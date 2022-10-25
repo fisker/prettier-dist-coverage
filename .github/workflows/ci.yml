@@ -41,10 +41,10 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            import fs from 'node:promises'
-            const packageJson = JSON.parse(await fs.readFile('./package.json'))
+            const fs = require('node:fs')
+            const packageJson = JSON.parse(fs.readFileSync('./package.json'))
             packageJson.c8.include = ['dist/**'];
-            await fs.writeFile('./package.json', JSON.stringify(packageJson, undefined, 2))
+            fs.writeFileSync('./package.json', JSON.stringify(packageJson, undefined, 2))
 
       - name: Run Tests
         run: yarn c8 test:dist
