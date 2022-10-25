@@ -13,6 +13,9 @@ env:
   PRETTIER_BRANCH: ${{ github.event.inputs.branch || 'next' }}
   SKIP_PRODUCTION_INSTALL: 1
 
+permissions:
+  contents: write
+
 jobs:
   test:
     name: Test
@@ -42,10 +45,16 @@ jobs:
             const fs = require('node:fs')
             const packageJson = JSON.parse(fs.readFileSync('./package.json'))
             packageJson.c8.include = ['dist/**'];
+            packageJson.c8.reporter = [...packageJson.c8.reporter, 'lcov', 'html'];
             fs.writeFileSync('./package.json', JSON.stringify(packageJson, undefined, 2))
 
       - name: Run Tests
         run: yarn c8 yarn test:dist
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: coverage
 
       - name: Upload Coverage
         uses: coverallsapp/github-action@1.1.3
