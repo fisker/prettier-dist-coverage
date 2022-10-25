@@ -51,12 +51,3 @@ jobs:
         with:
           fail_ci_if_error: true
           files: coverage/lcov.info
-
-      - name: Run Format Tests (standalone)
-        run: yarn c8 yarn test:dist-standalone
-
-      - name: Upload Coverage
-        uses: codecov/codecov-action@v3.1.1
-        with:
-          fail_ci_if_error: true
-          files: coverage/lcov.info
