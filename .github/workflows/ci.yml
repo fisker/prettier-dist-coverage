@@ -17,7 +17,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     env:
-      FULL_TEST: ${{ matrix.FULL_TEST }}
+      FULL_TEST: 1
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,7 +28,6 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
           cache: "yarn"
 
       - name: Install Dependencies
@@ -47,21 +46,19 @@ jobs:
             fs.writeFileSync('./package.json', JSON.stringify(packageJson, undefined, 2))
 
       - name: Run Tests
-        run: yarn c8 test:dist
+        run: yarn c8 yarn test:dist
 
       - name: Upload Coverage
         uses: codecov/codecov-action@v3.1.1
-        if: ${{ matrix.ENABLE_CODE_COVERAGE }}
         with:
           fail_ci_if_error: true
           files: coverage/lcov.info
 
       - name: Run Format Tests (standalone)
-        run: yarn c8 test:dist-standalone
+        run: yarn c8 yarn test:dist-standalone
 
       - name: Upload Coverage
         uses: codecov/codecov-action@v3.1.1
-        if: ${{ matrix.ENABLE_CODE_COVERAGE }}
         with:
           fail_ci_if_error: true
           files: coverage/lcov.info
