@@ -1,0 +1,53 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch"
+        required: true
+        default: "next"
+env:
+  PRETTIER_BRANCH: ${{ github.event.inputs.branch || 'next' }}
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    env:
+      FULL_TEST: ${{ matrix.FULL_TEST }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: prettier/prettier
+          ref: ${{ env.PRETTIER_BRANCH }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: "yarn"
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build --clean --no-minify
+
+      - name: Update c8 config
+        uses: actions/github-script@v6
+        with:
+          script: |
+            import fs from 'node:promises'
+            const packageJson = JSON.parse(await fs.readFile('./package.json'))
+            packageJson.c8.include = ['dist/**'];
+            await fs.writeFile('./package.json', JSON.stringify(packageJson, undefined, 2))
+
+      - name: Run Tests
+        run: yarn c8 test:dist
+
+      - name: Run Format Tests (standalone)
+        run: yarn c8 test:dist-standalone
