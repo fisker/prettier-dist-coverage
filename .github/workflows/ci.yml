@@ -3,6 +3,9 @@ name: Test
 on:
   push:
   pull_request:
+  schedule:
+    # “At 00:00.” https://crontab.guru/#0%C2%A00%C2%A0*%C2%A0*%C2%A0*
+    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
       branch:
