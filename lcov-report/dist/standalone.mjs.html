@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">62.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13136/20976</span>
+                <span class='fraction'>13137/20977</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.86% </span>
+                <span class="strong">59.8% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3065/5120</span>
+                <span class='fraction'>3057/5112</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.35% </span>
+                <span class="strong">63.79% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>798/1240</span>
+                <span class='fraction'>791/1240</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">62.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13136/20976</span>
+                <span class='fraction'>13137/20977</span>
             </div>
         
             
@@ -21039,7 +21039,8 @@
 <a name='L20974'></a><a href='#L20974'>20974</a>
 <a name='L20975'></a><a href='#L20975'>20975</a>
 <a name='L20976'></a><a href='#L20976'>20976</a>
-<a name='L20977'></a><a href='#L20977'>20977</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L20977'></a><a href='#L20977'>20977</a>
+<a name='L20978'></a><a href='#L20978'>20978</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -25304,13 +25305,14 @@
 <span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">482x</span>
+<span class="cline-any cline-yes">482x</span>
+<span class="cline-any cline-yes">482x</span>
+<span class="cline-any cline-yes">482x</span>
 <span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">798x</span>
 <span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">798x</span>
+<span class="cline-any cline-yes">482x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -43742,7 +43744,7 @@ var require_build = __commonJS({
 // src/main/version.evaluate.cjs
 var require_version_evaluate = __commonJS({
   "src/main/version.evaluate.cjs"(exports, module) {
-    module.exports = "3.0.0-alpha.3";
+    module.exports = "3.0.0-alpha.4";
   }
 });
 &nbsp;
@@ -46279,9 +46281,10 @@ function resolveParser({
   plugins,
   parser
 }) {
-  for (const {
-    parsers
-  } of plugins) {
+  for (let index = plugins.length - 1; index &gt;= 0; index--) {
+    const {
+      parsers
+    } = plugins[index];
     if (parsers &amp;&amp; Object.prototype.hasOwnProperty.call(parsers, parser)) {
       const parserOrParserInitFunction = parsers[parser];
       return typeof parserOrParserInitFunction === "function" <span class="branch-0 cbranch-no" title="branch not covered" >? parserOrParserInitFunction() </span>: parserOrParserInitFunction;
@@ -47802,7 +47805,7 @@ var language_js_exports = {};
 __export(language_js_exports, {
   languages: () =&gt; languages_evaluate_default,
   options: () =&gt; options_default,
-  parsers: () =&gt; parsers_default,
+  parsers: <span class="fstat-no" title="function not covered" >() =&gt; parsers_default,</span>
   printers: () =&gt; printers
 });
 init_define_process();
@@ -56363,7 +56366,7 @@ var language_css_exports = {};
 __export(language_css_exports, {
   languages: () =&gt; languages_evaluate_default2,
   options: () =&gt; options_default2,
-  parsers: () =&gt; parsers_default2,
+  parsers: <span class="fstat-no" title="function not covered" >() =&gt; parsers_default2,</span>
   printers: () =&gt; printers2
 });
 init_define_process();
@@ -57484,7 +57487,7 @@ var printers2 = {
 var language_handlebars_exports = {};
 __export(language_handlebars_exports, {
   languages: () =&gt; languages_evaluate_default3,
-  parsers: () =&gt; parsers_default3,
+  parsers: <span class="fstat-no" title="function not covered" >() =&gt; parsers_default3,</span>
   printers: () =&gt; printers3
 });
 init_define_process();
@@ -58214,7 +58217,7 @@ var language_graphql_exports = {};
 __export(language_graphql_exports, {
   languages: () =&gt; languages_evaluate_default4,
   options: () =&gt; options_default3,
-  parsers: () =&gt; parsers_default4,
+  parsers: <span class="fstat-no" title="function not covered" >() =&gt; parsers_default4,</span>
   printers: () =&gt; printers4
 });
 init_define_process();
@@ -58921,7 +58924,7 @@ var language_markdown_exports = {};
 __export(language_markdown_exports, {
   languages: () =&gt; languages_evaluate_default5,
   options: () =&gt; options_default4,
-  parsers: () =&gt; parsers_default5,
+  parsers: <span class="fstat-no" title="function not covered" >() =&gt; parsers_default5,</span>
   printers: () =&gt; printers5
 });
 init_define_process();
@@ -60057,7 +60060,7 @@ var language_html_exports = {};
 __export(language_html_exports, {
   languages: () =&gt; languages_evaluate_default6,
   options: () =&gt; options_default5,
-  parsers: () =&gt; parsers_default6,
+  parsers: <span class="fstat-no" title="function not covered" >() =&gt; parsers_default6,</span>
   printers: () =&gt; printers6
 });
 init_define_process();
@@ -62026,7 +62029,7 @@ var language_yaml_exports = {};
 __export(language_yaml_exports, {
   languages: () =&gt; languages_evaluate_default7,
   options: () =&gt; options_default6,
-  parsers: () =&gt; parsers_default7,
+  parsers: <span class="fstat-no" title="function not covered" >() =&gt; parsers_default7,</span>
   printers: () =&gt; printers7
 });
 init_define_process();
@@ -62998,7 +63001,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-25T09:31:41.680Z
+                at 2022-10-26T06:03:48.912Z
             </div>
         <script src="../prettify.js"></script>
         <script>
