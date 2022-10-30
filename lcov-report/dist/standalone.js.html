@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.11% </span>
+                <span class="strong">63.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13052/20679</span>
+                <span class='fraction'>13055/20682</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.81% </span>
+                <span class="strong">59.8% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3060/5116</span>
+                <span class='fraction'>3060/5117</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.11% </span>
+                <span class="strong">63.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13052/20679</span>
+                <span class='fraction'>13055/20682</span>
             </div>
         
             
@@ -20741,7 +20741,10 @@
 <a name='L20676'></a><a href='#L20676'>20676</a>
 <a name='L20677'></a><a href='#L20677'>20677</a>
 <a name='L20678'></a><a href='#L20678'>20678</a>
-<a name='L20679'></a><a href='#L20679'>20679</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L20679'></a><a href='#L20679'>20679</a>
+<a name='L20680'></a><a href='#L20680'>20680</a>
+<a name='L20681'></a><a href='#L20681'>20681</a>
+<a name='L20682'></a><a href='#L20682'>20682</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -26517,7 +26520,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">90x</span>
-<span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">181x</span>
 <span class="cline-any cline-yes">181x</span>
@@ -26572,6 +26574,10 @@
 <span class="cline-any cline-yes">1280x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -47186,15 +47192,14 @@
   var src_default = isEs5IdentifierName;
 &nbsp;
   // src/language-js/loc.js
-  function locStart(node, opts) {
-    const { ignoreDecorators } = opts || {};
-    if (!ignoreDecorators) {
-      const decorators = node.declaration <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.declaration.decorators </span>|| node.decorators;
-      if (is_non_empty_array_default(decorators)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        return locStart(decorators[0]);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-    }
-    return node.range ? node.range[0] : node.start;
+  function locStart(node) {
+    var _a, _b;
+    const start = node.range ? node.range[0] : node.start;
+    const decorators = (_b = (_a = node.declaration) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a.decorators)</span> != null <span class="branch-0 cbranch-no" title="branch not covered" >? _b </span>: node.decorators;
+    if (is_non_empty_array_default(decorators)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return Math.min(locStart(decorators[0]), start);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    return start;
   }
   function locEnd(node) {
     return node.range ? node.range[1] : node.end;
@@ -48076,6 +48081,10 @@
       "typeParameters"
     ],
     TSAsExpression: [
+      "expression",
+      "typeAnnotation"
+    ],
+    TSSatisfiesExpression: [
       "expression",
       "typeAnnotation"
     ],
@@ -52813,7 +52822,7 @@
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const decorators = node.declaration &amp;&amp; node.declaration.decorators;
-    return is_non_empty_array_default(decorators) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; locStart(node, { ignoreDecorators: true }) &gt; locStart(decorators[0]);</span>
+    return is_non_empty_array_default(decorators) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; locStart(node) === locStart(decorators[0]);</span>
   }
 &nbsp;
   // src/language-js/print/class.js
@@ -62104,7 +62113,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-29T02:12:33.423Z
+                at 2022-10-30T02:36:36.248Z
             </div>
         <script src="../prettify.js"></script>
         <script>
