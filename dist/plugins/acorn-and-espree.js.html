@@ -20136,7 +20136,7 @@
           }
           return this.finishToken(type, word);
         };
-        var version = "8.8.0";
+        var version = "8.8.1";
         Parser.acorn = {
           Parser,
           version,
@@ -21537,71 +21537,71 @@
 &nbsp;
   // src/language-js/traverse/visitor-keys.evaluate.js
   var visitor_keys_evaluate_default = {
-    ArrayExpression: [
+    "ArrayExpression": [
       "elements"
     ],
-    AssignmentExpression: [
+    "AssignmentExpression": [
       "left",
       "right"
     ],
-    BinaryExpression: [
+    "BinaryExpression": [
       "left",
       "right"
     ],
-    InterpreterDirective: [],
-    Directive: [
+    "InterpreterDirective": [],
+    "Directive": [
       "value"
     ],
-    DirectiveLiteral: [],
-    BlockStatement: [
+    "DirectiveLiteral": [],
+    "BlockStatement": [
       "directives",
       "body"
     ],
-    BreakStatement: [
+    "BreakStatement": [
       "label"
     ],
-    CallExpression: [
+    "CallExpression": [
       "callee",
       "arguments",
       "typeParameters",
       "typeArguments"
     ],
-    CatchClause: [
+    "CatchClause": [
       "param",
       "body"
     ],
-    ConditionalExpression: [
+    "ConditionalExpression": [
       "test",
       "consequent",
       "alternate"
     ],
-    ContinueStatement: [
+    "ContinueStatement": [
       "label"
     ],
-    DebuggerStatement: [],
-    DoWhileStatement: [
+    "DebuggerStatement": [],
+    "DoWhileStatement": [
       "test",
       "body"
     ],
-    EmptyStatement: [],
-    ExpressionStatement: [
+    "EmptyStatement": [],
+    "ExpressionStatement": [
       "expression"
     ],
-    File: [
+    "File": [
       "program"
     ],
-    ForInStatement: [
+    "ForInStatement": [
       "left",
       "right",
       "body"
     ],
-    ForStatement: [
+    "ForStatement": [
       "init",
       "test",
       "update",
       "body"
     ],
-    FunctionDeclaration: [
+    "FunctionDeclaration": [
       "id",
       "params",
       "body",
@@ -21609,54 +21609,54 @@
       "typeParameters",
       "predicate"
     ],
-    FunctionExpression: [
+    "FunctionExpression": [
       "id",
       "params",
       "body",
       "returnType",
       "typeParameters"
     ],
-    Identifier: [
+    "Identifier": [
       "typeAnnotation",
       "decorators"
     ],
-    IfStatement: [
+    "IfStatement": [
       "test",
       "consequent",
       "alternate"
     ],
-    LabeledStatement: [
+    "LabeledStatement": [
       "label",
       "body"
     ],
-    StringLiteral: [],
-    NumericLiteral: [],
-    NullLiteral: [],
-    BooleanLiteral: [],
-    RegExpLiteral: [],
-    LogicalExpression: [
+    "StringLiteral": [],
+    "NumericLiteral": [],
+    "NullLiteral": [],
+    "BooleanLiteral": [],
+    "RegExpLiteral": [],
+    "LogicalExpression": [
       "left",
       "right"
     ],
-    MemberExpression: [
+    "MemberExpression": [
       "object",
       "property"
     ],
-    NewExpression: [
+    "NewExpression": [
       "callee",
       "arguments",
       "typeParameters",
       "typeArguments"
     ],
-    Program: [
+    "Program": [
       "directives",
       "body",
       "interpreter"
     ],
-    ObjectExpression: [
+    "ObjectExpression": [
       "properties"
     ],
-    ObjectMethod: [
+    "ObjectMethod": [
       "key",
       "params",
       "body",
@@ -21664,85 +21664,85 @@
       "returnType",
       "typeParameters"
     ],
-    ObjectProperty: [
+    "ObjectProperty": [
       "key",
       "value",
       "decorators"
     ],
-    RestElement: [
+    "RestElement": [
       "argument",
       "typeAnnotation",
       "decorators"
     ],
-    ReturnStatement: [
+    "ReturnStatement": [
       "argument"
     ],
-    SequenceExpression: [
+    "SequenceExpression": [
       "expressions"
     ],
-    ParenthesizedExpression: [
+    "ParenthesizedExpression": [
       "expression"
     ],
-    SwitchCase: [
+    "SwitchCase": [
       "test",
       "consequent"
     ],
-    SwitchStatement: [
+    "SwitchStatement": [
       "discriminant",
       "cases"
     ],
-    ThisExpression: [],
-    ThrowStatement: [
+    "ThisExpression": [],
+    "ThrowStatement": [
       "argument"
     ],
-    TryStatement: [
+    "TryStatement": [
       "block",
       "handler",
       "finalizer"
     ],
-    UnaryExpression: [
+    "UnaryExpression": [
       "argument"
     ],
-    UpdateExpression: [
+    "UpdateExpression": [
       "argument"
     ],
-    VariableDeclaration: [
+    "VariableDeclaration": [
       "declarations"
     ],
-    VariableDeclarator: [
+    "VariableDeclarator": [
       "id",
       "init"
     ],
-    WhileStatement: [
+    "WhileStatement": [
       "test",
       "body"
     ],
-    WithStatement: [
+    "WithStatement": [
       "object",
       "body"
     ],
-    AssignmentPattern: [
+    "AssignmentPattern": [
       "left",
       "right",
       "decorators",
       "typeAnnotation"
     ],
-    ArrayPattern: [
+    "ArrayPattern": [
       "elements",
       "typeAnnotation",
       "decorators"
     ],
-    ArrowFunctionExpression: [
+    "ArrowFunctionExpression": [
       "params",
       "body",
       "returnType",
       "typeParameters",
       "predicate"
     ],
-    ClassBody: [
+    "ClassBody": [
       "body"
     ],
-    ClassExpression: [
+    "ClassExpression": [
       "id",
       "body",
       "superClass",
@@ -21752,7 +21752,7 @@
       "implements",
       "decorators"
     ],
-    ClassDeclaration: [
+    "ClassDeclaration": [
       "id",
       "body",
       "superClass",
@@ -21762,49 +21762,49 @@
       "implements",
       "decorators"
     ],
-    ExportAllDeclaration: [
+    "ExportAllDeclaration": [
       "source",
       "exported",
       "assertions"
     ],
-    ExportDefaultDeclaration: [
+    "ExportDefaultDeclaration": [
       "declaration"
     ],
-    ExportNamedDeclaration: [
+    "ExportNamedDeclaration": [
       "declaration",
       "specifiers",
       "source",
       "assertions"
     ],
-    ExportSpecifier: [
+    "ExportSpecifier": [
       "local",
       "exported"
     ],
-    ForOfStatement: [
+    "ForOfStatement": [
       "left",
       "right",
       "body"
     ],
-    ImportDeclaration: [
+    "ImportDeclaration": [
       "specifiers",
       "source",
       "assertions"
     ],
-    ImportDefaultSpecifier: [
+    "ImportDefaultSpecifier": [
       "local"
     ],
-    ImportNamespaceSpecifier: [
+    "ImportNamespaceSpecifier": [
       "local"
     ],
-    ImportSpecifier: [
+    "ImportSpecifier": [
       "local",
       "imported"
     ],
-    MetaProperty: [
+    "MetaProperty": [
       "meta",
       "property"
     ],
-    ClassMethod: [
+    "ClassMethod": [
       "key",
       "params",
       "body",
@@ -21812,67 +21812,67 @@
       "returnType",
       "typeParameters"
     ],
-    ObjectPattern: [
+    "ObjectPattern": [
       "properties",
       "typeAnnotation",
       "decorators"
     ],
-    SpreadElement: [
+    "SpreadElement": [
       "argument"
     ],
-    Super: [],
-    TaggedTemplateExpression: [
+    "Super": [],
+    "TaggedTemplateExpression": [
       "tag",
       "quasi",
       "typeParameters"
     ],
-    TemplateElement: [],
-    TemplateLiteral: [
+    "TemplateElement": [],
+    "TemplateLiteral": [
       "quasis",
       "expressions"
     ],
-    YieldExpression: [
+    "YieldExpression": [
       "argument"
     ],
-    AwaitExpression: [
+    "AwaitExpression": [
       "argument"
     ],
-    Import: [],
-    BigIntLiteral: [],
-    ExportNamespaceSpecifier: [
+    "Import": [],
+    "BigIntLiteral": [],
+    "ExportNamespaceSpecifier": [
       "exported"
     ],
-    OptionalMemberExpression: [
+    "OptionalMemberExpression": [
       "object",
       "property"
     ],
-    OptionalCallExpression: [
+    "OptionalCallExpression": [
       "callee",
       "arguments",
       "typeParameters",
       "typeArguments"
     ],
-    ClassProperty: [
+    "ClassProperty": [
       "key",
       "value",
       "typeAnnotation",
       "decorators",
       "variance"
     ],
-    ClassAccessorProperty: [
+    "ClassAccessorProperty": [
       "key",
       "value",
       "typeAnnotation",
       "decorators"
     ],
-    ClassPrivateProperty: [
+    "ClassPrivateProperty": [
       "key",
       "value",
       "decorators",
       "typeAnnotation",
       "variance"
     ],
-    ClassPrivateMethod: [
+    "ClassPrivateMethod": [
       "key",
       "params",
       "body",
@@ -21880,24 +21880,24 @@
       "returnType",
       "typeParameters"
     ],
-    PrivateName: [
+    "PrivateName": [
       "id"
     ],
-    StaticBlock: [
+    "StaticBlock": [
       "body"
     ],
-    AnyTypeAnnotation: [],
-    ArrayTypeAnnotation: [
+    "AnyTypeAnnotation": [],
+    "ArrayTypeAnnotation": [
       "elementType"
     ],
-    BooleanTypeAnnotation: [],
-    BooleanLiteralTypeAnnotation: [],
-    NullLiteralTypeAnnotation: [],
-    ClassImplements: [
+    "BooleanTypeAnnotation": [],
+    "BooleanLiteralTypeAnnotation": [],
+    "NullLiteralTypeAnnotation": [],
+    "ClassImplements": [
       "id",
       "typeParameters"
     ],
-    DeclareClass: [
+    "DeclareClass": [
       "id",
       "typeParameters",
       "extends",
@@ -21905,11 +21905,11 @@
       "implements",
       "body"
     ],
-    DeclareFunction: [
+    "DeclareFunction": [
       "id",
       "predicate"
     ],
-    DeclareInterface: [
+    "DeclareInterface": [
       "id",
       "typeParameters",
       "extends",
@@ -21917,59 +21917,59 @@
       "implements",
       "body"
     ],
-    DeclareModule: [
+    "DeclareModule": [
       "id",
       "body"
     ],
-    DeclareModuleExports: [
+    "DeclareModuleExports": [
       "typeAnnotation"
     ],
-    DeclareTypeAlias: [
+    "DeclareTypeAlias": [
       "id",
       "typeParameters",
       "right"
     ],
-    DeclareOpaqueType: [
+    "DeclareOpaqueType": [
       "id",
       "typeParameters",
       "supertype"
     ],
-    DeclareVariable: [
+    "DeclareVariable": [
       "id"
     ],
-    DeclareExportDeclaration: [
+    "DeclareExportDeclaration": [
       "declaration",
       "specifiers",
       "source"
     ],
-    DeclareExportAllDeclaration: [
+    "DeclareExportAllDeclaration": [
       "source"
     ],
-    DeclaredPredicate: [
+    "DeclaredPredicate": [
       "value"
     ],
-    ExistsTypeAnnotation: [],
-    FunctionTypeAnnotation: [
+    "ExistsTypeAnnotation": [],
+    "FunctionTypeAnnotation": [
       "typeParameters",
       "params",
       "rest",
       "returnType",
       "this"
     ],
-    FunctionTypeParam: [
+    "FunctionTypeParam": [
       "name",
       "typeAnnotation"
     ],
-    GenericTypeAnnotation: [
+    "GenericTypeAnnotation": [
       "id",
       "typeParameters"
     ],
-    InferredPredicate: [],
-    InterfaceExtends: [
+    "InferredPredicate": [],
+    "InterfaceExtends": [
       "id",
       "typeParameters"
     ],
-    InterfaceDeclaration: [
+    "InterfaceDeclaration": [
       "id",
       "typeParameters",
       "extends",
@@ -21977,262 +21977,262 @@
       "implements",
       "body"
     ],
-    InterfaceTypeAnnotation: [
+    "InterfaceTypeAnnotation": [
       "extends",
       "body"
     ],
-    IntersectionTypeAnnotation: [
+    "IntersectionTypeAnnotation": [
       "types"
     ],
-    MixedTypeAnnotation: [],
-    EmptyTypeAnnotation: [],
-    NullableTypeAnnotation: [
+    "MixedTypeAnnotation": [],
+    "EmptyTypeAnnotation": [],
+    "NullableTypeAnnotation": [
       "typeAnnotation"
     ],
-    NumberLiteralTypeAnnotation: [],
-    NumberTypeAnnotation: [],
-    ObjectTypeAnnotation: [
+    "NumberLiteralTypeAnnotation": [],
+    "NumberTypeAnnotation": [],
+    "ObjectTypeAnnotation": [
       "properties",
       "indexers",
       "callProperties",
       "internalSlots"
     ],
-    ObjectTypeInternalSlot: [
+    "ObjectTypeInternalSlot": [
       "id",
       "value",
       "optional",
       "static",
       "method"
     ],
-    ObjectTypeCallProperty: [
+    "ObjectTypeCallProperty": [
       "value"
     ],
-    ObjectTypeIndexer: [
+    "ObjectTypeIndexer": [
       "id",
       "key",
       "value",
       "variance"
     ],
-    ObjectTypeProperty: [
+    "ObjectTypeProperty": [
       "key",
       "value",
       "variance"
     ],
-    ObjectTypeSpreadProperty: [
+    "ObjectTypeSpreadProperty": [
       "argument"
     ],
-    OpaqueType: [
+    "OpaqueType": [
       "id",
       "typeParameters",
       "supertype",
       "impltype"
     ],
-    QualifiedTypeIdentifier: [
+    "QualifiedTypeIdentifier": [
       "id",
       "qualification"
     ],
-    StringLiteralTypeAnnotation: [],
-    StringTypeAnnotation: [],
-    SymbolTypeAnnotation: [],
-    ThisTypeAnnotation: [],
-    TupleTypeAnnotation: [
+    "StringLiteralTypeAnnotation": [],
+    "StringTypeAnnotation": [],
+    "SymbolTypeAnnotation": [],
+    "ThisTypeAnnotation": [],
+    "TupleTypeAnnotation": [
       "types"
     ],
-    TypeofTypeAnnotation: [
+    "TypeofTypeAnnotation": [
       "argument"
     ],
-    TypeAlias: [
+    "TypeAlias": [
       "id",
       "typeParameters",
       "right"
     ],
-    TypeAnnotation: [
+    "TypeAnnotation": [
       "typeAnnotation"
     ],
-    TypeCastExpression: [
+    "TypeCastExpression": [
       "expression",
       "typeAnnotation"
     ],
-    TypeParameter: [
+    "TypeParameter": [
       "bound",
       "default",
       "variance"
     ],
-    TypeParameterDeclaration: [
+    "TypeParameterDeclaration": [
       "params"
     ],
-    TypeParameterInstantiation: [
+    "TypeParameterInstantiation": [
       "params"
     ],
-    UnionTypeAnnotation: [
+    "UnionTypeAnnotation": [
       "types"
     ],
-    Variance: [],
-    VoidTypeAnnotation: [],
-    EnumDeclaration: [
+    "Variance": [],
+    "VoidTypeAnnotation": [],
+    "EnumDeclaration": [
       "id",
       "body"
     ],
-    EnumBooleanBody: [
+    "EnumBooleanBody": [
       "members"
     ],
-    EnumNumberBody: [
+    "EnumNumberBody": [
       "members"
     ],
-    EnumStringBody: [
+    "EnumStringBody": [
       "members"
     ],
-    EnumSymbolBody: [
+    "EnumSymbolBody": [
       "members"
     ],
-    EnumBooleanMember: [
+    "EnumBooleanMember": [
       "id",
       "init"
     ],
-    EnumNumberMember: [
+    "EnumNumberMember": [
       "id",
       "init"
     ],
-    EnumStringMember: [
+    "EnumStringMember": [
       "id",
       "init"
     ],
-    EnumDefaultedMember: [
+    "EnumDefaultedMember": [
       "id"
     ],
-    IndexedAccessType: [
+    "IndexedAccessType": [
       "objectType",
       "indexType"
     ],
-    OptionalIndexedAccessType: [
+    "OptionalIndexedAccessType": [
       "objectType",
       "indexType"
     ],
-    JSXAttribute: [
+    "JSXAttribute": [
       "name",
       "value"
     ],
-    JSXClosingElement: [
+    "JSXClosingElement": [
       "name"
     ],
-    JSXElement: [
+    "JSXElement": [
       "openingElement",
       "children",
       "closingElement"
     ],
-    JSXEmptyExpression: [],
-    JSXExpressionContainer: [
+    "JSXEmptyExpression": [],
+    "JSXExpressionContainer": [
       "expression"
     ],
-    JSXSpreadChild: [
+    "JSXSpreadChild": [
       "expression"
     ],
-    JSXIdentifier: [],
-    JSXMemberExpression: [
+    "JSXIdentifier": [],
+    "JSXMemberExpression": [
       "object",
       "property"
     ],
-    JSXNamespacedName: [
+    "JSXNamespacedName": [
       "namespace",
       "name"
     ],
-    JSXOpeningElement: [
+    "JSXOpeningElement": [
       "name",
       "attributes",
       "typeParameters"
     ],
-    JSXSpreadAttribute: [
+    "JSXSpreadAttribute": [
       "argument"
     ],
-    JSXText: [],
-    JSXFragment: [
+    "JSXText": [],
+    "JSXFragment": [
       "openingFragment",
       "children",
       "closingFragment"
     ],
-    JSXOpeningFragment: [],
-    JSXClosingFragment: [],
-    Noop: [],
-    Placeholder: [],
-    V8IntrinsicIdentifier: [],
-    ArgumentPlaceholder: [],
-    BindExpression: [
+    "JSXOpeningFragment": [],
+    "JSXClosingFragment": [],
+    "Noop": [],
+    "Placeholder": [],
+    "V8IntrinsicIdentifier": [],
+    "ArgumentPlaceholder": [],
+    "BindExpression": [
       "object",
       "callee"
     ],
-    ImportAttribute: [
+    "ImportAttribute": [
       "key",
       "value"
     ],
-    Decorator: [
+    "Decorator": [
       "expression"
     ],
-    DoExpression: [
+    "DoExpression": [
       "body"
     ],
-    ExportDefaultSpecifier: [
+    "ExportDefaultSpecifier": [
       "exported"
     ],
-    RecordExpression: [
+    "RecordExpression": [
       "properties"
     ],
-    TupleExpression: [
+    "TupleExpression": [
       "elements"
     ],
-    DecimalLiteral: [],
-    ModuleExpression: [
+    "DecimalLiteral": [],
+    "ModuleExpression": [
       "body"
     ],
-    TopicReference: [],
-    PipelineTopicExpression: [
+    "TopicReference": [],
+    "PipelineTopicExpression": [
       "expression"
     ],
-    PipelineBareFunction: [
+    "PipelineBareFunction": [
       "callee"
     ],
-    PipelinePrimaryTopicReference: [],
-    TSParameterProperty: [
+    "PipelinePrimaryTopicReference": [],
+    "TSParameterProperty": [
       "parameter",
       "decorators"
     ],
-    TSDeclareFunction: [
+    "TSDeclareFunction": [
       "id",
       "typeParameters",
       "params",
       "returnType",
       "body"
     ],
-    TSDeclareMethod: [
+    "TSDeclareMethod": [
       "decorators",
       "key",
       "typeParameters",
       "params",
       "returnType"
     ],
-    TSQualifiedName: [
+    "TSQualifiedName": [
       "left",
       "right"
     ],
-    TSCallSignatureDeclaration: [
+    "TSCallSignatureDeclaration": [
       "typeParameters",
       "parameters",
       "typeAnnotation",
       "params",
       "returnType"
     ],
-    TSConstructSignatureDeclaration: [
+    "TSConstructSignatureDeclaration": [
       "typeParameters",
       "parameters",
       "typeAnnotation",
       "params",
       "returnType"
     ],
-    TSPropertySignature: [
+    "TSPropertySignature": [
       "key",
       "typeAnnotation",
       "initializer"
     ],
-    TSMethodSignature: [
+    "TSMethodSignature": [
       "key",
       "typeParameters",
       "parameters",
@@ -22240,311 +22240,311 @@
       "params",
       "returnType"
     ],
-    TSIndexSignature: [
+    "TSIndexSignature": [
       "parameters",
       "typeAnnotation"
     ],
-    TSAnyKeyword: [],
-    TSBooleanKeyword: [],
-    TSBigIntKeyword: [],
-    TSIntrinsicKeyword: [],
-    TSNeverKeyword: [],
-    TSNullKeyword: [],
-    TSNumberKeyword: [],
-    TSObjectKeyword: [],
-    TSStringKeyword: [],
-    TSSymbolKeyword: [],
-    TSUndefinedKeyword: [],
-    TSUnknownKeyword: [],
-    TSVoidKeyword: [],
-    TSThisType: [],
-    TSFunctionType: [
+    "TSAnyKeyword": [],
+    "TSBooleanKeyword": [],
+    "TSBigIntKeyword": [],
+    "TSIntrinsicKeyword": [],
+    "TSNeverKeyword": [],
+    "TSNullKeyword": [],
+    "TSNumberKeyword": [],
+    "TSObjectKeyword": [],
+    "TSStringKeyword": [],
+    "TSSymbolKeyword": [],
+    "TSUndefinedKeyword": [],
+    "TSUnknownKeyword": [],
+    "TSVoidKeyword": [],
+    "TSThisType": [],
+    "TSFunctionType": [
       "typeParameters",
       "parameters",
       "typeAnnotation",
       "params",
       "returnType"
     ],
-    TSConstructorType: [
+    "TSConstructorType": [
       "typeParameters",
       "parameters",
       "typeAnnotation",
       "params",
       "returnType"
     ],
-    TSTypeReference: [
+    "TSTypeReference": [
       "typeName",
       "typeParameters"
     ],
-    TSTypePredicate: [
+    "TSTypePredicate": [
       "parameterName",
       "typeAnnotation"
     ],
-    TSTypeQuery: [
+    "TSTypeQuery": [
       "exprName",
       "typeParameters"
     ],
-    TSTypeLiteral: [
+    "TSTypeLiteral": [
       "members"
     ],
-    TSArrayType: [
+    "TSArrayType": [
       "elementType"
     ],
-    TSTupleType: [
+    "TSTupleType": [
       "elementTypes"
     ],
-    TSOptionalType: [
+    "TSOptionalType": [
       "typeAnnotation"
     ],
-    TSRestType: [
+    "TSRestType": [
       "typeAnnotation"
     ],
-    TSNamedTupleMember: [
+    "TSNamedTupleMember": [
       "label",
       "elementType"
     ],
-    TSUnionType: [
+    "TSUnionType": [
       "types"
     ],
-    TSIntersectionType: [
+    "TSIntersectionType": [
       "types"
     ],
-    TSConditionalType: [
+    "TSConditionalType": [
       "checkType",
       "extendsType",
       "trueType",
       "falseType"
     ],
-    TSInferType: [
+    "TSInferType": [
       "typeParameter"
     ],
-    TSParenthesizedType: [
+    "TSParenthesizedType": [
       "typeAnnotation"
     ],
-    TSTypeOperator: [
+    "TSTypeOperator": [
       "typeAnnotation"
     ],
-    TSIndexedAccessType: [
+    "TSIndexedAccessType": [
       "objectType",
       "indexType"
     ],
-    TSMappedType: [
+    "TSMappedType": [
       "typeParameter",
       "typeAnnotation",
       "nameType"
     ],
-    TSLiteralType: [
+    "TSLiteralType": [
       "literal"
     ],
-    TSExpressionWithTypeArguments: [
+    "TSExpressionWithTypeArguments": [
       "expression",
       "typeParameters"
     ],
-    TSInterfaceDeclaration: [
+    "TSInterfaceDeclaration": [
       "id",
       "typeParameters",
       "extends",
       "body"
     ],
-    TSInterfaceBody: [
+    "TSInterfaceBody": [
       "body"
     ],
-    TSTypeAliasDeclaration: [
+    "TSTypeAliasDeclaration": [
       "id",
       "typeParameters",
       "typeAnnotation"
     ],
-    TSInstantiationExpression: [
+    "TSInstantiationExpression": [
       "expression",
       "typeParameters"
     ],
-    TSAsExpression: [
+    "TSAsExpression": [
       "expression",
       "typeAnnotation"
     ],
-    TSSatisfiesExpression: [
+    "TSSatisfiesExpression": [
       "expression",
       "typeAnnotation"
     ],
-    TSTypeAssertion: [
+    "TSTypeAssertion": [
       "typeAnnotation",
       "expression"
     ],
-    TSEnumDeclaration: [
+    "TSEnumDeclaration": [
       "id",
       "members",
       "modifiers"
     ],
-    TSEnumMember: [
+    "TSEnumMember": [
       "id",
       "initializer"
     ],
-    TSModuleDeclaration: [
+    "TSModuleDeclaration": [
       "id",
       "body",
       "modifiers"
     ],
-    TSModuleBlock: [
+    "TSModuleBlock": [
       "body"
     ],
-    TSImportType: [
+    "TSImportType": [
       "argument",
       "qualifier",
       "typeParameters",
       "parameter"
     ],
-    TSImportEqualsDeclaration: [
+    "TSImportEqualsDeclaration": [
       "id",
       "moduleReference"
     ],
-    TSExternalModuleReference: [
+    "TSExternalModuleReference": [
       "expression"
     ],
-    TSNonNullExpression: [
+    "TSNonNullExpression": [
       "expression"
     ],
-    TSExportAssignment: [
+    "TSExportAssignment": [
       "expression"
     ],
-    TSNamespaceExportDeclaration: [
+    "TSNamespaceExportDeclaration": [
       "id"
     ],
-    TSTypeAnnotation: [
+    "TSTypeAnnotation": [
       "typeAnnotation"
     ],
-    TSTypeParameterInstantiation: [
+    "TSTypeParameterInstantiation": [
       "params"
     ],
-    TSTypeParameterDeclaration: [
+    "TSTypeParameterDeclaration": [
       "params"
     ],
-    TSTypeParameter: [
+    "TSTypeParameter": [
       "constraint",
       "default",
       "name"
     ],
-    ChainExpression: [
+    "ChainExpression": [
       "expression"
     ],
-    ExperimentalRestProperty: [
+    "ExperimentalRestProperty": [
       "argument"
     ],
-    ExperimentalSpreadProperty: [
+    "ExperimentalSpreadProperty": [
       "argument"
     ],
-    ImportExpression: [
+    "ImportExpression": [
       "source",
       "attributes"
     ],
-    Literal: [],
-    MethodDefinition: [
+    "Literal": [],
+    "MethodDefinition": [
       "decorators",
       "key",
       "value",
       "typeParameters"
     ],
-    PrivateIdentifier: [],
-    Property: [
+    "PrivateIdentifier": [],
+    "Property": [
       "key",
       "value",
       "decorators"
     ],
-    PropertyDefinition: [
+    "PropertyDefinition": [
       "decorators",
       "key",
       "typeAnnotation",
       "value",
       "variance"
     ],
-    TSAbstractKeyword: [],
-    TSAbstractMethodDefinition: [
+    "TSAbstractKeyword": [],
+    "TSAbstractMethodDefinition": [
       "key",
       "value",
       "decorators"
     ],
-    TSAbstractPropertyDefinition: [
+    "TSAbstractPropertyDefinition": [
       "decorators",
       "key",
       "typeAnnotation"
     ],
-    TSAsyncKeyword: [],
-    TSClassImplements: [
+    "TSAsyncKeyword": [],
+    "TSClassImplements": [
       "expression",
       "typeParameters"
     ],
-    TSDeclareKeyword: [],
-    TSEmptyBodyFunctionExpression: [
+    "TSDeclareKeyword": [],
+    "TSEmptyBodyFunctionExpression": [
       "id",
       "typeParameters",
       "params",
       "returnType"
     ],
-    TSExportKeyword: [],
-    TSInterfaceHeritage: [
+    "TSExportKeyword": [],
+    "TSInterfaceHeritage": [
       "expression",
       "typeParameters"
     ],
-    TSPrivateKeyword: [],
-    TSProtectedKeyword: [],
-    TSPublicKeyword: [],
-    TSReadonlyKeyword: [],
-    TSStaticKeyword: [],
-    TSTemplateLiteralType: [
+    "TSPrivateKeyword": [],
+    "TSProtectedKeyword": [],
+    "TSPublicKeyword": [],
+    "TSReadonlyKeyword": [],
+    "TSStaticKeyword": [],
+    "TSTemplateLiteralType": [
       "quasis",
       "types"
     ],
-    BigIntLiteralTypeAnnotation: [],
-    NGRoot: [
+    "BigIntLiteralTypeAnnotation": [],
+    "NGRoot": [
       "node"
     ],
-    NGPipeExpression: [
+    "NGPipeExpression": [
       "left",
       "right",
       "arguments"
     ],
-    NGChainedExpression: [
+    "NGChainedExpression": [
       "expressions"
     ],
-    NGEmptyExpression: [],
-    NGMicrosyntax: [
+    "NGEmptyExpression": [],
+    "NGMicrosyntax": [
       "body"
     ],
-    NGMicrosyntaxKey: [],
-    NGMicrosyntaxExpression: [
+    "NGMicrosyntaxKey": [],
+    "NGMicrosyntaxExpression": [
       "expression",
       "alias"
     ],
-    NGMicrosyntaxKeyedExpression: [
+    "NGMicrosyntaxKeyedExpression": [
       "key",
       "expression"
     ],
-    NGMicrosyntaxLet: [
+    "NGMicrosyntaxLet": [
       "key",
       "value"
     ],
-    NGMicrosyntaxAs: [
+    "NGMicrosyntaxAs": [
       "key",
       "alias"
     ],
-    JsExpressionRoot: [
+    "JsExpressionRoot": [
       "node"
     ],
-    JsonRoot: [
+    "JsonRoot": [
       "node"
     ],
-    SpreadProperty: [
+    "SpreadProperty": [
       "argument"
     ],
-    TSJSDocAllType: [],
-    TSJSDocUnknownType: [],
-    TSJSDocNullableType: [
+    "TSJSDocAllType": [],
+    "TSJSDocUnknownType": [],
+    "TSJSDocNullableType": [
       "typeAnnotation"
     ],
-    TSJSDocNonNullableType: [
+    "TSJSDocNonNullableType": [
       "typeAnnotation"
     ],
-    BigIntTypeAnnotation: [],
-    QualifiedTypeofIdentifier: [
+    "BigIntTypeAnnotation": [],
+    "QualifiedTypeofIdentifier": [
       "id",
       "qualification"
     ]
@@ -22906,7 +22906,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-30T02:36:40.318Z
+                at 2022-10-31T02:33:39.784Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
