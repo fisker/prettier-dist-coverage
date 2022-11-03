@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.86% </span>
+                <span class="strong">60.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6144/10095</span>
+                <span class='fraction'>6153/10111</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.85% </span>
+                <span class="strong">45.88% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>321/700</span>
+                <span class='fraction'>323/704</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.31% </span>
+                <span class="strong">45.52% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>116/256</span>
+                <span class='fraction'>117/257</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.86% </span>
+                <span class="strong">60.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6144/10095</span>
+                <span class='fraction'>6153/10111</span>
             </div>
         
             
@@ -10157,7 +10157,23 @@
 <a name='L10092'></a><a href='#L10092'>10092</a>
 <a name='L10093'></a><a href='#L10093'>10093</a>
 <a name='L10094'></a><a href='#L10094'>10094</a>
-<a name='L10095'></a><a href='#L10095'>10095</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10095'></a><a href='#L10095'>10095</a>
+<a name='L10096'></a><a href='#L10096'>10096</a>
+<a name='L10097'></a><a href='#L10097'>10097</a>
+<a name='L10098'></a><a href='#L10098'>10098</a>
+<a name='L10099'></a><a href='#L10099'>10099</a>
+<a name='L10100'></a><a href='#L10100'>10100</a>
+<a name='L10101'></a><a href='#L10101'>10101</a>
+<a name='L10102'></a><a href='#L10102'>10102</a>
+<a name='L10103'></a><a href='#L10103'>10103</a>
+<a name='L10104'></a><a href='#L10104'>10104</a>
+<a name='L10105'></a><a href='#L10105'>10105</a>
+<a name='L10106'></a><a href='#L10106'>10106</a>
+<a name='L10107'></a><a href='#L10107'>10107</a>
+<a name='L10108'></a><a href='#L10108'>10108</a>
+<a name='L10109'></a><a href='#L10109'>10109</a>
+<a name='L10110'></a><a href='#L10110'>10110</a>
+<a name='L10111'></a><a href='#L10111'>10111</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20189,6 +20205,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20232,6 +20263,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -28852,7 +28884,7 @@
   var parser_create_error_default = createError;
 &nbsp;
   // src/utils/try-combinations.js
-  function tryCombinations(...combinations) {
+  function tryCombinations(combinations) {
     let firstError;
     for (const [index, fn] of combinations.entries()) {
       try {
@@ -30277,9 +30309,24 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var postprocess_default = postprocess;
 &nbsp;
+  // src/language-js/parse/utils/get-source-type.js
+  function getSourceType(options) {
+    let { filepath } = options;
+    if (!filepath) {
+      return;
+    }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    filepath = filepath.toLowerCase();</span></span>
+<span class="cstat-no" title="statement not covered" >    if (filepath.endsWith(".cjs")) {</span>
+<span class="cstat-no" title="statement not covered" >      return "script";</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (filepath.endsWith(".mjs")) {</span>
+<span class="cstat-no" title="statement not covered" >      return "module";</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  }
+  var get_source_type_default = getSourceType;
+&nbsp;
   // src/language-js/parse/meriyah.js
   var parseOptions = {
-    module: true,
     next: true,
     ranges: true,
     webcompat: true,
@@ -30295,12 +30342,12 @@
     specDeviation: true,
     uniqueKeyInPattern: false
   };
-  function parseWithOptions(parse3, text, module) {
+  function parseWithOptions(parse3, text, sourceType) {
     const comments = [];
     const tokens = [];
     const ast = parse3(text, {
       ...parseOptions,
-      module,
+      module: sourceType === "module",
       onComment: comments,
       onToken: tokens
     });
@@ -30328,12 +30375,13 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   async function parse2(text, options = {}) {
     const { parse: parse3 } = await Promise.resolve().then(() =&gt; (init_meriyah_esm(), meriyah_esm_exports));
-    const { result: ast, error: moduleParseError } = try_combinations_default(
-      () =&gt; parseWithOptions(parse3, text, true),
-      () =&gt; parseWithOptions(parse3, text, false)
+    const sourceType = get_source_type_default(options);
+    const combinations = (sourceType <span class="branch-0 cbranch-no" title="branch not covered" >? [sourceType] </span>: ["module", "script"]).map(
+      (sourceType2) =&gt; () =&gt; parseWithOptions(parse3, text, sourceType2)
     );
+    const { result: ast, error } = try_combinations_default(combinations);
     if (!ast) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      throw createParseError(moduleParseError);</span>
+<span class="cstat-no" title="statement not covered" >      throw createParseError(error);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     options.originalText = text;
     return postprocess_default(ast, options);
@@ -30352,7 +30400,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-02T02:30:45.757Z
+                at 2022-11-03T02:10:49.861Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
