@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.62% </span>
+                <span class="strong">67.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6173/9128</span>
+                <span class='fraction'>6177/9132</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.64% </span>
+                <span class="strong">83.23% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1534/1834</span>
+                <span class='fraction'>1534/1843</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.62% </span>
+                <span class="strong">67.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6173/9128</span>
+                <span class='fraction'>6177/9132</span>
             </div>
         
             
@@ -9191,7 +9191,11 @@
 <a name='L9126'></a><a href='#L9126'>9126</a>
 <a name='L9127'></a><a href='#L9127'>9127</a>
 <a name='L9128'></a><a href='#L9128'>9128</a>
-<a name='L9129'></a><a href='#L9129'>9129</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
+<a name='L9129'></a><a href='#L9129'>9129</a>
+<a name='L9130'></a><a href='#L9130'>9130</a>
+<a name='L9131'></a><a href='#L9131'>9131</a>
+<a name='L9132'></a><a href='#L9132'>9132</a>
+<a name='L9133'></a><a href='#L9133'>9133</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -17577,6 +17581,7 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">34689x</span>
 <span class="cline-any cline-yes">34689x</span>
+<span class="cline-any cline-yes">34689x</span>
 <span class="cline-any cline-yes">10037x</span>
 <span class="cline-any cline-yes">10037x</span>
 <span class="cline-any cline-yes">24652x</span>
@@ -17589,6 +17594,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">34689x</span>
+<span class="cline-any cline-yes">35855x</span>
 <span class="cline-any cline-yes">35855x</span>
 <span class="cline-any cline-yes">35855x</span>
 <span class="cline-any cline-yes">155x</span>
@@ -17636,6 +17642,7 @@
 <span class="cline-any cline-yes">69639x</span>
 <span class="cline-any cline-yes">69639x</span>
 <span class="cline-any cline-yes">74780x</span>
+<span class="cline-any cline-yes">5141x</span>
 <span class="cline-any cline-yes">5141x</span>
 <span class="cline-any cline-yes">5141x</span>
 <span class="cline-any cline-yes">5141x</span>
@@ -17824,6 +17831,7 @@
 <span class="cline-any cline-yes">47x</span>
 <span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">12462x</span>
 <span class="cline-any cline-yes">12462x</span>
 <span class="cline-any cline-yes">12462x</span>
 <span class="cline-any cline-yes">12462x</span>
@@ -26658,7 +26666,7 @@ function hasPragma2(text) {
 // src/utils/text/skip.js
 function skip(chars) {
   return (text, index, opts) =&gt; {
-    const backwards = opts <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; opts.backwards;</span>
+    const backwards = Boolean(opts == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: opts.backwards)</span>;
     if (index === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -26704,13 +26712,14 @@ var line_column_to_index_default = lineColumnToIndex;
 &nbsp;
 // src/language-css/loc.js
 function calculateLocStart(node, text) {
-  if (node.source &amp;&amp; node.source.start &amp;&amp; typeof node.source.start.offset === "number") {
+  var _a, _b, _c;
+  if (typeof ((_b = (_a = node.source) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.start) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _b.offset) === "number") {
     return node.source.start.offset;
   }
   if (typeof node.sourceIndex === "number") {
     return node.sourceIndex;
   }
-<span class="branch-0 cbranch-no" title="branch not covered" >  if (node.source &amp;&amp; node.source.start)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >  if ((_c = node.source) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" ></span>: _c.start)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return line_column_to_index_default(node.source.start, text);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  throw Object.assign(new Error("Can not locate node."), {</span>
@@ -26718,10 +26727,11 @@ function calculateLocStart(node, text) {
 <span class="cstat-no" title="statement not covered" >  });</span>
 }
 function calculateLocEnd(node, text) {
+  var _a, _b;
   if (node.type === "css-comment" &amp;&amp; node.inline) {
     return skipEverythingButNewLine(text, node.source.startOffset);
   }
-  if (node.source &amp;&amp; node.source.end &amp;&amp; typeof node.source.end.offset === "number") {
+  if (typeof ((_b = (_a = node.source) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.end) == null ? void 0 : _b.offset) === "number") {
     return node.source.end.offset + 1;
   }
   if (node.source) {
@@ -26765,6 +26775,7 @@ function calculateValueNodeLoc(node, rootOffset, text) {
   }
 }
 function getValueRootOffset(node) {
+  var _a;
   let result = node.source.startOffset;
   if (typeof node.prop === "string") {
     result += node.prop.length;
@@ -26772,7 +26783,7 @@ function getValueRootOffset(node) {
   if (node.type === "css-atrule" &amp;&amp; typeof node.name === "string") {
     result += 1 + node.name.length + node.raws.afterName.match(/^\s*:?\s*/)[0].length;
   }
-  if (node.type !== "css-atrule" &amp;&amp; node.raws &amp;&amp; typeof node.raws.between === "string") {
+  if (node.type !== "css-atrule" &amp;&amp; typeof ((_a = node.raws) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.between) === "string") {
     result += node.raws.between.length;
   }
   return result;
@@ -26953,6 +26964,7 @@ var getHighestAncestor = (node) =&gt; {
   return node;
 };
 async function parseValueNode(valueNode, options) {
+  var _a, _b;
   const {
     nodes
   } = valueNode;
@@ -26979,7 +26991,7 @@ async function parseValueNode(valueNode, options) {
       node.group.groups = [await parseSelector(getHighestAncestor(valueNode).text.slice(node.group.open.sourceIndex + 1, node.group.close.sourceIndex))];
     }
     if (node.type === "func" &amp;&amp; node.value === "url") {
-      const groups = node.group &amp;&amp; node.group.groups <span class="branch-0 cbranch-no" title="branch not covered" >|| [];</span>
+      const groups = (_b = (_a = node.group) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.groups) != null ? _b <span class="branch-0 cbranch-no" title="branch not covered" >: [];</span>
       let groupList = [];
       for (let i2 = 0; i2 &lt; groups.length; i2++) {
         const group = groups[i2];
@@ -27148,7 +27160,7 @@ async function parseMediaQuery(params) {
 var DEFAULT_SCSS_DIRECTIVE = /(\s*)(!default).*$/;
 var GLOBAL_SCSS_DIRECTIVE = /(\s*)(!global).*$/;
 async function parseNestedCSS(node, options) {
-  var _a, _b, _c, _d;
+  var _a, _b, _c, _d, _e, _f;
   if (node &amp;&amp; typeof node === "object") {
     delete node.parent;
     for (const key in node) {
@@ -27179,7 +27191,7 @@ async function parseNestedCSS(node, options) {
           });
         } <span class="branch-0 cbranch-no" title="branch not covered" >catch {</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        if (ast &amp;&amp; ast.nodes &amp;&amp; ast.nodes.length === 1 &amp;&amp; ast.nodes[0].type === "css-rule") {
+        if (((_b = ast == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: ast.nodes) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _b.length) === 1 &amp;&amp; ast.nodes[0].type === "css-rule") {
           rules = ast.nodes[0].nodes;
         }
       }
@@ -27198,7 +27210,7 @@ async function parseNestedCSS(node, options) {
     }
     let selector = "";
     if (typeof node.selector === "string") {
-      selector = node.raws.selector ? (_b = node.raws.selector.scss) != null ? _b : node.raws.selector.raw : node.selector;
+      selector = node.raws.selector ? (_c = node.raws.selector.scss) != null ? _c : node.raws.selector.raw : node.selector;
       if (node.raws.between &amp;&amp; node.raws.between.trim().length &gt; 0) {
         selector += node.raws.between;
       }
@@ -27206,13 +27218,13 @@ async function parseNestedCSS(node, options) {
     }
     let value = "";
     if (typeof node.value === "string") {
-      value = node.raws.value ? (_c = node.raws.value.scss) != null ? _c : node.raws.value.raw : node.value;
+      value = node.raws.value ? (_d = node.raws.value.scss) != null ? _d : node.raws.value.raw : node.value;
       value = value.trim();
       node.raws.value = value;
     }
     let params = "";
     if (typeof node.params === "string") {
-      params = node.raws.params ? (_d = node.raws.params.scss) != null ? _d : node.raws.params.raw : node.params;
+      params = node.raws.params ? (_e = node.raws.params.scss) != null ? _e : node.raws.params.raw : node.params;
       if (node.raws.afterName &amp;&amp; node.raws.afterName.trim().length &gt; 0) {
         params = node.raws.afterName + params;
       }
@@ -27294,7 +27306,7 @@ async function parseNestedCSS(node, options) {
           node.name = parts[0];
           node.value = await parseValue(parts.slice(1).join(":"), options);
         }
-        if (!["page", "nest", "keyframes"].includes(node.name) &amp;&amp; node.params &amp;&amp; node.params[0] === ":") {
+        if (!["page", "nest", "keyframes"].includes(node.name) &amp;&amp; ((_f = node.params) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _f[0]) === ":") {
           node.variable = true;
           node.value = await parseValue(node.params.slice(1), options);
           node.raws.afterName += ":";
@@ -27454,7 +27466,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-03T02:10:53.466Z
+                at 2022-11-04T02:17:02.112Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

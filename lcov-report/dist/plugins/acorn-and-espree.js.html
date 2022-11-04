@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.37% </span>
+                <span class="strong">62.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4759/7630</span>
+                <span class='fraction'>4759/7631</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.06% </span>
+                <span class="strong">57.01% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>707/1239</span>
+                <span class='fraction'>707/1240</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.37% </span>
+                <span class="strong">62.36% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4759/7630</span>
+                <span class='fraction'>4759/7631</span>
             </div>
         
             
@@ -7692,7 +7692,8 @@
 <a name='L7627'></a><a href='#L7627'>7627</a>
 <a name='L7628'></a><a href='#L7628'>7628</a>
 <a name='L7629'></a><a href='#L7629'>7629</a>
-<a name='L7630'></a><a href='#L7630'>7630</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7630'></a><a href='#L7630'>7630</a>
+<a name='L7631'></a><a href='#L7631'>7631</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15047,6 +15048,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22678,7 +22680,8 @@
     if (options.parser !== "typescript" &amp;&amp; options.parser !== "flow" &amp;&amp; options.parser !== "acorn" &amp;&amp; options.parser !== "espree" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; options.parser !== "meriyah")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      const startOffsetsOfTypeCastedNodes = /* @__PURE__ */ new Set();</span>
 <span class="cstat-no" title="statement not covered" >      ast = visit_node_default(ast, (node) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (node.leadingComments &amp;&amp; node.leadingComments.some(is_type_cast_comment_default)) {</span>
+<span class="cstat-no" title="statement not covered" >        var _a;</span>
+<span class="cstat-no" title="statement not covered" >        if ((_a = node.leadingComments) == null ? void 0 : _a.some(is_type_cast_comment_default)) {</span>
 <span class="cstat-no" title="statement not covered" >          startOffsetsOfTypeCastedNodes.add(locStart(node));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
@@ -22713,7 +22716,7 @@
 <span class="cstat-no" title="statement not covered" >          break;</span>
         case "VariableDeclaration": {
           const lastDeclaration = at_default(false, node.declarations, -1);
-          if (lastDeclaration &amp;&amp; lastDeclaration.init) {
+          if (lastDeclaration == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: lastDeclaration.init) {
             overrideLocEnd(node, lastDeclaration);
           }
           break;
@@ -22753,7 +22756,7 @@
 <span class="cstat-no" title="statement not covered" >          const {</span>
 <span class="cstat-no" title="statement not covered" >            exported</span>
 <span class="cstat-no" title="statement not covered" >          } = node;</span>
-<span class="cstat-no" title="statement not covered" >          if (options.parser === "meriyah" &amp;&amp; exported &amp;&amp; exported.type === "Identifier") {</span>
+<span class="cstat-no" title="statement not covered" >          if (options.parser === "meriyah" &amp;&amp; (exported == null ? void 0 : exported.type) === "Identifier") {</span>
 <span class="cstat-no" title="statement not covered" >            const raw = options.originalText.slice(locStart(exported), locEnd(exported));</span>
 <span class="cstat-no" title="statement not covered" >            if (raw.startsWith('"') || raw.startsWith("'")) {</span>
 <span class="cstat-no" title="statement not covered" >              node.exported = {</span>
@@ -22957,7 +22960,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-03T02:10:49.861Z
+                at 2022-11-04T02:16:57.937Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

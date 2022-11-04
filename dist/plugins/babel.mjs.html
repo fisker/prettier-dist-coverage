@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">85.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14127/16455</span>
+                <span class='fraction'>14129/16457</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">86.52% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4257/4920</span>
+                <span class='fraction'>4259/4922</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">85.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14127/16455</span>
+                <span class='fraction'>14129/16457</span>
             </div>
         
             
@@ -16518,7 +16518,9 @@
 <a name='L16453'></a><a href='#L16453'>16453</a>
 <a name='L16454'></a><a href='#L16454'>16454</a>
 <a name='L16455'></a><a href='#L16455'>16455</a>
-<a name='L16456'></a><a href='#L16456'>16456</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">223x</span>
+<a name='L16456'></a><a href='#L16456'>16456</a>
+<a name='L16457'></a><a href='#L16457'>16457</a>
+<a name='L16458'></a><a href='#L16458'>16458</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
@@ -32612,6 +32614,7 @@
 <span class="cline-any cline-yes">5423x</span>
 <span class="cline-any cline-yes">5423x</span>
 <span class="cline-any cline-yes">252781x</span>
+<span class="cline-any cline-yes">252781x</span>
 <span class="cline-any cline-yes">170x</span>
 <span class="cline-any cline-yes">170x</span>
 <span class="cline-any cline-yes">5423x</span>
@@ -32816,6 +32819,7 @@
 <span class="cline-any cline-yes">1752x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
+<span class="cline-any cline-yes">3518x</span>
 <span class="cline-any cline-yes">3518x</span>
 <span class="cline-any cline-yes">3518x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -47601,7 +47605,7 @@ var skip_inline_comment_default = skipInlineComment;
 &nbsp;
 // src/utils/text/skip-newline.js
 function skipNewline(text, index, opts) {
-  const backwards = opts <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; opts.backwards;</span>
+  const backwards = Boolean(opts == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: opts.backwards)</span>;
   if (index === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -47628,7 +47632,7 @@ var skip_newline_default = skipNewline;
 // src/utils/text/skip.js
 function skip(chars) {
   return (text, index, opts) =&gt; {
-    const backwards = opts <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; opts.backwards;</span>
+    const backwards = Boolean(opts == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: opts.backwards)</span>;
     if (index === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -49066,7 +49070,8 @@ function postprocess(ast, options) {
   if (options.parser !== "typescript" &amp;&amp; options.parser !== "flow" &amp;&amp; options.parser !== "acorn" &amp;&amp; options.parser !== "espree" &amp;&amp; options.parser !== "meriyah") {
     const startOffsetsOfTypeCastedNodes = /* @__PURE__ */ new Set();
     ast = visit_node_default(ast, (node) =&gt; {
-      if (node.leadingComments &amp;&amp; node.leadingComments.some(is_type_cast_comment_default)) {
+      var _a;
+      if ((_a = node.leadingComments) == null ? void 0 : _a.some(is_type_cast_comment_default)) {
         startOffsetsOfTypeCastedNodes.add(locStart(node));
       }
     });
@@ -49101,7 +49106,7 @@ function postprocess(ast, options) {
         break;
       case "VariableDeclaration": {
         const lastDeclaration = at_default(false, node.declarations, -1);
-        if (lastDeclaration &amp;&amp; lastDeclaration.init) {
+        if (lastDeclaration == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: lastDeclaration.init) {
           overrideLocEnd(node, lastDeclaration);
         }
         break;
@@ -49141,7 +49146,7 @@ function postprocess(ast, options) {
         const {
           exported
         } = node;
-        if (options.parser === "meriyah" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; exported <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; exported.type === "Identifier")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+        if (options.parser === "meriyah" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (exported == null ? void 0 : exported.type) === "Identifier")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          const raw = options.originalText.slice(locStart(exported), locEnd(exported));</span>
 <span class="cstat-no" title="statement not covered" >          if (raw.startsWith('"') || raw.startsWith("'")) {</span>
 <span class="cstat-no" title="statement not covered" >            node.exported = {</span>
@@ -49272,7 +49277,8 @@ var appendPlugins = (plugins, options = parseOptions) =&gt; ({
 });
 var FLOW_PRAGMA_REGEX = /@(?:no)?flow\b/;
 function isFlowFile(text, options) {
-  if (options.filepath &amp;&amp; options.filepath.endsWith(".js.flow")) {
+  var _a;
+  if ((_a = options.filepath) == null ? void 0 : _a.endsWith(".js.flow")) {
     return true;
   }
   const shebang = get_shebang_default(text);
@@ -49435,7 +49441,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-03T02:10:53.466Z
+                at 2022-11-04T02:17:02.112Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
