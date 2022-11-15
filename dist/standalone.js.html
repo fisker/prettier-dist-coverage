@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.2% </span>
+                <span class="strong">64.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13169/20510</span>
+                <span class='fraction'>13172/20509</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.59% </span>
+                <span class="strong">59.61% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3056/5128</span>
+                <span class='fraction'>3061/5135</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.2% </span>
+                <span class="strong">64.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13169/20510</span>
+                <span class='fraction'>13172/20509</span>
             </div>
         
             
@@ -20571,8 +20571,7 @@
 <a name='L20506'></a><a href='#L20506'>20506</a>
 <a name='L20507'></a><a href='#L20507'>20507</a>
 <a name='L20508'></a><a href='#L20508'>20508</a>
-<a name='L20509'></a><a href='#L20509'>20509</a>
-<a name='L20510'></a><a href='#L20510'>20510</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L20509'></a><a href='#L20509'>20509</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -25747,6 +25746,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1514x</span>
 <span class="cline-any cline-yes">1514x</span>
 <span class="cline-any cline-yes">1514x</span>
 <span class="cline-any cline-yes">1514x</span>
@@ -31274,6 +31274,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">16x</span>
@@ -35314,10 +35315,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">179x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">179x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">179x</span>
@@ -36937,6 +36934,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -45034,7 +45032,7 @@
 <span class="cstat-no" title="statement not covered" >              return (_a = plugin2.parsers) == null ? void 0 : _a[value];</span>
 <span class="cstat-no" title="statement not covered" >            });</span>
 <span class="cstat-no" title="statement not covered" >            let description = language.name;</span>
-<span class="cstat-no" title="statement not covered" >            if (plugin &amp;&amp; plugin.name) {</span>
+<span class="cstat-no" title="statement not covered" >            if (plugin == null ? void 0 : plugin.name) {</span>
 <span class="cstat-no" title="statement not covered" >              description += ` (plugin: ${plugin.name})`;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            option.choices.push({</span>
@@ -45409,7 +45407,7 @@
   var create_get_visitor_keys_function_default = createGetVisitorKeysFunction;
 &nbsp;
   // src/main/massage-ast.js
-<span class="fstat-no" title="function not covered" >  function massageAST(ast, options9) {</span>
+<span class="fstat-no" title="function not covered" >  function massageAst(ast, options9) {</span>
 <span class="cstat-no" title="statement not covered" >    var _a;</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      printer: {</span>
@@ -45449,7 +45447,7 @@
 <span class="cstat-no" title="statement not covered" >      return result != null ? result : newObj;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var massage_ast_default = massageAST;
+  var massage_ast_default = massageAst;
 &nbsp;
   // scripts/build/shims/assert.js
   var assert = () =&gt; {
@@ -46256,11 +46254,12 @@
 <span class="cstat-no" title="statement not covered" >    return { doc: originalText.slice(start, end), printedComments };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function callPluginPrintFunction(path, options9, printPath2, args, embeds) {
+    var _a;
     const { node } = path;
     const { printer: printer9 } = options9;
     let doc;
     let printedComments;
-    if (printer9.hasPrettierIgnore &amp;&amp; printer9.hasPrettierIgnore(path)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if ((_a = printer9.hasPrettierIgnore) == null ? void 0 : _a.call(printer9, path)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      ({ doc, printedComments } = printPrettierIgnoredNode(node, options9));</span>
     } else if (embeds.has(node)) {
       doc = embeds.get(node);
@@ -50944,7 +50943,7 @@
       const needsForcedTrailingComma = lastElem === null;
       const groupId = Symbol("array");
       const shouldBreak = !options9.__inJestEach &amp;&amp; node.elements.length &gt; 1 &amp;&amp; node.elements.every((element, i, elements) =&gt; {
-        const elementType = element &amp;&amp; element.type;
+        const elementType = element == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: element.type;
         if (elementType !== "ArrayExpression" &amp;&amp; elementType !== "ObjectExpression") {
           return false;
         }
@@ -51781,11 +51780,12 @@
     return returnTypeNode;
   }
   function shouldGroupFunctionParameters(functionNode, returnTypeDoc) {
+    var _a;
     const returnTypeNode = getReturnTypeNode(functionNode);
     if (!returnTypeNode) {
       return false;
     }
-    const typeParameters = functionNode.typeParameters &amp;&amp; functionNode.typeParameters.params;
+    const typeParameters = (_a = functionNode.typeParameters) == null ? void 0 : _a.params;
     if (typeParameters) {
       if (typeParameters.length &gt; 1) {
         return false;
@@ -55721,7 +55721,7 @@
 <span class="cstat-no" title="statement not covered" >    return options9.trailingComma === "es5" || options9.trailingComma === "all";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function genericPrint2(path, options9, print4) {
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e, _f;
     const {
       node
     } = path;
@@ -55821,18 +55821,14 @@
 <span class="cstat-no" title="statement not covered" >        return node.value;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "selector-string":</span>
 <span class="cstat-no" title="statement not covered" >        return adjustStrings(node.value, options9);</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >      case "selector-tag": {</span>
-<span class="cstat-no" title="statement not covered" >        const parentNode = path.parent;</span>
-<span class="cstat-no" title="statement not covered" >        const index = parentNode &amp;&amp; parentNode.nodes.indexOf(node);</span>
-<span class="cstat-no" title="statement not covered" >        const prevNode = index &amp;&amp; parentNode.nodes[index - 1];</span>
-<span class="cstat-no" title="statement not covered" >        return [node.namespace ? [node.namespace === true ? "" : node.namespace.trim(), "|"] : "", prevNode.type === "selector-nesting" ? node.value : adjustNumbers(isKeyframeAtRuleKeywords(path, node.value) ? node.value.toLowerCase() : node.value)];</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "selector-tag":</span>
+<span class="cstat-no" title="statement not covered" >        return [node.namespace ? [node.namespace === true ? "" : node.namespace.trim(), "|"] : "", ((_c = path.previous) == null ? void 0 : _c.type) === "selector-nesting" ? node.value : adjustNumbers(isKeyframeAtRuleKeywords(path, node.value) ? node.value.toLowerCase() : node.value)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "selector-id":</span>
 <span class="cstat-no" title="statement not covered" >        return ["#", node.value];</span>
       case "selector-class":
         return [".", adjustNumbers(adjustStrings(node.value, options9))];
       case "selector-attribute":
-        return ["[", node.namespace <span class="branch-0 cbranch-no" title="branch not covered" >? [node.namespace === true ? "" : node.namespace.trim(), "|"] </span>: "", node.attribute.trim(), (_c = node.operator) != null ? _c <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> node.value ? quoteAttributeValue(adjustStrings(node.value.trim(), options9), options9) <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> node.insensitive <span class="branch-0 cbranch-no" title="branch not covered" >? " i" </span>: "", "]"];
+        return ["[", node.namespace <span class="branch-0 cbranch-no" title="branch not covered" >? [node.namespace === true ? "" : node.namespace.trim(), "|"] </span>: "", node.attribute.trim(), (_d = node.operator) != null ? _d <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> node.value ? quoteAttributeValue(adjustStrings(node.value.trim(), options9), options9) <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> node.insensitive <span class="branch-0 cbranch-no" title="branch not covered" >? " i" </span>: "", "]"];
       case "selector-combinator": {
         if (node.value === "+" || node.value === "&gt;" <span class="branch-0 cbranch-no" title="branch not covered" >|| node.value === "~" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| node.value === "&gt;&gt;&gt;")</span> {
           const parentNode = path.parent;
@@ -55855,7 +55851,7 @@
 <span class="cstat-no" title="statement not covered" >          return adjustNumbers(adjustStrings(maybeToLowerCase(node.value), options9));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const parentNode = path.parent;</span>
-<span class="cstat-no" title="statement not covered" >        if (parentNode.raws &amp;&amp; parentNode.raws.selector) {</span>
+<span class="cstat-no" title="statement not covered" >        if ((_e = parentNode.raws) == null ? void 0 : _e.selector) {</span>
 <span class="cstat-no" title="statement not covered" >          const start = locStart2(parentNode);</span>
 <span class="cstat-no" title="statement not covered" >          const end = start + parentNode.raws.selector.length;</span>
 <span class="cstat-no" title="statement not covered" >          return options9.originalText.slice(start, end).trim();</span>
@@ -55929,7 +55925,7 @@
           if (iNode.type !== "value-string" &amp;&amp; iNode.value &amp;&amp; iNode.value.includes("\\") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNextNode <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode.type !== "value-comment")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          if (iPrevNode &amp;&amp; iPrevNode.value &amp;&amp; iPrevNode.value.indexOf("\\") === iPrevNode.value.length - 1 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNode.type === "value-operator" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNode.value === "/")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if ((iPrevNode == null ? void 0 : iPrevNode.value) &amp;&amp; iPrevNode.value.indexOf("\\") === iPrevNode.value.length - 1 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNode.type === "value-operator" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNode.value === "/")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           if (iNode.value === "\\") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -56004,7 +56000,7 @@
 <span class="cstat-no" title="statement not covered" >            parts.push(" ");</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          if (((_d = iNode.value) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _d.endsWith("#")) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNextNode.value === "{" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; isParenGroupNode(iNextNode.group))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (((_f = iNode.value) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _f.endsWith("#")) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNextNode.value === "{" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; isParenGroupNode(iNextNode.group))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           parts.push(line);
@@ -56081,12 +56077,12 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
         return node.value;
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "value-colon": {</span>
-<span class="cstat-no" title="statement not covered" >        const parentNode = path.parent;</span>
-<span class="cstat-no" title="statement not covered" >        const index = parentNode &amp;&amp; parentNode.groups.indexOf(node);</span>
-<span class="cstat-no" title="statement not covered" >        const prevNode = index &amp;&amp; parentNode.groups[index - 1];</span>
+<span class="cstat-no" title="statement not covered" >        const {</span>
+<span class="cstat-no" title="statement not covered" >          previous</span>
+<span class="cstat-no" title="statement not covered" >        } = path;</span>
 <span class="cstat-no" title="statement not covered" >        return [</span>
 <span class="cstat-no" title="statement not covered" >          node.value,</span>
-<span class="cstat-no" title="statement not covered" >          typeof (prevNode == null ? void 0 : prevNode.value) === "string" &amp;&amp; prevNode.value.endsWith("\\") || insideValueFunctionNode(path, "url") ? "" : line</span>
+<span class="cstat-no" title="statement not covered" >          typeof (previous == null ? void 0 : previous.value) === "string" &amp;&amp; previous.value.endsWith("\\") || insideValueFunctionNode(path, "url") ? "" : line</span>
 <span class="cstat-no" title="statement not covered" >        ];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "value-string":</span>
@@ -57446,9 +57442,10 @@
 &nbsp;
   // src/utils/infer-parser-by-language.js
   function inferParserByLanguage(language, options9) {
+    var _a, _b;
     const { languages } = getSupportInfo({ plugins: options9.plugins });
-    const matched = languages.find(({ name }) =&gt; name.toLowerCase() === language) || languages.find(({ aliases }) =&gt; aliases == null ? void 0 : aliases.includes(language)) || languages.find(({ extensions }) =&gt; extensions == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: extensions.includes(`.${language}`));
-    return matched &amp;&amp; matched.parsers[0];
+    const matched = (_b = (_a = languages.find(({ name }) =&gt; name.toLowerCase() === language)) != null <span class="branch-0 cbranch-no" title="branch not covered" >? _a </span>: languages.find(({ aliases }) =&gt; aliases == null ? void 0 : aliases.includes(language))) != null ? _b : languages.find(({ extensions }) =&gt; extensions == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: extensions.includes(`.${language}`));
+    return matched == null ? void 0 : matched.parsers[0];
   }
   var infer_parser_by_language_default = inferParserByLanguage;
 &nbsp;
@@ -61597,7 +61594,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-14T02:05:11.614Z
+                at 2022-11-15T02:02:49.077Z
             </div>
         <script src="../prettify.js"></script>
         <script>
