@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.59% </span>
+                <span class="strong">94.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1365/1443</span>
+                <span class='fraction'>1374/1458</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.16% </span>
+                <span class="strong">90.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>578/634</span>
+                <span class='fraction'>579/638</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">99.15% </span>
+                <span class="strong">99.16% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>118/119</span>
+                <span class='fraction'>119/120</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.59% </span>
+                <span class="strong">94.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1365/1443</span>
+                <span class='fraction'>1374/1458</span>
             </div>
         
             
@@ -1506,7 +1506,22 @@
 <a name='L1441'></a><a href='#L1441'>1441</a>
 <a name='L1442'></a><a href='#L1442'>1442</a>
 <a name='L1443'></a><a href='#L1443'>1443</a>
-<a name='L1444'></a><a href='#L1444'>1444</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">393x</span>
+<a name='L1444'></a><a href='#L1444'>1444</a>
+<a name='L1445'></a><a href='#L1445'>1445</a>
+<a name='L1446'></a><a href='#L1446'>1446</a>
+<a name='L1447'></a><a href='#L1447'>1447</a>
+<a name='L1448'></a><a href='#L1448'>1448</a>
+<a name='L1449'></a><a href='#L1449'>1449</a>
+<a name='L1450'></a><a href='#L1450'>1450</a>
+<a name='L1451'></a><a href='#L1451'>1451</a>
+<a name='L1452'></a><a href='#L1452'>1452</a>
+<a name='L1453'></a><a href='#L1453'>1453</a>
+<a name='L1454'></a><a href='#L1454'>1454</a>
+<a name='L1455'></a><a href='#L1455'>1455</a>
+<a name='L1456'></a><a href='#L1456'>1456</a>
+<a name='L1457'></a><a href='#L1457'>1457</a>
+<a name='L1458'></a><a href='#L1458'>1458</a>
+<a name='L1459'></a><a href='#L1459'>1459</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
@@ -1736,6 +1751,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">399623x</span>
+<span class="cline-any cline-yes">393x</span>
+<span class="cline-any cline-yes">393x</span>
+<span class="cline-any cline-yes">393x</span>
+<span class="cline-any cline-yes">393x</span>
+<span class="cline-any cline-yes">393x</span>
+<span class="cline-any cline-yes">1724x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1724x</span>
+<span class="cline-any cline-yes">1724x</span>
+<span class="cline-any cline-yes">1724x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
@@ -3182,6 +3212,21 @@ var at = (isOptionalObject, object, index) =&gt; {
 };
 var at_default = at;
 &nbsp;
+// scripts/build/shims/string-replace-all.js
+var stringReplaceAll = (isOptionalObject, original, pattern, replacement) =&gt; {
+  if (isOptionalObject <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (original === void 0 || original === null))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+  if (original.replaceAll) {
+    return original.replaceAll(pattern, replacement);
+  }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  if (pattern.global) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return original.replace(pattern, replacement);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return original.split(pattern).join(replacement);</span>
+};
+var string_replace_all_default = stringReplaceAll;
+&nbsp;
 // src/common/end-of-line.js
 function convertEndOfLineToChars(value) {
   switch (value) {
@@ -3953,7 +3998,7 @@ function printDocToString(doc, options) {
     } = cmds.pop();
     switch (get_doc_type_default(doc2)) {
       case DOC_TYPE_STRING: {
-        const formatted = newLine !== "\n" ? doc2.replace(/\n/g, newLine) : doc2;
+        const formatted = newLine !== "\n" ? string_replace_all_default(false, doc2, "\n", newLine) : doc2;
         out.push(formatted);
         pos += get_string_width_default(formatted);
         break;
@@ -4399,7 +4444,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-21T02:03:44.804Z
+                at 2022-11-22T02:05:57.470Z
             </div>
         <script src="../prettify.js"></script>
         <script>

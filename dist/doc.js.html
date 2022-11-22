@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.84% </span>
+                <span class="strong">17.99% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>263/1474</span>
+                <span class='fraction'>268/1489</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.82% </span>
+                <span class="strong">9.73% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>11/112</span>
+                <span class='fraction'>11/113</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.84% </span>
+                <span class="strong">17.99% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>263/1474</span>
+                <span class='fraction'>268/1489</span>
             </div>
         
             
@@ -1536,7 +1536,22 @@
 <a name='L1471'></a><a href='#L1471'>1471</a>
 <a name='L1472'></a><a href='#L1472'>1472</a>
 <a name='L1473'></a><a href='#L1473'>1473</a>
-<a name='L1474'></a><a href='#L1474'>1474</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1474'></a><a href='#L1474'>1474</a>
+<a name='L1475'></a><a href='#L1475'>1475</a>
+<a name='L1476'></a><a href='#L1476'>1476</a>
+<a name='L1477'></a><a href='#L1477'>1477</a>
+<a name='L1478'></a><a href='#L1478'>1478</a>
+<a name='L1479'></a><a href='#L1479'>1479</a>
+<a name='L1480'></a><a href='#L1480'>1480</a>
+<a name='L1481'></a><a href='#L1481'>1481</a>
+<a name='L1482'></a><a href='#L1482'>1482</a>
+<a name='L1483'></a><a href='#L1483'>1483</a>
+<a name='L1484'></a><a href='#L1484'>1484</a>
+<a name='L1485'></a><a href='#L1485'>1485</a>
+<a name='L1486'></a><a href='#L1486'>1486</a>
+<a name='L1487'></a><a href='#L1487'>1487</a>
+<a name='L1488'></a><a href='#L1488'>1488</a>
+<a name='L1489'></a><a href='#L1489'>1489</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1797,6 +1812,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3277,6 +3307,21 @@
   };
   var at_default = at;
 &nbsp;
+  // scripts/build/shims/string-replace-all.js
+  var stringReplaceAll = <span class="fstat-no" title="function not covered" >(isOptionalObject, original, pattern, replacement) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (isOptionalObject &amp;&amp; (original === void 0 || original === null)) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (original.replaceAll) {</span>
+<span class="cstat-no" title="statement not covered" >      return original.replaceAll(pattern, replacement);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (pattern.global) {</span>
+<span class="cstat-no" title="statement not covered" >      return original.replace(pattern, replacement);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return original.split(pattern).join(replacement);</span>
+  };
+  var string_replace_all_default = stringReplaceAll;
+&nbsp;
   // src/common/end-of-line.js
 <span class="fstat-no" title="function not covered" >  function convertEndOfLineToChars(value) {</span>
 <span class="cstat-no" title="statement not covered" >    switch (value) {</span>
@@ -4048,7 +4093,7 @@
 <span class="cstat-no" title="statement not covered" >      } = cmds.pop();</span>
 <span class="cstat-no" title="statement not covered" >      switch (get_doc_type_default(doc2)) {</span>
 <span class="cstat-no" title="statement not covered" >        case DOC_TYPE_STRING: {</span>
-<span class="cstat-no" title="statement not covered" >          const formatted = newLine !== "\n" ? doc2.replace(/\n/g, newLine) : doc2;</span>
+<span class="cstat-no" title="statement not covered" >          const formatted = newLine !== "\n" ? string_replace_all_default(false, doc2, "\n", newLine) : doc2;</span>
 <span class="cstat-no" title="statement not covered" >          out.push(formatted);</span>
 <span class="cstat-no" title="statement not covered" >          pos += get_string_width_default(formatted);</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
@@ -4489,7 +4534,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-21T02:03:48.459Z
+                at 2022-11-22T02:06:02.012Z
             </div>
         <script src="../prettify.js"></script>
         <script>
