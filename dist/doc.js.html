@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.99% </span>
+                <span class="strong">17.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>268/1489</span>
+                <span class='fraction'>266/1486</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.27% </span>
+                <span class="strong">73.91% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/22</span>
+                <span class='fraction'>17/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.73% </span>
+                <span class="strong">9.82% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>11/113</span>
+                <span class='fraction'>11/112</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.99% </span>
+                <span class="strong">17.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>268/1489</span>
+                <span class='fraction'>266/1486</span>
             </div>
         
             
@@ -1548,10 +1548,7 @@
 <a name='L1483'></a><a href='#L1483'>1483</a>
 <a name='L1484'></a><a href='#L1484'>1484</a>
 <a name='L1485'></a><a href='#L1485'>1485</a>
-<a name='L1486'></a><a href='#L1486'>1486</a>
-<a name='L1487'></a><a href='#L1487'>1487</a>
-<a name='L1488'></a><a href='#L1488'>1488</a>
-<a name='L1489'></a><a href='#L1489'>1489</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1486'></a><a href='#L1486'>1486</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1574,7 +1571,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1604,10 +1600,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1968,9 +1960,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3070,7 +3064,6 @@
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __defNormalProp = <span class="fstat-no" title="function not covered" >(obj, key, value) =&gt; key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;</span>
   var __commonJS = (cb, mod) =&gt; function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
@@ -3091,10 +3084,6 @@
     mod
   ));
   var __toCommonJS = (mod) =&gt; __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-  var __publicField = <span class="fstat-no" title="function not covered" >(obj, key, value) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);</span>
-<span class="cstat-no" title="statement not covered" >    return value;</span>
-  };
 &nbsp;
   // node_modules/string-width/node_modules/emoji-regex/index.js
   var require_emoji_regex = __commonJS({
@@ -3438,9 +3427,9 @@
   var get_doc_type_default = getDocType;
 &nbsp;
   // src/document/invalid-doc-error.js
-  var disjunctionListFormat = <span class="fstat-no" title="function not covered" >(list) =&gt; [...list.slice(0, -1), `or ${at_default(false, list, -1)}`].join(", ");</span>
+  var disjunctionListFormat = <span class="fstat-no" title="function not covered" >(list) =&gt; new Intl.ListFormat("en-US", { type: "disjunction" }).format(list);</span>
 <span class="fstat-no" title="function not covered" >  function getDocErrorMessage(doc) {</span>
-<span class="cstat-no" title="statement not covered" >    const type = doc === null ? null : typeof doc;</span>
+<span class="cstat-no" title="statement not covered" >    const type = doc === null ? "null" : typeof doc;</span>
 <span class="cstat-no" title="statement not covered" >    if (type !== "string" &amp;&amp; type !== "object") {</span>
 <span class="cstat-no" title="statement not covered" >      return `Unexpected doc '${type}', </span>
 <span class="cstat-no" title="statement not covered" >Expected it to be 'string' or 'object'.`;</span>
@@ -3452,14 +3441,16 @@
 <span class="cstat-no" title="statement not covered" >    if (objectType !== "[object Object]") {</span>
 <span class="cstat-no" title="statement not covered" >      return `Unexpected doc '${objectType}'.`;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const EXPECTED_TYPE_VALUES = disjunctionListFormat([...VALID_OBJECT_DOC_TYPES].map((type2) =&gt; `'${type2}'`));</span>
+<span class="cstat-no" title="statement not covered" >    const EXPECTED_TYPE_VALUES = disjunctionListFormat(</span>
+<span class="cstat-no" title="statement not covered" >      [...VALID_OBJECT_DOC_TYPES].map((type2) =&gt; `'${type2}'`)</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    return `Unexpected doc.type '${doc.type}'.</span>
 <span class="cstat-no" title="statement not covered" >Expected it to be ${EXPECTED_TYPE_VALUES}.`;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var InvalidDocError = class extends Error {
+<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    name = "InvalidDocError";</span></span>
 <span class="fstat-no" title="function not covered" >    constructor(doc) {</span>
 <span class="cstat-no" title="statement not covered" >      super(getDocErrorMessage(doc));</span>
-<span class="cstat-no" title="statement not covered" >      __publicField(this, "name", "InvalidDocError");</span>
 <span class="cstat-no" title="statement not covered" >      this.doc = doc;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
@@ -4534,7 +4525,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-23T01:52:47.200Z
+                at 2022-11-24T01:57:12.560Z
             </div>
         <script src="../prettify.js"></script>
         <script>

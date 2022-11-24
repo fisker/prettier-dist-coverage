@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.1% </span>
+                <span class="strong">83.08% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1535/1847</span>
+                <span class='fraction'>1532/1844</span>
             </div>
         
             
@@ -27027,7 +27027,7 @@ var getHighestAncestor = (node) =&gt; {
   return node;
 };
 async function parseValueNode(valueNode, options) {
-  var _a, _b;
+  var _a;
   const {
     nodes
   } = valueNode;
@@ -27054,7 +27054,7 @@ async function parseValueNode(valueNode, options) {
       node.group.groups = [await parseSelector(getHighestAncestor(valueNode).text.slice(node.group.open.sourceIndex + 1, node.group.close.sourceIndex))];
     }
     if (node.type === "func" &amp;&amp; node.value === "url") {
-      const groups = (_b = (_a = node.group) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.groups) != null ? _b <span class="branch-0 cbranch-no" title="branch not covered" >: [];</span>
+      const groups = ((_a = node.group) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.groups) <span class="branch-0 cbranch-no" title="branch not covered" >?? [];</span>
       let groupList = [];
       for (let i2 = 0; i2 &lt; groups.length; i2++) {
         const group = groups[i2];
@@ -27223,7 +27223,7 @@ async function parseMediaQuery(params) {
 var DEFAULT_SCSS_DIRECTIVE = /(\s*)(!default).*$/;
 var GLOBAL_SCSS_DIRECTIVE = /(\s*)(!global).*$/;
 async function parseNestedCSS(node, options) {
-  var _a, _b, _c, _d, _e, _f;
+  var _a, _b;
   if (node &amp;&amp; typeof node === "object") {
     delete node.parent;
     for (const key in node) {
@@ -27232,7 +27232,7 @@ async function parseNestedCSS(node, options) {
     if (!node.type) {
       return node;
     }
-    (_a = node.raws) != null ? _a <span class="branch-0 cbranch-no" title="branch not covered" >: node.raws = {};</span>
+    node.raws <span class="branch-0 cbranch-no" title="branch not covered" >?? (node.raws = {});</span>
     if (node.type === "css-decl" &amp;&amp; typeof node.prop === "string" &amp;&amp; node.prop.startsWith("--") &amp;&amp; typeof node.value === "string" &amp;&amp; node.value.startsWith("{")) {
       let rules;
       if (node.value.trimEnd().endsWith("}")) {
@@ -27254,7 +27254,7 @@ async function parseNestedCSS(node, options) {
           });
         } <span class="branch-0 cbranch-no" title="branch not covered" >catch {</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        if (((_b = ast == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: ast.nodes) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _b.length) === 1 &amp;&amp; ast.nodes[0].type === "css-rule") {
+        if (((_a = ast == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: ast.nodes) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.length) === 1 &amp;&amp; ast.nodes[0].type === "css-rule") {
           rules = ast.nodes[0].nodes;
         }
       }
@@ -27273,7 +27273,7 @@ async function parseNestedCSS(node, options) {
     }
     let selector = "";
     if (typeof node.selector === "string") {
-      selector = node.raws.selector ? (_c = node.raws.selector.scss) != null ? _c : node.raws.selector.raw : node.selector;
+      selector = node.raws.selector ? node.raws.selector.scss ?? node.raws.selector.raw : node.selector;
       if (node.raws.between &amp;&amp; node.raws.between.trim().length &gt; 0) {
         selector += node.raws.between;
       }
@@ -27281,13 +27281,13 @@ async function parseNestedCSS(node, options) {
     }
     let value = "";
     if (typeof node.value === "string") {
-      value = node.raws.value ? (_d = node.raws.value.scss) != null ? _d : node.raws.value.raw : node.value;
+      value = node.raws.value ? node.raws.value.scss ?? node.raws.value.raw : node.value;
       value = value.trim();
       node.raws.value = value;
     }
     let params = "";
     if (typeof node.params === "string") {
-      params = node.raws.params ? (_e = node.raws.params.scss) != null ? _e : node.raws.params.raw : node.params;
+      params = node.raws.params ? node.raws.params.scss ?? node.raws.params.raw : node.params;
       if (node.raws.afterName &amp;&amp; node.raws.afterName.trim().length &gt; 0) {
         params = node.raws.afterName + params;
       }
@@ -27369,7 +27369,7 @@ async function parseNestedCSS(node, options) {
           node.name = parts[0];
           node.value = await parseValue(parts.slice(1).join(":"), options);
         }
-        if (!["page", "nest", "keyframes"].includes(node.name) &amp;&amp; ((_f = node.params) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _f[0]) === ":") {
+        if (!["page", "nest", "keyframes"].includes(node.name) &amp;&amp; ((_b = node.params) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _b[0]) === ":") {
           node.variable = true;
           node.value = await parseValue(node.params.slice(1), options);
           node.raws.afterName += ":";
@@ -27529,7 +27529,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-23T01:52:47.200Z
+                at 2022-11-24T01:57:12.560Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

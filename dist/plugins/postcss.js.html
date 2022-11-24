@@ -27134,7 +27134,7 @@
 <span class="cstat-no" title="statement not covered" >    return node;</span>
   };
   async function parseValueNode(valueNode, options) {
-    var _a, _b;
+    var _a;
     const {
       nodes
     } = valueNode;
@@ -27161,7 +27161,7 @@
 <span class="cstat-no" title="statement not covered" >        node.group.groups = [await parseSelector(getHighestAncestor(valueNode).text.slice(node.group.open.sourceIndex + 1, node.group.close.sourceIndex))];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (node.type === "func" &amp;&amp; node.value === "url") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        const groups = (_b = (_a = node.group) == null ? void 0 : _a.groups) != null ? _b : [];</span>
+<span class="cstat-no" title="statement not covered" >        const groups = ((_a = node.group) == null ? void 0 : _a.groups) ?? [];</span>
 <span class="cstat-no" title="statement not covered" >        let groupList = [];</span>
 <span class="cstat-no" title="statement not covered" >        for (let i2 = 0; i2 &lt; groups.length; i2++) {</span>
 <span class="cstat-no" title="statement not covered" >          const group = groups[i2];</span>
@@ -27330,7 +27330,7 @@
   var DEFAULT_SCSS_DIRECTIVE = /(\s*)(!default).*$/;
   var GLOBAL_SCSS_DIRECTIVE = /(\s*)(!global).*$/;
   async function parseNestedCSS(node, options) {
-    var _a, _b, _c, _d, _e, _f;
+    var _a, _b;
     if (node &amp;&amp; typeof node === "object") {
       delete node.parent;
       for (const key in node) {
@@ -27339,7 +27339,7 @@
       if (!node.type) {
         return node;
       }
-      (_a = node.raws) != null ? _a <span class="branch-0 cbranch-no" title="branch not covered" >: node.raws = {};</span>
+      node.raws <span class="branch-0 cbranch-no" title="branch not covered" >?? (node.raws = {});</span>
       if (node.type === "css-decl" &amp;&amp; typeof node.prop === "string" &amp;&amp; node.prop.startsWith("--") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; typeof node.value === "string" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.value.startsWith("{"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        let rules;</span>
 <span class="cstat-no" title="statement not covered" >        if (node.value.trimEnd().endsWith("}")) {</span>
@@ -27361,7 +27361,7 @@
 <span class="cstat-no" title="statement not covered" >            });</span>
 <span class="cstat-no" title="statement not covered" >          } catch {</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (((_b = ast == null ? void 0 : ast.nodes) == null ? void 0 : _b.length) === 1 &amp;&amp; ast.nodes[0].type === "css-rule") {</span>
+<span class="cstat-no" title="statement not covered" >          if (((_a = ast == null ? void 0 : ast.nodes) == null ? void 0 : _a.length) === 1 &amp;&amp; ast.nodes[0].type === "css-rule") {</span>
 <span class="cstat-no" title="statement not covered" >            rules = ast.nodes[0].nodes;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -27380,7 +27380,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
       let selector = "";
       if (typeof node.selector === "string") {
-        selector = node.raws.selector <span class="branch-0 cbranch-no" title="branch not covered" >? (_c = node.raws.selector.scss) != null ? _c : node.raws.selector.raw </span>: node.selector;
+        selector = node.raws.selector <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.selector.scss ?? node.raws.selector.raw </span>: node.selector;
         if (node.raws.between &amp;&amp; node.raws.between.trim().length &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          selector += node.raws.between;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -27388,13 +27388,13 @@
       }
       let value = "";
       if (typeof node.value === "string") {
-        value = node.raws.value <span class="branch-0 cbranch-no" title="branch not covered" >? (_d = node.raws.value.scss) != null ? _d : node.raws.value.raw </span>: node.value;
+        value = node.raws.value <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.value.scss ?? node.raws.value.raw </span>: node.value;
         value = value.trim();
         node.raws.value = value;
       }
       let params = "";
       if (typeof node.params === "string") {
-        params = node.raws.params <span class="branch-0 cbranch-no" title="branch not covered" >? (_e = node.raws.params.scss) != null ? _e : node.raws.params.raw </span>: node.params;
+        params = node.raws.params <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.params.scss ?? node.raws.params.raw </span>: node.params;
         if (node.raws.afterName &amp;&amp; node.raws.afterName.trim().length &gt; 0) {
           params = node.raws.afterName + params;
         }
@@ -27476,7 +27476,7 @@
 <span class="cstat-no" title="statement not covered" >            node.name = parts[0];</span>
 <span class="cstat-no" title="statement not covered" >            node.value = await parseValue(parts.slice(1).join(":"), options);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          if (!["page", "nest", "keyframes"].includes(node.name) &amp;&amp; ((_f = node.params) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _f[0]) === ":") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (!["page", "nest", "keyframes"].includes(node.name) &amp;&amp; ((_b = node.params) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _b[0]) === ":") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            node.variable = true;</span>
 <span class="cstat-no" title="statement not covered" >            node.value = await parseValue(node.params.slice(1), options);</span>
 <span class="cstat-no" title="statement not covered" >            node.raws.afterName += ":";</span>
@@ -27634,7 +27634,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-23T01:52:47.200Z
+                at 2022-11-24T01:57:12.560Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

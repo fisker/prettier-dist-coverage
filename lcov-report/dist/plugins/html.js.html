@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">83.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4990/5981</span>
+                <span class='fraction'>4988/5978</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.3% </span>
+                <span class="strong">77.52% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>378/489</span>
+                <span class='fraction'>376/485</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">83.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4990/5981</span>
+                <span class='fraction'>4988/5978</span>
             </div>
         
             
@@ -6040,10 +6040,7 @@
 <a name='L5975'></a><a href='#L5975'>5975</a>
 <a name='L5976'></a><a href='#L5976'>5976</a>
 <a name='L5977'></a><a href='#L5977'>5977</a>
-<a name='L5978'></a><a href='#L5978'>5978</a>
-<a name='L5979'></a><a href='#L5979'>5979</a>
-<a name='L5980'></a><a href='#L5980'>5980</a>
-<a name='L5981'></a><a href='#L5981'>5981</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5978'></a><a href='#L5978'>5978</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -6120,7 +6117,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">358x</span>
 <span class="cline-any cline-yes">358x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9996,7 +9992,6 @@
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">21x</span>
@@ -10525,7 +10520,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12100,7 +12094,6 @@
 &nbsp;
   // node_modules/angular-html-parser/lib/compiler/src/ml_parser/html_tags.js
   function getHtmlTagDefinition(tagName) {
-    var _a;
     if (!TAG_DEFINITIONS) {
       _DEFAULT_TAG_DEFINITION = new HtmlTagDefinition();
       TAG_DEFINITIONS = {
@@ -12180,7 +12173,7 @@
         "textarea": new HtmlTagDefinition({ contentType: TagContentType.ESCAPABLE_RAW_TEXT, ignoreFirstLf: true })
       };
     }
-    return (_a = TAG_DEFINITIONS[tagName]) != null ? _a : _DEFAULT_TAG_DEFINITION;
+    return TAG_DEFINITIONS[tagName] ?? _DEFAULT_TAG_DEFINITION;
   }
   var HtmlTagDefinition, _DEFAULT_TAG_DEFINITION, TAG_DEFINITIONS;
   var init_html_tags = __esm({
@@ -12207,7 +12200,7 @@
         getContentType(prefix) {
           if (typeof this.contentType === "object") {
             const overrideType = prefix === void 0 ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: this.contentType[prefix];</span>
-            return overrideType != null <span class="branch-0 cbranch-no" title="branch not covered" >? overrideType </span>: this.contentType.default;
+            return overrideType ?? this.contentType.default;
           }
           return this.contentType;
         }
@@ -14950,7 +14943,7 @@
           const token = {
             type: this._currentTokenType,
             parts,
-            sourceSpan: (end != null <span class="branch-0 cbranch-no" title="branch not covered" >? end </span>: this._cursor).getSpan(this._currentTokenStart, this._leadingTriviaCodePoints)
+            sourceSpan: (end ?? this._cursor).getSpan(this._currentTokenStart, this._leadingTriviaCodePoints)
           };
           this.tokens.push(token);
           this._currentTokenStart = null;
@@ -15972,7 +15965,6 @@
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >          return false;</span></span>
         }
         _consumeAttr(attrName) {
-          var _a, _b;
           const fullName = mergeNsAndName(attrName.parts[0], attrName.parts[1]);
           let attrEnd = attrName.sourceSpan.end;
           let startQuoteToken;
@@ -16004,7 +15996,7 @@
             const quoteToken = this._advance();
             valueEnd = attrEnd = quoteToken.sourceSpan.end;
           }
-          const valueSpan = valueStartSpan &amp;&amp; valueEnd &amp;&amp; new ParseSourceSpan((_a = startQuoteToken == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: startQuoteToken.sourceSpan.start) != null ? _a <span class="branch-0 cbranch-no" title="branch not covered" >: valueStartSpan.start,</span> valueEnd, (_b = startQuoteToken == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: startQuoteToken.sourceSpan.fullStart) != null ? _b <span class="branch-0 cbranch-no" title="branch not covered" >: valueStartSpan.fullStart)</span>;
+          const valueSpan = valueStartSpan &amp;&amp; valueEnd &amp;&amp; new ParseSourceSpan((startQuoteToken == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: startQuoteToken.sourceSpan.start) <span class="branch-0 cbranch-no" title="branch not covered" >?? valueStartSpan.start,</span> valueEnd, (startQuoteToken == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: startQuoteToken.sourceSpan.fullStart) <span class="branch-0 cbranch-no" title="branch not covered" >?? valueStartSpan.fullStart)</span>;
           return new Attribute(fullName, value, new ParseSourceSpan(attrName.sourceSpan.start, attrEnd, attrName.sourceSpan.fullStart), attrName.sourceSpan, valueSpan, valueTokens.length &gt; 0 ? valueTokens : void 0, void 0);
         }
         _getParentElement() {
@@ -16505,9 +16497,8 @@
 &nbsp;
   // src/utils/infer-parser-by-language.js
 <span class="fstat-no" title="function not covered" >  function inferParserByLanguage(language, options2) {</span>
-<span class="cstat-no" title="statement not covered" >    var _a, _b;</span>
 <span class="cstat-no" title="statement not covered" >    const { languages } = getSupportInfo({ plugins: options2.plugins });</span>
-<span class="cstat-no" title="statement not covered" >    const matched = (_b = (_a = languages.find(({ name }) =&gt; name.toLowerCase() === language)) != null ? _a : languages.find(({ aliases }) =&gt; aliases == null ? void 0 : aliases.includes(language))) != null ? _b : languages.find(({ extensions }) =&gt; extensions == null ? void 0 : extensions.includes(`.${language}`));</span>
+<span class="cstat-no" title="statement not covered" >    const matched = languages.find(({ name }) =&gt; name.toLowerCase() === language) ?? languages.find(({ aliases }) =&gt; aliases == null ? void 0 : aliases.includes(language)) ?? languages.find(({ extensions }) =&gt; extensions == null ? void 0 : extensions.includes(`.${language}`));</span>
 <span class="cstat-no" title="statement not covered" >    return matched == null ? void 0 : matched.parsers[0];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var infer_parser_by_language_default = inferParserByLanguage;
@@ -17739,7 +17730,7 @@
             allowHtmComponentClosingTags,
             isTagNameCaseSensitive
           });
-          const getSecondParse = () =&gt; secondParseResult != null ? secondParseResult : secondParseResult = doSecondParse();
+          const getSecondParse = () =&gt; secondParseResult ?? (secondParseResult = doSecondParse());
           const getSameLocationNode = (node) =&gt; getSecondParse().rootNodes.find(({
             startSourceSpan
           }) =&gt; startSourceSpan &amp;&amp; startSourceSpan.start.offset === node.startSourceSpan.start.offset);
@@ -18010,7 +18001,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-23T01:52:43.688Z
+                at 2022-11-24T01:57:07.311Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
