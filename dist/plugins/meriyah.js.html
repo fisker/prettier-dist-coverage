@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.09% </span>
+                <span class="strong">61.02% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6146/10059</span>
+                <span class='fraction'>6147/10073</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.07% </span>
+                <span class="strong">46.01% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>323/701</span>
+                <span class='fraction'>323/702</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.09% </span>
+                <span class="strong">61.02% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6146/10059</span>
+                <span class='fraction'>6147/10073</span>
             </div>
         
             
@@ -10121,7 +10121,21 @@
 <a name='L10056'></a><a href='#L10056'>10056</a>
 <a name='L10057'></a><a href='#L10057'>10057</a>
 <a name='L10058'></a><a href='#L10058'>10058</a>
-<a name='L10059'></a><a href='#L10059'>10059</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10059'></a><a href='#L10059'>10059</a>
+<a name='L10060'></a><a href='#L10060'>10060</a>
+<a name='L10061'></a><a href='#L10061'>10061</a>
+<a name='L10062'></a><a href='#L10062'>10062</a>
+<a name='L10063'></a><a href='#L10063'>10063</a>
+<a name='L10064'></a><a href='#L10064'>10064</a>
+<a name='L10065'></a><a href='#L10065'>10065</a>
+<a name='L10066'></a><a href='#L10066'>10066</a>
+<a name='L10067'></a><a href='#L10067'>10067</a>
+<a name='L10068'></a><a href='#L10068'>10068</a>
+<a name='L10069'></a><a href='#L10069'>10069</a>
+<a name='L10070'></a><a href='#L10070'>10070</a>
+<a name='L10071'></a><a href='#L10071'>10071</a>
+<a name='L10072'></a><a href='#L10072'>10072</a>
+<a name='L10073'></a><a href='#L10073'>10073</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20018,6 +20032,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -30089,6 +30117,20 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "PropertyDefinition":</span>
+<span class="cstat-no" title="statement not covered" >          if (options.parser === "meriyah" &amp;&amp; node.static &amp;&amp; !node.computed &amp;&amp; !node.key) {</span>
+<span class="cstat-no" title="statement not covered" >            const name = "static";</span>
+<span class="cstat-no" title="statement not covered" >            const start = locStart(node);</span>
+<span class="cstat-no" title="statement not covered" >            Object.assign(node, {</span>
+<span class="cstat-no" title="statement not covered" >              static: false,</span>
+<span class="cstat-no" title="statement not covered" >              key: {</span>
+<span class="cstat-no" title="statement not covered" >                type: "Identifier",</span>
+<span class="cstat-no" title="statement not covered" >                name,</span>
+<span class="cstat-no" title="statement not covered" >                range: [start, start + name.length]</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >            });</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
       }
     });
     if (is_non_empty_array_default(ast.comments)) {
@@ -30244,7 +30286,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-01T02:02:41.177Z
+                at 2022-12-02T01:48:58.817Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
