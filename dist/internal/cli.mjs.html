@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.31% </span>
+                <span class="strong">54.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3608/6643</span>
+                <span class='fraction'>3608/6653</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.32% </span>
+                <span class="strong">80.24% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>853/1062</span>
+                <span class='fraction'>853/1063</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.31% </span>
+                <span class="strong">54.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3608/6643</span>
+                <span class='fraction'>3608/6653</span>
             </div>
         
             
@@ -6706,7 +6706,17 @@
 <a name='L6641'></a><a href='#L6641'>6641</a>
 <a name='L6642'></a><a href='#L6642'>6642</a>
 <a name='L6643'></a><a href='#L6643'>6643</a>
-<a name='L6644'></a><a href='#L6644'>6644</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">392x</span>
+<a name='L6644'></a><a href='#L6644'>6644</a>
+<a name='L6645'></a><a href='#L6645'>6645</a>
+<a name='L6646'></a><a href='#L6646'>6646</a>
+<a name='L6647'></a><a href='#L6647'>6647</a>
+<a name='L6648'></a><a href='#L6648'>6648</a>
+<a name='L6649'></a><a href='#L6649'>6649</a>
+<a name='L6650'></a><a href='#L6650'>6650</a>
+<a name='L6651'></a><a href='#L6651'>6651</a>
+<a name='L6652'></a><a href='#L6652'>6652</a>
+<a name='L6653'></a><a href='#L6653'>6653</a>
+<a name='L6654'></a><a href='#L6654'>6654</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">392x</span>
 <span class="cline-any cline-yes">392x</span>
 <span class="cline-any cline-yes">392x</span>
 <span class="cline-any cline-yes">392x</span>
@@ -11231,6 +11241,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">784x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">784x</span>
 <span class="cline-any cline-yes">784x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11250,7 +11263,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">784x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11884,6 +11902,8 @@
 <span class="cline-any cline-yes">392x</span>
 <span class="cline-any cline-yes">392x</span>
 <span class="cline-any cline-yes">392x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -17818,7 +17838,7 @@ var ansi_styles_default = ansiStyles;
 import process2 from "process";
 import os from "os";
 import tty from "tty";
-function hasFlag(flag, argv = process2.argv) {
+function hasFlag(flag, argv = globalThis.Deno <span class="branch-0 cbranch-no" title="branch not covered" >? globalThis.Deno.args </span>: process2.argv) {
   const prefix = flag.startsWith("-") <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: flag.length === 1 <span class="branch-0 cbranch-no" title="branch not covered" >? "-" </span>: "--";
   const position = argv.indexOf(prefix + flag);
   const terminatorPosition = argv.indexOf("--");
@@ -17870,6 +17890,9 @@ function _supportsColor(haveStream, { streamIsTTY, sniffFlags = true } = {}) {
 <span class="cstat-no" title="statement not covered" >      return 2;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+  if ("TF_BUILD" in env &amp;&amp; "AGENT_NAME" in env) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    return 1;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   if (haveStream &amp;&amp; !streamIsTTY <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; forceColor === void 0)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -17885,7 +17908,10 @@ function _supportsColor(haveStream, { streamIsTTY, sniffFlags = true } = {}) {
 <span class="cstat-no" title="statement not covered" >    return 1;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if ("CI" in env) {</span>
-<span class="cstat-no" title="statement not covered" >    if (["TRAVIS", "CIRCLECI", "APPVEYOR", "GITLAB_CI", "GITHUB_ACTIONS", "BUILDKITE", "DRONE"].some((sign) =&gt; sign in env) || env.CI_NAME === "codeship") {</span>
+<span class="cstat-no" title="statement not covered" >    if ("GITHUB_ACTIONS" in env) {</span>
+<span class="cstat-no" title="statement not covered" >      return 3;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (["TRAVIS", "CIRCLECI", "APPVEYOR", "GITLAB_CI", "BUILDKITE", "DRONE"].some((sign) =&gt; sign in env) || env.CI_NAME === "codeship") {</span>
 <span class="cstat-no" title="statement not covered" >      return 1;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return min;</span>
@@ -17893,19 +17919,21 @@ function _supportsColor(haveStream, { streamIsTTY, sniffFlags = true } = {}) {
 <span class="cstat-no" title="statement not covered" >  if ("TEAMCITY_VERSION" in env) {</span>
 <span class="cstat-no" title="statement not covered" >    return /^(9\.(0*[1-9]\d*)\.|\d{2,}\.)/.test(env.TEAMCITY_VERSION) ? 1 : 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if ("TF_BUILD" in env &amp;&amp; "AGENT_NAME" in env) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    return 1;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (env.COLORTERM === "truecolor") {</span>
+<span class="cstat-no" title="statement not covered" >    return 3;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (env.TERM === "xterm-kitty") {</span>
 <span class="cstat-no" title="statement not covered" >    return 3;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if ("TERM_PROGRAM" in env) {</span>
 <span class="cstat-no" title="statement not covered" >    const version2 = Number.parseInt((env.TERM_PROGRAM_VERSION || "").split(".")[0], 10);</span>
 <span class="cstat-no" title="statement not covered" >    switch (env.TERM_PROGRAM) {</span>
-<span class="cstat-no" title="statement not covered" >      case "iTerm.app":</span>
+<span class="cstat-no" title="statement not covered" >      case "iTerm.app": {</span>
 <span class="cstat-no" title="statement not covered" >        return version2 &gt;= 3 ? 3 : 2;</span>
-<span class="cstat-no" title="statement not covered" >      case "Apple_Terminal":</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      case "Apple_Terminal": {</span>
 <span class="cstat-no" title="statement not covered" >        return 2;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (/-256(color)?$/i.test(env.TERM)) {</span>
@@ -18526,19 +18554,21 @@ var SEPARATORS = /[_.\- ]+/;
 var LEADING_SEPARATORS = new RegExp("^" + SEPARATORS.source);
 var SEPARATORS_AND_IDENTIFIER = new RegExp(SEPARATORS.source + IDENTIFIER.source, "gu");
 var NUMBERS_AND_IDENTIFIER = new RegExp("\\d+" + IDENTIFIER.source, "gu");
-var preserveCamelCase = <span class="fstat-no" title="function not covered" >(string, toLowerCase, toUpperCase) =&gt; {</span>
+var preserveCamelCase = <span class="fstat-no" title="function not covered" >(string, toLowerCase, toUpperCase, preserveConsecutiveUppercase2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  let isLastCharLower = false;</span>
 <span class="cstat-no" title="statement not covered" >  let isLastCharUpper = false;</span>
 <span class="cstat-no" title="statement not covered" >  let isLastLastCharUpper = false;</span>
+<span class="cstat-no" title="statement not covered" >  let isLastLastCharPreserved = false;</span>
 <span class="cstat-no" title="statement not covered" >  for (let index = 0; index &lt; string.length; index++) {</span>
 <span class="cstat-no" title="statement not covered" >    const character = string[index];</span>
+<span class="cstat-no" title="statement not covered" >    isLastLastCharPreserved = index &gt; 2 ? string[index - 3] === "-" : true;</span>
 <span class="cstat-no" title="statement not covered" >    if (isLastCharLower &amp;&amp; UPPERCASE.test(character)) {</span>
 <span class="cstat-no" title="statement not covered" >      string = string.slice(0, index) + "-" + string.slice(index);</span>
 <span class="cstat-no" title="statement not covered" >      isLastCharLower = false;</span>
 <span class="cstat-no" title="statement not covered" >      isLastLastCharUpper = isLastCharUpper;</span>
 <span class="cstat-no" title="statement not covered" >      isLastCharUpper = true;</span>
 <span class="cstat-no" title="statement not covered" >      index++;</span>
-<span class="cstat-no" title="statement not covered" >    } else if (isLastCharUpper &amp;&amp; isLastLastCharUpper &amp;&amp; LOWERCASE.test(character)) {</span>
+<span class="cstat-no" title="statement not covered" >    } else if (isLastCharUpper &amp;&amp; isLastLastCharUpper &amp;&amp; LOWERCASE.test(character) &amp;&amp; (!isLastLastCharPreserved || preserveConsecutiveUppercase2)) {</span>
 <span class="cstat-no" title="statement not covered" >      string = string.slice(0, index - 1) + "-" + string.slice(index - 1);</span>
 <span class="cstat-no" title="statement not covered" >      isLastLastCharUpper = isLastCharUpper;</span>
 <span class="cstat-no" title="statement not covered" >      isLastCharUpper = false;</span>
@@ -18587,7 +18617,7 @@ function camelCase(input, options2) {
   }
   const hasUpperCase = input !== toLowerCase(input);
   if (hasUpperCase) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    input = preserveCamelCase(input, toLowerCase, toUpperCase);</span>
+<span class="cstat-no" title="statement not covered" >    input = preserveCamelCase(input, toLowerCase, toUpperCase, options2.preserveConsecutiveUppercase);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   input = input.replace(LEADING_SEPARATORS, "");
   input = options2.preserveConsecutiveUppercase <span class="branch-0 cbranch-no" title="branch not covered" >? preserveConsecutiveUppercase(input, toLowerCase) </span>: toLowerCase(input);
@@ -19999,7 +20029,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-18T01:37:57.916Z
+                at 2022-12-19T01:31:44.276Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
