@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.97% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7855/8929</span>
+                <span class='fraction'>7866/8941</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.97% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7855/8929</span>
+                <span class='fraction'>7866/8941</span>
             </div>
         
             
@@ -8992,7 +8992,19 @@
 <a name='L8927'></a><a href='#L8927'>8927</a>
 <a name='L8928'></a><a href='#L8928'>8928</a>
 <a name='L8929'></a><a href='#L8929'>8929</a>
-<a name='L8930'></a><a href='#L8930'>8930</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8930'></a><a href='#L8930'>8930</a>
+<a name='L8931'></a><a href='#L8931'>8931</a>
+<a name='L8932'></a><a href='#L8932'>8932</a>
+<a name='L8933'></a><a href='#L8933'>8933</a>
+<a name='L8934'></a><a href='#L8934'>8934</a>
+<a name='L8935'></a><a href='#L8935'>8935</a>
+<a name='L8936'></a><a href='#L8936'>8936</a>
+<a name='L8937'></a><a href='#L8937'>8937</a>
+<a name='L8938'></a><a href='#L8938'>8938</a>
+<a name='L8939'></a><a href='#L8939'>8939</a>
+<a name='L8940'></a><a href='#L8940'>8940</a>
+<a name='L8941'></a><a href='#L8941'>8941</a>
+<a name='L8942'></a><a href='#L8942'>8942</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9010,6 +9022,10 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16371,6 +16387,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -17689,6 +17706,12 @@
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">1467x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -17791,6 +17814,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">372x</span>
 <span class="cline-any cline-yes">372x</span>
 <span class="cline-any cline-yes">344x</span>
 <span class="cline-any cline-yes">344x</span>
@@ -17939,6 +17963,10 @@ var __copyProps = (to, from, except, desc) =&gt; {
   return to;
 };
 var __toESM = (mod, isNodeMode, target) =&gt; (target = mod != null ? __create(__getProtoOf(mod)) <span class="branch-0 cbranch-no" title="branch not covered" >: {},</span> __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
   isNodeMode <span class="branch-0 cbranch-no" title="branch not covered" >|| !mod <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| !mod.__esModule </span>? __defProp(target, "default", { value: mod, enumerable: true }) <span class="branch-0 cbranch-no" title="branch not covered" >: target,</span>
   mod
 ));
@@ -25295,7 +25323,8 @@ var require_minpath_browser = __commonJS({
 <span class="cstat-no" title="statement not covered" >          preDotState = -1;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (startDot &lt; 0 || end &lt; 0 || preDotState === 0 || preDotState === 1 &amp;&amp; startDot === end - 1 &amp;&amp; startDot === startPart + 1) {</span>
+<span class="cstat-no" title="statement not covered" >      if (startDot &lt; 0 || end &lt; 0 || // We saw a non-dot character immediately before the dot.</span>
+<span class="cstat-no" title="statement not covered" >      preDotState === 0 || preDotState === 1 &amp;&amp; startDot === end - 1 &amp;&amp; startDot === startPart + 1) {</span>
 <span class="cstat-no" title="statement not covered" >        return "";</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return path.slice(startDot, end);</span>
@@ -26616,7 +26645,13 @@ function parse(text) {
   };
   return {
     frontMatter: frontMatter2,
-    content: string_replace_all_default(false, raw, /[^\n]/g, " ") + text.slice(raw.length)
+    content: string_replace_all_default(
+      /* isOptionalObject*/
+      false,
+      raw,
+      /[^\n]/g,
+      " "
+    ) + text.slice(raw.length)
   };
 }
 var parse_default = parse;
@@ -26720,7 +26755,8 @@ function mapAst(ast, handler) {
 // src/language-markdown/unified-plugins/html-to-jsx.js
 function htmlToJsx() {
   return (ast) =&gt; mapAst(ast, (node, _index, [parent]) =&gt; {
-    if (node.type !== "html" || COMMENT_REGEX.test(node.value) || INLINE_NODE_WRAPPER_TYPES.has(parent.type)) {
+    if (node.type !== "html" || // Keep HTML-style comments (legacy MDX)
+    COMMENT_REGEX.test(node.value) || INLINE_NODE_WRAPPER_TYPES.has(parent.type)) {
       return node;
     }
     return { ...node, type: "jsx" };
@@ -26857,7 +26893,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-09T01:41:02.309Z
+                at 2023-01-10T01:46:24.743Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
