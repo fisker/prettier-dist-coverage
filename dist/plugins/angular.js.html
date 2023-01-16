@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.55% </span>
+                <span class="strong">6.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>192/2927</span>
+                <span class='fraction'>192/2926</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.55% </span>
+                <span class="strong">6.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>192/2927</span>
+                <span class='fraction'>192/2926</span>
             </div>
         
             
@@ -2988,8 +2988,7 @@
 <a name='L2923'></a><a href='#L2923'>2923</a>
 <a name='L2924'></a><a href='#L2924'>2924</a>
 <a name='L2925'></a><a href='#L2925'>2925</a>
-<a name='L2926'></a><a href='#L2926'>2926</a>
-<a name='L2927'></a><a href='#L2927'>2927</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L2926'></a><a href='#L2926'>2926</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3666,7 +3665,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6245,18 +6243,6 @@
 <span class="cstat-no" title="statement not covered" >      };</span>
 <span class="cstat-no" title="statement not covered" >      Unary = class extends Binary {</span>
 <span class="cstat-no" title="statement not covered" >        /**</span>
-<span class="cstat-no" title="statement not covered" >         * During the deprecation period this constructor is private, to avoid consumers from creating</span>
-<span class="cstat-no" title="statement not covered" >         * a `Unary` with the fallback properties for `Binary`.</span>
-<span class="cstat-no" title="statement not covered" >         */</span>
-<span class="cstat-no" title="statement not covered" >        constructor(span, sourceSpan, operator, expr, binaryOp, binaryLeft, binaryRight) {</span>
-<span class="cstat-no" title="statement not covered" >          super(span, sourceSpan, binaryOp, binaryLeft, binaryRight);</span>
-<span class="cstat-no" title="statement not covered" >          this.operator = operator;</span>
-<span class="cstat-no" title="statement not covered" >          this.expr = expr;</span>
-<span class="cstat-no" title="statement not covered" >          this.left = null;</span>
-<span class="cstat-no" title="statement not covered" >          this.right = null;</span>
-<span class="cstat-no" title="statement not covered" >          this.operation = null;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        /**</span>
 <span class="cstat-no" title="statement not covered" >         * Creates a unary minus expression "-x", represented as `Binary` using "0 - x".</span>
 <span class="cstat-no" title="statement not covered" >         */</span>
 <span class="cstat-no" title="statement not covered" >        static createMinus(span, sourceSpan, expr) {</span>
@@ -6267,6 +6253,18 @@
 <span class="cstat-no" title="statement not covered" >         */</span>
 <span class="cstat-no" title="statement not covered" >        static createPlus(span, sourceSpan, expr) {</span>
 <span class="cstat-no" title="statement not covered" >          return new Unary(span, sourceSpan, "+", expr, "-", expr, new LiteralPrimitive(span, sourceSpan, 0));</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        /**</span>
+<span class="cstat-no" title="statement not covered" >         * During the deprecation period this constructor is private, to avoid consumers from creating</span>
+<span class="cstat-no" title="statement not covered" >         * a `Unary` with the fallback properties for `Binary`.</span>
+<span class="cstat-no" title="statement not covered" >         */</span>
+<span class="cstat-no" title="statement not covered" >        constructor(span, sourceSpan, operator, expr, binaryOp, binaryLeft, binaryRight) {</span>
+<span class="cstat-no" title="statement not covered" >          super(span, sourceSpan, binaryOp, binaryLeft, binaryRight);</span>
+<span class="cstat-no" title="statement not covered" >          this.operator = operator;</span>
+<span class="cstat-no" title="statement not covered" >          this.expr = expr;</span>
+<span class="cstat-no" title="statement not covered" >          this.left = null;</span>
+<span class="cstat-no" title="statement not covered" >          this.right = null;</span>
+<span class="cstat-no" title="statement not covered" >          this.operation = null;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        visit(visitor, context = null) {</span>
 <span class="cstat-no" title="statement not covered" >          if (visitor.visitUnary !== void 0) {</span>
@@ -6861,9 +6859,8 @@
 <span class="cstat-no" title="statement not covered" >          while (this.peek != quote) {</span>
 <span class="cstat-no" title="statement not covered" >            if (this.peek == $BACKSLASH) {</span>
 <span class="cstat-no" title="statement not covered" >              buffer += input.substring(marker, this.index);</span>
-<span class="cstat-no" title="statement not covered" >              this.advance();</span>
 <span class="cstat-no" title="statement not covered" >              let unescapedCode;</span>
-<span class="cstat-no" title="statement not covered" >              this.peek = this.peek;</span>
+<span class="cstat-no" title="statement not covered" >              this.advance();</span>
 <span class="cstat-no" title="statement not covered" >              if (this.peek == $u) {</span>
 <span class="cstat-no" title="statement not covered" >                const hex = input.substring(this.index + 1, this.index + 5);</span>
 <span class="cstat-no" title="statement not covered" >                if (/^[0-9a-f]+$/i.test(hex)) {</span>
@@ -6941,16 +6938,16 @@
 <span class="fstat-no" title="function not covered" >    "node_modules/@angular/compiler/esm2020/src/ml_parser/interpolation_config.mjs"() {</span>
 <span class="cstat-no" title="statement not covered" >      init_assertions();</span>
 <span class="cstat-no" title="statement not covered" >      InterpolationConfig = class {</span>
-<span class="cstat-no" title="statement not covered" >        constructor(start, end) {</span>
-<span class="cstat-no" title="statement not covered" >          this.start = start;</span>
-<span class="cstat-no" title="statement not covered" >          this.end = end;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        static fromArray(markers) {</span>
 <span class="cstat-no" title="statement not covered" >          if (!markers) {</span>
 <span class="cstat-no" title="statement not covered" >            return DEFAULT_INTERPOLATION_CONFIG;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          assertInterpolationSymbols("interpolation", markers);</span>
 <span class="cstat-no" title="statement not covered" >          return new InterpolationConfig(markers[0], markers[1]);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        constructor(start, end) {</span>
+<span class="cstat-no" title="statement not covered" >          this.start = start;</span>
+<span class="cstat-no" title="statement not covered" >          this.end = end;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
 <span class="cstat-no" title="statement not covered" >      DEFAULT_INTERPOLATION_CONFIG = new InterpolationConfig("{{", "}}");</span>
@@ -8848,7 +8845,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-15T01:46:35.156Z
+                at 2023-01-16T01:43:07.361Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
