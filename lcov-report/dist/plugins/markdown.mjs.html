@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.97% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7866/8941</span>
+                <span class='fraction'>7873/8949</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.97% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7866/8941</span>
+                <span class='fraction'>7873/8949</span>
             </div>
         
             
@@ -9004,7 +9004,15 @@
 <a name='L8939'></a><a href='#L8939'>8939</a>
 <a name='L8940'></a><a href='#L8940'>8940</a>
 <a name='L8941'></a><a href='#L8941'>8941</a>
-<a name='L8942'></a><a href='#L8942'>8942</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8942'></a><a href='#L8942'>8942</a>
+<a name='L8943'></a><a href='#L8943'>8943</a>
+<a name='L8944'></a><a href='#L8944'>8944</a>
+<a name='L8945'></a><a href='#L8945'>8945</a>
+<a name='L8946'></a><a href='#L8946'>8946</a>
+<a name='L8947'></a><a href='#L8947'>8947</a>
+<a name='L8948'></a><a href='#L8948'>8948</a>
+<a name='L8949'></a><a href='#L8949'>8949</a>
+<a name='L8950'></a><a href='#L8950'>8950</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -12036,6 +12044,9 @@
 <span class="cline-any cline-yes">16483x</span>
 <span class="cline-any cline-yes">16483x</span>
 <span class="cline-any cline-yes">16483x</span>
+<span class="cline-any cline-yes">184986x</span>
+<span class="cline-any cline-yes">184986x</span>
+<span class="cline-any cline-yes">184986x</span>
 <span class="cline-any cline-yes">184986x</span>
 <span class="cline-any cline-yes">184986x</span>
 <span class="cline-any cline-yes">184986x</span>
@@ -16388,6 +16399,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16941,6 +16953,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1334x</span>
 <span class="cline-any cline-yes">1334x</span>
+<span class="cline-any cline-yes">1334x</span>
+<span class="cline-any cline-yes">1334x</span>
+<span class="cline-any cline-yes">1334x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1334x</span>
 <span class="cline-any cline-yes">1334x</span>
@@ -17065,6 +17080,7 @@
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -20979,7 +20995,10 @@ var require_tokenizer = __commonJS({
           while (++index &lt; length) {
             name = methods[index];
             method = tokenizers[name];
-            if (method &amp;&amp; (!method.onlyAtStart || self.atStart) &amp;&amp; (!method.notInList <span class="branch-0 cbranch-no" title="branch not covered" >|| !self.inList)</span> &amp;&amp; (!method.notInBlock <span class="branch-0 cbranch-no" title="branch not covered" >|| !self.inBlock)</span> &amp;&amp; (!method.notInLink || !self.inLink)) {
+            if (method &amp;&amp; /* istanbul ignore next */
+            (!method.onlyAtStart || self.atStart) &amp;&amp; /* istanbul ignore next */
+            (!method.notInList <span class="branch-0 cbranch-no" title="branch not covered" >|| !self.inList)</span> &amp;&amp; /* istanbul ignore next */
+            (!method.notInBlock <span class="branch-0 cbranch-no" title="branch not covered" >|| !self.inBlock)</span> &amp;&amp; (!method.notInLink || !self.inLink)) {
               valueLength = value.length;
               method.apply(self, [eat, value]);
               matched = valueLength !== value.length;
@@ -25324,7 +25343,8 @@ var require_minpath_browser = __commonJS({
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (startDot &lt; 0 || end &lt; 0 || // We saw a non-dot character immediately before the dot.</span>
-<span class="cstat-no" title="statement not covered" >      preDotState === 0 || preDotState === 1 &amp;&amp; startDot === end - 1 &amp;&amp; startDot === startPart + 1) {</span>
+<span class="cstat-no" title="statement not covered" >      preDotState === 0 || // The (right-most) trimmed path component is exactly `..`.</span>
+<span class="cstat-no" title="statement not covered" >      preDotState === 1 &amp;&amp; startDot === end - 1 &amp;&amp; startDot === startPart + 1) {</span>
 <span class="cstat-no" title="statement not covered" >        return "";</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return path.slice(startDot, end);</span>
@@ -25880,7 +25900,10 @@ var require_unified = __commonJS({
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
     function newable(value, name) {
-      return typeof value === "function" &amp;&amp; value.prototype &amp;&amp; (keys(value.prototype) <span class="branch-0 cbranch-no" title="branch not covered" >|| name in value.prototype)</span>;
+      return typeof value === "function" &amp;&amp; value.prototype &amp;&amp; // A function with keys in its prototype is probably a constructor.
+      // Classes’ prototype methods are not enumerable, so we check if some value
+      // exists in the prototype.
+      (keys(value.prototype) <span class="branch-0 cbranch-no" title="branch not covered" >|| name in value.prototype)</span>;
     }
     function keys(value) {
       var key;
@@ -26007,7 +26030,8 @@ var require_inline = __commonJS({
           next = value.charCodeAt(index + 1);
           if (code === dollarSign) {
             previous = value.charCodeAt(index - 1);
-            if (previous !== space &amp;&amp; previous !== tab &amp;&amp; (next !== next || next &lt; digit0 || next &gt; digit9) &amp;&amp; (!double || next === dollarSign)) {
+            if (previous !== space &amp;&amp; previous !== tab &amp;&amp; // eslint-disable-next-line no-self-compare
+            (next !== next || next &lt; digit0 || next &gt; digit9) &amp;&amp; (!double || next === dollarSign)) {
               contentEnd = index - 1;
               index++;
               if (double) {
@@ -26893,7 +26917,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-16T01:43:02.864Z
+                at 2023-01-17T01:41:57.036Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

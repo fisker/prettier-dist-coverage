@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.44% </span>
+                <span class="strong">53.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3403/6367</span>
+                <span class='fraction'>3407/6372</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.44% </span>
+                <span class="strong">53.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3403/6367</span>
+                <span class='fraction'>3407/6372</span>
             </div>
         
             
@@ -6430,7 +6430,12 @@
 <a name='L6365'></a><a href='#L6365'>6365</a>
 <a name='L6366'></a><a href='#L6366'>6366</a>
 <a name='L6367'></a><a href='#L6367'>6367</a>
-<a name='L6368'></a><a href='#L6368'>6368</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">393x</span>
+<a name='L6368'></a><a href='#L6368'>6368</a>
+<a name='L6369'></a><a href='#L6369'>6369</a>
+<a name='L6370'></a><a href='#L6370'>6370</a>
+<a name='L6371'></a><a href='#L6371'>6371</a>
+<a name='L6372'></a><a href='#L6372'>6372</a>
+<a name='L6373'></a><a href='#L6373'>6373</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
@@ -6813,6 +6818,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -6858,6 +6865,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11355,6 +11363,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12738,6 +12747,7 @@
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
+<span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">18471x</span>
 <span class="cline-any cline-yes">18471x</span>
 <span class="cline-any cline-yes">18471x</span>
@@ -13175,59 +13185,62 @@ var require_build = __commonJS({
     exports.LinesAndColumns = void 0;
     var LF = "\n";
     var CR = "\r";
-    var LinesAndColumns = function() {
-      function LinesAndColumns2(string) {
-        this.string = string;
-        var offsets = [0];
-        for (var offset = 0; offset &lt; string.length; ) {
-          switch (string[offset]) {
-            case LF:
-              offset += LF.length;
-              offsets.push(offset);
-              break;
-<span class="branch-0 cbranch-no" title="branch not covered" >            case CR:</span>
-<span class="cstat-no" title="statement not covered" >              offset += CR.length;</span>
-<span class="cstat-no" title="statement not covered" >              if (string[offset] === LF) {</span>
-<span class="cstat-no" title="statement not covered" >                offset += LF.length;</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              offsets.push(offset);</span>
-<span class="cstat-no" title="statement not covered" >              break;</span>
-            default:
-              offset++;
-              break;
+    var LinesAndColumns = (
+      /** @class */
+      function() {
+        function LinesAndColumns2(string) {
+          this.string = string;
+          var offsets = [0];
+          for (var offset = 0; offset &lt; string.length; ) {
+            switch (string[offset]) {
+              case LF:
+                offset += LF.length;
+                offsets.push(offset);
+                break;
+<span class="branch-0 cbranch-no" title="branch not covered" >              case CR:</span>
+<span class="cstat-no" title="statement not covered" >                offset += CR.length;</span>
+<span class="cstat-no" title="statement not covered" >                if (string[offset] === LF) {</span>
+<span class="cstat-no" title="statement not covered" >                  offset += LF.length;</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >                offsets.push(offset);</span>
+<span class="cstat-no" title="statement not covered" >                break;</span>
+              default:
+                offset++;
+                break;
+            }
           }
+          this.offsets = offsets;
         }
-        this.offsets = offsets;
-      }
-      LinesAndColumns2.prototype.locationForIndex = function(index) {
-        if (index &lt; 0 || index &gt; this.string.length) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          return null;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-        var line = 0;
-        var offsets = this.offsets;
-        while (offsets[line + 1] &lt;= index) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          line++;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-        var column = index - offsets[line];
-        return { line, column };
-      };
-      LinesAndColumns2.prototype.indexForLocation = <span class="fstat-no" title="function not covered" >function(location) {</span>
-<span class="cstat-no" title="statement not covered" >        var line = location.line, column = location.column;</span>
-<span class="cstat-no" title="statement not covered" >        if (line &lt; 0 || line &gt;= this.offsets.length) {</span>
-<span class="cstat-no" title="statement not covered" >          return null;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (column &lt; 0 || column &gt; this.lengthOfLine(line)) {</span>
-<span class="cstat-no" title="statement not covered" >          return null;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return this.offsets[line] + column;</span>
-      };
-      LinesAndColumns2.prototype.lengthOfLine = <span class="fstat-no" title="function not covered" >function(line) {</span>
-<span class="cstat-no" title="statement not covered" >        var offset = this.offsets[line];</span>
-<span class="cstat-no" title="statement not covered" >        var nextOffset = line === this.offsets.length - 1 ? this.string.length : this.offsets[line + 1];</span>
-<span class="cstat-no" title="statement not covered" >        return nextOffset - offset;</span>
-      };
-      return LinesAndColumns2;
-    }();
+        LinesAndColumns2.prototype.locationForIndex = function(index) {
+          if (index &lt; 0 || index &gt; this.string.length) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+          var line = 0;
+          var offsets = this.offsets;
+          while (offsets[line + 1] &lt;= index) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            line++;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+          var column = index - offsets[line];
+          return { line, column };
+        };
+        LinesAndColumns2.prototype.indexForLocation = <span class="fstat-no" title="function not covered" >function(location) {</span>
+<span class="cstat-no" title="statement not covered" >          var line = location.line, column = location.column;</span>
+<span class="cstat-no" title="statement not covered" >          if (line &lt; 0 || line &gt;= this.offsets.length) {</span>
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          if (column &lt; 0 || column &gt; this.lengthOfLine(line)) {</span>
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          return this.offsets[line] + column;</span>
+        };
+        LinesAndColumns2.prototype.lengthOfLine = <span class="fstat-no" title="function not covered" >function(line) {</span>
+<span class="cstat-no" title="statement not covered" >          var offset = this.offsets[line];</span>
+<span class="cstat-no" title="statement not covered" >          var nextOffset = line === this.offsets.length - 1 ? this.string.length : this.offsets[line + 1];</span>
+<span class="cstat-no" title="statement not covered" >          return nextOffset - offset;</span>
+        };
+        return LinesAndColumns2;
+      }()
+    );
     exports.LinesAndColumns = LinesAndColumns;
     exports["default"] = LinesAndColumns;
   }
@@ -17697,7 +17710,8 @@ var require_dumper = __commonJS({
 <span class="cstat-no" title="statement not covered" >          if (char === CHAR_LINE_FEED) {</span>
 <span class="cstat-no" title="statement not covered" >            hasLineBreak = true;</span>
 <span class="cstat-no" title="statement not covered" >            if (shouldTrackWidth) {</span>
-<span class="cstat-no" title="statement not covered" >              hasFoldableLine = hasFoldableLine || i - previousLineBreak - 1 &gt; lineWidth &amp;&amp; string[previousLineBreak + 1] !== " ";</span>
+<span class="cstat-no" title="statement not covered" >              hasFoldableLine = hasFoldableLine || // Foldable line = too long, and not more-indented.</span>
+<span class="cstat-no" title="statement not covered" >              i - previousLineBreak - 1 &gt; lineWidth &amp;&amp; string[previousLineBreak + 1] !== " ";</span>
 <span class="cstat-no" title="statement not covered" >              previousLineBreak = i;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          } else if (!isPrintable(char)) {</span>
@@ -19094,7 +19108,8 @@ var require_ci_info = __commonJS({
 <span class="cstat-no" title="statement not covered" >          exports.isPR = null;</span>
       }
     });
-    exports.isCI = !!(env.CI !== "false" &amp;&amp; (env.BUILD_ID || // Jenkins, Cloudbees
+    exports.isCI = !!(env.CI !== "false" &amp;&amp; // Bypass all checks if CI env is explicitly set to 'false'
+    (env.BUILD_ID || // Jenkins, Cloudbees
     env.BUILD_NUMBER || // Jenkins, TeamCity
     env.CI <span class="branch-0 cbranch-no" title="branch not covered" >|| // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari</span>
     env.CI_APP_ID <span class="branch-0 cbranch-no" title="branch not covered" >|| // Appflow</span>
@@ -19171,7 +19186,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-16T01:43:07.361Z
+                at 2023-01-17T01:42:00.531Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

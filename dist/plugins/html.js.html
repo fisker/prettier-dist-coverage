@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.42% </span>
+                <span class="strong">82.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5113/6203</span>
+                <span class='fraction'>5115/6205</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.42% </span>
+                <span class="strong">82.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5113/6203</span>
+                <span class='fraction'>5115/6205</span>
             </div>
         
             
@@ -6265,7 +6265,9 @@
 <a name='L6200'></a><a href='#L6200'>6200</a>
 <a name='L6201'></a><a href='#L6201'>6201</a>
 <a name='L6202'></a><a href='#L6202'>6202</a>
-<a name='L6203'></a><a href='#L6203'>6203</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L6203'></a><a href='#L6203'>6203</a>
+<a name='L6204'></a><a href='#L6204'>6204</a>
+<a name='L6205'></a><a href='#L6205'>6205</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10379,6 +10381,7 @@
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12437,6 +12440,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16575,7 +16579,8 @@
           let unexpectedCloseTagDetected = false;
           for (let stackIndex = this._elementStack.length - 1; stackIndex &gt;= 0; stackIndex--) {
             const el = this._elementStack[stackIndex];
-            if (!fullName || (getNsPrefix(el.name) <span class="branch-0 cbranch-no" title="branch not covered" >? el.name == fullName </span>: el.name.toLowerCase() == fullName.toLowerCase())) {
+            if (!fullName || /* isForeignElement */
+            (getNsPrefix(el.name) <span class="branch-0 cbranch-no" title="branch not covered" >? el.name == fullName </span>: el.name.toLowerCase() == fullName.toLowerCase())) {
               el.endSourceSpan = endSourceSpan;
               el.sourceSpan.end = endSourceSpan !== null ? endSourceSpan.end <span class="branch-0 cbranch-no" title="branch not covered" >: el.sourceSpan.end;</span>
               this._elementStack.splice(stackIndex, this._elementStack.length - stackIndex);
@@ -18344,7 +18349,7 @@
 &nbsp;
   // src/language-html/parser-html.js
   function ngHtmlParser(angularHtmlParser, input, {
-    recognizeSelfClosing,
+    canSelfClose,
     normalizeTagName,
     normalizeAttributeName,
     allowHtmComponentClosingTags,
@@ -18363,7 +18368,7 @@
       rootNodes,
       errors
     } = parse3(input, {
-      canSelfClose: recognizeSelfClosing,
+      canSelfClose,
       allowHtmComponentClosingTags,
       isTagNameCaseSensitive,
       getTagContentType(tagName, prefix, hasParent, attrs) {
@@ -18389,7 +18394,7 @@
         if (rootNodes.some(shouldParseAsHTML)) {
           let secondParseResult;
           const doSecondParse = () =&gt; parse3(input, {
-            canSelfClose: recognizeSelfClosing,
+            canSelfClose,
             allowHtmComponentClosingTags,
             isTagNameCaseSensitive
           });
@@ -18426,13 +18431,13 @@
           }
         }
       }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
-<span class="cstat-no" title="statement not covered" >        recognizeSelfClosing = true;</span>
+<span class="cstat-no" title="statement not covered" >        canSelfClose = true;</span>
 <span class="cstat-no" title="statement not covered" >        normalizeTagName = true;</span>
 <span class="cstat-no" title="statement not covered" >        normalizeAttributeName = true;</span>
 <span class="cstat-no" title="statement not covered" >        allowHtmComponentClosingTags = true;</span>
 <span class="cstat-no" title="statement not covered" >        isTagNameCaseSensitive = false;</span>
 <span class="cstat-no" title="statement not covered" >        const htmlParseResult = parse3(input, {</span>
-<span class="cstat-no" title="statement not covered" >          canSelfClose: recognizeSelfClosing,</span>
+<span class="cstat-no" title="statement not covered" >          canSelfClose,</span>
 <span class="cstat-no" title="statement not covered" >          allowHtmComponentClosingTags,</span>
 <span class="cstat-no" title="statement not covered" >          isTagNameCaseSensitive</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
@@ -18611,7 +18616,7 @@
   }
   function createParser({
     name,
-    recognizeSelfClosing = false,
+    canSelfClose = false,
     normalizeTagName = false,
     normalizeAttributeName = false,
     allowHtmComponentClosingTags = false,
@@ -18625,7 +18630,7 @@
           parser: name,
           ...options2
         }, {
-          recognizeSelfClosing,
+          canSelfClose,
           normalizeTagName,
           normalizeAttributeName,
           allowHtmComponentClosingTags,
@@ -18643,17 +18648,18 @@
     parsers: {
       html: createParser({
         name: "html",
-        recognizeSelfClosing: true,
+        canSelfClose: true,
         normalizeTagName: true,
         normalizeAttributeName: true,
         allowHtmComponentClosingTags: true
       }),
       angular: createParser({
-        name: "angular"
+        name: "angular",
+        canSelfClose: true
       }),
       vue: createParser({
         name: "vue",
-        recognizeSelfClosing: true,
+        canSelfClose: true,
         isTagNameCaseSensitive: true,
         shouldParseAsRawText(tagName, prefix, hasParent, attrs) {
           return tagName.toLowerCase() !== "html" &amp;&amp; !hasParent &amp;&amp; (tagName !== "template" || attrs.some(({
@@ -18676,7 +18682,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-16T01:43:07.361Z
+                at 2023-01-17T01:42:00.531Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
