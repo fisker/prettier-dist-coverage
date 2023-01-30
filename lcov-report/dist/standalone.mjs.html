@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.93% </span>
+                <span class="strong">62.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13743/21837</span>
+                <span class='fraction'>13739/21826</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">59.49% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3041/5111</span>
+                <span class='fraction'>3042/5113</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.49% </span>
+                <span class="strong">63.52% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>788/1241</span>
+                <span class='fraction'>789/1242</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.93% </span>
+                <span class="strong">62.94% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13743/21837</span>
+                <span class='fraction'>13739/21826</span>
             </div>
         
             
@@ -21889,18 +21889,7 @@
 <a name='L21824'></a><a href='#L21824'>21824</a>
 <a name='L21825'></a><a href='#L21825'>21825</a>
 <a name='L21826'></a><a href='#L21826'>21826</a>
-<a name='L21827'></a><a href='#L21827'>21827</a>
-<a name='L21828'></a><a href='#L21828'>21828</a>
-<a name='L21829'></a><a href='#L21829'>21829</a>
-<a name='L21830'></a><a href='#L21830'>21830</a>
-<a name='L21831'></a><a href='#L21831'>21831</a>
-<a name='L21832'></a><a href='#L21832'>21832</a>
-<a name='L21833'></a><a href='#L21833'>21833</a>
-<a name='L21834'></a><a href='#L21834'>21834</a>
-<a name='L21835'></a><a href='#L21835'>21835</a>
-<a name='L21836'></a><a href='#L21836'>21836</a>
-<a name='L21837'></a><a href='#L21837'>21837</a>
-<a name='L21838'></a><a href='#L21838'>21838</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L21827'></a><a href='#L21827'>21827</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -38063,13 +38052,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -38077,6 +38059,9 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -38448,13 +38433,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -59879,27 +59857,20 @@ var parsers_default3 = void 0;
 clean3.ignoredProperties = /* @__PURE__ */ new Set(["loc", "selfClosing"]);
 var clean_default3 = clean3;
 &nbsp;
-// node_modules/html-void-elements/index.js
-var htmlVoidElements = [
+// src/language-handlebars/html-void-elements.evaluate.js
+var html_void_elements_evaluate_default = [
   "area",
   "base",
-  "basefont",
-  "bgsound",
   "br",
   "col",
   "command",
   "embed",
-  "frame",
   "hr",
-  "image",
   "img",
   "input",
-  "isindex",
   "keygen",
   "link",
-  "menuitem",
   "meta",
-  "nextid",
   "param",
   "source",
   "track",
@@ -59913,9 +59884,12 @@ function isUppercase(string) {
 function isGlimmerComponent(node) {
   return node.type === "ElementNode" &amp;&amp; typeof node.tag === "string" &amp;&amp; !node.tag.startsWith(":") &amp;&amp; (isUppercase(node.tag[0]) || node.tag.includes("."));
 }
-var voidTags = new Set(htmlVoidElements);
+var voidTags = new Set(html_void_elements_evaluate_default);
+function isVoidTag(tag) {
+  return voidTags.has(tag.toLowerCase()) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !isUppercase(tag[0]);</span>
+}
 function isVoidElement(node) {
-  return voidTags.has(node.tag) || node.selfClosing === true || isGlimmerComponent(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2));</span>
+  return node.selfClosing === true || isVoidTag(node.tag) || isGlimmerComponent(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2));</span>
 }
 function isWhitespaceNode(node) {
   return node.type === "TextNode" &amp;&amp; !/\S/.test(node.chars);
@@ -60319,18 +60293,15 @@ function printClosingMustache(node) {
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    node</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
-<span class="cstat-no" title="statement not covered" >  const openingMustache = printOpeningBlockOpeningMustache(node);</span>
-<span class="cstat-no" title="statement not covered" >  const closingMustache = printOpeningBlockClosingMustache(node);</span>
-<span class="cstat-no" title="statement not covered" >  const attributes = [printPath(path, print4)];</span>
-<span class="cstat-no" title="statement not covered" >  const params = printParams(path, print4);</span>
-<span class="cstat-no" title="statement not covered" >  if (params) {</span>
-<span class="cstat-no" title="statement not covered" >    attributes.push(line, params);</span>
+<span class="cstat-no" title="statement not covered" >  const parts = [];</span>
+<span class="cstat-no" title="statement not covered" >  const paramsDoc = printParams(path, print4);</span>
+<span class="cstat-no" title="statement not covered" >  if (paramsDoc) {</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(group(paramsDoc));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (is_non_empty_array_default(node.program.blockParams)) {</span>
-<span class="cstat-no" title="statement not covered" >    const block = printBlockParams(node.program);</span>
-<span class="cstat-no" title="statement not covered" >    attributes.push(line, block);</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(printBlockParams(node.program));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return group([openingMustache, indent(attributes), softline, closingMustache]);</span>
+<span class="cstat-no" title="statement not covered" >  return group([printOpeningBlockOpeningMustache(node), printPath(path, print4), parts.length &gt; 0 ? indent([line, join(line, parts)]) : "", softline, printOpeningBlockClosingMustache(node)]);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function printElseBlock(node, options9) {</span></span>
 <span class="cstat-no" title="statement not covered" >  return [options9.htmlWhitespaceSensitivity === "ignore" ? hardline : "", printInverseBlockOpeningMustache(node), "else", printInverseBlockClosingMustache(node)];</span>
@@ -60348,11 +60319,7 @@ function printClosingMustache(node) {
 <span class="cstat-no" title="statement not covered" >    node,</span>
 <span class="cstat-no" title="statement not covered" >    grandparent</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
-<span class="cstat-no" title="statement not covered" >  let blockParams = [];</span>
-<span class="cstat-no" title="statement not covered" >  if (is_non_empty_array_default(node.program.blockParams)) {</span>
-<span class="cstat-no" title="statement not covered" >    blockParams = [line, printBlockParams(node.program)];</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return group([printInverseBlockOpeningMustache(grandparent), indent(group([group(["else", line, grandparent.inverse.body[0].path.parts[0]]), line, printParams(path, print4)])), indent(blockParams), softline, printInverseBlockClosingMustache(grandparent)]);</span>
+<span class="cstat-no" title="statement not covered" >  return group([printInverseBlockOpeningMustache(grandparent), ["else", " ", grandparent.inverse.body[0].path.parts[0]], indent([line, group(printParams(path, print4)), ...is_non_empty_array_default(node.program.blockParams) ? [line, printBlockParams(node.program)] : []]), softline, printInverseBlockClosingMustache(grandparent)]);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function printCloseBlock(path, print4, options9) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
@@ -65581,7 +65548,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-29T01:48:36.445Z
+                at 2023-01-30T01:39:16.192Z
             </div>
         <script src="../prettify.js"></script>
         <script>
