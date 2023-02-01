@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.25% </span>
+                <span class="strong">52.24% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8603/16465</span>
+                <span class='fraction'>8604/16468</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">56.41% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1301/2306</span>
+                <span class='fraction'>1302/2308</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.25% </span>
+                <span class="strong">52.24% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8603/16465</span>
+                <span class='fraction'>8604/16468</span>
             </div>
         
             
@@ -16527,7 +16527,10 @@
 <a name='L16462'></a><a href='#L16462'>16462</a>
 <a name='L16463'></a><a href='#L16463'>16463</a>
 <a name='L16464'></a><a href='#L16464'>16464</a>
-<a name='L16465'></a><a href='#L16465'>16465</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16465'></a><a href='#L16465'>16465</a>
+<a name='L16466'></a><a href='#L16466'>16466</a>
+<a name='L16467'></a><a href='#L16467'>16467</a>
+<a name='L16468'></a><a href='#L16468'>16468</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32560,23 +32563,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2522x</span>
-<span class="cline-any cline-yes">951x</span>
-<span class="cline-any cline-yes">951x</span>
-<span class="cline-any cline-yes">2522x</span>
+<span class="cline-any cline-yes">2519x</span>
+<span class="cline-any cline-yes">948x</span>
+<span class="cline-any cline-yes">948x</span>
+<span class="cline-any cline-yes">2519x</span>
 <span class="cline-any cline-yes">345x</span>
 <span class="cline-any cline-yes">411x</span>
 <span class="cline-any cline-yes">411x</span>
 <span class="cline-any cline-yes">345x</span>
 <span class="cline-any cline-yes">345x</span>
 <span class="cline-any cline-yes">1226x</span>
-<span class="cline-any cline-yes">2522x</span>
-<span class="cline-any cline-yes">2078x</span>
-<span class="cline-any cline-yes">2078x</span>
-<span class="cline-any cline-yes">2522x</span>
-<span class="cline-any cline-yes">2522x</span>
+<span class="cline-any cline-yes">2519x</span>
+<span class="cline-any cline-yes">2075x</span>
+<span class="cline-any cline-yes">2075x</span>
+<span class="cline-any cline-yes">2519x</span>
+<span class="cline-any cline-yes">2519x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32665,6 +32666,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">408x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">408x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -48676,8 +48682,7 @@
     ],
     "TSPropertySignature": [
       "key",
-      "typeAnnotation",
-      "initializer"
+      "typeAnnotation"
     ],
     "TSMethodSignature": [
       "key",
@@ -48819,8 +48824,7 @@
     ],
     "TSEnumDeclaration": [
       "id",
-      "members",
-      "modifiers"
+      "members"
     ],
     "TSEnumMember": [
       "id",
@@ -49127,6 +49131,11 @@
 <span class="cstat-no" title="statement not covered" >            if (invalidProperty) {</span>
 <span class="cstat-no" title="statement not covered" >              throw_ts_syntax_error_default(invalidProperty.value, "Unexpected token.");</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+          break;
+        case "TSPropertySignature":
+          if (node.initializer) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            throw_ts_syntax_error_default(node.initializer, "An interface property cannot have an initializer.");</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           break;
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "TopicReference":</span>
@@ -49462,7 +49471,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-31T01:48:44.960Z
+                at 2023-02-01T01:55:59.841Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
