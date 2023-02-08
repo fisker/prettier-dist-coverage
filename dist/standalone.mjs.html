@@ -50747,7 +50747,7 @@ var isFunctionOrArrowExpression = createTypeCheckFunction(["FunctionExpression",
 function isAngularTestWrapper(node) {
   return isCallExpression(node) &amp;&amp; node.callee.type === "Identifier" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; ["async", "inject", "fakeAsync", "waitForAsync"].includes(node.callee.name);</span>
 }
-var isJsxNode = createTypeCheckFunction(["JSXElement", "JSXFragment"]);
+var isJsxElement = createTypeCheckFunction(["JSXElement", "JSXFragment"]);
 function isTheOnlyJsxElementInMarkdown(options9, path) {
   if (options9.parentParser !== "markdown" &amp;&amp; options9.parentParser !== "mdx") {
     return false;
@@ -50755,7 +50755,7 @@ function isTheOnlyJsxElementInMarkdown(options9, path) {
   const {
     node
   } = path;
-  if (!node.expression || !isJsxNode(node.expression)) {
+  if (!node.expression || !isJsxElement(node.expression)) {
     return false;
   }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  const {</span></span>
@@ -50912,7 +50912,7 @@ function isSimpleTemplateLiteral(node) {
 <span class="cstat-no" title="statement not covered" >  return keyword;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 function hasLeadingOwnLineComment(text, node) {
-  if (isJsxNode(node)) {
+  if (isJsxElement(node)) {
     return hasNodeIgnoreComment(node);
   }
   return hasComment(node, CommentCheckFlags.Leading, (comment) =&gt; hasNewline(text, locEnd(comment)));
@@ -52566,7 +52566,7 @@ function printJsxElementInternal(path, options9, print4) {
 <span class="cstat-no" title="statement not covered" >    }</span>
     return child;
   });
-  const containsTag = node.children.some(isJsxNode);
+  const containsTag = node.children.some(isJsxElement);
   const containsMultipleExpressions = node.children.filter((child) =&gt; child.type === "JSXExpressionContainer").length &gt; 1;
   const containsMultipleAttributes = node.type === "JSXElement" &amp;&amp; node.openingElement.attributes.length &gt; 1;
   let forcedBreak = willBreak(openingLines) || containsTag || containsMultipleAttributes || containsMultipleExpressions;
@@ -52789,7 +52789,7 @@ function printJsxExpressionContainer(path, options9, print4) {
   const {
     node
   } = path;
-  const shouldInline = (node2, parent) =&gt; node2.type === "JSXEmptyExpression" || !hasComment(node2) &amp;&amp; (isArrayOrTupleExpression(node2) || isObjectOrRecordExpression(node2) || node2.type === "ArrowFunctionExpression" || node2.type === "AwaitExpression" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (shouldInline(node2.argument, node2) || node2.argument.type === "JSXElement") </span>|| isCallExpression(node2) || node2.type === "FunctionExpression" || node2.type === "TemplateLiteral" || node2.type === "TaggedTemplateExpression" || node2.type === "DoExpression" || isJsxNode(parent) &amp;&amp; (node2.type === "ConditionalExpression" || isBinaryish(node2)));
+  const shouldInline = (node2, parent) =&gt; node2.type === "JSXEmptyExpression" || !hasComment(node2) &amp;&amp; (isArrayOrTupleExpression(node2) || isObjectOrRecordExpression(node2) || node2.type === "ArrowFunctionExpression" || node2.type === "AwaitExpression" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (shouldInline(node2.argument, node2) || node2.argument.type === "JSXElement") </span>|| isCallExpression(node2) || node2.type === "FunctionExpression" || node2.type === "TemplateLiteral" || node2.type === "TaggedTemplateExpression" || node2.type === "DoExpression" || isJsxElement(parent) &amp;&amp; (node2.type === "ConditionalExpression" || isBinaryish(node2)));
   if (shouldInline(node.expression, path.parent)) {
     return group(["{", print4("expression"), lineSuffixBoundary, "}"]);
   }
@@ -52979,7 +52979,7 @@ function hasJsxIgnoreComment(path) {
     node,
     parent
   } = path;
-  if (!isJsxNode(node) || !isJsxNode(parent)) {
+  if (!isJsxElement(node) || !isJsxElement(parent)) {
     return false;
   }
   const {
@@ -53587,7 +53587,7 @@ function willPrintOwnComments({
   node,
   parent
 }) {
-  return (isJsxNode(node) || parent &amp;&amp; (parent.type === "JSXSpreadAttribute" || parent.type === "JSXSpreadChild" || parent.type === "UnionTypeAnnotation" || parent.type === "TSUnionType" || (parent.type === "ClassDeclaration" || parent.type === "ClassExpression") &amp;&amp; parent.superClass === node)) &amp;&amp; (!hasNodeIgnoreComment(node) <span class="branch-0 cbranch-no" title="branch not covered" >|| parent.type === "UnionTypeAnnotation" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| parent.type === "TSUnionType")</span>;
+  return (isJsxElement(node) || parent &amp;&amp; (parent.type === "JSXSpreadAttribute" || parent.type === "JSXSpreadChild" || parent.type === "UnionTypeAnnotation" || parent.type === "TSUnionType" || (parent.type === "ClassDeclaration" || parent.type === "ClassExpression") &amp;&amp; parent.superClass === node)) &amp;&amp; (!hasNodeIgnoreComment(node) <span class="branch-0 cbranch-no" title="branch not covered" >|| parent.type === "UnionTypeAnnotation" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| parent.type === "TSUnionType")</span>;
 }
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isGap(text, {</span></span>
 <span class="cstat-no" title="statement not covered" >  parser</span>
@@ -53677,7 +53677,7 @@ function printBinaryishExpression(path, options9, print4) {
   if (parts.length === 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return "";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  const hasJsx = isJsxNode(node.right);
+  const hasJsx = isJsxElement(node.right);
   const firstGroupIndex = parts.findIndex((part) =&gt; typeof part !== "string" &amp;&amp; !Array.isArray(part) &amp;&amp; part.type === DOC_TYPE_GROUP);
   const headParts = parts.slice(0, firstGroupIndex === -1 <span class="branch-0 cbranch-no" title="branch not covered" >? 1 </span>: firstGroupIndex + 1);
   const rest = parts.slice(headParts.length, hasJsx <span class="branch-0 cbranch-no" title="branch not covered" >? -1 </span>: void 0);
@@ -53770,7 +53770,7 @@ function shouldInlineLogicalExpression(node) {
   if (isArrayOrTupleExpression(node.right) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.right.elements.length &gt; 0)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if (isJsxNode(node.right)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (isJsxElement(node.right)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   return false;
@@ -54129,7 +54129,7 @@ function couldExpandArg(arg, arrowChainRecursion = false) {
 <span class="cstat-no" title="statement not covered" >  //   res.send("Hello World!");</span>
 <span class="cstat-no" title="statement not covered" >  // });</span>
 <span class="cstat-no" title="statement not covered" >  (!arg.returnType || !arg.returnType.typeAnnotation || arg.returnType.typeAnnotation.type !== "TSTypeReference" || // https://github.com/prettier/prettier/issues/7542</span>
-  isNonEmptyBlockStatement(arg.body)) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (arg.body.type === "BlockStatement" || arg.body.type === "ArrowFunctionExpression" &amp;&amp; couldExpandArg(arg.body, true) || isObjectOrRecordExpression(arg.body) || isArrayOrTupleExpression(arg.body) || !arrowChainRecursion &amp;&amp; (isCallExpression(arg.body) || arg.body.type === "ConditionalExpression") || isJsxNode(arg.body)) </span>|| arg.type === "DoExpression" || arg.type === "ModuleExpression";
+  isNonEmptyBlockStatement(arg.body)) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (arg.body.type === "BlockStatement" || arg.body.type === "ArrowFunctionExpression" &amp;&amp; couldExpandArg(arg.body, true) || isObjectOrRecordExpression(arg.body) || isArrayOrTupleExpression(arg.body) || !arrowChainRecursion &amp;&amp; (isCallExpression(arg.body) || arg.body.type === "ConditionalExpression") || isJsxElement(arg.body)) </span>|| arg.type === "DoExpression" || arg.type === "ModuleExpression";
 }
 function shouldExpandLastArg(args, argDocs, options9) {
   var _a, _b;
@@ -55517,7 +55517,7 @@ function printArrowFunction(path, options9, print4, args) {
 <span class="cstat-no" title="statement not covered" >  }</span>
   const parts = signatures;
   parts.push(" =&gt;");
-  if (!hasLeadingOwnLineComment(options9.originalText, node.body) &amp;&amp; (isArrayOrTupleExpression(node.body) || isObjectOrRecordExpression(node.body) || node.body.type === "BlockStatement" || isJsxNode(node.body) <span class="branch-0 cbranch-no" title="branch not covered" >|| ((_a = body[0].label) == null ? void 0 : _a.hug) !== false &amp;&amp; (((_b = body[0].label) == null ? void 0 : _b.embed) || isTemplateOnItsOwnLine(node.body, options9.originalText)) <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| node.body.type === "ArrowFunctionExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| node.body.type === "DoExpression")</span>) {
+  if (!hasLeadingOwnLineComment(options9.originalText, node.body) &amp;&amp; (isArrayOrTupleExpression(node.body) || isObjectOrRecordExpression(node.body) || node.body.type === "BlockStatement" || isJsxElement(node.body) <span class="branch-0 cbranch-no" title="branch not covered" >|| ((_a = body[0].label) == null ? void 0 : _a.hug) !== false &amp;&amp; (((_b = body[0].label) == null ? void 0 : _b.embed) || isTemplateOnItsOwnLine(node.body, options9.originalText)) <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| node.body.type === "ArrowFunctionExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| node.body.type === "DoExpression")</span>) {
     return group([...parts, " ", body]);
   }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  if (node.body.type === "SequenceExpression") {</span></span>
@@ -56605,7 +56605,7 @@ function conditionalExpressionChainContainsJsx(node) {
     const conditionalExpression = conditionalExpressions[index];
     for (const property of ["test", "consequent", "alternate"]) {
       const node2 = conditionalExpression[property];
-      if (isJsxNode(node2)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      if (isJsxElement(node2)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (node2.type === "ConditionalExpression") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -56684,7 +56684,7 @@ function printTernary(path, options9, print4) {
   ));
   const firstNonConditionalParent = currentParent <span class="branch-0 cbranch-no" title="branch not covered" >|| parent;</span>
   const lastConditionalParent = previousParent;
-  if (isConditionalExpression &amp;&amp; (isJsxNode(node[testNodePropertyNames[0]]) || isJsxNode(consequentNode) || isJsxNode(alternateNode) || conditionalExpressionChainContainsJsx(lastConditionalParent))) {
+  if (isConditionalExpression &amp;&amp; (isJsxElement(node[testNodePropertyNames[0]]) || isJsxElement(consequentNode) || isJsxElement(alternateNode) || conditionalExpressionChainContainsJsx(lastConditionalParent))) {
     jsxMode = true;
     forceNoIndent = true;
     const wrap = (doc) =&gt; [
@@ -56819,7 +56819,7 @@ function getLastStatement(statements) {
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >    default:</span>
-<span class="cstat-no" title="statement not covered" >      if (isJsxNode(node)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isJsxElement(node)) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -65269,7 +65269,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-07T01:44:18.908Z
+                at 2023-02-08T01:47:21.697Z
             </div>
         <script src="../prettify.js"></script>
         <script>
