@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.44% </span>
+                <span class="strong">87.34% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6932/7927</span>
+                <span class='fraction'>6932/7936</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.23% </span>
+                <span class="strong">75.16% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1577/2096</span>
+                <span class='fraction'>1577/2098</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.44% </span>
+                <span class="strong">87.34% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6932/7927</span>
+                <span class='fraction'>6932/7936</span>
             </div>
         
             
@@ -7990,7 +7990,16 @@
 <a name='L7925'></a><a href='#L7925'>7925</a>
 <a name='L7926'></a><a href='#L7926'>7926</a>
 <a name='L7927'></a><a href='#L7927'>7927</a>
-<a name='L7928'></a><a href='#L7928'>7928</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7928'></a><a href='#L7928'>7928</a>
+<a name='L7929'></a><a href='#L7929'>7929</a>
+<a name='L7930'></a><a href='#L7930'>7930</a>
+<a name='L7931'></a><a href='#L7931'>7931</a>
+<a name='L7932'></a><a href='#L7932'>7932</a>
+<a name='L7933'></a><a href='#L7933'>7933</a>
+<a name='L7934'></a><a href='#L7934'>7934</a>
+<a name='L7935'></a><a href='#L7935'>7935</a>
+<a name='L7936'></a><a href='#L7936'>7936</a>
+<a name='L7937'></a><a href='#L7937'>7937</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15600,23 +15609,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">135821x</span>
-<span class="cline-any cline-yes">135821x</span>
-<span class="cline-any cline-yes">60020x</span>
-<span class="cline-any cline-yes">60020x</span>
-<span class="cline-any cline-yes">135821x</span>
+<span class="cline-any cline-yes">134755x</span>
+<span class="cline-any cline-yes">134755x</span>
+<span class="cline-any cline-yes">58954x</span>
+<span class="cline-any cline-yes">58954x</span>
+<span class="cline-any cline-yes">134755x</span>
 <span class="cline-any cline-yes">15042x</span>
 <span class="cline-any cline-yes">19916x</span>
 <span class="cline-any cline-yes">19916x</span>
 <span class="cline-any cline-yes">15042x</span>
 <span class="cline-any cline-yes">15042x</span>
 <span class="cline-any cline-yes">60759x</span>
-<span class="cline-any cline-yes">135821x</span>
-<span class="cline-any cline-yes">114839x</span>
-<span class="cline-any cline-yes">114839x</span>
-<span class="cline-any cline-yes">135821x</span>
-<span class="cline-any cline-yes">135821x</span>
+<span class="cline-any cline-yes">134755x</span>
+<span class="cline-any cline-yes">113773x</span>
+<span class="cline-any cline-yes">113773x</span>
+<span class="cline-any cline-yes">134755x</span>
+<span class="cline-any cline-yes">134755x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15633,6 +15641,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1064x</span>
+<span class="cline-any cline-yes">1064x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1064x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22434,8 +22452,8 @@ var is_block_comment_default = isBlockComment;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isTypeCastComment(comment) {</span></span>
 <span class="cstat-no" title="statement not covered" >  return is_block_comment_default(comment) &amp;&amp; comment.value[0] === "*" &amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however</span>
 <span class="cstat-no" title="statement not covered" >  // Closure Compiler accepts types in parens and even without any delimiters at all.</span>
-<span class="cstat-no" title="statement not covered" >  // That's why we just search for "@type".</span>
-<span class="cstat-no" title="statement not covered" >  /@type\b/.test(comment.value);</span>
+<span class="cstat-no" title="statement not covered" >  // That's why we just search for "@type" and "@satisfies".</span>
+<span class="cstat-no" title="statement not covered" >  /@(?:type|satisfies)\b/.test(comment.value);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 var is_type_cast_comment_default = isTypeCastComment;
 &nbsp;
@@ -22602,8 +22620,7 @@ var visitor_keys_evaluate_default = {
   ],
   "Program": [
     "directives",
-    "body",
-    "interpreter"
+    "body"
   ],
   "ObjectExpression": [
     "properties"
@@ -23560,6 +23577,16 @@ var throw_ts_syntax_error_default = throwSyntaxError;
 &nbsp;
 // src/language-js/parse/postprocess/index.js
 function postprocess(ast, options) {
+  if (ast.type === "File" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; ast.program.interpreter)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      program: {</span>
+<span class="cstat-no" title="statement not covered" >        interpreter</span>
+<span class="cstat-no" title="statement not covered" >      },</span>
+<span class="cstat-no" title="statement not covered" >      comments</span>
+<span class="cstat-no" title="statement not covered" >    } = ast;</span>
+<span class="cstat-no" title="statement not covered" >    delete ast.program.interpreter;</span>
+<span class="cstat-no" title="statement not covered" >    comments.unshift(interpreter);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   if (options.parser !== "typescript" &amp;&amp; options.parser !== "flow" &amp;&amp; options.parser !== "acorn" &amp;&amp; options.parser !== "espree" &amp;&amp; options.parser !== "meriyah") {
     const startOffsetsOfTypeCastedNodes = /* @__PURE__ */ new Set();
     ast = visit_node_default(ast, (node) =&gt; {
@@ -23851,7 +23878,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-08T01:47:21.697Z
+                at 2023-02-09T01:46:15.636Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.26% </span>
+                <span class="strong">52.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8609/16473</span>
+                <span class='fraction'>8609/16482</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.31% </span>
+                <span class="strong">56.3% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1302/2312</span>
+                <span class='fraction'>1303/2314</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.26% </span>
+                <span class="strong">52.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8609/16473</span>
+                <span class='fraction'>8609/16482</span>
             </div>
         
             
@@ -16535,7 +16535,16 @@
 <a name='L16470'></a><a href='#L16470'>16470</a>
 <a name='L16471'></a><a href='#L16471'>16471</a>
 <a name='L16472'></a><a href='#L16472'>16472</a>
-<a name='L16473'></a><a href='#L16473'>16473</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16473'></a><a href='#L16473'>16473</a>
+<a name='L16474'></a><a href='#L16474'>16474</a>
+<a name='L16475'></a><a href='#L16475'>16475</a>
+<a name='L16476'></a><a href='#L16476'>16476</a>
+<a name='L16477'></a><a href='#L16477'>16477</a>
+<a name='L16478'></a><a href='#L16478'>16478</a>
+<a name='L16479'></a><a href='#L16479'>16479</a>
+<a name='L16480'></a><a href='#L16480'>16480</a>
+<a name='L16481'></a><a href='#L16481'>16481</a>
+<a name='L16482'></a><a href='#L16482'>16482</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32574,22 +32583,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2519x</span>
-<span class="cline-any cline-yes">948x</span>
-<span class="cline-any cline-yes">948x</span>
-<span class="cline-any cline-yes">2519x</span>
+<span class="cline-any cline-yes">2489x</span>
+<span class="cline-any cline-yes">918x</span>
+<span class="cline-any cline-yes">918x</span>
+<span class="cline-any cline-yes">2489x</span>
 <span class="cline-any cline-yes">345x</span>
 <span class="cline-any cline-yes">411x</span>
 <span class="cline-any cline-yes">411x</span>
 <span class="cline-any cline-yes">345x</span>
 <span class="cline-any cline-yes">345x</span>
 <span class="cline-any cline-yes">1226x</span>
-<span class="cline-any cline-yes">2519x</span>
-<span class="cline-any cline-yes">2075x</span>
-<span class="cline-any cline-yes">2075x</span>
-<span class="cline-any cline-yes">2519x</span>
-<span class="cline-any cline-yes">2519x</span>
+<span class="cline-any cline-yes">2489x</span>
+<span class="cline-any cline-yes">2045x</span>
+<span class="cline-any cline-yes">2045x</span>
+<span class="cline-any cline-yes">2489x</span>
+<span class="cline-any cline-yes">2489x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32606,6 +32614,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -47952,8 +47970,8 @@
   function isTypeCastComment(comment) {
     return is_block_comment_default(comment) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; comment.value[0] === "*" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however</span>
 <span class="cstat-no" title="statement not covered" >    // Closure Compiler accepts types in parens and even without any delimiters at all.</span>
-<span class="cstat-no" title="statement not covered" >    // That's why we just search for "@type".</span>
-    /@type\b/.test(comment.value);
+<span class="cstat-no" title="statement not covered" >    // That's why we just search for "@type" and "@satisfies".</span>
+    /@(?:type|satisfies)\b/.test(comment.value);
   }
   var is_type_cast_comment_default = isTypeCastComment;
 &nbsp;
@@ -48120,8 +48138,7 @@
     ],
     "Program": [
       "directives",
-      "body",
-      "interpreter"
+      "body"
     ],
     "ObjectExpression": [
       "properties"
@@ -49078,6 +49095,16 @@
 &nbsp;
   // src/language-js/parse/postprocess/index.js
   function postprocess(ast, options) {
+    if (ast.type === "File" &amp;&amp; ast.program.interpreter) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      const {</span>
+<span class="cstat-no" title="statement not covered" >        program: {</span>
+<span class="cstat-no" title="statement not covered" >          interpreter</span>
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >        comments</span>
+<span class="cstat-no" title="statement not covered" >      } = ast;</span>
+<span class="cstat-no" title="statement not covered" >      delete ast.program.interpreter;</span>
+<span class="cstat-no" title="statement not covered" >      comments.unshift(interpreter);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     if (options.parser !== "typescript" &amp;&amp; options.parser !== "flow" &amp;&amp; options.parser !== "acorn" &amp;&amp; options.parser !== "espree" &amp;&amp; options.parser !== "meriyah") {
       const startOffsetsOfTypeCastedNodes = /* @__PURE__ */ new Set();
       ast = visit_node_default(ast, (node) =&gt; {
@@ -49486,7 +49513,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-08T01:47:21.697Z
+                at 2023-02-09T01:46:15.636Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
