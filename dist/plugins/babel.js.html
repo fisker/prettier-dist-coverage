@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.08% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8118/16210</span>
+                <span class='fraction'>8122/16216</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.68% </span>
+                <span class="strong">56.59% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1230/2170</span>
+                <span class='fraction'>1231/2175</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.08% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8118/16210</span>
+                <span class='fraction'>8122/16216</span>
             </div>
         
             
@@ -16272,7 +16272,13 @@
 <a name='L16207'></a><a href='#L16207'>16207</a>
 <a name='L16208'></a><a href='#L16208'>16208</a>
 <a name='L16209'></a><a href='#L16209'>16209</a>
-<a name='L16210'></a><a href='#L16210'>16210</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16210'></a><a href='#L16210'>16210</a>
+<a name='L16211'></a><a href='#L16211'>16211</a>
+<a name='L16212'></a><a href='#L16212'>16212</a>
+<a name='L16213'></a><a href='#L16213'>16213</a>
+<a name='L16214'></a><a href='#L16214'>16214</a>
+<a name='L16215'></a><a href='#L16215'>16215</a>
+<a name='L16216'></a><a href='#L16216'>16216</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -30594,8 +30600,6 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
@@ -30719,8 +30723,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">102x</span>
-<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">104x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32052,10 +32056,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2489x</span>
 <span class="cline-any cline-yes">918x</span>
 <span class="cline-any cline-yes">918x</span>
@@ -32167,6 +32167,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">408x</span>
+<span class="cline-any cline-yes">408x</span>
+<span class="cline-any cline-yes">408x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">408x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32374,6 +32384,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -46796,17 +46808,15 @@
 &nbsp;
   // src/utils/try-combinations.js
   function tryCombinations(combinations) {
-    let firstError;
-    for (const [index, fn] of combinations.entries()) {
+    const errors = [];
+    for (const fn of combinations) {
       try {
-        return { result: fn() };
+        return fn();
       } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >        if (index === 0) {</span>
-<span class="cstat-no" title="statement not covered" >          firstError = error;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        errors.push(error);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return { error: firstError };</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    throw Object.assign(new Error("All combinations failed"), { errors });</span></span>
   }
   var try_combinations_default = tryCombinations;
 &nbsp;
@@ -47601,8 +47611,6 @@
       "id",
       "typeParameters",
       "extends",
-      "mixins",
-      "implements",
       "body"
     ],
     "DeclareModule": [
@@ -47661,8 +47669,6 @@
       "id",
       "typeParameters",
       "extends",
-      "mixins",
-      "implements",
       "body"
     ],
     "InterfaceTypeAnnotation": [
@@ -48376,6 +48382,16 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           break;
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "DeclareInterface":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "InterfaceDeclaration":</span>
+        case "TSInterfaceDeclaration":
+          if (is_non_empty_array_default(node.mixins)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            throw_ts_syntax_error_default(node.mixins[0], "Interface declaration cannot have 'mixins' clause.");</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+          if (is_non_empty_array_default(node.implements)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            throw_ts_syntax_error_default(node.implements[0], "Interface declaration cannot have 'implements' clause.");</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+          break;
         case "TSPropertySignature":
           if (node.initializer) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            throw_ts_syntax_error_default(node.initializer, "An interface property cannot have an initializer.");</span>
@@ -48584,12 +48600,14 @@
 <span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       const parseFunction = isExpression ? import_parser2.parseExpression : import_parser2.parse;
-      let { result: ast, error } = try_combinations_default(
-        combinations.map(
-          (options) =&gt; () =&gt; parseWithOptions(parseFunction, text, options)
-        )
-      );
-      if (!ast) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      let ast;
+      try {
+        ast = try_combinations_default(
+          combinations.map(
+            (options) =&gt; () =&gt; parseWithOptions(parseFunction, text, options)
+          )
+        );
+      } <span class="branch-0 cbranch-no" title="branch not covered" >catch ({ errors: [error] }) {</span>
 <span class="cstat-no" title="statement not covered" >        throw create_babel_parse_error_default(error);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       opts.originalText = text;
@@ -48697,7 +48715,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-21T01:49:53.031Z
+                at 2023-02-22T01:45:54.234Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

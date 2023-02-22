@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.81% </span>
+                <span class="strong">84.73% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6484/7645</span>
+                <span class='fraction'>6485/7653</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.91% </span>
+                <span class="strong">82.8% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1937/2336</span>
+                <span class='fraction'>1936/2338</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.81% </span>
+                <span class="strong">84.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6484/7645</span>
+                <span class='fraction'>6485/7653</span>
             </div>
         
             
@@ -7708,7 +7708,15 @@
 <a name='L7643'></a><a href='#L7643'>7643</a>
 <a name='L7644'></a><a href='#L7644'>7644</a>
 <a name='L7645'></a><a href='#L7645'>7645</a>
-<a name='L7646'></a><a href='#L7646'>7646</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7646'></a><a href='#L7646'>7646</a>
+<a name='L7647'></a><a href='#L7647'>7647</a>
+<a name='L7648'></a><a href='#L7648'>7648</a>
+<a name='L7649'></a><a href='#L7649'>7649</a>
+<a name='L7650'></a><a href='#L7650'>7650</a>
+<a name='L7651'></a><a href='#L7651'>7651</a>
+<a name='L7652'></a><a href='#L7652'>7652</a>
+<a name='L7653'></a><a href='#L7653'>7653</a>
+<a name='L7654'></a><a href='#L7654'>7654</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -13821,8 +13829,6 @@
 <span class="cline-any cline-yes">3018x</span>
 <span class="cline-any cline-yes">3018x</span>
 <span class="cline-any cline-yes">912x</span>
-<span class="cline-any cline-yes">494x</span>
-<span class="cline-any cline-yes">494x</span>
 <span class="cline-any cline-yes">912x</span>
 <span class="cline-any cline-yes">3018x</span>
 <span class="cline-any cline-yes">430x</span>
@@ -15021,10 +15027,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">273222x</span>
 <span class="cline-any cline-yes">273222x</span>
 <span class="cline-any cline-yes">120012x</span>
@@ -15137,6 +15139,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1652x</span>
+<span class="cline-any cline-yes">124092x</span>
+<span class="cline-any cline-yes">124092x</span>
+<span class="cline-any cline-yes">124092x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">124092x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15296,6 +15308,8 @@
 <span class="cline-any cline-yes">1265x</span>
 <span class="cline-any cline-yes">1265x</span>
 <span class="cline-any cline-yes">1265x</span>
+<span class="cline-any cline-yes">1265x</span>
+<span class="cline-any cline-yes">1265x</span>
 <span class="cline-any cline-yes">212x</span>
 <span class="cline-any cline-yes">212x</span>
 <span class="cline-any cline-yes">1053x</span>
@@ -15327,6 +15341,8 @@
 <span class="cline-any cline-yes">218x</span>
 <span class="cline-any cline-yes">218x</span>
 <span class="cline-any cline-yes">218x</span>
+<span class="cline-any cline-yes">1271x</span>
+<span class="cline-any cline-yes">1271x</span>
 <span class="cline-any cline-yes">1271x</span>
 <span class="cline-any cline-yes">1271x</span>
 <span class="cline-any cline-yes">1271x</span>
@@ -21460,17 +21476,15 @@ var parser_create_error_default = createError;
 &nbsp;
 // src/utils/try-combinations.js
 function tryCombinations(combinations) {
-  let firstError;
-  for (const [index, fn] of combinations.entries()) {
+  const errors = [];
+  for (const fn of combinations) {
     try {
-      return { result: fn() };
+      return fn();
     } catch (error) {
-      if (index === 0) {
-        firstError = error;
-      }
+      errors.push(error);
     }
   }
-  return { error: firstError };
+  throw Object.assign(new Error("All combinations failed"), { errors });
 }
 var try_combinations_default = tryCombinations;
 &nbsp;
@@ -22007,8 +22021,6 @@ var visitor_keys_evaluate_default = {
     "id",
     "typeParameters",
     "extends",
-    "mixins",
-    "implements",
     "body"
   ],
   "DeclareModule": [
@@ -22067,8 +22079,6 @@ var visitor_keys_evaluate_default = {
     "id",
     "typeParameters",
     "extends",
-    "mixins",
-    "implements",
     "body"
   ],
   "InterfaceTypeAnnotation": [
@@ -22782,6 +22792,16 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         break;
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "DeclareInterface":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "InterfaceDeclaration":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "TSInterfaceDeclaration":</span>
+<span class="cstat-no" title="statement not covered" >        if (is_non_empty_array_default(node.mixins)) {</span>
+<span class="cstat-no" title="statement not covered" >          throw_ts_syntax_error_default(node.mixins[0], "Interface declaration cannot have 'mixins' clause.");</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (is_non_empty_array_default(node.implements)) {</span>
+<span class="cstat-no" title="statement not covered" >          throw_ts_syntax_error_default(node.implements[0], "Interface declaration cannot have 'implements' clause.");</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "TSPropertySignature":</span>
 <span class="cstat-no" title="statement not covered" >        if (node.initializer) {</span>
 <span class="cstat-no" title="statement not covered" >          throw_ts_syntax_error_default(node.initializer, "An interface property cannot have an initializer.");</span>
@@ -22939,8 +22959,10 @@ function parse(text, options = {}) {
   const combinations = (sourceType ? [sourceType] : ["module", "script"]).map(
     (sourceType2) =&gt; () =&gt; parseWithOptions(text, sourceType2)
   );
-  const { result: ast, error } = try_combinations_default(combinations);
-  if (!ast) {
+  let ast;
+  try {
+    ast = try_combinations_default(combinations);
+  } catch ({ errors: [error] }) {
     throw createParseError(error);
   }
   options.originalText = text;
@@ -22978,8 +23000,10 @@ function parse2(text, options = {}) {
   const combinations = (sourceType ? [sourceType] : ["module", "script"]).map(
     (sourceType2) =&gt; () =&gt; espreeParse(text, { ...parseOptions2, sourceType: sourceType2 })
   );
-  const { result: ast, error } = try_combinations_default(combinations);
-  if (!ast) {
+  let ast;
+  try {
+    ast = try_combinations_default(combinations);
+  } catch ({ errors: [error] }) {
     throw createParseError2(error);
   }
   options.originalText = text;
@@ -23005,7 +23029,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-21T01:49:49.298Z
+                at 2023-02-22T01:45:50.857Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
