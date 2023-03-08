@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.45% </span>
+                <span class="strong">87.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14170/16202</span>
+                <span class='fraction'>14176/16208</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.45% </span>
+                <span class="strong">87.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14170/16202</span>
+                <span class='fraction'>14176/16208</span>
             </div>
         
             
@@ -16265,7 +16265,13 @@
 <a name='L16200'></a><a href='#L16200'>16200</a>
 <a name='L16201'></a><a href='#L16201'>16201</a>
 <a name='L16202'></a><a href='#L16202'>16202</a>
-<a name='L16203'></a><a href='#L16203'>16203</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">223x</span>
+<a name='L16203'></a><a href='#L16203'>16203</a>
+<a name='L16204'></a><a href='#L16204'>16204</a>
+<a name='L16205'></a><a href='#L16205'>16205</a>
+<a name='L16206'></a><a href='#L16206'>16206</a>
+<a name='L16207'></a><a href='#L16207'>16207</a>
+<a name='L16208'></a><a href='#L16208'>16208</a>
+<a name='L16209'></a><a href='#L16209'>16209</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
@@ -30789,6 +30795,7 @@
 <span class="cline-any cline-yes">630x</span>
 <span class="cline-any cline-yes">630x</span>
 <span class="cline-any cline-yes">630x</span>
+<span class="cline-any cline-yes">630x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
@@ -30813,7 +30820,6 @@
 <span class="cline-any cline-yes">426x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">373x</span>
 <span class="cline-any cline-yes">373x</span>
 <span class="cline-any cline-yes">373x</span>
 <span class="cline-any cline-yes">446x</span>
@@ -32059,6 +32065,10 @@
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">7912x</span>
 <span class="cline-any cline-yes">7912x</span>
+<span class="cline-any cline-yes">7912x</span>
+<span class="cline-any cline-yes">7912x</span>
+<span class="cline-any cline-yes">7912x</span>
+<span class="cline-any cline-yes">7912x</span>
 <span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">62x</span>
@@ -32151,6 +32161,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">415x</span>
 <span class="cline-any cline-yes">442527x</span>
+<span class="cline-any cline-yes">84x</span>
+<span class="cline-any cline-yes">84x</span>
+<span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">442527x</span>
@@ -32367,7 +32380,6 @@
 <span class="cline-any cline-yes">8356x</span>
 <span class="cline-any cline-yes">412x</span>
 <span class="cline-any cline-yes">412x</span>
-<span class="cline-any cline-yes">7912x</span>
 <span class="cline-any cline-yes">8353x</span>
 <span class="cline-any cline-yes">345x</span>
 <span class="cline-any cline-yes">345x</span>
@@ -46978,17 +46990,18 @@ function createBabelParseError(error) {
 var create_babel_parse_error_default = createBabelParseError;
 &nbsp;
 // src/language-js/parse/utils/wrap-babel-expression.js
-function wrapBabelExpression(node, options, type = "JsExpressionRoot") {
-  const { tokens, comments } = node;
-  delete node.tokens;
-  delete node.comments;
+function wrapBabelExpression(expression, options) {
+  const { type = "JsExpressionRoot", rootMarker, text } = options;
+  const { tokens, comments } = expression;
+  delete expression.tokens;
+  delete expression.comments;
   return {
     tokens,
     comments,
     type,
-    node,
-    range: [0, options.originalText.length],
-    rootMarker: options.rootMarker
+    node: expression,
+    range: [0, text.length],
+    rootMarker
   };
 }
 var wrap_babel_expression_default = wrapBabelExpression;
@@ -46996,7 +47009,7 @@ var wrap_babel_expression_default = wrapBabelExpression;
 // src/language-json/parser-json.js
 function createJsonParse(options = {}) {
   const { allowComments = true } = options;
-  return function parse(text, options2 = {}) {
+  return function parse(text) {
     let ast;
     try {
       ast = (0, import_parser.parseExpression)(text, {
@@ -47016,8 +47029,7 @@ function createJsonParse(options = {}) {
       throw createJsonError(ast.comments[0], "Comment");
     }
     assertJsonNode(ast);
-    options2.originalText = text;
-    return wrap_babel_expression_default(ast, options2, "JsonRoot");
+    return wrap_babel_expression_default(ast, { type: "JsonRoot", text });
   };
 }
 function createJsonError(node, description) {
@@ -48260,6 +48272,10 @@ var throw_ts_syntax_error_default = throwSyntaxError;
 &nbsp;
 // src/language-js/parse/postprocess/index.js
 function postprocess(ast, options) {
+  const {
+    parser: parser2,
+    text
+  } = options;
   if (ast.type === "File" &amp;&amp; ast.program.interpreter) {
     const {
       program: {
@@ -48270,7 +48286,7 @@ function postprocess(ast, options) {
     delete ast.program.interpreter;
     comments.unshift(interpreter);
   }
-  if (options.parser !== "typescript" &amp;&amp; options.parser !== "flow" &amp;&amp; options.parser !== "acorn" &amp;&amp; options.parser !== "espree" &amp;&amp; options.parser !== "meriyah") {
+  if (parser2 === "babel") {
     const startOffsetsOfTypeCastedNodes = /* @__PURE__ */ new Set();
     ast = visit_node_default(ast, (node) =&gt; {
       var _a;
@@ -48330,7 +48346,7 @@ function postprocess(ast, options) {
         }
         break;
       case "ObjectExpression":
-        if (options.parser === "typescript") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+        if (parser2 === "typescript") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          const invalidProperty = node.properties.find((property) =&gt; property.type === "Property" &amp;&amp; property.value.type === "TSEmptyBodyFunctionExpression");</span>
 <span class="cstat-no" title="statement not covered" >          if (invalidProperty) {</span>
 <span class="cstat-no" title="statement not covered" >            throw_ts_syntax_error_default(invalidProperty.value, "Unexpected token.");</span>
@@ -48353,14 +48369,17 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >        }</span>
         break;
       case "TopicReference":
-        options.__isUsingHackPipeline = true;
+        ast.extra = {
+          ...ast.extra,
+          __isUsingHackPipeline: true
+        };
         break;
       case "ExportAllDeclaration": {
         const {
           exported
         } = node;
-        if (options.parser === "meriyah" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (exported == null ? void 0 : exported.type) === "Identifier")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          const raw = options.originalText.slice(locStart(exported), locEnd(exported));</span>
+        if (parser2 === "meriyah" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (exported == null ? void 0 : exported.type) === "Identifier")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          const raw = text.slice(locStart(exported), locEnd(exported));</span>
 <span class="cstat-no" title="statement not covered" >          if (raw.startsWith('"') || raw.startsWith("'")) {</span>
 <span class="cstat-no" title="statement not covered" >            node.exported = {</span>
 <span class="cstat-no" title="statement not covered" >              ...node.exported,</span>
@@ -48373,7 +48392,7 @@ function postprocess(ast, options) {
         break;
       }
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "PropertyDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        if (options.parser === "meriyah" &amp;&amp; node.static &amp;&amp; !node.computed &amp;&amp; !node.key) {</span>
+<span class="cstat-no" title="statement not covered" >        if (parser2 === "meriyah" &amp;&amp; node.static &amp;&amp; !node.computed &amp;&amp; !node.key) {</span>
 <span class="cstat-no" title="statement not covered" >          const name = "static";</span>
 <span class="cstat-no" title="statement not covered" >          const start = locStart(node);</span>
 <span class="cstat-no" title="statement not covered" >          Object.assign(node, {</span>
@@ -48406,11 +48425,11 @@ function postprocess(ast, options) {
     }
   }
   if (ast.type === "Program") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    ast.range = [0, options.originalText.length];</span>
+<span class="cstat-no" title="statement not covered" >    ast.range = [0, text.length];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   return ast;
   function overrideLocEnd(toBeOverriddenNode, toOverrideNode) {
-    if (options.originalText[locEnd(toOverrideNode)] === ";") {
+    if (text[locEnd(toOverrideNode)] === ";") {
       return;
     }
     toBeOverriddenNode.range = [locStart(toBeOverriddenNode), locEnd(toOverrideNode)];
@@ -48527,22 +48546,22 @@ function parseWithOptions(parse, text, options) {
   return ast;
 }
 function createParse({ isExpression = false, optionsCombinations }) {
-  return (text, opts = {}) =&gt; {
-    if ((opts.parser === "babel" || opts.parser === "__babel_estree") &amp;&amp; isFlowFile(text, opts)) {
-      opts.parser = "babel-flow";
-      return babelFlow.parse(text, opts);
+  return (text, options = {}) =&gt; {
+    if ((options.parser === "babel" || options.parser === "__babel_estree") &amp;&amp; isFlowFile(text, options)) {
+      options.parser = "babel-flow";
+      return babelFlow.parse(text, options);
     }
     let combinations = optionsCombinations;
-    const sourceType = opts.__babelSourceType ?? get_source_type_default(opts);
+    const sourceType = options.__babelSourceType ?? get_source_type_default(options);
     if (sourceType === "script") {
-      combinations = combinations.map((options) =&gt; ({
-        ...options,
+      combinations = combinations.map((options2) =&gt; ({
+        ...options2,
         sourceType: "script"
       }));
     }
     if (/#[[{]/.test(text)) {
       combinations = combinations.map(
-        (options) =&gt; appendPlugins([recordAndTuplePlugin], options)
+        (options2) =&gt; appendPlugins([recordAndTuplePlugin], options2)
       );
     }
     const shouldEnableV8intrinsicPlugin = /%[A-Z]/.test(text);
@@ -48550,12 +48569,12 @@ function createParse({ isExpression = false, optionsCombinations }) {
       const conflictsPlugins = shouldEnableV8intrinsicPlugin ? [...pipelineOperatorPlugins, v8intrinsicPlugin] : pipelineOperatorPlugins;
       combinations = conflictsPlugins.flatMap(
         (pipelineOperatorPlugin) =&gt; combinations.map(
-          (options) =&gt; appendPlugins([pipelineOperatorPlugin], options)
+          (options2) =&gt; appendPlugins([pipelineOperatorPlugin], options2)
         )
       );
     } else if (shouldEnableV8intrinsicPlugin) {
       combinations = combinations.map(
-        (options) =&gt; appendPlugins([v8intrinsicPlugin], options)
+        (options2) =&gt; appendPlugins([v8intrinsicPlugin], options2)
       );
     }
     const parseFunction = isExpression ? import_parser2.parseExpression : import_parser2.parse;
@@ -48563,17 +48582,16 @@ function createParse({ isExpression = false, optionsCombinations }) {
     try {
       ast = try_combinations_default(
         combinations.map(
-          (options) =&gt; () =&gt; parseWithOptions(parseFunction, text, options)
+          (options2) =&gt; () =&gt; parseWithOptions(parseFunction, text, options2)
         )
       );
     } catch ({ errors: [error] }) {
       throw create_babel_parse_error_default(error);
     }
-    opts.originalText = text;
     if (isExpression) {
-      ast = wrap_babel_expression_default(ast, opts);
+      ast = wrap_babel_expression_default(ast, { text, rootMarker: options.rootMarker });
     }
-    return postprocess_default(ast, opts);
+    return postprocess_default(ast, { parser: "babel", text });
   };
 }
 var allowedMessageCodes = /* @__PURE__ */ new Set([
@@ -48676,7 +48694,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-07T01:57:53.068Z
+                at 2023-03-08T01:52:46.942Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
