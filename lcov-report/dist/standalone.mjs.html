@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.54% </span>
+                <span class="strong">63.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13886/21853</span>
+                <span class='fraction'>13891/21858</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.77% </span>
+                <span class="strong">59.76% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3084/5159</span>
+                <span class='fraction'>3085/5162</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.19% </span>
+                <span class="strong">66.22% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>803/1213</span>
+                <span class='fraction'>804/1214</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.54% </span>
+                <span class="strong">63.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13886/21853</span>
+                <span class='fraction'>13891/21858</span>
             </div>
         
             
@@ -21916,7 +21916,12 @@
 <a name='L21851'></a><a href='#L21851'>21851</a>
 <a name='L21852'></a><a href='#L21852'>21852</a>
 <a name='L21853'></a><a href='#L21853'>21853</a>
-<a name='L21854'></a><a href='#L21854'>21854</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L21854'></a><a href='#L21854'>21854</a>
+<a name='L21855'></a><a href='#L21855'>21855</a>
+<a name='L21856'></a><a href='#L21856'>21856</a>
+<a name='L21857'></a><a href='#L21857'>21857</a>
+<a name='L21858'></a><a href='#L21858'>21858</a>
+<a name='L21859'></a><a href='#L21859'>21859</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -29230,25 +29235,25 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-yes">33x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -33351,6 +33356,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -33825,6 +33834,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -55204,6 +55214,10 @@ function shouldGroupFunctionParameters(functionNode, returnTypeDoc) {
 <span class="cstat-no" title="statement not covered" >    (node) =&gt; node.type !== "VariableDeclaration" || node.kind === "const" &amp;&amp; node.declarations.length === 1</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+function shouldBreakFunctionParameters(functionNode) {
+  const parameters = getFunctionParameters(functionNode);
+  return parameters.length &gt; 1 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parameters.some((parameter) =&gt; parameter.type === "TSParameterProperty");</span>
+}
 &nbsp;
 // src/language-js/print/type-annotation.js
 function shouldHugType(node) {
@@ -55689,6 +55703,7 @@ function printMethodValue(path, options9, print4) {
   const { node } = path;
   const parametersDoc = printFunctionParameters(path, print4, options9);
   const returnTypeDoc = printReturnType(path, print4);
+  const shouldBreakParameters = shouldBreakFunctionParameters(node);
   const shouldGroupParameters = shouldGroupFunctionParameters(
     node,
     returnTypeDoc
@@ -55696,7 +55711,7 @@ function printMethodValue(path, options9, print4) {
   const parts = [
     printFunctionTypeParameters(path, options9, print4),
     group([
-      shouldGroupParameters <span class="branch-0 cbranch-no" title="branch not covered" >? group(parametersDoc) </span>: parametersDoc,
+      shouldBreakParameters <span class="branch-0 cbranch-no" title="branch not covered" >? group(parametersDoc, { shouldBreak: true }) </span>: shouldGroupParameters <span class="branch-0 cbranch-no" title="branch not covered" >? group(parametersDoc) </span>: parametersDoc,
       returnTypeDoc
     ])
   ];
@@ -65629,7 +65644,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-11T01:31:17.436Z
+                at 2023-03-12T01:50:01.812Z
             </div>
         <script src="../prettify.js"></script>
         <script>

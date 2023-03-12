@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">64.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14142/21881</span>
+                <span class='fraction'>14147/21886</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.79% </span>
+                <span class="strong">59.78% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3088/5164</span>
+                <span class='fraction'>3089/5167</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.87% </span>
+                <span class="strong">65.9% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>805/1222</span>
+                <span class='fraction'>806/1223</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">64.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14142/21881</span>
+                <span class='fraction'>14147/21886</span>
             </div>
         
             
@@ -21943,7 +21943,12 @@
 <a name='L21878'></a><a href='#L21878'>21878</a>
 <a name='L21879'></a><a href='#L21879'>21879</a>
 <a name='L21880'></a><a href='#L21880'>21880</a>
-<a name='L21881'></a><a href='#L21881'>21881</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L21881'></a><a href='#L21881'>21881</a>
+<a name='L21882'></a><a href='#L21882'>21882</a>
+<a name='L21883'></a><a href='#L21883'>21883</a>
+<a name='L21884'></a><a href='#L21884'>21884</a>
+<a name='L21885'></a><a href='#L21885'>21885</a>
+<a name='L21886'></a><a href='#L21886'>21886</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -29294,24 +29299,24 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-yes">33x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -33415,6 +33420,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -33896,6 +33905,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -55294,6 +55304,10 @@
 <span class="cstat-no" title="statement not covered" >      (node) =&gt; node.type !== "VariableDeclaration" || node.kind === "const" &amp;&amp; node.declarations.length === 1</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+  function shouldBreakFunctionParameters(functionNode) {
+    const parameters = getFunctionParameters(functionNode);
+    return parameters.length &gt; 1 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parameters.some((parameter) =&gt; parameter.type === "TSParameterProperty");</span>
+  }
 &nbsp;
   // src/language-js/print/type-annotation.js
   function shouldHugType(node) {
@@ -55779,6 +55793,7 @@
     const { node } = path;
     const parametersDoc = printFunctionParameters(path, print4, options9);
     const returnTypeDoc = printReturnType(path, print4);
+    const shouldBreakParameters = shouldBreakFunctionParameters(node);
     const shouldGroupParameters = shouldGroupFunctionParameters(
       node,
       returnTypeDoc
@@ -55786,7 +55801,7 @@
     const parts = [
       printFunctionTypeParameters(path, options9, print4),
       group([
-        shouldGroupParameters <span class="branch-0 cbranch-no" title="branch not covered" >? group(parametersDoc) </span>: parametersDoc,
+        shouldBreakParameters <span class="branch-0 cbranch-no" title="branch not covered" >? group(parametersDoc, { shouldBreak: true }) </span>: shouldGroupParameters <span class="branch-0 cbranch-no" title="branch not covered" >? group(parametersDoc) </span>: parametersDoc,
         returnTypeDoc
       ])
     ];
@@ -65710,7 +65725,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-11T01:31:21.777Z
+                at 2023-03-12T01:50:05.740Z
             </div>
         <script src="../prettify.js"></script>
         <script>
