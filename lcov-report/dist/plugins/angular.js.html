@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.34% </span>
+                <span class="strong">26.26% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>739/2805</span>
+                <span class='fraction'>736/2802</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.19% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>16/21</span>
+                <span class='fraction'>16/20</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.34% </span>
+                <span class="strong">26.26% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>739/2805</span>
+                <span class='fraction'>736/2802</span>
             </div>
         
             
@@ -2864,10 +2864,7 @@
 <a name='L2799'></a><a href='#L2799'>2799</a>
 <a name='L2800'></a><a href='#L2800'>2800</a>
 <a name='L2801'></a><a href='#L2801'>2801</a>
-<a name='L2802'></a><a href='#L2802'>2802</a>
-<a name='L2803'></a><a href='#L2803'>2803</a>
-<a name='L2804'></a><a href='#L2804'>2804</a>
-<a name='L2805'></a><a href='#L2805'>2805</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L2802'></a><a href='#L2802'>2802</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -5661,9 +5658,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -5674,7 +5668,7 @@
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">(function (factory) {
   function interopModuleDefault() {
     var module = factory();
-    return module.default <span class="branch-0 cbranch-no" title="branch not covered" >|| module;</span>
+    return module.default || module;
   }
 &nbsp;
   if (typeof exports === "object" &amp;&amp; typeof module === "object") {
@@ -5716,7 +5710,7 @@
   // src/language-js/parse/angular.js
   var angular_exports = {};
   __export(angular_exports, {
-    default: () =&gt; angular_default
+    parsers: () =&gt; parsers
   });
 &nbsp;
   // node_modules/lines-and-columns/build/index.mjs
@@ -6765,7 +6759,7 @@
      */
 <span class="fstat-no" title="function not covered" >    parseTemplateBindings(templateKey, templateValue, templateUrl, absoluteKeyOffset, absoluteValueOffset) {</span>
 <span class="cstat-no" title="statement not covered" >      const tokens = this._lexer.tokenize(templateValue);</span>
-<span class="cstat-no" title="statement not covered" >      const parser2 = new _ParseAST(</span>
+<span class="cstat-no" title="statement not covered" >      const parser = new _ParseAST(</span>
 <span class="cstat-no" title="statement not covered" >        templateValue,</span>
 <span class="cstat-no" title="statement not covered" >        templateUrl,</span>
 <span class="cstat-no" title="statement not covered" >        absoluteValueOffset,</span>
@@ -6775,7 +6769,7 @@
 <span class="cstat-no" title="statement not covered" >        0</span>
 <span class="cstat-no" title="statement not covered" >        /* relative offset */</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >      return parser2.parseTemplateBindings({</span>
+<span class="cstat-no" title="statement not covered" >      return parser.parseTemplateBindings({</span>
 <span class="cstat-no" title="statement not covered" >        source: templateKey,</span>
 <span class="cstat-no" title="statement not covered" >        span: new AbsoluteSourceSpan(absoluteKeyOffset, absoluteKeyOffset + templateKey.length)</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
@@ -8465,15 +8459,12 @@
       locEnd
     };
   }
-  var parser = {
-    parsers: {
-      __ng_action: createParser(parseAction),
-      __ng_binding: createParser(parseBinding),
-      __ng_interpolation: createParser(parseInterpolationExpression),
-      __ng_directive: createParser(parseTemplateBindings)
-    }
+  var parsers = {
+    __ng_action: createParser(parseAction),
+    __ng_binding: createParser(parseBinding),
+    __ng_interpolation: createParser(parseInterpolationExpression),
+    __ng_directive: createParser(parseTemplateBindings)
   };
-  var angular_default = parser;
   return __toCommonJS(angular_exports);
 });</pre></td></tr></table></pre>
 
@@ -8482,7 +8473,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-12T01:50:01.812Z
+                at 2023-03-14T01:27:16.752Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

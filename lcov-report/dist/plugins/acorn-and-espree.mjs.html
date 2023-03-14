@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">85.54% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6551/7658</span>
+                <span class='fraction'>6550/7657</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">85.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6551/7658</span>
+                <span class='fraction'>6550/7657</span>
             </div>
         
             
@@ -7720,8 +7720,7 @@
 <a name='L7655'></a><a href='#L7655'>7655</a>
 <a name='L7656'></a><a href='#L7656'>7656</a>
 <a name='L7657'></a><a href='#L7657'>7657</a>
-<a name='L7658'></a><a href='#L7658'>7658</a>
-<a name='L7659'></a><a href='#L7659'>7659</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7658'></a><a href='#L7658'>7658</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -13818,6 +13817,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">444x</span>
 <span class="cline-any cline-yes">444x</span>
 <span class="cline-any cline-yes">444x</span>
@@ -13882,24 +13883,24 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">92932x</span>
-<span class="cline-any cline-yes">92932x</span>
-<span class="cline-any cline-yes">92932x</span>
+<span class="cline-any cline-yes">91708x</span>
+<span class="cline-any cline-yes">91708x</span>
+<span class="cline-any cline-yes">91708x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">90808x</span>
-<span class="cline-any cline-yes">90808x</span>
-<span class="cline-any cline-yes">90808x</span>
-<span class="cline-any cline-yes">90808x</span>
-<span class="cline-any cline-yes">90808x</span>
+<span class="cline-any cline-yes">89584x</span>
+<span class="cline-any cline-yes">89584x</span>
+<span class="cline-any cline-yes">89584x</span>
+<span class="cline-any cline-yes">89584x</span>
+<span class="cline-any cline-yes">89584x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">90808x</span>
-<span class="cline-any cline-yes">90808x</span>
-<span class="cline-any cline-yes">67440x</span>
-<span class="cline-any cline-yes">67440x</span>
-<span class="cline-any cline-yes">67440x</span>
+<span class="cline-any cline-yes">89584x</span>
+<span class="cline-any cline-yes">89584x</span>
+<span class="cline-any cline-yes">66216x</span>
+<span class="cline-any cline-yes">66216x</span>
+<span class="cline-any cline-yes">66216x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -15366,9 +15367,6 @@
 <span class="cline-any cline-yes">225x</span>
 <span class="cline-any cline-yes">1062x</span>
 <span class="cline-any cline-yes">1287x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21445,7 +21443,7 @@ var require_espree = __commonJS({
         }
       };
     };
-    var parsers = {
+    var parsers2 = {
       _regular: null,
       _jsx: null,
 <span class="fstat-no" title="function not covered" >      get regular() {</span>
@@ -21468,9 +21466,11 @@ var require_espree = __commonJS({
       }
     };
     function parse3(code, options) {
-      const Parser = parsers.get(options);
+      const Parser = parsers2.get(options);
       return new Parser(options, code).parse();
     }
+    var name = "espree";
+    exports.name = name;
     exports.parse = parse3;
   }
 });
@@ -22616,6 +22616,7 @@ var visitor_keys_evaluate_default = {
     "types"
   ],
   "BigIntLiteralTypeAnnotation": [],
+  "BigIntTypeAnnotation": [],
   "NGRoot": [
     "node"
   ],
@@ -22662,7 +22663,6 @@ var visitor_keys_evaluate_default = {
   "TSJSDocNonNullableType": [
     "typeAnnotation"
   ],
-  "BigIntTypeAnnotation": [],
   "QualifiedTypeofIdentifier": [
     "id",
     "qualification"
@@ -23027,15 +23027,12 @@ function parse2(text, options = {}) {
 var espree_default = create_parser_default(parse2);
 &nbsp;
 // src/language-js/parse/acorn-and-espree.js
-var parserAcornAndEspree = {
-  parsers: {
-    acorn: acorn_default,
-    espree: espree_default
-  }
+var parsers = {
+  acorn: acorn_default,
+  espree: espree_default
 };
-var acorn_and_espree_default = parserAcornAndEspree;
 export {
-  acorn_and_espree_default as default
+  parsers
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -23044,7 +23041,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-12T01:50:01.812Z
+                at 2023-03-14T01:27:16.752Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

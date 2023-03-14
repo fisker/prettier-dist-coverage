@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14182/16214</span>
+                <span class='fraction'>14179/16211</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14182/16214</span>
+                <span class='fraction'>14179/16211</span>
             </div>
         
             
@@ -16274,10 +16274,7 @@
 <a name='L16209'></a><a href='#L16209'>16209</a>
 <a name='L16210'></a><a href='#L16210'>16210</a>
 <a name='L16211'></a><a href='#L16211'>16211</a>
-<a name='L16212'></a><a href='#L16212'>16212</a>
-<a name='L16213'></a><a href='#L16213'>16213</a>
-<a name='L16214'></a><a href='#L16214'>16214</a>
-<a name='L16215'></a><a href='#L16215'>16215</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">223x</span>
+<a name='L16212'></a><a href='#L16212'>16212</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
@@ -30705,9 +30702,9 @@
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
-<span class="cline-any cline-yes">335209x</span>
-<span class="cline-any cline-yes">335209x</span>
-<span class="cline-any cline-yes">335209x</span>
+<span class="cline-any cline-yes">332036x</span>
+<span class="cline-any cline-yes">332036x</span>
+<span class="cline-any cline-yes">332036x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
@@ -30746,18 +30743,18 @@
 <span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
-<span class="cline-any cline-yes">326462x</span>
-<span class="cline-any cline-yes">326462x</span>
-<span class="cline-any cline-yes">326462x</span>
-<span class="cline-any cline-yes">326462x</span>
-<span class="cline-any cline-yes">326462x</span>
+<span class="cline-any cline-yes">323289x</span>
+<span class="cline-any cline-yes">323289x</span>
+<span class="cline-any cline-yes">323289x</span>
+<span class="cline-any cline-yes">323289x</span>
+<span class="cline-any cline-yes">323289x</span>
 <span class="cline-any cline-yes">141x</span>
 <span class="cline-any cline-yes">141x</span>
-<span class="cline-any cline-yes">326321x</span>
-<span class="cline-any cline-yes">326462x</span>
-<span class="cline-any cline-yes">248206x</span>
-<span class="cline-any cline-yes">248206x</span>
-<span class="cline-any cline-yes">248206x</span>
+<span class="cline-any cline-yes">323148x</span>
+<span class="cline-any cline-yes">323289x</span>
+<span class="cline-any cline-yes">245033x</span>
+<span class="cline-any cline-yes">245033x</span>
+<span class="cline-any cline-yes">245033x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">2007x</span>
@@ -32488,9 +32485,6 @@
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-yes">223x</span>
-<span class="cline-any cline-yes">223x</span>
-<span class="cline-any cline-yes">223x</span>
-<span class="cline-any cline-yes">223x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -33966,12 +33960,12 @@ var require_lib = __commonJS({
       }
     };
     var ScopeHandler = class {
-      constructor(parser2, inModule) {
+      constructor(parser, inModule) {
         this.parser = void 0;
         this.scopeStack = [];
         this.inModule = void 0;
         this.undefinedExports = /* @__PURE__ */ new Map();
-        this.parser = parser2;
+        this.parser = parser;
         this.inModule = inModule;
       }
 <span class="fstat-no" title="function not covered" >      get inTopLevel() {</span>
@@ -35849,11 +35843,11 @@ var require_lib = __commonJS({
       }
     };
     var ClassScopeHandler = class {
-      constructor(parser2) {
+      constructor(parser) {
         this.parser = void 0;
         this.stack = [];
         this.undefinedPrivateNames = /* @__PURE__ */ new Map();
-        this.parser = parser2;
+        this.parser = parser;
       }
       current() {
         return this.stack[this.stack.length - 1];
@@ -35958,10 +35952,10 @@ var require_lib = __commonJS({
       }
     };
     var ExpressionScopeHandler = class {
-      constructor(parser2) {
+      constructor(parser) {
         this.parser = void 0;
         this.stack = [new ExpressionScope()];
-        this.parser = parser2;
+        this.parser = parser;
       }
       enter(scope) {
         this.stack.push(scope);
@@ -36314,15 +36308,15 @@ var require_lib = __commonJS({
       }
     };
     var Node = class {
-      constructor(parser2, pos, loc) {
+      constructor(parser, pos, loc) {
         this.type = "";
         this.start = pos;
         this.end = 0;
         this.loc = new SourceLocation(loc);
-        if (parser2 != null &amp;&amp; parser2.options.ranges)
+        if (parser != null &amp;&amp; parser.options.ranges)
           this.range = [pos, 0];
-        if (parser2 != null &amp;&amp; parser2.filename)
-<span class="branch-0 cbranch-no" title="branch not covered" >          this.loc.filename = parser2.filename;</span>
+        if (parser != null &amp;&amp; parser.filename)
+<span class="branch-0 cbranch-no" title="branch not covered" >          this.loc.filename = parser.filename;</span>
       }
     };
     var NodePrototype = Node.prototype;
@@ -46631,12 +46625,12 @@ var require_lib = __commonJS({
 <span class="cstat-no" title="statement not covered" >        options = Object.assign({}, options);</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
 <span class="cstat-no" title="statement not covered" >          options.sourceType = "module";</span>
-<span class="cstat-no" title="statement not covered" >          const parser2 = getParser(options, input);</span>
-<span class="cstat-no" title="statement not covered" >          const ast = parser2.parse();</span>
-<span class="cstat-no" title="statement not covered" >          if (parser2.sawUnambiguousESM) {</span>
+<span class="cstat-no" title="statement not covered" >          const parser = getParser(options, input);</span>
+<span class="cstat-no" title="statement not covered" >          const ast = parser.parse();</span>
+<span class="cstat-no" title="statement not covered" >          if (parser.sawUnambiguousESM) {</span>
 <span class="cstat-no" title="statement not covered" >            return ast;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (parser2.ambiguousScriptDifferentAst) {</span>
+<span class="cstat-no" title="statement not covered" >          if (parser.ambiguousScriptDifferentAst) {</span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
 <span class="cstat-no" title="statement not covered" >              options.sourceType = "script";</span>
 <span class="cstat-no" title="statement not covered" >              return getParser(options, input).parse();</span>
@@ -46659,11 +46653,11 @@ var require_lib = __commonJS({
       }
     }
     function parseExpression3(input, options) {
-      const parser2 = getParser(options, input);
-      if (parser2.options.strictMode) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        parser2.state.strict = true;</span>
+      const parser = getParser(options, input);
+      if (parser.options.strictMode) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        parser.state.strict = true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      return parser2.getExpression();
+      return parser.getExpression();
     }
     function generateExportedTokenTypes(internalTokenTypes) {
       const tokenTypes2 = {};
@@ -48184,6 +48178,7 @@ var visitor_keys_evaluate_default = {
     "types"
   ],
   "BigIntLiteralTypeAnnotation": [],
+  "BigIntTypeAnnotation": [],
   "NGRoot": [
     "node"
   ],
@@ -48230,7 +48225,6 @@ var visitor_keys_evaluate_default = {
   "TSJSDocNonNullableType": [
     "typeAnnotation"
   ],
-  "BigIntTypeAnnotation": [],
   "QualifiedTypeofIdentifier": [
     "id",
     "qualification"
@@ -48291,7 +48285,7 @@ var throw_ts_syntax_error_default = throwSyntaxError;
 // src/language-js/parse/postprocess/index.js
 function postprocess(ast, options) {
   const {
-    parser: parser2,
+    parser,
     text
   } = options;
   if (ast.type === "File" &amp;&amp; ast.program.interpreter) {
@@ -48304,7 +48298,7 @@ function postprocess(ast, options) {
     delete ast.program.interpreter;
     comments.unshift(interpreter);
   }
-  if (parser2 === "babel") {
+  if (parser === "babel") {
     const startOffsetsOfTypeCastedNodes = /* @__PURE__ */ new Set();
     ast = visit_node_default(ast, (node) =&gt; {
       var _a;
@@ -48364,7 +48358,7 @@ function postprocess(ast, options) {
         }
         break;
       case "ObjectExpression":
-        if (parser2 === "typescript") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+        if (parser === "typescript") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          const invalidProperty = node.properties.find((property) =&gt; property.type === "Property" &amp;&amp; property.value.type === "TSEmptyBodyFunctionExpression");</span>
 <span class="cstat-no" title="statement not covered" >          if (invalidProperty) {</span>
 <span class="cstat-no" title="statement not covered" >            throw_ts_syntax_error_default(invalidProperty.value, "Unexpected token.");</span>
@@ -48396,7 +48390,7 @@ function postprocess(ast, options) {
         const {
           exported
         } = node;
-        if (parser2 === "meriyah" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (exported == null ? void 0 : exported.type) === "Identifier")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+        if (parser === "meriyah" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (exported == null ? void 0 : exported.type) === "Identifier")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          const raw = text.slice(locStart(exported), locEnd(exported));</span>
 <span class="cstat-no" title="statement not covered" >          if (raw.startsWith('"') || raw.startsWith("'")) {</span>
 <span class="cstat-no" title="statement not covered" >            node.exported = {</span>
@@ -48410,7 +48404,7 @@ function postprocess(ast, options) {
         break;
       }
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "PropertyDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        if (parser2 === "meriyah" &amp;&amp; node.static &amp;&amp; !node.computed &amp;&amp; !node.key) {</span>
+<span class="cstat-no" title="statement not covered" >        if (parser === "meriyah" &amp;&amp; node.static &amp;&amp; !node.computed &amp;&amp; !node.key) {</span>
 <span class="cstat-no" title="statement not covered" >          const name = "static";</span>
 <span class="cstat-no" title="statement not covered" >          const start = locStart(node);</span>
 <span class="cstat-no" title="statement not covered" >          Object.assign(node, {</span>
@@ -48681,29 +48675,26 @@ var babelEstree = createBabelParser({
     (options) =&gt; appendPlugins(["estree"], options)
   )
 });
-var parser = {
-  parsers: {
-    babel,
-    "babel-flow": babelFlow,
-    "babel-ts": babelTs,
-    ...parser_json_default,
-    /** @internal */
-    __js_expression: babelExpression,
-    /** for vue filter */
-    __vue_expression: babelExpression,
-    /** for vue filter written in TS */
-    __vue_ts_expression: babelTSExpression,
-    /** for vue event binding to handle semicolon */
-    __vue_event_binding: babel,
-    /** for vue event binding written in TS to handle semicolon */
-    __vue_ts_event_binding: babelTs,
-    /** verify that we can print this AST */
-    __babel_estree: babelEstree
-  }
+var parsers = {
+  babel,
+  "babel-flow": babelFlow,
+  "babel-ts": babelTs,
+  ...parser_json_default,
+  /** @internal */
+  __js_expression: babelExpression,
+  /** for vue filter */
+  __vue_expression: babelExpression,
+  /** for vue filter written in TS */
+  __vue_ts_expression: babelTSExpression,
+  /** for vue event binding to handle semicolon */
+  __vue_event_binding: babel,
+  /** for vue event binding written in TS to handle semicolon */
+  __vue_ts_event_binding: babelTs,
+  /** verify that we can print this AST */
+  __babel_estree: babelEstree
 };
-var babel_default = parser;
 export {
-  babel_default as default
+  parsers
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -48712,7 +48703,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-12T01:50:01.812Z
+                at 2023-03-14T01:27:16.752Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
