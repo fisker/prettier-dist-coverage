@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.16% </span>
+                <span class="strong">90.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8091/8974</span>
+                <span class='fraction'>8090/8973</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.16% </span>
+                <span class="strong">90.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8091/8974</span>
+                <span class='fraction'>8090/8973</span>
             </div>
         
             
@@ -9036,8 +9036,7 @@
 <a name='L8971'></a><a href='#L8971'>8971</a>
 <a name='L8972'></a><a href='#L8972'>8972</a>
 <a name='L8973'></a><a href='#L8973'>8973</a>
-<a name='L8974'></a><a href='#L8974'>8974</a>
-<a name='L8975'></a><a href='#L8975'>8975</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">393x</span>
+<a name='L8974'></a><a href='#L8974'>8974</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">393x</span>
 <span class="cline-any cline-yes">6332x</span>
@@ -15167,6 +15166,8 @@
 <span class="cline-any cline-yes">1178x</span>
 <span class="cline-any cline-yes">183x</span>
 <span class="cline-any cline-yes">183x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">167x</span>
 <span class="cline-any cline-yes">1053x</span>
 <span class="cline-any cline-yes">1053x</span>
@@ -15180,7 +15181,7 @@
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">1053x</span>
 <span class="cline-any cline-yes">167x</span>
-<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">183x</span>
 <span class="cline-any cline-yes">88x</span>
 <span class="cline-any cline-yes">88x</span>
 <span class="cline-any cline-yes">88x</span>
@@ -15219,9 +15220,6 @@
 <span class="cline-any cline-yes">124x</span>
 <span class="cline-any cline-yes">429x</span>
 <span class="cline-any cline-yes">88x</span>
-<span class="cline-any cline-yes">183x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">183x</span>
 <span class="cline-any cline-yes">1178x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -24139,62 +24137,61 @@ function ngHtmlParser(input, parseOptions, options3) {
     getTagContentType: shouldParseAsRawText ? (...args) =&gt; shouldParseAsRawText(...args) ? TagContentType.RAW_TEXT : void 0 : void 0
   });
   if (name === "vue") {
-    const isVueHtml = rootNodes.some((node) =&gt; node.type === "docType" &amp;&amp; node.value === "html" || node.type === "element" &amp;&amp; node.name.toLowerCase() === "html");
-    if (!isVueHtml) {
-      const shouldParseAsHTML = (node) =&gt; {
-        var _a;
-        if (!node) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          return false;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-        if (node.type !== "element" || node.name !== "template") {
-          return false;
-        }
-        const language = (_a = node.attrs.find((attr) =&gt; attr.name === "lang")) == null ? void 0 : _a.value;
-        return !language || infer_parser_default(options3, {
-          language
-        }) === "html";
-      };
-      if (rootNodes.some(shouldParseAsHTML)) {
-        let secondParseResult;
-        const doSecondParse = () =&gt; parse(input, {
-          canSelfClose,
-          allowHtmComponentClosingTags,
-          isTagNameCaseSensitive
-        });
-        const getSecondParse = () =&gt; secondParseResult ?? (secondParseResult = doSecondParse());
-        const getSameLocationNode = (node) =&gt; getSecondParse().rootNodes.find(({
+    const isHtml = rootNodes.some((node) =&gt; node.type === "docType" &amp;&amp; node.value === "html" || node.type === "element" &amp;&amp; node.name.toLowerCase() === "html");
+    if (isHtml) {
+      return ngHtmlParser(input, HTML_PARSE_OPTIONS, options3);
+    }
+    const shouldParseAsHTML = (node) =&gt; {
+      var _a;
+      if (!node) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+      if (node.type !== "element" || node.name !== "template") {
+        return false;
+      }
+      const language = (_a = node.attrs.find((attr) =&gt; attr.name === "lang")) == null ? void 0 : _a.value;
+      return !language || infer_parser_default(options3, {
+        language
+      }) === "html";
+    };
+    if (rootNodes.some(shouldParseAsHTML)) {
+      let secondParseResult;
+      const doSecondParse = () =&gt; parse(input, {
+        canSelfClose,
+        allowHtmComponentClosingTags,
+        isTagNameCaseSensitive
+      });
+      const getSecondParse = () =&gt; secondParseResult ?? (secondParseResult = doSecondParse());
+      const getSameLocationNode = (node) =&gt; getSecondParse().rootNodes.find(({
+        startSourceSpan
+      }) =&gt; startSourceSpan &amp;&amp; startSourceSpan.start.offset === node.startSourceSpan.start.offset);
+      for (let i = 0; i &lt; rootNodes.length; i++) {
+        const node = rootNodes[i];
+        const {
+          endSourceSpan,
           startSourceSpan
-        }) =&gt; startSourceSpan &amp;&amp; startSourceSpan.start.offset === node.startSourceSpan.start.offset);
-        for (let i = 0; i &lt; rootNodes.length; i++) {
-          const node = rootNodes[i];
-          const {
-            endSourceSpan,
-            startSourceSpan
-          } = node;
-          const isUnclosedNode = endSourceSpan === null;
-          if (isUnclosedNode) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            const result = getSecondParse();</span>
-<span class="cstat-no" title="statement not covered" >            errors = result.errors;</span>
-<span class="cstat-no" title="statement not covered" >            rootNodes[i] = getSameLocationNode(node) || node;</span>
-          } else if (shouldParseAsHTML(node)) {
-            const result = getSecondParse();
-            const startOffset = startSourceSpan.end.offset;
-            const endOffset = endSourceSpan.start.offset;
-            for (const error of result.errors) {
-              const {
-                offset
-              } = error.span.start;
-              if (startOffset &lt; offset &amp;&amp; offset &lt; endOffset) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >                errors = [error];</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-            }
-            rootNodes[i] = getSameLocationNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >|| node;</span>
+        } = node;
+        const isUnclosedNode = endSourceSpan === null;
+        if (isUnclosedNode) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          const result = getSecondParse();</span>
+<span class="cstat-no" title="statement not covered" >          errors = result.errors;</span>
+<span class="cstat-no" title="statement not covered" >          rootNodes[i] = getSameLocationNode(node) || node;</span>
+        } else if (shouldParseAsHTML(node)) {
+          const result = getSecondParse();
+          const startOffset = startSourceSpan.end.offset;
+          const endOffset = endSourceSpan.start.offset;
+          for (const error of result.errors) {
+            const {
+              offset
+            } = error.span.start;
+            if (startOffset &lt; offset &amp;&amp; offset &lt; endOffset) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >              errors = [error];</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
           }
+          rootNodes[i] = getSameLocationNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >|| node;</span>
         }
       }
-    } else {
-      return ngHtmlParser(input, HTML_PARSE_OPTIONS, options3);
     }
   }
   if (errors.length &gt; 0) {
@@ -26992,7 +26989,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-22T01:31:35.616Z
+                at 2023-03-23T01:30:49.790Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
