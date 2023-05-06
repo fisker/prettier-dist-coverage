@@ -11,9 +11,9 @@ on:
       branch:
         description: "Branch"
         required: true
-        default: "next"
+        default: "main"
 env:
-  PRETTIER_BRANCH: ${{ github.event.inputs.branch || 'next' }}
+  PRETTIER_BRANCH: ${{ github.event.inputs.branch || 'main' }}
   SKIP_PRODUCTION_INSTALL: 1
 
 permissions:
