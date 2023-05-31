@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.44% </span>
+                <span class="strong">61.48% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6743/10974</span>
+                <span class='fraction'>6751/10980</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.54% </span>
+                <span class="strong">52.43% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1365/2598</span>
+                <span class='fraction'>1365/2603</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.44% </span>
+                <span class="strong">61.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6743/10974</span>
+                <span class='fraction'>6751/10980</span>
             </div>
         
             
@@ -11036,7 +11036,13 @@
 <a name='L10971'></a><a href='#L10971'>10971</a>
 <a name='L10972'></a><a href='#L10972'>10972</a>
 <a name='L10973'></a><a href='#L10973'>10973</a>
-<a name='L10974'></a><a href='#L10974'>10974</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10974'></a><a href='#L10974'>10974</a>
+<a name='L10975'></a><a href='#L10975'>10975</a>
+<a name='L10976'></a><a href='#L10976'>10976</a>
+<a name='L10977'></a><a href='#L10977'>10977</a>
+<a name='L10978'></a><a href='#L10978'>10978</a>
+<a name='L10979'></a><a href='#L10979'>10979</a>
+<a name='L10980'></a><a href='#L10980'>10980</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11778,8 +11784,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3678x</span>
-<span class="cline-any cline-yes">3678x</span>
+<span class="cline-any cline-yes">3680x</span>
+<span class="cline-any cline-yes">3680x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -12059,6 +12065,9 @@
 <span class="cline-any cline-yes">1044x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -17630,8 +17639,11 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -23262,8 +23274,9 @@
     ],
     "ExportAllDeclaration": [
       "source",
-      "exported",
-      "assertions"
+      "attributes",
+      "assertions",
+      "exported"
     ],
     "ExportDefaultDeclaration": [
       "declaration"
@@ -23272,6 +23285,7 @@
       "declaration",
       "specifiers",
       "source",
+      "attributes",
       "assertions"
     ],
     "ExportSpecifier": [
@@ -23286,6 +23300,7 @@
     "ImportDeclaration": [
       "specifiers",
       "source",
+      "attributes",
       "assertions"
     ],
     "ImportDefaultSpecifier": [
@@ -28460,7 +28475,7 @@
       printImportKind(node),
       printModuleSpecifiers(path, options2, print3),
       printModuleSource(path, options2, print3),
-      printImportAssertions(path, options2, print3),
+      printImportAttributes(path, options2, print3),
       options2.semi ? ";" <span class="branch-0 cbranch-no" title="branch not covered" >: ""</span>
     ];
   }
@@ -28494,7 +28509,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(</span>
 <span class="cstat-no" title="statement not covered" >        printModuleSource(path, options2, print3),</span>
-<span class="cstat-no" title="statement not covered" >        printImportAssertions(path, options2, print3)</span>
+<span class="cstat-no" title="statement not covered" >        printImportAttributes(path, options2, print3)</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     parts.push(printSemicolonAfterExportDeclaration(node, options2));
@@ -28598,15 +28613,18 @@
 <span class="cstat-no" title="statement not covered" >      options2.originalText.slice(locStart(node), locStart(source))</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
   }
-  function printImportAssertions(path, options2, print3) {
+  function printImportAttributes(path, options2, print3) {
+    var _a;
     const { node } = path;
-    if (!is_non_empty_array_default(node.assertions)) {
+    const property = is_non_empty_array_default(node.attributes) <span class="branch-0 cbranch-no" title="branch not covered" >? "attributes" </span>: is_non_empty_array_default(node.assertions) <span class="branch-0 cbranch-no" title="branch not covered" >? "assertions" </span>: void 0;
+    if (!property) {
       return "";
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return [</span></span>
-<span class="cstat-no" title="statement not covered" >      " assert {",</span>
-      options2.bracketSpacing ? " " <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span>
-      join(", ", path.map(print3, "assertions")),
+<span class="branch-0 cbranch-no" title="branch not covered" >    const keyword = property === "assertions" || ((_a = node.extra) == null ? void 0 : _a.deprecatedAssertSyntax) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "assert" <span class="branch-0 cbranch-no" title="branch not covered" ></span>: "with";</span>
+    return [
+      ` ${keyword} {`,
+      options2.bracketSpacing <span class="branch-0 cbranch-no" title="branch not covered" >? " " <span class="branch-0 cbranch-no" title="branch not covered" ></span>: "",</span>
+      join(", ", path.map(print3, property)),
       options2.bracketSpacing <span class="branch-0 cbranch-no" title="branch not covered" >? " " <span class="branch-0 cbranch-no" title="branch not covered" ></span>: "",</span>
       "}"
     ];
@@ -32989,7 +33007,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-30T01:41:53.149Z
+                at 2023-05-31T01:52:08.164Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
