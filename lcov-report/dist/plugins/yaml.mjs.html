@@ -17417,9 +17417,9 @@ var require_PlainValue_ec8e588e = __commonJS({
 <span class="cstat-no" title="statement not covered" >      return `${src}</span>
 <span class="cstat-no" title="statement not covered" >${offset}${err}${errEnd}`;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    var Range = class {
+    var Range = class _Range {
       static copy(orig) {
-        return new Range(orig.start, orig.end);
+        return new _Range(orig.start, orig.end);
       }
       constructor(start, end) {
         this.start = start;
@@ -17465,11 +17465,11 @@ var require_PlainValue_ec8e588e = __commonJS({
 <span class="cstat-no" title="statement not covered" >        return nextOffset;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     };
-    var Node = class {
+    var Node = class _Node {
       static <span class="fstat-no" title="function not covered" >addStringTerminator(src, offset, str) {</span>
 <span class="cstat-no" title="statement not covered" >        if (str[str.length - 1] === "\n")</span>
 <span class="cstat-no" title="statement not covered" >          return str;</span>
-<span class="cstat-no" title="statement not covered" >        const next = Node.endOfWhiteSpace(src, offset);</span>
+<span class="cstat-no" title="statement not covered" >        const next = _Node.endOfWhiteSpace(src, offset);</span>
 <span class="cstat-no" title="statement not covered" >        return next &gt;= src.length || src[next] === "\n" ? str + "\n" : str;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       // ^(---|...)
@@ -17540,11 +17540,11 @@ var require_PlainValue_ec8e588e = __commonJS({
        * @returns {?number}
        */
       static endOfBlockIndent(src, indent, lineStart) {
-        const inEnd = Node.endOfIndent(src, lineStart);
+        const inEnd = _Node.endOfIndent(src, lineStart);
         if (inEnd &gt; lineStart + indent) {
           return inEnd;
         } else {
-          const wsEnd = Node.endOfWhiteSpace(src, inEnd);
+          const wsEnd = _Node.endOfWhiteSpace(src, inEnd);
           const ch = src[wsEnd];
           if (!ch || ch === "\n")
             return wsEnd;
@@ -17565,7 +17565,7 @@ var require_PlainValue_ec8e588e = __commonJS({
       // should be at line or string end, or at next non-whitespace char
       static normalizeOffset(src, offset) {
         const ch = src[offset];
-        return !ch ? offset : ch !== "\n" &amp;&amp; src[offset - 1] === "\n" ? offset - 1 : Node.endOfWhiteSpace(src, offset);
+        return !ch ? offset : ch !== "\n" &amp;&amp; src[offset - 1] === "\n" ? offset - 1 : _Node.endOfWhiteSpace(src, offset);
       }
       // fold single newline into space, multiple newlines to N - 1 newlines
       // presumes src[offset] === '\n'
@@ -17584,7 +17584,7 @@ var require_PlainValue_ec8e588e = __commonJS({
             case "	":
               if (inCount &lt;= indent)
 <span class="branch-0 cbranch-no" title="branch not covered" >                error = true;</span>
-              offset = Node.endOfWhiteSpace(src, offset + 2) - 1;
+              offset = _Node.endOfWhiteSpace(src, offset + 2) - 1;
               break;
             case " ":
               inCount += 1;
@@ -17652,7 +17652,7 @@ var require_PlainValue_ec8e588e = __commonJS({
         const {
           end
         } = this.valueRange;
-        return start !== end <span class="branch-0 cbranch-no" title="branch not covered" >|| Node.atBlank(src, end - 1);</span>
+        return start !== end <span class="branch-0 cbranch-no" title="branch not covered" >|| _Node.atBlank(src, end - 1);</span>
       }
       get hasComment() {
         if (this.context) {
@@ -17746,7 +17746,7 @@ var require_PlainValue_ec8e588e = __commonJS({
           src
         } = this.context;
         if (src[start] === Char.COMMENT) {
-          const end = Node.endOfLine(src, start + 1);
+          const end = _Node.endOfLine(src, start + 1);
           const commentRange = new Range(start, end);
           this.props.push(commentRange);
           return end;
@@ -17780,7 +17780,7 @@ var require_PlainValue_ec8e588e = __commonJS({
 <span class="cstat-no" title="statement not covered" >        if (value != null)</span>
 <span class="cstat-no" title="statement not covered" >          return value;</span>
 <span class="cstat-no" title="statement not covered" >        const str = src.slice(range.start, range.end);</span>
-<span class="cstat-no" title="statement not covered" >        return Node.addStringTerminator(src, range.end, str);</span>
+<span class="cstat-no" title="statement not covered" >        return _Node.addStringTerminator(src, range.end, str);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     };
     var YAMLError2 = class extends Error {
@@ -17864,7 +17864,7 @@ var require_PlainValue_ec8e588e = __commonJS({
       }
       return obj;
     }
-    var PlainValue = class extends Node {
+    var PlainValue = class _PlainValue extends Node {
       static endOfLine(src, start, inFlow) {
         let ch = src[start];
         let offset = start;
@@ -17957,7 +17957,7 @@ var require_PlainValue_ec8e588e = __commonJS({
           if (src[end] === "\n") {
             offset = end;
           } else {
-            valueEnd = PlainValue.endOfLine(src, end, inFlow);
+            valueEnd = _PlainValue.endOfLine(src, end, inFlow);
             offset = valueEnd;
           }
         }
@@ -18000,7 +18000,7 @@ var require_PlainValue_ec8e588e = __commonJS({
         let offset = start;
         const ch = src[offset];
         if (ch &amp;&amp; ch !== "#" &amp;&amp; ch !== "\n") {
-          offset = PlainValue.endOfLine(src, start, inFlow);
+          offset = _PlainValue.endOfLine(src, start, inFlow);
         }
         this.valueRange = new Range(start, offset);
         offset = Node.endOfWhiteSpace(src, offset);
@@ -18210,7 +18210,7 @@ var require_parse_cst = __commonJS({
       }
       return ca;
     }
-    var Collection = class extends PlainValue.Node {
+    var Collection = class _Collection extends PlainValue.Node {
       static nextContentHasIndent(src, offset, indent) {
         const lineStart = PlainValue.Node.endOfLine(src, offset) + 1;
         offset = PlainValue.Node.endOfWhiteSpace(src, lineStart);
@@ -18221,7 +18221,7 @@ var require_parse_cst = __commonJS({
           return true;
         if (ch !== "#" &amp;&amp; ch !== "\n")
           return false;
-        return Collection.nextContentHasIndent(src, offset, indent);
+        return _Collection.nextContentHasIndent(src, offset, indent);
       }
       constructor(firstItem) {
         super(firstItem.type === PlainValue.Type.SEQ_ITEM ? PlainValue.Type.SEQ : PlainValue.Type.MAP);
@@ -18278,7 +18278,7 @@ var require_parse_cst = __commonJS({
               this.items.push(blankLine);
               offset -= 1;
             } else if (ch === "#") {
-              if (offset &lt; lineStart + indent &amp;&amp; !Collection.nextContentHasIndent(src, offset, indent)) {
+              if (offset &lt; lineStart + indent &amp;&amp; !_Collection.nextContentHasIndent(src, offset, indent)) {
                 return offset;
               }
               const comment = new Comment();
@@ -18436,7 +18436,7 @@ var require_parse_cst = __commonJS({
         return offset;
       }
     };
-    var Document2 = class extends PlainValue.Node {
+    var Document2 = class _Document extends PlainValue.Node {
       static startCommentOrEndBlankLine(src, start) {
         const offset = PlainValue.Node.endOfWhiteSpace(src, start);
         const ch = src[offset];
@@ -18458,7 +18458,7 @@ var require_parse_cst = __commonJS({
         let hasDirectives = false;
         let offset = start;
         while (!PlainValue.Node.atDocumentBoundary(src, offset, PlainValue.Char.DIRECTIVES_END)) {
-          offset = Document2.startCommentOrEndBlankLine(src, offset);
+          offset = _Document.startCommentOrEndBlankLine(src, offset);
           switch (src[offset]) {
             case "\n":
               if (atLineStart) {
@@ -18579,7 +18579,7 @@ var require_parse_cst = __commonJS({
                 Array.prototype.push.apply(this.contents, ec);
             }
           }
-          offset = Document2.startCommentOrEndBlankLine(src, offset);
+          offset = _Document.startCommentOrEndBlankLine(src, offset);
         }
         this.valueRange.end = offset;
         if (src[offset]) {
@@ -19051,7 +19051,7 @@ var require_parse_cst = __commonJS({
 <span class="cstat-no" title="statement not covered" >        return PlainValue.Node.addStringTerminator(src, range.end, str);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     };
-    var QuoteDouble = class extends PlainValue.Node {
+    var QuoteDouble = class _QuoteDouble extends PlainValue.Node {
       static endOfQuote(src, offset) {
         let ch = src[offset];
         while (ch &amp;&amp; ch !== '"') {
@@ -19212,14 +19212,14 @@ var require_parse_cst = __commonJS({
         const {
           src
         } = context;
-        let offset = QuoteDouble.endOfQuote(src, start + 1);
+        let offset = _QuoteDouble.endOfQuote(src, start + 1);
         this.valueRange = new PlainValue.Range(start, offset);
         offset = PlainValue.Node.endOfWhiteSpace(src, offset);
         offset = this.parseComment(offset);
         return offset;
       }
     };
-    var QuoteSingle = class extends PlainValue.Node {
+    var QuoteSingle = class _QuoteSingle extends PlainValue.Node {
       static endOfQuote(src, offset) {
         let ch = src[offset];
         while (ch) {
@@ -19300,7 +19300,7 @@ var require_parse_cst = __commonJS({
         const {
           src
         } = context;
-        let offset = QuoteSingle.endOfQuote(src, start + 1);
+        let offset = _QuoteSingle.endOfQuote(src, start + 1);
         this.valueRange = new PlainValue.Range(start, offset);
         offset = PlainValue.Node.endOfWhiteSpace(src, offset);
         offset = this.parseComment(offset);
@@ -19332,7 +19332,7 @@ var require_parse_cst = __commonJS({
 <span class="cstat-no" title="statement not covered" >          return null;</span>
       }
     }
-    var ParseContext = class {
+    var ParseContext = class _ParseContext {
       static parseType(src, offset, inFlow) {
         switch (src[offset]) {
           case "*":
@@ -19370,7 +19370,7 @@ var require_parse_cst = __commonJS({
         PlainValue._defineProperty(this, "parseNode", (overlay, start) =&gt; {
           if (PlainValue.Node.atDocumentBoundary(this.src, start))
             return null;
-          const context = new ParseContext(this, overlay);
+          const context = new _ParseContext(this, overlay);
           const {
             props,
             type,
@@ -19390,7 +19390,7 @@ var require_parse_cst = __commonJS({
 <span class="cstat-no" title="statement not covered" >              node.error = new PlainValue.YAMLSyntaxError(node, "Block collection must not have preceding content here (e.g. directives-end indicator)");</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
             const collection = new Collection(node);
-            offset = collection.parse(new ParseContext(context), offset);
+            offset = collection.parse(new _ParseContext(context), offset);
             collection.range = new PlainValue.Range(start, offset);
             return collection;
           }
@@ -19466,7 +19466,7 @@ var require_parse_cst = __commonJS({
         }
         if (lineHasProps &amp;&amp; ch === ":" &amp;&amp; PlainValue.Node.atBlank(src, offset + 1, true))
           offset -= 1;
-        const type = ParseContext.parseType(src, offset, inFlow);
+        const type = _ParseContext.parseType(src, offset, inFlow);
         return {
           props,
           type,
@@ -19589,7 +19589,7 @@ var require_resolveSeq_d03cb037 = __commonJS({
 <span class="cstat-no" title="statement not covered" >      return schema.createNode(v, false);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     var isEmptyPath = <span class="fstat-no" title="function not covered" >(path) =&gt; path == null || typeof path === "object" &amp;&amp; path[Symbol.iterator]().next().done;</span>
-    var Collection = class extends Node {
+    var Collection = class _Collection extends Node {
       constructor(schema) {
         super();
         PlainValue._defineProperty(this, "items", []);
@@ -19601,7 +19601,7 @@ var require_resolveSeq_d03cb037 = __commonJS({
 <span class="cstat-no" title="statement not covered" >        else {</span>
 <span class="cstat-no" title="statement not covered" >          const [key, ...rest] = path;</span>
 <span class="cstat-no" title="statement not covered" >          const node = this.get(key, true);</span>
-<span class="cstat-no" title="statement not covered" >          if (node instanceof Collection)</span>
+<span class="cstat-no" title="statement not covered" >          if (node instanceof _Collection)</span>
 <span class="cstat-no" title="statement not covered" >            node.addIn(rest, value);</span>
 <span class="cstat-no" title="statement not covered" >          else if (node === void 0 &amp;&amp; this.schema)</span>
 <span class="cstat-no" title="statement not covered" >            this.set(key, collectionFromPath(this.schema, rest, value));</span>
@@ -19613,7 +19613,7 @@ var require_resolveSeq_d03cb037 = __commonJS({
 <span class="cstat-no" title="statement not covered" >        if (rest.length === 0)</span>
 <span class="cstat-no" title="statement not covered" >          return this.delete(key);</span>
 <span class="cstat-no" title="statement not covered" >        const node = this.get(key, true);</span>
-<span class="cstat-no" title="statement not covered" >        if (node instanceof Collection)</span>
+<span class="cstat-no" title="statement not covered" >        if (node instanceof _Collection)</span>
 <span class="cstat-no" title="statement not covered" >          return node.deleteIn(rest);</span>
 <span class="cstat-no" title="statement not covered" >        else</span>
 <span class="cstat-no" title="statement not covered" >          throw new Error(`Expected YAML collection at ${key}. Remaining path: ${rest}`);</span>
@@ -19623,7 +19623,7 @@ var require_resolveSeq_d03cb037 = __commonJS({
 <span class="cstat-no" title="statement not covered" >        if (rest.length === 0)</span>
 <span class="cstat-no" title="statement not covered" >          return !keepScalar &amp;&amp; node instanceof Scalar ? node.value : node;</span>
 <span class="cstat-no" title="statement not covered" >        else</span>
-<span class="cstat-no" title="statement not covered" >          return node instanceof Collection ? node.getIn(rest, keepScalar) : void 0;</span>
+<span class="cstat-no" title="statement not covered" >          return node instanceof _Collection ? node.getIn(rest, keepScalar) : void 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="fstat-no" title="function not covered" >      hasAllNullValues() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.items.every((node) =&gt; {</span>
@@ -19637,14 +19637,14 @@ var require_resolveSeq_d03cb037 = __commonJS({
 <span class="cstat-no" title="statement not covered" >        if (rest.length === 0)</span>
 <span class="cstat-no" title="statement not covered" >          return this.has(key);</span>
 <span class="cstat-no" title="statement not covered" >        const node = this.get(key, true);</span>
-<span class="cstat-no" title="statement not covered" >        return node instanceof Collection ? node.hasIn(rest) : false;</span>
+<span class="cstat-no" title="statement not covered" >        return node instanceof _Collection ? node.hasIn(rest) : false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="fstat-no" title="function not covered" >      setIn([key, ...rest], value) {</span>
 <span class="cstat-no" title="statement not covered" >        if (rest.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >          this.set(key, value);</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          const node = this.get(key, true);</span>
-<span class="cstat-no" title="statement not covered" >          if (node instanceof Collection)</span>
+<span class="cstat-no" title="statement not covered" >          if (node instanceof _Collection)</span>
 <span class="cstat-no" title="statement not covered" >            node.setIn(rest, value);</span>
 <span class="cstat-no" title="statement not covered" >          else if (node === void 0 &amp;&amp; this.schema)</span>
 <span class="cstat-no" title="statement not covered" >            this.set(key, collectionFromPath(this.schema, rest, value));</span>
@@ -19724,7 +19724,7 @@ var require_resolveSeq_d03cb037 = __commonJS({
 <span class="cstat-no" title="statement not covered" >            end</span>
 <span class="cstat-no" title="statement not covered" >          } = flowChars;</span>
 <span class="cstat-no" title="statement not covered" >          const strings = nodes.map((n) =&gt; n.str);</span>
-<span class="cstat-no" title="statement not covered" >          if (hasItemWithNewLine || strings.reduce((sum, str2) =&gt; sum + str2.length + 2, 2) &gt; Collection.maxFlowStringSingleLineLength) {</span>
+<span class="cstat-no" title="statement not covered" >          if (hasItemWithNewLine || strings.reduce((sum, str2) =&gt; sum + str2.length + 2, 2) &gt; _Collection.maxFlowStringSingleLineLength) {</span>
 <span class="cstat-no" title="statement not covered" >            str = start;</span>
 <span class="cstat-no" title="statement not covered" >            for (const s of strings) {</span>
 <span class="cstat-no" title="statement not covered" >              str += s ? `</span>
@@ -19826,12 +19826,12 @@ var require_resolveSeq_d03cb037 = __commonJS({
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >      return JSON.stringify(jsKey);</span>
     };
-    var Pair = class extends Node {
+    var Pair = class _Pair extends Node {
       constructor(key, value = null) {
         super();
         this.key = key;
         this.value = value;
-        this.type = Pair.Type.PAIR;
+        this.type = _Pair.Type.PAIR;
       }
       get commentBefore() {
         return this.key instanceof Node ? this.key.commentBefore <span class="branch-0 cbranch-no" title="branch not covered" >: void 0;</span>
@@ -19990,7 +19990,7 @@ var require_resolveSeq_d03cb037 = __commonJS({
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return 1;</span>
     };
-    var Alias = class extends Node {
+    var Alias = class _Alias extends Node {
       static <span class="fstat-no" title="function not covered" >stringify({</span>
 <span class="cstat-no" title="statement not covered" >        range,</span>
 <span class="cstat-no" title="statement not covered" >        source</span>
@@ -20048,7 +20048,7 @@ var require_resolveSeq_d03cb037 = __commonJS({
       // Only called when stringifying an alias mapping key while constructing
       // Object output.
 <span class="fstat-no" title="function not covered" >      toString(ctx) {</span>
-<span class="cstat-no" title="statement not covered" >        return Alias.stringify(this, ctx);</span>
+<span class="cstat-no" title="statement not covered" >        return _Alias.stringify(this, ctx);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     };
     PlainValue._defineProperty(Alias, "default", true);
@@ -21620,7 +21620,7 @@ var require_warnings_1000a372 = __commonJS({
       resolve: parsePairs,
       createNode: createPairs
     };
-    var YAMLOMap = class extends resolveSeq.YAMLSeq {
+    var YAMLOMap = class _YAMLOMap extends resolveSeq.YAMLSeq {
 <span class="fstat-no" title="function not covered" >      constructor() {</span>
 <span class="cstat-no" title="statement not covered" >        super();</span>
 <span class="cstat-no" title="statement not covered" >        PlainValue._defineProperty(this, "add", resolveSeq.YAMLMap.prototype.add.bind(this));</span>
@@ -21628,7 +21628,7 @@ var require_warnings_1000a372 = __commonJS({
 <span class="cstat-no" title="statement not covered" >        PlainValue._defineProperty(this, "get", resolveSeq.YAMLMap.prototype.get.bind(this));</span>
 <span class="cstat-no" title="statement not covered" >        PlainValue._defineProperty(this, "has", resolveSeq.YAMLMap.prototype.has.bind(this));</span>
 <span class="cstat-no" title="statement not covered" >        PlainValue._defineProperty(this, "set", resolveSeq.YAMLMap.prototype.set.bind(this));</span>
-<span class="cstat-no" title="statement not covered" >        this.tag = YAMLOMap.tag;</span>
+<span class="cstat-no" title="statement not covered" >        this.tag = _YAMLOMap.tag;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="fstat-no" title="function not covered" >      toJSON(_, ctx) {</span>
 <span class="cstat-no" title="statement not covered" >        const map = /* @__PURE__ */ new Map();</span>
@@ -21681,10 +21681,10 @@ var require_warnings_1000a372 = __commonJS({
       resolve: parseOMap,
       createNode: createOMap
     };
-    var YAMLSet = class extends resolveSeq.YAMLMap {
+    var YAMLSet = class _YAMLSet extends resolveSeq.YAMLMap {
 <span class="fstat-no" title="function not covered" >      constructor() {</span>
 <span class="cstat-no" title="statement not covered" >        super();</span>
-<span class="cstat-no" title="statement not covered" >        this.tag = YAMLSet.tag;</span>
+<span class="cstat-no" title="statement not covered" >        this.tag = _YAMLSet.tag;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="fstat-no" title="function not covered" >      add(key) {</span>
 <span class="cstat-no" title="statement not covered" >        const pair = key instanceof resolveSeq.Pair ? key : new resolveSeq.Pair(key);</span>
@@ -22282,7 +22282,7 @@ var require_Schema_88e323a7 = __commonJS({
       return tags2;
     }
     var sortMapEntriesByKey = <span class="fstat-no" title="function not covered" >(a, b) =&gt; a.key &lt; b.key ? -1 : a.key &gt; b.key ? 1 : 0;</span>
-    var Schema = class {
+    var Schema = class _Schema {
       // TODO: remove in v2
       // TODO: remove in v2
       constructor({
@@ -22301,7 +22301,7 @@ var require_Schema_88e323a7 = __commonJS({
       }
 <span class="fstat-no" title="function not covered" >      createNode(value, wrapScalars, tagName, ctx) {</span>
 <span class="cstat-no" title="statement not covered" >        const baseCtx = {</span>
-<span class="cstat-no" title="statement not covered" >          defaultPrefix: Schema.defaultPrefix,</span>
+<span class="cstat-no" title="statement not covered" >          defaultPrefix: _Schema.defaultPrefix,</span>
 <span class="cstat-no" title="statement not covered" >          schema: this,</span>
 <span class="cstat-no" title="statement not covered" >          wrapScalars</span>
 <span class="cstat-no" title="statement not covered" >        };</span>
@@ -22513,7 +22513,7 @@ var require_Document_9b4560a1 = __commonJS({
 <span class="cstat-no" title="statement not covered" >      return item instanceof resolveSeq.Scalar || str[0] === "{" || str[0] === "[" ? `${props} ${str}` : `${props}</span>
 <span class="cstat-no" title="statement not covered" >${ctx.indent}${str}`;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    var Anchors = class {
+    var Anchors = class _Anchors {
       static <span class="fstat-no" title="function not covered" >validAnchorNode(node) {</span>
 <span class="cstat-no" title="statement not covered" >        return node instanceof resolveSeq.Scalar || node instanceof resolveSeq.YAMLSeq || node instanceof resolveSeq.YAMLMap;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -22575,7 +22575,7 @@ var require_Document_9b4560a1 = __commonJS({
         delete this._cstAliases;
       }
 <span class="fstat-no" title="function not covered" >      setAnchor(node, name) {</span>
-<span class="cstat-no" title="statement not covered" >        if (node != null &amp;&amp; !Anchors.validAnchorNode(node)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (node != null &amp;&amp; !_Anchors.validAnchorNode(node)) {</span>
 <span class="cstat-no" title="statement not covered" >          throw new Error("Anchors may only be set for Scalar, Seq and Map nodes");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (name &amp;&amp; /[\x00-\x19\s,[\]{}]/.test(name)) {</span>
@@ -22756,7 +22756,7 @@ ${cbNode.commentBefore}` : cb;
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error("Expected a YAML collection as document contents");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    var Document2 = class {
+    var Document2 = class _Document {
       constructor(options2) {
         this.anchors = new Anchors(options2.anchorPrefix);
         this.commentBefore = null;
@@ -22793,7 +22793,7 @@ ${cbNode.commentBefore}` : cb;
 <span class="cstat-no" title="statement not covered" >        return this.contents.deleteIn(path);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       getDefaults() {
-        return Document2.defaults[this.version] || Document2.defaults[this.options.version] <span class="branch-0 cbranch-no" title="branch not covered" >|| {};</span>
+        return _Document.defaults[this.version] || _Document.defaults[this.options.version] <span class="branch-0 cbranch-no" title="branch not covered" >|| {};</span>
       }
 <span class="fstat-no" title="function not covered" >      get(key, keepScalar) {</span>
 <span class="cstat-no" title="statement not covered" >        return this.contents instanceof resolveSeq.Collection ? this.contents.get(key, keepScalar) : void 0;</span>
@@ -25840,7 +25840,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-18T01:59:46.228Z
+                at 2023-06-19T01:47:08.074Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

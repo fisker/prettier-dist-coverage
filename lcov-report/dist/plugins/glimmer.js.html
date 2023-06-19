@@ -23693,20 +23693,20 @@
   });
 &nbsp;
   // node_modules/@glimmer/syntax/dist/modules/es2017/lib/source/slice.js
-  var SourceSlice = class {
+  var SourceSlice = class _SourceSlice {
 <span class="fstat-no" title="function not covered" >    constructor(options) {</span>
 <span class="cstat-no" title="statement not covered" >      this.loc = options.loc;</span>
 <span class="cstat-no" title="statement not covered" >      this.chars = options.chars;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     static <span class="fstat-no" title="function not covered" >synthetic(chars) {</span>
 <span class="cstat-no" title="statement not covered" >      let offsets = SourceSpan.synthetic(chars);</span>
-<span class="cstat-no" title="statement not covered" >      return new SourceSlice({</span>
+<span class="cstat-no" title="statement not covered" >      return new _SourceSlice({</span>
 <span class="cstat-no" title="statement not covered" >        loc: offsets,</span>
 <span class="cstat-no" title="statement not covered" >        chars</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     static <span class="fstat-no" title="function not covered" >load(source, slice) {</span>
-<span class="cstat-no" title="statement not covered" >      return new SourceSlice({</span>
+<span class="cstat-no" title="statement not covered" >      return new _SourceSlice({</span>
 <span class="cstat-no" title="statement not covered" >        loc: SourceSpan.load(source, slice[1]),</span>
 <span class="cstat-no" title="statement not covered" >        chars: slice[0]</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
@@ -23802,7 +23802,7 @@
 &nbsp;
   // node_modules/@glimmer/syntax/dist/modules/es2017/lib/source/loc/offset.js
   var BROKEN = "BROKEN";
-  var SourceOffset = class {
+  var SourceOffset = class _SourceOffset {
     constructor(data) {
       this.data = data;
     }
@@ -23863,13 +23863,13 @@
     move(by) {
       let charPos = this.data.toCharPos();
       if (charPos === null) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        return SourceOffset.broken();</span>
+<span class="cstat-no" title="statement not covered" >        return _SourceOffset.broken();</span>
       } else {
         let result = charPos.offset + by;
         if (charPos.source.check(result)) {
           return new CharPosition(charPos.source, result).wrap();
         }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
-<span class="cstat-no" title="statement not covered" >          return SourceOffset.broken();</span>
+<span class="cstat-no" title="statement not covered" >          return _SourceOffset.broken();</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       }
     }
@@ -24056,7 +24056,7 @@
   ).when(MatchAny, MatchAny, () =&gt; false));
 &nbsp;
   // node_modules/@glimmer/syntax/dist/modules/es2017/lib/source/loc/span.js
-  var SourceSpan = class {
+  var SourceSpan = class _SourceSpan {
     constructor(data) {
       this.data = data;
       this.isInvisible = data.kind !== "CharPosition" &amp;&amp; data.kind !== "HbsPosition";
@@ -24069,15 +24069,15 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     static <span class="fstat-no" title="function not covered" >load(source, serialized) {</span>
 <span class="cstat-no" title="statement not covered" >      if (typeof serialized === "number") {</span>
-<span class="cstat-no" title="statement not covered" >        return SourceSpan.forCharPositions(source, serialized, serialized);</span>
+<span class="cstat-no" title="statement not covered" >        return _SourceSpan.forCharPositions(source, serialized, serialized);</span>
 <span class="cstat-no" title="statement not covered" >      } else if (typeof serialized === "string") {</span>
-<span class="cstat-no" title="statement not covered" >        return SourceSpan.synthetic(serialized);</span>
+<span class="cstat-no" title="statement not covered" >        return _SourceSpan.synthetic(serialized);</span>
 <span class="cstat-no" title="statement not covered" >      } else if (Array.isArray(serialized)) {</span>
-<span class="cstat-no" title="statement not covered" >        return SourceSpan.forCharPositions(source, serialized[0], serialized[1]);</span>
+<span class="cstat-no" title="statement not covered" >        return _SourceSpan.forCharPositions(source, serialized[0], serialized[1]);</span>
 <span class="cstat-no" title="statement not covered" >      } else if (serialized === "NonExistent") {</span>
-<span class="cstat-no" title="statement not covered" >        return SourceSpan.NON_EXISTENT;</span>
+<span class="cstat-no" title="statement not covered" >        return _SourceSpan.NON_EXISTENT;</span>
 <span class="cstat-no" title="statement not covered" >      } else if (serialized === "Broken") {</span>
-<span class="cstat-no" title="statement not covered" >        return SourceSpan.broken(BROKEN_LOCATION);</span>
+<span class="cstat-no" title="statement not covered" >        return _SourceSpan.broken(BROKEN_LOCATION);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      assertNever(serialized);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -26719,7 +26719,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-18T01:59:46.228Z
+                at 2023-06-19T01:47:08.074Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

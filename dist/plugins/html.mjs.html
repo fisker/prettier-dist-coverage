@@ -18927,7 +18927,7 @@ var DASH_CASE_REGEXP = /-+([a-z0-9])/g;
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // node_modules/angular-html-parser/lib/compiler/src/parse_util.js
-var ParseLocation = class {
+var ParseLocation = class _ParseLocation {
   constructor(file, offset, line2, col) {
     this.file = file;
     this.offset = offset;
@@ -18966,7 +18966,7 @@ var ParseLocation = class {
         col++;
       }
     }
-    return new ParseLocation(this.file, offset, line2, col);
+    return new _ParseLocation(this.file, offset, line2, col);
   }
   // Return the source around the location
   // Up to `maxChars` or `maxLines` on each side of the location
@@ -23510,13 +23510,13 @@ var UNUSABLE_INTERPOLATION_REGEXPS = [
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // node_modules/angular-html-parser/lib/compiler/src/ml_parser/interpolation_config.js
-var InterpolationConfig = class {
+var InterpolationConfig = class _InterpolationConfig {
   static <span class="fstat-no" title="function not covered" >fromArray(markers) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!markers) {</span>
 <span class="cstat-no" title="statement not covered" >      return DEFAULT_INTERPOLATION_CONFIG;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    assertInterpolationSymbols("interpolation", markers);</span>
-<span class="cstat-no" title="statement not covered" >    return new InterpolationConfig(markers[0], markers[1]);</span>
+<span class="cstat-no" title="statement not covered" >    return new _InterpolationConfig(markers[0], markers[1]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   constructor(start, end) {
     this.start = start;
@@ -24315,9 +24315,9 @@ function mergeTextTokens(srcTokens) {
   }
   return dstTokens;
 }
-var PlainCharacterCursor = class {
+var PlainCharacterCursor = class _PlainCharacterCursor {
   constructor(fileOrCursor, range) {
-    if (fileOrCursor instanceof PlainCharacterCursor) {
+    if (fileOrCursor instanceof _PlainCharacterCursor) {
       this.file = fileOrCursor.file;
       this.input = fileOrCursor.input;
       this.end = fileOrCursor.end;
@@ -24344,7 +24344,7 @@ var PlainCharacterCursor = class {
     }
   }
   clone() {
-    return new PlainCharacterCursor(this);
+    return new _PlainCharacterCursor(this);
   }
   peek() {
     return this.state.peek;
@@ -24405,9 +24405,9 @@ var PlainCharacterCursor = class {
     return new ParseLocation(cursor.file, cursor.state.offset, cursor.state.line, cursor.state.column);
   }
 };
-var EscapedCharacterCursor = class extends PlainCharacterCursor {
+var EscapedCharacterCursor = class _EscapedCharacterCursor extends PlainCharacterCursor {
 <span class="fstat-no" title="function not covered" >  constructor(fileOrCursor, range) {</span>
-<span class="cstat-no" title="statement not covered" >    if (fileOrCursor instanceof EscapedCharacterCursor) {</span>
+<span class="cstat-no" title="statement not covered" >    if (fileOrCursor instanceof _EscapedCharacterCursor) {</span>
 <span class="cstat-no" title="statement not covered" >      super(fileOrCursor);</span>
 <span class="cstat-no" title="statement not covered" >      this.internalState = { ...fileOrCursor.internalState };</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
@@ -24425,7 +24425,7 @@ var EscapedCharacterCursor = class extends PlainCharacterCursor {
 <span class="cstat-no" title="statement not covered" >    this.processEscapeSequence();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  clone() {</span>
-<span class="cstat-no" title="statement not covered" >    return new EscapedCharacterCursor(this);</span>
+<span class="cstat-no" title="statement not covered" >    return new _EscapedCharacterCursor(this);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  getChars(start) {</span>
 <span class="cstat-no" title="statement not covered" >    const cursor = start.clone();</span>
@@ -24520,9 +24520,9 @@ var CursorError = class {
 };
 &nbsp;
 // node_modules/angular-html-parser/lib/compiler/src/ml_parser/parser.js
-var TreeError = class extends ParseError {
+var TreeError = class _TreeError extends ParseError {
   static create(elementName, span, msg) {
-    return new TreeError(elementName, span, msg);
+    return new _TreeError(elementName, span, msg);
   }
   constructor(elementName, span, msg) {
     super(span, msg);
@@ -24556,7 +24556,7 @@ var Parser = class {
     return new ParseTreeResult(parser2.rootNodes, tokenizeResult.errors.concat(parser2.errors));
   }
 };
-var _TreeBuilder = class {
+var _TreeBuilder = class __TreeBuilder {
   constructor(tokens, getTagDefinition, canSelfClose, allowHtmComponentClosingTags, isTagNameCaseSensitive) {
     this.tokens = tokens;
     this.getTagDefinition = getTagDefinition;
@@ -24673,7 +24673,7 @@ var _TreeBuilder = class {
 <span class="cstat-no" title="statement not covered" >      return null;</span>
 <span class="cstat-no" title="statement not covered" >    const end = this._advance();</span>
 <span class="cstat-no" title="statement not covered" >    exp.push({ type: 25, parts: [], sourceSpan: end.sourceSpan });</span>
-<span class="cstat-no" title="statement not covered" >    const expansionCaseParser = new _TreeBuilder(exp, this.getTagDefinition, this.canSelfClose, this.allowHtmComponentClosingTags, this.isTagNameCaseSensitive);</span>
+<span class="cstat-no" title="statement not covered" >    const expansionCaseParser = new __TreeBuilder(exp, this.getTagDefinition, this.canSelfClose, this.allowHtmComponentClosingTags, this.isTagNameCaseSensitive);</span>
 <span class="cstat-no" title="statement not covered" >    expansionCaseParser.build();</span>
 <span class="cstat-no" title="statement not covered" >    if (expansionCaseParser.errors.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >      this.errors = this.errors.concat(expansionCaseParser.errors);</span>
@@ -25977,7 +25977,7 @@ var NODES_KEYS = {
   children: true
 };
 var NON_ENUMERABLE_PROPERTIES = /* @__PURE__ */ new Set(["parent"]);
-var Node = class {
+var Node = class _Node {
   constructor(nodeOrProperties = {}) {
     for (const property of /* @__PURE__ */ new Set([
       ...NON_ENUMERABLE_PROPERTIES,
@@ -26011,7 +26011,7 @@ var Node = class {
 <span class="cstat-no" title="statement not covered" >        const mappedNodes = mapNodesIfChanged(nodes, (node) =&gt; node.map(fn));</span>
 <span class="cstat-no" title="statement not covered" >        if (newNode !== nodes) {</span>
 <span class="cstat-no" title="statement not covered" >          if (!newNode) {</span>
-<span class="cstat-no" title="statement not covered" >            newNode = new Node({ parent: this.parent });</span>
+<span class="cstat-no" title="statement not covered" >            newNode = new _Node({ parent: this.parent });</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          newNode.setProperty(NODES_KEY, mappedNodes);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -26038,7 +26038,7 @@ var Node = class {
     fn(this);
   }
   createChild(nodeOrProperties) {
-    const node = nodeOrProperties instanceof Node ? nodeOrProperties.clone() : new Node(nodeOrProperties);
+    const node = nodeOrProperties instanceof _Node ? nodeOrProperties.clone() : new _Node(nodeOrProperties);
     node.setProperty("parent", this);
     return node;
   }
@@ -26068,7 +26068,7 @@ var Node = class {
     this.children[this.children.indexOf(target)] = this.createChild(node);
   }
   clone() {
-    return new Node(this);
+    return new _Node(this);
   }
   get firstChild() {
     var _a;
@@ -26647,7 +26647,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-18T01:59:50.135Z
+                at 2023-06-19T01:47:12.872Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
