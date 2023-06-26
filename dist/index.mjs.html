@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.63% </span>
+                <span class="strong">65.65% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14333/21839</span>
+                <span class='fraction'>14347/21853</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.34% </span>
+                <span class="strong">78.35% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3241/4137</span>
+                <span class='fraction'>3243/4139</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.97% </span>
+                <span class="strong">62% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>965/1557</span>
+                <span class='fraction'>966/1558</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.63% </span>
+                <span class="strong">65.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14333/21839</span>
+                <span class='fraction'>14347/21853</span>
             </div>
         
             
@@ -21902,7 +21902,21 @@
 <a name='L21837'></a><a href='#L21837'>21837</a>
 <a name='L21838'></a><a href='#L21838'>21838</a>
 <a name='L21839'></a><a href='#L21839'>21839</a>
-<a name='L21840'></a><a href='#L21840'>21840</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">384x</span>
+<a name='L21840'></a><a href='#L21840'>21840</a>
+<a name='L21841'></a><a href='#L21841'>21841</a>
+<a name='L21842'></a><a href='#L21842'>21842</a>
+<a name='L21843'></a><a href='#L21843'>21843</a>
+<a name='L21844'></a><a href='#L21844'>21844</a>
+<a name='L21845'></a><a href='#L21845'>21845</a>
+<a name='L21846'></a><a href='#L21846'>21846</a>
+<a name='L21847'></a><a href='#L21847'>21847</a>
+<a name='L21848'></a><a href='#L21848'>21848</a>
+<a name='L21849'></a><a href='#L21849'>21849</a>
+<a name='L21850'></a><a href='#L21850'>21850</a>
+<a name='L21851'></a><a href='#L21851'>21851</a>
+<a name='L21852'></a><a href='#L21852'>21852</a>
+<a name='L21853'></a><a href='#L21853'>21853</a>
+<a name='L21854'></a><a href='#L21854'>21854</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
@@ -31471,6 +31485,20 @@
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">15360x</span>
+<span class="cline-any cline-yes">46080x</span>
+<span class="cline-any cline-yes">46080x</span>
+<span class="cline-any cline-yes">15360x</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">15360x</span>
@@ -43759,7 +43787,7 @@ var __require = /* @__PURE__ */ ((x) =&gt; typeof require !== "undefined" ? requ
 }) : x)(function(x) {
 <span class="cstat-no" title="statement not covered" >  if (typeof require !== "undefined")</span>
 <span class="cstat-no" title="statement not covered" >    return require.apply(this, arguments);</span>
-<span class="cstat-no" title="statement not covered" >  throw new Error('Dynamic require of "' + x + '" is not supported');</span>
+<span class="cstat-no" title="statement not covered" >  throw Error('Dynamic require of "' + x + '" is not supported');</span>
 });
 var __esm = (fn, res) =&gt; function __init() {
   return fn &amp;&amp; (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
@@ -53279,6 +53307,7 @@ var require_constants4 = __commonJS({
     var MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER <span class="branch-0 cbranch-no" title="branch not covered" >|| /* istanbul ignore next */</span>
     9007199254740991;
     var MAX_SAFE_COMPONENT_LENGTH = 16;
+    var MAX_SAFE_BUILD_LENGTH = MAX_LENGTH - 6;
     var RELEASE_TYPES = [
       "major",
       "premajor",
@@ -53291,6 +53320,7 @@ var require_constants4 = __commonJS({
     module.exports = {
       MAX_LENGTH,
       MAX_SAFE_COMPONENT_LENGTH,
+      MAX_SAFE_BUILD_LENGTH,
       MAX_SAFE_INTEGER,
       RELEASE_TYPES,
       SEMVER_SPEC_VERSION,
@@ -53303,7 +53333,7 @@ var require_constants4 = __commonJS({
 // node_modules/semver/internal/re.js
 var require_re = __commonJS({
   "node_modules/semver/internal/re.js"(exports, module) {
-    var { MAX_SAFE_COMPONENT_LENGTH } = require_constants4();
+    var { MAX_SAFE_COMPONENT_LENGTH, MAX_SAFE_BUILD_LENGTH } = require_constants4();
     var debug = require_debug();
     exports = module.exports = {};
     var re = exports.re = [];
@@ -53311,8 +53341,20 @@ var require_re = __commonJS({
     var src = exports.src = [];
     var t = exports.t = {};
     var R = 0;
+    var LETTERDASHNUMBER = "[a-zA-Z0-9-]";
+    var safeRegexReplacements = [
+      ["\\s", 1],
+      ["\\d", MAX_SAFE_COMPONENT_LENGTH],
+      [LETTERDASHNUMBER, MAX_SAFE_BUILD_LENGTH]
+    ];
+    var makeSafeRegex = (value) =&gt; {
+      for (const [token, max] of safeRegexReplacements) {
+        value = value.split(`${token}*`).join(`${token}{0,${max}}`).split(`${token}+`).join(`${token}{1,${max}}`);
+      }
+      return value;
+    };
     var createToken = (name, value, isGlobal) =&gt; {
-      const safe = value.split("\\s*").join("\\s{0,1}").split("\\s+").join("\\s");
+      const safe = makeSafeRegex(value);
       const index = R++;
       debug(name, index, value);
       t[name] = index;
@@ -53321,15 +53363,15 @@ var require_re = __commonJS({
       safeRe[index] = new RegExp(safe, isGlobal ? "g" : void 0);
     };
     createToken("NUMERICIDENTIFIER", "0|[1-9]\\d*");
-    createToken("NUMERICIDENTIFIERLOOSE", "[0-9]+");
-    createToken("NONNUMERICIDENTIFIER", "\\d*[a-zA-Z-][a-zA-Z0-9-]*");
+    createToken("NUMERICIDENTIFIERLOOSE", "\\d+");
+    createToken("NONNUMERICIDENTIFIER", `\\d*[a-zA-Z-]${LETTERDASHNUMBER}*`);
     createToken("MAINVERSION", `(${src[t.NUMERICIDENTIFIER]})\\.(${src[t.NUMERICIDENTIFIER]})\\.(${src[t.NUMERICIDENTIFIER]})`);
     createToken("MAINVERSIONLOOSE", `(${src[t.NUMERICIDENTIFIERLOOSE]})\\.(${src[t.NUMERICIDENTIFIERLOOSE]})\\.(${src[t.NUMERICIDENTIFIERLOOSE]})`);
     createToken("PRERELEASEIDENTIFIER", `(?:${src[t.NUMERICIDENTIFIER]}|${src[t.NONNUMERICIDENTIFIER]})`);
     createToken("PRERELEASEIDENTIFIERLOOSE", `(?:${src[t.NUMERICIDENTIFIERLOOSE]}|${src[t.NONNUMERICIDENTIFIER]})`);
     createToken("PRERELEASE", `(?:-(${src[t.PRERELEASEIDENTIFIER]}(?:\\.${src[t.PRERELEASEIDENTIFIER]})*))`);
     createToken("PRERELEASELOOSE", `(?:-?(${src[t.PRERELEASEIDENTIFIERLOOSE]}(?:\\.${src[t.PRERELEASEIDENTIFIERLOOSE]})*))`);
-    createToken("BUILDIDENTIFIER", "[0-9A-Za-z-]+");
+    createToken("BUILDIDENTIFIER", `${LETTERDASHNUMBER}+`);
     createToken("BUILD", `(?:\\+(${src[t.BUILDIDENTIFIER]}(?:\\.${src[t.BUILDIDENTIFIER]})*))`);
     createToken("FULLPLAIN", `v?${src[t.MAINVERSION]}${src[t.PRERELEASE]}?${src[t.BUILD]}?`);
     createToken("FULL", `^${src[t.FULLPLAIN]}$`);
@@ -65587,7 +65629,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-25T02:08:14.071Z
+                at 2023-06-26T02:01:06.477Z
             </div>
         <script src="../prettify.js"></script>
         <script>
