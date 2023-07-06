@@ -1967,12 +1967,12 @@
 <span class="cstat-no" title="statement not covered" >type EachCallback&lt;T&gt; = (</span>
 <span class="cstat-no" title="statement not covered" >  path: AstPath&lt;ArrayElement&lt;T&gt;&gt;,</span>
 <span class="cstat-no" title="statement not covered" >  index: number,</span>
-<span class="cstat-no" title="statement not covered" >  value: any</span>
+<span class="cstat-no" title="statement not covered" >  value: any,</span>
 <span class="cstat-no" title="statement not covered" >) =&gt; void;</span>
 <span class="cstat-no" title="statement not covered" >type MapCallback&lt;T, U&gt; = (</span>
 <span class="cstat-no" title="statement not covered" >  path: AstPath&lt;ArrayElement&lt;T&gt;&gt;,</span>
 <span class="cstat-no" title="statement not covered" >  index: number,</span>
-<span class="cstat-no" title="statement not covered" >  value: any</span>
+<span class="cstat-no" title="statement not covered" >  value: any,</span>
 <span class="cstat-no" title="statement not covered" >) =&gt; U;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// https://github.com/prettier/prettier/blob/next/src/common/ast-path.js</span>
@@ -2031,18 +2031,18 @@
 <span class="cstat-no" title="statement not covered" >  call&lt;U&gt;(callback: CallCallback&lt;T, U&gt;): U;</span>
 <span class="cstat-no" title="statement not covered" >  call&lt;U, P1 extends CallProperties&lt;T&gt;&gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: CallCallback&lt;IndexValue&lt;T, P1&gt;, U&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    prop1: P1</span>
+<span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >  ): U;</span>
 <span class="cstat-no" title="statement not covered" >  call&lt;U, P1 extends keyof T, P2 extends CallProperties&lt;T[P1]&gt;&gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: CallCallback&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, U&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
-<span class="cstat-no" title="statement not covered" >    prop2: P2</span>
+<span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
 <span class="cstat-no" title="statement not covered" >  ): U;</span>
 <span class="cstat-no" title="statement not covered" >  call&lt;</span>
 <span class="cstat-no" title="statement not covered" >    U,</span>
 <span class="cstat-no" title="statement not covered" >    P1 extends keyof T,</span>
 <span class="cstat-no" title="statement not covered" >    P2 extends CallProperties&lt;T[P1]&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    P3 extends CallProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >    P3 extends CallProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;,</span>
 <span class="cstat-no" title="statement not covered" >  &gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: CallCallback&lt;</span>
 <span class="cstat-no" title="statement not covered" >      IndexValue&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, P3&gt;,</span>
@@ -2050,14 +2050,14 @@
 <span class="cstat-no" title="statement not covered" >    &gt;,</span>
 <span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
-<span class="cstat-no" title="statement not covered" >    prop3: P3</span>
+<span class="cstat-no" title="statement not covered" >    prop3: P3,</span>
 <span class="cstat-no" title="statement not covered" >  ): U;</span>
 <span class="cstat-no" title="statement not covered" >  call&lt;</span>
 <span class="cstat-no" title="statement not covered" >    U,</span>
 <span class="cstat-no" title="statement not covered" >    P1 extends keyof T,</span>
 <span class="cstat-no" title="statement not covered" >    P2 extends CallProperties&lt;T[P1]&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    P3 extends CallProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    P4 extends CallProperties&lt;IndexValue&lt;IndexValue&lt;T[P1], P2&gt;, P3&gt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >    P4 extends CallProperties&lt;IndexValue&lt;IndexValue&lt;T[P1], P2&gt;, P3&gt;&gt;,</span>
 <span class="cstat-no" title="statement not covered" >  &gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: CallCallback&lt;</span>
 <span class="cstat-no" title="statement not covered" >      IndexValue&lt;IndexValue&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, P3&gt;, P4&gt;,</span>
@@ -2066,7 +2066,7 @@
 <span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
 <span class="cstat-no" title="statement not covered" >    prop3: P3,</span>
-<span class="cstat-no" title="statement not covered" >    prop4: P4</span>
+<span class="cstat-no" title="statement not covered" >    prop4: P4,</span>
 <span class="cstat-no" title="statement not covered" >  ): U;</span>
 <span class="cstat-no" title="statement not covered" >  call&lt;U, P extends PropertyKey&gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: CallCallback&lt;any, U&gt;,</span>
@@ -2080,28 +2080,28 @@
 <span class="cstat-no" title="statement not covered" >  each(callback: EachCallback&lt;T&gt;): void;</span>
 <span class="cstat-no" title="statement not covered" >  each&lt;P1 extends IterProperties&lt;T&gt;&gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: EachCallback&lt;IndexValue&lt;T, P1&gt;&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    prop1: P1</span>
+<span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >  ): void;</span>
 <span class="cstat-no" title="statement not covered" >  each&lt;P1 extends keyof T, P2 extends IterProperties&lt;T[P1]&gt;&gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: EachCallback&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
-<span class="cstat-no" title="statement not covered" >    prop2: P2</span>
-<span class="cstat-no" title="statement not covered" >  ): void;</span>
-<span class="cstat-no" title="statement not covered" >  each&lt;</span>
-<span class="cstat-no" title="statement not covered" >    P1 extends keyof T,</span>
-<span class="cstat-no" title="statement not covered" >    P2 extends IterProperties&lt;T[P1]&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    P3 extends IterProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >  &gt;(</span>
-<span class="cstat-no" title="statement not covered" >    callback: EachCallback&lt;IndexValue&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, P3&gt;&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
-<span class="cstat-no" title="statement not covered" >    prop3: P3</span>
 <span class="cstat-no" title="statement not covered" >  ): void;</span>
 <span class="cstat-no" title="statement not covered" >  each&lt;</span>
 <span class="cstat-no" title="statement not covered" >    P1 extends keyof T,</span>
 <span class="cstat-no" title="statement not covered" >    P2 extends IterProperties&lt;T[P1]&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    P3 extends IterProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    P4 extends IterProperties&lt;IndexValue&lt;IndexValue&lt;T[P1], P2&gt;, P3&gt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >  &gt;(</span>
+<span class="cstat-no" title="statement not covered" >    callback: EachCallback&lt;IndexValue&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, P3&gt;&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
+<span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
+<span class="cstat-no" title="statement not covered" >    prop3: P3,</span>
+<span class="cstat-no" title="statement not covered" >  ): void;</span>
+<span class="cstat-no" title="statement not covered" >  each&lt;</span>
+<span class="cstat-no" title="statement not covered" >    P1 extends keyof T,</span>
+<span class="cstat-no" title="statement not covered" >    P2 extends IterProperties&lt;T[P1]&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    P3 extends IterProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    P4 extends IterProperties&lt;IndexValue&lt;IndexValue&lt;T[P1], P2&gt;, P3&gt;&gt;,</span>
 <span class="cstat-no" title="statement not covered" >  &gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: EachCallback&lt;</span>
 <span class="cstat-no" title="statement not covered" >      IndexValue&lt;IndexValue&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, P3&gt;, P4&gt;</span>
@@ -2109,7 +2109,7 @@
 <span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
 <span class="cstat-no" title="statement not covered" >    prop3: P3,</span>
-<span class="cstat-no" title="statement not covered" >    prop4: P4</span>
+<span class="cstat-no" title="statement not covered" >    prop4: P4,</span>
 <span class="cstat-no" title="statement not covered" >  ): void;</span>
 <span class="cstat-no" title="statement not covered" >  each(</span>
 <span class="cstat-no" title="statement not covered" >    callback: EachCallback&lt;any[]&gt;,</span>
@@ -2123,30 +2123,30 @@
 <span class="cstat-no" title="statement not covered" >  map&lt;U&gt;(callback: MapCallback&lt;T, U&gt;): U[];</span>
 <span class="cstat-no" title="statement not covered" >  map&lt;U, P1 extends IterProperties&lt;T&gt;&gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: MapCallback&lt;IndexValue&lt;T, P1&gt;, U&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    prop1: P1</span>
+<span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >  ): U[];</span>
 <span class="cstat-no" title="statement not covered" >  map&lt;U, P1 extends keyof T, P2 extends IterProperties&lt;T[P1]&gt;&gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: MapCallback&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, U&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
-<span class="cstat-no" title="statement not covered" >    prop2: P2</span>
-<span class="cstat-no" title="statement not covered" >  ): U[];</span>
-<span class="cstat-no" title="statement not covered" >  map&lt;</span>
-<span class="cstat-no" title="statement not covered" >    U,</span>
-<span class="cstat-no" title="statement not covered" >    P1 extends keyof T,</span>
-<span class="cstat-no" title="statement not covered" >    P2 extends IterProperties&lt;T[P1]&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    P3 extends IterProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >  &gt;(</span>
-<span class="cstat-no" title="statement not covered" >    callback: MapCallback&lt;IndexValue&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, P3&gt;, U&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
-<span class="cstat-no" title="statement not covered" >    prop3: P3</span>
 <span class="cstat-no" title="statement not covered" >  ): U[];</span>
 <span class="cstat-no" title="statement not covered" >  map&lt;</span>
 <span class="cstat-no" title="statement not covered" >    U,</span>
 <span class="cstat-no" title="statement not covered" >    P1 extends keyof T,</span>
 <span class="cstat-no" title="statement not covered" >    P2 extends IterProperties&lt;T[P1]&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    P3 extends IterProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;,</span>
-<span class="cstat-no" title="statement not covered" >    P4 extends IterProperties&lt;IndexValue&lt;IndexValue&lt;T[P1], P2&gt;, P3&gt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >  &gt;(</span>
+<span class="cstat-no" title="statement not covered" >    callback: MapCallback&lt;IndexValue&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, P3&gt;, U&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
+<span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
+<span class="cstat-no" title="statement not covered" >    prop3: P3,</span>
+<span class="cstat-no" title="statement not covered" >  ): U[];</span>
+<span class="cstat-no" title="statement not covered" >  map&lt;</span>
+<span class="cstat-no" title="statement not covered" >    U,</span>
+<span class="cstat-no" title="statement not covered" >    P1 extends keyof T,</span>
+<span class="cstat-no" title="statement not covered" >    P2 extends IterProperties&lt;T[P1]&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    P3 extends IterProperties&lt;IndexValue&lt;T[P1], P2&gt;&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    P4 extends IterProperties&lt;IndexValue&lt;IndexValue&lt;T[P1], P2&gt;, P3&gt;&gt;,</span>
 <span class="cstat-no" title="statement not covered" >  &gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: MapCallback&lt;</span>
 <span class="cstat-no" title="statement not covered" >      IndexValue&lt;IndexValue&lt;IndexValue&lt;IndexValue&lt;T, P1&gt;, P2&gt;, P3&gt;, P4&gt;,</span>
@@ -2155,7 +2155,7 @@
 <span class="cstat-no" title="statement not covered" >    prop1: P1,</span>
 <span class="cstat-no" title="statement not covered" >    prop2: P2,</span>
 <span class="cstat-no" title="statement not covered" >    prop3: P3,</span>
-<span class="cstat-no" title="statement not covered" >    prop4: P4</span>
+<span class="cstat-no" title="statement not covered" >    prop4: P4,</span>
 <span class="cstat-no" title="statement not covered" >  ): U[];</span>
 <span class="cstat-no" title="statement not covered" >  map&lt;U&gt;(</span>
 <span class="cstat-no" title="statement not covered" >    callback: MapCallback&lt;any[], U&gt;,</span>
@@ -2199,7 +2199,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export type CustomParser = (</span>
 <span class="cstat-no" title="statement not covered" >  text: string,</span>
-<span class="cstat-no" title="statement not covered" >  options: Options</span>
+<span class="cstat-no" title="statement not covered" >  options: Options,</span>
 <span class="cstat-no" title="statement not covered" >) =&gt; AST | Promise&lt;AST&gt;;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >/**</span>
@@ -2362,20 +2362,20 @@
 <span class="cstat-no" title="statement not covered" >    path: AstPath&lt;T&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    options: ParserOptions&lt;T&gt;,</span>
 <span class="cstat-no" title="statement not covered" >    print: (path: AstPath&lt;T&gt;) =&gt; Doc,</span>
-<span class="cstat-no" title="statement not covered" >    args?: unknown</span>
+<span class="cstat-no" title="statement not covered" >    args?: unknown,</span>
 <span class="cstat-no" title="statement not covered" >  ): Doc;</span>
 <span class="cstat-no" title="statement not covered" >  embed?:</span>
 <span class="cstat-no" title="statement not covered" >    | ((</span>
 <span class="cstat-no" title="statement not covered" >        path: AstPath,</span>
-<span class="cstat-no" title="statement not covered" >        options: Options</span>
+<span class="cstat-no" title="statement not covered" >        options: Options,</span>
 <span class="cstat-no" title="statement not covered" >      ) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >        | ((</span>
 <span class="cstat-no" title="statement not covered" >            textToDoc: (text: string, options: Options) =&gt; Promise&lt;Doc&gt;,</span>
 <span class="cstat-no" title="statement not covered" >            print: (</span>
-<span class="cstat-no" title="statement not covered" >              selector?: string | number | Array&lt;string | number&gt; | AstPath</span>
+<span class="cstat-no" title="statement not covered" >              selector?: string | number | Array&lt;string | number&gt; | AstPath,</span>
 <span class="cstat-no" title="statement not covered" >            ) =&gt; Doc,</span>
 <span class="cstat-no" title="statement not covered" >            path: AstPath,</span>
-<span class="cstat-no" title="statement not covered" >            options: Options</span>
+<span class="cstat-no" title="statement not covered" >            options: Options,</span>
 <span class="cstat-no" title="statement not covered" >          ) =&gt; Promise&lt;Doc | undefined&gt; | Doc | undefined)</span>
 <span class="cstat-no" title="statement not covered" >        | Doc</span>
 <span class="cstat-no" title="statement not covered" >        | null)</span>
@@ -2412,7 +2412,7 @@
 <span class="cstat-no" title="statement not covered" >              text: string,</span>
 <span class="cstat-no" title="statement not covered" >              options: ParserOptions&lt;T&gt;,</span>
 <span class="cstat-no" title="statement not covered" >              ast: T,</span>
-<span class="cstat-no" title="statement not covered" >              isLastComment: boolean</span>
+<span class="cstat-no" title="statement not covered" >              isLastComment: boolean,</span>
 <span class="cstat-no" title="statement not covered" >            ) =&gt; boolean)</span>
 <span class="cstat-no" title="statement not covered" >          | undefined;</span>
 <span class="cstat-no" title="statement not covered" >        endOfLine?:</span>
@@ -2421,7 +2421,7 @@
 <span class="cstat-no" title="statement not covered" >              text: string,</span>
 <span class="cstat-no" title="statement not covered" >              options: ParserOptions&lt;T&gt;,</span>
 <span class="cstat-no" title="statement not covered" >              ast: T,</span>
-<span class="cstat-no" title="statement not covered" >              isLastComment: boolean</span>
+<span class="cstat-no" title="statement not covered" >              isLastComment: boolean,</span>
 <span class="cstat-no" title="statement not covered" >            ) =&gt; boolean)</span>
 <span class="cstat-no" title="statement not covered" >          | undefined;</span>
 <span class="cstat-no" title="statement not covered" >        remaining?:</span>
@@ -2430,7 +2430,7 @@
 <span class="cstat-no" title="statement not covered" >              text: string,</span>
 <span class="cstat-no" title="statement not covered" >              options: ParserOptions&lt;T&gt;,</span>
 <span class="cstat-no" title="statement not covered" >              ast: T,</span>
-<span class="cstat-no" title="statement not covered" >              isLastComment: boolean</span>
+<span class="cstat-no" title="statement not covered" >              isLastComment: boolean,</span>
 <span class="cstat-no" title="statement not covered" >            ) =&gt; boolean)</span>
 <span class="cstat-no" title="statement not covered" >          | undefined;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -2470,7 +2470,7 @@
 <span class="cstat-no" title="statement not covered" > */</span>
 <span class="cstat-no" title="statement not covered" >export function formatWithCursor(</span>
 <span class="cstat-no" title="statement not covered" >  source: string,</span>
-<span class="cstat-no" title="statement not covered" >  options: CursorOptions</span>
+<span class="cstat-no" title="statement not covered" >  options: CursorOptions,</span>
 <span class="cstat-no" title="statement not covered" >): Promise&lt;CursorResult&gt;;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function formatAST(ast: any, options?: Options): Promise&lt;string&gt;;</span>
@@ -2511,7 +2511,7 @@
 <span class="cstat-no" title="statement not covered" > */</span>
 <span class="cstat-no" title="statement not covered" >export function resolveConfig(</span>
 <span class="cstat-no" title="statement not covered" >  filePath: string,</span>
-<span class="cstat-no" title="statement not covered" >  options?: ResolveConfigOptions</span>
+<span class="cstat-no" title="statement not covered" >  options?: ResolveConfigOptions,</span>
 <span class="cstat-no" title="statement not covered" >): Promise&lt;Options | null&gt;;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >/**</span>
@@ -2687,7 +2687,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export function getFileInfo(</span>
 <span class="cstat-no" title="statement not covered" >  filePath: string,</span>
-<span class="cstat-no" title="statement not covered" >  options?: FileInfoOptions</span>
+<span class="cstat-no" title="statement not covered" >  options?: FileInfoOptions,</span>
 <span class="cstat-no" title="statement not covered" >): Promise&lt;FileInfoResult&gt;;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >/**</span>
@@ -2715,7 +2715,7 @@
 <span class="cstat-no" title="statement not covered" >  function getAlignmentSize(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    tabWidth: number,</span>
-<span class="cstat-no" title="statement not covered" >    startIndex?: number | undefined</span>
+<span class="cstat-no" title="statement not covered" >    startIndex?: number | undefined,</span>
 <span class="cstat-no" title="statement not covered" >  ): number;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function getIndentSize(value: string, tabWidth: number): number;</span>
@@ -2723,83 +2723,83 @@
 <span class="cstat-no" title="statement not covered" >  function skipNewline(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
-<span class="cstat-no" title="statement not covered" >    options?: SkipOptions | undefined</span>
+<span class="cstat-no" title="statement not covered" >    options?: SkipOptions | undefined,</span>
 <span class="cstat-no" title="statement not covered" >  ): number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function skipInlineComment(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
-<span class="cstat-no" title="statement not covered" >    startIndex: number | false</span>
+<span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
 <span class="cstat-no" title="statement not covered" >  ): number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function skipTrailingComment(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
-<span class="cstat-no" title="statement not covered" >    startIndex: number | false</span>
+<span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
 <span class="cstat-no" title="statement not covered" >  ): number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function skipTrailingComment(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
-<span class="cstat-no" title="statement not covered" >    startIndex: number | false</span>
+<span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
 <span class="cstat-no" title="statement not covered" >  ): number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function hasNewline(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number,</span>
-<span class="cstat-no" title="statement not covered" >    options?: SkipOptions | undefined</span>
+<span class="cstat-no" title="statement not covered" >    options?: SkipOptions | undefined,</span>
 <span class="cstat-no" title="statement not covered" >  ): boolean;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function hasNewlineInRange(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number,</span>
-<span class="cstat-no" title="statement not covered" >    endIndex: number</span>
+<span class="cstat-no" title="statement not covered" >    endIndex: number,</span>
 <span class="cstat-no" title="statement not covered" >  ): boolean;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function hasSpaces(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number,</span>
-<span class="cstat-no" title="statement not covered" >    options?: SkipOptions | undefined</span>
+<span class="cstat-no" title="statement not covered" >    options?: SkipOptions | undefined,</span>
 <span class="cstat-no" title="statement not covered" >  ): boolean;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function getNextNonSpaceNonCommentCharacter(</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
-<span class="cstat-no" title="statement not covered" >    startIndex: number</span>
+<span class="cstat-no" title="statement not covered" >    startIndex: number,</span>
 <span class="cstat-no" title="statement not covered" >  ): string;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function makeString(</span>
 <span class="cstat-no" title="statement not covered" >    rawText: string,</span>
 <span class="cstat-no" title="statement not covered" >    enclosingQuote: Quote,</span>
-<span class="cstat-no" title="statement not covered" >    unescapeUnnecessaryEscapes?: boolean | undefined</span>
+<span class="cstat-no" title="statement not covered" >    unescapeUnnecessaryEscapes?: boolean | undefined,</span>
 <span class="cstat-no" title="statement not covered" >  ): string;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function skip(</span>
-<span class="cstat-no" title="statement not covered" >    characters: string | RegExp</span>
+<span class="cstat-no" title="statement not covered" >    characters: string | RegExp,</span>
 <span class="cstat-no" title="statement not covered" >  ): (</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
-<span class="cstat-no" title="statement not covered" >    options?: SkipOptions</span>
+<span class="cstat-no" title="statement not covered" >    options?: SkipOptions,</span>
 <span class="cstat-no" title="statement not covered" >  ) =&gt; number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  const skipWhitespace: (</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
-<span class="cstat-no" title="statement not covered" >    options?: SkipOptions</span>
+<span class="cstat-no" title="statement not covered" >    options?: SkipOptions,</span>
 <span class="cstat-no" title="statement not covered" >  ) =&gt; number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  const skipSpaces: (</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
-<span class="cstat-no" title="statement not covered" >    options?: SkipOptions</span>
+<span class="cstat-no" title="statement not covered" >    options?: SkipOptions,</span>
 <span class="cstat-no" title="statement not covered" >  ) =&gt; number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  const skipToLineEnd: (</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
-<span class="cstat-no" title="statement not covered" >    options?: SkipOptions</span>
+<span class="cstat-no" title="statement not covered" >    options?: SkipOptions,</span>
 <span class="cstat-no" title="statement not covered" >  ) =&gt; number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  const skipEverythingButNewLine: (</span>
 <span class="cstat-no" title="statement not covered" >    text: string,</span>
 <span class="cstat-no" title="statement not covered" >    startIndex: number | false,</span>
-<span class="cstat-no" title="statement not covered" >    options?: SkipOptions</span>
+<span class="cstat-no" title="statement not covered" >    options?: SkipOptions,</span>
 <span class="cstat-no" title="statement not covered" >  ) =&gt; number | false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  function addLeadingComment(node: any, comment: any): void;</span>
@@ -2815,7 +2815,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-05T01:57:16.458Z
+                at 2023-07-06T02:01:20.913Z
             </div>
         <script src="../prettify.js"></script>
         <script>
