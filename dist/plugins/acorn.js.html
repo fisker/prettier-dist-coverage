@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.74% </span>
+                <span class="strong">60.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4876/8027</span>
+                <span class='fraction'>4880/8036</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.74% </span>
+                <span class="strong">60.72% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4876/8027</span>
+                <span class='fraction'>4880/8036</span>
             </div>
         
             
@@ -8089,7 +8089,16 @@
 <a name='L8024'></a><a href='#L8024'>8024</a>
 <a name='L8025'></a><a href='#L8025'>8025</a>
 <a name='L8026'></a><a href='#L8026'>8026</a>
-<a name='L8027'></a><a href='#L8027'>8027</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8027'></a><a href='#L8027'>8027</a>
+<a name='L8028'></a><a href='#L8028'>8028</a>
+<a name='L8029'></a><a href='#L8029'>8029</a>
+<a name='L8030'></a><a href='#L8030'>8030</a>
+<a name='L8031'></a><a href='#L8031'>8031</a>
+<a name='L8032'></a><a href='#L8032'>8032</a>
+<a name='L8033'></a><a href='#L8033'>8033</a>
+<a name='L8034'></a><a href='#L8034'>8034</a>
+<a name='L8035'></a><a href='#L8035'>8035</a>
+<a name='L8036'></a><a href='#L8036'>8036</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8591,10 +8600,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9616,6 +9629,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11252,6 +11268,8 @@
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16568,6 +16586,10 @@
           // allowed and treated as a line comment. Enabled by default when
           // `ecmaVersion` &gt;= 2023.
           allowHashBang: false,
+          // By default, the parser will verify that private properties are
+          // only used in places where they are valid and have been declared.
+          // Set this to false to turn such checks off.
+          checkPrivateFields: true,
           // When `locations` is on, `loc` properties holding objects with
           // `start` and `end` properties in `{line, column}` form (with
           // line being 1-based and column 0-based) will be attached to the
@@ -17645,6 +17667,9 @@
 <span class="cstat-no" title="statement not covered" >          var ref2 = this.privateNameStack.pop();</span>
 <span class="cstat-no" title="statement not covered" >          var declared = ref2.declared;</span>
 <span class="cstat-no" title="statement not covered" >          var used = ref2.used;</span>
+<span class="cstat-no" title="statement not covered" >          if (!this.options.checkPrivateFields) {</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          var len = this.privateNameStack.length;</span>
 <span class="cstat-no" title="statement not covered" >          var parent = len === 0 ? null : this.privateNameStack[len - 1];</span>
 <span class="cstat-no" title="statement not covered" >          for (var i2 = 0; i2 &lt; used.length; ++i2) {</span>
@@ -18513,7 +18538,7 @@
             }
             expr = this.finishNode(node, update <span class="branch-0 cbranch-no" title="branch not covered" >? "UpdateExpression" </span>: "UnaryExpression");
           } else if (!sawUnary &amp;&amp; this.type === types$1.privateId) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            if (forInit || this.privateNameStack.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            if ((forInit || this.privateNameStack.length === 0) &amp;&amp; this.options.checkPrivateFields) {</span>
 <span class="cstat-no" title="statement not covered" >              this.unexpected();</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            expr = this.parsePrivateIdent();</span>
@@ -19286,10 +19311,12 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          this.next();</span>
 <span class="cstat-no" title="statement not covered" >          this.finishNode(node, "PrivateIdentifier");</span>
-<span class="cstat-no" title="statement not covered" >          if (this.privateNameStack.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >            this.raise(node.start, "Private field '#" + node.name + "' must be declared in an enclosing class");</span>
-<span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            this.privateNameStack[this.privateNameStack.length - 1].used.push(node);</span>
+<span class="cstat-no" title="statement not covered" >          if (this.options.checkPrivateFields) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.privateNameStack.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >              this.raise(node.start, "Private field '#" + node.name + "' must be declared in an enclosing class");</span>
+<span class="cstat-no" title="statement not covered" >            } else {</span>
+<span class="cstat-no" title="statement not covered" >              this.privateNameStack[this.privateNameStack.length - 1].used.push(node);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return node;</span>
         };
@@ -21539,7 +21566,7 @@
           }
           return this.finishToken(type, word);
         };
-        var version = "8.9.0";
+        var version = "8.10.0";
         Parser.acorn = {
           Parser,
           version,
@@ -24148,7 +24175,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-09T02:06:12.483Z
+                at 2023-07-10T02:00:47.369Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">83.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6701/8007</span>
+                <span class='fraction'>6708/8016</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.17% </span>
+                <span class="strong">83.15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1988/2390</span>
+                <span class='fraction'>1990/2393</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">83.68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6701/8007</span>
+                <span class='fraction'>6708/8016</span>
             </div>
         
             
@@ -8070,7 +8070,16 @@
 <a name='L8005'></a><a href='#L8005'>8005</a>
 <a name='L8006'></a><a href='#L8006'>8006</a>
 <a name='L8007'></a><a href='#L8007'>8007</a>
-<a name='L8008'></a><a href='#L8008'>8008</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8008'></a><a href='#L8008'>8008</a>
+<a name='L8009'></a><a href='#L8009'>8009</a>
+<a name='L8010'></a><a href='#L8010'>8010</a>
+<a name='L8011'></a><a href='#L8011'>8011</a>
+<a name='L8012'></a><a href='#L8012'>8012</a>
+<a name='L8013'></a><a href='#L8013'>8013</a>
+<a name='L8014'></a><a href='#L8014'>8014</a>
+<a name='L8015'></a><a href='#L8015'>8015</a>
+<a name='L8016'></a><a href='#L8016'>8016</a>
+<a name='L8017'></a><a href='#L8017'>8017</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8547,10 +8556,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3158x</span>
 <span class="cline-any cline-yes">3158x</span>
-<span class="cline-any cline-yes">56844x</span>
-<span class="cline-any cline-yes">56844x</span>
+<span class="cline-any cline-yes">60002x</span>
+<span class="cline-any cline-yes">60002x</span>
 <span class="cline-any cline-yes">3158x</span>
 <span class="cline-any cline-yes">1573x</span>
 <span class="cline-any cline-yes">3158x</span>
@@ -9575,6 +9588,9 @@
 <span class="cline-any cline-yes">558x</span>
 <span class="cline-any cline-yes">558x</span>
 <span class="cline-any cline-yes">558x</span>
+<span class="cline-any cline-yes">558x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">558x</span>
 <span class="cline-any cline-yes">558x</span>
 <span class="cline-any cline-yes">558x</span>
@@ -11217,10 +11233,12 @@
 <span class="cline-any cline-yes">270x</span>
 <span class="cline-any cline-yes">270x</span>
 <span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">270x</span>
 <span class="cline-any cline-yes">262x</span>
 <span class="cline-any cline-yes">262x</span>
+<span class="cline-any cline-yes">270x</span>
 <span class="cline-any cline-yes">262x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16505,6 +16523,10 @@ var require_acorn = __commonJS({
         // allowed and treated as a line comment. Enabled by default when
         // `ecmaVersion` &gt;= 2023.
         allowHashBang: false,
+        // By default, the parser will verify that private properties are
+        // only used in places where they are valid and have been declared.
+        // Set this to false to turn such checks off.
+        checkPrivateFields: true,
         // When `locations` is on, `loc` properties holding objects with
         // `start` and `end` properties in `{line, column}` form (with
         // line being 1-based and column 0-based) will be attached to the
@@ -17582,6 +17604,9 @@ var require_acorn = __commonJS({
         var ref2 = this.privateNameStack.pop();
         var declared = ref2.declared;
         var used = ref2.used;
+        if (!this.options.checkPrivateFields) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          return;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
         var len = this.privateNameStack.length;
         var parent = len === 0 ? null <span class="branch-0 cbranch-no" title="branch not covered" >: this.privateNameStack[len - 1];</span>
         for (var i2 = 0; i2 &lt; used.length; ++i2) {
@@ -18450,7 +18475,7 @@ var require_acorn = __commonJS({
           }
           expr = this.finishNode(node, update ? "UpdateExpression" : "UnaryExpression");
         } else if (!sawUnary &amp;&amp; this.type === types$1.privateId) {
-          if (forInit || this.privateNameStack.length === 0) {
+          if ((forInit || this.privateNameStack.length === 0) &amp;&amp; this.options.checkPrivateFields) {
             this.unexpected();
           }
           expr = this.parsePrivateIdent();
@@ -19223,10 +19248,12 @@ var require_acorn = __commonJS({
 <span class="cstat-no" title="statement not covered" >        }</span>
         this.next();
         this.finishNode(node, "PrivateIdentifier");
-        if (this.privateNameStack.length === 0) {
-          this.raise(node.start, "Private field '#" + node.name + "' must be declared in an enclosing class");
-        } else {
-          this.privateNameStack[this.privateNameStack.length - 1].used.push(node);
+        if (this.options.checkPrivateFields) {
+          if (this.privateNameStack.length === 0) {
+            this.raise(node.start, "Private field '#" + node.name + "' must be declared in an enclosing class");
+          } else {
+            this.privateNameStack[this.privateNameStack.length - 1].used.push(node);
+          }
         }
         return node;
       };
@@ -21476,7 +21503,7 @@ var require_acorn = __commonJS({
         }
         return this.finishToken(type, word);
       };
-      var version = "8.9.0";
+      var version = "8.10.0";
       Parser.acorn = {
         Parser,
         version,
@@ -24091,7 +24118,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-09T02:06:08.642Z
+                at 2023-07-10T02:00:42.232Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
