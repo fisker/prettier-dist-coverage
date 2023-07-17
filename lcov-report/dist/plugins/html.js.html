@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.12% </span>
+                <span class="strong">76.01% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6765/8887</span>
+                <span class='fraction'>6769/8905</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.76% </span>
+                <span class="strong">73.7% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>914/1239</span>
+                <span class='fraction'>914/1240</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.68% </span>
+                <span class="strong">65.53% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>289/440</span>
+                <span class='fraction'>289/441</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.12% </span>
+                <span class="strong">76.01% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6765/8887</span>
+                <span class='fraction'>6769/8905</span>
             </div>
         
             
@@ -8949,7 +8949,25 @@
 <a name='L8884'></a><a href='#L8884'>8884</a>
 <a name='L8885'></a><a href='#L8885'>8885</a>
 <a name='L8886'></a><a href='#L8886'>8886</a>
-<a name='L8887'></a><a href='#L8887'>8887</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8887'></a><a href='#L8887'>8887</a>
+<a name='L8888'></a><a href='#L8888'>8888</a>
+<a name='L8889'></a><a href='#L8889'>8889</a>
+<a name='L8890'></a><a href='#L8890'>8890</a>
+<a name='L8891'></a><a href='#L8891'>8891</a>
+<a name='L8892'></a><a href='#L8892'>8892</a>
+<a name='L8893'></a><a href='#L8893'>8893</a>
+<a name='L8894'></a><a href='#L8894'>8894</a>
+<a name='L8895'></a><a href='#L8895'>8895</a>
+<a name='L8896'></a><a href='#L8896'>8896</a>
+<a name='L8897'></a><a href='#L8897'>8897</a>
+<a name='L8898'></a><a href='#L8898'>8898</a>
+<a name='L8899'></a><a href='#L8899'>8899</a>
+<a name='L8900'></a><a href='#L8900'>8900</a>
+<a name='L8901'></a><a href='#L8901'>8901</a>
+<a name='L8902'></a><a href='#L8902'>8902</a>
+<a name='L8903'></a><a href='#L8903'>8903</a>
+<a name='L8904'></a><a href='#L8904'>8904</a>
+<a name='L8905'></a><a href='#L8905'>8905</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11164,6 +11182,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11179,6 +11212,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20043,6 +20079,21 @@
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
+  // src/language-html/embed/print-vue-script-generic-attribute-value.js
+<span class="fstat-no" title="function not covered" >  function printVueScriptGenericAttributeValue(textToDoc, print2, path) {</span>
+<span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >    const value = getUnescapedAttributeValue(node);</span>
+<span class="cstat-no" title="statement not covered" >    return formatAttributeValue(</span>
+<span class="cstat-no" title="statement not covered" >      `type T&lt;${value}&gt; = any`,</span>
+<span class="cstat-no" title="statement not covered" >      textToDoc,</span>
+<span class="cstat-no" title="statement not covered" >      {</span>
+<span class="cstat-no" title="statement not covered" >        parser: "babel-ts",</span>
+<span class="cstat-no" title="statement not covered" >        __isEmbeddedTypescriptGenericParameters: true</span>
+<span class="cstat-no" title="statement not covered" >      },</span>
+<span class="cstat-no" title="statement not covered" >      shouldHugJsExpression</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+&nbsp;
   // src/language-html/embed/vue-bindings.js
 <span class="fstat-no" title="function not covered" >  function printVueBindings(text, textToDoc, { parseWithTs }) {</span>
 <span class="cstat-no" title="statement not covered" >    return formatAttributeValue(`function _(${text}) {}`, textToDoc, {</span>
@@ -20066,6 +20117,9 @@
 <span class="cstat-no" title="statement not covered" >    const attributeName = node.fullName;</span>
 <span class="cstat-no" title="statement not covered" >    if (attributeName === "v-for") {</span>
 <span class="cstat-no" title="statement not covered" >      return printVueVForDirective;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    if (attributeName === "generic" &amp;&amp; isVueScriptTag(node.parent, options2)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return printVueScriptGenericAttributeValue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const value = getUnescapedAttributeValue(node);</span>
 <span class="cstat-no" title="statement not covered" >    const parseWithTs = is_vue_sfc_with_typescript_script_default(path, options2);</span>
@@ -26728,7 +26782,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-16T02:11:26.920Z
+                at 2023-07-17T02:04:21.302Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
