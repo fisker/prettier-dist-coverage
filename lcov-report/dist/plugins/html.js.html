@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.01% </span>
+                <span class="strong">76.1% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6769/8905</span>
+                <span class='fraction'>6775/8902</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.01% </span>
+                <span class="strong">76.1% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6769/8905</span>
+                <span class='fraction'>6775/8902</span>
             </div>
         
             
@@ -8964,10 +8964,7 @@
 <a name='L8899'></a><a href='#L8899'>8899</a>
 <a name='L8900'></a><a href='#L8900'>8900</a>
 <a name='L8901'></a><a href='#L8901'>8901</a>
-<a name='L8902'></a><a href='#L8902'>8902</a>
-<a name='L8903'></a><a href='#L8903'>8903</a>
-<a name='L8904'></a><a href='#L8904'>8904</a>
-<a name='L8905'></a><a href='#L8905'>8905</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8902'></a><a href='#L8902'>8902</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11059,15 +11056,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -19962,42 +19956,39 @@
 <span class="cstat-no" title="statement not covered" >      return () =&gt; printSrcsetValue(getUnescapedAttributeValue(path.node));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
+  var SRCSET_UNITS = {
+    width: "w",
+    height: "h",
+    density: "x"
+  };
+  var SRCSET_TYPES = Object.keys(SRCSET_UNITS);
 <span class="fstat-no" title="function not covered" >  function printSrcsetValue(value) {</span>
 <span class="cstat-no" title="statement not covered" >    const srcset = parse_srcset_default(value);</span>
-<span class="cstat-no" title="statement not covered" >    const hasW = srcset.some(({ width }) =&gt; width);</span>
-<span class="cstat-no" title="statement not covered" >    const hasH = srcset.some(({ height }) =&gt; height);</span>
-<span class="cstat-no" title="statement not covered" >    const hasX = srcset.some(({ density }) =&gt; density);</span>
-<span class="cstat-no" title="statement not covered" >    if (hasW + hasH + hasX &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >    const types = SRCSET_TYPES.filter((type) =&gt; srcset.some((candidate) =&gt; Object.prototype.hasOwnProperty.call(candidate, type)));</span>
+<span class="cstat-no" title="statement not covered" >    if (types.length &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error("Mixed descriptor in srcset is not supported");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const key = hasW ? "width" : hasH ? "height" : "density";</span>
-<span class="cstat-no" title="statement not covered" >    const unit = hasW ? "w" : hasH ? "h" : "x";</span>
+<span class="cstat-no" title="statement not covered" >    const [key] = types;</span>
+<span class="cstat-no" title="statement not covered" >    const unit = SRCSET_UNITS[key];</span>
 <span class="cstat-no" title="statement not covered" >    const urls = srcset.map((src) =&gt; src.source.value);</span>
 <span class="cstat-no" title="statement not covered" >    const maxUrlLength = Math.max(...urls.map((url) =&gt; url.length));</span>
-<span class="cstat-no" title="statement not covered" >    const descriptors = srcset.map(</span>
-<span class="cstat-no" title="statement not covered" >      (src) =&gt; src[key] ? String(src[key].value) : ""</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    const descriptors = srcset.map((src) =&gt; src[key] ? String(src[key].value) : "");</span>
 <span class="cstat-no" title="statement not covered" >    const descriptorLeftLengths = descriptors.map((descriptor) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      const index = descriptor.indexOf(".");</span>
 <span class="cstat-no" title="statement not covered" >      return index === -1 ? descriptor.length : index;</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    const maxDescriptorLeftLength = Math.max(...descriptorLeftLengths);</span>
-<span class="cstat-no" title="statement not covered" >    return printExpand(</span>
-<span class="cstat-no" title="statement not covered" >      join(</span>
-<span class="cstat-no" title="statement not covered" >        [",", line],</span>
-<span class="cstat-no" title="statement not covered" >        urls.map((url, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          const parts = [url];</span>
-<span class="cstat-no" title="statement not covered" >          const descriptor = descriptors[index];</span>
-<span class="cstat-no" title="statement not covered" >          if (descriptor) {</span>
-<span class="cstat-no" title="statement not covered" >            const urlPadding = maxUrlLength - url.length + 1;</span>
-<span class="cstat-no" title="statement not covered" >            const descriptorPadding = maxDescriptorLeftLength - descriptorLeftLengths[index];</span>
-<span class="cstat-no" title="statement not covered" >            const alignment = " ".repeat(urlPadding + descriptorPadding);</span>
-<span class="cstat-no" title="statement not covered" >            parts.push(ifBreak(alignment, " "), descriptor + unit);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          return parts;</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >      )</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    return printExpand(join([",", line], urls.map((url, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const parts = [url];</span>
+<span class="cstat-no" title="statement not covered" >      const descriptor = descriptors[index];</span>
+<span class="cstat-no" title="statement not covered" >      if (descriptor) {</span>
+<span class="cstat-no" title="statement not covered" >        const urlPadding = maxUrlLength - url.length + 1;</span>
+<span class="cstat-no" title="statement not covered" >        const descriptorPadding = maxDescriptorLeftLength - descriptorLeftLengths[index];</span>
+<span class="cstat-no" title="statement not covered" >        const alignment = " ".repeat(urlPadding + descriptorPadding);</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(ifBreak(alignment, " "), descriptor + unit);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      return parts;</span>
+<span class="cstat-no" title="statement not covered" >    })));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var srcset_default = printSrcset;
 &nbsp;
@@ -26782,7 +26773,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-08T01:26:00.210Z
+                at 2023-08-09T01:29:56.254Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

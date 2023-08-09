@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">90.26% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8013/8877</span>
+                <span class='fraction'>8010/8874</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.27% </span>
+                <span class="strong">93.35% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1734/1859</span>
+                <span class='fraction'>1729/1852</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">90.26% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8013/8877</span>
+                <span class='fraction'>8010/8874</span>
             </div>
         
             
@@ -8937,10 +8937,7 @@
 <a name='L8872'></a><a href='#L8872'>8872</a>
 <a name='L8873'></a><a href='#L8873'>8873</a>
 <a name='L8874'></a><a href='#L8874'>8874</a>
-<a name='L8875'></a><a href='#L8875'>8875</a>
-<a name='L8876'></a><a href='#L8876'>8876</a>
-<a name='L8877'></a><a href='#L8877'>8877</a>
-<a name='L8878'></a><a href='#L8878'>8878</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8875'></a><a href='#L8875'>8875</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -10995,30 +10992,29 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">4275x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
@@ -11028,9 +11024,7 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -19872,42 +19866,39 @@ function printSrcset(path) {
     return () =&gt; printSrcsetValue(getUnescapedAttributeValue(path.node));
   }
 }
+var SRCSET_UNITS = {
+  width: "w",
+  height: "h",
+  density: "x"
+};
+var SRCSET_TYPES = Object.keys(SRCSET_UNITS);
 function printSrcsetValue(value) {
   const srcset = parse_srcset_default(value);
-  const hasW = srcset.some(({ width }) =&gt; width);
-  const hasH = srcset.some(({ height }) =&gt; height);
-  const hasX = srcset.some(({ density }) =&gt; density);
-  if (hasW + hasH + hasX &gt; 1) {
+  const types = SRCSET_TYPES.filter((type) =&gt; srcset.some((candidate) =&gt; Object.prototype.hasOwnProperty.call(candidate, type)));
+  if (types.length &gt; 1) {
     throw new Error("Mixed descriptor in srcset is not supported");
   }
-  const key = hasW ? "width" : hasH <span class="branch-0 cbranch-no" title="branch not covered" >? "height" </span>: "density";
-  const unit = hasW ? "w" : hasH <span class="branch-0 cbranch-no" title="branch not covered" >? "h" </span>: "x";
+  const [key] = types;
+  const unit = SRCSET_UNITS[key];
   const urls = srcset.map((src) =&gt; src.source.value);
   const maxUrlLength = Math.max(...urls.map((url) =&gt; url.length));
-  const descriptors = srcset.map(
-    (src) =&gt; src[key] ? String(src[key].value) : ""
-  );
+  const descriptors = srcset.map((src) =&gt; src[key] ? String(src[key].value) : "");
   const descriptorLeftLengths = descriptors.map((descriptor) =&gt; {
     const index = descriptor.indexOf(".");
     return index === -1 ? descriptor.length : index;
   });
   const maxDescriptorLeftLength = Math.max(...descriptorLeftLengths);
-  return printExpand(
-    join(
-      [",", line],
-      urls.map((url, index) =&gt; {
-        const parts = [url];
-        const descriptor = descriptors[index];
-        if (descriptor) {
-          const urlPadding = maxUrlLength - url.length + 1;
-          const descriptorPadding = maxDescriptorLeftLength - descriptorLeftLengths[index];
-          const alignment = " ".repeat(urlPadding + descriptorPadding);
-          parts.push(ifBreak(alignment, " "), descriptor + unit);
-        }
-        return parts;
-      })
-    )
-  );
+  return printExpand(join([",", line], urls.map((url, index) =&gt; {
+    const parts = [url];
+    const descriptor = descriptors[index];
+    if (descriptor) {
+      const urlPadding = maxUrlLength - url.length + 1;
+      const descriptorPadding = maxDescriptorLeftLength - descriptorLeftLengths[index];
+      const alignment = " ".repeat(urlPadding + descriptorPadding);
+      parts.push(ifBreak(alignment, " "), descriptor + unit);
+    }
+    return parts;
+  })));
 }
 var srcset_default = printSrcset;
 &nbsp;
@@ -26701,7 +26692,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-08T01:26:00.210Z
+                at 2023-08-09T01:29:56.254Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
