@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.75% </span>
+                <span class="strong">55.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3893/6982</span>
+                <span class='fraction'>3905/7000</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.75% </span>
+                <span class="strong">55.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3893/6982</span>
+                <span class='fraction'>3905/7000</span>
             </div>
         
             
@@ -7045,7 +7045,25 @@
 <a name='L6980'></a><a href='#L6980'>6980</a>
 <a name='L6981'></a><a href='#L6981'>6981</a>
 <a name='L6982'></a><a href='#L6982'>6982</a>
-<a name='L6983'></a><a href='#L6983'>6983</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">384x</span>
+<a name='L6983'></a><a href='#L6983'>6983</a>
+<a name='L6984'></a><a href='#L6984'>6984</a>
+<a name='L6985'></a><a href='#L6985'>6985</a>
+<a name='L6986'></a><a href='#L6986'>6986</a>
+<a name='L6987'></a><a href='#L6987'>6987</a>
+<a name='L6988'></a><a href='#L6988'>6988</a>
+<a name='L6989'></a><a href='#L6989'>6989</a>
+<a name='L6990'></a><a href='#L6990'>6990</a>
+<a name='L6991'></a><a href='#L6991'>6991</a>
+<a name='L6992'></a><a href='#L6992'>6992</a>
+<a name='L6993'></a><a href='#L6993'>6993</a>
+<a name='L6994'></a><a href='#L6994'>6994</a>
+<a name='L6995'></a><a href='#L6995'>6995</a>
+<a name='L6996'></a><a href='#L6996'>6996</a>
+<a name='L6997'></a><a href='#L6997'>6997</a>
+<a name='L6998'></a><a href='#L6998'>6998</a>
+<a name='L6999'></a><a href='#L6999'>6999</a>
+<a name='L7000'></a><a href='#L7000'>7000</a>
+<a name='L7001'></a><a href='#L7001'>7001</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
@@ -11548,12 +11566,12 @@
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
-<span class="cline-any cline-yes">1643x</span>
+<span class="cline-any cline-yes">8809x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1643x</span>
-<span class="cline-any cline-yes">1643x</span>
-<span class="cline-any cline-yes">1643x</span>
+<span class="cline-any cline-yes">8809x</span>
+<span class="cline-any cline-yes">8809x</span>
+<span class="cline-any cline-yes">8809x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12452,8 +12470,26 @@
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">384x</span>
 <span class="cline-any cline-yes">384x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
+<span class="cline-any cline-yes">3583x</span>
 <span class="cline-any cline-yes">3583x</span>
 <span class="cline-any cline-yes">3583x</span>
 <span class="cline-any cline-yes">3583x</span>
@@ -19433,12 +19469,30 @@ var preserveCamelCase = <span class="fstat-no" title="function not covered" >(st
 };
 var preserveConsecutiveUppercase = <span class="fstat-no" title="function not covered" >(input, toLowerCase) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  LEADING_CAPITAL.lastIndex = 0;</span>
-<span class="cstat-no" title="statement not covered" >  return input.replace(LEADING_CAPITAL, (m1) =&gt; toLowerCase(m1));</span>
+<span class="cstat-no" title="statement not covered" >  return string_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >    /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >    false,</span>
+<span class="cstat-no" title="statement not covered" >    input,</span>
+<span class="cstat-no" title="statement not covered" >    LEADING_CAPITAL,</span>
+<span class="cstat-no" title="statement not covered" >    (match) =&gt; toLowerCase(match)</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 };
 var postProcess = (input, toUpperCase) =&gt; {
   SEPARATORS_AND_IDENTIFIER.lastIndex = 0;
   NUMBERS_AND_IDENTIFIER.lastIndex = 0;
-  return input.replace(SEPARATORS_AND_IDENTIFIER, (_, identifier) =&gt; toUpperCase(identifier)).replace(NUMBERS_AND_IDENTIFIER, (m) =&gt; toUpperCase(m));
+  return string_replace_all_default(
+    /* isOptionalObject*/
+    false,
+    string_replace_all_default(
+      /* isOptionalObject*/
+      false,
+      input,
+      NUMBERS_AND_IDENTIFIER,
+      (match, pattern, offset) =&gt; ["_", "-"].includes(input.charAt(offset + match.length)) ? match : toUpperCase(match)
+    ),
+    SEPARATORS_AND_IDENTIFIER,
+    (_, identifier) =&gt; toUpperCase(identifier)
+  );
 };
 function camelCase(input, options) {
   if (!(typeof input === "string" <span class="branch-0 cbranch-no" title="branch not covered" >|| Array.isArray(input))</span>) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -21016,7 +21070,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-15T01:14:32.424Z
+                at 2023-08-16T01:14:06.517Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
