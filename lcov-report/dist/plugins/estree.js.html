@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.42% </span>
+                <span class="strong">61.49% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6767/11017</span>
+                <span class='fraction'>6767/11005</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.5% </span>
+                <span class="strong">52.51% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1374/2617</span>
+                <span class='fraction'>1376/2620</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.42% </span>
+                <span class="strong">61.49% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6767/11017</span>
+                <span class='fraction'>6767/11005</span>
             </div>
         
             
@@ -11067,19 +11067,7 @@
 <a name='L11002'></a><a href='#L11002'>11002</a>
 <a name='L11003'></a><a href='#L11003'>11003</a>
 <a name='L11004'></a><a href='#L11004'>11004</a>
-<a name='L11005'></a><a href='#L11005'>11005</a>
-<a name='L11006'></a><a href='#L11006'>11006</a>
-<a name='L11007'></a><a href='#L11007'>11007</a>
-<a name='L11008'></a><a href='#L11008'>11008</a>
-<a name='L11009'></a><a href='#L11009'>11009</a>
-<a name='L11010'></a><a href='#L11010'>11010</a>
-<a name='L11011'></a><a href='#L11011'>11011</a>
-<a name='L11012'></a><a href='#L11012'>11012</a>
-<a name='L11013'></a><a href='#L11013'>11013</a>
-<a name='L11014'></a><a href='#L11014'>11014</a>
-<a name='L11015'></a><a href='#L11015'>11015</a>
-<a name='L11016'></a><a href='#L11016'>11016</a>
-<a name='L11017'></a><a href='#L11017'>11017</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11005'></a><a href='#L11005'>11005</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15083,18 +15071,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -26094,25 +26070,13 @@
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (((precedingNode == null ? void 0 : precedingNode.type) === "Identifier" || (precedingNode == null ? void 0 : precedingNode.type) === "AssignmentPattern" || (precedingNode == null ? void 0 : precedingNode.type) === "ObjectPattern" || (precedingNode == null ? void 0 : precedingNode.type) === "ArrayPattern" || (precedingNode == null ? void 0 : precedingNode.type) === "RestElement") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; enclosingNode <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; isRealFunctionLikeNode(enclosingNode) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (((precedingNode == null ? void 0 : precedingNode.type) === "Identifier" || (precedingNode == null ? void 0 : precedingNode.type) === "AssignmentPattern" || (precedingNode == null ? void 0 : precedingNode.type) === "ObjectPattern" || (precedingNode == null ? void 0 : precedingNode.type) === "ArrayPattern" || (precedingNode == null ? void 0 : precedingNode.type) === "RestElement" || (precedingNode == null ? void 0 : precedingNode.type) === "TSParameterProperty") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isRealFunctionLikeNode(enclosingNode) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if ((enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "FunctionDeclaration" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (followingNode == null ? void 0 : followingNode.type) === "BlockStatement")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      const functionParamRightParenIndex = (<span class="branch-0 cbranch-no" title="branch not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >        const parameters = getFunctionParameters(enclosingNode);</span>
-<span class="cstat-no" title="statement not covered" >        if (parameters.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >          return get_next_non_space_non_comment_character_index_default(text, locEnd(at_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject*/</span>
-<span class="cstat-no" title="statement not covered" >            false,</span>
-<span class="cstat-no" title="statement not covered" >            parameters,</span>
-<span class="cstat-no" title="statement not covered" >            -1</span>
-<span class="cstat-no" title="statement not covered" >          )));</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        const functionParamLeftParenIndex = get_next_non_space_non_comment_character_index_default(text, locEnd(enclosingNode.id));</span>
-<span class="cstat-no" title="statement not covered" >        return functionParamLeftParenIndex !== false &amp;&amp; get_next_non_space_non_comment_character_index_default(text, functionParamLeftParenIndex + 1);</span>
-<span class="cstat-no" title="statement not covered" >      })();</span>
-<span class="cstat-no" title="statement not covered" >      if (locStart(comment) &gt; functionParamRightParenIndex) {</span>
+    if (!is_block_comment_default(comment) &amp;&amp; ((enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "FunctionDeclaration" || (enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "FunctionExpression" || (enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "ObjectMethod") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (followingNode == null ? void 0 : followingNode.type) === "BlockStatement" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; enclosingNode.body === followingNode)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      const characterAfterCommentIndex = get_next_non_space_non_comment_character_index_default(text, locEnd(comment));</span>
+<span class="cstat-no" title="statement not covered" >      if (characterAfterCommentIndex === locStart(followingNode)) {</span>
 <span class="cstat-no" title="statement not covered" >        addBlockStatementFirstComment(followingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -33118,7 +33082,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-02T01:14:09.322Z
+                at 2023-09-03T01:20:30.905Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
