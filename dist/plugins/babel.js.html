@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.86% </span>
+                <span class="strong">49.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8141/16327</span>
+                <span class='fraction'>8135/16322</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.48% </span>
+                <span class="strong">56.51% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1245/2204</span>
+                <span class='fraction'>1245/2203</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.75% </span>
+                <span class="strong">54.81% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>558/1019</span>
+                <span class='fraction'>558/1018</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.86% </span>
+                <span class="strong">49.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8141/16327</span>
+                <span class='fraction'>8135/16322</span>
             </div>
         
             
@@ -16384,12 +16384,7 @@
 <a name='L16319'></a><a href='#L16319'>16319</a>
 <a name='L16320'></a><a href='#L16320'>16320</a>
 <a name='L16321'></a><a href='#L16321'>16321</a>
-<a name='L16322'></a><a href='#L16322'>16322</a>
-<a name='L16323'></a><a href='#L16323'>16323</a>
-<a name='L16324'></a><a href='#L16324'>16324</a>
-<a name='L16325'></a><a href='#L16325'>16325</a>
-<a name='L16326'></a><a href='#L16326'>16326</a>
-<a name='L16327'></a><a href='#L16327'>16327</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16322'></a><a href='#L16322'>16322</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16495,23 +16490,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16795,11 +16773,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">290x</span>
 <span class="cline-any cline-yes">290x</span>
 <span class="cline-any cline-yes">290x</span>
 <span class="cline-any cline-yes">290x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32816,32 +32806,15 @@
         } = position;
         return new Position(line, column + columnOffset, index + columnOffset);
       }
-      var ParseErrorCode = {
-        SyntaxError: "BABEL_PARSER_SYNTAX_ERROR",
-        SourceTypeModuleError: "BABEL_PARSER_SOURCETYPE_MODULE_REQUIRED"
-      };
-      var reflect = <span class="fstat-no" title="function not covered" >(keys, last = keys.length - 1) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >        get() {</span>
-<span class="cstat-no" title="statement not covered" >          return keys.reduce((object, key) =&gt; object[key], this);</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        set(value) {</span>
-<span class="cstat-no" title="statement not covered" >          keys.reduce((item, key, i) =&gt; i === last ? item[key] = value : item[key], this);</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-      });
-      var instantiate = <span class="fstat-no" title="function not covered" >(constructor, properties, descriptors) =&gt; Object.keys(descriptors).map((key) =&gt; [key, descriptors[key]]).filter(([, descriptor]) =&gt; !!descriptor).map(([key, descriptor]) =&gt; [key, typeof descriptor === "function" ? {</span>
-<span class="cstat-no" title="statement not covered" >        value: descriptor,</span>
-<span class="cstat-no" title="statement not covered" >        enumerable: false</span>
-<span class="cstat-no" title="statement not covered" >      } : typeof descriptor.reflect === "string" ? Object.assign({}, descriptor, reflect(descriptor.reflect.split("."))) : descriptor]).reduce((instance, [key, descriptor]) =&gt; Object.defineProperty(instance, key, Object.assign({</span>
-<span class="cstat-no" title="statement not covered" >        configurable: true</span>
-      }, descriptor)), Object.assign(new constructor(), properties));
+      var code = "BABEL_PARSER_SOURCETYPE_MODULE_REQUIRED";
       var ModuleErrors = {
         ImportMetaOutsideModule: {
           message: `import.meta may appear only with 'sourceType: "module"'`,
-          code: ParseErrorCode.SourceTypeModuleError
+          code
         },
         ImportOutsideModule: {
           message: `'import' and 'export' may appear only with 'sourceType: "module"'`,
-          code: ParseErrorCode.SourceTypeModuleError
+          code
         }
       };
       var NodeDescriptions = {
@@ -33121,6 +33094,13 @@
       };
       var _excluded$1 = ["toMessage"];
       var _excluded2$1 = ["message"];
+<span class="fstat-no" title="function not covered" >      function defineHidden(obj, key, value) {</span>
+<span class="cstat-no" title="statement not covered" >        Object.defineProperty(obj, key, {</span>
+<span class="cstat-no" title="statement not covered" >          enumerable: false,</span>
+<span class="cstat-no" title="statement not covered" >          configurable: true,</span>
+<span class="cstat-no" title="statement not covered" >          value</span>
+<span class="cstat-no" title="statement not covered" >        });</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
       function toParseErrorConstructor(_ref) {
         let {
           toMessage
@@ -33129,39 +33109,44 @@
 <span class="cstat-no" title="statement not covered" >          loc,</span>
 <span class="cstat-no" title="statement not covered" >          details</span>
 <span class="cstat-no" title="statement not covered" >        }) {</span>
-<span class="cstat-no" title="statement not covered" >          return instantiate(SyntaxError, Object.assign({}, properties, {</span>
-<span class="cstat-no" title="statement not covered" >            loc</span>
-<span class="cstat-no" title="statement not covered" >          }), {</span>
-<span class="cstat-no" title="statement not covered" >            clone(overrides = {}) {</span>
-<span class="cstat-no" title="statement not covered" >              const loc2 = overrides.loc || {};</span>
-<span class="cstat-no" title="statement not covered" >              return constructor({</span>
-<span class="cstat-no" title="statement not covered" >                loc: new Position("line" in loc2 ? loc2.line : this.loc.line, "column" in loc2 ? loc2.column : this.loc.column, "index" in loc2 ? loc2.index : this.loc.index),</span>
-<span class="cstat-no" title="statement not covered" >                details: Object.assign({}, this.details, overrides.details)</span>
+<span class="cstat-no" title="statement not covered" >          const error = new SyntaxError();</span>
+<span class="cstat-no" title="statement not covered" >          Object.assign(error, properties, {</span>
+<span class="cstat-no" title="statement not covered" >            loc,</span>
+<span class="cstat-no" title="statement not covered" >            pos: loc.index</span>
+<span class="cstat-no" title="statement not covered" >          });</span>
+<span class="cstat-no" title="statement not covered" >          if ("missingPlugin" in details) {</span>
+<span class="cstat-no" title="statement not covered" >            Object.assign(error, {</span>
+<span class="cstat-no" title="statement not covered" >              missingPlugin: details.missingPlugin</span>
+<span class="cstat-no" title="statement not covered" >            });</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          defineHidden(error, "clone", function clone(overrides = {}) {</span>
+<span class="cstat-no" title="statement not covered" >            var _overrides$loc;</span>
+<span class="cstat-no" title="statement not covered" >            const {</span>
+<span class="cstat-no" title="statement not covered" >              line,</span>
+<span class="cstat-no" title="statement not covered" >              column,</span>
+<span class="cstat-no" title="statement not covered" >              index</span>
+<span class="cstat-no" title="statement not covered" >            } = (_overrides$loc = overrides.loc) != null ? _overrides$loc : loc;</span>
+<span class="cstat-no" title="statement not covered" >            return constructor({</span>
+<span class="cstat-no" title="statement not covered" >              loc: new Position(line, column, index),</span>
+<span class="cstat-no" title="statement not covered" >              details: Object.assign({}, details, overrides.details)</span>
+<span class="cstat-no" title="statement not covered" >            });</span>
+<span class="cstat-no" title="statement not covered" >          });</span>
+<span class="cstat-no" title="statement not covered" >          defineHidden(error, "details", details);</span>
+<span class="cstat-no" title="statement not covered" >          Object.defineProperty(error, "message", {</span>
+<span class="cstat-no" title="statement not covered" >            configurable: true,</span>
+<span class="cstat-no" title="statement not covered" >            get() {</span>
+<span class="cstat-no" title="statement not covered" >              const message = `${toMessage(details)} (${loc.line}:${loc.column})`;</span>
+<span class="cstat-no" title="statement not covered" >              this.message = message;</span>
+<span class="cstat-no" title="statement not covered" >              return message;</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
+<span class="cstat-no" title="statement not covered" >            set(value) {</span>
+<span class="cstat-no" title="statement not covered" >              Object.defineProperty(this, "message", {</span>
+<span class="cstat-no" title="statement not covered" >                value,</span>
+<span class="cstat-no" title="statement not covered" >                writable: true</span>
 <span class="cstat-no" title="statement not covered" >              });</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >            details: {</span>
-<span class="cstat-no" title="statement not covered" >              value: details,</span>
-<span class="cstat-no" title="statement not covered" >              enumerable: false</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >            message: {</span>
-<span class="cstat-no" title="statement not covered" >              get() {</span>
-<span class="cstat-no" title="statement not covered" >                return `${toMessage(this.details)} (${this.loc.line}:${this.loc.column})`;</span>
-<span class="cstat-no" title="statement not covered" >              },</span>
-<span class="cstat-no" title="statement not covered" >              set(value) {</span>
-<span class="cstat-no" title="statement not covered" >                Object.defineProperty(this, "message", {</span>
-<span class="cstat-no" title="statement not covered" >                  value</span>
-<span class="cstat-no" title="statement not covered" >                });</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >            pos: {</span>
-<span class="cstat-no" title="statement not covered" >              reflect: "loc.index",</span>
-<span class="cstat-no" title="statement not covered" >              enumerable: true</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >            missingPlugin: "missingPlugin" in details &amp;&amp; {</span>
-<span class="cstat-no" title="statement not covered" >              reflect: "details.missingPlugin",</span>
-<span class="cstat-no" title="statement not covered" >              enumerable: true</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
+<span class="cstat-no" title="statement not covered" >          return error;</span>
         };
       }
       function ParseErrorEnum(argument, syntaxPlugin) {
@@ -33180,7 +33165,7 @@
           } = _ref2, rest = _objectWithoutPropertiesLoose(_ref2, _excluded2$1);
           const toMessage = typeof message === "string" ? <span class="fstat-no" title="function not covered" >() =&gt; message </span>: message;
           ParseErrorConstructors[reasonCode] = toParseErrorConstructor(Object.assign({
-            code: ParseErrorCode.SyntaxError,
+            code: "BABEL_PARSER_SYNTAX_ERROR",
             reasonCode,
             toMessage
           }, syntaxPlugin ? {
@@ -34088,49 +34073,49 @@
       nonASCIIidentifierStartChars = nonASCIIidentifierChars = null;
       var astralIdentifierStartCodes = [0, 11, 2, 25, 2, 18, 2, 1, 2, 14, 3, 13, 35, 122, 70, 52, 268, 28, 4, 48, 48, 31, 14, 29, 6, 37, 11, 29, 3, 35, 5, 7, 2, 4, 43, 157, 19, 35, 5, 35, 5, 39, 9, 51, 13, 10, 2, 14, 2, 6, 2, 1, 2, 10, 2, 14, 2, 6, 2, 1, 68, 310, 10, 21, 11, 7, 25, 5, 2, 41, 2, 8, 70, 5, 3, 0, 2, 43, 2, 1, 4, 0, 3, 22, 11, 22, 10, 30, 66, 18, 2, 1, 11, 21, 11, 25, 71, 55, 7, 1, 65, 0, 16, 3, 2, 2, 2, 28, 43, 28, 4, 28, 36, 7, 2, 27, 28, 53, 11, 21, 11, 18, 14, 17, 111, 72, 56, 50, 14, 50, 14, 35, 349, 41, 7, 1, 79, 28, 11, 0, 9, 21, 43, 17, 47, 20, 28, 22, 13, 52, 58, 1, 3, 0, 14, 44, 33, 24, 27, 35, 30, 0, 3, 0, 9, 34, 4, 0, 13, 47, 15, 3, 22, 0, 2, 0, 36, 17, 2, 24, 20, 1, 64, 6, 2, 0, 2, 3, 2, 14, 2, 9, 8, 46, 39, 7, 3, 1, 3, 21, 2, 6, 2, 1, 2, 4, 4, 0, 19, 0, 13, 4, 159, 52, 19, 3, 21, 2, 31, 47, 21, 1, 2, 0, 185, 46, 42, 3, 37, 47, 21, 0, 60, 42, 14, 0, 72, 26, 38, 6, 186, 43, 117, 63, 32, 7, 3, 0, 3, 7, 2, 1, 2, 23, 16, 0, 2, 0, 95, 7, 3, 38, 17, 0, 2, 0, 29, 0, 11, 39, 8, 0, 22, 0, 12, 45, 20, 0, 19, 72, 264, 8, 2, 36, 18, 0, 50, 29, 113, 6, 2, 1, 2, 37, 22, 0, 26, 5, 2, 1, 2, 31, 15, 0, 328, 18, 16, 0, 2, 12, 2, 33, 125, 0, 80, 921, 103, 110, 18, 195, 2637, 96, 16, 1071, 18, 5, 4026, 582, 8634, 568, 8, 30, 18, 78, 18, 29, 19, 47, 17, 3, 32, 20, 6, 18, 689, 63, 129, 74, 6, 0, 67, 12, 65, 1, 2, 0, 29, 6135, 9, 1237, 43, 8, 8936, 3, 2, 6, 2, 1, 2, 290, 16, 0, 30, 2, 3, 0, 15, 3, 9, 395, 2309, 106, 6, 12, 4, 8, 8, 9, 5991, 84, 2, 70, 2, 1, 3, 0, 3, 1, 3, 3, 2, 11, 2, 0, 2, 6, 2, 64, 2, 3, 3, 7, 2, 6, 2, 27, 2, 3, 2, 4, 2, 0, 4, 6, 2, 339, 3, 24, 2, 24, 2, 30, 2, 24, 2, 30, 2, 24, 2, 30, 2, 24, 2, 30, 2, 24, 2, 7, 1845, 30, 7, 5, 262, 61, 147, 44, 11, 6, 17, 0, 322, 29, 19, 43, 485, 27, 757, 6, 2, 3, 2, 1, 2, 14, 2, 196, 60, 67, 8, 0, 1205, 3, 2, 26, 2, 1, 2, 0, 3, 0, 2, 9, 2, 3, 2, 0, 2, 0, 7, 0, 5, 0, 2, 0, 2, 0, 2, 2, 2, 1, 2, 0, 3, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 1, 2, 0, 3, 3, 2, 6, 2, 3, 2, 3, 2, 0, 2, 9, 2, 16, 6, 2, 2, 4, 2, 16, 4421, 42719, 33, 4153, 7, 221, 3, 5761, 15, 7472, 3104, 541, 1507, 4938, 6, 4191];
       var astralIdentifierCodes = [509, 0, 227, 0, 150, 4, 294, 9, 1368, 2, 2, 1, 6, 3, 41, 2, 5, 0, 166, 1, 574, 3, 9, 9, 370, 1, 81, 2, 71, 10, 50, 3, 123, 2, 54, 14, 32, 10, 3, 1, 11, 3, 46, 10, 8, 0, 46, 9, 7, 2, 37, 13, 2, 9, 6, 1, 45, 0, 13, 2, 49, 13, 9, 3, 2, 11, 83, 11, 7, 0, 3, 0, 158, 11, 6, 9, 7, 3, 56, 1, 2, 6, 3, 1, 3, 2, 10, 0, 11, 1, 3, 6, 4, 4, 193, 17, 10, 9, 5, 0, 82, 19, 13, 9, 214, 6, 3, 8, 28, 1, 83, 16, 16, 9, 82, 12, 9, 9, 84, 14, 5, 9, 243, 14, 166, 9, 71, 5, 2, 1, 3, 3, 2, 0, 2, 1, 13, 9, 120, 6, 3, 6, 4, 0, 29, 9, 41, 6, 2, 3, 9, 0, 10, 10, 47, 15, 406, 7, 2, 7, 17, 9, 57, 21, 2, 13, 123, 5, 4, 0, 2, 1, 2, 6, 2, 0, 9, 9, 49, 4, 2, 1, 2, 4, 9, 9, 330, 3, 10, 1, 2, 0, 49, 6, 4, 4, 14, 9, 5351, 0, 7, 14, 13835, 9, 87, 9, 39, 4, 60, 6, 26, 9, 1014, 0, 2, 54, 8, 3, 82, 0, 12, 1, 19628, 1, 4706, 45, 3, 22, 543, 4, 4, 5, 9, 7, 3, 6, 31, 3, 149, 2, 1418, 49, 513, 54, 5, 49, 9, 0, 15, 0, 23, 4, 2, 14, 1361, 6, 2, 16, 3, 6, 2, 1, 2, 4, 101, 0, 161, 6, 10, 9, 357, 0, 62, 13, 499, 13, 983, 6, 110, 6, 6, 9, 4759, 9, 787719, 239];
-<span class="fstat-no" title="function not covered" >      function isInAstralSet(code, set) {</span>
+<span class="fstat-no" title="function not covered" >      function isInAstralSet(code2, set) {</span>
 <span class="cstat-no" title="statement not covered" >        let pos = 65536;</span>
 <span class="cstat-no" title="statement not covered" >        for (let i = 0, length = set.length; i &lt; length; i += 2) {</span>
 <span class="cstat-no" title="statement not covered" >          pos += set[i];</span>
-<span class="cstat-no" title="statement not covered" >          if (pos &gt; code)</span>
+<span class="cstat-no" title="statement not covered" >          if (pos &gt; code2)</span>
 <span class="cstat-no" title="statement not covered" >            return false;</span>
 <span class="cstat-no" title="statement not covered" >          pos += set[i + 1];</span>
-<span class="cstat-no" title="statement not covered" >          if (pos &gt;= code)</span>
+<span class="cstat-no" title="statement not covered" >          if (pos &gt;= code2)</span>
 <span class="cstat-no" title="statement not covered" >            return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      function isIdentifierStart(code) {
-        if (code &lt; 65)
-          return code === 36;
-        if (code &lt;= 90)
+      function isIdentifierStart(code2) {
+        if (code2 &lt; 65)
+          return code2 === 36;
+        if (code2 &lt;= 90)
           return true;
-        if (code &lt; 97)
-<span class="branch-0 cbranch-no" title="branch not covered" >          return code === 95;</span>
-        if (code &lt;= 122)
+        if (code2 &lt; 97)
+<span class="branch-0 cbranch-no" title="branch not covered" >          return code2 === 95;</span>
+        if (code2 &lt;= 122)
           return true;
-        if (code &lt;= 65535) {
-          return code &gt;= 170 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; nonASCIIidentifierStart.test(String.fromCharCode(code));</span>
+        if (code2 &lt;= 65535) {
+          return code2 &gt;= 170 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; nonASCIIidentifierStart.test(String.fromCharCode(code2));</span>
         }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        return isInAstralSet(code, astralIdentifierStartCodes);</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        return isInAstralSet(code2, astralIdentifierStartCodes);</span></span>
       }
-      function isIdentifierChar(code) {
-        if (code &lt; 48)
-          return code === 36;
-        if (code &lt; 58)
+      function isIdentifierChar(code2) {
+        if (code2 &lt; 48)
+          return code2 === 36;
+        if (code2 &lt; 58)
 <span class="branch-0 cbranch-no" title="branch not covered" >          return true;</span>
-        if (code &lt; 65)
+        if (code2 &lt; 65)
           return false;
-        if (code &lt;= 90)
+        if (code2 &lt;= 90)
           return true;
-        if (code &lt; 97)
-<span class="branch-0 cbranch-no" title="branch not covered" >          return code === 95;</span>
-        if (code &lt;= 122)
+        if (code2 &lt; 97)
+<span class="branch-0 cbranch-no" title="branch not covered" >          return code2 === 95;</span>
+        if (code2 &lt;= 122)
           return true;
-        if (code &lt;= 65535) {
-          return code &gt;= 170 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; nonASCIIidentifier.test(String.fromCharCode(code));</span>
+        if (code2 &lt;= 65535) {
+          return code2 &gt;= 170 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; nonASCIIidentifier.test(String.fromCharCode(code2));</span>
         }
-<span class="branch-0 cbranch-no" title="branch not covered" >        return isInAstralSet(code, astralIdentifierStartCodes) || isInAstralSet(code, astralIdentifierCodes);</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >        return isInAstralSet(code2, astralIdentifierStartCodes) || isInAstralSet(code2, astralIdentifierCodes);</span>
       }
       var reservedWords = {
         keyword: ["break", "case", "catch", "continue", "debugger", "default", "do", "else", "finally", "for", "function", "if", "return", "switch", "throw", "try", "var", "const", "while", "with", "new", "this", "super", "class", "extends", "export", "import", "null", "true", "false", "in", "instanceof", "typeof", "void", "delete"],
@@ -34559,8 +34544,8 @@
       };
       var lineBreak = /\r\n?|[\n\u2028\u2029]/;
       var lineBreakG = new RegExp(lineBreak.source, "g");
-      function isNewLine(code) {
-        switch (code) {
+      function isNewLine(code2) {
+        switch (code2) {
           case 10:
           case 13:
           case 8232:
@@ -34573,8 +34558,8 @@
       var skipWhiteSpace = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g;
       var skipWhiteSpaceInLine = /(?:[^\S\n\r\u2028\u2029]|\/\/.*|\/\*.*?\*\/)*/g;
       var skipWhiteSpaceToLineBreak = new RegExp("(?=(" + skipWhiteSpaceInLine.source + "))\\1" + /(?=[\n\r\u2028\u2029]|\/\*(?!.*?\*\/)|$)/.source, "y");
-      function isWhitespace(code) {
-        switch (code) {
+      function isWhitespace(code2) {
+        switch (code2) {
 <span class="branch-0 cbranch-no" title="branch not covered" >          case 9:</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case 11:</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case 12:</span>
@@ -34671,8 +34656,8 @@
           return state;
         }
       };
-      var _isDigit = function isDigit(code) {
-        return code &gt;= 48 &amp;&amp; code &lt;= 57;
+      var _isDigit = function isDigit(code2) {
+        return code2 &gt;= 48 &amp;&amp; code2 &lt;= 57;
       };
       var forbiddenNumericSeparatorSiblings = {
         decBinOct: /* @__PURE__ */ new Set([46, 66, 69, 79, 95, 98, 101, 111]),
@@ -34774,20 +34759,20 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >          case 114:</span>
 <span class="cstat-no" title="statement not covered" >            return res("\r");</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case 120: {</span>
-<span class="cstat-no" title="statement not covered" >            let code;</span>
+<span class="cstat-no" title="statement not covered" >            let code2;</span>
 <span class="cstat-no" title="statement not covered" >            ({</span>
-<span class="cstat-no" title="statement not covered" >              code,</span>
+<span class="cstat-no" title="statement not covered" >              code: code2,</span>
 <span class="cstat-no" title="statement not covered" >              pos</span>
 <span class="cstat-no" title="statement not covered" >            } = readHexChar(input, pos, lineStart, curLine, 2, false, throwOnInvalid, errors));</span>
-<span class="cstat-no" title="statement not covered" >            return res(code === null ? null : String.fromCharCode(code));</span>
+<span class="cstat-no" title="statement not covered" >            return res(code2 === null ? null : String.fromCharCode(code2));</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case 117: {</span>
-<span class="cstat-no" title="statement not covered" >            let code;</span>
+<span class="cstat-no" title="statement not covered" >            let code2;</span>
 <span class="cstat-no" title="statement not covered" >            ({</span>
-<span class="cstat-no" title="statement not covered" >              code,</span>
+<span class="cstat-no" title="statement not covered" >              code: code2,</span>
 <span class="cstat-no" title="statement not covered" >              pos</span>
 <span class="cstat-no" title="statement not covered" >            } = readCodePoint(input, pos, lineStart, curLine, throwOnInvalid, errors));</span>
-<span class="cstat-no" title="statement not covered" >            return res(code === null ? null : String.fromCodePoint(code));</span>
+<span class="cstat-no" title="statement not covered" >            return res(code2 === null ? null : String.fromCodePoint(code2));</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case 116:</span>
 <span class="cstat-no" title="statement not covered" >            return res("	");</span>
@@ -34864,9 +34849,9 @@
         let invalid = false;
         let total = 0;
         for (let i = 0, e = len == null ? Infinity <span class="branch-0 cbranch-no" title="branch not covered" >: len;</span> i &lt; e; ++i) {
-          const code = input.charCodeAt(pos);
+          const code2 = input.charCodeAt(pos);
           let val;
-          if (code === 95 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; allowNumSeparator !== "bail")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (code2 === 95 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; allowNumSeparator !== "bail")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            const prev = input.charCodeAt(pos - 1);</span>
 <span class="cstat-no" title="statement not covered" >            const next = input.charCodeAt(pos + 1);</span>
 <span class="cstat-no" title="statement not covered" >            if (!allowNumSeparator) {</span>
@@ -34887,12 +34872,12 @@
 <span class="cstat-no" title="statement not covered" >            ++pos;</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          if (code &gt;= 97) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            val = code - 97 + 10;</span>
-          } else if (code &gt;= 65) {
-            val = code - 65 + 10;
-          } else if (_isDigit(code)) {
-            val = code - 48;
+          if (code2 &gt;= 97) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            val = code2 - 97 + 10;</span>
+          } else if (code2 &gt;= 65) {
+            val = code2 - 65 + 10;
+          } else if (_isDigit(code2)) {
+            val = code2 - 48;
           } else {
             val = Infinity;
           }
@@ -34927,15 +34912,15 @@
       }
 <span class="fstat-no" title="function not covered" >      function readCodePoint(input, pos, lineStart, curLine, throwOnInvalid, errors) {</span>
 <span class="cstat-no" title="statement not covered" >        const ch = input.charCodeAt(pos);</span>
-<span class="cstat-no" title="statement not covered" >        let code;</span>
+<span class="cstat-no" title="statement not covered" >        let code2;</span>
 <span class="cstat-no" title="statement not covered" >        if (ch === 123) {</span>
 <span class="cstat-no" title="statement not covered" >          ++pos;</span>
 <span class="cstat-no" title="statement not covered" >          ({</span>
-<span class="cstat-no" title="statement not covered" >            code,</span>
+<span class="cstat-no" title="statement not covered" >            code: code2,</span>
 <span class="cstat-no" title="statement not covered" >            pos</span>
 <span class="cstat-no" title="statement not covered" >          } = readHexChar(input, pos, lineStart, curLine, input.indexOf("}", pos) - pos, true, throwOnInvalid, errors));</span>
 <span class="cstat-no" title="statement not covered" >          ++pos;</span>
-<span class="cstat-no" title="statement not covered" >          if (code !== null &amp;&amp; code &gt; 1114111) {</span>
+<span class="cstat-no" title="statement not covered" >          if (code2 !== null &amp;&amp; code2 &gt; 1114111) {</span>
 <span class="cstat-no" title="statement not covered" >            if (throwOnInvalid) {</span>
 <span class="cstat-no" title="statement not covered" >              errors.invalidCodePoint(pos, lineStart, curLine);</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
@@ -34947,12 +34932,12 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          ({</span>
-<span class="cstat-no" title="statement not covered" >            code,</span>
+<span class="cstat-no" title="statement not covered" >            code: code2,</span>
 <span class="cstat-no" title="statement not covered" >            pos</span>
 <span class="cstat-no" title="statement not covered" >          } = readHexChar(input, pos, lineStart, curLine, 4, false, throwOnInvalid, errors));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
-<span class="cstat-no" title="statement not covered" >          code,</span>
+<span class="cstat-no" title="statement not covered" >          code: code2,</span>
 <span class="cstat-no" title="statement not covered" >          pos</span>
 <span class="cstat-no" title="statement not covered" >        };</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -35357,32 +35342,32 @@
 <span class="cstat-no" title="statement not covered" >          this.finishToken(28, value);</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        readToken_mult_modulo(code) {
-          let type = code === 42 ? 55 <span class="branch-0 cbranch-no" title="branch not covered" >: 54;</span>
+        readToken_mult_modulo(code2) {
+          let type = code2 === 42 ? 55 <span class="branch-0 cbranch-no" title="branch not covered" >: 54;</span>
           let width = 1;
           let next = this.input.charCodeAt(this.state.pos + 1);
-          if (code === 42 &amp;&amp; next === 42) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (code2 === 42 &amp;&amp; next === 42) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            width++;</span>
 <span class="cstat-no" title="statement not covered" >            next = this.input.charCodeAt(this.state.pos + 2);</span>
 <span class="cstat-no" title="statement not covered" >            type = 57;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           if (next === 61 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !this.state.inType)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            width++;</span>
-<span class="cstat-no" title="statement not covered" >            type = code === 37 ? 33 : 30;</span>
+<span class="cstat-no" title="statement not covered" >            type = code2 === 37 ? 33 : 30;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           this.finishOp(type, width);
         }
-        readToken_pipe_amp(code) {
+        readToken_pipe_amp(code2) {
           const next = this.input.charCodeAt(this.state.pos + 1);
-          if (next === code) {
+          if (next === code2) {
             if (this.input.charCodeAt(this.state.pos + 2) === 61) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >              this.finishOp(30, 3);</span>
             } else {
-              this.finishOp(code === 124 ? 41 <span class="branch-0 cbranch-no" title="branch not covered" >: 42,</span> 2);
+              this.finishOp(code2 === 124 ? 41 <span class="branch-0 cbranch-no" title="branch not covered" >: 42,</span> 2);
             }
             return;
           }
-          if (code === 124) {
+          if (code2 === 124) {
             if (next === 62) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >              this.finishOp(39, 2);</span>
 <span class="cstat-no" title="statement not covered" >              return;</span>
@@ -35412,7 +35397,7 @@
 <span class="cstat-no" title="statement not covered" >            this.finishOp(30, 2);</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          this.finishOp(code === 124 ? 43 <span class="branch-0 cbranch-no" title="branch not covered" >: 45,</span> 1);
+          this.finishOp(code2 === 124 ? 43 <span class="branch-0 cbranch-no" title="branch not covered" >: 45,</span> 1);
         }
 <span class="fstat-no" title="function not covered" >        readToken_caret() {</span>
 <span class="cstat-no" title="statement not covered" >          const next = this.input.charCodeAt(this.state.pos + 1);</span>
@@ -35442,9 +35427,9 @@
 <span class="cstat-no" title="statement not covered" >            this.finishOp(26, 1);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        readToken_plus_min(code) {
+        readToken_plus_min(code2) {
           const next = this.input.charCodeAt(this.state.pos + 1);
-          if (next === code) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (next === code2) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.finishOp(34, 2);</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -35493,18 +35478,18 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          this.finishOp(48, 1);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        readToken_eq_excl(code) {
+        readToken_eq_excl(code2) {
           const next = this.input.charCodeAt(this.state.pos + 1);
           if (next === 61) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.finishOp(46, this.input.charCodeAt(this.state.pos + 2) === 61 ? 3 : 2);</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          if (code === 61 &amp;&amp; next === 62) {
+          if (code2 === 61 &amp;&amp; next === 62) {
             this.state.pos += 2;
             this.finishToken(19);
             return;
           }
-          this.finishOp(code === 61 ? 29 : 35, 1);
+          this.finishOp(code2 === 61 ? 29 : 35, 1);
         }
         readToken_question() {
           const next = this.input.charCodeAt(this.state.pos + 1);
@@ -35523,8 +35508,8 @@
             this.finishToken(17);
           }
         }
-        getTokenFromCode(code) {
-          switch (code) {
+        getTokenFromCode(code2) {
+          switch (code2) {
             case 46:
               this.readToken_dot();
               return;
@@ -35622,25 +35607,25 @@
               return;
             case 34:
             case 39:
-              this.readString(code);
+              this.readString(code2);
               return;
             case 47:
               this.readToken_slash();
               return;
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 37:</span>
             case 42:
-              this.readToken_mult_modulo(code);
+              this.readToken_mult_modulo(code2);
               return;
             case 124:
             case 38:
-              this.readToken_pipe_amp(code);
+              this.readToken_pipe_amp(code2);
               return;
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 94:</span>
 <span class="cstat-no" title="statement not covered" >              this.readToken_caret();</span>
 <span class="cstat-no" title="statement not covered" >              return;</span>
             case 43:
             case 45:
-              this.readToken_plus_min(code);
+              this.readToken_plus_min(code2);
               return;
             case 60:
               this.readToken_lt();
@@ -35650,7 +35635,7 @@
 <span class="cstat-no" title="statement not covered" >              return;</span>
             case 61:
             case 33:
-              this.readToken_eq_excl(code);
+              this.readToken_eq_excl(code2);
               return;
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 126:</span>
 <span class="cstat-no" title="statement not covered" >              this.finishOp(36, 1);</span>
@@ -35665,14 +35650,14 @@
 <span class="cstat-no" title="statement not covered" >              this.readWord();</span>
 <span class="cstat-no" title="statement not covered" >              return;</span>
             default:
-              if (isIdentifierStart(code)) {
-                this.readWord(code);
+              if (isIdentifierStart(code2)) {
+                this.readWord(code2);
                 return;
               }
           }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >          throw this.raise(Errors.InvalidOrUnexpectedToken, {</span></span>
 <span class="cstat-no" title="statement not covered" >            at: this.state.curPosition(),</span>
-<span class="cstat-no" title="statement not covered" >            unexpected: String.fromCodePoint(code)</span>
+<span class="cstat-no" title="statement not covered" >            unexpected: String.fromCodePoint(code2)</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
         }
         finishOp(type, size) {
@@ -35882,11 +35867,11 @@
         }
 <span class="fstat-no" title="function not covered" >        readCodePoint(throwOnInvalid) {</span>
 <span class="cstat-no" title="statement not covered" >          const {</span>
-<span class="cstat-no" title="statement not covered" >            code,</span>
+<span class="cstat-no" title="statement not covered" >            code: code2,</span>
 <span class="cstat-no" title="statement not covered" >            pos</span>
 <span class="cstat-no" title="statement not covered" >          } = readCodePoint(this.input, this.state.pos, this.state.lineStart, this.state.curLine, throwOnInvalid, this.errorHandlers_readCodePoint);</span>
 <span class="cstat-no" title="statement not covered" >          this.state.pos = pos;</span>
-<span class="cstat-no" title="statement not covered" >          return code;</span>
+<span class="cstat-no" title="statement not covered" >          return code2;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         readString(quote) {
           const {
@@ -38169,23 +38154,23 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          this.finishToken(130, fullWord);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        getTokenFromCode(code) {
+        getTokenFromCode(code2) {
           const next = this.input.charCodeAt(this.state.pos + 1);
-          if (code === 123 &amp;&amp; next === 124) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (code2 === 123 &amp;&amp; next === 124) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.finishOp(6, 2);</span>
-          } else if (this.state.inType &amp;&amp; (code === 62 || code === 60)) {
-            this.finishOp(code === 62 ? 48 : 47, 1);
-          } else if (this.state.inType &amp;&amp; code === 63) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          } else if (this.state.inType &amp;&amp; (code2 === 62 || code2 === 60)) {
+            this.finishOp(code2 === 62 ? 48 : 47, 1);
+          } else if (this.state.inType &amp;&amp; code2 === 63) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            if (next === 46) {</span>
 <span class="cstat-no" title="statement not covered" >              this.finishOp(18, 2);</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
 <span class="cstat-no" title="statement not covered" >              this.finishOp(17, 1);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-          } else if (isIteratorStart(code, next, this.input.charCodeAt(this.state.pos + 2))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          } else if (isIteratorStart(code2, next, this.input.charCodeAt(this.state.pos + 2))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.state.pos += 2;</span>
 <span class="cstat-no" title="statement not covered" >            this.readIterator();</span>
           } else {
-            super.getTokenFromCode(code);
+            super.getTokenFromCode(code2);
           }
         }
 <span class="fstat-no" title="function not covered" >        isAssignable(node, isBinding) {</span>
@@ -38702,23 +38687,23 @@
 <span class="cstat-no" title="statement not covered" >            return;</span>
 <span class="cstat-no" title="statement not covered" >          return super.parseArrowExpression(node, void 0, true);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="fstat-no" title="function not covered" >        readToken_mult_modulo(code) {</span>
+<span class="fstat-no" title="function not covered" >        readToken_mult_modulo(code2) {</span>
 <span class="cstat-no" title="statement not covered" >          const next = this.input.charCodeAt(this.state.pos + 1);</span>
-<span class="cstat-no" title="statement not covered" >          if (code === 42 &amp;&amp; next === 47 &amp;&amp; this.state.hasFlowComment) {</span>
+<span class="cstat-no" title="statement not covered" >          if (code2 === 42 &amp;&amp; next === 47 &amp;&amp; this.state.hasFlowComment) {</span>
 <span class="cstat-no" title="statement not covered" >            this.state.hasFlowComment = false;</span>
 <span class="cstat-no" title="statement not covered" >            this.state.pos += 2;</span>
 <span class="cstat-no" title="statement not covered" >            this.nextToken();</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          super.readToken_mult_modulo(code);</span>
+<span class="cstat-no" title="statement not covered" >          super.readToken_mult_modulo(code2);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        readToken_pipe_amp(code) {
+        readToken_pipe_amp(code2) {
           const next = this.input.charCodeAt(this.state.pos + 1);
-          if (code === 124 &amp;&amp; next === 125) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (code2 === 124 &amp;&amp; next === 125) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.finishOp(9, 2);</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          super.readToken_pipe_amp(code);
+          super.readToken_pipe_amp(code2);
         }
         parseTopLevel(file, program) {
           const fileNode = super.parseTopLevel(file, program);
@@ -39506,33 +39491,33 @@
           if (!curContext.preserveSpace)
             super.skipSpace();
         }
-        getTokenFromCode(code) {
+        getTokenFromCode(code2) {
           const context = this.curContext();
           if (context === types.j_expr) {
             this.jsxReadToken();
             return;
           }
           if (context === types.j_oTag || context === types.j_cTag) {
-            if (isIdentifierStart(code)) {
+            if (isIdentifierStart(code2)) {
               this.jsxReadWord();
               return;
             }
-            if (code === 62) {
+            if (code2 === 62) {
               ++this.state.pos;
               this.finishToken(141);
               return;
             }
-            if ((code === 34 || code === 39) &amp;&amp; context === types.j_oTag) {
-              this.jsxReadString(code);
+            if ((code2 === 34 || code2 === 39) &amp;&amp; context === types.j_oTag) {
+              this.jsxReadString(code2);
               return;
             }
           }
-          if (code === 60 &amp;&amp; this.state.canStartJSXElement &amp;&amp; this.input.charCodeAt(this.state.pos + 1) !== 33) {
+          if (code2 === 60 &amp;&amp; this.state.canStartJSXElement &amp;&amp; this.input.charCodeAt(this.state.pos + 1) !== 33) {
             ++this.state.pos;
             this.finishToken(140);
             return;
           }
-          super.getTokenFromCode(code);
+          super.getTokenFromCode(code2);
         }
         updateContext(prevType) {
           const {
@@ -42460,18 +42445,18 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return node;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        getTokenFromCode(code) {
+        getTokenFromCode(code2) {
           if (this.state.inType) {
-            if (code === 62) {
+            if (code2 === 62) {
               this.finishOp(48, 1);
               return;
             }
-            if (code === 60) {
+            if (code2 === 60) {
               this.finishOp(47, 1);
               return;
             }
           }
-          super.getTokenFromCode(code);
+          super.getTokenFromCode(code2);
         }
 <span class="fstat-no" title="function not covered" >        reScan_lt_gt() {</span>
 <span class="cstat-no" title="statement not covered" >          const {</span>
@@ -42782,11 +42767,11 @@
 <span class="cstat-no" title="statement not covered" >          node.expectedNode = expectedNode;</span>
 <span class="cstat-no" title="statement not covered" >          return isFinished ? node : this.finishNode(node, "Placeholder");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        getTokenFromCode(code) {</span>
-<span class="cstat-no" title="statement not covered" >          if (code === 37 &amp;&amp; this.input.charCodeAt(this.state.pos + 1) === 37) {</span>
+<span class="cstat-no" title="statement not covered" >        getTokenFromCode(code2) {</span>
+<span class="cstat-no" title="statement not covered" >          if (code2 === 37 &amp;&amp; this.input.charCodeAt(this.state.pos + 1) === 37) {</span>
 <span class="cstat-no" title="statement not covered" >            this.finishOp(142, 2);</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            super.getTokenFromCode(code);</span>
+<span class="cstat-no" title="statement not covered" >            super.getTokenFromCode(code2);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        parseExprAtom(refExpressionErrors) {</span>
@@ -43593,7 +43578,7 @@
           if (optional) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            node.arguments = this.parseCallExpressionArguments(11);</span>
           } else {
-            node.arguments = this.parseCallExpressionArguments(11, base.type === "Import", base.type !== "Super", maybeAsyncArrow <span class="branch-0 cbranch-no" title="branch not covered" >? node </span>: null, refExpressionErrors);
+            node.arguments = this.parseCallExpressionArguments(11, base.type === "Import", base.type !== "Super", node, refExpressionErrors);
           }
           let finishedNode = this.finishCallExpression(node, optionalChainMember);
           if (maybeAsyncArrow <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; this.shouldParseAsyncArrow() <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !optional)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -49048,7 +49033,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-04T01:16:12.802Z
+                at 2023-09-05T01:15:02.690Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
