@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.59% </span>
+                <span class="strong">55.61% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4046/7278</span>
+                <span class='fraction'>4050/7282</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.59% </span>
+                <span class="strong">55.61% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4046/7278</span>
+                <span class='fraction'>4050/7282</span>
             </div>
         
             
@@ -7341,7 +7341,11 @@
 <a name='L7276'></a><a href='#L7276'>7276</a>
 <a name='L7277'></a><a href='#L7277'>7277</a>
 <a name='L7278'></a><a href='#L7278'>7278</a>
-<a name='L7279'></a><a href='#L7279'>7279</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">385x</span>
+<a name='L7279'></a><a href='#L7279'>7279</a>
+<a name='L7280'></a><a href='#L7280'>7280</a>
+<a name='L7281'></a><a href='#L7281'>7281</a>
+<a name='L7282'></a><a href='#L7282'>7282</a>
+<a name='L7283'></a><a href='#L7283'>7283</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">385x</span>
 <span class="cline-any cline-yes">385x</span>
 <span class="cline-any cline-yes">385x</span>
 <span class="cline-any cline-yes">385x</span>
@@ -14562,9 +14566,9 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">380x</span>
 <span class="cline-any cline-yes">385x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">385x</span>
 <span class="cline-any cline-yes">380x</span>
 <span class="cline-any cline-yes">380x</span>
@@ -14597,22 +14601,26 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">308x</span>
-<span class="cline-any cline-yes">380x</span>
-<span class="cline-any cline-yes">380x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">308x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">302x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">287x</span>
+<span class="cline-any cline-yes">380x</span>
+<span class="cline-any cline-yes">380x</span>
 <span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">287x</span>
-<span class="cline-any cline-yes">220x</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">222x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">220x</span>
+<span class="cline-any cline-yes">216x</span>
+<span class="cline-any cline-yes">216x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">380x</span>
@@ -21874,25 +21882,29 @@ async function main(context) {
   if (context.argv.supportInfo) {
     return print_support_info_default();
   }
-  const hasFilePatterns = context.filePatterns.length &gt; 0;
-  const useStdin = !hasFilePatterns &amp;&amp; (!process.stdin.isTTY || context.argv.filepath);
   if (context.argv.findConfigPath) {
     await find_config_path_default(context);
-  } else if (context.argv.fileInfo) {
+    return;
+  }
+  if (context.argv.fileInfo) {
     await file_info_default(context);
-  } else if (useStdin) {
+    return;
+  }
+  const hasFilePatterns = context.filePatterns.length &gt; 0;
+  const useStdin = !hasFilePatterns &amp;&amp; (!process.stdin.isTTY || context.argv.filepath);
+  if (useStdin) {
     if (context.argv.cache) {
-      process.exitCode = 2;
-      context.logger.error("`--cache` cannot be used with stdin.");
-      return;
+      throw new Error("`--cache` cannot be used when formatting stdin.");
     }
     await formatStdin(context);
-  } else if (hasFilePatterns) {
-    await formatFiles(context);
-  } else {
-    process.exitCode = 1;
-    printToScreen(createUsage(context));
+    return;
   }
+  if (hasFilePatterns) {
+    await formatFiles(context);
+    return;
+  }
+  process.exitCode = 1;
+  printToScreen(createUsage(context));
 }
 export {
   run
@@ -21904,7 +21916,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-07T01:16:40.714Z
+                at 2023-09-08T01:16:26.096Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
