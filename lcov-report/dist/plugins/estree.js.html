@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">61.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6828/11115</span>
+                <span class='fraction'>6832/11120</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.17% </span>
+                <span class="strong">52.16% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1381/2647</span>
+                <span class='fraction'>1383/2651</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">61.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6828/11115</span>
+                <span class='fraction'>6832/11120</span>
             </div>
         
             
@@ -11177,7 +11177,12 @@
 <a name='L11112'></a><a href='#L11112'>11112</a>
 <a name='L11113'></a><a href='#L11113'>11113</a>
 <a name='L11114'></a><a href='#L11114'>11114</a>
-<a name='L11115'></a><a href='#L11115'>11115</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11115'></a><a href='#L11115'>11115</a>
+<a name='L11116'></a><a href='#L11116'>11116</a>
+<a name='L11117'></a><a href='#L11117'>11117</a>
+<a name='L11118'></a><a href='#L11118'>11118</a>
+<a name='L11119'></a><a href='#L11119'>11119</a>
+<a name='L11120'></a><a href='#L11120'>11120</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -13286,6 +13291,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
@@ -14068,6 +14074,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">961x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">961x</span>
 <span class="cline-any cline-yes">679x</span>
 <span class="cline-any cline-yes">961x</span>
@@ -17456,7 +17467,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23822,7 +23832,8 @@
       "elementTypes"
     ],
     "TypeofTypeAnnotation": [
-      "argument"
+      "argument",
+      "typeArguments"
     ],
     "TypeAlias": [
       "id",
@@ -25179,6 +25190,11 @@
           void 0,
           (node2, key2) =&gt; key2 === "returnType" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node2.type === "ArrowFunctionExpression"</span>
         ) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; includesFunctionTypeInObjectType(node))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          return true;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+        break;
+      case "BinaryExpression":
+        if (key === "left" &amp;&amp; (parent.operator === "in" || parent.operator === "instanceof") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.type === "UnaryExpression")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         break;
@@ -28570,10 +28586,9 @@
 <span class="cstat-no" title="statement not covered" >    return [print3("elementType"), "[]"];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function printTypeQuery({ node }, print3) {</span>
-<span class="cstat-no" title="statement not covered" >    return [</span>
-<span class="cstat-no" title="statement not covered" >      "typeof ",</span>
-<span class="cstat-no" title="statement not covered" >      ...node.type === "TSTypeQuery" ? [print3("exprName"), print3("typeParameters")] : [print3("argument")]</span>
-<span class="cstat-no" title="statement not covered" >    ];</span>
+<span class="cstat-no" title="statement not covered" >    const argumentPropertyName = node.type === "TSTypeQuery" ? "exprName" : "argument";</span>
+<span class="cstat-no" title="statement not covered" >    const typeArgsPropertyName = node.type === "TSTypeQuery" ? "typeParameters" : "typeArguments";</span>
+<span class="cstat-no" title="statement not covered" >    return ["typeof ", print3(argumentPropertyName), print3(typeArgsPropertyName)];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function printTypePredicate(path, print3) {</span>
 <span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
@@ -33412,7 +33427,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-09-28T01:18:03.861Z
+                at 2023-09-29T01:17:29.953Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
