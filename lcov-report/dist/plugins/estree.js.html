@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">61.01% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6962/11410</span>
+                <span class='fraction'>6973/11428</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.74% </span>
+                <span class="strong">50.63% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1388/2735</span>
+                <span class='fraction'>1389/2743</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">61.01% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6962/11410</span>
+                <span class='fraction'>6973/11428</span>
             </div>
         
             
@@ -11472,7 +11472,25 @@
 <a name='L11407'></a><a href='#L11407'>11407</a>
 <a name='L11408'></a><a href='#L11408'>11408</a>
 <a name='L11409'></a><a href='#L11409'>11409</a>
-<a name='L11410'></a><a href='#L11410'>11410</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11410'></a><a href='#L11410'>11410</a>
+<a name='L11411'></a><a href='#L11411'>11411</a>
+<a name='L11412'></a><a href='#L11412'>11412</a>
+<a name='L11413'></a><a href='#L11413'>11413</a>
+<a name='L11414'></a><a href='#L11414'>11414</a>
+<a name='L11415'></a><a href='#L11415'>11415</a>
+<a name='L11416'></a><a href='#L11416'>11416</a>
+<a name='L11417'></a><a href='#L11417'>11417</a>
+<a name='L11418'></a><a href='#L11418'>11418</a>
+<a name='L11419'></a><a href='#L11419'>11419</a>
+<a name='L11420'></a><a href='#L11420'>11420</a>
+<a name='L11421'></a><a href='#L11421'>11421</a>
+<a name='L11422'></a><a href='#L11422'>11422</a>
+<a name='L11423'></a><a href='#L11423'>11423</a>
+<a name='L11424'></a><a href='#L11424'>11424</a>
+<a name='L11425'></a><a href='#L11425'>11425</a>
+<a name='L11426'></a><a href='#L11426'>11426</a>
+<a name='L11427'></a><a href='#L11427'>11427</a>
+<a name='L11428'></a><a href='#L11428'>11428</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14305,6 +14323,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">196x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">196x</span>
 <span class="cline-any cline-yes">196x</span>
 <span class="cline-any cline-yes">961x</span>
@@ -25714,6 +25750,24 @@
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+      if (key === "expression") {
+        switch (node.name) {
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "await":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "interface":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "module":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "using":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "yield":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "let":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "type": {</span>
+<span class="cstat-no" title="statement not covered" >            const ancestorNeitherAsNorSatisfies = path.findAncestor(</span>
+<span class="cstat-no" title="statement not covered" >              (node2) =&gt; !isBinaryCastExpression(node2)</span>
+<span class="cstat-no" title="statement not covered" >            );</span>
+<span class="cstat-no" title="statement not covered" >            if (ancestorNeitherAsNorSatisfies !== parent &amp;&amp; ancestorNeitherAsNorSatisfies.type === "ExpressionStatement") {</span>
+<span class="cstat-no" title="statement not covered" >              return true;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+        }
+      }
       return false;
     }
     if (node.type === "ObjectExpression" || node.type === "FunctionExpression" || node.type === "ClassExpression" || node.type === "DoExpression") {
@@ -34297,7 +34351,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-16T01:19:02.167Z
+                at 2023-10-17T01:18:16.361Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
