@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">49.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8195/16433</span>
+                <span class='fraction'>8196/16436</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.54% </span>
+                <span class="strong">56.56% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1253/2216</span>
+                <span class='fraction'>1254/2217</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">49.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8195/16433</span>
+                <span class='fraction'>8196/16436</span>
             </div>
         
             
@@ -16495,7 +16495,10 @@
 <a name='L16430'></a><a href='#L16430'>16430</a>
 <a name='L16431'></a><a href='#L16431'>16431</a>
 <a name='L16432'></a><a href='#L16432'>16432</a>
-<a name='L16433'></a><a href='#L16433'>16433</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16433'></a><a href='#L16433'>16433</a>
+<a name='L16434'></a><a href='#L16434'>16434</a>
+<a name='L16435'></a><a href='#L16435'>16435</a>
+<a name='L16436'></a><a href='#L16436'>16436</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -18213,22 +18216,22 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">517x</span>
-<span class="cline-any cline-yes">517x</span>
-<span class="cline-any cline-yes">517x</span>
-<span class="cline-any cline-yes">517x</span>
-<span class="cline-any cline-yes">517x</span>
-<span class="cline-any cline-yes">517x</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-yes">409x</span>
 <span class="cline-any cline-yes">112x</span>
 <span class="cline-any cline-yes">112x</span>
-<span class="cline-any cline-yes">517x</span>
+<span class="cline-any cline-yes">409x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">112x</span>
 <span class="cline-any cline-yes">112x</span>
 <span class="cline-any cline-yes">112x</span>
-<span class="cline-any cline-yes">517x</span>
+<span class="cline-any cline-yes">409x</span>
 <span class="cline-any cline-yes">111x</span>
 <span class="cline-any cline-yes">111x</span>
 <span class="cline-any cline-yes">111x</span>
@@ -18242,7 +18245,7 @@
 <span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-yes">111x</span>
-<span class="cline-any cline-yes">517x</span>
+<span class="cline-any cline-yes">409x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -31210,6 +31213,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32806,6 +32811,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -47631,14 +47637,16 @@
 &nbsp;
   // src/language-js/parse/utils/create-babel-parse-error.js
 <span class="fstat-no" title="function not covered" >  function createBabelParseError(error) {</span>
-<span class="cstat-no" title="statement not covered" >    const { message, loc } = error;</span>
-<span class="cstat-no" title="statement not covered" >    return parser_create_error_default(message.replace(/ \(.*\)$/, ""), {</span>
-<span class="cstat-no" title="statement not covered" >      loc: {</span>
-<span class="cstat-no" title="statement not covered" >        start: {</span>
-<span class="cstat-no" title="statement not covered" >          line: loc ? loc.line : 0,</span>
-<span class="cstat-no" title="statement not covered" >          column: loc ? loc.column + 1 : 0</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      },</span>
+<span class="cstat-no" title="statement not covered" >    let {</span>
+<span class="cstat-no" title="statement not covered" >      message,</span>
+<span class="cstat-no" title="statement not covered" >      loc: { line, column }</span>
+<span class="cstat-no" title="statement not covered" >    } = error;</span>
+<span class="cstat-no" title="statement not covered" >    const suffix = ` (${line}:${column})`;</span>
+<span class="cstat-no" title="statement not covered" >    if (message.endsWith(suffix)) {</span>
+<span class="cstat-no" title="statement not covered" >      message = message.slice(0, -suffix.length);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return parser_create_error_default(message, {</span>
+<span class="cstat-no" title="statement not covered" >      loc: { start: { line, column: column + 1 } },</span>
 <span class="cstat-no" title="statement not covered" >      cause: error</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -49242,7 +49250,8 @@
       try {
         ast = (0, import_parser2.parseExpression)(text, {
           tokens: true,
-          ranges: true
+          ranges: true,
+          attachComment: false
         });
       } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >        if ((error == null ? void 0 : error.reasonCode) === "MissingPlugin" || (error == null ? void 0 : error.reasonCode) === "MissingOneOfPlugins") {</span>
@@ -49366,7 +49375,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-03T01:19:00.622Z
+                at 2023-11-04T01:17:35.345Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
