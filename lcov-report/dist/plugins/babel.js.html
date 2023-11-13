@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.86% </span>
+                <span class="strong">49.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8196/16436</span>
+                <span class='fraction'>8191/16431</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.56% </span>
+                <span class="strong">56.54% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1254/2217</span>
+                <span class='fraction'>1253/2216</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.86% </span>
+                <span class="strong">49.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8196/16436</span>
+                <span class='fraction'>8191/16431</span>
             </div>
         
             
@@ -16493,12 +16493,7 @@
 <a name='L16428'></a><a href='#L16428'>16428</a>
 <a name='L16429'></a><a href='#L16429'>16429</a>
 <a name='L16430'></a><a href='#L16430'>16430</a>
-<a name='L16431'></a><a href='#L16431'>16431</a>
-<a name='L16432'></a><a href='#L16432'>16432</a>
-<a name='L16433'></a><a href='#L16433'>16433</a>
-<a name='L16434'></a><a href='#L16434'>16434</a>
-<a name='L16435'></a><a href='#L16435'>16435</a>
-<a name='L16436'></a><a href='#L16436'>16436</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16431'></a><a href='#L16431'>16431</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20083,11 +20078,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">14x</span>
@@ -36518,11 +36508,6 @@
       function newExpressionScope() {
         return new ExpressionScope();
       }
-      var PARAM = 0;
-      var PARAM_YIELD = 1;
-      var PARAM_AWAIT = 2;
-      var PARAM_RETURN = 4;
-      var PARAM_IN = 8;
       var ProductionParameterHandler = class {
         constructor() {
           this.stacks = [];
@@ -36537,20 +36522,20 @@
           return this.stacks[this.stacks.length - 1];
         }
 <span class="fstat-no" title="function not covered" >        get hasAwait() {</span>
-<span class="cstat-no" title="statement not covered" >          return (this.currentFlags() &amp; PARAM_AWAIT) &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >          return (this.currentFlags() &amp; 2) &gt; 0;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         get hasYield() {
-          return (this.currentFlags() &amp; PARAM_YIELD) &gt; 0;
+          return (this.currentFlags() &amp; 1) &gt; 0;
         }
         get hasReturn() {
-          return (this.currentFlags() &amp; PARAM_RETURN) &gt; 0;
+          return (this.currentFlags() &amp; 4) &gt; 0;
         }
         get hasIn() {
-          return (this.currentFlags() &amp; PARAM_IN) &gt; 0;
+          return (this.currentFlags() &amp; 8) &gt; 0;
         }
       };
       function functionFlags(isAsync, isGenerator) {
-        return (isAsync <span class="branch-0 cbranch-no" title="branch not covered" >? PARAM_AWAIT </span>: 0) | (isGenerator <span class="branch-0 cbranch-no" title="branch not covered" >? PARAM_YIELD </span>: 0);
+        return (isAsync <span class="branch-0 cbranch-no" title="branch not covered" >? 2 </span>: 0) | (isGenerator <span class="branch-0 cbranch-no" title="branch not covered" >? 1 </span>: 0);
       }
       var UtilParser = class extends Tokenizer {
         addExtra(node, key, value, enumerable = true) {
@@ -36750,9 +36735,9 @@
           };
         }
         enterInitialScopes() {
-          let paramFlags = PARAM;
+          let paramFlags = 0;
           if (this.inModule) {
-            paramFlags |= PARAM_AWAIT;
+            paramFlags |= 2;
           }
           this.scope.enter(1);
           this.prodParam.enter(paramFlags);
@@ -41581,7 +41566,7 @@
 <span class="cstat-no" title="statement not covered" >            node.body = inner;</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            this.scope.enter(256);</span>
-<span class="cstat-no" title="statement not covered" >            this.prodParam.enter(PARAM);</span>
+<span class="cstat-no" title="statement not covered" >            this.prodParam.enter(0);</span>
 <span class="cstat-no" title="statement not covered" >            node.body = this.tsParseModuleBlock();</span>
 <span class="cstat-no" title="statement not covered" >            this.prodParam.exit();</span>
 <span class="cstat-no" title="statement not covered" >            this.scope.exit();</span>
@@ -41599,7 +41584,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (this.match(5)) {</span>
 <span class="cstat-no" title="statement not covered" >            this.scope.enter(256);</span>
-<span class="cstat-no" title="statement not covered" >            this.prodParam.enter(PARAM);</span>
+<span class="cstat-no" title="statement not covered" >            this.prodParam.enter(0);</span>
 <span class="cstat-no" title="statement not covered" >            node.body = this.tsParseModuleBlock();</span>
 <span class="cstat-no" title="statement not covered" >            this.prodParam.exit();</span>
 <span class="cstat-no" title="statement not covered" >            this.scope.exit();</span>
@@ -41727,7 +41712,7 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >            case "global":</span>
 <span class="cstat-no" title="statement not covered" >              if (this.match(5)) {</span>
 <span class="cstat-no" title="statement not covered" >                this.scope.enter(256);</span>
-<span class="cstat-no" title="statement not covered" >                this.prodParam.enter(PARAM);</span>
+<span class="cstat-no" title="statement not covered" >                this.prodParam.enter(0);</span>
 <span class="cstat-no" title="statement not covered" >                const mod = node;</span>
 <span class="cstat-no" title="statement not covered" >                mod.global = true;</span>
 <span class="cstat-no" title="statement not covered" >                mod.id = expr;</span>
@@ -44189,7 +44174,7 @@
 <span class="cstat-no" title="statement not covered" >          const oldLabels = this.state.labels;</span>
 <span class="cstat-no" title="statement not covered" >          this.state.labels = [];</span>
 <span class="cstat-no" title="statement not covered" >          if (isAsync) {</span>
-<span class="cstat-no" title="statement not covered" >            this.prodParam.enter(PARAM_AWAIT);</span>
+<span class="cstat-no" title="statement not covered" >            this.prodParam.enter(2);</span>
 <span class="cstat-no" title="statement not covered" >            node.body = this.parseBlock();</span>
 <span class="cstat-no" title="statement not covered" >            this.prodParam.exit();</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
@@ -44758,7 +44743,7 @@
           this.scope.enter(2 | 4);
           let flags = functionFlags(isAsync, false);
           if (!this.match(5) &amp;&amp; this.prodParam.hasIn) {
-            flags |= PARAM_IN;
+            flags |= 8;
           }
           this.prodParam.enter(flags);
           this.initFunction(node, isAsync);
@@ -44792,7 +44777,7 @@
             const oldStrict = this.state.strict;
             const oldLabels = this.state.labels;
             this.state.labels = [];
-            this.prodParam.enter(this.prodParam.currentFlags() | PARAM_RETURN);
+            this.prodParam.enter(this.prodParam.currentFlags() | 4);
             node.body = this.parseBlock(true, false, (hasStrictModeDirective) =&gt; {
               const nonSimple = !this.isSimpleParamList(node.params);
               if (hasStrictModeDirective <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; nonSimple)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -45137,9 +45122,9 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
         allowInAnd(callback) {
           const flags = this.prodParam.currentFlags();
-          const prodParamToSet = PARAM_IN &amp; ~flags;
+          const prodParamToSet = 8 &amp; ~flags;
           if (prodParamToSet) {
-            this.prodParam.enter(flags | PARAM_IN);
+            this.prodParam.enter(flags | 8);
             try {
               return callback();
             } finally {
@@ -45150,9 +45135,9 @@
         }
 <span class="fstat-no" title="function not covered" >        disallowInAnd(callback) {</span>
 <span class="cstat-no" title="statement not covered" >          const flags = this.prodParam.currentFlags();</span>
-<span class="cstat-no" title="statement not covered" >          const prodParamToClear = PARAM_IN &amp; flags;</span>
+<span class="cstat-no" title="statement not covered" >          const prodParamToClear = 8 &amp; flags;</span>
 <span class="cstat-no" title="statement not covered" >          if (prodParamToClear) {</span>
-<span class="cstat-no" title="statement not covered" >            this.prodParam.enter(flags &amp; ~PARAM_IN);</span>
+<span class="cstat-no" title="statement not covered" >            this.prodParam.enter(flags &amp; ~8);</span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
 <span class="cstat-no" title="statement not covered" >              return callback();</span>
 <span class="cstat-no" title="statement not covered" >            } finally {</span>
@@ -46071,7 +46056,7 @@
             }
             body.push(stmt);
           }
-          afterBlockParse == null ? void 0 : afterBlockParse.call(this, hasStrictModeDirective);
+          afterBlockParse == null || afterBlockParse.call(this, hasStrictModeDirective);
           if (!oldStrict) {
             this.setStrict(false);
           }
@@ -46450,7 +46435,7 @@
 <span class="cstat-no" title="statement not covered" >          this.scope.enter(64 | 128 | 16);</span>
 <span class="cstat-no" title="statement not covered" >          const oldLabels = this.state.labels;</span>
 <span class="cstat-no" title="statement not covered" >          this.state.labels = [];</span>
-<span class="cstat-no" title="statement not covered" >          this.prodParam.enter(PARAM);</span>
+<span class="cstat-no" title="statement not covered" >          this.prodParam.enter(0);</span>
 <span class="cstat-no" title="statement not covered" >          const body = member.body = [];</span>
 <span class="cstat-no" title="statement not covered" >          this.parseBlockOrModuleBlockBody(body, void 0, false, 8);</span>
 <span class="cstat-no" title="statement not covered" >          this.prodParam.exit();</span>
@@ -46523,7 +46508,7 @@
 <span class="fstat-no" title="function not covered" >        parseInitializer(node) {</span>
 <span class="cstat-no" title="statement not covered" >          this.scope.enter(64 | 16);</span>
 <span class="cstat-no" title="statement not covered" >          this.expressionScope.enter(newExpressionScope());</span>
-<span class="cstat-no" title="statement not covered" >          this.prodParam.enter(PARAM);</span>
+<span class="cstat-no" title="statement not covered" >          this.prodParam.enter(0);</span>
 <span class="cstat-no" title="statement not covered" >          node.value = this.eat(29) ? this.parseMaybeAssignAllowIn() : null;</span>
 <span class="cstat-no" title="statement not covered" >          this.expressionScope.exit();</span>
 <span class="cstat-no" title="statement not covered" >          this.prodParam.exit();</span>
@@ -49375,7 +49360,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T01:22:32.755Z
+                at 2023-11-13T01:20:00.334Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

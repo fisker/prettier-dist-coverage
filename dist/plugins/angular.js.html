@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25.1% </span>
+                <span class="strong">25.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>769/3063</span>
+                <span class='fraction'>769/3060</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25.1% </span>
+                <span class="strong">25.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>769/3063</span>
+                <span class='fraction'>769/3060</span>
             </div>
         
             
@@ -3122,10 +3122,7 @@
 <a name='L3057'></a><a href='#L3057'>3057</a>
 <a name='L3058'></a><a href='#L3058'>3058</a>
 <a name='L3059'></a><a href='#L3059'>3059</a>
-<a name='L3060'></a><a href='#L3060'>3060</a>
-<a name='L3061'></a><a href='#L3061'>3061</a>
-<a name='L3062'></a><a href='#L3062'>3062</a>
-<a name='L3063'></a><a href='#L3063'>3063</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L3060'></a><a href='#L3060'>3060</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -5398,9 +5395,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8463,9 +8457,6 @@
 <span class="cstat-no" title="statement not covered" >    if (typeof pattern === "string") {</span>
 <span class="cstat-no" title="statement not covered" >      return (character) =&gt; character === pattern;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (!pattern.global) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new TypeError("a non-global RegExp argument is not supported");</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (character) =&gt; pattern.test(character);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function getCharacterLastIndex(text, pattern, fromIndex) {</span>
@@ -8571,7 +8562,7 @@
 <span class="cstat-no" title="statement not covered" >          args</span>
 <span class="cstat-no" title="statement not covered" >        } = node;</span>
 <span class="cstat-no" title="statement not covered" >        const tExp = _t(exp);</span>
-<span class="cstat-no" title="statement not covered" >        const nameStart = context.getCharacterIndex(/\S/g, context.getCharacterIndex("|", _getOuterEnd(tExp)) + 1);</span>
+<span class="cstat-no" title="statement not covered" >        const nameStart = context.getCharacterIndex(/\S/, context.getCharacterIndex("|", _getOuterEnd(tExp)) + 1);</span>
 <span class="cstat-no" title="statement not covered" >        const tName = _c("Identifier", {</span>
 <span class="cstat-no" title="statement not covered" >          name</span>
 <span class="cstat-no" title="statement not covered" >        }, {</span>
@@ -8683,8 +8674,8 @@
 <span class="cstat-no" title="statement not covered" >          const tValue = tValues[index];</span>
 <span class="cstat-no" title="statement not covered" >          const valueStart = _getOuterStart(tValue);</span>
 <span class="cstat-no" title="statement not covered" >          const valueEnd = _getOuterEnd(tValue);</span>
-<span class="cstat-no" title="statement not covered" >          const keyStart = context.getCharacterIndex(/\S/g, index === 0 ? node.sourceSpan.start + 1 : context.getCharacterIndex(",", _getOuterEnd(tValues[index - 1])) + 1);</span>
-<span class="cstat-no" title="statement not covered" >          const keyEnd = valueStart === keyStart ? valueEnd : context.getCharacterLastIndex(/\S/g, context.getCharacterLastIndex(":", valueStart - 1) - 1) + 1;</span>
+<span class="cstat-no" title="statement not covered" >          const keyStart = context.getCharacterIndex(/\S/, index === 0 ? node.sourceSpan.start + 1 : context.getCharacterIndex(",", _getOuterEnd(tValues[index - 1])) + 1);</span>
+<span class="cstat-no" title="statement not covered" >          const keyEnd = valueStart === keyStart ? valueEnd : context.getCharacterLastIndex(/\S/, context.getCharacterLastIndex(":", valueStart - 1) - 1) + 1;</span>
 <span class="cstat-no" title="statement not covered" >          const keySpan = {</span>
 <span class="cstat-no" title="statement not covered" >            start: keyStart,</span>
 <span class="cstat-no" title="statement not covered" >            end: keyEnd</span>
@@ -8809,7 +8800,7 @@
 <span class="cstat-no" title="statement not covered" >          receiver,</span>
 <span class="cstat-no" title="statement not covered" >          name</span>
 <span class="cstat-no" title="statement not covered" >        } = node;</span>
-<span class="cstat-no" title="statement not covered" >        const nameEnd = context.getCharacterLastIndex(/\S/g, node.sourceSpan.end - 1) + 1;</span>
+<span class="cstat-no" title="statement not covered" >        const nameEnd = context.getCharacterLastIndex(/\S/, node.sourceSpan.end - 1) + 1;</span>
 <span class="cstat-no" title="statement not covered" >        const tName = _c("Identifier", {</span>
 <span class="cstat-no" title="statement not covered" >          name</span>
 <span class="cstat-no" title="statement not covered" >        }, {</span>
@@ -8857,7 +8848,7 @@
 <span class="cstat-no" title="statement not covered" >          value</span>
 <span class="cstat-no" title="statement not covered" >        } = node;</span>
 <span class="cstat-no" title="statement not covered" >        const tValue = _t(value);</span>
-<span class="cstat-no" title="statement not covered" >        const nameEnd = context.getCharacterLastIndex(/\S/g, context.getCharacterLastIndex("=", _getOuterStart(tValue) - 1) - 1) + 1;</span>
+<span class="cstat-no" title="statement not covered" >        const nameEnd = context.getCharacterLastIndex(/\S/, context.getCharacterLastIndex("=", _getOuterStart(tValue) - 1) - 1) + 1;</span>
 <span class="cstat-no" title="statement not covered" >        const tName = _c("Identifier", {</span>
 <span class="cstat-no" title="statement not covered" >          name</span>
 <span class="cstat-no" title="statement not covered" >        }, {</span>
@@ -9182,7 +9173,7 @@
 <span class="cstat-no" title="statement not covered" >      if (!variableBinding.value || variableBinding.value.source !== NG_PARSE_TEMPLATE_BINDINGS_FAKE_PREFIX) {</span>
 <span class="cstat-no" title="statement not covered" >        return variableBinding.value;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const index = context.getCharacterIndex(/\S/g, variableBinding.sourceSpan.start);</span>
+<span class="cstat-no" title="statement not covered" >      const index = context.getCharacterIndex(/\S/, variableBinding.sourceSpan.start);</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
 <span class="cstat-no" title="statement not covered" >        source: "$implicit",</span>
 <span class="cstat-no" title="statement not covered" >        span: {</span>
@@ -9256,7 +9247,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T01:22:35.998Z
+                at 2023-11-13T01:20:03.580Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

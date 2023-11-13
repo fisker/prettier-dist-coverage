@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14319/16416</span>
+                <span class='fraction'>14314/16411</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4601/5230</span>
+                <span class='fraction'>4600/5229</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">87.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14319/16416</span>
+                <span class='fraction'>14314/16411</span>
             </div>
         
             
@@ -16474,12 +16474,7 @@
 <a name='L16409'></a><a href='#L16409'>16409</a>
 <a name='L16410'></a><a href='#L16410'>16410</a>
 <a name='L16411'></a><a href='#L16411'>16411</a>
-<a name='L16412'></a><a href='#L16412'>16412</a>
-<a name='L16413'></a><a href='#L16413'>16413</a>
-<a name='L16414'></a><a href='#L16414'>16414</a>
-<a name='L16415'></a><a href='#L16415'>16415</a>
-<a name='L16416'></a><a href='#L16416'>16416</a>
-<a name='L16417'></a><a href='#L16417'>16417</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">235x</span>
+<a name='L16412'></a><a href='#L16412'>16412</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">235x</span>
@@ -20039,11 +20034,6 @@
 <span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">16301x</span>
 <span class="cline-any cline-yes">16301x</span>
-<span class="cline-any cline-yes">235x</span>
-<span class="cline-any cline-yes">235x</span>
-<span class="cline-any cline-yes">235x</span>
-<span class="cline-any cline-yes">235x</span>
-<span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">9678x</span>
@@ -36455,11 +36445,6 @@ var require_lib = __commonJS({
     function newExpressionScope() {
       return new ExpressionScope();
     }
-    var PARAM = 0;
-    var PARAM_YIELD = 1;
-    var PARAM_AWAIT = 2;
-    var PARAM_RETURN = 4;
-    var PARAM_IN = 8;
     var ProductionParameterHandler = class {
       constructor() {
         this.stacks = [];
@@ -36474,20 +36459,20 @@ var require_lib = __commonJS({
         return this.stacks[this.stacks.length - 1];
       }
       get hasAwait() {
-        return (this.currentFlags() &amp; PARAM_AWAIT) &gt; 0;
+        return (this.currentFlags() &amp; 2) &gt; 0;
       }
       get hasYield() {
-        return (this.currentFlags() &amp; PARAM_YIELD) &gt; 0;
+        return (this.currentFlags() &amp; 1) &gt; 0;
       }
       get hasReturn() {
-        return (this.currentFlags() &amp; PARAM_RETURN) &gt; 0;
+        return (this.currentFlags() &amp; 4) &gt; 0;
       }
       get hasIn() {
-        return (this.currentFlags() &amp; PARAM_IN) &gt; 0;
+        return (this.currentFlags() &amp; 8) &gt; 0;
       }
     };
     function functionFlags(isAsync, isGenerator) {
-      return (isAsync ? PARAM_AWAIT : 0) | (isGenerator ? PARAM_YIELD : 0);
+      return (isAsync ? 2 : 0) | (isGenerator ? 1 : 0);
     }
     var UtilParser = class extends Tokenizer {
       addExtra(node, key, value, enumerable = true) {
@@ -36687,9 +36672,9 @@ var require_lib = __commonJS({
         };
       }
       enterInitialScopes() {
-        let paramFlags = PARAM;
+        let paramFlags = 0;
         if (this.inModule) {
-          paramFlags |= PARAM_AWAIT;
+          paramFlags |= 2;
         }
         this.scope.enter(1);
         this.prodParam.enter(paramFlags);
@@ -41518,7 +41503,7 @@ var require_lib = __commonJS({
           node.body = inner;
         } else {
           this.scope.enter(256);
-          this.prodParam.enter(PARAM);
+          this.prodParam.enter(0);
           node.body = this.tsParseModuleBlock();
           this.prodParam.exit();
           this.scope.exit();
@@ -41536,7 +41521,7 @@ var require_lib = __commonJS({
 <span class="cstat-no" title="statement not covered" >        }</span>
         if (this.match(5)) {
           this.scope.enter(256);
-          this.prodParam.enter(PARAM);
+          this.prodParam.enter(0);
           node.body = this.tsParseModuleBlock();
           this.prodParam.exit();
           this.scope.exit();
@@ -41664,7 +41649,7 @@ var require_lib = __commonJS({
           case "global":
             if (this.match(5)) {
               this.scope.enter(256);
-              this.prodParam.enter(PARAM);
+              this.prodParam.enter(0);
               const mod = node;
               mod.global = true;
               mod.id = expr;
@@ -44126,7 +44111,7 @@ var require_lib = __commonJS({
         const oldLabels = this.state.labels;
         this.state.labels = [];
         if (isAsync) {
-          this.prodParam.enter(PARAM_AWAIT);
+          this.prodParam.enter(2);
           node.body = this.parseBlock();
           this.prodParam.exit();
         } else {
@@ -44695,7 +44680,7 @@ var require_lib = __commonJS({
         this.scope.enter(2 | 4);
         let flags = functionFlags(isAsync, false);
         if (!this.match(5) &amp;&amp; this.prodParam.hasIn) {
-          flags |= PARAM_IN;
+          flags |= 8;
         }
         this.prodParam.enter(flags);
         this.initFunction(node, isAsync);
@@ -44729,7 +44714,7 @@ var require_lib = __commonJS({
           const oldStrict = this.state.strict;
           const oldLabels = this.state.labels;
           this.state.labels = [];
-          this.prodParam.enter(this.prodParam.currentFlags() | PARAM_RETURN);
+          this.prodParam.enter(this.prodParam.currentFlags() | 4);
           node.body = this.parseBlock(true, false, (hasStrictModeDirective) =&gt; {
             const nonSimple = !this.isSimpleParamList(node.params);
             if (hasStrictModeDirective &amp;&amp; nonSimple) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -45074,9 +45059,9 @@ var require_lib = __commonJS({
       }
       allowInAnd(callback) {
         const flags = this.prodParam.currentFlags();
-        const prodParamToSet = PARAM_IN &amp; ~flags;
+        const prodParamToSet = 8 &amp; ~flags;
         if (prodParamToSet) {
-          this.prodParam.enter(flags | PARAM_IN);
+          this.prodParam.enter(flags | 8);
           try {
             return callback();
           } finally {
@@ -45087,9 +45072,9 @@ var require_lib = __commonJS({
       }
       disallowInAnd(callback) {
         const flags = this.prodParam.currentFlags();
-        const prodParamToClear = PARAM_IN &amp; flags;
+        const prodParamToClear = 8 &amp; flags;
         if (prodParamToClear) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          this.prodParam.enter(flags &amp; ~PARAM_IN);</span>
+<span class="cstat-no" title="statement not covered" >          this.prodParam.enter(flags &amp; ~8);</span>
 <span class="cstat-no" title="statement not covered" >          try {</span>
 <span class="cstat-no" title="statement not covered" >            return callback();</span>
 <span class="cstat-no" title="statement not covered" >          } finally {</span>
@@ -46008,7 +45993,7 @@ var require_lib = __commonJS({
           }
           body.push(stmt);
         }
-        afterBlockParse == null ? void 0 : afterBlockParse.call(this, hasStrictModeDirective);
+        afterBlockParse == null || afterBlockParse.call(this, hasStrictModeDirective);
         if (!oldStrict) {
           this.setStrict(false);
         }
@@ -46387,7 +46372,7 @@ var require_lib = __commonJS({
         this.scope.enter(64 | 128 | 16);
         const oldLabels = this.state.labels;
         this.state.labels = [];
-        this.prodParam.enter(PARAM);
+        this.prodParam.enter(0);
         const body = member.body = [];
         this.parseBlockOrModuleBlockBody(body, void 0, false, 8);
         this.prodParam.exit();
@@ -46460,7 +46445,7 @@ var require_lib = __commonJS({
       parseInitializer(node) {
         this.scope.enter(64 | 16);
         this.expressionScope.enter(newExpressionScope());
-        this.prodParam.enter(PARAM);
+        this.prodParam.enter(0);
         node.value = this.eat(29) ? this.parseMaybeAssignAllowIn() : null;
         this.expressionScope.exit();
         this.prodParam.exit();
@@ -49318,7 +49303,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T01:22:32.755Z
+                at 2023-11-13T01:20:00.334Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
