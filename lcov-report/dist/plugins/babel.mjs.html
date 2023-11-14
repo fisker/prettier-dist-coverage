@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.22% </span>
+                <span class="strong">87.21% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14314/16411</span>
+                <span class='fraction'>14308/16405</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.97% </span>
+                <span class="strong">87.96% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4600/5229</span>
+                <span class='fraction'>4598/5227</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.23% </span>
+                <span class="strong">92.22% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>986/1069</span>
+                <span class='fraction'>985/1068</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.22% </span>
+                <span class="strong">87.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14314/16411</span>
+                <span class='fraction'>14308/16405</span>
             </div>
         
             
@@ -16468,13 +16468,7 @@
 <a name='L16403'></a><a href='#L16403'>16403</a>
 <a name='L16404'></a><a href='#L16404'>16404</a>
 <a name='L16405'></a><a href='#L16405'>16405</a>
-<a name='L16406'></a><a href='#L16406'>16406</a>
-<a name='L16407'></a><a href='#L16407'>16407</a>
-<a name='L16408'></a><a href='#L16408'>16408</a>
-<a name='L16409'></a><a href='#L16409'>16409</a>
-<a name='L16410'></a><a href='#L16410'>16410</a>
-<a name='L16411'></a><a href='#L16411'>16411</a>
-<a name='L16412'></a><a href='#L16412'>16412</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">235x</span>
+<a name='L16406'></a><a href='#L16406'>16406</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">235x</span>
 <span class="cline-any cline-yes">235x</span>
@@ -32410,8 +32404,8 @@
 <span class="cline-any cline-yes">9376x</span>
 <span class="cline-any cline-yes">9376x</span>
 <span class="cline-any cline-yes">9376x</span>
-<span class="cline-any cline-yes">8682x</span>
-<span class="cline-any cline-yes">8682x</span>
+<span class="cline-any cline-yes">1578x</span>
+<span class="cline-any cline-yes">1578x</span>
 <span class="cline-any cline-yes">9376x</span>
 <span class="cline-any cline-yes">9376x</span>
 <span class="cline-any cline-yes">490084x</span>
@@ -32478,12 +32472,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8421x</span>
-<span class="cline-any cline-yes">8421x</span>
-<span class="cline-any cline-yes">8682x</span>
-<span class="cline-any cline-yes">7104x</span>
-<span class="cline-any cline-yes">7104x</span>
-<span class="cline-any cline-yes">1578x</span>
-<span class="cline-any cline-yes">8682x</span>
 <span class="cline-any cline-yes">8421x</span>
 <span class="cline-any cline-yes">3982x</span>
 <span class="cline-any cline-yes">3982x</span>
@@ -48792,7 +48780,7 @@ function postprocess(ast, options) {
           expression
         } = node;
         if (expression.type === "TypeCastExpression") {
-          expression.range = node.range;
+          expression.range = [...node.range];
           return expression;
         }
         const start = locStart(node);
@@ -48820,8 +48808,8 @@ function postprocess(ast, options) {
           node.declarations,
           -1
         );
-        if (lastDeclaration == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: lastDeclaration.init) {
-          overrideLocEnd(node, lastDeclaration);
+        if ((lastDeclaration == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: lastDeclaration.init) &amp;&amp; text[locEnd(lastDeclaration)] !== ";") {
+          node.range = [locStart(node), locEnd(lastDeclaration)];
         }
         break;
       }
@@ -48889,12 +48877,6 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >    ast.range = [0, text.length];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   return ast;
-  function overrideLocEnd(toBeOverriddenNode, toOverrideNode) {
-    if (text[locEnd(toOverrideNode)] === ";") {
-      return;
-    }
-    toBeOverriddenNode.range = [locStart(toBeOverriddenNode), locEnd(toOverrideNode)];
-  }
 }
 function isUnbalancedLogicalTree(node) {
   return node.type === "LogicalExpression" &amp;&amp; node.right.type === "LogicalExpression" &amp;&amp; node.operator === node.right.operator;
@@ -49303,7 +49285,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-13T01:20:00.334Z
+                at 2023-11-14T01:18:29.669Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

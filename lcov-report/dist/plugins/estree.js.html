@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.09% </span>
+                <span class="strong">61.07% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6977/11419</span>
+                <span class='fraction'>6978/11425</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.09% </span>
+                <span class="strong">61.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6977/11419</span>
+                <span class='fraction'>6978/11425</span>
             </div>
         
             
@@ -11481,7 +11481,13 @@
 <a name='L11416'></a><a href='#L11416'>11416</a>
 <a name='L11417'></a><a href='#L11417'>11417</a>
 <a name='L11418'></a><a href='#L11418'>11418</a>
-<a name='L11419'></a><a href='#L11419'>11419</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11419'></a><a href='#L11419'>11419</a>
+<a name='L11420'></a><a href='#L11420'>11420</a>
+<a name='L11421'></a><a href='#L11421'>11421</a>
+<a name='L11422'></a><a href='#L11422'>11422</a>
+<a name='L11423'></a><a href='#L11423'>11423</a>
+<a name='L11424'></a><a href='#L11424'>11424</a>
+<a name='L11425'></a><a href='#L11425'>11425</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -18566,6 +18572,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18581,6 +18590,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
@@ -29982,7 +29994,10 @@
       ":",
       isAlternateTernary <span class="branch-0 cbranch-no" title="branch not covered" >? " " <span class="branch-0 cbranch-no" title="branch not covered" ></span>: !isBigTabs ? " " : shouldGroupTestAndConsequent ? ifBreak(</span>
 <span class="cstat-no" title="statement not covered" >        fillTab,</span>
-<span class="cstat-no" title="statement not covered" >        ifBreak(isInChain || tryToParenthesizeAlternate ? " " : fillTab, " "),</span>
+<span class="cstat-no" title="statement not covered" >        ifBreak(</span>
+<span class="cstat-no" title="statement not covered" >          isInChain || tryToParenthesizeAlternate ? " " : fillTab,</span>
+<span class="cstat-no" title="statement not covered" >          " "</span>
+<span class="cstat-no" title="statement not covered" >        ),</span>
 <span class="cstat-no" title="statement not covered" >        { groupId: testAndConsequentId }</span>
       ) : ifBreak(fillTab, " "),
       isAlternateTernary <span class="branch-0 cbranch-no" title="branch not covered" >? printedAlternateWithParens <span class="branch-0 cbranch-no" title="branch not covered" ></span>: group([</span>
@@ -30001,7 +30016,10 @@
 <span class="cstat-no" title="statement not covered" >      // However, this sadly means that tests are always shunted to the next line in this case,</span>
 <span class="cstat-no" title="statement not covered" >      // which I'm ambivalent about but some people like keeping on the same line as the assignment.</span>
 <span class="cstat-no" title="statement not covered" >      group(indent([softline, group(parts)]))</span>
-    ) <span class="branch-0 cbranch-no" title="branch not covered" >: isOnSameLineAsAssignment || isOnSameLineAsReturn ? group(indent(parts)) : shouldExtraIndent || isTSConditional &amp;&amp; isInTest ? group([indent([softline, parts]), breakTSClosingParen ? softline : ""]) : parent === firstNonConditionalParent ? group(parts) : parts;</span>
+    ) <span class="branch-0 cbranch-no" title="branch not covered" >: isOnSameLineAsAssignment || isOnSameLineAsReturn ? group(indent(parts)) : shouldExtraIndent || isTSConditional &amp;&amp; isInTest ? group([</span>
+<span class="cstat-no" title="statement not covered" >      indent([softline, parts]),</span>
+<span class="cstat-no" title="statement not covered" >      breakTSClosingParen ? softline : ""</span>
+    ]) : parent === firstNonConditionalParent ? group(parts) : parts;
     return result;
   }
 &nbsp;
@@ -34324,7 +34342,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-13T01:20:00.334Z
+                at 2023-11-14T01:18:29.669Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

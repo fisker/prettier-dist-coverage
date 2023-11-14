@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.85% </span>
+                <span class="strong">49.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8191/16431</span>
+                <span class='fraction'>8187/16425</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">56.54% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1253/2216</span>
+                <span class='fraction'>1252/2214</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.69% </span>
+                <span class="strong">54.65% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>559/1022</span>
+                <span class='fraction'>558/1021</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.85% </span>
+                <span class="strong">49.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8191/16431</span>
+                <span class='fraction'>8187/16425</span>
             </div>
         
             
@@ -16487,13 +16487,7 @@
 <a name='L16422'></a><a href='#L16422'>16422</a>
 <a name='L16423'></a><a href='#L16423'>16423</a>
 <a name='L16424'></a><a href='#L16424'>16424</a>
-<a name='L16425'></a><a href='#L16425'>16425</a>
-<a name='L16426'></a><a href='#L16426'>16426</a>
-<a name='L16427'></a><a href='#L16427'>16427</a>
-<a name='L16428'></a><a href='#L16428'>16428</a>
-<a name='L16429'></a><a href='#L16429'>16429</a>
-<a name='L16430'></a><a href='#L16430'>16430</a>
-<a name='L16431'></a><a href='#L16431'>16431</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16425'></a><a href='#L16425'>16425</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32522,12 +32516,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -48855,7 +48843,7 @@
             expression
           } = node;
           if (expression.type === "TypeCastExpression") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            expression.range = node.range;</span>
+<span class="cstat-no" title="statement not covered" >            expression.range = [...node.range];</span>
 <span class="cstat-no" title="statement not covered" >            return expression;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           const start = locStart(node);
@@ -48883,8 +48871,8 @@
             node.declarations,
             -1
           );
-          if (lastDeclaration == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: lastDeclaration.init) {
-            overrideLocEnd(node, lastDeclaration);
+          if ((lastDeclaration == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: lastDeclaration.init) &amp;&amp; text[locEnd(lastDeclaration)] !== ";") {
+            node.range = [locStart(node), locEnd(lastDeclaration)];
           }
           break;
         }
@@ -48952,12 +48940,6 @@
 <span class="cstat-no" title="statement not covered" >      ast.range = [0, text.length];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return ast;
-    function overrideLocEnd(toBeOverriddenNode, toOverrideNode) {
-      if (text[locEnd(toOverrideNode)] === ";") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        return;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-      toBeOverriddenNode.range = [locStart(toBeOverriddenNode), locEnd(toOverrideNode)];
-    }
   }
   function isUnbalancedLogicalTree(node) {
     return node.type === "LogicalExpression" &amp;&amp; node.right.type === "LogicalExpression" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.operator === node.right.operator;</span>
@@ -49360,7 +49342,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-13T01:20:00.334Z
+                at 2023-11-14T01:18:29.669Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
