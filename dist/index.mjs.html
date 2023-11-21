@@ -49446,7 +49446,7 @@ var require_parse = __commonJS({
       CHAR_NO_BREAK_SPACE,
       CHAR_ZERO_WIDTH_NOBREAK_SPACE
     } = require_constants();
-    var parse3 = (input, options8 = {}) =&gt; {
+    var parse4 = (input, options8 = {}) =&gt; {
       if (typeof input !== "string") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        throw new TypeError("Expected a string");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -49652,7 +49652,7 @@ var require_parse = __commonJS({
       push({ type: "eos" });
       return ast;
     };
-    module.exports = parse3;
+    module.exports = parse4;
   }
 });
 &nbsp;
@@ -49663,7 +49663,7 @@ var require_braces = __commonJS({
     var stringify = require_stringify();
     var compile = require_compile();
     var expand = require_expand();
-    var parse3 = require_parse();
+    var parse4 = require_parse();
     var braces = (input, options8 = {}) =&gt; {
       let output = [];
       if (Array.isArray(input)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -49683,7 +49683,7 @@ var require_braces = __commonJS({
       }
       return output;
     };
-    braces.parse = (input, options8 = {}) =&gt; parse3(input, options8);
+    braces.parse = (input, options8 = {}) =&gt; parse4(input, options8);
     braces.stringify = <span class="fstat-no" title="function not covered" >(input, options8 = {}) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (typeof input === "string") {</span>
 <span class="cstat-no" title="statement not covered" >        return stringify(braces.parse(input, options8), options8);</span>
@@ -50341,7 +50341,7 @@ var require_parse2 = __commonJS({
     var syntaxError = <span class="fstat-no" title="function not covered" >(type, char) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      return `Missing ${type}: "${char}" - use "\\\\${char}" to match literal characters`;</span>
     };
-    var parse3 = (input, options8) =&gt; {
+    var parse4 = (input, options8) =&gt; {
       if (typeof input !== "string") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        throw new TypeError("Expected a string");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -50491,7 +50491,7 @@ var require_parse2 = __commonJS({
 <span class="cstat-no" title="statement not covered" >            output = token.close = `)$))${extglobStar}`;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (token.inner.includes("*") &amp;&amp; (rest = remaining()) &amp;&amp; /^\.[^\\/.]+$/.test(rest)) {</span>
-<span class="cstat-no" title="statement not covered" >            const expression = parse3(rest, { ...options8, fastpaths: false }).output;</span>
+<span class="cstat-no" title="statement not covered" >            const expression = parse4(rest, { ...options8, fastpaths: false }).output;</span>
 <span class="cstat-no" title="statement not covered" >            output = token.close = `)${expression})${extglobStar})`;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (token.prev.type === "bos") {</span>
@@ -51020,7 +51020,7 @@ var require_parse2 = __commonJS({
 <span class="cstat-no" title="statement not covered" >      }</span>
       return state;
     };
-    parse3.fastpaths = (input, options8) =&gt; {
+    parse4.fastpaths = (input, options8) =&gt; {
       const opts = { ...options8 };
       const max = typeof opts.maxLength === "number" <span class="branch-0 cbranch-no" title="branch not covered" >? Math.min(MAX_LENGTH, opts.maxLength) </span>: MAX_LENGTH;
       const len = input.length;
@@ -51089,7 +51089,7 @@ var require_parse2 = __commonJS({
       }
       return source;
     };
-    module.exports = parse3;
+    module.exports = parse4;
   }
 });
 &nbsp;
@@ -51099,7 +51099,7 @@ var require_picomatch = __commonJS({
     "use strict";
     var path10 = __require("path");
     var scan = require_scan();
-    var parse3 = require_parse2();
+    var parse4 = require_parse2();
     var utils = require_utils2();
     var constants = require_constants2();
     var isObject2 = (val) =&gt; val &amp;&amp; typeof val === "object" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !Array.isArray(val);</span>
@@ -51189,7 +51189,7 @@ var require_picomatch = __commonJS({
     picomatch.parse = <span class="fstat-no" title="function not covered" >(pattern, options8) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (Array.isArray(pattern))</span>
 <span class="cstat-no" title="statement not covered" >        return pattern.map((p) =&gt; picomatch.parse(p, options8));</span>
-<span class="cstat-no" title="statement not covered" >      return parse3(pattern, { ...options8, fastpaths: false });</span>
+<span class="cstat-no" title="statement not covered" >      return parse4(pattern, { ...options8, fastpaths: false });</span>
     };
     picomatch.scan = (input, options8) =&gt; scan(input, options8);
     picomatch.compileRe = (state, options8, returnOutput = false, returnState = false) =&gt; {
@@ -51215,10 +51215,10 @@ var require_picomatch = __commonJS({
 <span class="cstat-no" title="statement not covered" >      }</span>
       let parsed = { negated: false, fastpaths: true };
       if (options8.fastpaths !== false &amp;&amp; (input[0] === "." || input[0] === "*")) {
-        parsed.output = parse3.fastpaths(input, options8);
+        parsed.output = parse4.fastpaths(input, options8);
       }
       if (!parsed.output) {
-        parsed = parse3(input, options8);
+        parsed = parse4(input, options8);
       }
       return picomatch.compileRe(parsed, options8, returnOutput, returnState);
     };
@@ -52597,26 +52597,26 @@ var require_queue = __commonJS({
 <span class="cstat-no" title="statement not covered" >      queue.drained = drained;</span>
 <span class="cstat-no" title="statement not covered" >      return queue;</span>
 <span class="cstat-no" title="statement not covered" >      function push(value) {</span>
-<span class="cstat-no" title="statement not covered" >        var p = new Promise(function(resolve2, reject) {</span>
+<span class="cstat-no" title="statement not covered" >        var p = new Promise(function(resolve3, reject) {</span>
 <span class="cstat-no" title="statement not covered" >          pushCb(value, function(err, result) {</span>
 <span class="cstat-no" title="statement not covered" >            if (err) {</span>
 <span class="cstat-no" title="statement not covered" >              reject(err);</span>
 <span class="cstat-no" title="statement not covered" >              return;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            resolve2(result);</span>
+<span class="cstat-no" title="statement not covered" >            resolve3(result);</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >        p.catch(noop2);</span>
 <span class="cstat-no" title="statement not covered" >        return p;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      function unshift(value) {</span>
-<span class="cstat-no" title="statement not covered" >        var p = new Promise(function(resolve2, reject) {</span>
+<span class="cstat-no" title="statement not covered" >        var p = new Promise(function(resolve3, reject) {</span>
 <span class="cstat-no" title="statement not covered" >          unshiftCb(value, function(err, result) {</span>
 <span class="cstat-no" title="statement not covered" >            if (err) {</span>
 <span class="cstat-no" title="statement not covered" >              reject(err);</span>
 <span class="cstat-no" title="statement not covered" >              return;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            resolve2(result);</span>
+<span class="cstat-no" title="statement not covered" >            resolve3(result);</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >        p.catch(noop2);</span>
@@ -52624,15 +52624,15 @@ var require_queue = __commonJS({
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      function drained() {</span>
 <span class="cstat-no" title="statement not covered" >        if (queue.idle()) {</span>
-<span class="cstat-no" title="statement not covered" >          return new Promise(function(resolve2) {</span>
-<span class="cstat-no" title="statement not covered" >            resolve2();</span>
+<span class="cstat-no" title="statement not covered" >          return new Promise(function(resolve3) {</span>
+<span class="cstat-no" title="statement not covered" >            resolve3();</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        var previousDrain = queue.drain;</span>
-<span class="cstat-no" title="statement not covered" >        var p = new Promise(function(resolve2) {</span>
+<span class="cstat-no" title="statement not covered" >        var p = new Promise(function(resolve3) {</span>
 <span class="cstat-no" title="statement not covered" >          queue.drain = function() {</span>
 <span class="cstat-no" title="statement not covered" >            previousDrain();</span>
-<span class="cstat-no" title="statement not covered" >            resolve2();</span>
+<span class="cstat-no" title="statement not covered" >            resolve3();</span>
 <span class="cstat-no" title="statement not covered" >          };</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >        return p;</span>
@@ -53115,9 +53115,9 @@ var require_stream3 = __commonJS({
         });
       }
       _getStat(filepath) {
-        return new Promise((resolve2, reject) =&gt; {
+        return new Promise((resolve3, reject) =&gt; {
           this._stat(filepath, this._fsStatSettings, (error, stats) =&gt; {
-            return error === null ? resolve2(stats) : reject(error);
+            return error === null ? resolve3(stats) : reject(error);
           });
         });
       }
@@ -53141,10 +53141,10 @@ var require_async5 = __commonJS({
         this._readerStream = new stream_1.default(this._settings);
       }
       dynamic(root, options8) {
-        return new Promise((resolve2, reject) =&gt; {
+        return new Promise((resolve3, reject) =&gt; {
           this._walkAsync(root, options8, (error, entries) =&gt; {
             if (error === null) {
-              resolve2(entries);
+              resolve3(entries);
             }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
 <span class="cstat-no" title="statement not covered" >              reject(error);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -53154,10 +53154,10 @@ var require_async5 = __commonJS({
       async static(patterns, options8) {
         const entries = [];
         const stream = this._readerStream.static(patterns, options8);
-        return new Promise((resolve2, reject) =&gt; {
+        return new Promise((resolve3, reject) =&gt; {
           stream.once("error", reject);
           stream.on("data", (entry) =&gt; entries.push(entry));
-          stream.once("end", () =&gt; resolve2(entries));
+          stream.once("end", () =&gt; resolve3(entries));
         });
       }
     };
@@ -56273,8 +56273,8 @@ var require_p_defer = __commonJS({
     "use strict";
     module.exports = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      const ret = {};</span>
-<span class="cstat-no" title="statement not covered" >      ret.promise = new Promise((resolve2, reject) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        ret.resolve = resolve2;</span>
+<span class="cstat-no" title="statement not covered" >      ret.promise = new Promise((resolve3, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        ret.resolve = resolve3;</span>
 <span class="cstat-no" title="statement not covered" >        ret.reject = reject;</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >      return ret;</span>
@@ -56287,7 +56287,7 @@ var require_dist = __commonJS({
   "node_modules/map-age-cleaner/dist/index.js"(exports, module) {
     "use strict";
     var __awaiter = exports &amp;&amp; exports.__awaiter || <span class="fstat-no" title="function not covered" >function(thisArg, _arguments, P, generator) {</span>
-<span class="cstat-no" title="statement not covered" >      return new (P || (P = Promise))(function(resolve2, reject) {</span>
+<span class="cstat-no" title="statement not covered" >      return new (P || (P = Promise))(function(resolve3, reject) {</span>
 <span class="cstat-no" title="statement not covered" >        function fulfilled(value) {</span>
 <span class="cstat-no" title="statement not covered" >          try {</span>
 <span class="cstat-no" title="statement not covered" >            step(generator.next(value));</span>
@@ -56303,8 +56303,8 @@ var require_dist = __commonJS({
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        function step(result) {</span>
-<span class="cstat-no" title="statement not covered" >          result.done ? resolve2(result.value) : new P(function(resolve3) {</span>
-<span class="cstat-no" title="statement not covered" >            resolve3(result.value);</span>
+<span class="cstat-no" title="statement not covered" >          result.done ? resolve3(result.value) : new P(function(resolve4) {</span>
+<span class="cstat-no" title="statement not covered" >            resolve4(result.value);</span>
 <span class="cstat-no" title="statement not covered" >          }).then(fulfilled, rejected);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        step((generator = generator.apply(thisArg, _arguments || [])).next());</span>
@@ -57943,9 +57943,9 @@ var require_fnmatch = __commonJS({
       }
       return ret;
     }
-    Minimatch.prototype.parse = parse3;
+    Minimatch.prototype.parse = parse4;
     var SUBPARSE = {};
-    function parse3(pattern, isSub) {
+    function parse4(pattern, isSub) {
       var options8 = this.options;
       if (!options8.noglobstar &amp;&amp; pattern === "**")
         return GLOBSTAR;
@@ -58311,7 +58311,7 @@ var require_ini = __commonJS({
   "node_modules/editorconfig/src/lib/ini.js"(exports) {
     "use strict";
     var __awaiter = exports &amp;&amp; exports.__awaiter || <span class="fstat-no" title="function not covered" >function(thisArg, _arguments, P, generator) {</span>
-<span class="cstat-no" title="statement not covered" >      return new (P || (P = Promise))(function(resolve2, reject) {</span>
+<span class="cstat-no" title="statement not covered" >      return new (P || (P = Promise))(function(resolve3, reject) {</span>
 <span class="cstat-no" title="statement not covered" >        function fulfilled(value) {</span>
 <span class="cstat-no" title="statement not covered" >          try {</span>
 <span class="cstat-no" title="statement not covered" >            step(generator.next(value));</span>
@@ -58327,8 +58327,8 @@ var require_ini = __commonJS({
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        function step(result) {</span>
-<span class="cstat-no" title="statement not covered" >          result.done ? resolve2(result.value) : new P(function(resolve3) {</span>
-<span class="cstat-no" title="statement not covered" >            resolve3(result.value);</span>
+<span class="cstat-no" title="statement not covered" >          result.done ? resolve3(result.value) : new P(function(resolve4) {</span>
+<span class="cstat-no" title="statement not covered" >            resolve4(result.value);</span>
 <span class="cstat-no" title="statement not covered" >          }).then(fulfilled, rejected);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        step((generator = generator.apply(thisArg, _arguments || [])).next());</span>
@@ -58429,22 +58429,22 @@ var require_ini = __commonJS({
       param: /^\s*([\w\.\-\_]+)\s*[=:]\s*(.*?)\s*([#;].*)?$/,
       comment: /^\s*[#;].*$/
     };
-<span class="fstat-no" title="function not covered" >    function parse3(file) {</span>
+<span class="fstat-no" title="function not covered" >    function parse4(file) {</span>
 <span class="cstat-no" title="statement not covered" >      return __awaiter(this, void 0, void 0, function() {</span>
 <span class="cstat-no" title="statement not covered" >        return __generator(this, function(_a) {</span>
-<span class="cstat-no" title="statement not covered" >          return [2, new Promise(function(resolve2, reject) {</span>
+<span class="cstat-no" title="statement not covered" >          return [2, new Promise(function(resolve3, reject) {</span>
 <span class="cstat-no" title="statement not covered" >            fs5.readFile(file, "utf8", function(err, data) {</span>
 <span class="cstat-no" title="statement not covered" >              if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                reject(err);</span>
 <span class="cstat-no" title="statement not covered" >                return;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              resolve2(parseString(data));</span>
+<span class="cstat-no" title="statement not covered" >              resolve3(parseString(data));</span>
 <span class="cstat-no" title="statement not covered" >            });</span>
 <span class="cstat-no" title="statement not covered" >          })];</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    exports.parse = parse3;
+    exports.parse = parse4;
 <span class="fstat-no" title="function not covered" >    function parseSync(file) {</span>
 <span class="cstat-no" title="statement not covered" >      return parseString(fs5.readFileSync(file, "utf8"));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -58545,7 +58545,7 @@ var require_src = __commonJS({
   "node_modules/editorconfig/src/index.js"(exports) {
     "use strict";
     var __awaiter = exports &amp;&amp; exports.__awaiter || function(thisArg, _arguments, P, generator) {
-      return new (P || (P = Promise))(function(resolve2, reject) {
+      return new (P || (P = Promise))(function(resolve3, reject) {
 <span class="fstat-no" title="function not covered" >        function fulfilled(value) {</span>
 <span class="cstat-no" title="statement not covered" >          try {</span>
 <span class="cstat-no" title="statement not covered" >            step(generator.next(value));</span>
@@ -58561,8 +58561,8 @@ var require_src = __commonJS({
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         function step(result) {
-          result.done ? resolve2(result.value) <span class="branch-0 cbranch-no" title="branch not covered" >: new P(function(resolve3) {</span>
-<span class="cstat-no" title="statement not covered" >            resolve3(result.value);</span>
+          result.done ? resolve3(result.value) <span class="branch-0 cbranch-no" title="branch not covered" >: new P(function(resolve4) {</span>
+<span class="cstat-no" title="statement not covered" >            resolve4(result.value);</span>
           }).then(fulfilled, rejected);
         }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
@@ -58791,9 +58791,9 @@ var require_src = __commonJS({
       return __awaiter(this, void 0, void 0, function() {
         return __generator(this, function(_a) {
           return [2, Promise.all(filepaths.map(function(name) {
-            return new Promise(function(resolve2) {
+            return new Promise(function(resolve3) {
               fs5.readFile(name, "utf8", function(err, data) {
-                resolve2({
+                resolve3({
                   name,
                   contents: err ? "" : data
                 });
@@ -58852,7 +58852,7 @@ var require_src = __commonJS({
 <span class="cstat-no" title="statement not covered" >      return parseFromConfigs(getConfigsForFiles(files), resolvedFilePath, processedOptions);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     exports.parseFromFilesSync = parseFromFilesSync;
-    function parse3(_filepath, _options) {
+    function parse4(_filepath, _options) {
       if (_options === void 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        _options = {};</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -58867,7 +58867,7 @@ var require_src = __commonJS({
         });
       });
     }
-    exports.parse = parse3;
+    exports.parse = parse4;
 <span class="fstat-no" title="function not covered" >    function parseSync(_filepath, _options) {</span>
 <span class="cstat-no" title="statement not covered" >      if (_options === void 0) {</span>
 <span class="cstat-no" title="statement not covered" >        _options = {};</span>
@@ -60501,20 +60501,20 @@ var require_parse_async = __commonJS({
       const index = 0;
       const blocksize = opts.blocksize || 40960;
       const parser = new TOMLParser();
-      return new Promise((resolve2, reject) =&gt; {
-        setImmediate(parseAsyncNext, index, blocksize, resolve2, reject);
+      return new Promise((resolve3, reject) =&gt; {
+        setImmediate(parseAsyncNext, index, blocksize, resolve3, reject);
       });
-      function parseAsyncNext(index2, blocksize2, resolve2, reject) {
+      function parseAsyncNext(index2, blocksize2, resolve3, reject) {
         if (index2 &gt;= str.length) {
           try {
-            return resolve2(parser.finish());
+            return resolve3(parser.finish());
           } <span class="branch-0 cbranch-no" title="branch not covered" >catch (err) {</span>
 <span class="cstat-no" title="statement not covered" >            return reject(prettyError(err, str));</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
         }
         try {
           parser.parse(str.slice(index2, index2 + blocksize2));
-          setImmediate(parseAsyncNext, index2 + blocksize2, blocksize2, resolve2, reject);
+          setImmediate(parseAsyncNext, index2 + blocksize2, blocksize2, resolve3, reject);
         } catch (err) {
           reject(prettyError(err, str));
         }
@@ -60569,7 +60569,7 @@ var require_parse3 = __commonJS({
     var token;
     var key;
     var root;
-    module.exports = function parse3(text, reviver) {
+    module.exports = function parse4(text, reviver) {
       source = String(text);
       parseState = "start";
       stack = [];
@@ -69058,7 +69058,7 @@ var editorconfig_to_prettier_default = editorConfigToPrettier;
 import path2 from "path";
 &nbsp;
 // node_modules/iterate-directory-up/index.js
-import path from "path";
+import * as path from "path";
 var toAbsolutePath = (value) =&gt; path.resolve(toPath(value));
 function* iterateDirectoryUp(from, to) {
   from = toAbsolutePath(from);
@@ -70616,7 +70616,7 @@ function defaultResolve(specifier, context = {}) {
 }
 &nbsp;
 // node_modules/import-meta-resolve/index.js
-function resolve(specifier, parent) {
+function resolve2(specifier, parent) {
   if (!parent) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    throw new Error(</span>
 <span class="cstat-no" title="statement not covered" >      "Please pass `parent`: `import-meta-resolve` cannot ponyfill that"</span>
@@ -70638,7 +70638,7 @@ function resolve(specifier, parent) {
 &nbsp;
 // src/utils/import-from-file.js
 function importFromFile(specifier, parent) {
-  const url2 = resolve(specifier, pathToFileURL3(parent).href);
+  const url2 = resolve2(specifier, pathToFileURL3(parent).href);
   return import(url2);
 }
 var import_from_file_default = importFromFile;
@@ -70774,8 +70774,8 @@ function loadPrettierConfig(filePath, options8) {
   if (!filePath) {
     return search();
   }
-  const dirname = path6.dirname(path6.resolve(filePath));
-  return search(dirname);
+  const dirname2 = path6.dirname(path6.resolve(filePath));
+  return search(dirname2);
 }
 async function resolveConfig(fileUrlOrPath, options8) {
   options8 = { useCache: true, ...options8 };
@@ -70800,8 +70800,8 @@ async function resolveConfig(fileUrlOrPath, options8) {
 }
 async function resolveConfigFile(fileUrlOrPath) {
   const { search } = get_prettier_config_explorer_default();
-  const dirname = fileUrlOrPath ? path6.dirname(path6.resolve(toPath(fileUrlOrPath))) : void 0;
-  const result = await search(dirname);
+  const dirname2 = fileUrlOrPath ? path6.dirname(path6.resolve(toPath(fileUrlOrPath))) : void 0;
+  const result = await search(dirname2);
   return (result == null ? void 0 : result.filepath) ?? null;
 }
 function mergeOverrides(configResult, filePath) {
@@ -72346,7 +72346,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-20T01:21:22.968Z
+                at 2023-11-21T01:23:25.082Z
             </div>
         <script src="../prettify.js"></script>
         <script>
