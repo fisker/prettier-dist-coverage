@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.65% </span>
+                <span class="strong">55.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4056/7288</span>
+                <span class='fraction'>4056/7284</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.65% </span>
+                <span class="strong">55.68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4056/7288</span>
+                <span class='fraction'>4056/7284</span>
             </div>
         
             
@@ -7347,11 +7347,7 @@
 <a name='L7282'></a><a href='#L7282'>7282</a>
 <a name='L7283'></a><a href='#L7283'>7283</a>
 <a name='L7284'></a><a href='#L7284'>7284</a>
-<a name='L7285'></a><a href='#L7285'>7285</a>
-<a name='L7286'></a><a href='#L7286'>7286</a>
-<a name='L7287'></a><a href='#L7287'>7287</a>
-<a name='L7288'></a><a href='#L7288'>7288</a>
-<a name='L7289'></a><a href='#L7289'>7289</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">401x</span>
+<a name='L7285'></a><a href='#L7285'>7285</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
@@ -8693,10 +8689,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">38x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16012,23 +16004,19 @@ var require_src = __commonJS({
 <span class="cstat-no" title="statement not covered" >            return void 0;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (isArray) {</span>
-<span class="cstat-no" title="statement not covered" >            const result = [];</span>
-<span class="cstat-no" title="statement not covered" >            for (let row of data) {</span>
+<span class="cstat-no" title="statement not covered" >            return data.map((row, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >              if (typeof row === "string") {</span>
 <span class="cstat-no" title="statement not covered" >                row = this.opts.deserialize(row);</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              if (row === void 0 || row === null) {</span>
-<span class="cstat-no" title="statement not covered" >                result.push(void 0);</span>
-<span class="cstat-no" title="statement not covered" >                continue;</span>
+<span class="cstat-no" title="statement not covered" >                return void 0;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              if (typeof row.expires === "number" &amp;&amp; Date.now() &gt; row.expires) {</span>
-<span class="cstat-no" title="statement not covered" >                this.delete(key).then(() =&gt; void 0);</span>
-<span class="cstat-no" title="statement not covered" >                result.push(void 0);</span>
-<span class="cstat-no" title="statement not covered" >              } else {</span>
-<span class="cstat-no" title="statement not covered" >                result.push(options &amp;&amp; options.raw ? row : row.value);</span>
+<span class="cstat-no" title="statement not covered" >                this.delete(key[index]).then(() =&gt; void 0);</span>
+<span class="cstat-no" title="statement not covered" >                return void 0;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            return result;</span>
+<span class="cstat-no" title="statement not covered" >              return options &amp;&amp; options.raw ? row : row.value;</span>
+<span class="cstat-no" title="statement not covered" >            });</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (typeof data.expires === "number" &amp;&amp; Date.now() &gt; data.expires) {</span>
 <span class="cstat-no" title="statement not covered" >            return this.delete(key).then(() =&gt; void 0);</span>
@@ -21934,7 +21922,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-22T01:22:29.917Z
+                at 2023-11-23T01:20:13.091Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
