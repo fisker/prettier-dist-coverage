@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.07% </span>
+                <span class="strong">61.06% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6978/11425</span>
+                <span class='fraction'>6986/11440</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.63% </span>
+                <span class="strong">50.58% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1389/2743</span>
+                <span class='fraction'>1390/2748</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.47% </span>
+                <span class="strong">67.53% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>361/535</span>
+                <span class='fraction'>362/536</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.07% </span>
+                <span class="strong">61.06% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6978/11425</span>
+                <span class='fraction'>6986/11440</span>
             </div>
         
             
@@ -11487,7 +11487,22 @@
 <a name='L11422'></a><a href='#L11422'>11422</a>
 <a name='L11423'></a><a href='#L11423'>11423</a>
 <a name='L11424'></a><a href='#L11424'>11424</a>
-<a name='L11425'></a><a href='#L11425'>11425</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11425'></a><a href='#L11425'>11425</a>
+<a name='L11426'></a><a href='#L11426'>11426</a>
+<a name='L11427'></a><a href='#L11427'>11427</a>
+<a name='L11428'></a><a href='#L11428'>11428</a>
+<a name='L11429'></a><a href='#L11429'>11429</a>
+<a name='L11430'></a><a href='#L11430'>11430</a>
+<a name='L11431'></a><a href='#L11431'>11431</a>
+<a name='L11432'></a><a href='#L11432'>11432</a>
+<a name='L11433'></a><a href='#L11433'>11433</a>
+<a name='L11434'></a><a href='#L11434'>11434</a>
+<a name='L11435'></a><a href='#L11435'>11435</a>
+<a name='L11436'></a><a href='#L11436'>11436</a>
+<a name='L11437'></a><a href='#L11437'>11437</a>
+<a name='L11438'></a><a href='#L11438'>11438</a>
+<a name='L11439'></a><a href='#L11439'>11439</a>
+<a name='L11440'></a><a href='#L11440'>11440</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15919,6 +15934,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -26800,7 +26830,7 @@
 &nbsp;
   // src/language-js/comments/handle-comments.js
   function handleOwnLineComment(context) {
-    return [handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionArgComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileComments, handleTryStatementComments, handleClassComments, handleForComments, handleUnionTypeComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleBreakAndContinueStatementComments, handleNestedConditionalExpressionComments].some((fn) =&gt; fn(context));
+    return [handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionArgComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileComments, handleTryStatementComments, handleClassComments, handleForComments, handleUnionTypeComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleBreakAndContinueStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern].some((fn) =&gt; fn(context));
   }
 <span class="fstat-no" title="function not covered" >  function handleEndOfLineComment(context) {</span>
 <span class="cstat-no" title="statement not covered" >    return [handleClosureTypeCastComments, handleLastFunctionArgComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileComments, handleTryStatementComments, handleClassComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleVariableDeclaratorComments, handleBreakAndContinueStatementComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression].some((fn) =&gt; fn(context));</span>
@@ -27343,6 +27373,21 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+  function handleCommentsInDestructuringPattern({
+    comment,
+    enclosingNode,
+    precedingNode,
+    followingNode
+  }) {
+    if (((enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "ObjectPattern" || (enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "ArrayPattern") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (followingNode == null ? void 0 : followingNode.type) === "TSTypeAnnotation")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      if (precedingNode) {</span>
+<span class="cstat-no" title="statement not covered" >        addTrailingComment(precedingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >      } else {</span>
+<span class="cstat-no" title="statement not covered" >        addDanglingComment(enclosingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  }
   var isRealFunctionLikeNode = create_type_check_function_default(["ArrowFunctionExpression", "FunctionExpression", "FunctionDeclaration", "ObjectMethod", "ClassMethod", "TSDeclareFunction", "TSCallSignatureDeclaration", "TSConstructSignatureDeclaration", "TSMethodSignature", "TSConstructorType", "TSFunctionType", "TSDeclareMethod"]);
 &nbsp;
   // src/language-js/utils/is-indentable-block-comment.js
@@ -34342,7 +34387,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-23T01:20:16.307Z
+                at 2023-11-24T01:18:32.482Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
