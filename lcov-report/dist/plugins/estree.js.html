@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.83% </span>
+                <span class="strong">60.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6990/11491</span>
+                <span class='fraction'>6999/11500</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.69% </span>
+                <span class="strong">50.72% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1393/2748</span>
+                <span class='fraction'>1395/2750</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.83% </span>
+                <span class="strong">60.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6990/11491</span>
+                <span class='fraction'>6999/11500</span>
             </div>
         
             
@@ -11553,7 +11553,16 @@
 <a name='L11488'></a><a href='#L11488'>11488</a>
 <a name='L11489'></a><a href='#L11489'>11489</a>
 <a name='L11490'></a><a href='#L11490'>11490</a>
-<a name='L11491'></a><a href='#L11491'>11491</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11491'></a><a href='#L11491'>11491</a>
+<a name='L11492'></a><a href='#L11492'>11492</a>
+<a name='L11493'></a><a href='#L11493'>11493</a>
+<a name='L11494'></a><a href='#L11494'>11494</a>
+<a name='L11495'></a><a href='#L11495'>11495</a>
+<a name='L11496'></a><a href='#L11496'>11496</a>
+<a name='L11497'></a><a href='#L11497'>11497</a>
+<a name='L11498'></a><a href='#L11498'>11498</a>
+<a name='L11499'></a><a href='#L11499'>11499</a>
+<a name='L11500'></a><a href='#L11500'>11500</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -12030,12 +12039,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">358x</span>
+<span class="cline-any cline-yes">378x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">358x</span>
-<span class="cline-any cline-yes">358x</span>
-<span class="cline-any cline-yes">358x</span>
+<span class="cline-any cline-yes">378x</span>
+<span class="cline-any cline-yes">378x</span>
+<span class="cline-any cline-yes">378x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -17055,6 +17064,8 @@
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-yes">51x</span>
@@ -17175,6 +17186,11 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18414,6 +18430,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18538,6 +18555,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -28540,9 +28558,11 @@
         node: node2
       } = path2;
       if (isCallExpression(node2) &amp;&amp; (isMemberish(node2.callee) <span class="branch-0 cbranch-no" title="branch not covered" >|| isCallExpression(node2.callee))</span>) {
+        const hasTrailingEmptyLine = shouldInsertEmptyLineAfter(node2);
         printedNodes.unshift({
           node: node2,
-          printed: [printComments(path2, [printOptionalToken(path2), printFunctionTypeParameters(path2, options2, print3), call_arguments_default(path2, options2, print3)], options2), shouldInsertEmptyLineAfter(node2) <span class="branch-0 cbranch-no" title="branch not covered" >? hardline </span>: ""]
+          hasTrailingEmptyLine,
+          printed: [printComments(path2, [printOptionalToken(path2), printFunctionTypeParameters(path2, options2, print3), call_arguments_default(path2, options2, print3)], options2), hasTrailingEmptyLine <span class="branch-0 cbranch-no" title="branch not covered" >? hardline </span>: ""]
         });
         path2.call((callee) =&gt; rec(callee), "callee");
       } else if (isMemberish(node2)) {
@@ -28665,7 +28685,12 @@
     const cutoff = shouldMerge ? 3 : 2;
     const flatGroups = groups.flat();
     const nodeHasComment = flatGroups.slice(1, -1).some((node2) =&gt; hasComment(node2.node, CommentCheckFlags.Leading)) || flatGroups.slice(0, -1).some((node2) =&gt; hasComment(node2.node, CommentCheckFlags.Trailing)) || groups[cutoff] &amp;&amp; hasComment(groups[cutoff][0].node, CommentCheckFlags.Leading);
-    if (groups.length &lt;= cutoff &amp;&amp; !nodeHasComment) {
+    if (groups.length &lt;= cutoff &amp;&amp; !nodeHasComment &amp;&amp; !groups.some((g) =&gt; at_default(
+      /* isOptionalObject*/
+      false,
+      g,
+      -1
+    ).hasTrailingEmptyLine)) {
       if (isLongCurriedCallExpression(path)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return oneLine;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -29901,7 +29926,8 @@
     ["ReturnStatement", "argument"],
     ["ThrowStatement", "argument"],
     ["UnaryExpression", "argument"],
-    ["YieldExpression", "argument"]
+    ["YieldExpression", "argument"],
+    ["AwaitExpression", "argument"]
   ]);
   function shouldExtraIndentForConditionalExpression(path) {
     const { node } = path;
@@ -30034,7 +30060,8 @@
     ["ReturnStatement", "argument"],
     ["ThrowStatement", "argument"],
     ["UnaryExpression", "argument"],
-    ["YieldExpression", "argument"]
+    ["YieldExpression", "argument"],
+    ["AwaitExpression", "argument"]
   ]);
 <span class="fstat-no" title="function not covered" >  function shouldExtraIndentForConditionalExpression2(path) {</span>
 <span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
@@ -34540,7 +34567,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-13T01:20:51.546Z
+                at 2023-12-14T01:20:05.365Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.96% </span>
+                <span class="strong">61.98% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5499/8874</span>
+                <span class='fraction'>5510/8889</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.87% </span>
+                <span class="strong">59.77% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>479/800</span>
+                <span class='fraction'>483/808</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.85% </span>
+                <span class="strong">44.05% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>250/570</span>
+                <span class='fraction'>252/572</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.96% </span>
+                <span class="strong">61.98% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5499/8874</span>
+                <span class='fraction'>5510/8889</span>
             </div>
         
             
@@ -8936,7 +8936,22 @@
 <a name='L8871'></a><a href='#L8871'>8871</a>
 <a name='L8872'></a><a href='#L8872'>8872</a>
 <a name='L8873'></a><a href='#L8873'>8873</a>
-<a name='L8874'></a><a href='#L8874'>8874</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8874'></a><a href='#L8874'>8874</a>
+<a name='L8875'></a><a href='#L8875'>8875</a>
+<a name='L8876'></a><a href='#L8876'>8876</a>
+<a name='L8877'></a><a href='#L8877'>8877</a>
+<a name='L8878'></a><a href='#L8878'>8878</a>
+<a name='L8879'></a><a href='#L8879'>8879</a>
+<a name='L8880'></a><a href='#L8880'>8880</a>
+<a name='L8881'></a><a href='#L8881'>8881</a>
+<a name='L8882'></a><a href='#L8882'>8882</a>
+<a name='L8883'></a><a href='#L8883'>8883</a>
+<a name='L8884'></a><a href='#L8884'>8884</a>
+<a name='L8885'></a><a href='#L8885'>8885</a>
+<a name='L8886'></a><a href='#L8886'>8886</a>
+<a name='L8887'></a><a href='#L8887'>8887</a>
+<a name='L8888'></a><a href='#L8888'>8888</a>
+<a name='L8889'></a><a href='#L8889'>8889</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10060,6 +10075,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -18659,7 +18689,7 @@
 <span class="cstat-no" title="statement not covered" >        return ["{{", isLeftWhiteSpaceSensitive ? "~" : "", "!", dashes, node.value, dashes, isRightWhitespaceSensitive ? "~" : "", "}}"];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       case "PathExpression":
-        return node.original;
+        return printPathExpression(node);
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "BooleanLiteral":</span>
 <span class="cstat-no" title="statement not covered" >        return String(node.value);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "CommentStatement":</span>
@@ -18933,6 +18963,21 @@
 <span class="fstat-no" title="function not covered" >  function printBlockParams(node) {</span>
 <span class="cstat-no" title="statement not covered" >    return ["as |", node.blockParams.join(" "), "|"];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+  var PATH_EXPRESSION_FORBIDDEN_CHARACTERS = new Set("!\"#%&amp;'()*+,./;&lt;=&gt;@[\\]^`{|}~");
+  var PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART = /* @__PURE__ */ new Set(["true", "false", "null", "undefined"]);
+  var isPathExpressionPartNeedBrackets = (part, index) =&gt; index !== 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART.has(part) </span>|| /\s/.test(part) || /^\d/.test(part) || Array.prototype.some.call(part, (character) =&gt; PATH_EXPRESSION_FORBIDDEN_CHARACTERS.has(character));
+  function printPathExpression(node) {
+    if (node.data || node.parts.length === 1 &amp;&amp; node.original.includes("/")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return node.original;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    let {
+      parts
+    } = node;
+    if (node.this) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      parts = ["this", ...parts];</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    return parts.map((part, index) =&gt; isPathExpressionPartNeedBrackets(part, index) <span class="branch-0 cbranch-no" title="branch not covered" >? `[${part}]` </span>: part).join(".");
+  }
   var printer = {
     print,
     massageAstNode: clean_default,
@@ -26689,7 +26734,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-13T01:20:54.807Z
+                at 2023-12-14T01:20:08.576Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
