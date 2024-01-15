@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.29% </span>
+                <span class="strong">61.3% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7103/11588</span>
+                <span class='fraction'>7104/11588</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.77% </span>
+                <span class="strong">67.64% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>368/543</span>
+                <span class='fraction'>368/544</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.29% </span>
+                <span class="strong">61.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7103/11588</span>
+                <span class='fraction'>7104/11588</span>
             </div>
         
             
@@ -13681,16 +13681,16 @@
 <span class="cline-any cline-yes">854x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">854x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -25266,18 +25266,18 @@
   }
   var skipChainExpression = (fn) =&gt; (node) =&gt; {
     if ((node == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: node.type) === "ChainExpression") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      if (!node.object) {</span>
-<span class="cstat-no" title="statement not covered" >        node.object = node.expression.object;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (!node.property) {</span>
-<span class="cstat-no" title="statement not covered" >        node.property = node.expression.property;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      node = node.expression;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return fn(node);
   };
   var isCallExpression = skipChainExpression(create_type_check_function_default(["CallExpression", "OptionalCallExpression"]));
   var isMemberExpression = skipChainExpression(create_type_check_function_default(["MemberExpression", "OptionalMemberExpression"]));
+<span class="fstat-no" title="function not covered" >  function getChainProp(node, property) {</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type === "ChainExpression") {</span>
+<span class="cstat-no" title="statement not covered" >      return node.expression[property];</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return node[property];</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   function isSimpleTemplateLiteral(node) {
     let expressionsKey = "expressions";
     if (node.type === "TSTemplateLiteralType") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -25461,14 +25461,14 @@
 <span class="cstat-no" title="statement not covered" >      return node.elements.every((x) =&gt; x === null || isChildSimple(x));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (isCallLikeExpression(node)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      if (node.type === "ImportExpression" || isSimpleCallArgument(node.callee, depth)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (node.type === "ImportExpression" || isSimpleCallArgument(getChainProp(node, "callee"), depth)) {</span>
 <span class="cstat-no" title="statement not covered" >        const args = getCallArguments(node);</span>
 <span class="cstat-no" title="statement not covered" >        return args.length &lt;= depth &amp;&amp; args.every(isChildSimple);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (isMemberExpression(node)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return isSimpleCallArgument(node.object, depth) &amp;&amp; isSimpleCallArgument(node.property, depth);</span>
+<span class="cstat-no" title="statement not covered" >      return isSimpleCallArgument(getChainProp(node, "object"), depth) &amp;&amp; isSimpleCallArgument(getChainProp(node, "property"), depth);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (node.type === "UnaryExpression" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; simpleCallArgumentUnaryOperators.has(node.operator) </span>|| node.type === "UpdateExpression") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return isSimpleCallArgument(node.argument, depth);</span>
@@ -27961,7 +27961,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   function isStyledJsx({ node, parent, grandparent }) {
     return grandparent &amp;&amp; node.quasis &amp;&amp; parent.type === "JSXExpressionContainer" &amp;&amp; grandparent.type === "JSXElement" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; grandparent.openingElement.name.name === "style" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; grandparent.openingElement.attributes.some(</span>
-<span class="cstat-no" title="statement not covered" >      (attribute) =&gt; attribute.name.name === "jsx"</span>
+<span class="cstat-no" title="statement not covered" >      (attribute) =&gt; attribute.type === "JSXAttribute" &amp;&amp; attribute.name.name === "jsx"</span>
     ) || (parent == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: parent.type) === "TaggedTemplateExpression" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.tag.type === "Identifier" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.tag.name === "css" </span>|| (parent == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: parent.type) === "TaggedTemplateExpression" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.tag.type === "MemberExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.tag.object.name === "css" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; (parent.tag.property.name === "global" || parent.tag.property.name === "resolve");</span>
   }
 <span class="fstat-no" title="function not covered" >  function isStyledIdentifier(node) {</span>
@@ -34831,7 +34831,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-14T01:27:05.726Z
+                at 2024-01-15T01:23:50.480Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
