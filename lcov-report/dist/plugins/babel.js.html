@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">56.54% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1252/2214</span>
+                <span class='fraction'>1253/2216</span>
             </div>
         
             
@@ -31128,8 +31128,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">102x</span>
-<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -31143,6 +31143,7 @@
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32494,6 +32495,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32781,7 +32788,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -32792,12 +32798,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -47556,16 +47556,17 @@
 &nbsp;
   // src/language-js/loc.js
   function locStart(node) {
-    var _a;
-    const start = node.range ? node.range[0] : node.start;
-    const decorators = ((_a = node.declaration) == null ? void 0 : _a.decorators) ?? node.decorators;
-    if (is_non_empty_array_default(decorators)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return Math.min(locStart(decorators[0]), start);</span>
+    var _a, _b, _c;
+    const start = ((_a = node.range) == null ? void 0 : _a[0]) ?? node.start;
+    const firstDecorator = (_c = ((_b = node.declaration) == null ? void 0 : _b.decorators) ?? node.decorators) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _c[0];</span>
+    if (firstDecorator) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return Math.min(locStart(firstDecorator), start);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return start;
   }
   function locEnd(node) {
-    return node.range ? node.range[1] : node.end;
+    var _a;
+    return ((_a = node.range) == null ? void 0 : _a[1]) ?? node.end;
   }
 &nbsp;
   // src/language-js/utils/create-type-check-function.js
@@ -48905,15 +48906,21 @@
 <span class="fstat-no" title="function not covered" >  function createBabelParseError(error) {</span>
 <span class="cstat-no" title="statement not covered" >    let {</span>
 <span class="cstat-no" title="statement not covered" >      message,</span>
-<span class="cstat-no" title="statement not covered" >      loc: { line, column }</span>
+<span class="cstat-no" title="statement not covered" >      loc: { line, column },</span>
+<span class="cstat-no" title="statement not covered" >      reasonCode</span>
 <span class="cstat-no" title="statement not covered" >    } = error;</span>
+<span class="cstat-no" title="statement not covered" >    let cause = error;</span>
+<span class="cstat-no" title="statement not covered" >    if (reasonCode === "MissingPlugin" || reasonCode === "MissingOneOfPlugins") {</span>
+<span class="cstat-no" title="statement not covered" >      message = "Unexpected token.";</span>
+<span class="cstat-no" title="statement not covered" >      cause = void 0;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const suffix = ` (${line}:${column})`;</span>
 <span class="cstat-no" title="statement not covered" >    if (message.endsWith(suffix)) {</span>
 <span class="cstat-no" title="statement not covered" >      message = message.slice(0, -suffix.length);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return parser_create_error_default(message, {</span>
 <span class="cstat-no" title="statement not covered" >      loc: { start: { line, column: column + 1 } },</span>
-<span class="cstat-no" title="statement not covered" >      cause: error</span>
+<span class="cstat-no" title="statement not covered" >      cause</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var create_babel_parse_error_default = createBabelParseError;
@@ -49058,7 +49065,7 @@
   function parseWithOptions(parse, text, options) {
     const ast = parse(text, options);
     const error = ast.errors.find(
-      (error2) =&gt; !allowedMessageCodes.has(error2.reasonCode)
+      (error2) =&gt; !allowedReasonCodes.has(error2.reasonCode)
     );
     if (error) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      throw error;</span>
@@ -49114,7 +49121,7 @@
       return postprocess_default(ast, { parser: "babel", text });
     };
   }
-  var allowedMessageCodes = /* @__PURE__ */ new Set([
+  var allowedReasonCodes = /* @__PURE__ */ new Set([
     "StrictNumericEscape",
     "StrictWith",
     "StrictOctalLiteral",
@@ -49126,7 +49133,6 @@
     "EmptyTypeParameters",
     "ConstructorHasTypeParameters",
     "UnsupportedParameterPropertyKind",
-    "MixedLabeledAndUnlabeledElements",
     "DuplicateAccessibilityModifier",
     "DecoratorExportClass",
     "ParamDupe",
@@ -49214,12 +49220,6 @@
           attachComment: false
         });
       } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >        if ((error == null ? void 0 : error.reasonCode) === "MissingPlugin" || (error == null ? void 0 : error.reasonCode) === "MissingOneOfPlugins") {</span>
-<span class="cstat-no" title="statement not covered" >          throw create_babel_parse_error_default({</span>
-<span class="cstat-no" title="statement not covered" >            message: "Unexpected token",</span>
-<span class="cstat-no" title="statement not covered" >            loc: error.loc</span>
-<span class="cstat-no" title="statement not covered" >          });</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        throw create_babel_parse_error_default(error);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (!allowComments &amp;&amp; is_non_empty_array_default(ast.comments)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -49336,7 +49336,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-16T01:21:24.150Z
+                at 2024-01-17T01:22:06.952Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

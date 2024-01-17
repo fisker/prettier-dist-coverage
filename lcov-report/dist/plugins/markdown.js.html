@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.61% </span>
+                <span class="strong">69.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7970/11449</span>
+                <span class='fraction'>7971/11445</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.61% </span>
+                <span class="strong">69.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7970/11449</span>
+                <span class='fraction'>7971/11445</span>
             </div>
         
             
@@ -11507,11 +11507,7 @@
 <a name='L11442'></a><a href='#L11442'>11442</a>
 <a name='L11443'></a><a href='#L11443'>11443</a>
 <a name='L11444'></a><a href='#L11444'>11444</a>
-<a name='L11445'></a><a href='#L11445'>11445</a>
-<a name='L11446'></a><a href='#L11446'>11446</a>
-<a name='L11447'></a><a href='#L11447'>11447</a>
-<a name='L11448'></a><a href='#L11448'>11448</a>
-<a name='L11449'></a><a href='#L11449'>11449</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11445'></a><a href='#L11445'>11445</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21523,8 +21519,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -21536,9 +21531,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32968,13 +32960,12 @@
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const basename = getFileBasename(file).toLowerCase();</span></span>
 <span class="cstat-no" title="statement not covered" >    return languages.find(</span>
-<span class="cstat-no" title="statement not covered" >      (language) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        var _a, _b;</span>
-<span class="cstat-no" title="statement not covered" >        return ((_a = language.extensions) == null ? void 0 : _a.some((extension) =&gt; basename.endsWith(extension))) || ((_b = language.filenames) == null ? void 0 : _b.some((name) =&gt; name.toLowerCase() === basename));</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >      ({ filenames }) =&gt; filenames == null ? void 0 : filenames.some((name) =&gt; name.toLowerCase() === basename)</span>
+<span class="cstat-no" title="statement not covered" >    ) ?? languages.find(</span>
+<span class="cstat-no" title="statement not covered" >      ({ extensions }) =&gt; extensions == null ? void 0 : extensions.some((extension) =&gt; basename.endsWith(extension))</span>
+    );
   }
-  function getLanguageByName(languages, languageName) {
+  function getLanguageByLanguageName(languages, languageName) {
     if (!languageName) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -32989,10 +32980,7 @@
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return languages.find(</span>
-<span class="cstat-no" title="statement not covered" >      (language) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        var _a;</span>
-<span class="cstat-no" title="statement not covered" >        return (_a = language.interpreters) == null ? void 0 : _a.includes(interpreter);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      ({ interpreters }) =&gt; interpreters == null ? void 0 : interpreters.includes(interpreter)</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
   }
   function inferParser(options2, fileInfo) {
@@ -33002,7 +32990,7 @@
         plugin.languages ?? []
       )
     );
-    const language = getLanguageByName(languages, fileInfo.language) ?? getLanguageByFileName(languages, fileInfo.physicalFile) ?? getLanguageByFileName(languages, fileInfo.file) ?? getLanguageByInterpreter(languages, fileInfo.physicalFile);
+    const language = getLanguageByLanguageName(languages, fileInfo.language) ?? getLanguageByFileName(languages, fileInfo.physicalFile) ?? getLanguageByFileName(languages, fileInfo.file) ?? getLanguageByInterpreter(languages, fileInfo.physicalFile);
     return language == null ? void 0 : language.parsers[0];
   }
   var infer_parser_default = inferParser;
@@ -34414,7 +34402,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-16T01:21:24.150Z
+                at 2024-01-17T01:22:06.952Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.68% </span>
+                <span class="strong">60.73% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3214/5296</span>
+                <span class='fraction'>3214/5292</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.68% </span>
+                <span class="strong">60.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3214/5296</span>
+                <span class='fraction'>3214/5292</span>
             </div>
         
             
@@ -5354,11 +5354,7 @@
 <a name='L5289'></a><a href='#L5289'>5289</a>
 <a name='L5290'></a><a href='#L5290'>5290</a>
 <a name='L5291'></a><a href='#L5291'>5291</a>
-<a name='L5292'></a><a href='#L5292'>5292</a>
-<a name='L5293'></a><a href='#L5293'>5293</a>
-<a name='L5294'></a><a href='#L5294'>5294</a>
-<a name='L5295'></a><a href='#L5295'>5295</a>
-<a name='L5296'></a><a href='#L5296'>5296</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5292'></a><a href='#L5292'>5292</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8572,7 +8568,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8580,9 +8575,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13862,13 +13854,12 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const basename = getFileBasename(file).toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >    return languages.find(</span>
-<span class="cstat-no" title="statement not covered" >      (language) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        var _a, _b;</span>
-<span class="cstat-no" title="statement not covered" >        return ((_a = language.extensions) == null ? void 0 : _a.some((extension) =&gt; basename.endsWith(extension))) || ((_b = language.filenames) == null ? void 0 : _b.some((name) =&gt; name.toLowerCase() === basename));</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      ({ filenames }) =&gt; filenames == null ? void 0 : filenames.some((name) =&gt; name.toLowerCase() === basename)</span>
+<span class="cstat-no" title="statement not covered" >    ) ?? languages.find(</span>
+<span class="cstat-no" title="statement not covered" >      ({ extensions }) =&gt; extensions == null ? void 0 : extensions.some((extension) =&gt; basename.endsWith(extension))</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  function getLanguageByName(languages, languageName) {</span>
+<span class="fstat-no" title="function not covered" >  function getLanguageByLanguageName(languages, languageName) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!languageName) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -13883,10 +13874,7 @@
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return languages.find(</span>
-<span class="cstat-no" title="statement not covered" >      (language) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        var _a;</span>
-<span class="cstat-no" title="statement not covered" >        return (_a = language.interpreters) == null ? void 0 : _a.includes(interpreter);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      ({ interpreters }) =&gt; interpreters == null ? void 0 : interpreters.includes(interpreter)</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function inferParser(options, fileInfo) {</span>
@@ -13896,7 +13884,7 @@
 <span class="cstat-no" title="statement not covered" >        plugin.languages ?? []</span>
 <span class="cstat-no" title="statement not covered" >      )</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    const language = getLanguageByName(languages, fileInfo.language) ?? getLanguageByFileName(languages, fileInfo.physicalFile) ?? getLanguageByFileName(languages, fileInfo.file) ?? getLanguageByInterpreter(languages, fileInfo.physicalFile);</span>
+<span class="cstat-no" title="statement not covered" >    const language = getLanguageByLanguageName(languages, fileInfo.language) ?? getLanguageByFileName(languages, fileInfo.physicalFile) ?? getLanguageByFileName(languages, fileInfo.file) ?? getLanguageByInterpreter(languages, fileInfo.physicalFile);</span>
 <span class="cstat-no" title="statement not covered" >    return language == null ? void 0 : language.parsers[0];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var infer_parser_default = inferParser;
@@ -15955,7 +15943,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-16T01:21:27.455Z
+                at 2024-01-17T01:22:10.241Z
             </div>
         <script src="../prettify.js"></script>
         <script>

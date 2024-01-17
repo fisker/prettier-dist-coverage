@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.95% </span>
+                <span class="strong">84.99% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2490/2931</span>
+                <span class='fraction'>2487/2926</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.59% </span>
+                <span class="strong">71.86% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>189/264</span>
+                <span class='fraction'>189/263</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.95% </span>
+                <span class="strong">84.99% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2490/2931</span>
+                <span class='fraction'>2487/2926</span>
             </div>
         
             
@@ -2989,12 +2989,7 @@
 <a name='L2924'></a><a href='#L2924'>2924</a>
 <a name='L2925'></a><a href='#L2925'>2925</a>
 <a name='L2926'></a><a href='#L2926'>2926</a>
-<a name='L2927'></a><a href='#L2927'>2927</a>
-<a name='L2928'></a><a href='#L2928'>2928</a>
-<a name='L2929'></a><a href='#L2929'>2929</a>
-<a name='L2930'></a><a href='#L2930'>2930</a>
-<a name='L2931'></a><a href='#L2931'>2931</a>
-<a name='L2932'></a><a href='#L2932'>2932</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L2927'></a><a href='#L2927'>2927</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -5881,11 +5876,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8810,24 +8800,19 @@ var parseInterpolationExpression = createParser(parseNgInterpolationExpression);
 var parseAction = createParser(parseNgAction);
 var parseTemplateBindings = (input) =&gt; transformTemplateBindings(parseNgTemplateBindings(input), new Context(input));
 &nbsp;
-// src/utils/is-non-empty-array.js
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isNonEmptyArray(object) {</span></span>
-<span class="cstat-no" title="statement not covered" >  return Array.isArray(object) &amp;&amp; object.length &gt; 0;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-var is_non_empty_array_default = isNonEmptyArray;
-&nbsp;
 // src/language-js/loc.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function locStart(node) {</span></span>
-<span class="cstat-no" title="statement not covered" >  var _a;</span>
-<span class="cstat-no" title="statement not covered" >  const start = node.range ? node.range[0] : node.start;</span>
-<span class="cstat-no" title="statement not covered" >  const decorators = ((_a = node.declaration) == null ? void 0 : _a.decorators) ?? node.decorators;</span>
-<span class="cstat-no" title="statement not covered" >  if (is_non_empty_array_default(decorators)) {</span>
-<span class="cstat-no" title="statement not covered" >    return Math.min(locStart(decorators[0]), start);</span>
+<span class="cstat-no" title="statement not covered" >  var _a, _b, _c;</span>
+<span class="cstat-no" title="statement not covered" >  const start = ((_a = node.range) == null ? void 0 : _a[0]) ?? node.start;</span>
+<span class="cstat-no" title="statement not covered" >  const firstDecorator = (_c = ((_b = node.declaration) == null ? void 0 : _b.decorators) ?? node.decorators) == null ? void 0 : _c[0];</span>
+<span class="cstat-no" title="statement not covered" >  if (firstDecorator) {</span>
+<span class="cstat-no" title="statement not covered" >    return Math.min(locStart(firstDecorator), start);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return start;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function locEnd(node) {</span></span>
-<span class="cstat-no" title="statement not covered" >  return node.range ? node.range[1] : node.end;</span>
+<span class="cstat-no" title="statement not covered" >  var _a;</span>
+<span class="cstat-no" title="statement not covered" >  return ((_a = node.range) == null ? void 0 : _a[1]) ?? node.end;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // src/language-js/parse/angular.js
@@ -8863,7 +8848,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-16T01:21:24.150Z
+                at 2024-01-17T01:22:06.952Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
