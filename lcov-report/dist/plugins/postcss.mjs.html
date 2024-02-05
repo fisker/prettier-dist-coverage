@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.27% </span>
+                <span class="strong">71.31% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7994/11215</span>
+                <span class='fraction'>7991/11205</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.74% </span>
+                <span class="strong">85.8% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2358/2750</span>
+                <span class='fraction'>2357/2747</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.84% </span>
+                <span class="strong">64.79% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>498/768</span>
+                <span class='fraction'>497/767</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.27% </span>
+                <span class="strong">71.31% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7994/11215</span>
+                <span class='fraction'>7991/11205</span>
             </div>
         
             
@@ -11268,17 +11268,7 @@
 <a name='L11203'></a><a href='#L11203'>11203</a>
 <a name='L11204'></a><a href='#L11204'>11204</a>
 <a name='L11205'></a><a href='#L11205'>11205</a>
-<a name='L11206'></a><a href='#L11206'>11206</a>
-<a name='L11207'></a><a href='#L11207'>11207</a>
-<a name='L11208'></a><a href='#L11208'>11208</a>
-<a name='L11209'></a><a href='#L11209'>11209</a>
-<a name='L11210'></a><a href='#L11210'>11210</a>
-<a name='L11211'></a><a href='#L11211'>11211</a>
-<a name='L11212'></a><a href='#L11212'>11212</a>
-<a name='L11213'></a><a href='#L11213'>11213</a>
-<a name='L11214'></a><a href='#L11214'>11214</a>
-<a name='L11215'></a><a href='#L11215'>11215</a>
-<a name='L11216'></a><a href='#L11216'>11216</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
+<a name='L11206'></a><a href='#L11206'>11206</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -19763,15 +19753,6 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">96x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">96x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">96x</span>
-<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -19953,9 +19934,6 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21423,6 +21401,8 @@
 <span class="cline-any cline-yes">4338x</span>
 <span class="cline-any cline-yes">4338x</span>
 <span class="cline-any cline-yes">4338x</span>
+<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-yes">96x</span>
 <span class="cline-any cline-yes">96x</span>
 <span class="cline-any cline-yes">96x</span>
 <span class="cline-any cline-yes">96x</span>
@@ -30978,15 +30958,6 @@ var at = (isOptionalObject, object, index) =&gt; {
 var at_default = at;
 &nbsp;
 // src/document/utils.js
-var getDocParts = (doc) =&gt; {
-  if (Array.isArray(doc)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    return doc;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-  if (doc.type !== DOC_TYPE_FILL) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error(`Expect doc to be 'array' or '${DOC_TYPE_FILL}'.`);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-  return doc.parts;
-};
 function mapDoc(doc, cb) {
   if (typeof doc === "string") {
     return cb(doc);
@@ -31168,14 +31139,14 @@ var ignoredProperties = /* @__PURE__ */ new Set([
   "trailingComma",
   "spaces"
 ]);
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function clean(ast, newObj, parent) {</span></span>
-<span class="cstat-no" title="statement not covered" >  if (is_front_matter_default(ast) &amp;&amp; ast.lang === "yaml") {</span>
-<span class="cstat-no" title="statement not covered" >    delete newObj.value;</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function clean(original, cloned, parent) {</span></span>
+<span class="cstat-no" title="statement not covered" >  if (is_front_matter_default(original) &amp;&amp; original.lang === "yaml") {</span>
+<span class="cstat-no" title="statement not covered" >    delete cloned.value;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "css-comment" &amp;&amp; parent.type === "css-root" &amp;&amp; parent.nodes.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >    if (parent.nodes[0] === ast || is_front_matter_default(parent.nodes[0]) &amp;&amp; parent.nodes[1] === ast) {</span>
-<span class="cstat-no" title="statement not covered" >      delete newObj.text;</span>
-<span class="cstat-no" title="statement not covered" >      if (/^\*\s*@(?:format|prettier)\s*$/.test(ast.text)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "css-comment" &amp;&amp; parent.type === "css-root" &amp;&amp; parent.nodes.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >    if (parent.nodes[0] === original || is_front_matter_default(parent.nodes[0]) &amp;&amp; parent.nodes[1] === original) {</span>
+<span class="cstat-no" title="statement not covered" >      delete cloned.text;</span>
+<span class="cstat-no" title="statement not covered" >      if (/^\*\s*@(?:format|prettier)\s*$/.test(original.text)) {</span>
 <span class="cstat-no" title="statement not covered" >        return null;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -31184,85 +31155,82 @@ var ignoredProperties = /* @__PURE__ */ new Set([
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      parent.nodes,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
-<span class="cstat-no" title="statement not covered" >    ) === ast) {</span>
+<span class="cstat-no" title="statement not covered" >    ) === original) {</span>
 <span class="cstat-no" title="statement not covered" >      return null;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "value-root") {</span>
-<span class="cstat-no" title="statement not covered" >    delete newObj.text;</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "value-root") {</span>
+<span class="cstat-no" title="statement not covered" >    delete cloned.text;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "media-query" || ast.type === "media-query-list" || ast.type === "media-feature-expression") {</span>
-<span class="cstat-no" title="statement not covered" >    delete newObj.value;</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "media-query" || original.type === "media-query-list" || original.type === "media-feature-expression") {</span>
+<span class="cstat-no" title="statement not covered" >    delete cloned.value;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "css-rule") {</span>
-<span class="cstat-no" title="statement not covered" >    delete newObj.params;</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "css-rule") {</span>
+<span class="cstat-no" title="statement not covered" >    delete cloned.params;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "selector-combinator") {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.value = string_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >  if ((original.type === "media-feature" || original.type === "media-keyword" || original.type === "media-type" || original.type === "media-unknown" || original.type === "media-url" || original.type === "media-value" || original.type === "selector-attribute" || original.type === "selector-string" || original.type === "selector-class" || original.type === "selector-combinator" || original.type === "value-string") &amp;&amp; original.value) {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.value = cleanCSSStrings(original.value);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "selector-combinator") {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.value = string_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
-<span class="cstat-no" title="statement not covered" >      newObj.value,</span>
+<span class="cstat-no" title="statement not covered" >      cloned.value,</span>
 <span class="cstat-no" title="statement not covered" >      /\s+/g,</span>
 <span class="cstat-no" title="statement not covered" >      " "</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "media-feature") {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.value = string_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "media-feature") {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.value = string_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
-<span class="cstat-no" title="statement not covered" >      newObj.value,</span>
+<span class="cstat-no" title="statement not covered" >      cloned.value,</span>
 <span class="cstat-no" title="statement not covered" >      " ",</span>
 <span class="cstat-no" title="statement not covered" >      ""</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "value-word" &amp;&amp; (ast.isColor &amp;&amp; ast.isHex || ["initial", "inherit", "unset", "revert"].includes(newObj.value.toLowerCase())) || ast.type === "media-feature" || ast.type === "selector-root-invalid" || ast.type === "selector-pseudo") {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.value = newObj.value.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "value-word" &amp;&amp; (original.isColor &amp;&amp; original.isHex || ["initial", "inherit", "unset", "revert"].includes(original.value.toLowerCase())) || original.type === "media-feature" || original.type === "selector-root-invalid" || original.type === "selector-pseudo") {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.value = cloned.value.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "css-decl") {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.prop = newObj.prop.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "css-decl") {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.prop = original.prop.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "css-atrule" || ast.type === "css-import") {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.name = newObj.name.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "css-atrule" || original.type === "css-import") {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.name = original.name.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "value-number") {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.unit = newObj.unit.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "value-number") {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.unit = original.unit.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "value-unknown") {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.value = string_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "value-unknown") {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.value = string_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
-<span class="cstat-no" title="statement not covered" >      newObj.value,</span>
+<span class="cstat-no" title="statement not covered" >      cloned.value,</span>
 <span class="cstat-no" title="statement not covered" >      /;$/g,</span>
 <span class="cstat-no" title="statement not covered" >      ""</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if ((ast.type === "media-feature" || ast.type === "media-keyword" || ast.type === "media-type" || ast.type === "media-unknown" || ast.type === "media-url" || ast.type === "media-value" || ast.type === "selector-attribute" || ast.type === "selector-string" || ast.type === "selector-class" || ast.type === "selector-combinator" || ast.type === "value-string") &amp;&amp; newObj.value) {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.value = cleanCSSStrings(newObj.value);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "selector-attribute") {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.attribute = newObj.attribute.trim();</span>
-<span class="cstat-no" title="statement not covered" >    if (newObj.namespace &amp;&amp; typeof newObj.namespace === "string") {</span>
-<span class="cstat-no" title="statement not covered" >      newObj.namespace = newObj.namespace.trim();</span>
-<span class="cstat-no" title="statement not covered" >      if (newObj.namespace.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >        newObj.namespace = true;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "selector-attribute") {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.attribute = original.attribute.trim();</span>
+<span class="cstat-no" title="statement not covered" >    if (original.namespace &amp;&amp; typeof original.namespace === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      cloned.namespace = original.namespace.trim() || true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (newObj.value) {</span>
-<span class="cstat-no" title="statement not covered" >      newObj.value = string_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >    if (original.value) {</span>
+<span class="cstat-no" title="statement not covered" >      cloned.value = string_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
-<span class="cstat-no" title="statement not covered" >        newObj.value.trim(),</span>
+<span class="cstat-no" title="statement not covered" >        cloned.value.trim(),</span>
 <span class="cstat-no" title="statement not covered" >        /^["']|["']$/g,</span>
 <span class="cstat-no" title="statement not covered" >        ""</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >      delete newObj.quoted;</span>
+<span class="cstat-no" title="statement not covered" >      delete cloned.quoted;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if ((ast.type === "media-value" || ast.type === "media-type" || ast.type === "value-number" || ast.type === "selector-root-invalid" || ast.type === "selector-class" || ast.type === "selector-combinator" || ast.type === "selector-tag") &amp;&amp; newObj.value) {</span>
-<span class="cstat-no" title="statement not covered" >    newObj.value = string_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >  if ((original.type === "media-value" || original.type === "media-type" || original.type === "value-number" || original.type === "selector-root-invalid" || original.type === "selector-class" || original.type === "selector-combinator" || original.type === "selector-tag") &amp;&amp; original.value) {</span>
+<span class="cstat-no" title="statement not covered" >    cloned.value = string_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
-<span class="cstat-no" title="statement not covered" >      newObj.value,</span>
+<span class="cstat-no" title="statement not covered" >      cloned.value,</span>
 <span class="cstat-no" title="statement not covered" >      /([\d+.e-]+)([a-z]*)/gi,</span>
 <span class="cstat-no" title="statement not covered" >      (match, numStr, unit) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const num = Number(numStr);</span>
@@ -31270,23 +31238,23 @@ var ignoredProperties = /* @__PURE__ */ new Set([
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "selector-tag") {</span>
-<span class="cstat-no" title="statement not covered" >    const lowercasedValue = ast.value.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "selector-tag") {</span>
+<span class="cstat-no" title="statement not covered" >    const lowercasedValue = cloned.value.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >    if (["from", "to"].includes(lowercasedValue)) {</span>
-<span class="cstat-no" title="statement not covered" >      newObj.value = lowercasedValue;</span>
+<span class="cstat-no" title="statement not covered" >      cloned.value = lowercasedValue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "css-atrule" &amp;&amp; ast.name.toLowerCase() === "supports") {</span>
-<span class="cstat-no" title="statement not covered" >    delete newObj.value;</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "css-atrule" &amp;&amp; original.name.toLowerCase() === "supports") {</span>
+<span class="cstat-no" title="statement not covered" >    delete cloned.value;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "selector-unknown") {</span>
-<span class="cstat-no" title="statement not covered" >    delete newObj.value;</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "selector-unknown") {</span>
+<span class="cstat-no" title="statement not covered" >    delete cloned.value;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "value-comma_group") {</span>
-<span class="cstat-no" title="statement not covered" >    const index = ast.groups.findIndex((node) =&gt; node.type === "value-number" &amp;&amp; node.unit === "...");</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "value-comma_group") {</span>
+<span class="cstat-no" title="statement not covered" >    const index = original.groups.findIndex((node) =&gt; node.type === "value-number" &amp;&amp; node.unit === "...");</span>
 <span class="cstat-no" title="statement not covered" >    if (index !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >      newObj.groups[index].unit = "";</span>
-<span class="cstat-no" title="statement not covered" >      newObj.groups.splice(index + 1, 0, {</span>
+<span class="cstat-no" title="statement not covered" >      cloned.groups[index].unit = "";</span>
+<span class="cstat-no" title="statement not covered" >      cloned.groups.splice(index + 1, 0, {</span>
 <span class="cstat-no" title="statement not covered" >        type: "value-word",</span>
 <span class="cstat-no" title="statement not covered" >        value: "...",</span>
 <span class="cstat-no" title="statement not covered" >        isColor: false,</span>
@@ -31294,10 +31262,10 @@ var ignoredProperties = /* @__PURE__ */ new Set([
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "value-comma_group" &amp;&amp; ast.groups.some((node) =&gt; node.type === "value-atword" &amp;&amp; node.value.endsWith("[") || node.type === "value-word" &amp;&amp; node.value.startsWith("]"))) {</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "value-comma_group" &amp;&amp; original.groups.some((node) =&gt; node.type === "value-atword" &amp;&amp; node.value.endsWith("[") || node.type === "value-word" &amp;&amp; node.value.startsWith("]"))) {</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >      type: "value-atword",</span>
-<span class="cstat-no" title="statement not covered" >      value: ast.groups.map((node) =&gt; node.value).join(""),</span>
+<span class="cstat-no" title="statement not covered" >      value: original.groups.map((node) =&gt; node.value).join(""),</span>
 <span class="cstat-no" title="statement not covered" >      group: {</span>
 <span class="cstat-no" title="statement not covered" >        open: null,</span>
 <span class="cstat-no" title="statement not covered" >        close: null,</span>
@@ -32638,7 +32606,9 @@ function printParenthesizedValueGroup(path, options2, print3) {
     var _a;
     let doc2 = groupDocs[index];
     if (isKeyValuePairNode(child) &amp;&amp; child.type === "value-comma_group" &amp;&amp; child.groups &amp;&amp; child.groups[0].type !== "value-paren_group" &amp;&amp; ((_a = child.groups[2]) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.type) === "value-paren_group") {
-      const parts3 = getDocParts(doc2.contents.contents);
+      const {
+        parts: parts3
+      } = doc2.contents.contents;
       parts3[1] = group(parts3[1]);
       doc2 = group(dedent(doc2));
     }
@@ -33715,7 +33685,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-04T01:20:23.735Z
+                at 2024-02-05T01:17:47.817Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
