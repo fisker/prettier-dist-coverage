@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.44% </span>
+                <span class="strong">61.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7098/11551</span>
+                <span class='fraction'>7101/11559</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.57% </span>
+                <span class="strong">50.62% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1407/2782</span>
+                <span class='fraction'>1409/2783</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.44% </span>
+                <span class="strong">61.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7098/11551</span>
+                <span class='fraction'>7101/11559</span>
             </div>
         
             
@@ -11613,7 +11613,15 @@
 <a name='L11548'></a><a href='#L11548'>11548</a>
 <a name='L11549'></a><a href='#L11549'>11549</a>
 <a name='L11550'></a><a href='#L11550'>11550</a>
-<a name='L11551'></a><a href='#L11551'>11551</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11551'></a><a href='#L11551'>11551</a>
+<a name='L11552'></a><a href='#L11552'>11552</a>
+<a name='L11553'></a><a href='#L11553'>11553</a>
+<a name='L11554'></a><a href='#L11554'>11554</a>
+<a name='L11555'></a><a href='#L11555'>11555</a>
+<a name='L11556'></a><a href='#L11556'>11556</a>
+<a name='L11557'></a><a href='#L11557'>11557</a>
+<a name='L11558'></a><a href='#L11558'>11558</a>
+<a name='L11559'></a><a href='#L11559'>11559</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -17019,6 +17027,11 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">998x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">998x</span>
@@ -19783,6 +19796,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -28566,8 +28582,13 @@
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       case "TSInferType":
-        if (node.type === "TSInferType" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type === "TSRestType")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          return false;</span>
+        if (node.type === "TSInferType") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          if (parent.type === "TSRestType") {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          if (key === "types" &amp;&amp; (parent.type === "TSUnionType" || parent.type === "TSIntersectionType") &amp;&amp; node.typeParameter.type === "TSTypeParameter" &amp;&amp; node.typeParameter.constraint) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       case "TSTypeOperator":
         return parent.type === "TSArrayType" || parent.type === "TSOptionalType" || parent.type === "TSRestType" || key === "objectType" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type === "TSIndexedAccessType" </span>|| parent.type === "TSTypeOperator" || parent.type === "TSTypeAnnotation" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; path.grandparent.type.startsWith("TSJSDoc");</span>
@@ -31332,6 +31353,9 @@
 &nbsp;
   // src/utils/print-number.js
   function printNumber(rawNumber) {
+    if (rawNumber.length === 1) {
+      return rawNumber;
+    }
     return rawNumber.toLowerCase().replace(/^([+-]?[\d.]+e)(?:\+|(-))?0*(?=\d)/, "$1$2").replace(/^([+-]?[\d.]+)e[+-]?0+$/, "$1").replace(/^([+-])?\./, "$10.").replace(/(\.\d+?)0+(?=e|$)/, "$1").replace(/\.(?=e|$)/, "");
   }
   var print_number_default = printNumber;
@@ -34720,7 +34744,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-06T01:15:24.756Z
+                at 2024-02-07T01:13:38.880Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
