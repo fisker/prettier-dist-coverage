@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.16% </span>
+                <span class="strong">51.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4064/7943</span>
+                <span class='fraction'>4071/7955</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.06% </span>
+                <span class="strong">45.01% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>315/699</span>
+                <span class='fraction'>316/702</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.16% </span>
+                <span class="strong">51.17% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4064/7943</span>
+                <span class='fraction'>4071/7955</span>
             </div>
         
             
@@ -8005,7 +8005,19 @@
 <a name='L7940'></a><a href='#L7940'>7940</a>
 <a name='L7941'></a><a href='#L7941'>7941</a>
 <a name='L7942'></a><a href='#L7942'>7942</a>
-<a name='L7943'></a><a href='#L7943'>7943</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7943'></a><a href='#L7943'>7943</a>
+<a name='L7944'></a><a href='#L7944'>7944</a>
+<a name='L7945'></a><a href='#L7945'>7945</a>
+<a name='L7946'></a><a href='#L7946'>7946</a>
+<a name='L7947'></a><a href='#L7947'>7947</a>
+<a name='L7948'></a><a href='#L7948'>7948</a>
+<a name='L7949'></a><a href='#L7949'>7949</a>
+<a name='L7950'></a><a href='#L7950'>7950</a>
+<a name='L7951'></a><a href='#L7951'>7951</a>
+<a name='L7952'></a><a href='#L7952'>7952</a>
+<a name='L7953'></a><a href='#L7953'>7953</a>
+<a name='L7954'></a><a href='#L7954'>7954</a>
+<a name='L7955'></a><a href='#L7955'>7955</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10379,9 +10391,12 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -10793,6 +10808,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11047,6 +11066,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11612,6 +11632,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11917,6 +11940,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18320,10 +18344,13 @@
     return parser.token;
   }
   function matchOrInsertSemicolon(parser, context, specDeviation) {
+    var _a;
     if ((parser.flags &amp; 1) === 0 &amp;&amp; (parser.token &amp; 1048576) !== 1048576 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !specDeviation)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      report(parser, 28, KeywordDescTable[parser.token &amp; 255]);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    consumeOpt(parser, context, 1074790417);
+    if (!consumeOpt(parser, context, 1074790417)) {
+      (_a = parser.onInsertedSemicolon) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a.call(parser, parser.startPos);</span>
+    }
   }
 <span class="fstat-no" title="function not covered" >  function isValidStrictMode(parser, index, tokenPos, tokenValue) {</span>
 <span class="cstat-no" title="statement not covered" >    if (index - tokenPos &lt; 13 &amp;&amp; tokenValue === "use strict") {</span>
@@ -18652,7 +18679,7 @@
 <span class="cstat-no" title="statement not covered" >    if (!isValidIdentifier(context, t))</span>
 <span class="cstat-no" title="statement not covered" >      report(parser, 0);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  function create(source, sourceFile, onComment, onToken) {
+  function create(source, sourceFile, onComment, onToken, onInsertedSemicolon) {
     return {
       source,
       flags: 0,
@@ -18678,12 +18705,14 @@
       destructible: 0,
       onComment,
       onToken,
+      onInsertedSemicolon,
       leadingDecorators: []
     };
   }
   function parseSource(source, options, context) {
     let sourceFile = "";
     let onComment;
+    let onInsertedSemicolon;
     let onToken;
     if (options != null) {
       if (options.module)
@@ -18721,11 +18750,13 @@
       if (options.onComment != null) {
         onComment = Array.isArray(options.onComment) ? pushComment(context, options.onComment) <span class="branch-0 cbranch-no" title="branch not covered" >: options.onComment;</span>
       }
+      if (options.onInsertedSemicolon != null)
+<span class="branch-0 cbranch-no" title="branch not covered" >        onInsertedSemicolon = options.onInsertedSemicolon;</span>
       if (options.onToken != null) {
         onToken = Array.isArray(options.onToken) ? pushToken(context, options.onToken) <span class="branch-0 cbranch-no" title="branch not covered" >: options.onToken;</span>
       }
     }
-    const parser = create(source, sourceFile, onComment, onToken);
+    const parser = create(source, sourceFile, onComment, onToken, onInsertedSemicolon);
     if (context &amp; 1)
       skipHashBang(parser);
     const scope = context &amp; 64 <span class="branch-0 cbranch-no" title="branch not covered" >? createScope() </span>: void 0;
@@ -18983,10 +19014,11 @@
 <span class="cstat-no" title="statement not covered" >      parser.assignable = 1;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    expr = parseMemberOrUpdateExpression(parser, context, expr, 0, 0, start, line, column);</span>
-<span class="cstat-no" title="statement not covered" >    if (parser.token === 18)</span>
-<span class="cstat-no" title="statement not covered" >      expr = parseSequenceExpression(parser, context, 0, start, line, column, expr);</span>
 <span class="cstat-no" title="statement not covered" >    expr = parseAssignmentExpression(parser, context, 0, 0, start, line, column, expr);</span>
 <span class="cstat-no" title="statement not covered" >    parser.assignable = 1;</span>
+<span class="cstat-no" title="statement not covered" >    if (parser.token === 18) {</span>
+<span class="cstat-no" title="statement not covered" >      expr = parseSequenceExpression(parser, context, 0, start, line, column, expr);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return parseExpressionStatement(parser, context, expr, start, line, column);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function parseDirective(parser, context, expression, token, start, line, column) {</span>
@@ -19560,6 +19592,9 @@
 <span class="cstat-no" title="statement not covered" >    }), start, line, column);</span>
 <span class="cstat-no" title="statement not covered" >    expr = parseMemberOrUpdateExpression(parser, context, expr, 0, 0, start, line, column);</span>
 <span class="cstat-no" title="statement not covered" >    expr = parseAssignmentExpression(parser, context, 0, 0, start, line, column, expr);</span>
+<span class="cstat-no" title="statement not covered" >    if (parser.token === 18) {</span>
+<span class="cstat-no" title="statement not covered" >      expr = parseSequenceExpression(parser, context, 0, start, line, column, expr);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return parseExpressionStatement(parser, context, expr, start, line, column);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function parseImportCallDeclaration(parser, context, start, line, column) {</span>
@@ -19881,6 +19916,7 @@
 <span class="cstat-no" title="statement not covered" >        report(parser, 49);</span>
 <span class="cstat-no" title="statement not covered" >      return parseArrowFromIdentifier(parser, context, parser.tokenValue, expr, inNew, canAssign, 0, start, line, column);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    parser.assignable = 1;</span>
 <span class="cstat-no" title="statement not covered" >    return expr;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function parseYieldExpression(parser, context, inGroup, canAssign, start, line, column) {</span>
@@ -23896,7 +23932,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-03T01:16:02.918Z
+                at 2024-04-04T01:17:36.570Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
