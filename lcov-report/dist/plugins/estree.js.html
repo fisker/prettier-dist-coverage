@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.89% </span>
+                <span class="strong">60.91% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7203/11828</span>
+                <span class='fraction'>7212/11840</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.44% </span>
+                <span class="strong">50.4% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1419/2813</span>
+                <span class='fraction'>1419/2815</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.89% </span>
+                <span class="strong">60.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7203/11828</span>
+                <span class='fraction'>7212/11840</span>
             </div>
         
             
@@ -11890,7 +11890,19 @@
 <a name='L11825'></a><a href='#L11825'>11825</a>
 <a name='L11826'></a><a href='#L11826'>11826</a>
 <a name='L11827'></a><a href='#L11827'>11827</a>
-<a name='L11828'></a><a href='#L11828'>11828</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11828'></a><a href='#L11828'>11828</a>
+<a name='L11829'></a><a href='#L11829'>11829</a>
+<a name='L11830'></a><a href='#L11830'>11830</a>
+<a name='L11831'></a><a href='#L11831'>11831</a>
+<a name='L11832'></a><a href='#L11832'>11832</a>
+<a name='L11833'></a><a href='#L11833'>11833</a>
+<a name='L11834'></a><a href='#L11834'>11834</a>
+<a name='L11835'></a><a href='#L11835'>11835</a>
+<a name='L11836'></a><a href='#L11836'>11836</a>
+<a name='L11837'></a><a href='#L11837'>11837</a>
+<a name='L11838'></a><a href='#L11838'>11838</a>
+<a name='L11839'></a><a href='#L11839'>11839</a>
+<a name='L11840'></a><a href='#L11840'>11840</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -12618,6 +12630,13 @@
 <span class="cline-any cline-yes">1083x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22605,6 +22624,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22825,7 +22847,9 @@
 <span class="cline-any cline-yes">750x</span>
 <span class="cline-any cline-yes">750x</span>
 <span class="cline-any cline-yes">750x</span>
+<span class="cline-any cline-yes">750x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">750x</span>
 <span class="cline-any cline-yes">750x</span>
 <span class="cline-any cline-yes">750x</span>
 <span class="cline-any cline-yes">750x</span>
@@ -25417,6 +25441,9 @@
       "quasis",
       "types"
     ],
+    "AsConstExpression": [
+      "expression"
+    ],
     "AsExpression": [
       "expression",
       "typeAnnotation"
@@ -25467,6 +25494,13 @@
     "DeclareNamespace": [
       "id",
       "body"
+    ],
+    "EnumBigIntBody": [
+      "members"
+    ],
+    "EnumBigIntMember": [
+      "id",
+      "init"
     ],
     "HookDeclaration": [
       "id",
@@ -25563,9 +25597,6 @@
     "NeverTypeAnnotation": [],
     "UndefinedTypeAnnotation": [],
     "UnknownTypeAnnotation": [],
-    "AsConstExpression": [
-      "expression"
-    ],
     "SatisfiesExpression": [
       "expression",
       "typeAnnotation"
@@ -33365,7 +33396,7 @@
       node
     } = path;
     const isTypeAnnotation = node.type === "ObjectTypeAnnotation";
-    const isEnumBody = node.type === "TSEnumDeclaration" || node.type === "EnumBooleanBody" || node.type === "EnumNumberBody" || node.type === "EnumStringBody" || node.type === "EnumSymbolBody";
+    const isEnumBody = node.type === "TSEnumDeclaration" || node.type === "EnumBooleanBody" || node.type === "EnumNumberBody" || node.type === "EnumBigIntBody" || node.type === "EnumStringBody" || node.type === "EnumSymbolBody";
     const fields = [node.type === "TSTypeLiteral" || isEnumBody <span class="branch-0 cbranch-no" title="branch not covered" >? "members" </span>: node.type === "TSInterfaceBody" ? "body" : "properties"];
     if (isTypeAnnotation) {
       fields.push("indexers", "callProperties", "internalSlots");
@@ -34422,6 +34453,9 @@
 <span class="cstat-no" title="statement not covered" >        case "EnumNumberBody":</span>
 <span class="cstat-no" title="statement not covered" >          type = "number";</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >        case "EnumBigIntBody":</span>
+<span class="cstat-no" title="statement not covered" >          type = "bigint";</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        case "EnumStringBody":</span>
 <span class="cstat-no" title="statement not covered" >          type = "string";</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
@@ -34650,11 +34684,13 @@
 <span class="cstat-no" title="statement not covered" >        return printEnumDeclaration(path, print3, options2);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumBooleanBody":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumNumberBody":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumBigIntBody":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumStringBody":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumSymbolBody":</span>
 <span class="cstat-no" title="statement not covered" >        return printEnumBody(path, print3, options2);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumBooleanMember":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumNumberMember":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumBigIntMember":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumStringMember":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumDefaultedMember":</span>
 <span class="cstat-no" title="statement not covered" >        return printEnumMember(path, print3);</span>
@@ -35551,7 +35587,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-09T01:19:44.624Z
+                at 2024-05-10T01:20:59.266Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
