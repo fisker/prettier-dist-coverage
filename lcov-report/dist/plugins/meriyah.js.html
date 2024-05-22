@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.48% </span>
+                <span class="strong">51.49% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4122/8006</span>
+                <span class='fraction'>4121/8003</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.48% </span>
+                <span class="strong">51.49% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4122/8006</span>
+                <span class='fraction'>4121/8003</span>
             </div>
         
             
@@ -8065,10 +8065,7 @@
 <a name='L8000'></a><a href='#L8000'>8000</a>
 <a name='L8001'></a><a href='#L8001'>8001</a>
 <a name='L8002'></a><a href='#L8002'>8002</a>
-<a name='L8003'></a><a href='#L8003'>8003</a>
-<a name='L8004'></a><a href='#L8004'>8004</a>
-<a name='L8005'></a><a href='#L8005'>8005</a>
-<a name='L8006'></a><a href='#L8006'>8006</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8003'></a><a href='#L8003'>8003</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9000,7 +8997,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10684,9 +10680,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -17008,39 +17002,38 @@
   function scanRegularExpression(parser, context) {
     const bodyStart = parser.index;
     let preparseState = 0;
-    loop:
-      while (true) {
-        const ch = parser.currentChar;
-        advanceChar(parser);
-        if (preparseState &amp; 1) {
-          preparseState &amp;= ~1;
-        } else {
-          switch (ch) {
-            case 47:
-              if (!preparseState)
-                break loop;
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >              else</span></span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
-            case 92:
-              preparseState |= 1;
-              break;
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 91:</span>
-<span class="cstat-no" title="statement not covered" >              preparseState |= 2;</span>
+    loop: while (true) {
+      const ch = parser.currentChar;
+      advanceChar(parser);
+      if (preparseState &amp; 1) {
+        preparseState &amp;= ~1;
+      } else {
+        switch (ch) {
+          case 47:
+            if (!preparseState)
+              break loop;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            else</span></span>
 <span class="cstat-no" title="statement not covered" >              break;</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 93:</span>
-<span class="cstat-no" title="statement not covered" >              preparseState &amp;= 1;</span>
-<span class="cstat-no" title="statement not covered" >              break;</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 13:</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 10:</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 8232:</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 8233:</span>
-<span class="cstat-no" title="statement not covered" >              report(parser, 32);</span>
-          }
+          case 92:
+            preparseState |= 1;
+            break;
+<span class="branch-0 cbranch-no" title="branch not covered" >          case 91:</span>
+<span class="cstat-no" title="statement not covered" >            preparseState |= 2;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case 93:</span>
+<span class="cstat-no" title="statement not covered" >            preparseState &amp;= 1;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case 13:</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case 10:</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case 8232:</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case 8233:</span>
+<span class="cstat-no" title="statement not covered" >            report(parser, 32);</span>
         }
-        if (parser.index &gt;= parser.source.length) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          return report(parser, 32);</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
       }
+      if (parser.index &gt;= parser.source.length) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        return report(parser, 32);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+    }
     const bodyEnd = parser.index - 1;
     let mask = 0;
     let char = parser.currentChar;
@@ -18670,8 +18663,7 @@
 <span class="cstat-no" title="statement not covered" >    if (value &amp;&amp; (value &amp; 2) === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      if (kind &amp; 1) {</span>
 <span class="cstat-no" title="statement not covered" >        scope.scopeError = recordScopeError(parser, 141, name);</span>
-<span class="cstat-no" title="statement not covered" >      } else if (context &amp; 256 &amp;&amp; value &amp; 64 &amp;&amp; origin &amp; 2)</span>
-<span class="cstat-no" title="statement not covered" >        ;</span>
+<span class="cstat-no" title="statement not covered" >      } else if (context &amp; 256 &amp;&amp; value &amp; 64 &amp;&amp; origin &amp; 2) ;</span>
 <span class="cstat-no" title="statement not covered" >      else {</span>
 <span class="cstat-no" title="statement not covered" >        report(parser, 141, name);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -18695,8 +18687,7 @@
 <span class="cstat-no" title="statement not covered" >    while (currentScope &amp;&amp; (currentScope.type &amp; 256) === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      const value = currentScope["#" + name];</span>
 <span class="cstat-no" title="statement not covered" >      if (value &amp; 248) {</span>
-<span class="cstat-no" title="statement not covered" >        if (context &amp; 256 &amp;&amp; (context &amp; 1024) === 0 &amp;&amp; (kind &amp; 128 &amp;&amp; value &amp; 68 || value &amp; 128 &amp;&amp; kind &amp; 68))</span>
-<span class="cstat-no" title="statement not covered" >          ;</span>
+<span class="cstat-no" title="statement not covered" >        if (context &amp; 256 &amp;&amp; (context &amp; 1024) === 0 &amp;&amp; (kind &amp; 128 &amp;&amp; value &amp; 68 || value &amp; 128 &amp;&amp; kind &amp; 68)) ;</span>
 <span class="cstat-no" title="statement not covered" >        else {</span>
 <span class="cstat-no" title="statement not covered" >          report(parser, 141, name);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -24085,7 +24076,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-21T01:21:10.896Z
+                at 2024-05-22T01:22:05.052Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

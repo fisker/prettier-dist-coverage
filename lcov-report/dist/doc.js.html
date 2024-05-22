@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.96% </span>
+                <span class="strong">16.98% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>224/1320</span>
+                <span class='fraction'>224/1319</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.96% </span>
+                <span class="strong">16.98% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>224/1320</span>
+                <span class='fraction'>224/1319</span>
             </div>
         
             
@@ -1381,8 +1381,7 @@
 <a name='L1316'></a><a href='#L1316'>1316</a>
 <a name='L1317'></a><a href='#L1317'>1317</a>
 <a name='L1318'></a><a href='#L1318'>1318</a>
-<a name='L1319'></a><a href='#L1319'>1319</a>
-<a name='L1320'></a><a href='#L1320'>1320</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1319'></a><a href='#L1319'>1319</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2202,7 +2201,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3524,26 +3522,25 @@
 <span class="cstat-no" title="statement not covered" >    let trimCount = 0;</span>
 <span class="cstat-no" title="statement not covered" >    let cursorCount = 0;</span>
 <span class="cstat-no" title="statement not covered" >    let outIndex = out.length;</span>
-<span class="cstat-no" title="statement not covered" >    outer:</span>
-<span class="cstat-no" title="statement not covered" >      while (outIndex--) {</span>
-<span class="cstat-no" title="statement not covered" >        const last = out[outIndex];</span>
-<span class="cstat-no" title="statement not covered" >        if (last === CURSOR_PLACEHOLDER) {</span>
-<span class="cstat-no" title="statement not covered" >          cursorCount++;</span>
-<span class="cstat-no" title="statement not covered" >          continue;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (false) {</span>
-<span class="cstat-no" title="statement not covered" >          throw new Error(`Unexpected value in trim: '${typeof last}'`);</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        for (let charIndex = last.length - 1; charIndex &gt;= 0; charIndex--) {</span>
-<span class="cstat-no" title="statement not covered" >          const char = last[charIndex];</span>
-<span class="cstat-no" title="statement not covered" >          if (char === " " || char === "	") {</span>
-<span class="cstat-no" title="statement not covered" >            trimCount++;</span>
-<span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            out[outIndex] = last.slice(0, charIndex + 1);</span>
-<span class="cstat-no" title="statement not covered" >            break outer;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >    outer: while (outIndex--) {</span>
+<span class="cstat-no" title="statement not covered" >      const last = out[outIndex];</span>
+<span class="cstat-no" title="statement not covered" >      if (last === CURSOR_PLACEHOLDER) {</span>
+<span class="cstat-no" title="statement not covered" >        cursorCount++;</span>
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (false) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Unexpected value in trim: '${typeof last}'`);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      for (let charIndex = last.length - 1; charIndex &gt;= 0; charIndex--) {</span>
+<span class="cstat-no" title="statement not covered" >        const char = last[charIndex];</span>
+<span class="cstat-no" title="statement not covered" >        if (char === " " || char === "	") {</span>
+<span class="cstat-no" title="statement not covered" >          trimCount++;</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >          out[outIndex] = last.slice(0, charIndex + 1);</span>
+<span class="cstat-no" title="statement not covered" >          break outer;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (trimCount &gt; 0 || cursorCount &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >      out.length = outIndex + 1;</span>
 <span class="cstat-no" title="statement not covered" >      while (cursorCount-- &gt; 0) {</span>
@@ -4027,7 +4024,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-21T01:21:10.896Z
+                at 2024-05-22T01:22:05.052Z
             </div>
         <script src="../prettify.js"></script>
         <script>

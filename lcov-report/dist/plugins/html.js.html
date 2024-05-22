@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.3% </span>
+                <span class="strong">74.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6956/9362</span>
+                <span class='fraction'>6944/9351</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.48% </span>
+                <span class="strong">63.34% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>299/471</span>
+                <span class='fraction'>299/472</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.3% </span>
+                <span class="strong">74.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6956/9362</span>
+                <span class='fraction'>6944/9351</span>
             </div>
         
             
@@ -9413,18 +9413,7 @@
 <a name='L9348'></a><a href='#L9348'>9348</a>
 <a name='L9349'></a><a href='#L9349'>9349</a>
 <a name='L9350'></a><a href='#L9350'>9350</a>
-<a name='L9351'></a><a href='#L9351'>9351</a>
-<a name='L9352'></a><a href='#L9352'>9352</a>
-<a name='L9353'></a><a href='#L9353'>9353</a>
-<a name='L9354'></a><a href='#L9354'>9354</a>
-<a name='L9355'></a><a href='#L9355'>9355</a>
-<a name='L9356'></a><a href='#L9356'>9356</a>
-<a name='L9357'></a><a href='#L9357'>9357</a>
-<a name='L9358'></a><a href='#L9358'>9358</a>
-<a name='L9359'></a><a href='#L9359'>9359</a>
-<a name='L9360'></a><a href='#L9360'>9360</a>
-<a name='L9361'></a><a href='#L9361'>9361</a>
-<a name='L9362'></a><a href='#L9362'>9362</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9351'></a><a href='#L9351'>9351</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9451,6 +9440,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -9461,20 +9453,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">144x</span>
-<span class="cline-any cline-yes">144x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">143x</span>
-<span class="cline-any cline-yes">143x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -18813,6 +18791,9 @@
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __typeError = <span class="fstat-no" title="function not covered" >(msg) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    throw TypeError(msg);</span>
+  };
   var __export = (target, all) =&gt; {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
@@ -18826,24 +18807,10 @@
     return to;
   };
   var __toCommonJS = (mod) =&gt; __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-  var __accessCheck = (obj, member, msg) =&gt; {
-    if (!member.has(obj))
-<span class="branch-0 cbranch-no" title="branch not covered" >      throw TypeError("Cannot " + msg);</span>
-  };
-  var __privateGet = (obj, member, getter) =&gt; {
-    __accessCheck(obj, member, "read from private field");
-    return getter <span class="branch-0 cbranch-no" title="branch not covered" >? getter.call(obj) </span>: member.get(obj);
-  };
-  var __privateAdd = (obj, member, value) =&gt; {
-    if (member.has(obj))
-<span class="branch-0 cbranch-no" title="branch not covered" >      throw TypeError("Cannot add the same private member more than once");</span>
-    member instanceof WeakSet <span class="branch-0 cbranch-no" title="branch not covered" >? member.add(obj) </span>: member.set(obj, value);
-  };
-  var __privateSet = (obj, member, value, setter) =&gt; {
-    __accessCheck(obj, member, "write to private field");
-    setter <span class="branch-0 cbranch-no" title="branch not covered" >? setter.call(obj, value) </span>: member.set(obj, value);
-    return value;
-  };
+  var __accessCheck = (obj, member, msg) =&gt; member.has(obj) <span class="branch-0 cbranch-no" title="branch not covered" >|| __typeError("Cannot " + msg);</span>
+  var __privateGet = (obj, member, getter) =&gt; (__accessCheck(obj, member, "read from private field"), getter <span class="branch-0 cbranch-no" title="branch not covered" >? getter.call(obj) </span>: member.get(obj));
+  var __privateAdd = (obj, member, value) =&gt; member.has(obj) <span class="branch-0 cbranch-no" title="branch not covered" >? __typeError("Cannot add the same private member more than once") </span>: member instanceof WeakSet <span class="branch-0 cbranch-no" title="branch not covered" >? member.add(obj) </span>: member.set(obj, value);
+  var __privateSet = (obj, member, value, setter) =&gt; (__accessCheck(obj, member, "write to private field"), setter <span class="branch-0 cbranch-no" title="branch not covered" >? setter.call(obj, value) </span>: member.set(obj, value), value);
 &nbsp;
   // src/plugins/html.js
   var html_exports = {};
@@ -19239,7 +19206,7 @@
   var _whitespaceCharacters;
   var WhitespaceUtils = class {
     constructor(whitespaceCharacters) {
-      __privateAdd(this, _whitespaceCharacters, void 0);
+      __privateAdd(this, _whitespaceCharacters);
       __privateSet(this, _whitespaceCharacters, new Set(whitespaceCharacters));
       if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        throw new TypeError(`Invalid characters: ${JSON.stringify(whitespaceCharacters)}`);</span>
@@ -28153,7 +28120,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-21T01:21:10.896Z
+                at 2024-05-22T01:22:05.052Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

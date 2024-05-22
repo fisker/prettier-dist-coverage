@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.9% </span>
+                <span class="strong">94.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11224/11827</span>
+                <span class='fraction'>11211/11815</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.34% </span>
+                <span class="strong">97.16% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>549/564</span>
+                <span class='fraction'>549/565</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.9% </span>
+                <span class="strong">94.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11224/11827</span>
+                <span class='fraction'>11211/11815</span>
             </div>
         
             
@@ -11878,23 +11878,14 @@
 <a name='L11813'></a><a href='#L11813'>11813</a>
 <a name='L11814'></a><a href='#L11814'>11814</a>
 <a name='L11815'></a><a href='#L11815'>11815</a>
-<a name='L11816'></a><a href='#L11816'>11816</a>
-<a name='L11817'></a><a href='#L11817'>11817</a>
-<a name='L11818'></a><a href='#L11818'>11818</a>
-<a name='L11819'></a><a href='#L11819'>11819</a>
-<a name='L11820'></a><a href='#L11820'>11820</a>
-<a name='L11821'></a><a href='#L11821'>11821</a>
-<a name='L11822'></a><a href='#L11822'>11822</a>
-<a name='L11823'></a><a href='#L11823'>11823</a>
-<a name='L11824'></a><a href='#L11824'>11824</a>
-<a name='L11825'></a><a href='#L11825'>11825</a>
-<a name='L11826'></a><a href='#L11826'>11826</a>
-<a name='L11827'></a><a href='#L11827'>11827</a>
-<a name='L11828'></a><a href='#L11828'>11828</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">239x</span>
+<a name='L11816'></a><a href='#L11816'>11816</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
+<span class="cline-any cline-yes">239x</span>
+<span class="cline-any cline-yes">239x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
@@ -11912,20 +11903,6 @@
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">40689x</span>
-<span class="cline-any cline-yes">40689x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">239x</span>
-<span class="cline-any cline-yes">40450x</span>
-<span class="cline-any cline-yes">40450x</span>
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">239x</span>
@@ -15854,7 +15831,6 @@
 <span class="cline-any cline-yes">3780x</span>
 <span class="cline-any cline-yes">3780x</span>
 <span class="cline-any cline-yes">1727x</span>
-<span class="cline-any cline-yes">716x</span>
 <span class="cline-any cline-yes">716x</span>
 <span class="cline-any cline-yes">716x</span>
 <span class="cline-any cline-yes">716x</span>
@@ -23723,6 +23699,9 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __typeError = <span class="fstat-no" title="function not covered" >(msg) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  throw TypeError(msg);</span>
+};
 var __commonJS = (cb, mod) =&gt; function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
@@ -23746,24 +23725,10 @@ var __toESM = (mod, isNodeMode, target) =&gt; (target = mod != null ? __create(_
   isNodeMode <span class="branch-0 cbranch-no" title="branch not covered" >|| !mod <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| !mod.__esModule </span>? __defProp(target, "default", { value: mod, enumerable: true }) <span class="branch-0 cbranch-no" title="branch not covered" >: target,</span>
   mod
 ));
-var __accessCheck = (obj, member, msg) =&gt; {
-  if (!member.has(obj))
-<span class="branch-0 cbranch-no" title="branch not covered" >    throw TypeError("Cannot " + msg);</span>
-};
-var __privateGet = (obj, member, getter) =&gt; {
-  __accessCheck(obj, member, "read from private field");
-  return getter <span class="branch-0 cbranch-no" title="branch not covered" >? getter.call(obj) </span>: member.get(obj);
-};
-var __privateAdd = (obj, member, value) =&gt; {
-  if (member.has(obj))
-<span class="branch-0 cbranch-no" title="branch not covered" >    throw TypeError("Cannot add the same private member more than once");</span>
-  member instanceof WeakSet <span class="branch-0 cbranch-no" title="branch not covered" >? member.add(obj) </span>: member.set(obj, value);
-};
-var __privateSet = (obj, member, value, setter) =&gt; {
-  __accessCheck(obj, member, "write to private field");
-  setter <span class="branch-0 cbranch-no" title="branch not covered" >? setter.call(obj, value) </span>: member.set(obj, value);
-  return value;
-};
+var __accessCheck = (obj, member, msg) =&gt; member.has(obj) <span class="branch-0 cbranch-no" title="branch not covered" >|| __typeError("Cannot " + msg);</span>
+var __privateGet = (obj, member, getter) =&gt; (__accessCheck(obj, member, "read from private field"), getter <span class="branch-0 cbranch-no" title="branch not covered" >? getter.call(obj) </span>: member.get(obj));
+var __privateAdd = (obj, member, value) =&gt; member.has(obj) <span class="branch-0 cbranch-no" title="branch not covered" >? __typeError("Cannot add the same private member more than once") </span>: member instanceof WeakSet <span class="branch-0 cbranch-no" title="branch not covered" >? member.add(obj) </span>: member.set(obj, value);
+var __privateSet = (obj, member, value, setter) =&gt; (__accessCheck(obj, member, "write to private field"), setter <span class="branch-0 cbranch-no" title="branch not covered" >? setter.call(obj, value) </span>: member.set(obj, value), value);
 &nbsp;
 // node_modules/jest-docblock/build/index.js
 var require_build = __commonJS({
@@ -27685,26 +27650,25 @@ function trim(out) {
   let trimCount = 0;
   let cursorCount = 0;
   let outIndex = out.length;
-  outer:
-    while (outIndex--) {
-      const last = out[outIndex];
-      if (last === CURSOR_PLACEHOLDER) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        cursorCount++;</span>
-<span class="cstat-no" title="statement not covered" >        continue;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-      if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Unexpected value in trim: '${typeof last}'`);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-      for (let charIndex = last.length - 1; charIndex &gt;= 0; charIndex--) {
-        const char = last[charIndex];
-        if (char === " " || char === "	") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          trimCount++;</span>
-        } else {
-          out[outIndex] = last.slice(0, charIndex + 1);
-          break outer;
-        }
+  outer: while (outIndex--) {
+    const last = out[outIndex];
+    if (last === CURSOR_PLACEHOLDER) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      cursorCount++;</span>
+<span class="cstat-no" title="statement not covered" >      continue;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error(`Unexpected value in trim: '${typeof last}'`);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    for (let charIndex = last.length - 1; charIndex &gt;= 0; charIndex--) {
+      const char = last[charIndex];
+      if (char === " " || char === "	") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        trimCount++;</span>
+      } else {
+        out[outIndex] = last.slice(0, charIndex + 1);
+        break outer;
       }
     }
+  }
   if (trimCount &gt; 0 || cursorCount &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    out.length = outIndex + 1;</span>
 <span class="cstat-no" title="statement not covered" >    while (cursorCount-- &gt; 0) {</span>
@@ -29653,7 +29617,7 @@ function escapeStringRegexp(string) {
 var _whitespaceCharacters;
 var WhitespaceUtils = class {
   constructor(whitespaceCharacters) {
-    __privateAdd(this, _whitespaceCharacters, void 0);
+    __privateAdd(this, _whitespaceCharacters);
     __privateSet(this, _whitespaceCharacters, new Set(whitespaceCharacters));
     if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      throw new TypeError(`Invalid characters: ${JSON.stringify(whitespaceCharacters)}`);</span>
@@ -35551,7 +35515,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-21T01:21:14.023Z
+                at 2024-05-22T01:22:08.159Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
