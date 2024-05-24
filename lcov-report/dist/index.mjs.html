@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">67.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15488/22850</span>
+                <span class='fraction'>15493/22855</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">77.87% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3762/4831</span>
+                <span class='fraction'>3763/4832</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">67.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15488/22850</span>
+                <span class='fraction'>15493/22855</span>
             </div>
         
             
@@ -22913,7 +22913,12 @@
 <a name='L22848'></a><a href='#L22848'>22848</a>
 <a name='L22849'></a><a href='#L22849'>22849</a>
 <a name='L22850'></a><a href='#L22850'>22850</a>
-<a name='L22851'></a><a href='#L22851'>22851</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">401x</span>
+<a name='L22851'></a><a href='#L22851'>22851</a>
+<a name='L22852'></a><a href='#L22852'>22852</a>
+<a name='L22853'></a><a href='#L22853'>22853</a>
+<a name='L22854'></a><a href='#L22854'>22854</a>
+<a name='L22855'></a><a href='#L22855'>22855</a>
+<a name='L22856'></a><a href='#L22856'>22856</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
@@ -23864,6 +23869,12 @@
 <span class="cline-any cline-yes">112x</span>
 <span class="cline-any cline-yes">128x</span>
 <span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-yes">66x</span>
+<span class="cline-any cline-yes">66x</span>
+<span class="cline-any cline-yes">66x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">128x</span>
 <span class="cline-any cline-yes">112x</span>
 <span class="cline-any cline-yes">46x</span>
@@ -24371,6 +24382,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
@@ -24614,7 +24626,6 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -24655,7 +24666,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">100x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -46667,7 +46677,7 @@ var require_utils = __commonJS({
 <span class="cstat-no" title="statement not covered" >      return (Number(max) - Number(min)) / Number(step) &gt;= limit;</span>
     };
     exports.escapeNode = <span class="fstat-no" title="function not covered" >(block, n = 0, type2) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      let node = block.nodes[n];</span>
+<span class="cstat-no" title="statement not covered" >      const node = block.nodes[n];</span>
 <span class="cstat-no" title="statement not covered" >      if (!node) return;</span>
 <span class="cstat-no" title="statement not covered" >      if (type2 &amp;&amp; node.type === type2 || node.type === "open" || node.type === "close") {</span>
 <span class="cstat-no" title="statement not covered" >        if (node.escaped !== true) {</span>
@@ -46712,8 +46722,14 @@ var require_utils = __commonJS({
       const result = [];
       const flat = (arr) =&gt; {
         for (let i = 0; i &lt; arr.length; i++) {
-          let ele = arr[i];
-          Array.isArray(ele) ? flat(ele, result) : ele !== void 0 &amp;&amp; result.push(ele);
+          const ele = arr[i];
+          if (Array.isArray(ele)) {
+            flat(ele);
+            continue;
+          }
+          if (ele !== void 0) {
+            result.push(ele);
+          }
         }
         return result;
       };
@@ -46729,9 +46745,9 @@ var require_stringify = __commonJS({
     "use strict";
     var utils = require_utils();
     module.exports = <span class="fstat-no" title="function not covered" >(ast, options8 = {}) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      let stringify = (node, parent = {}) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        let invalidBlock = options8.escapeInvalid &amp;&amp; utils.isInvalidBrace(parent);</span>
-<span class="cstat-no" title="statement not covered" >        let invalidNode = node.invalid === true &amp;&amp; options8.escapeInvalid === true;</span>
+<span class="cstat-no" title="statement not covered" >      const stringify = (node, parent = {}) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const invalidBlock = options8.escapeInvalid &amp;&amp; utils.isInvalidBrace(parent);</span>
+<span class="cstat-no" title="statement not covered" >        const invalidNode = node.invalid === true &amp;&amp; options8.escapeInvalid === true;</span>
 <span class="cstat-no" title="statement not covered" >        let output = "";</span>
 <span class="cstat-no" title="statement not covered" >        if (node.value) {</span>
 <span class="cstat-no" title="statement not covered" >          if ((invalidBlock || invalidNode) &amp;&amp; utils.isOpenOrClose(node)) {</span>
@@ -46743,7 +46759,7 @@ var require_stringify = __commonJS({
 <span class="cstat-no" title="statement not covered" >          return node.value;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (node.nodes) {</span>
-<span class="cstat-no" title="statement not covered" >          for (let child of node.nodes) {</span>
+<span class="cstat-no" title="statement not covered" >          for (const child of node.nodes) {</span>
 <span class="cstat-no" title="statement not covered" >            output += stringify(child);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -47029,7 +47045,7 @@ var require_fill_range = __commonJS({
 <span class="cstat-no" title="statement not covered" >      while (input.length &lt; maxLength) input = "0" + input;</span>
 <span class="cstat-no" title="statement not covered" >      return negative ? "-" + input : input;</span>
     };
-    var toSequence = <span class="fstat-no" title="function not covered" >(parts, options8) =&gt; {</span>
+    var toSequence = <span class="fstat-no" title="function not covered" >(parts, options8, maxLen) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      parts.negatives.sort((a, b) =&gt; a &lt; b ? -1 : a &gt; b ? 1 : 0);</span>
 <span class="cstat-no" title="statement not covered" >      parts.positives.sort((a, b) =&gt; a &lt; b ? -1 : a &gt; b ? 1 : 0);</span>
 <span class="cstat-no" title="statement not covered" >      let prefix = options8.capture ? "" : "?:";</span>
@@ -47037,10 +47053,10 @@ var require_fill_range = __commonJS({
 <span class="cstat-no" title="statement not covered" >      let negatives = "";</span>
 <span class="cstat-no" title="statement not covered" >      let result;</span>
 <span class="cstat-no" title="statement not covered" >      if (parts.positives.length) {</span>
-<span class="cstat-no" title="statement not covered" >        positives = parts.positives.join("|");</span>
+<span class="cstat-no" title="statement not covered" >        positives = parts.positives.map((v) =&gt; toMaxLen(String(v), maxLen)).join("|");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (parts.negatives.length) {</span>
-<span class="cstat-no" title="statement not covered" >        negatives = `-(${prefix}${parts.negatives.join("|")})`;</span>
+<span class="cstat-no" title="statement not covered" >        negatives = `-(${prefix}${parts.negatives.map((v) =&gt; toMaxLen(String(v), maxLen)).join("|")})`;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (positives &amp;&amp; negatives) {</span>
 <span class="cstat-no" title="statement not covered" >        result = `${positives}|${negatives}`;</span>
@@ -47117,7 +47133,7 @@ var require_fill_range = __commonJS({
 <span class="cstat-no" title="statement not covered" >        index++;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (options8.toRegex === true) {</span>
-<span class="cstat-no" title="statement not covered" >        return step &gt; 1 ? toSequence(parts, options8) : toRegex(range, null, { wrap: false, ...options8 });</span>
+<span class="cstat-no" title="statement not covered" >        return step &gt; 1 ? toSequence(parts, options8, maxLen) : toRegex(range, null, { wrap: false, ...options8 });</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return range;</span>
     };
@@ -47182,16 +47198,17 @@ var require_compile = __commonJS({
     var fill2 = require_fill_range();
     var utils = require_utils();
     var compile = <span class="fstat-no" title="function not covered" >(ast, options8 = {}) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      let walk = (node, parent = {}) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        let invalidBlock = utils.isInvalidBrace(parent);</span>
-<span class="cstat-no" title="statement not covered" >        let invalidNode = node.invalid === true &amp;&amp; options8.escapeInvalid === true;</span>
-<span class="cstat-no" title="statement not covered" >        let invalid = invalidBlock === true || invalidNode === true;</span>
-<span class="cstat-no" title="statement not covered" >        let prefix = options8.escapeInvalid === true ? "\\" : "";</span>
+<span class="cstat-no" title="statement not covered" >      const walk = (node, parent = {}) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const invalidBlock = utils.isInvalidBrace(parent);</span>
+<span class="cstat-no" title="statement not covered" >        const invalidNode = node.invalid === true &amp;&amp; options8.escapeInvalid === true;</span>
+<span class="cstat-no" title="statement not covered" >        const invalid = invalidBlock === true || invalidNode === true;</span>
+<span class="cstat-no" title="statement not covered" >        const prefix = options8.escapeInvalid === true ? "\\" : "";</span>
 <span class="cstat-no" title="statement not covered" >        let output = "";</span>
 <span class="cstat-no" title="statement not covered" >        if (node.isOpen === true) {</span>
 <span class="cstat-no" title="statement not covered" >          return prefix + node.value;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (node.isClose === true) {</span>
+<span class="cstat-no" title="statement not covered" >          console.log("node.isClose", prefix, node.value);</span>
 <span class="cstat-no" title="statement not covered" >          return prefix + node.value;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (node.type === "open") {</span>
@@ -47207,14 +47224,14 @@ var require_compile = __commonJS({
 <span class="cstat-no" title="statement not covered" >          return node.value;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (node.nodes &amp;&amp; node.ranges &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >          let args = utils.reduce(node.nodes);</span>
-<span class="cstat-no" title="statement not covered" >          let range = fill2(...args, { ...options8, wrap: false, toRegex: true });</span>
+<span class="cstat-no" title="statement not covered" >          const args = utils.reduce(node.nodes);</span>
+<span class="cstat-no" title="statement not covered" >          const range = fill2(...args, { ...options8, wrap: false, toRegex: true, strictZeros: true });</span>
 <span class="cstat-no" title="statement not covered" >          if (range.length !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >            return args.length &gt; 1 &amp;&amp; range.length &gt; 1 ? `(${range})` : range;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (node.nodes) {</span>
-<span class="cstat-no" title="statement not covered" >          for (let child of node.nodes) {</span>
+<span class="cstat-no" title="statement not covered" >          for (const child of node.nodes) {</span>
 <span class="cstat-no" title="statement not covered" >            output += walk(child, node);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -47234,16 +47251,16 @@ var require_expand = __commonJS({
     var stringify = require_stringify();
     var utils = require_utils();
     var append = (queue = "", stash = "", enclose = false) =&gt; {
-      let result = [];
+      const result = [];
       queue = [].concat(queue);
       stash = [].concat(stash);
       if (!stash.length) <span class="branch-0 cbranch-no" title="branch not covered" >return queue;</span>
       if (!queue.length) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return enclose ? utils.flatten(stash).map((ele) =&gt; `{${ele}}`) : stash;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      for (let item of queue) {
+      for (const item of queue) {
         if (Array.isArray(item)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          for (let value of item) {</span>
+<span class="cstat-no" title="statement not covered" >          for (const value of item) {</span>
 <span class="cstat-no" title="statement not covered" >            result.push(append(value, stash, enclose));</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
         } else {
@@ -47256,8 +47273,8 @@ var require_expand = __commonJS({
       return utils.flatten(result);
     };
     var expand = (ast, options8 = {}) =&gt; {
-      let rangeLimit = options8.rangeLimit === void 0 ? 1e3 <span class="branch-0 cbranch-no" title="branch not covered" >: options8.rangeLimit;</span>
-      let walk = (node, parent = {}) =&gt; {
+      const rangeLimit = options8.rangeLimit === void 0 ? 1e3 <span class="branch-0 cbranch-no" title="branch not covered" >: options8.rangeLimit;</span>
+      const walk = (node, parent = {}) =&gt; {
         node.queue = [];
         let p = parent;
         let q = parent.queue;
@@ -47274,7 +47291,7 @@ var require_expand = __commonJS({
 <span class="cstat-no" title="statement not covered" >          return;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         if (node.nodes &amp;&amp; node.ranges &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          let args = utils.reduce(node.nodes);</span>
+<span class="cstat-no" title="statement not covered" >          const args = utils.reduce(node.nodes);</span>
 <span class="cstat-no" title="statement not covered" >          if (utils.exceedsLimit(...args, options8.step, rangeLimit)) {</span>
 <span class="cstat-no" title="statement not covered" >            throw new RangeError("expanded array length exceeds range limit. Use options.rangeLimit to increase or disable the limit.");</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -47286,7 +47303,7 @@ var require_expand = __commonJS({
 <span class="cstat-no" title="statement not covered" >          node.nodes = [];</span>
 <span class="cstat-no" title="statement not covered" >          return;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        let enclose = utils.encloseBrace(node);
+        const enclose = utils.encloseBrace(node);
         let queue = node.queue;
         let block = node;
         while (block.type !== "brace" &amp;&amp; block.type !== "root" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; block.parent)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -47294,7 +47311,7 @@ var require_expand = __commonJS({
 <span class="cstat-no" title="statement not covered" >          queue = block.queue;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         for (let i = 0; i &lt; node.nodes.length; i++) {
-          let child = node.nodes[i];
+          const child = node.nodes[i];
           if (child.type === "comma" &amp;&amp; node.type === "brace") {
             if (i === 1) <span class="branch-0 cbranch-no" title="branch not covered" >queue.push("");</span>
             queue.push("");
@@ -47325,7 +47342,7 @@ var require_constants = __commonJS({
   "node_modules/braces/lib/constants.js"(exports, module) {
     "use strict";
     module.exports = {
-      MAX_LENGTH: 1024 * 64,
+      MAX_LENGTH: 1e4,
       // Digits
       CHAR_0: "0",
       /* 0 */
@@ -47459,21 +47476,20 @@ var require_parse = __commonJS({
       if (typeof input !== "string") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        throw new TypeError("Expected a string");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      let opts = options8 <span class="branch-0 cbranch-no" title="branch not covered" >|| {};</span>
-      let max = typeof opts.maxLength === "number" <span class="branch-0 cbranch-no" title="branch not covered" >? Math.min(MAX_LENGTH, opts.maxLength) </span>: MAX_LENGTH;
+      const opts = options8 <span class="branch-0 cbranch-no" title="branch not covered" >|| {};</span>
+      const max = typeof opts.maxLength === "number" <span class="branch-0 cbranch-no" title="branch not covered" >? Math.min(MAX_LENGTH, opts.maxLength) </span>: MAX_LENGTH;
       if (input.length &gt; max) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        throw new SyntaxError(`Input length (${input.length}), exceeds max characters (${max})`);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      let ast = { type: "root", input, nodes: [] };
-      let stack2 = [ast];
+      const ast = { type: "root", input, nodes: [] };
+      const stack2 = [ast];
       let block = ast;
       let prev = ast;
       let brackets = 0;
-      let length = input.length;
+      const length = input.length;
       let index = 0;
       let depth = 0;
       let value;
-      let memo = {};
       const advance = () =&gt; input[index++];
       const push2 = (node) =&gt; {
         if (node.type === "text" &amp;&amp; prev.type === "dot") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -47506,7 +47522,6 @@ var require_parse = __commonJS({
 <span class="cstat-no" title="statement not covered" >        }</span>
         if (value === CHAR_LEFT_SQUARE_BRACKET) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          brackets++;</span>
-<span class="cstat-no" title="statement not covered" >          let closed = true;</span>
 <span class="cstat-no" title="statement not covered" >          let next;</span>
 <span class="cstat-no" title="statement not covered" >          while (index &lt; length &amp;&amp; (next = advance())) {</span>
 <span class="cstat-no" title="statement not covered" >            value += next;</span>
@@ -47545,7 +47560,7 @@ var require_parse = __commonJS({
 <span class="cstat-no" title="statement not covered" >          continue;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         if (value === CHAR_DOUBLE_QUOTE || value === CHAR_SINGLE_QUOTE || value === CHAR_BACKTICK) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          let open = value;</span>
+<span class="cstat-no" title="statement not covered" >          const open = value;</span>
 <span class="cstat-no" title="statement not covered" >          let next;</span>
 <span class="cstat-no" title="statement not covered" >          if (options8.keepQuotes !== true) {</span>
 <span class="cstat-no" title="statement not covered" >            value = "";</span>
@@ -47566,8 +47581,8 @@ var require_parse = __commonJS({
 <span class="cstat-no" title="statement not covered" >        }</span>
         if (value === CHAR_LEFT_CURLY_BRACE) {
           depth++;
-          let dollar = prev.value &amp;&amp; prev.value.slice(-1) === "$" || block.dollar === true;
-          let brace = {
+          const dollar = prev.value &amp;&amp; prev.value.slice(-1) === "$" || block.dollar === true;
+          const brace = {
             type: "brace",
             open: true,
             close: false,
@@ -47587,7 +47602,7 @@ var require_parse = __commonJS({
 <span class="cstat-no" title="statement not covered" >            push2({ type: "text", value });</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          let type2 = "close";
+          const type2 = "close";
           block = stack2.pop();
           block.close = true;
           push2({ type: type2, value });
@@ -47598,7 +47613,7 @@ var require_parse = __commonJS({
         if (value === CHAR_COMMA &amp;&amp; depth &gt; 0) {
           if (block.ranges &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            block.ranges = 0;</span>
-<span class="cstat-no" title="statement not covered" >            let open = block.nodes.shift();</span>
+<span class="cstat-no" title="statement not covered" >            const open = block.nodes.shift();</span>
 <span class="cstat-no" title="statement not covered" >            block.nodes = [open, { type: "text", value: stringify(block) }];</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           push2({ type: "comma", value });
@@ -47606,7 +47621,7 @@ var require_parse = __commonJS({
           continue;
         }
         if (value === CHAR_DOT &amp;&amp; depth &gt; 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; block.commas === 0)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          let siblings = block.nodes;</span>
+<span class="cstat-no" title="statement not covered" >          const siblings = block.nodes;</span>
 <span class="cstat-no" title="statement not covered" >          if (depth === 0 || siblings.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            push2({ type: "text", value });</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
@@ -47627,7 +47642,7 @@ var require_parse = __commonJS({
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (prev.type === "range") {</span>
 <span class="cstat-no" title="statement not covered" >            siblings.pop();</span>
-<span class="cstat-no" title="statement not covered" >            let before = siblings[siblings.length - 1];</span>
+<span class="cstat-no" title="statement not covered" >            const before = siblings[siblings.length - 1];</span>
 <span class="cstat-no" title="statement not covered" >            before.value += prev.value + value;</span>
 <span class="cstat-no" title="statement not covered" >            prev = before;</span>
 <span class="cstat-no" title="statement not covered" >            block.ranges--;</span>
@@ -47649,8 +47664,8 @@ var require_parse = __commonJS({
 <span class="cstat-no" title="statement not covered" >              node.invalid = true;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
-<span class="cstat-no" title="statement not covered" >          let parent = stack2[stack2.length - 1];</span>
-<span class="cstat-no" title="statement not covered" >          let index2 = parent.nodes.indexOf(block);</span>
+<span class="cstat-no" title="statement not covered" >          const parent = stack2[stack2.length - 1];</span>
+<span class="cstat-no" title="statement not covered" >          const index2 = parent.nodes.indexOf(block);</span>
 <span class="cstat-no" title="statement not covered" >          parent.nodes.splice(index2, 1, ...block.nodes);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       } while (stack2.length &gt; 0);
@@ -47672,8 +47687,8 @@ var require_braces = __commonJS({
     var braces = (input, options8 = {}) =&gt; {
       let output = [];
       if (Array.isArray(input)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        for (let pattern of input) {</span>
-<span class="cstat-no" title="statement not covered" >          let result = braces.create(pattern, options8);</span>
+<span class="cstat-no" title="statement not covered" >        for (const pattern of input) {</span>
+<span class="cstat-no" title="statement not covered" >          const result = braces.create(pattern, options8);</span>
 <span class="cstat-no" title="statement not covered" >          if (Array.isArray(result)) {</span>
 <span class="cstat-no" title="statement not covered" >            output.push(...result);</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
@@ -68620,7 +68635,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-23T01:21:12.012Z
+                at 2024-05-24T01:22:11.823Z
             </div>
         <script src="../prettify.js"></script>
         <script>

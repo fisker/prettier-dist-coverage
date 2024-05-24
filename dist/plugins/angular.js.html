@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.02% </span>
+                <span class="strong">27.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>799/2957</span>
+                <span class='fraction'>816/2974</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85% </span>
+                <span class="strong">86.36% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/20</span>
+                <span class='fraction'>19/22</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.02% </span>
+                <span class="strong">27.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>799/2957</span>
+                <span class='fraction'>816/2974</span>
             </div>
         
             
@@ -3019,7 +3019,24 @@
 <a name='L2954'></a><a href='#L2954'>2954</a>
 <a name='L2955'></a><a href='#L2955'>2955</a>
 <a name='L2956'></a><a href='#L2956'>2956</a>
-<a name='L2957'></a><a href='#L2957'>2957</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L2957'></a><a href='#L2957'>2957</a>
+<a name='L2958'></a><a href='#L2958'>2958</a>
+<a name='L2959'></a><a href='#L2959'>2959</a>
+<a name='L2960'></a><a href='#L2960'>2960</a>
+<a name='L2961'></a><a href='#L2961'>2961</a>
+<a name='L2962'></a><a href='#L2962'>2962</a>
+<a name='L2963'></a><a href='#L2963'>2963</a>
+<a name='L2964'></a><a href='#L2964'>2964</a>
+<a name='L2965'></a><a href='#L2965'>2965</a>
+<a name='L2966'></a><a href='#L2966'>2966</a>
+<a name='L2967'></a><a href='#L2967'>2967</a>
+<a name='L2968'></a><a href='#L2968'>2968</a>
+<a name='L2969'></a><a href='#L2969'>2969</a>
+<a name='L2970'></a><a href='#L2970'>2970</a>
+<a name='L2971'></a><a href='#L2971'>2971</a>
+<a name='L2972'></a><a href='#L2972'>2972</a>
+<a name='L2973'></a><a href='#L2973'>2973</a>
+<a name='L2974'></a><a href='#L2974'>2974</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3543,6 +3560,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3926,6 +3958,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -6444,6 +6478,21 @@
     ParsedPropertyType2[ParsedPropertyType2["ANIMATION"] = 2] = "ANIMATION";
     ParsedPropertyType2[ParsedPropertyType2["TWO_WAY"] = 3] = "TWO_WAY";
   })(ParsedPropertyType || (ParsedPropertyType = {}));
+  var ParsedEventType;
+  (function(ParsedEventType2) {
+    ParsedEventType2[ParsedEventType2["Regular"] = 0] = "Regular";
+    ParsedEventType2[ParsedEventType2["Animation"] = 1] = "Animation";
+    ParsedEventType2[ParsedEventType2["TwoWay"] = 2] = "TwoWay";
+  })(ParsedEventType || (ParsedEventType = {}));
+  var BindingType;
+  (function(BindingType2) {
+    BindingType2[BindingType2["Property"] = 0] = "Property";
+    BindingType2[BindingType2["Attribute"] = 1] = "Attribute";
+    BindingType2[BindingType2["Class"] = 2] = "Class";
+    BindingType2[BindingType2["Style"] = 3] = "Style";
+    BindingType2[BindingType2["Animation"] = 4] = "Animation";
+    BindingType2[BindingType2["TwoWay"] = 5] = "TwoWay";
+  })(BindingType || (BindingType = {}));
 &nbsp;
   // node_modules/@angular/compiler/esm2022/src/chars.mjs
   var $EOF = 0;
@@ -6885,6 +6934,8 @@
 &nbsp;
   // node_modules/@angular/compiler/esm2022/src/assertions.mjs
   var UNUSABLE_INTERPOLATION_REGEXPS = [
+    /@/,
+    // control flow reserved symbol
     /^\s*$/,
     // empty
     /[&lt;&gt;]/,
@@ -8938,7 +8989,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-23T01:21:15.192Z
+                at 2024-05-24T01:22:15.209Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
