@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.49% </span>
+                <span class="strong">51.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4121/8003</span>
+                <span class='fraction'>4122/8010</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.01% </span>
+                <span class="strong">44.82% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>316/702</span>
+                <span class='fraction'>316/705</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.49% </span>
+                <span class="strong">51.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4121/8003</span>
+                <span class='fraction'>4122/8010</span>
             </div>
         
             
@@ -8065,7 +8065,14 @@
 <a name='L8000'></a><a href='#L8000'>8000</a>
 <a name='L8001'></a><a href='#L8001'>8001</a>
 <a name='L8002'></a><a href='#L8002'>8002</a>
-<a name='L8003'></a><a href='#L8003'>8003</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8003'></a><a href='#L8003'>8003</a>
+<a name='L8004'></a><a href='#L8004'>8004</a>
+<a name='L8005'></a><a href='#L8005'>8005</a>
+<a name='L8006'></a><a href='#L8006'>8006</a>
+<a name='L8007'></a><a href='#L8007'>8007</a>
+<a name='L8008'></a><a href='#L8008'>8008</a>
+<a name='L8009'></a><a href='#L8009'>8009</a>
+<a name='L8010'></a><a href='#L8010'>8010</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -12142,6 +12149,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -12167,6 +12176,9 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -14170,6 +14182,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20125,8 +20139,9 @@
 <span class="cstat-no" title="statement not covered" >      case 67174411: {</span>
 <span class="cstat-no" title="statement not covered" >        if ((context &amp; 524288) === 0)</span>
 <span class="cstat-no" title="statement not covered" >          report(parser, 26);</span>
-<span class="cstat-no" title="statement not covered" >        if (context &amp; 16384)</span>
+<span class="cstat-no" title="statement not covered" >        if (context &amp; 16384 &amp;&amp; !(context &amp; 33554432)) {</span>
 <span class="cstat-no" title="statement not covered" >          report(parser, 27);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        parser.assignable = 2;</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -20134,8 +20149,9 @@
 <span class="cstat-no" title="statement not covered" >      case 67108877: {</span>
 <span class="cstat-no" title="statement not covered" >        if ((context &amp; 262144) === 0)</span>
 <span class="cstat-no" title="statement not covered" >          report(parser, 27);</span>
-<span class="cstat-no" title="statement not covered" >        if (context &amp; 16384)</span>
+<span class="cstat-no" title="statement not covered" >        if (context &amp; 16384 &amp;&amp; !(context &amp; 33554432)) {</span>
 <span class="cstat-no" title="statement not covered" >          report(parser, 27);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        parser.assignable = 1;</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -20169,6 +20185,9 @@
       switch (parser.token) {
         case 67108877: {
           nextToken(parser, (context | 1073741824 | 8192) ^ 8192);
+          if (context &amp; 16384 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parser.token === 131 <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parser.tokenValue === "super")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            report(parser, 27);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
           parser.assignable = 1;
           const property = parsePropertyOrPrivatePropertyName(parser, context | 65536);
           expr = finishNode(parser, context, start, line, column, {
@@ -21592,7 +21611,7 @@
 <span class="cstat-no" title="statement not covered" >      reportScopeError(scope.scopeError);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (expression) {</span>
-<span class="cstat-no" title="statement not covered" >      body = parseExpression(parser, context, 1, 0, 0, parser.tokenPos, parser.linePos, parser.colPos);</span>
+<span class="cstat-no" title="statement not covered" >      body = parseExpression(parser, context &amp; 16384 ? context | 33554432 : context, 1, 0, 0, parser.tokenPos, parser.linePos, parser.colPos);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      if (scope)</span>
 <span class="cstat-no" title="statement not covered" >        scope = addChildScope(scope, 128);</span>
@@ -22180,6 +22199,8 @@
 <span class="cstat-no" title="statement not covered" >      const { tokenPos, linePos, colPos } = parser;</span>
 <span class="cstat-no" title="statement not covered" >      if (parser.token === 537079928)</span>
 <span class="cstat-no" title="statement not covered" >        report(parser, 116);</span>
+<span class="cstat-no" title="statement not covered" >      const modifierFlags = (state &amp; 64) === 0 ? 31981568 : 14680064;</span>
+<span class="cstat-no" title="statement not covered" >      context = (context | modifierFlags) ^ modifierFlags | (state &amp; 88) &lt;&lt; 18 | 100925440;</span>
 <span class="cstat-no" title="statement not covered" >      value = parsePrimaryExpression(parser, context | 16384, 2, 0, 1, 0, 0, 1, tokenPos, linePos, colPos);</span>
 <span class="cstat-no" title="statement not covered" >      if ((parser.token &amp; 1073741824) !== 1073741824 || (parser.token &amp; 4194304) === 4194304) {</span>
 <span class="cstat-no" title="statement not covered" >        value = parseMemberOrUpdateExpression(parser, context | 16384, value, 0, 0, tokenPos, linePos, colPos);</span>
@@ -24076,7 +24097,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-24T01:22:15.209Z
+                at 2024-05-25T01:20:35.328Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

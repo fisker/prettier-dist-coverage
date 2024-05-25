@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.99% </span>
+                <span class="strong">87.93% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7025/7983</span>
+                <span class='fraction'>7026/7990</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.73% </span>
+                <span class="strong">75.58% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1601/2114</span>
+                <span class='fraction'>1604/2122</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.99% </span>
+                <span class="strong">87.93% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7025/7983</span>
+                <span class='fraction'>7026/7990</span>
             </div>
         
             
@@ -8046,7 +8046,14 @@
 <a name='L7981'></a><a href='#L7981'>7981</a>
 <a name='L7982'></a><a href='#L7982'>7982</a>
 <a name='L7983'></a><a href='#L7983'>7983</a>
-<a name='L7984'></a><a href='#L7984'>7984</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7984'></a><a href='#L7984'>7984</a>
+<a name='L7985'></a><a href='#L7985'>7985</a>
+<a name='L7986'></a><a href='#L7986'>7986</a>
+<a name='L7987'></a><a href='#L7987'>7987</a>
+<a name='L7988'></a><a href='#L7988'>7988</a>
+<a name='L7989'></a><a href='#L7989'>7989</a>
+<a name='L7990'></a><a href='#L7990'>7990</a>
+<a name='L7991'></a><a href='#L7991'>7991</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -12079,8 +12086,9 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -12089,7 +12097,8 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -12123,6 +12132,9 @@
 <span class="cline-any cline-yes">8439x</span>
 <span class="cline-any cline-yes">8439x</span>
 <span class="cline-any cline-yes">3885x</span>
+<span class="cline-any cline-yes">3885x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3885x</span>
 <span class="cline-any cline-yes">3885x</span>
 <span class="cline-any cline-yes">3885x</span>
@@ -14130,6 +14142,8 @@
 <span class="cline-any cline-yes">203x</span>
 <span class="cline-any cline-yes">203x</span>
 <span class="cline-any cline-yes">203x</span>
+<span class="cline-any cline-yes">157x</span>
+<span class="cline-any cline-yes">157x</span>
 <span class="cline-any cline-yes">157x</span>
 <span class="cline-any cline-yes">157x</span>
 <span class="cline-any cline-yes">157x</span>
@@ -20062,8 +20076,9 @@ function parseSuperExpression(parser, context, start, line, column) {
     case 67174411: {
       if ((context &amp; 524288) === 0)
         report(parser, 26);
-      if (context &amp; 16384)
-<span class="branch-0 cbranch-no" title="branch not covered" >        report(parser, 27);</span>
+      if (context &amp; 16384 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !(context &amp; 33554432))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        report(parser, 27);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
       parser.assignable = 2;
       break;
     }
@@ -20071,8 +20086,9 @@ function parseSuperExpression(parser, context, start, line, column) {
     case 67108877: {
       if ((context &amp; 262144) === 0)
 <span class="branch-0 cbranch-no" title="branch not covered" >        report(parser, 27);</span>
-      if (context &amp; 16384)
-<span class="branch-0 cbranch-no" title="branch not covered" >        report(parser, 27);</span>
+      if (context &amp; 16384 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !(context &amp; 33554432))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        report(parser, 27);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
       parser.assignable = 1;
       break;
     }
@@ -20106,6 +20122,9 @@ function parseMemberOrUpdateExpression(parser, context, expr, inGroup, inChain, 
     switch (parser.token) {
       case 67108877: {
         nextToken(parser, (context | 1073741824 | 8192) ^ 8192);
+        if (context &amp; 16384 &amp;&amp; parser.token === 131 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parser.tokenValue === "super")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          report(parser, 27);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
         parser.assignable = 1;
         const property = parsePropertyOrPrivatePropertyName(parser, context | 65536);
         expr = finishNode(parser, context, start, line, column, {
@@ -21529,7 +21548,7 @@ function parseArrowFunctionExpression(parser, context, scope, params, isAsync, s
 <span class="cstat-no" title="statement not covered" >    reportScopeError(scope.scopeError);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   if (expression) {
-    body = parseExpression(parser, context, 1, 0, 0, parser.tokenPos, parser.linePos, parser.colPos);
+    body = parseExpression(parser, context &amp; 16384 ? context | 33554432 : context, 1, 0, 0, parser.tokenPos, parser.linePos, parser.colPos);
   } else {
     if (scope)
 <span class="branch-0 cbranch-no" title="branch not covered" >      scope = addChildScope(scope, 128);</span>
@@ -22117,6 +22136,8 @@ function parsePropertyDefinition(parser, context, key, state, decorators, start,
     const { tokenPos, linePos, colPos } = parser;
     if (parser.token === 537079928)
 <span class="branch-0 cbranch-no" title="branch not covered" >      report(parser, 116);</span>
+    const modifierFlags = (state &amp; 64) === 0 ? 31981568 <span class="branch-0 cbranch-no" title="branch not covered" >: 14680064;</span>
+    context = (context | modifierFlags) ^ modifierFlags | (state &amp; 88) &lt;&lt; 18 | 100925440;
     value = parsePrimaryExpression(parser, context | 16384, 2, 0, 1, 0, 0, 1, tokenPos, linePos, colPos);
     if ((parser.token &amp; 1073741824) !== 1073741824 || (parser.token &amp; 4194304) === 4194304) {
       value = parseMemberOrUpdateExpression(parser, context | 16384, value, 0, 0, tokenPos, linePos, colPos);
@@ -24019,7 +24040,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-24T01:22:11.823Z
+                at 2024-05-25T01:20:32.240Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
