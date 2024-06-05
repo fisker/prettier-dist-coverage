@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.22% </span>
+                <span class="strong">61.21% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5603/9152</span>
+                <span class='fraction'>5607/9159</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.19% </span>
+                <span class="strong">59.9% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>484/804</span>
+                <span class='fraction'>484/808</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.22% </span>
+                <span class="strong">61.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5603/9152</span>
+                <span class='fraction'>5607/9159</span>
             </div>
         
             
@@ -9214,7 +9214,14 @@
 <a name='L9149'></a><a href='#L9149'>9149</a>
 <a name='L9150'></a><a href='#L9150'>9150</a>
 <a name='L9151'></a><a href='#L9151'>9151</a>
-<a name='L9152'></a><a href='#L9152'>9152</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9152'></a><a href='#L9152'>9152</a>
+<a name='L9153'></a><a href='#L9153'>9153</a>
+<a name='L9154'></a><a href='#L9154'>9154</a>
+<a name='L9155'></a><a href='#L9155'>9155</a>
+<a name='L9156'></a><a href='#L9156'>9156</a>
+<a name='L9157'></a><a href='#L9157'>9157</a>
+<a name='L9158'></a><a href='#L9158'>9158</a>
+<a name='L9159'></a><a href='#L9159'>9159</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10063,6 +10070,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -10325,6 +10336,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -19078,7 +19092,7 @@
           false,
           node.chars,
           "{{",
-          "\\{{"
+          String.raw`\{{`
         );
         const attrName = getCurrentAttributeName(path);
         if (attrName) {
@@ -19197,7 +19211,9 @@
 <span class="cstat-no" title="statement not covered" >        return ["{{", isLeftWhiteSpaceSensitive ? "~" : "", "!", dashes, node.value, dashes, isRightWhitespaceSensitive ? "~" : "", "}}"];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       case "PathExpression":
-        return printPathExpression(node);
+        return printPathExpression(node, print2);
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "AtHead":</span>
+<span class="cstat-no" title="statement not covered" >        return node.name;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "BooleanLiteral":</span>
 <span class="cstat-no" title="statement not covered" >        return String(node.value);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "CommentStatement":</span>
@@ -19210,6 +19226,8 @@
 <span class="cstat-no" title="statement not covered" >        return "undefined";</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "NullLiteral":</span>
 <span class="cstat-no" title="statement not covered" >        return "null";</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "VarHead":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "ThisHead":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      default:</span>
 <span class="cstat-no" title="statement not covered" >        throw new unexpected_node_error_default(node, "Handlebars");</span>
     }
@@ -19475,8 +19493,11 @@
   var PATH_EXPRESSION_FORBIDDEN_CHARACTERS = new Set("!\"#%&amp;'()*+,./;&lt;=&gt;@[\\]^`{|}~");
   var PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART = /* @__PURE__ */ new Set(["true", "false", "null", "undefined"]);
   var isPathExpressionPartNeedBrackets = (part, index) =&gt; index !== 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART.has(part) </span>|| /\s/.test(part) || /^\d/.test(part) || Array.prototype.some.call(part, (character) =&gt; PATH_EXPRESSION_FORBIDDEN_CHARACTERS.has(character));
-  function printPathExpression(node) {
-    if (node.head.type === "AtHead" || node.tail.length === 0 &amp;&amp; node.original.includes("/")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  function printPathExpression(node, print2) {
+    if (node.head.type === "AtHead") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return print2("head");</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    if (node.tail.length === 0 &amp;&amp; node.original.includes("/")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return node.original;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const parts = [node.head.original, ...node.tail];
@@ -27523,7 +27544,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-04T01:23:37.963Z
+                at 2024-06-05T01:23:17.895Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
