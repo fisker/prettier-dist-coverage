@@ -11302,7 +11302,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function normalizeEndOfLine(text) {</span>
 <span class="cstat-no" title="statement not covered" >    return string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      text,</span>
 <span class="cstat-no" title="statement not covered" >      /\r\n?/g,</span>
@@ -11880,7 +11880,7 @@
   function breakParentGroup(groupStack) {
     if (groupStack.length &gt; 0) {
       const parentGroup = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         groupStack,
         -1
@@ -11937,12 +11937,12 @@
   function stripTrailingHardlineFromParts(parts) {
     parts = [...parts];
     while (parts.length &gt;= 2 &amp;&amp; at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       parts,
       -2
     ).type === DOC_TYPE_LINE &amp;&amp; at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       parts,
       -1
@@ -11951,7 +11951,7 @@
     }
     if (parts.length &gt; 0) {
       const lastPart = stripTrailingHardlineFromDoc(at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         parts,
         -1
@@ -12039,7 +12039,7 @@
           }
           const [currentPart, ...restParts] = Array.isArray(part) ? part : [part];
           if (typeof currentPart === "string" &amp;&amp; typeof at_default(
-            /* isOptionalObject*/
+            /* isOptionalObject */
             false,
             parts,
             -1
@@ -12285,7 +12285,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
           const groupMode = doc.break ? MODE_BREAK : mode;
           const contents = doc.expandedStates &amp;&amp; groupMode === MODE_BREAK <span class="branch-0 cbranch-no" title="branch not covered" >? at_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >            false,</span>
 <span class="cstat-no" title="statement not covered" >            doc.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >            -1</span>
@@ -12352,7 +12352,7 @@
       switch (get_doc_type_default(doc2)) {
         case DOC_TYPE_STRING: {
           const formatted = newLine !== "\n" <span class="branch-0 cbranch-no" title="branch not covered" >? string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >            false,</span>
 <span class="cstat-no" title="statement not covered" >            doc2,</span>
 <span class="cstat-no" title="statement not covered" >            "\n",</span>
@@ -12422,7 +12422,7 @@
               } else {
                 if (doc2.expandedStates) {
                   const mostExpanded = at_default(
-                    /* isOptionalObject*/
+                    /* isOptionalObject */
                     false,
                     doc2.expandedStates,
                     -1
@@ -12470,7 +12470,7 @@
           }
           if (doc2.id) {
             groupModeMap[doc2.id] = at_default(
-              /* isOptionalObject*/
+              /* isOptionalObject */
               false,
               cmds,
               -1
@@ -12686,7 +12686,7 @@
         siblings
       } = this;
       return at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         stack,
         siblings === null ? -2 : -4
@@ -12695,7 +12695,7 @@
     /** @type {number | null} */
     get index() {
       return this.siblings === null ? null : at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         this.stack,
         -2
@@ -12704,7 +12704,7 @@
     /** @type {object} */
     get node() {
       return at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         this.stack,
         -1
@@ -12728,7 +12728,7 @@
         stack
       } = this;
       const maybeArray = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         stack,
         -3
@@ -12784,7 +12784,7 @@
 <span class="cstat-no" title="statement not covered" >      } = stack;</span>
 <span class="cstat-no" title="statement not covered" >      if (length &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >        return at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          stack,</span>
 <span class="cstat-no" title="statement not covered" >          -2</span>
@@ -12796,7 +12796,7 @@
     // this.stack.
 <span class="fstat-no" title="function not covered" >    getValue() {</span>
 <span class="cstat-no" title="statement not covered" >      return at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        this.stack,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
@@ -12822,7 +12822,7 @@
         length
       } = stack;
       let value = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         stack,
         -1
@@ -12858,7 +12858,7 @@
         length
       } = stack;
       let value = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         stack,
         -1
@@ -13880,7 +13880,7 @@
       };
       if (Array.isArray(option.default)) {
         option.default = at_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           option.default,
           -1
@@ -14775,7 +14775,7 @@
     if (isCLI <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !optionInfo.array)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      const originalPreprocess = parameters.preprocess || (<span class="fstat-no" title="function not covered" >(x) =&gt; x)</span>;</span>
 <span class="cstat-no" title="statement not covered" >      parameters.preprocess = <span class="fstat-no" title="function not covered" >(value, schema, utils2) =&gt; schema.preprocess(originalPreprocess(Array.isArray(value) ? at_default(</span></span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        value,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
@@ -14818,7 +14818,7 @@
 <span class="cstat-no" title="statement not covered" >      throw new Error("parserName is required.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const plugin = array_find_last_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       plugins,
       (plugin2) =&gt; plugin2.parsers &amp;&amp; Object.prototype.hasOwnProperty.call(plugin2.parsers, parserName)
@@ -14837,7 +14837,7 @@
 <span class="cstat-no" title="statement not covered" >      throw new Error("astFormat is required.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const plugin = array_find_last_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       plugins,
       (plugin2) =&gt; plugin2.printers &amp;&amp; Object.prototype.hasOwnProperty.call(plugin2.printers, astFormat)
@@ -15540,7 +15540,7 @@
 <span class="cstat-no" title="statement not covered" >        cursorOffset += countEndOfLineChars(formatted.slice(0, cursorOffset), "\n");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      formatted = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        formatted,</span>
 <span class="cstat-no" title="statement not covered" >        "\n",</span>
@@ -15896,7 +15896,7 @@
 <span class="cstat-no" title="statement not covered" >    const otherQuote = enclosingQuote === '"' ? "'" : '"';</span>
 <span class="cstat-no" title="statement not covered" >    const regex = /\\(.)|(["'])/gs;</span>
 <span class="cstat-no" title="statement not covered" >    const raw = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      rawText,</span>
 <span class="cstat-no" title="statement not covered" >      regex,</span>
@@ -15991,7 +15991,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T01:26:11.134Z
+                at 2024-06-11T01:24:50.873Z
             </div>
         <script src="../prettify.js"></script>
         <script>

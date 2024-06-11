@@ -24346,7 +24346,7 @@
     const otherQuote = enclosingQuote === '"' ? "'" : '"';
     const regex = /\\(.)|(["'])/gs;
     const raw = string_replace_all_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       rawText2,
       regex,
@@ -25876,7 +25876,7 @@
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const lastDanglingComment = at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      getComments(node, CommentCheckFlags.Dangling),</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -26053,7 +26053,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     const parameters = getFunctionParameters(node);
     return ((_a = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       parameters,
       -1
@@ -26289,7 +26289,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (original.type === "JSXAttribute" &amp;&amp; ((_a = original.value) == null ? void 0 : _a.type) === "Literal" &amp;&amp; /["']|&amp;quot;|&amp;apos;/.test(original.value.value)) {</span>
 <span class="cstat-no" title="statement not covered" >      cloned.value.value = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        original.value.value,</span>
 <span class="cstat-no" title="statement not covered" >        /["']|&amp;quot;|&amp;apos;/g,</span>
@@ -26705,7 +26705,7 @@
 <span class="fstat-no" title="function not covered" >  function breakParentGroup(groupStack) {</span>
 <span class="cstat-no" title="statement not covered" >    if (groupStack.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >      const parentGroup = at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        groupStack,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
@@ -26795,7 +26795,7 @@
           }
           const [currentPart, ...restParts] = Array.isArray(part) <span class="branch-0 cbranch-no" title="branch not covered" >? part </span>: [part];
           if (typeof currentPart === "string" &amp;&amp; typeof at_default(
-            /* isOptionalObject*/
+            /* isOptionalObject */
             false,
             parts,
             -1
@@ -27172,7 +27172,7 @@
     if (classLikeNodeTypes.has(enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      if (is_non_empty_array_default(enclosingNode.decorators) &amp;&amp; !((followingNode == null ? void 0 : followingNode.type) === "Decorator")) {</span>
 <span class="cstat-no" title="statement not covered" >        addTrailingComment(at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          enclosingNode.decorators,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
@@ -27517,7 +27517,7 @@
 <span class="cstat-no" title="statement not covered" >  }) {</span>
 <span class="cstat-no" title="statement not covered" >    if (isUnionType(precedingNode) &amp;&amp; ((enclosingNode.type === "TSArrayType" || enclosingNode.type === "ArrayTypeAnnotation") &amp;&amp; !followingNode || isIntersectionType(enclosingNode))) {</span>
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        precedingNode.types,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
@@ -27581,7 +27581,7 @@
 <span class="cstat-no" title="statement not covered" >  }) {</span>
 <span class="cstat-no" title="statement not covered" >    if (parser === "flow" || parser === "babel-flow") {</span>
 <span class="cstat-no" title="statement not covered" >      text = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        text,</span>
 <span class="cstat-no" title="statement not covered" >        /[\s(]/g,</span>
@@ -27796,7 +27796,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          const groupMode = doc.break ? MODE_BREAK : mode;</span>
 <span class="cstat-no" title="statement not covered" >          const contents = doc.expandedStates &amp;&amp; groupMode === MODE_BREAK ? at_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >            false,</span>
 <span class="cstat-no" title="statement not covered" >            doc.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >            -1</span>
@@ -27863,7 +27863,7 @@
       switch (get_doc_type_default(doc2)) {
         case DOC_TYPE_STRING: {
           const formatted = newLine !== "\n" <span class="branch-0 cbranch-no" title="branch not covered" >? string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >            false,</span>
 <span class="cstat-no" title="statement not covered" >            doc2,</span>
 <span class="cstat-no" title="statement not covered" >            "\n",</span>
@@ -27933,7 +27933,7 @@
               }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
 <span class="cstat-no" title="statement not covered" >                if (doc2.expandedStates) {</span>
 <span class="cstat-no" title="statement not covered" >                  const mostExpanded = at_default(</span>
-<span class="cstat-no" title="statement not covered" >                    /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >                    /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >                    false,</span>
 <span class="cstat-no" title="statement not covered" >                    doc2.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >                    -1</span>
@@ -27981,7 +27981,7 @@
           }
           if (doc2.id) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            groupModeMap[doc2.id] = at_default(</span>
-<span class="cstat-no" title="statement not covered" >              /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >              /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >              false,</span>
 <span class="cstat-no" title="statement not covered" >              cmds,</span>
 <span class="cstat-no" title="statement not covered" >              -1</span>
@@ -28282,7 +28282,7 @@
 <span class="cstat-no" title="statement not covered" >      }];</span>
 <span class="cstat-no" title="statement not covered" >      for (let i = 1; i &lt; node.quasis.length; i++) {</span>
 <span class="cstat-no" title="statement not covered" >        const row = at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          tableBody,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
@@ -28334,7 +28334,7 @@
 <span class="cstat-no" title="statement not covered" >    return mapDoc(doc, (currentDoc) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (typeof currentDoc === "string") {</span>
 <span class="cstat-no" title="statement not covered" >        return raw ? string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          currentDoc,</span>
 <span class="cstat-no" title="statement not covered" >          /(\\*)`/g,</span>
@@ -28346,7 +28346,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function uncookTemplateElementValue(cookedValue) {</span>
 <span class="cstat-no" title="statement not covered" >    return string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      cookedValue,</span>
 <span class="cstat-no" title="statement not covered" >      /([\\`]|\${)/g,</span>
@@ -28590,7 +28590,7 @@
 <span class="cstat-no" title="statement not covered" >            component = uncookTemplateElementValue(component);</span>
 <span class="cstat-no" title="statement not covered" >            if (options2.__embeddedInHtml) {</span>
 <span class="cstat-no" title="statement not covered" >              component = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >                /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >                /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >                false,</span>
 <span class="cstat-no" title="statement not covered" >                component,</span>
 <span class="cstat-no" title="statement not covered" >                /&lt;\/(?=script\b)/gi,</span>
@@ -28637,7 +28637,7 @@
 <span class="cstat-no" title="statement not covered" >      node</span>
 <span class="cstat-no" title="statement not covered" >    } = path;</span>
 <span class="cstat-no" title="statement not covered" >    let text = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      node.quasis[0].value.raw,</span>
 <span class="cstat-no" title="statement not covered" >      /((?:\\\\)*)\\`/g,</span>
@@ -28647,7 +28647,7 @@
 <span class="cstat-no" title="statement not covered" >    const hasIndent = indentation !== "";</span>
 <span class="cstat-no" title="statement not covered" >    if (hasIndent) {</span>
 <span class="cstat-no" title="statement not covered" >      text = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        text,</span>
 <span class="cstat-no" title="statement not covered" >        new RegExp(`^${indentation}`, "gm"),</span>
@@ -29717,7 +29717,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    hasTrailingWhitespace(text) {</span>
 <span class="cstat-no" title="statement not covered" >      return __privateGet(this, _whitespaceCharacters).has(at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        text,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
@@ -29805,7 +29805,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
     while (children.length &gt; 0 &amp;&amp; isEmptyStringOrAnyLine(at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       children,
       -1
@@ -29880,7 +29880,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
           let endWhitespace;
           if (at_default(
-            /* isOptionalObject*/
+            /* isOptionalObject */
             false,
             words,
             -1
@@ -29901,7 +29901,7 @@
           if (endWhitespace !== void 0) {
             if (/\n/.test(endWhitespace)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >              parts.push(separatorWithWhitespace(isFacebookTranslationTag, at_default(</span>
-<span class="cstat-no" title="statement not covered" >                /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >                /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >                false,</span>
 <span class="cstat-no" title="statement not covered" >                parts,</span>
 <span class="cstat-no" title="statement not covered" >                -1</span>
@@ -29911,7 +29911,7 @@
             }
           } else {
             parts.push(separatorNoWhitespace(isFacebookTranslationTag, at_default(
-              /* isOptionalObject*/
+              /* isOptionalObject */
               false,
               parts,
               -1
@@ -29982,10 +29982,10 @@
       if (isStringLiteral(node.value)) {
         const raw = rawText(node.value);
         let final = string_replace_all_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           string_replace_all_default(
-            /* isOptionalObject*/
+            /* isOptionalObject */
             false,
             raw.slice(1, -1),
             "&amp;apos;",
@@ -29996,13 +29996,13 @@
         );
         const quote = get_preferred_quote_default(final, options2.jsxSingleQuote);
         final = quote === '"' ? string_replace_all_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           final,
           '"',
           "&amp;quot;"
         ) <span class="branch-0 cbranch-no" title="branch not covered" >: string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          final,</span>
 <span class="cstat-no" title="statement not covered" >          "'",</span>
@@ -30065,7 +30065,7 @@
   }
   function shouldPrintBracketSameLine(node, options2, nameHasComments) {
     const lastAttrHasTrailingComments = node.attributes.length &gt; 0 &amp;&amp; hasComment(at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       node.attributes,
       -1
@@ -30287,7 +30287,7 @@
       return chain;
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const jsxPart = at_default(</span></span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      parts,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -30625,14 +30625,14 @@
   function shouldExpandLastArg(args, argDocs, options2) {
     var _a, _b;
     const lastArg = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       args,
       -1
     );
     if (args.length === 1) {
       const lastArgDoc = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         argDocs,
         -1
@@ -30642,7 +30642,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
     const penultimateArg = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       args,
       -2
@@ -30885,7 +30885,7 @@
         return firstNode.type === "ThisExpression" || firstNode.type === "Identifier" &amp;&amp; (isFactory(firstNode.name) || isExpressionStatement &amp;&amp; isShort(firstNode.name) || hasComputed);
       }
       const lastNode = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         groups2[0],
         -1
@@ -30896,7 +30896,7 @@
     function printGroup(printedGroup) {
       const printed = printedGroup.map((tuple) =&gt; tuple.printed);
       if (printedGroup.length &gt; 0 &amp;&amp; at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         printedGroup,
         -1
@@ -30917,7 +30917,7 @@
     const flatGroups = groups.flat();
     const nodeHasComment = flatGroups.slice(1, -1).some((node2) =&gt; hasComment(node2.node, CommentCheckFlags.Leading)) || flatGroups.slice(0, -1).some((node2) =&gt; hasComment(node2.node, CommentCheckFlags.Trailing)) || groups[cutoff] &amp;&amp; hasComment(groups[cutoff][0].node, CommentCheckFlags.Leading);
     if (groups.length &lt;= cutoff &amp;&amp; !nodeHasComment &amp;&amp; !groups.some((g) =&gt; at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       g,
       -1
@@ -30928,7 +30928,7 @@
       return group(oneLine);
     }
     const lastNodeBeforeIndent = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       groups[shouldMerge ? 1 : 0],
       -1
@@ -30940,10 +30940,10 @@
     }) =&gt; node2).filter(isCallExpression);
     function lastGroupWillBreakAndOtherCallsHaveFunctionArguments() {
       const lastGroupNode = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         at_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           groups,
           -1
@@ -30951,7 +30951,7 @@
         -1
       ).node;
       const lastGroupDoc = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         printedGroups,
         -1
@@ -31880,7 +31880,7 @@
       parts.push(printEmptyArrayElements(path, options2, openBracket, closeBracket));
     } else {
       const lastElem = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         elements,
         -1
@@ -32425,7 +32425,7 @@
     } = path;
     const parts = [];
     const lastStatement = array_find_last_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       node[property],
       (statement) =&gt; statement.type !== "EmptyStatement"
@@ -32489,7 +32489,7 @@
 <span class="cstat-no" title="statement not covered" >      if (hasBody || hasDanglingComments) {</span>
 <span class="cstat-no" title="statement not covered" >        parts.push(hardline);</span>
 <span class="cstat-no" title="statement not covered" >        if (isNextLineEmpty2(at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          node.directives,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
@@ -33426,7 +33426,7 @@
 <span class="cstat-no" title="statement not covered" >        const hasLineComments = hasComment(node, CommentCheckFlags.Line);</span>
 <span class="cstat-no" title="statement not covered" >        const printedDanglingComments = printDanglingComments(path, options2);</span>
 <span class="cstat-no" title="statement not covered" >        printed = [printedDanglingComments, hasLineComments || has_newline_default(options2.originalText, locEnd(at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          getComments(node),</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
@@ -33437,7 +33437,7 @@
 <span class="cstat-no" title="statement not covered" >      props.push([...separatorParts, ...printed]);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const lastElem = (_a = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       propsAndLoc,
       -1
@@ -34370,7 +34370,7 @@
 <span class="fstat-no" title="function not covered" >  function hasRestParameter2(componentNode, parameters) {</span>
 <span class="cstat-no" title="statement not covered" >    var _a;</span>
 <span class="cstat-no" title="statement not covered" >    return componentNode.rest || ((_a = at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      parameters,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -35575,7 +35575,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T01:26:14.292Z
+                at 2024-06-11T01:24:54.010Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -3115,7 +3115,7 @@ var get_string_width_default = getStringWidth;
 function breakParentGroup(groupStack) {
   if (groupStack.length &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    const parentGroup = at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      groupStack,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -3172,12 +3172,12 @@ function propagateBreaks(doc) {
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function stripTrailingHardlineFromParts(parts) {</span></span>
 <span class="cstat-no" title="statement not covered" >  parts = [...parts];</span>
 <span class="cstat-no" title="statement not covered" >  while (parts.length &gt;= 2 &amp;&amp; at_default(</span>
-<span class="cstat-no" title="statement not covered" >    /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >    /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >    false,</span>
 <span class="cstat-no" title="statement not covered" >    parts,</span>
 <span class="cstat-no" title="statement not covered" >    -2</span>
 <span class="cstat-no" title="statement not covered" >  ).type === DOC_TYPE_LINE &amp;&amp; at_default(</span>
-<span class="cstat-no" title="statement not covered" >    /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >    /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >    false,</span>
 <span class="cstat-no" title="statement not covered" >    parts,</span>
 <span class="cstat-no" title="statement not covered" >    -1</span>
@@ -3186,7 +3186,7 @@ function propagateBreaks(doc) {
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (parts.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >    const lastPart = stripTrailingHardlineFromDoc(at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      parts,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -3274,7 +3274,7 @@ function propagateBreaks(doc) {
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const [currentPart, ...restParts] = Array.isArray(part) ? part : [part];</span>
 <span class="cstat-no" title="statement not covered" >        if (typeof currentPart === "string" &amp;&amp; typeof at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          parts,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
@@ -3514,7 +3514,7 @@ function fits(next, restCommands, width, hasLineSuffix, groupModeMap, mustBeFlat
 <span class="cstat-no" title="statement not covered" >        }</span>
         const groupMode = doc.break <span class="branch-0 cbranch-no" title="branch not covered" >? MODE_BREAK </span>: mode;
         const contents = doc.expandedStates <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; groupMode === MODE_BREAK <span class="branch-0 cbranch-no" title="branch not covered" ></span>? at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          doc.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
@@ -3581,7 +3581,7 @@ function printDocToString(doc, options) {
     switch (get_doc_type_default(doc2)) {
       case DOC_TYPE_STRING: {
         const formatted = newLine !== "\n" <span class="branch-0 cbranch-no" title="branch not covered" >? string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          doc2,</span>
 <span class="cstat-no" title="statement not covered" >          "\n",</span>
@@ -3651,7 +3651,7 @@ function printDocToString(doc, options) {
             } else {
               if (doc2.expandedStates) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                const mostExpanded = at_default(</span>
-<span class="cstat-no" title="statement not covered" >                  /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >                  /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >                  false,</span>
 <span class="cstat-no" title="statement not covered" >                  doc2.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >                  -1</span>
@@ -3699,7 +3699,7 @@ function printDocToString(doc, options) {
         }
         if (doc2.id) {
           groupModeMap[doc2.id] = at_default(
-            /* isOptionalObject*/
+            /* isOptionalObject */
             false,
             cmds,
             -1
@@ -3943,7 +3943,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T01:26:14.292Z
+                at 2024-06-11T01:24:54.010Z
             </div>
         <script src="../prettify.js"></script>
         <script>

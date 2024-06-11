@@ -63529,7 +63529,7 @@ import path10 from "path";
 import url from "url";
 var createIgnore = import_ignore.default.default;
 var slash = path10.sep === "\\" <span class="branch-0 cbranch-no" title="branch not covered" >? <span class="fstat-no" title="function not covered" >(filePath) =&gt; string_replace_all_default(</span></span>
-<span class="cstat-no" title="statement not covered" >  /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >  /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >  false,</span>
 <span class="cstat-no" title="statement not covered" >  filePath,</span>
 <span class="cstat-no" title="statement not covered" >  "\\",</span>
@@ -63721,7 +63721,7 @@ function countEndOfLineChars(text, eol) {
 }
 function normalizeEndOfLine(text) {
   return string_replace_all_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     text,
     /\r\n?/g,
@@ -64196,7 +64196,7 @@ function mapDoc(doc2, cb) {
 function breakParentGroup(groupStack) {
   if (groupStack.length &gt; 0) {
     const parentGroup = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       groupStack,
       -1
@@ -64241,12 +64241,12 @@ function propagateBreaks(doc2) {
 function stripTrailingHardlineFromParts(parts) {
   parts = [...parts];
   while (parts.length &gt;= 2 &amp;&amp; at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     parts,
     -2
   ).type === DOC_TYPE_LINE &amp;&amp; at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     parts,
     -1
@@ -64255,7 +64255,7 @@ function stripTrailingHardlineFromParts(parts) {
   }
   if (parts.length &gt; 0) {
     const lastPart = stripTrailingHardlineFromDoc(at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       parts,
       -1
@@ -64343,7 +64343,7 @@ function cleanDocFn(doc2) {
         }
         const [currentPart, ...restParts] = Array.isArray(part) ? part : [part];
         if (typeof currentPart === "string" &amp;&amp; typeof at_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           parts,
           -1
@@ -64578,7 +64578,7 @@ function fits(next, restCommands, width, hasLineSuffix, groupModeMap, mustBeFlat
         }
         const groupMode = doc2.break ? MODE_BREAK : mode;
         const contents = doc2.expandedStates &amp;&amp; groupMode === MODE_BREAK ? at_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           doc2.expandedStates,
           -1
@@ -64645,7 +64645,7 @@ function printDocToString(doc2, options8) {
     switch (get_doc_type_default(doc3)) {
       case DOC_TYPE_STRING: {
         const formatted = newLine !== "\n" ? string_replace_all_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           doc3,
           "\n",
@@ -64715,7 +64715,7 @@ function printDocToString(doc2, options8) {
             } else {
               if (doc3.expandedStates) {
                 const mostExpanded = at_default(
-                  /* isOptionalObject*/
+                  /* isOptionalObject */
                   false,
                   doc3.expandedStates,
                   -1
@@ -64763,7 +64763,7 @@ function printDocToString(doc2, options8) {
         }
         if (doc3.id) {
           groupModeMap[doc3.id] = at_default(
-            /* isOptionalObject*/
+            /* isOptionalObject */
             false,
             cmds,
             -1
@@ -64979,7 +64979,7 @@ var AstPath = class {
       siblings
     } = this;
     return at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       stack2,
       siblings === null ? -2 : -4
@@ -64988,7 +64988,7 @@ var AstPath = class {
   /** @type {number | null} */
   get index() {
     return this.siblings === null ? null : at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       this.stack,
       -2
@@ -64997,7 +64997,7 @@ var AstPath = class {
   /** @type {object} */
   get node() {
     return at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       this.stack,
       -1
@@ -65021,7 +65021,7 @@ var AstPath = class {
       stack: stack2
     } = this;
     const maybeArray = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       stack2,
       -3
@@ -65077,7 +65077,7 @@ var AstPath = class {
 <span class="cstat-no" title="statement not covered" >    } = stack2;</span>
 <span class="cstat-no" title="statement not covered" >    if (length &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >      return at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        stack2,</span>
 <span class="cstat-no" title="statement not covered" >        -2</span>
@@ -65089,7 +65089,7 @@ var AstPath = class {
   // this.stack.
   getValue() {
     return at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       this.stack,
       -1
@@ -65115,7 +65115,7 @@ var AstPath = class {
       length
     } = stack2;
     let value = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       stack2,
       -1
@@ -65151,7 +65151,7 @@ var AstPath = class {
       length
     } = stack2;
     let value = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       stack2,
       -1
@@ -66163,7 +66163,7 @@ function normalizeOptionSettings(settings) {
     };
     if (Array.isArray(option.default)) {
       option.default = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         option.default,
         -1
@@ -66319,7 +66319,7 @@ function optionInfoToSchema(optionInfo, {
   if (isCLI &amp;&amp; !optionInfo.array) {
     const originalPreprocess = parameters.preprocess || ((x) =&gt; x);
     parameters.preprocess = (value, schema2, utils) =&gt; schema2.preprocess(originalPreprocess(Array.isArray(value) ? at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       value,
       -1
@@ -66362,7 +66362,7 @@ function getParserPluginByParserName(plugins, parserName) {
 <span class="cstat-no" title="statement not covered" >    throw new Error("parserName is required.");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   const plugin = array_find_last_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     plugins,
     (plugin2) =&gt; plugin2.parsers &amp;&amp; Object.prototype.hasOwnProperty.call(plugin2.parsers, parserName)
@@ -66381,7 +66381,7 @@ function getPrinterPluginByAstFormat(plugins, astFormat) {
 <span class="cstat-no" title="statement not covered" >    throw new Error("astFormat is required.");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   const plugin = array_find_last_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     plugins,
     (plugin2) =&gt; plugin2.printers &amp;&amp; Object.prototype.hasOwnProperty.call(plugin2.printers, astFormat)
@@ -67085,7 +67085,7 @@ async function formatRange(originalText, opts) {
       cursorOffset += countEndOfLineChars(formatted.slice(0, cursorOffset), "\n");
     }
     formatted = string_replace_all_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       formatted,
       "\n",
@@ -68491,7 +68491,7 @@ function makeString(rawText, enclosingQuote, unescapeUnnecessaryEscapes) {
   const otherQuote = enclosingQuote === '"' ? "'" : '"';
   const regex = /\\(.)|(["'])/gs;
   const raw = string_replace_all_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     rawText,
     regex,
@@ -68635,7 +68635,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T01:26:11.134Z
+                at 2024-06-11T01:24:50.873Z
             </div>
         <script src="../prettify.js"></script>
         <script>

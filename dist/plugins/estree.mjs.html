@@ -24287,7 +24287,7 @@ function makeString(rawText2, enclosingQuote, unescapeUnnecessaryEscapes) {
   const otherQuote = enclosingQuote === '"' ? "'" : '"';
   const regex = /\\(.)|(["'])/gs;
   const raw = string_replace_all_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     rawText2,
     regex,
@@ -25817,7 +25817,7 @@ function needsHardlineAfterDanglingComment(node) {
     return false;
   }
   const lastDanglingComment = at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     getComments(node, CommentCheckFlags.Dangling),
     -1
@@ -25994,7 +25994,7 @@ function hasRestParameter(node) {
   }
   const parameters = getFunctionParameters(node);
   return ((_a = at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     parameters,
     -1
@@ -26230,7 +26230,7 @@ function clean(original, cloned, parent) {
 <span class="cstat-no" title="statement not covered" >  }</span>
   if (original.type === "JSXAttribute" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; ((_a = original.value) == null ? void 0 : _a.type) === "Literal" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; /["']|&amp;quot;|&amp;apos;/.test(original.value.value))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    cloned.value.value = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      original.value.value,</span>
 <span class="cstat-no" title="statement not covered" >      /["']|&amp;quot;|&amp;apos;/g,</span>
@@ -26646,7 +26646,7 @@ function willBreak(doc) {
 function breakParentGroup(groupStack) {
   if (groupStack.length &gt; 0) {
     const parentGroup = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       groupStack,
       -1
@@ -26736,7 +26736,7 @@ function cleanDocFn(doc) {
         }
         const [currentPart, ...restParts] = Array.isArray(part) ? part : [part];
         if (typeof currentPart === "string" &amp;&amp; typeof at_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           parts,
           -1
@@ -27113,7 +27113,7 @@ function handleClassComments({
   if (classLikeNodeTypes.has(enclosingNode == null ? void 0 : enclosingNode.type)) {
     if (is_non_empty_array_default(enclosingNode.decorators) &amp;&amp; !((followingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: followingNode.type) === "Decorator")) {
       addTrailingComment(at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         enclosingNode.decorators,
         -1
@@ -27458,7 +27458,7 @@ function handleLastUnionElementInExpression({
 }) {
   if (isUnionType(precedingNode) &amp;&amp; ((enclosingNode.type === "TSArrayType" || enclosingNode.type === "ArrayTypeAnnotation") &amp;&amp; !followingNode || isIntersectionType(enclosingNode))) {
     addTrailingComment(at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       precedingNode.types,
       -1
@@ -27522,7 +27522,7 @@ function isGap(text, {
 }) {
   if (parser === "flow" || parser === "babel-flow") {
     text = string_replace_all_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       text,
       /[\s(]/g,
@@ -27737,7 +27737,7 @@ function fits(next, restCommands, width, hasLineSuffix, groupModeMap, mustBeFlat
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const groupMode = doc.break ? MODE_BREAK : mode;</span>
 <span class="cstat-no" title="statement not covered" >        const contents = doc.expandedStates &amp;&amp; groupMode === MODE_BREAK ? at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          doc.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
@@ -27804,7 +27804,7 @@ function printDocToString(doc, options2) {
     switch (get_doc_type_default(doc2)) {
       case DOC_TYPE_STRING: {
         const formatted = newLine !== "\n" <span class="branch-0 cbranch-no" title="branch not covered" >? string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          doc2,</span>
 <span class="cstat-no" title="statement not covered" >          "\n",</span>
@@ -27874,7 +27874,7 @@ function printDocToString(doc, options2) {
             } else {
               if (doc2.expandedStates) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                const mostExpanded = at_default(</span>
-<span class="cstat-no" title="statement not covered" >                  /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >                  /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >                  false,</span>
 <span class="cstat-no" title="statement not covered" >                  doc2.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >                  -1</span>
@@ -27922,7 +27922,7 @@ function printDocToString(doc, options2) {
         }
         if (doc2.id) {
           groupModeMap[doc2.id] = at_default(
-            /* isOptionalObject*/
+            /* isOptionalObject */
             false,
             cmds,
             -1
@@ -28223,7 +28223,7 @@ function printJestEachTemplateLiteral(path, options2, print3) {
     }];
     for (let i = 1; i &lt; node.quasis.length; i++) {
       const row = at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         tableBody,
         -1
@@ -28275,7 +28275,7 @@ function escapeTemplateCharacters(doc, raw) {
   return mapDoc(doc, (currentDoc) =&gt; {
     if (typeof currentDoc === "string") {
       return raw ? string_replace_all_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         currentDoc,
         /(\\*)`/g,
@@ -28287,7 +28287,7 @@ function escapeTemplateCharacters(doc, raw) {
 }
 function uncookTemplateElementValue(cookedValue) {
   return string_replace_all_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     cookedValue,
     /([\\`]|\${)/g,
@@ -28531,7 +28531,7 @@ async function printEmbedHtmlLike(parser, textToDoc, print3, path, options2) {
           component = uncookTemplateElementValue(component);
           if (options2.__embeddedInHtml) {
             component = string_replace_all_default(
-              /* isOptionalObject*/
+              /* isOptionalObject */
               false,
               component,
               /&lt;\/(?=script\b)/gi,
@@ -28578,7 +28578,7 @@ async function printEmbedMarkdown(textToDoc, print3, path) {
     node
   } = path;
   let text = string_replace_all_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     node.quasis[0].value.raw,
     /((?:\\\\)*)\\`/g,
@@ -28588,7 +28588,7 @@ async function printEmbedMarkdown(textToDoc, print3, path) {
   const hasIndent = indentation !== "";
   if (hasIndent) {
     text = string_replace_all_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       text,
       new RegExp(`^${indentation}`, "gm"),
@@ -29658,7 +29658,7 @@ var WhitespaceUtils = class {
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  hasTrailingWhitespace(text) {</span>
 <span class="cstat-no" title="statement not covered" >    return __privateGet(this, _whitespaceCharacters).has(at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      text,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -29746,7 +29746,7 @@ function printJsxElementInternal(path, options2, print3) {
     }
   }
   while (children.length &gt; 0 &amp;&amp; isEmptyStringOrAnyLine(at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     children,
     -1
@@ -29821,7 +29821,7 @@ function printJsxChildren(path, options2, print3, jsxWhitespace, isFacebookTrans
         }
         let endWhitespace;
         if (at_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           words,
           -1
@@ -29842,7 +29842,7 @@ function printJsxChildren(path, options2, print3, jsxWhitespace, isFacebookTrans
         if (endWhitespace !== void 0) {
           if (/\n/.test(endWhitespace)) {
             parts.push(separatorWithWhitespace(isFacebookTranslationTag, at_default(
-              /* isOptionalObject*/
+              /* isOptionalObject */
               false,
               parts,
               -1
@@ -29852,7 +29852,7 @@ function printJsxChildren(path, options2, print3, jsxWhitespace, isFacebookTrans
           }
         } else {
           parts.push(separatorNoWhitespace(isFacebookTranslationTag, at_default(
-            /* isOptionalObject*/
+            /* isOptionalObject */
             false,
             parts,
             -1
@@ -29923,10 +29923,10 @@ function printJsxAttribute(path, options2, print3) {
     if (isStringLiteral(node.value)) {
       const raw = rawText(node.value);
       let final = string_replace_all_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         string_replace_all_default(
-          /* isOptionalObject*/
+          /* isOptionalObject */
           false,
           raw.slice(1, -1),
           "&amp;apos;",
@@ -29937,13 +29937,13 @@ function printJsxAttribute(path, options2, print3) {
       );
       const quote = get_preferred_quote_default(final, options2.jsxSingleQuote);
       final = quote === '"' ? string_replace_all_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         final,
         '"',
         "&amp;quot;"
       ) : string_replace_all_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         final,
         "'",
@@ -30006,7 +30006,7 @@ function printEndOfOpeningTag(node, options2, nameHasComments) {
 }
 function shouldPrintBracketSameLine(node, options2, nameHasComments) {
   const lastAttrHasTrailingComments = node.attributes.length &gt; 0 &amp;&amp; hasComment(at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     node.attributes,
     -1
@@ -30228,7 +30228,7 @@ function printBinaryishExpression(path, options2, print3) {
     return chain;
   }
   const jsxPart = at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     parts,
     -1
@@ -30566,14 +30566,14 @@ function couldExpandArg(arg, arrowChainRecursion = false) {
 function shouldExpandLastArg(args, argDocs, options2) {
   var _a, _b;
   const lastArg = at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     args,
     -1
   );
   if (args.length === 1) {
     const lastArgDoc = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       argDocs,
       -1
@@ -30583,7 +30583,7 @@ function shouldExpandLastArg(args, argDocs, options2) {
     }
   }
   const penultimateArg = at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     args,
     -2
@@ -30826,7 +30826,7 @@ function printMemberChain(path, options2, print3) {
       return firstNode.type === "ThisExpression" || firstNode.type === "Identifier" &amp;&amp; (isFactory(firstNode.name) || isExpressionStatement &amp;&amp; isShort(firstNode.name) || hasComputed);
     }
     const lastNode = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       groups2[0],
       -1
@@ -30837,7 +30837,7 @@ function printMemberChain(path, options2, print3) {
   function printGroup(printedGroup) {
     const printed = printedGroup.map((tuple) =&gt; tuple.printed);
     if (printedGroup.length &gt; 0 &amp;&amp; at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       printedGroup,
       -1
@@ -30858,7 +30858,7 @@ function printMemberChain(path, options2, print3) {
   const flatGroups = groups.flat();
   const nodeHasComment = flatGroups.slice(1, -1).some((node2) =&gt; hasComment(node2.node, CommentCheckFlags.Leading)) || flatGroups.slice(0, -1).some((node2) =&gt; hasComment(node2.node, CommentCheckFlags.Trailing)) || groups[cutoff] &amp;&amp; hasComment(groups[cutoff][0].node, CommentCheckFlags.Leading);
   if (groups.length &lt;= cutoff &amp;&amp; !nodeHasComment &amp;&amp; !groups.some((g) =&gt; at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     g,
     -1
@@ -30869,7 +30869,7 @@ function printMemberChain(path, options2, print3) {
     return group(oneLine);
   }
   const lastNodeBeforeIndent = at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     groups[shouldMerge ? 1 : 0],
     -1
@@ -30881,10 +30881,10 @@ function printMemberChain(path, options2, print3) {
   }) =&gt; node2).filter(isCallExpression);
   function lastGroupWillBreakAndOtherCallsHaveFunctionArguments() {
     const lastGroupNode = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         groups,
         -1
@@ -30892,7 +30892,7 @@ function printMemberChain(path, options2, print3) {
       -1
     ).node;
     const lastGroupDoc = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       printedGroups,
       -1
@@ -31821,7 +31821,7 @@ function printArray(path, options2, print3) {
     parts.push(printEmptyArrayElements(path, options2, openBracket, closeBracket));
   } else {
     const lastElem = at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       elements,
       -1
@@ -32366,7 +32366,7 @@ function printStatementSequence(path, options2, print3, property) {
   } = path;
   const parts = [];
   const lastStatement = array_find_last_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     node[property],
     (statement) =&gt; statement.type !== "EmptyStatement"
@@ -32430,7 +32430,7 @@ function printBlockBody(path, options2, print3) {
     if (hasBody || hasDanglingComments) {
       parts.push(hardline);
       if (isNextLineEmpty2(at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         node.directives,
         -1
@@ -33367,7 +33367,7 @@ function printObject(path, options2, print3) {
       const hasLineComments = hasComment(node, CommentCheckFlags.Line);
       const printedDanglingComments = printDanglingComments(path, options2);
       printed = [printedDanglingComments, hasLineComments || has_newline_default(options2.originalText, locEnd(at_default(
-        /* isOptionalObject*/
+        /* isOptionalObject */
         false,
         getComments(node),
         -1
@@ -33378,7 +33378,7 @@ function printObject(path, options2, print3) {
     props.push([...separatorParts, ...printed]);
   }
   const lastElem = (_a = at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     propsAndLoc,
     -1
@@ -34311,7 +34311,7 @@ function printComponentParameters(path, print3, options2) {
 function hasRestParameter2(componentNode, parameters) {
   var _a;
   return componentNode.rest || ((_a = at_default(
-    /* isOptionalObject*/
+    /* isOptionalObject */
     false,
     parameters,
     -1
@@ -35524,7 +35524,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T01:26:14.292Z
+                at 2024-06-11T01:24:54.010Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

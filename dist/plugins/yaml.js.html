@@ -22526,7 +22526,7 @@
   }
   function getLastDescendantNode(node) {
     return is_non_empty_array_default(node.children) ? getLastDescendantNode(at_default(
-      /* isOptionalObject*/
+      /* isOptionalObject */
       false,
       node.children,
       -1
@@ -22542,14 +22542,14 @@
     if (node.type === "documentBody") {
       const documentHead = path.parent.head;
       return hasEndComments(documentHead) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isPrettierIgnore(at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        documentHead.endComments,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
       ));
     }
     return hasLeadingComments(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isPrettierIgnore(at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      node.leadingComments,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -22607,17 +22607,17 @@
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : splitWithSingleSpace(lineContent)).reduce((reduced, lineContentWords, index) =&gt; index !== 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; lineContentWords.length &gt; 0 &amp;&amp; !// trailing backslash in quoteDouble should be preserved</span></span>
 <span class="cstat-no" title="statement not covered" >    (nodeType === "quoteDouble" &amp;&amp; at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        reduced,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
 <span class="cstat-no" title="statement not covered" >      ),</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
 <span class="cstat-no" title="statement not covered" >    ).endsWith("\\")) ? [...reduced.slice(0, -1), [...at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      reduced,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -22641,24 +22641,24 @@
       return removeUnnecessaryTrailingNewlines(rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : [lineContent]));
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return removeUnnecessaryTrailingNewlines(rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : splitWithSingleSpace(lineContent)).reduce((reduced, lineContentWords, index) =&gt; index !== 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; lineContentWords.length &gt; 0 &amp;&amp; !/^\s/.test(lineContentWords[0]) &amp;&amp; !/^\s|\s$/.test(at_default(</span></span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      reduced,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
 <span class="cstat-no" title="statement not covered" >    )) ? [...reduced.slice(0, -1), [...at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      reduced,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
 <span class="cstat-no" title="statement not covered" >    ), ...lineContentWords]] : [...reduced, lineContentWords], []).map((lineContentWords) =&gt; lineContentWords.reduce((reduced, word) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >      // disallow trailing spaces</span>
 <span class="cstat-no" title="statement not covered" >      reduced.length &gt; 0 &amp;&amp; /\s$/.test(at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        reduced,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
 <span class="cstat-no" title="statement not covered" >      )) ? [...reduced.slice(0, -1), at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        reduced,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
@@ -22667,7 +22667,7 @@
 <span class="cstat-no" title="statement not covered" >    function removeUnnecessaryTrailingNewlines(lineContents) {</span>
       if (node.chomping === "keep") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          lineContents,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
@@ -22799,7 +22799,7 @@
 <span class="cstat-no" title="statement not covered" >      bracketSpacing = line;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const lastItem = at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      node.children,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
@@ -23112,10 +23112,10 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (raw.includes(doubleQuote)) {</span>
 <span class="cstat-no" title="statement not covered" >          return [singleQuote, printFlowScalarContent(node.type, node.type === "quoteDouble" ? string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >            false,</span>
 <span class="cstat-no" title="statement not covered" >            string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >              /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >              /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >              false,</span>
 <span class="cstat-no" title="statement not covered" >              raw,</span>
 <span class="cstat-no" title="statement not covered" >              String.raw`\"`,</span>
@@ -23129,7 +23129,7 @@
 <span class="cstat-no" title="statement not covered" >          return [doubleQuote, printFlowScalarContent(node.type, node.type === "quoteSingle" ? (</span>
 <span class="cstat-no" title="statement not covered" >            // single quote needs to be escaped by 2 single quotes in quoteSingle</span>
 <span class="cstat-no" title="statement not covered" >            string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >              /* isOptionalObject*/</span>
+<span class="cstat-no" title="statement not covered" >              /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >              false,</span>
 <span class="cstat-no" title="statement not covered" >              raw,</span>
 <span class="cstat-no" title="statement not covered" >              "''",</span>
@@ -24697,7 +24697,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T01:26:14.292Z
+                at 2024-06-11T01:24:54.010Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
