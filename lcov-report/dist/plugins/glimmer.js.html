@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.21% </span>
+                <span class="strong">61.19% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5607/9159</span>
+                <span class='fraction'>5604/9158</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.21% </span>
+                <span class="strong">61.19% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5607/9159</span>
+                <span class='fraction'>5604/9158</span>
             </div>
         
             
@@ -9220,8 +9220,7 @@
 <a name='L9155'></a><a href='#L9155'>9155</a>
 <a name='L9156'></a><a href='#L9156'>9156</a>
 <a name='L9157'></a><a href='#L9157'>9157</a>
-<a name='L9158'></a><a href='#L9158'>9158</a>
-<a name='L9159'></a><a href='#L9159'>9159</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9158'></a><a href='#L9158'>9158</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9707,6 +9706,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9747,11 +9749,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10067,7 +10064,6 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -10335,10 +10331,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18864,6 +18862,9 @@
 <span class="cstat-no" title="statement not covered" >    if (original.type === "AttrNode" &amp;&amp; original.name.toLowerCase() === "class") {</span>
 <span class="cstat-no" title="statement not covered" >      delete cloned.value;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (original.type === "PathExpression") {</span>
+<span class="cstat-no" title="statement not covered" >      cloned.head = original.head.original;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   clean.ignoredProperties = /* @__PURE__ */ new Set(["loc", "selfClosing"]);
   var clean_default = clean;
@@ -18911,9 +18912,6 @@
 &nbsp;
   // src/language-handlebars/visitor-keys.evaluate.js
   var visitor_keys_evaluate_default = {
-    "VarHead": [],
-    "ThisHead": [],
-    "AtHead": [],
     "Template": [
       "body"
     ],
@@ -18957,9 +18955,7 @@
       "params",
       "hash"
     ],
-    "PathExpression": [
-      "head"
-    ],
+    "PathExpression": [],
     "StringLiteral": [],
     "BooleanLiteral": [],
     "NumberLiteral": [],
@@ -19211,9 +19207,7 @@
 <span class="cstat-no" title="statement not covered" >        return ["{{", isLeftWhiteSpaceSensitive ? "~" : "", "!", dashes, node.value, dashes, isRightWhitespaceSensitive ? "~" : "", "}}"];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       case "PathExpression":
-        return printPathExpression(node, print2);
-<span class="branch-0 cbranch-no" title="branch not covered" >      case "AtHead":</span>
-<span class="cstat-no" title="statement not covered" >        return node.name;</span>
+        return printPathExpression(node);
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "BooleanLiteral":</span>
 <span class="cstat-no" title="statement not covered" >        return String(node.value);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "CommentStatement":</span>
@@ -19226,6 +19220,7 @@
 <span class="cstat-no" title="statement not covered" >        return "undefined";</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "NullLiteral":</span>
 <span class="cstat-no" title="statement not covered" >        return "null";</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "AtHead":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "VarHead":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ThisHead":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      default:</span>
@@ -19492,11 +19487,13 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var PATH_EXPRESSION_FORBIDDEN_CHARACTERS = new Set("!\"#%&amp;'()*+,./;&lt;=&gt;@[\\]^`{|}~");
   var PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART = /* @__PURE__ */ new Set(["true", "false", "null", "undefined"]);
-  var isPathExpressionPartNeedBrackets = (part, index) =&gt; index !== 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART.has(part) </span>|| /\s/.test(part) || /^\d/.test(part) || Array.prototype.some.call(part, (character) =&gt; PATH_EXPRESSION_FORBIDDEN_CHARACTERS.has(character));
-  function printPathExpression(node, print2) {
-    if (node.head.type === "AtHead") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return print2("head");</span>
+  var isPathExpressionPartNeedBrackets = (part, index) =&gt; {
+    if (index === 0 &amp;&amp; part.startsWith("@")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+    return index !== 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART.has(part) </span>|| /\s/.test(part) || /^\d/.test(part) || Array.prototype.some.call(part, (character) =&gt; PATH_EXPRESSION_FORBIDDEN_CHARACTERS.has(character));
+  };
+  function printPathExpression(node) {
     if (node.tail.length === 0 &amp;&amp; node.original.includes("/")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return node.original;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -27544,7 +27541,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-11T01:24:50.873Z
+                at 2024-06-12T01:24:48.255Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
