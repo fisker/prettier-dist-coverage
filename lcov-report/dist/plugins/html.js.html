@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.21% </span>
+                <span class="strong">74.2% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6948/9362</span>
+                <span class='fraction'>6948/9363</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.21% </span>
+                <span class="strong">74.2% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6948/9362</span>
+                <span class='fraction'>6948/9363</span>
             </div>
         
             
@@ -9424,7 +9424,8 @@
 <a name='L9359'></a><a href='#L9359'>9359</a>
 <a name='L9360'></a><a href='#L9360'>9360</a>
 <a name='L9361'></a><a href='#L9361'>9361</a>
-<a name='L9362'></a><a href='#L9362'>9362</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9362'></a><a href='#L9362'>9362</a>
+<a name='L9363'></a><a href='#L9363'>9363</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11838,6 +11839,7 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -19282,7 +19284,7 @@
     }
     split(text, captureWhitespace = false) {
       const pattern = `[${escapeStringRegexp([...__privateGet(this, _whitespaceCharacters)].join(""))}]+`;
-      const regexp = new RegExp(captureWhitespace <span class="branch-0 cbranch-no" title="branch not covered" >? `(${pattern})` </span>: pattern);
+      const regexp = new RegExp(captureWhitespace <span class="branch-0 cbranch-no" title="branch not covered" >? `(${pattern})` </span>: pattern, "u");
       return text.split(regexp);
     }
     hasWhitespaceCharacter(text) {
@@ -19427,7 +19429,7 @@
 <span class="cstat-no" title="statement not covered" >      node.sourceSpan.start.offset,</span>
 <span class="cstat-no" title="statement not covered" >      node.sourceSpan.end.offset</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    const isEmpty = /^\s*$/.test(content);</span>
+<span class="cstat-no" title="statement not covered" >    const isEmpty = /^\s*$/u.test(content);</span>
 <span class="cstat-no" title="statement not covered" >    if (isEmpty) {</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -19447,7 +19449,7 @@
   var get_interpreter_default = void 0;
 &nbsp;
   // src/utils/infer-parser.js
-  var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/).pop();</span>
+  var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/u).pop();</span>
 <span class="fstat-no" title="function not covered" >  function getLanguageByFileName(languages, file) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!file) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -19599,7 +19601,7 @@
 <span class="cstat-no" title="statement not covered" >    /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >    false,</span>
 <span class="cstat-no" title="statement not covered" >    string,</span>
-<span class="cstat-no" title="statement not covered" >    /^[\t\f\r ]*\n/g,</span>
+<span class="cstat-no" title="statement not covered" >    /^[\t\f\r ]*\n/gu,</span>
 <span class="cstat-no" title="statement not covered" >    ""</span>
   );
   var htmlTrimPreserveIndentation = <span class="fstat-no" title="function not covered" >(string) =&gt; htmlTrimLeadingBlankLines(html_whitespace_utils_default.trimEnd(string));</span>
@@ -19871,7 +19873,7 @@
       return "block";
     }
     if (((_a = node.prev) == null ? void 0 : _a.type) === "comment") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      const match = node.prev.value.match(/^\s*display:\s*([a-z]+)\s*$/);</span>
+<span class="cstat-no" title="statement not covered" >      const match = node.prev.value.match(/^\s*display:\s*([a-z]+)\s*$/u);</span>
 <span class="cstat-no" title="statement not covered" >      if (match) {</span>
 <span class="cstat-no" title="statement not covered" >        return match[1];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -19971,7 +19973,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/language-html/embed/angular-interpolation.js
-  var interpolationRegex = /{{(.+?)}}/s;
+  var interpolationRegex = /\{\{(.+?)\}\}/su;
 <span class="fstat-no" title="function not covered" >  async function printAngularInterpolation(text, textToDoc) {</span>
 <span class="cstat-no" title="statement not covered" >    const parts = [];</span>
 <span class="cstat-no" title="statement not covered" >    for (const [index, part] of text.split(interpolationRegex).entries()) {</span>
@@ -20023,15 +20025,15 @@
     if (attributeName.startsWith("(") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; attributeName.endsWith(")") </span>|| attributeName.startsWith("on-")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return printNgAction;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (attributeName.startsWith("[") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; attributeName.endsWith("]") </span>|| /^bind(?:on)?-/.test(attributeName) || // Unofficial rudimentary support for some of the most used directives of AngularJS 1.x
-    /^ng-(?:if|show|hide|class|style)$/.test(attributeName)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (attributeName.startsWith("[") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; attributeName.endsWith("]") </span>|| /^bind(?:on)?-/u.test(attributeName) || // Unofficial rudimentary support for some of the most used directives of AngularJS 1.x
+    /^ng-(?:if|show|hide|class|style)$/u.test(attributeName)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return printNgBinding;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (attributeName.startsWith("*")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return printNgDirective;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const value = getUnescapedAttributeValue(node);
-    if (/^i18n(?:-.+)?$/.test(attributeName)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (/^i18n(?:-.+)?$/u.test(attributeName)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return () =&gt; printExpand(</span>
 <span class="cstat-no" title="statement not covered" >        fill(getTextValueParts(node, value.trim())),</span>
 <span class="cstat-no" title="statement not covered" >        !value.includes("@@")</span>
@@ -20048,7 +20050,7 @@
     const { node } = path;
     const value = getUnescapedAttributeValue(node);
     if (node.fullName === "class" &amp;&amp; !options2.parentParser &amp;&amp; !value.includes("{{")) {
-      return () =&gt; value.trim().split(/\s+/).join(" ");
+      return () =&gt; value.trim().split(/\s+/u).join(" ");
     }
   }
   var class_names_default = printClassNames;
@@ -20325,8 +20327,8 @@
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function isVueEventBindingExpression(eventBindingValue) {</span>
-<span class="cstat-no" title="statement not covered" >    const fnExpRE = /^(?:[\w$]+|\([^)]*\))\s*=&gt;|^function\s*\(/;</span>
-<span class="cstat-no" title="statement not covered" >    const simplePathRE = /^[$_a-z][\w$]*(?:\.[$_a-z][\w$]*|\['[^']*']|\["[^"]*"]|\[\d+]|\[[$_a-z][\w$]*])*$/i;</span>
+<span class="cstat-no" title="statement not covered" >    const fnExpRE = /^(?:[\w$]+|\([^)]*\))\s*=&gt;|^function\s*\(/u;</span>
+<span class="cstat-no" title="statement not covered" >    const simplePathRE = /^[$_a-z][\w$]*(?:\.[$_a-z][\w$]*|\['[^']*'\]|\["[^"]*"\]|\[\d+\]|\[[$_a-z][\w$]*\])*$/iu;</span>
 <span class="cstat-no" title="statement not covered" >    const value = eventBindingValue.trim();</span>
 <span class="cstat-no" title="statement not covered" >    return fnExpRE.test(value) || simplePathRE.test(value);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -20348,9 +20350,9 @@
 <span class="cstat-no" title="statement not covered" >    })];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function parseVueVForDirective(value) {</span>
-<span class="cstat-no" title="statement not covered" >    const forAliasRE = /(.*?)\s+(in|of)\s+(.*)/s;</span>
-<span class="cstat-no" title="statement not covered" >    const forIteratorRE = /,([^,\]}]*)(?:,([^,\]}]*))?$/;</span>
-<span class="cstat-no" title="statement not covered" >    const stripParensRE = /^\(|\)$/g;</span>
+<span class="cstat-no" title="statement not covered" >    const forAliasRE = /(.*?)\s+(in|of)\s+(.*)/su;</span>
+<span class="cstat-no" title="statement not covered" >    const forIteratorRE = /,([^,\]}]*)(?:,([^,\]}]*))?$/u;</span>
+<span class="cstat-no" title="statement not covered" >    const stripParensRE = /^\(|\)$/gu;</span>
 <span class="cstat-no" title="statement not covered" >    const inMatch = value.match(forAliasRE);</span>
 <span class="cstat-no" title="statement not covered" >    if (!inMatch) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -20455,7 +20457,7 @@
     }
     if (
       // lit-html: html`&lt;my-element obj=${obj}&gt;&lt;/my-element&gt;`
-      /^PRETTIER_HTML_PLACEHOLDER_\d+_\d+_IN_JS$/.test(options2.originalText.slice(node.valueSpan.start.offset, node.valueSpan.end.offset)) || // lwc: html`&lt;my-element data-for={value}&gt;&lt;/my-element&gt;`
+      /^PRETTIER_HTML_PLACEHOLDER_\d+_\d+_IN_JS$/u.test(options2.originalText.slice(node.valueSpan.start.offset, node.valueSpan.end.offset)) || // lwc: html`&lt;my-element data-for={value}&gt;&lt;/my-element&gt;`
       options2.parser === "lwc" &amp;&amp; node.value.startsWith("{") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.value.endsWith("}")</span>
     ) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return [node.rawName, "=", node.value];</span>
@@ -20584,14 +20586,14 @@
     return node.next &amp;&amp; !isTextLikeNode(node.next) &amp;&amp; isTextLikeNode(node) &amp;&amp; node.isTrailingSpaceSensitive &amp;&amp; !node.hasTrailingSpaces;
   }
 <span class="fstat-no" title="function not covered" >  function getPrettierIgnoreAttributeCommentData(value) {</span>
-<span class="cstat-no" title="statement not covered" >    const match = value.trim().match(/^prettier-ignore-attribute(?:\s+(.+))?$/s);</span>
+<span class="cstat-no" title="statement not covered" >    const match = value.trim().match(/^prettier-ignore-attribute(?:\s+(.+))?$/su);</span>
 <span class="cstat-no" title="statement not covered" >    if (!match) {</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (!match[1]) {</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return match[1].split(/\s+/);</span>
+<span class="cstat-no" title="statement not covered" >    return match[1].split(/\s+/u);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function needsToBorrowParentOpeningTagEndMarker(node) {
     return !node.prev &amp;&amp; node.isLeadingSpaceSensitive &amp;&amp; !node.hasLeadingSpaces;
@@ -20741,7 +20743,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return async (textToDoc, print2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            const content = get_node_content_default(node, options2);</span>
-<span class="cstat-no" title="statement not covered" >            let isEmpty = /^\s*$/.test(content);</span>
+<span class="cstat-no" title="statement not covered" >            let isEmpty = /^\s*$/u.test(content);</span>
 <span class="cstat-no" title="statement not covered" >            let doc = "";</span>
 <span class="cstat-no" title="statement not covered" >            if (!isEmpty) {</span>
 <span class="cstat-no" title="statement not covered" >              doc = await textToDoc(htmlTrimPreserveIndentation(content), {</span>
@@ -20767,7 +20769,7 @@
           const parser2 = inferElementParser(node.parent, options2);
           if (parser2) {
             return async (textToDoc) =&gt; {
-              const value = parser2 === "markdown" <span class="branch-0 cbranch-no" title="branch not covered" >? dedentString(node.value.replace(/^[^\S\n]*\n/, "")) </span>: node.value;
+              const value = parser2 === "markdown" <span class="branch-0 cbranch-no" title="branch not covered" >? dedentString(node.value.replace(/^[^\S\n]*\n/u, "")) </span>: node.value;
               const textToDocOptions = { parser: parser2, __embeddedInHtml: true };
               if (options2.parser === "html" &amp;&amp; parser2 === "babel") {
                 let sourceType = "script";
@@ -20891,7 +20893,7 @@
 &nbsp;
   // src/language-html/pragma.js
 <span class="fstat-no" title="function not covered" >  function hasPragma(text) {</span>
-<span class="cstat-no" title="statement not covered" >    return /^\s*&lt;!--\s*@(?:format|prettier)\s*--&gt;/.test(text);</span>
+<span class="cstat-no" title="statement not covered" >    return /^\s*&lt;!--\s*@(?:format|prettier)\s*--&gt;/u.test(text);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function insertPragma(text) {</span>
 <span class="cstat-no" title="statement not covered" >    return "&lt;!-- @format --&gt;\n\n" + text;</span>
@@ -21199,7 +21201,8 @@
         return line;
       }
       if ((node.lastChild.type === "comment" || node.lastChild.type === "text" &amp;&amp; node.isWhitespaceSensitive &amp;&amp; node.isIndentationSensitive) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; new RegExp(</span>
-<span class="cstat-no" title="statement not covered" >        `\\n[\\t ]{${options2.tabWidth * (path.ancestors.length - 1)}}$`</span>
+<span class="cstat-no" title="statement not covered" >        `\\n[\\t ]{${options2.tabWidth * (path.ancestors.length - 1)}}$`,</span>
+<span class="cstat-no" title="statement not covered" >        "u"</span>
       ).test(node.lastChild.value)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return "";</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -21568,7 +21571,7 @@
     if (options2.parser === "html") {
       return;
     }
-    const interpolationRegex2 = /{{(.+?)}}/s;
+    const interpolationRegex2 = /\{\{(.+?)\}\}/su;
     ast.walk((node) =&gt; {
       if (!canHaveInterpolation(node)) {
         return;
@@ -21681,7 +21684,7 @@
       if (node.type !== "element") {
         return;
       }
-      node.hasHtmComponentClosingTag = node.endSourceSpan &amp;&amp; /^&lt;\s*\/\s*\/\s*&gt;$/.test(
+      node.hasHtmComponentClosingTag = node.endSourceSpan &amp;&amp; /^&lt;\s*\/\s*\/\s*&gt;$/u.test(
         options2.originalText.slice(
           node.endSourceSpan.start.offset,
           node.endSourceSpan.end.offset
@@ -21756,7 +21759,7 @@
 <span class="cstat-no" title="statement not covered" >        return [printOpeningTagStart(node, options2), ...path.map(print2, "children"), printClosingTagEnd(node, options2)];</span>
       case "text": {
         if (node.parent.type === "interpolation") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          const trailingNewlineRegex = /\n[^\S\n]*$/;</span>
+<span class="cstat-no" title="statement not covered" >          const trailingNewlineRegex = /\n[^\S\n]*$/u;</span>
 <span class="cstat-no" title="statement not covered" >          const hasTrailingNewline = trailingNewlineRegex.test(node.value);</span>
 <span class="cstat-no" title="statement not covered" >          const value = hasTrailingNewline ? node.value.replace(trailingNewlineRegex, "") : node.value;</span>
 <span class="cstat-no" title="statement not covered" >          return [replaceEndOfLine(value), hasTrailingNewline ? hardline : ""];</span>
@@ -21771,8 +21774,8 @@
         return [group([printOpeningTagStart(node, options2), " ", string_replace_all_default(
           /* isOptionalObject */
           false,
-          node.value.replace(/^html\b/i, "html"),
-          /\s+/g,
+          node.value.replace(/^html\b/iu, "html"),
+          /\s+/gu,
           " "
         )]), printClosingTagEnd(node, options2)];
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "comment":</span>
@@ -26590,7 +26593,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const frontMatterEndIndex = endDelimiterIndex + 1 + DELIMITER_LENGTH;</span>
 <span class="cstat-no" title="statement not covered" >    const nextCharacter = text.charAt(frontMatterEndIndex + 1);</span>
-<span class="cstat-no" title="statement not covered" >    if (!/\s?/.test(nextCharacter)) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!/\s?/u.test(nextCharacter)) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const raw = text.slice(0, frontMatterEndIndex);</span>
@@ -26620,7 +26623,7 @@
 <span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        raw,</span>
-<span class="cstat-no" title="statement not covered" >        /[^\n]/g,</span>
+<span class="cstat-no" title="statement not covered" >        /[^\n]/gu,</span>
 <span class="cstat-no" title="statement not covered" >        " "</span>
 <span class="cstat-no" title="statement not covered" >      ) + text.slice(raw.length)</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
@@ -26768,15 +26771,15 @@
   // src/language-html/conditional-comment.js
   var parseFunctions = [{
     // &lt;!--[if ... ]&gt; ... &lt;![endif]--&gt;
-    regex: /^(\[if([^\]]*)]&gt;)(.*?)&lt;!\s*\[endif]$/s,
+    regex: /^(\[if([^\]]*)\]&gt;)(.*?)&lt;!\s*\[endif\]$/su,
     parse: parseIeConditionalStartEndComment
   }, {
     // &lt;!--[if ... ]&gt;&lt;!--&gt;
-    regex: /^\[if([^\]]*)]&gt;&lt;!$/,
+    regex: /^\[if([^\]]*)\]&gt;&lt;!$/u,
     parse: parseIeConditionalStartComment
   }, {
     // &lt;!--&lt;![endif]--&gt;
-    regex: /^&lt;!\s*\[endif]$/,
+    regex: /^&lt;!\s*\[endif\]$/u,
     parse: parseIeConditionalEndComment
   }];
 <span class="fstat-no" title="function not covered" >  function parseIeConditionalComment(node, parseHtml) {</span>
@@ -26818,7 +26821,7 @@
 <span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        condition.trim(),</span>
-<span class="cstat-no" title="statement not covered" >        /\s+/g,</span>
+<span class="cstat-no" title="statement not covered" >        /\s+/gu,</span>
 <span class="cstat-no" title="statement not covered" >        " "</span>
 <span class="cstat-no" title="statement not covered" >      ),</span>
 <span class="cstat-no" title="statement not covered" >      sourceSpan: node.sourceSpan,</span>
@@ -26834,7 +26837,7 @@
 <span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        condition.trim(),</span>
-<span class="cstat-no" title="statement not covered" >        /\s+/g,</span>
+<span class="cstat-no" title="statement not covered" >        /\s+/gu,</span>
 <span class="cstat-no" title="statement not covered" >        " "</span>
 <span class="cstat-no" title="statement not covered" >      ),</span>
 <span class="cstat-no" title="statement not covered" >      sourceSpan: node.sourceSpan</span>
@@ -27837,7 +27840,7 @@
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      node.name.toLowerCase(),</span>
-<span class="cstat-no" title="statement not covered" >      /\s+/g,</span>
+<span class="cstat-no" title="statement not covered" >      /\s+/gu,</span>
 <span class="cstat-no" title="statement not covered" >      " "</span>
 <span class="cstat-no" title="statement not covered" >    ).trim();</span>
 <span class="cstat-no" title="statement not covered" >    node.type = "angularControlFlowBlock";</span>
@@ -27942,7 +27945,7 @@
               attr.value = null;
             } else {
               attr.value = attr.valueSpan.toString();
-              if (/["']/.test(attr.value[0])) {
+              if (/["']/u.test(attr.value[0])) {
                 attr.value = attr.value.slice(1, -1);
               }
             }
@@ -28071,7 +28074,7 @@
 <span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        text.slice(0, offset),</span>
-<span class="cstat-no" title="statement not covered" >        /[^\n\r]/g,</span>
+<span class="cstat-no" title="statement not covered" >        /[^\n\r]/gu,</span>
 <span class="cstat-no" title="statement not covered" >        " "</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >      const realContent = subContent;</span>
@@ -28153,7 +28156,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-17T00:26:58.894Z
+                at 2024-06-18T00:26:36.316Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

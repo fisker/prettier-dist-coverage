@@ -30548,7 +30548,7 @@ var get_preferred_quote_default = getPreferredQuote;
 // src/utils/make-string.js
 function makeString(rawText, enclosingQuote, unescapeUnnecessaryEscapes) {
   const otherQuote = enclosingQuote === '"' ? "'" : '"';
-  const regex = /\\(.)|(["'])/gs;
+  const regex = /\\(.)|(["'])/gsu;
   const raw = string_replace_all_default(
     /* isOptionalObject */
     false,
@@ -30564,7 +30564,7 @@ function makeString(rawText, enclosingQuote, unescapeUnnecessaryEscapes) {
       if (quote) {
         return quote;
       }
-      return unescapeUnnecessaryEscapes <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/.test(escaped) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? escaped </span>: "\\" + escaped;
+      return unescapeUnnecessaryEscapes <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/u.test(escaped) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? escaped </span>: "\\" + escaped;
     }
   );
   return enclosingQuote + raw + enclosingQuote;
@@ -30628,7 +30628,7 @@ var ignoredProperties = /* @__PURE__ */ new Set([
 <span class="cstat-no" title="statement not covered" >  if (original.type === "css-comment" &amp;&amp; parent.type === "css-root" &amp;&amp; parent.nodes.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >    if (parent.nodes[0] === original || is_front_matter_default(parent.nodes[0]) &amp;&amp; parent.nodes[1] === original) {</span>
 <span class="cstat-no" title="statement not covered" >      delete cloned.text;</span>
-<span class="cstat-no" title="statement not covered" >      if (/^\*\s*@(?:format|prettier)\s*$/.test(original.text)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (/^\*\s*@(?:format|prettier)\s*$/u.test(original.text)) {</span>
 <span class="cstat-no" title="statement not covered" >        return null;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -30658,7 +30658,7 @@ var ignoredProperties = /* @__PURE__ */ new Set([
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      cloned.value,</span>
-<span class="cstat-no" title="statement not covered" >      /\s+/g,</span>
+<span class="cstat-no" title="statement not covered" >      /\s+/gu,</span>
 <span class="cstat-no" title="statement not covered" >      " "</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -30688,7 +30688,7 @@ var ignoredProperties = /* @__PURE__ */ new Set([
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      cloned.value,</span>
-<span class="cstat-no" title="statement not covered" >      /;$/g,</span>
+<span class="cstat-no" title="statement not covered" >      /;$/gu,</span>
 <span class="cstat-no" title="statement not covered" >      ""</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -30702,7 +30702,7 @@ var ignoredProperties = /* @__PURE__ */ new Set([
 <span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        cloned.value.trim(),</span>
-<span class="cstat-no" title="statement not covered" >        /^["']|["']$/g,</span>
+<span class="cstat-no" title="statement not covered" >        /^["']|["']$/gu,</span>
 <span class="cstat-no" title="statement not covered" >        ""</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >      delete cloned.quoted;</span>
@@ -30713,7 +30713,7 @@ var ignoredProperties = /* @__PURE__ */ new Set([
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      cloned.value,</span>
-<span class="cstat-no" title="statement not covered" >      /([\d+.e-]+)([a-z]*)/gi,</span>
+<span class="cstat-no" title="statement not covered" >      /([\d+.e-]+)([a-z]*)/giu,</span>
 <span class="cstat-no" title="statement not covered" >      (match, numStr, unit) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const num = Number(numStr);</span>
 <span class="cstat-no" title="statement not covered" >        return Number.isNaN(num) ? match : num + unit.toLowerCase();</span>
@@ -30769,7 +30769,7 @@ clean.ignoredProperties = ignoredProperties;
 <span class="cstat-no" title="statement not covered" >      "'",</span>
 <span class="cstat-no" title="statement not covered" >      '"'</span>
 <span class="cstat-no" title="statement not covered" >    ),</span>
-<span class="cstat-no" title="statement not covered" >    /\\([^\da-f])/gi,</span>
+<span class="cstat-no" title="statement not covered" >    /\\([^\da-f])/giu,</span>
 <span class="cstat-no" title="statement not covered" >    "$1"</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -30936,10 +30936,10 @@ function skip(characters) {
 <span class="cstat-no" title="statement not covered" >    return false;</span>
   };
 }
-var skipWhitespace = skip(/\s/);
+var skipWhitespace = skip(/\s/u);
 var skipSpaces = skip(" 	");
 var skipToLineEnd = skip(",; 	");
-var skipEverythingButNewLine = skip(/[^\n\r]/);
+var skipEverythingButNewLine = skip(/[^\n\r]/u);
 &nbsp;
 // src/language-css/loc.js
 function calculateLocStart(node, text) {
@@ -31017,7 +31017,7 @@ function getValueRootOffset(node) {
     result += node.prop.length;
   }
   if (node.type === "css-atrule" &amp;&amp; typeof node.name === "string") {
-    result += 1 + node.name.length + node.raws.afterName.match(/^\s*:?\s*/)[0].length;
+    result += 1 + node.name.length + node.raws.afterName.match(/^\s*:?\s*/u)[0].length;
   }
   if (node.type !== "css-atrule" &amp;&amp; typeof ((_a = node.raws) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.between) === "string") {
     result += node.raws.between.length;
@@ -31117,7 +31117,7 @@ function replaceQuotesInInlineComments(text) {
       /* isOptionalObject */
       false,
       text.slice(start, end),
-      /["'*]/g,
+      /["'*]/gu,
       " "
     ) + text.slice(end);
   }
@@ -31312,7 +31312,7 @@ ${startDelimiter}`, firstLineBreakIndex);
   }
   const frontMatterEndIndex = endDelimiterIndex + 1 + DELIMITER_LENGTH;
   const nextCharacter = text.charAt(frontMatterEndIndex + 1);
-  if (!/\s?/.test(nextCharacter)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (!/\s?/u.test(nextCharacter)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   const raw = text.slice(0, frontMatterEndIndex);
@@ -31342,7 +31342,7 @@ function parse(text) {
       /* isOptionalObject */
       false,
       raw,
-      /[^\n]/g,
+      /[^\n]/gu,
       " "
     ) + text.slice(raw.length)
   };
@@ -31447,7 +31447,7 @@ function isDetachedRulesetDeclarationNode(node) {
   if (!selector) {
     return false;
   }
-  return typeof selector === "string" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /^@.+:.*$/.test(selector) </span>|| selector.value &amp;&amp; /^@.+:.*$/.test(selector.value);
+  return typeof selector === "string" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /^@.+:.*$/u.test(selector) </span>|| selector.value &amp;&amp; /^@.+:.*$/u.test(selector.value);
 }
 function isForKeywordNode(node) {
   return node.type === "value-word" &amp;&amp; ["from", "through", "end"].includes(node.value);
@@ -31487,7 +31487,7 @@ function isSCSSControlDirectiveNode(node, options2) {
 }
 function isDetachedRulesetCallNode(node) {
   var _a;
-  return ((_a = node.raws) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.params) &amp;&amp; /^\(\s*\)$/.test(node.raws.params);
+  return ((_a = node.raws) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.params) &amp;&amp; /^\(\s*\)$/u.test(node.raws.params);
 }
 function isTemplatePlaceholderNode(node) {
   return node.name.startsWith("prettier-placeholder");
@@ -31582,7 +31582,7 @@ function isColorAdjusterFuncNode(node) {
   return colorAdjusterFunctions.has(node.value.toLowerCase());
 }
 function lastLineHasInlineComment(text) {
-  return /\/\//.test(text.split(/[\n\r]/).pop());
+  return /\/\//u.test(text.split(/[\n\r]/u).pop());
 }
 function isAtWordPlaceholderNode(node) {
   return (node == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: node.type) === "value-atword" &amp;&amp; node.value.startsWith("prettier-placeholder-");
@@ -31788,7 +31788,7 @@ function printNumber(rawNumber) {
   if (rawNumber.length === 1) {
     return rawNumber;
   }
-  return rawNumber.toLowerCase().replace(/^([+-]?[\d.]+e)(?:\+|(-))?0*(?=\d)/, "$1$2").replace(/^([+-]?[\d.]+)e[+-]?0+$/, "$1").replace(/^([+-])?\./, "$10.").replace(/(\.\d+?)0+(?=e|$)/, "$1").replace(/\.(?=e|$)/, "");
+  return rawNumber.toLowerCase().replace(/^([+-]?[\d.]+e)(?:\+|(-))?0*(?=\d)/u, "$1$2").replace(/^([+-]?[\d.]+)e[+-]?0+$/u, "$1").replace(/^([+-])?\./u, "$10.").replace(/(\.\d+?)0+(?=e|$)/u, "$1").replace(/\.(?=e|$)/u, "");
 }
 var print_number_default = printNumber;
 &nbsp;
@@ -32045,11 +32045,11 @@ function printUnit(unit) {
   const lowercased = unit.toLowerCase();
   return css_units_evaluate_default.has(lowercased) ? css_units_evaluate_default.get(lowercased) : unit;
 }
-var STRING_REGEX = /(["'])(?:(?!\1)[^\\]|\\.)*\1/gs;
-var NUMBER_REGEX = /(?:\d*\.\d+|\d+\.?)(?:e[+-]?\d+)?/gi;
-var STANDARD_UNIT_REGEX = /[a-z]+/gi;
-var WORD_PART_REGEX = /[$@]?[_a-z\u0080-\uFFFF][\w\u0080-\uFFFF-]*/gi;
-var ADJUST_NUMBERS_REGEX = new RegExp(STRING_REGEX.source + `|(${WORD_PART_REGEX.source})?(${NUMBER_REGEX.source})(${STANDARD_UNIT_REGEX.source})?`, "gi");
+var STRING_REGEX = /(["'])(?:(?!\1)[^\\]|\\.)*\1/gsu;
+var NUMBER_REGEX = /(?:\d*\.\d+|\d+\.?)(?:e[+-]?\d+)?/giu;
+var STANDARD_UNIT_REGEX = /[a-z]+/giu;
+var WORD_PART_REGEX = /[$@]?[_a-z\u0080-\uFFFF][\w\u0080-\uFFFF-]*/giu;
+var ADJUST_NUMBERS_REGEX = new RegExp(STRING_REGEX.source + `|(${WORD_PART_REGEX.source})?(${NUMBER_REGEX.source})(${STANDARD_UNIT_REGEX.source})?`, "giu");
 function adjustStrings(value, options2) {
   return string_replace_all_default(
     /* isOptionalObject */
@@ -32073,7 +32073,7 @@ function adjustNumbers(value) {
   );
 }
 function printCssNumber(rawNumber) {
-  return print_number_default(rawNumber).replace(/\.0(?=$|e)/, "");
+  return print_number_default(rawNumber).replace(/\.0(?=$|e)/u, "");
 }
 function shouldPrintTrailingComma(options2) {
   return options2.trailingComma === "es5" || options2.trailingComma === "all";
@@ -32298,7 +32298,7 @@ function genericPrint(path, options2, print3) {
       } = node.raws;
       const trimmedBetween = rawBetween.trim();
       const isColon = trimmedBetween === ":";
-      const isValueAllSpace = typeof node.value === "string" &amp;&amp; /^ *$/.test(node.value);
+      const isValueAllSpace = typeof node.value === "string" &amp;&amp; /^ *$/u.test(node.value);
       let value = typeof node.value === "string" ? node.value : print3("value");
       value = hasComposesNode(node) ? removeLines(value) : value;
       if (!isColon &amp;&amp; lastLineHasInlineComment(trimmedBetween) &amp;&amp; !(((_c = (_b = node.value) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _b.group) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _c.group) &amp;&amp; path.call(() =&gt; shouldBreakList(path), "value", "group", "group"))) {
@@ -32309,7 +32309,7 @@ function genericPrint(path, options2, print3) {
           /* isOptionalObject */
           false,
           node.raws.before,
-          /[\s;]/g,
+          /[\s;]/gu,
           ""
         ),
         // Less variable
@@ -32319,9 +32319,9 @@ function genericPrint(path, options2, print3) {
         node.extend || isValueAllSpace ? "" : " ",
         options2.parser === "less" &amp;&amp; node.extend &amp;&amp; node.selector ? ["extend(", print3("selector"), ")"] : "",
         value,
-        node.raws.important ? node.raws.important.replace(/\s*!\s*important/i, " !important") : node.important ? " !important" : "",
-        node.raws.scssDefault ? node.raws.scssDefault.replace(/\s*!default/i, " !default") : node.scssDefault ? " !default" : "",
-        node.raws.scssGlobal ? node.raws.scssGlobal.replace(/\s*!global/i, " !global") : node.scssGlobal ? " !global" : "",
+        node.raws.important ? node.raws.important.replace(/\s*!\s*important/iu, " !important") : node.important ? " !important" : "",
+        node.raws.scssDefault ? node.raws.scssDefault.replace(/\s*!default/iu, " !default") : node.scssDefault ? " !default" : "",
+        node.raws.scssGlobal ? node.raws.scssGlobal.replace(/\s*!global/iu, " !global") : node.scssGlobal ? " !global" : "",
         node.nodes ? [" {", indent([softline, sequence_default(path, options2, print3)]), softline, "}"] : isTemplatePropNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !parentNode.raws.semicolon <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; options2.originalText[locEnd(node) - 1] !== ";" <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: options2.__isHTMLStyleAttribute &amp;&amp; isLastNode(path, node) ? ifBreak(";") : ";"
       ];
     }
@@ -32346,7 +32346,7 @@ function genericPrint(path, options2, print3) {
         // variable declarations will be parsed as at-rules with names ending
         // with a colon, so keep the original case then.
         isDetachedRulesetCallNode(node) || node.name.endsWith(":") || isTemplatePlaceholderNode(node) ? node.name : maybeToLowerCase(node.name),
-        node.params ? [isDetachedRulesetCallNode(node) ? "" : isTemplatePlaceholderNode(node) ? node.raws.afterName === "" ? "" : node.name.endsWith(":") ? " " : /^\s*\n\s*\n/.test(node.raws.afterName) ? [hardline, hardline] : /^\s*\n/.test(node.raws.afterName) ? hardline : " " : " ", typeof node.params === "string" ? node.params : print3("params")] : "",
+        node.params ? [isDetachedRulesetCallNode(node) ? "" : isTemplatePlaceholderNode(node) ? node.raws.afterName === "" ? "" : node.name.endsWith(":") ? " " : /^\s*\n\s*\n/u.test(node.raws.afterName) ? [hardline, hardline] : /^\s*\n/u.test(node.raws.afterName) ? hardline : " " : " ", typeof node.params === "string" ? node.params : print3("params")] : "",
         node.selector ? indent([" ", print3("selector")]) : "",
         node.value ? group([" ", print3("value"), isSCSSControlDirectiveNode(node, options2) ? hasParensAroundNode(node) ? " " : line : ""]) : node.name === "else" ? " " : "",
         node.nodes ? [isSCSSControlDirectiveNode(node, options2) ? "" : node.selector &amp;&amp; !node.selector.nodes &amp;&amp; typeof node.selector.value === "string" &amp;&amp; lastLineHasInlineComment(node.selector.value) || !node.selector &amp;&amp; typeof node.params === "string" &amp;&amp; lastLineHasInlineComment(node.params) ? line : " ", "{", indent([node.nodes.length &gt; 0 ? softline : "", sequence_default(path, options2, print3)]), softline, "}"] : isTemplatePlaceholderNodeWithoutSemiColon || isImportUnknownValueEndsWithSemiColon ? "" : ";"
@@ -32378,7 +32378,7 @@ function genericPrint(path, options2, print3) {
         /* isOptionalObject */
         false,
         node.value,
-        / +/g,
+        / +/gu,
         " "
       ), options2));
     case "media-colon":
@@ -32395,10 +32395,10 @@ function genericPrint(path, options2, print3) {
 <span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
 <span class="cstat-no" title="statement not covered" >          node.value,</span>
-<span class="cstat-no" title="statement not covered" >          /^url\(\s+/gi,</span>
+<span class="cstat-no" title="statement not covered" >          /^url\(\s+/giu,</span>
 <span class="cstat-no" title="statement not covered" >          "url("</span>
 <span class="cstat-no" title="statement not covered" >        ),</span>
-<span class="cstat-no" title="statement not covered" >        /\s+\)$/g,</span>
+<span class="cstat-no" title="statement not covered" >        /\s+\)$/gu,</span>
 <span class="cstat-no" title="statement not covered" >        ")"</span>
 <span class="cstat-no" title="statement not covered" >      ), options2);</span>
     case "media-unknown":
@@ -32717,7 +32717,7 @@ var parse_media_query_default = parseMediaQuery;
 // src/language-css/parse/parse-selector.js
 var import_processor = __toESM(require_processor2(), 1);
 function parseSelector(selector) {
-  if (/\/\/|\/\*/.test(selector)) {
+  if (/\/\/|\/\*/u.test(selector)) {
     return {
       type: "selector-unknown",
       value: selector.trim()
@@ -32930,7 +32930,7 @@ function parseValue(value, options2) {
   }
   result.text = value;
   const parsedResult = parseNestedValue(result, options2);
-  return addTypePrefix(parsedResult, "value-", /^selector-/);
+  return addTypePrefix(parsedResult, "value-", /^selector-/u);
 }
 var parse_value_default = parseValue;
 &nbsp;
@@ -32949,13 +32949,13 @@ function isSCSSNestedPropertyNode(node, options2) {
   if (!node.selector) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  return node.selector.replace(/\/\*.*?\*\//, "").replace(/\/\/.*\n/, "").trim().endsWith(":");
+  return node.selector.replace(/\/\*.*?\*\//u, "").replace(/\/\/.*\n/u, "").trim().endsWith(":");
 }
 var is_scss_nested_property_node_default = isSCSSNestedPropertyNode;
 &nbsp;
 // src/language-css/parser-postcss.js
-var DEFAULT_SCSS_DIRECTIVE = /(\s*)(!default).*$/;
-var GLOBAL_SCSS_DIRECTIVE = /(\s*)(!global).*$/;
+var DEFAULT_SCSS_DIRECTIVE = /(\s*)(!default).*$/u;
+var GLOBAL_SCSS_DIRECTIVE = /(\s*)(!global).*$/u;
 function parseNestedCSS(node, options2) {
   var _a, _b;
   if (node &amp;&amp; typeof node === "object") {
@@ -32976,7 +32976,7 @@ function parseNestedCSS(node, options2) {
           /* isOptionalObject */
           false,
           textBefore,
-          /[^\n]/g,
+          /[^\n]/gu,
           " "
         ) + nodeText;
         let parse3;
@@ -33096,7 +33096,7 @@ function parseNestedCSS(node, options2) {
         }
       }
       if (options2.parser === "css" &amp;&amp; node.name === "custom-selector") {
-        const customSelector = node.params.match(/:--\S+\s+/)[0].trim();
+        const customSelector = node.params.match(/:--\S+\s+/u)[0].trim();
         node.customSelector = customSelector;
         node.selector = parse_selector_default(node.params.slice(customSelector.length).trim());
         delete node.params;
@@ -33144,7 +33144,7 @@ function parseNestedCSS(node, options2) {
         return node;
       }
       if (name === "at-root") {
-        if (/^\(\s*(?:without|with)\s*:.+\)$/s.test(params)) {
+        if (/^\(\s*(?:without|with)\s*:.+\)$/su.test(params)) {
           node.params = parse_value_default(params, options2);
         } else {
           node.selector = parse_selector_default(params);
@@ -33159,8 +33159,8 @@ function parseNestedCSS(node, options2) {
         return node;
       }
       if (["namespace", "supports", "if", "else", "for", "each", "while", "debug", "mixin", "include", "function", "return", "define-mixin", "add-mixin"].includes(name)) {
-        params = params.replace(/(\$\S+?)(\s+)?\.{3}/, "$1...$2");
-        params = params.replace(/^(?!if)(\S+)(\s+)\(/, "$1($2");
+        params = params.replace(/(\$\S+?)(\s+)?\.{3}/u, "$1...$2");
+        params = params.replace(/^(?!if)(\S+)(\s+)\(/u, "$1($2");
         node.value = parse_value_default(params, options2);
         delete node.params;
         return node;
@@ -33280,7 +33280,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-17T00:27:01.681Z
+                at 2024-06-18T00:26:39.727Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

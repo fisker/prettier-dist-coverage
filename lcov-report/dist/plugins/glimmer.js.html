@@ -18790,7 +18790,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    split(text, captureWhitespace = false) {</span>
 <span class="cstat-no" title="statement not covered" >      const pattern = `[${escapeStringRegexp([...__privateGet(this, _whitespaceCharacters)].join(""))}]+`;</span>
-<span class="cstat-no" title="statement not covered" >      const regexp = new RegExp(captureWhitespace ? `(${pattern})` : pattern);</span>
+<span class="cstat-no" title="statement not covered" >      const regexp = new RegExp(captureWhitespace ? `(${pattern})` : pattern, "u");</span>
 <span class="cstat-no" title="statement not covered" >      return text.split(regexp);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    hasWhitespaceCharacter(text) {</span>
@@ -19015,7 +19015,7 @@
     return node.selfClosing === true || isVoidTag(node.tag) || isGlimmerComponent(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2));</span>
   }
   function isWhitespaceNode(node) {
-    return node.type === "TextNode" &amp;&amp; !/\S/.test(node.chars);
+    return node.type === "TextNode" &amp;&amp; !/\S/u.test(node.chars);
   }
   function isPrettierIgnoreNode(node) {
     return (node == null ? void 0 : node.type) === "MustacheCommentStatement" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; typeof node.value === "string" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.value.trim() === "prettier-ignore";</span>
@@ -19093,14 +19093,14 @@
         const attrName = getCurrentAttributeName(path);
         if (attrName) {
           if (attrName === "class") {
-            const formattedClasses = text.trim().split(/\s+/).join(" ");
+            const formattedClasses = text.trim().split(/\s+/u).join(" ");
             let leadingSpace2 = false;
             let trailingSpace2 = false;
             if (path.parent.type === "ConcatStatement") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >              if (((_b = path.previous) == null ? void 0 : _b.type) === "MustacheStatement" &amp;&amp; /^\s/.test(text)) {</span>
+<span class="cstat-no" title="statement not covered" >              if (((_b = path.previous) == null ? void 0 : _b.type) === "MustacheStatement" &amp;&amp; /^\s/u.test(text)) {</span>
 <span class="cstat-no" title="statement not covered" >                leadingSpace2 = true;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              if (((_c = path.next) == null ? void 0 : _c.type) === "MustacheStatement" &amp;&amp; /\s$/.test(text) &amp;&amp; formattedClasses !== "") {</span>
+<span class="cstat-no" title="statement not covered" >              if (((_c = path.next) == null ? void 0 : _c.type) === "MustacheStatement" &amp;&amp; /\s$/u.test(text) &amp;&amp; formattedClasses !== "") {</span>
 <span class="cstat-no" title="statement not covered" >                trailingSpace2 = true;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -19411,12 +19411,12 @@
   }
 <span class="fstat-no" title="function not covered" >  function countLeadingNewLines(string) {</span>
 <span class="cstat-no" title="statement not covered" >    string = typeof string === "string" ? string : "";</span>
-<span class="cstat-no" title="statement not covered" >    const newLines = (string.match(/^([^\S\n\r]*[\n\r])+/g) || [])[0] || "";</span>
+<span class="cstat-no" title="statement not covered" >    const newLines = (string.match(/^([^\S\n\r]*[\n\r])+/gu) || [])[0] || "";</span>
 <span class="cstat-no" title="statement not covered" >    return countNewLines(newLines);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function countTrailingNewLines(string) {</span>
 <span class="cstat-no" title="statement not covered" >    string = typeof string === "string" ? string : "";</span>
-<span class="cstat-no" title="statement not covered" >    const newLines = (string.match(/([\n\r][^\S\n\r]*)+$/g) || [])[0] || "";</span>
+<span class="cstat-no" title="statement not covered" >    const newLines = (string.match(/([\n\r][^\S\n\r]*)+$/gu) || [])[0] || "";</span>
 <span class="cstat-no" title="statement not covered" >    return countNewLines(newLines);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function generateHardlines(number = 0) {
@@ -19491,7 +19491,7 @@
     if (index === 0 &amp;&amp; part.startsWith("@")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    return index !== 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART.has(part) </span>|| /\s/.test(part) || /^\d/.test(part) || Array.prototype.some.call(part, (character) =&gt; PATH_EXPRESSION_FORBIDDEN_CHARACTERS.has(character));
+    return index !== 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; PATH_EXPRESSION_FORBIDDEN_IN_FIRST_PART.has(part) </span>|| /\s/u.test(part) || /^\d/u.test(part) || Array.prototype.some.call(part, (character) =&gt; PATH_EXPRESSION_FORBIDDEN_CHARACTERS.has(character));
   };
   function printPathExpression(node) {
     if (node.tail.length === 0 &amp;&amp; node.original.includes("/")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -27403,7 +27403,7 @@
     if (childrenOrBody) {
       for (let i = 0; i &lt; childrenOrBody.length - 1; i++) {
         if (childrenOrBody[i].type === "TextNode" &amp;&amp; childrenOrBody[i + 1].type === "MustacheStatement") {
-          childrenOrBody[i].chars = childrenOrBody[i].chars.replace(/\\$/, "\\\\");
+          childrenOrBody[i].chars = childrenOrBody[i].chars.replace(/\\$/u, "\\\\");
         }
       }
     }
@@ -27462,7 +27462,7 @@
 <span class="cstat-no" title="statement not covered" >      message</span>
 <span class="cstat-no" title="statement not covered" >    } = error;</span>
 <span class="cstat-no" title="statement not covered" >    const lines = message.split("\n");</span>
-<span class="cstat-no" title="statement not covered" >    if (lines.length &gt;= 4 &amp;&amp; /^Parse error on line \d+:$/.test(lines[0]) &amp;&amp; /^-*\^$/.test(at_default(</span>
+<span class="cstat-no" title="statement not covered" >    if (lines.length &gt;= 4 &amp;&amp; /^Parse error on line \d+:$/u.test(lines[0]) &amp;&amp; /^-*\^$/u.test(at_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      lines,</span>
@@ -27475,7 +27475,7 @@
 <span class="cstat-no" title="statement not covered" >        -1</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (lines.length &gt;= 4 &amp;&amp; /:\s?$/.test(lines[0]) &amp;&amp; /^\(error occurred in '.*?' @ line \d+ : column \d+\)$/.test(at_default(</span>
+<span class="cstat-no" title="statement not covered" >    if (lines.length &gt;= 4 &amp;&amp; /:\s?$/u.test(lines[0]) &amp;&amp; /^\(error occurred in '.*?' @ line \d+ : column \d+\)$/u.test(at_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      lines,</span>
@@ -27541,7 +27541,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-17T00:26:58.894Z
+                at 2024-06-18T00:26:36.316Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

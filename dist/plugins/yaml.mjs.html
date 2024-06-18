@@ -22230,10 +22230,10 @@ function skip(characters) {
 <span class="cstat-no" title="statement not covered" >    return false;</span>
   };
 }
-var skipWhitespace = skip(/\s/);
+var skipWhitespace = skip(/\s/u);
 var skipSpaces = skip(" 	");
 var skipToLineEnd = skip(",; 	");
-var skipEverythingButNewLine = skip(/[^\n\r]/);
+var skipEverythingButNewLine = skip(/[^\n\r]/u);
 &nbsp;
 // src/utils/skip-newline.js
 function skipNewline(text, startIndex, options2) {
@@ -22289,7 +22289,7 @@ var unexpected_node_error_default = UnexpectedNodeError;
 // src/language-yaml/embed.js
 function embed(path, options2) {
   const { node } = path;
-  if (node.type === "root" &amp;&amp; options2.filepath &amp;&amp; /(?:[/\\]|^)\.(?:prettier|stylelint|lintstaged)rc$/.test(options2.filepath)) {
+  if (node.type === "root" &amp;&amp; options2.filepath &amp;&amp; /(?:[/\\]|^)\.(?:prettier|stylelint|lintstaged)rc$/u.test(options2.filepath)) {
     return async (textToDoc) =&gt; {
       const doc = await textToDoc(options2.originalText, { parser: "json" });
       return doc ? [doc, hardline] <span class="branch-0 cbranch-no" title="branch not covered" >: void 0;</span>
@@ -22397,10 +22397,10 @@ function locStart(node) {
 &nbsp;
 // src/language-yaml/pragma.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isPragma(text) {</span></span>
-<span class="cstat-no" title="statement not covered" >  return /^\s*@(?:prettier|format)\s*$/.test(text);</span>
+<span class="cstat-no" title="statement not covered" >  return /^\s*@(?:prettier|format)\s*$/u.test(text);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 function hasPragma(text) {
-  return /^\s*#[^\S\n]*@(?:prettier|format)\s*?(?:\n|$)/.test(text);
+  return /^\s*#[^\S\n]*@(?:prettier|format)\s*?(?:\n|$)/u.test(text);
 }
 function insertPragma(text) {
   return `# @format
@@ -22438,7 +22438,7 @@ function isNextLineEmpty(node, text) {
     if (char === "\n") {
       newlineCount++;
     }
-    if (newlineCount === 1 &amp;&amp; /\S/.test(char)) {
+    if (newlineCount === 1 &amp;&amp; /\S/u.test(char)) {
       return false;
     }
     if (newlineCount === 2) {
@@ -22522,7 +22522,7 @@ function hasEndComments(node) {
 function splitWithSingleSpace(text) {
   const parts = [];
   let lastPart;
-  for (const part of text.split(/( +)/)) {
+  for (const part of text.split(/( +)/u)) {
     if (part !== " ") {
       if (lastPart === " ") {
         parts.push(part);
@@ -22571,10 +22571,10 @@ function getBlockValueLineContents(node, {
   isLastDescendant,
   options: options2
 }) {
-  const content = node.position.start.line === node.position.end.line <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: options2.originalText.slice(node.position.start.offset, node.position.end.offset).match(/^[^\n]*\n(.*)$/s)[1];
+  const content = node.position.start.line === node.position.end.line <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: options2.originalText.slice(node.position.start.offset, node.position.end.offset).match(/^[^\n]*\n(.*)$/su)[1];
   let leadingSpaceCount;
   if (node.indent === null) {
-    const matches = content.match(/^(?&lt;leadingSpace&gt; *)[^\n\r ]/m);
+    const matches = content.match(/^(?&lt;leadingSpace&gt; *)[^\n\r ]/mu);
     leadingSpaceCount = matches ? matches.groups.leadingSpace.length : Number.POSITIVE_INFINITY;
   } else {
     leadingSpaceCount = node.indent - 1 + parentIndent;
@@ -22583,7 +22583,7 @@ function getBlockValueLineContents(node, {
   if (options2.proseWrap === "preserve" || node.type === "blockLiteral") {
     return removeUnnecessaryTrailingNewlines(rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : [lineContent]));
   }
-  return removeUnnecessaryTrailingNewlines(rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : splitWithSingleSpace(lineContent)).reduce((reduced, lineContentWords, index) =&gt; index !== 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; lineContentWords.length &gt; 0 &amp;&amp; !/^\s/.test(lineContentWords[0]) &amp;&amp; !/^\s|\s$/.test(at_default(
+  return removeUnnecessaryTrailingNewlines(rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : splitWithSingleSpace(lineContent)).reduce((reduced, lineContentWords, index) =&gt; index !== 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; lineContentWords.length &gt; 0 &amp;&amp; !/^\s/u.test(lineContentWords[0]) &amp;&amp; !/^\s|\s$/u.test(at_default(
     /* isOptionalObject */
     false,
     reduced,
@@ -22595,7 +22595,7 @@ function getBlockValueLineContents(node, {
     -1
   ), ...lineContentWords]] : [...reduced, lineContentWords], []).map((lineContentWords) =&gt; lineContentWords.reduce((reduced, word) =&gt; (
     // disallow trailing spaces
-    reduced.length &gt; 0 &amp;&amp; /\s$/.test(at_default(
+    reduced.length &gt; 0 &amp;&amp; /\s$/u.test(at_default(
       /* isOptionalObject */
       false,
       reduced,
@@ -22846,7 +22846,7 @@ function isAbsolutelyPrintedAsSingleLineNode(node, options2) {
   }
   if (
     // backslash-newline
-    /\\$/m.test(
+    /\\$/mu.test(
       options2.originalText.slice(
         node.position.start.offset,
         node.position.end.offset
@@ -22859,7 +22859,7 @@ function isAbsolutelyPrintedAsSingleLineNode(node, options2) {
     case "never":
       return !node.value.includes("\n");
     case "always":
-      return !/[\n ]/.test(node.value);
+      return !/[\n ]/u.test(node.value);
 <span class="branch-0 cbranch-no" title="branch not covered" >    default:</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
   }
@@ -23049,7 +23049,7 @@ function printNode(path, options2, print) {
       const singleQuote = "'";
       const doubleQuote = '"';
       const raw = options2.originalText.slice(node.position.start.offset + 1, node.position.end.offset - 1);
-      if (node.type === "quoteSingle" &amp;&amp; raw.includes("\\") || node.type === "quoteDouble" &amp;&amp; /\\[^"]/.test(raw)) {
+      if (node.type === "quoteSingle" &amp;&amp; raw.includes("\\") || node.type === "quoteDouble" &amp;&amp; /\\[^"]/u.test(raw)) {
         const originalQuote = node.type === "quoteDouble" ? doubleQuote : singleQuote;
         return [originalQuote, printFlowScalarContent(node.type, raw, options2), originalQuote];
       }
@@ -23135,7 +23135,7 @@ function shouldPrintDocumentHeadEndMarker(path, options2) {
      * ---
      * preserve the first document head end marker
      */
-    path.isFirst &amp;&amp; /---(?:\s|$)/.test(options2.originalText.slice(locStart(document), locStart(document) + 4)) || /**
+    path.isFirst &amp;&amp; /---(?:\s|$)/u.test(options2.originalText.slice(locStart(document), locStart(document) + 4)) || /**
      * %DIRECTIVE
      * ---
      */
@@ -24649,7 +24649,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-17T00:27:01.681Z
+                at 2024-06-18T00:26:39.727Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

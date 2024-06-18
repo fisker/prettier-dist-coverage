@@ -24052,7 +24052,7 @@ function isWide(x) {
 var _isNarrowWidth = (codePoint) =&gt; !(isFullWidth(codePoint) || isWide(codePoint));
 &nbsp;
 // src/utils/get-string-width.js
-var notAsciiRegex = /[^\x20-\x7F]/;
+var notAsciiRegex = /[^\x20-\x7F]/u;
 function getStringWidth(text) {
   if (!text) {
     return 0;
@@ -24102,10 +24102,10 @@ function skip(characters) {
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return false;</span></span>
   };
 }
-var skipWhitespace = skip(/\s/);
+var skipWhitespace = skip(/\s/u);
 var skipSpaces = skip(" 	");
 var skipToLineEnd = skip(",; 	");
-var skipEverythingButNewLine = skip(/[^\n\r]/);
+var skipEverythingButNewLine = skip(/[^\n\r]/u);
 &nbsp;
 // src/utils/skip-newline.js
 function skipNewline(text, startIndex, options2) {
@@ -24217,7 +24217,7 @@ var get_preferred_quote_default = getPreferredQuote;
 // src/utils/make-string.js
 function makeString(rawText2, enclosingQuote, unescapeUnnecessaryEscapes) {
   const otherQuote = enclosingQuote === '"' ? "'" : '"';
-  const regex = /\\(.)|(["'])/gs;
+  const regex = /\\(.)|(["'])/gsu;
   const raw = string_replace_all_default(
     /* isOptionalObject */
     false,
@@ -24233,7 +24233,7 @@ function makeString(rawText2, enclosingQuote, unescapeUnnecessaryEscapes) {
       if (quote) {
         return quote;
       }
-      return unescapeUnnecessaryEscapes &amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/.test(escaped) ? escaped : "\\" + escaped;
+      return unescapeUnnecessaryEscapes &amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/u.test(escaped) ? escaped : "\\" + escaped;
     }
   );
   return enclosingQuote + raw + enclosingQuote;
@@ -26165,12 +26165,12 @@ function clean(original, cloned, parent) {
   if (original.type === "JSXAttribute" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; original.name.name === "css" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; original.value.type === "JSXExpressionContainer" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; original.value.expression.type === "TemplateLiteral")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    removeTemplateElementsValue(cloned.value.expression);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if (original.type === "JSXAttribute" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; ((_a = original.value) == null ? void 0 : _a.type) === "Literal" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; /["']|&amp;quot;|&amp;apos;/.test(original.value.value))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (original.type === "JSXAttribute" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; ((_a = original.value) == null ? void 0 : _a.type) === "Literal" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; /["']|&amp;quot;|&amp;apos;/u.test(original.value.value))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    cloned.value.value = string_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      original.value.value,</span>
-<span class="cstat-no" title="statement not covered" >      /["']|&amp;quot;|&amp;apos;/g,</span>
+<span class="cstat-no" title="statement not covered" >      /["']|&amp;quot;|&amp;apos;/gu,</span>
 <span class="cstat-no" title="statement not covered" >      '"'</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -26850,7 +26850,7 @@ function isTypeCastComment(comment) {
   return is_block_comment_default(comment) &amp;&amp; comment.value[0] === "*" &amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however
   // Closure Compiler accepts types in parens and even without any delimiters at all.
   // That's why we just search for "@type" and "@satisfies".
-  /@(?:type|satisfies)\b/.test(comment.value);
+  /@(?:type|satisfies)\b/u.test(comment.value);
 }
 var is_type_cast_comment_default = isTypeCastComment;
 &nbsp;
@@ -27469,7 +27469,7 @@ function isGap(text, {
       /* isOptionalObject */
       false,
       text,
-      /[\s(]/g,
+      /[\s(]/gu,
       ""
     );
     return text === "" || text === "/*" || text === "/*::";
@@ -28076,7 +28076,7 @@ function getIndentSize(value, tabWidth) {
 <span class="cstat-no" title="statement not covered" >  }</span>
   return get_alignment_size_default(
     // All the leading whitespaces
-    value.slice(lastNewlineIndex + 1).match(/^[\t ]*/)[0],
+    value.slice(lastNewlineIndex + 1).match(/^[\t ]*/u)[0],
     tabWidth
   );
 }
@@ -28150,7 +28150,7 @@ function printJestEachTemplateLiteral(path, options2, print3) {
   const {
     node
   } = path;
-  const headerNames = node.quasis[0].value.raw.trim().split(/\s*\|\s*/);
+  const headerNames = node.quasis[0].value.raw.trim().split(/\s*\|\s*/u);
   if (headerNames.length &gt; 1 <span class="branch-0 cbranch-no" title="branch not covered" >|| headerNames.some((headerName) =&gt; headerName.length &gt; 0))</span> {
     options2.__inJestEach = true;
     const expressions = path.map(print3, "expressions");
@@ -28222,7 +28222,7 @@ function escapeTemplateCharacters(doc, raw) {
         /* isOptionalObject */
         false,
         currentDoc,
-        /(\\*)`/g,
+        /(\\*)`/gu,
         "$1$1\\`"
       ) : uncookTemplateElementValue(currentDoc);
     }
@@ -28234,7 +28234,7 @@ function uncookTemplateElementValue(cookedValue) {
     /* isOptionalObject */
     false,
     cookedValue,
-    /([\\`]|\${)/g,
+    /([\\`]|\$\{)/gu,
     String.raw`\$1`
   );
 }
@@ -28242,7 +28242,7 @@ function isJestEachTemplateLiteral({
   node,
   parent
 }) {
-  const jestEachTriggerRegex = /^[fx]?(?:describe|it|test)$/;
+  const jestEachTriggerRegex = /^[fx]?(?:describe|it|test)$/u;
   return parent.type === "TaggedTemplateExpression" &amp;&amp; parent.quasi === node &amp;&amp; parent.tag.type === "MemberExpression" &amp;&amp; parent.tag.property.type === "Identifier" &amp;&amp; parent.tag.property.name === "each" &amp;&amp; (parent.tag.object.type === "Identifier" &amp;&amp; jestEachTriggerRegex.test(parent.tag.object.name) || parent.tag.object.type === "MemberExpression" &amp;&amp; parent.tag.object.property.type === "Identifier" &amp;&amp; (parent.tag.object.property.name === "only" <span class="branch-0 cbranch-no" title="branch not covered" >|| parent.tag.object.property.name === "skip")</span> &amp;&amp; parent.tag.object.object.type === "Identifier" &amp;&amp; jestEachTriggerRegex.test(parent.tag.object.object.name));
 }
 &nbsp;
@@ -28313,7 +28313,7 @@ function replacePlaceholders(quasisDoc, expressionDocs) {
     if (typeof doc !== "string" || !doc.includes("@prettier-placeholder")) {
       return doc;
     }
-    return doc.split(/@prettier-placeholder-(\d+)-id/).map((component, idx) =&gt; {
+    return doc.split(/@prettier-placeholder-(\d+)-id/u).map((component, idx) =&gt; {
       if (idx % 2 === 0) {
         return replaceEndOfLine(component);
       }
@@ -28332,7 +28332,7 @@ function isStyledIdentifier(node) {
   return node.type === "Identifier" &amp;&amp; node.name === "styled";
 }
 function isStyledExtend(node) {
-  return /^[A-Z]/.test(node.object.name) &amp;&amp; node.property.name === "extend";
+  return /^[A-Z]/u.test(node.object.name) &amp;&amp; node.property.name === "extend";
 }
 function isStyledComponents({ parent }) {
   if (!parent || parent.type !== "TaggedTemplateExpression") {
@@ -28387,9 +28387,9 @@ async function printEmbedGraphQL(textToDoc, print3, path) {
     const startsWithBlankLine = numLines &gt; 2 &amp;&amp; lines[0].trim() === "" &amp;&amp; lines[1].trim() === "";
     const endsWithBlankLine = numLines &gt; 2 &amp;&amp; lines[numLines - 1].trim() === "" &amp;&amp; lines[numLines - 2].trim() === "";
     const commentsAndWhitespaceOnly = lines.every(
-      (line2) =&gt; /^\s*(?:#[^\n\r]*)?$/.test(line2)
+      (line2) =&gt; /^\s*(?:#[^\n\r]*)?$/u.test(line2)
     );
-    if (!isLast &amp;&amp; /#[^\n\r]*$/.test(lines[numLines - 1])) {
+    if (!isLast &amp;&amp; /#[^\n\r]*$/u.test(lines[numLines - 1])) {
       return null;
     }
     let doc = null;
@@ -28454,7 +28454,7 @@ async function printEmbedHtmlLike(parser, textToDoc, print3, path, options2) {
   const composePlaceholder = (index) =&gt; `PRETTIER_HTML_PLACEHOLDER_${index}_${counter}_IN_JS`;
   const text = node.quasis.map((quasi, index, quasis) =&gt; index === quasis.length - 1 ? quasi.value.cooked : quasi.value.cooked + composePlaceholder(index)).join("");
   const expressionDocs = printTemplateExpressions(path, print3);
-  const placeholderRegex = new RegExp(composePlaceholder(String.raw`(\d+)`), "g");
+  const placeholderRegex = new RegExp(composePlaceholder(String.raw`(\d+)`), "gu");
   let topLevelCount = 0;
   const doc = await textToDoc(text, {
     parser,
@@ -28478,7 +28478,7 @@ async function printEmbedHtmlLike(parser, textToDoc, print3, path, options2) {
               /* isOptionalObject */
               false,
               component,
-              /&lt;\/(?=script\b)/gi,
+              /&lt;\/(?=script\b)/giu,
               String.raw`&lt;\/`
             );
           }
@@ -28491,8 +28491,8 @@ async function printEmbedHtmlLike(parser, textToDoc, print3, path, options2) {
     }
     return parts;
   });
-  const leadingWhitespace = /^\s/.test(text) ? " " : "";
-  const trailingWhitespace = /\s$/.test(text) ? " " : "";
+  const leadingWhitespace = /^\s/u.test(text) ? " " : "";
+  const trailingWhitespace = /\s$/u.test(text) ? " " : "";
   const linebreak = options2.htmlWhitespaceSensitivity === "ignore" ? hardline : leadingWhitespace &amp;&amp; trailingWhitespace ? line : null;
   if (linebreak) {
     return group(["`", indent([linebreak, group(contentDoc)]), linebreak, "`"]);
@@ -28525,7 +28525,7 @@ async function printEmbedMarkdown(textToDoc, print3, path) {
     /* isOptionalObject */
     false,
     node.quasis[0].value.raw,
-    /((?:\\\\)*)\\`/g,
+    /((?:\\\\)*)\\`/gu,
     (_, backslashes) =&gt; "\\".repeat(backslashes.length / 2) + "`"
   );
   const indentation = getIndentation(text);
@@ -28535,7 +28535,7 @@ async function printEmbedMarkdown(textToDoc, print3, path) {
       /* isOptionalObject */
       false,
       text,
-      new RegExp(`^${indentation}`, "gm"),
+      new RegExp(`^${indentation}`, "gmu"),
       ""
     );
   }
@@ -28546,7 +28546,7 @@ async function printEmbedMarkdown(textToDoc, print3, path) {
   return ["`", hasIndent ? indent([softline, doc]) : [literalline, dedentToRoot(doc)], softline, "`"];
 }
 function getIndentation(str) {
-  const firstMatchedIndent = str.match(/^([^\S\n]*)\S/m);
+  const firstMatchedIndent = str.match(/^([^\S\n]*)\S/mu);
   return firstMatchedIndent === null <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: firstMatchedIndent[1];
 }
 function printMarkdown(path) {
@@ -28778,7 +28778,7 @@ function needsParens(path, options2) {
     return false;
   }
   if (node.type === "Identifier") {
-    if (((_a = node.extra) == null ? void 0 : _a.parenthesized) &amp;&amp; /^PRETTIER_HTML_PLACEHOLDER_\d+_\d+_IN_JS$/.test(node.name)) {
+    if (((_a = node.extra) == null ? void 0 : _a.parenthesized) &amp;&amp; /^PRETTIER_HTML_PLACEHOLDER_\d+_\d+_IN_JS$/u.test(node.name)) {
       return true;
     }
     if (key === "left" &amp;&amp; (node.name === "async" &amp;&amp; !parent.await || node.name === "let") &amp;&amp; parent.type === "ForOfStatement") {
@@ -29713,7 +29713,7 @@ var WhitespaceUtils = class {
   }
   split(text, captureWhitespace = false) {
     const pattern = `[${escapeStringRegexp([...__privateGet(this, _whitespaceCharacters)].join(""))}]+`;
-    const regexp = new RegExp(captureWhitespace ? `(${pattern})` : pattern);
+    const regexp = new RegExp(captureWhitespace ? `(${pattern})` : pattern, "u");
     return text.split(regexp);
   }
 <span class="fstat-no" title="function not covered" >  hasWhitespaceCharacter(text) {</span>
@@ -29848,7 +29848,7 @@ function printJsxChildren(path, options2, print3, jsxWhitespace, isFacebookTrans
         if (words[0] === "") {
           parts.push("");
           words.shift();
-          if (/\n/.test(words[0])) {
+          if (/\n/u.test(words[0])) {
             parts.push(separatorWithWhitespace(isFacebookTranslationTag, words[1], node, next));
           } else {
             parts.push(jsxWhitespace);
@@ -29876,7 +29876,7 @@ function printJsxChildren(path, options2, print3, jsxWhitespace, isFacebookTrans
           }
         }
         if (endWhitespace !== void 0) {
-          if (/\n/.test(endWhitespace)) {
+          if (/\n/u.test(endWhitespace)) {
             parts.push(separatorWithWhitespace(isFacebookTranslationTag, at_default(
               /* isOptionalObject */
               false,
@@ -29894,8 +29894,8 @@ function printJsxChildren(path, options2, print3, jsxWhitespace, isFacebookTrans
             -1
           ), node, next));
         }
-      } else if (/\n/.test(text)) {
-        if (text.match(/\n/g).length &gt; 1) {
+      } else if (/\n/u.test(text)) {
+        if (text.match(/\n/gu).length &gt; 1) {
           parts.push("", hardline);
         }
       }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
@@ -30173,7 +30173,7 @@ function isEmptyJsxElement(node) {
   return child.type === "JSXText" &amp;&amp; !isMeaningfulJsxText(child);
 }
 function isMeaningfulJsxText(node) {
-  return node.type === "JSXText" &amp;&amp; (jsxWhitespaceUtils.hasNonWhitespaceCharacter(rawText(node)) || !/\n/.test(rawText(node)));
+  return node.type === "JSXText" &amp;&amp; (jsxWhitespaceUtils.hasNonWhitespaceCharacter(rawText(node)) || !/\n/u.test(rawText(node)));
 }
 function isJsxWhitespaceExpression(node) {
   return node.type === "JSXExpressionContainer" &amp;&amp; isStringLiteral(node.expression) &amp;&amp; node.expression.value === " " &amp;&amp; !hasComment(node.expression);
@@ -30385,7 +30385,7 @@ function printAngular(path, options2, print3) {
         "body"
       );
     case "NGMicrosyntaxKey":
-      return /^[$_a-z][\w$]*(?:-[$_a-z][\w$])*$/i.test(node.name) ? node.name <span class="branch-0 cbranch-no" title="branch not covered" >: JSON.stringify(node.name);</span>
+      return /^[$_a-z][\w$]*(?:-[$_a-z][\w$])*$/iu.test(node.name) ? node.name <span class="branch-0 cbranch-no" title="branch not covered" >: JSON.stringify(node.name);</span>
     case "NGMicrosyntaxExpression":
       return [
         print3("expression"),
@@ -30851,7 +30851,7 @@ function printMemberChain(path, options2, print3) {
     groups.push(currentGroup);
   }
   function isFactory(name) {
-    return /^[A-Z]|^[$_]+$/.test(name);
+    return /^[A-Z]|^[$_]+$/u.test(name);
   }
   function isShort(name) {
     return name.length &lt;= options2.tabWidth;
@@ -31957,14 +31957,14 @@ function printNumber(rawNumber) {
   if (rawNumber.length === 1) {
     return rawNumber;
   }
-  return rawNumber.toLowerCase().replace(/^([+-]?[\d.]+e)(?:\+|(-))?0*(?=\d)/, "$1$2").replace(/^([+-]?[\d.]+)e[+-]?0+$/, "$1").replace(/^([+-])?\./, "$10.").replace(/(\.\d+?)0+(?=e|$)/, "$1").replace(/\.(?=e|$)/, "");
+  return rawNumber.toLowerCase().replace(/^([+-]?[\d.]+e)(?:\+|(-))?0*(?=\d)/u, "$1$2").replace(/^([+-]?[\d.]+)e[+-]?0+$/u, "$1").replace(/^([+-])?\./u, "$10.").replace(/(\.\d+?)0+(?=e|$)/u, "$1").replace(/\.(?=e|$)/u, "");
 }
 var print_number_default = printNumber;
 &nbsp;
 // src/language-js/print/property.js
 var needsQuoteProps = /* @__PURE__ */ new WeakMap();
 function isSimpleNumber(numberString) {
-  return /^(?:\d+|\d+\.\d+)$/.test(numberString);
+  return /^(?:\d+|\d+\.\d+)$/u.test(numberString);
 }
 function isStringKeySafeToUnquote(node, options2) {
   if (options2.parser === "json" || options2.parser === "jsonc" || !isStringLiteral(node.key) || print_string_default(rawText(node.key), options2).slice(1, -1) !== node.key.value) {
@@ -32013,7 +32013,7 @@ function printPropertyKey(path, options2, print3) {
     return path.call(
       (keyPath) =&gt; printComments(
         keyPath,
-        /^\d/.test(key.value) ? print_number_default(key.value) : key.value,
+        /^\d/u.test(key.value) ? print_number_default(key.value) : key.value,
         options2
       ),
       "key"
@@ -32569,7 +32569,7 @@ function printTypescriptMappedType(path, options2, print3) {
 var getTypeParametersGroupId = create_group_id_mapper_default("typeParameters");
 function shouldForceTrailingComma(path, options2, paramsKey) {
   const { node } = path;
-  return getFunctionParameters(node).length === 1 &amp;&amp; node.type.startsWith("TS") &amp;&amp; !node[paramsKey][0].constraint &amp;&amp; path.parent.type === "ArrowFunctionExpression" &amp;&amp; !(options2.filepath &amp;&amp; /\.ts$/.test(options2.filepath));
+  return getFunctionParameters(node).length === 1 &amp;&amp; node.type.startsWith("TS") &amp;&amp; !node[paramsKey][0].constraint &amp;&amp; path.parent.type === "ArrowFunctionExpression" &amp;&amp; !(options2.filepath &amp;&amp; /\.ts$/u.test(options2.filepath));
 }
 function printTypeParameters(path, options2, print3, paramsKey) {
   const { node } = path;
@@ -33995,7 +33995,7 @@ function printEstree(path, options2, print3, args) {
       return [print3("value"), semi];
     case "UnaryExpression":
       parts.push(node.operator);
-      if (/[a-z]$/.test(node.operator)) {
+      if (/[a-z]$/u.test(node.operator)) {
         parts.push(" ");
       }
       if (hasComment(node.argument)) {
@@ -35584,7 +35584,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-17T00:26:58.894Z
+                at 2024-06-18T00:26:36.316Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

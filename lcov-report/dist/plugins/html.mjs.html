@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">92.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8634/9334</span>
+                <span class='fraction'>8635/9335</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">92.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8634/9334</span>
+                <span class='fraction'>8635/9335</span>
             </div>
         
             
@@ -9397,7 +9397,8 @@
 <a name='L9332'></a><a href='#L9332'>9332</a>
 <a name='L9333'></a><a href='#L9333'>9333</a>
 <a name='L9334'></a><a href='#L9334'>9334</a>
-<a name='L9335'></a><a href='#L9335'>9335</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9335'></a><a href='#L9335'>9335</a>
+<a name='L9336'></a><a href='#L9336'>9336</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11775,6 +11776,7 @@
 <span class="cline-any cline-yes">233x</span>
 <span class="cline-any cline-yes">233x</span>
 <span class="cline-any cline-yes">4485x</span>
+<span class="cline-any cline-yes">154x</span>
 <span class="cline-any cline-yes">154x</span>
 <span class="cline-any cline-yes">4485x</span>
 <span class="cline-any cline-yes">63x</span>
@@ -19192,7 +19194,7 @@ var WhitespaceUtils = class {
   }
   split(text, captureWhitespace = false) {
     const pattern = `[${escapeStringRegexp([...__privateGet(this, _whitespaceCharacters)].join(""))}]+`;
-    const regexp = new RegExp(captureWhitespace <span class="branch-0 cbranch-no" title="branch not covered" >? `(${pattern})` </span>: pattern);
+    const regexp = new RegExp(captureWhitespace <span class="branch-0 cbranch-no" title="branch not covered" >? `(${pattern})` </span>: pattern, "u");
     return text.split(regexp);
   }
   hasWhitespaceCharacter(text) {
@@ -19337,7 +19339,7 @@ function printAngularControlFlowBlockParameters(textToDoc, print2, path, options
     node.sourceSpan.start.offset,
     node.sourceSpan.end.offset
   );
-  const isEmpty = /^\s*$/.test(content);
+  const isEmpty = /^\s*$/u.test(content);
   if (isEmpty) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return "";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -19357,7 +19359,7 @@ var angular_control_flow_block_parameters_default = printAngularControlFlowBlock
 var get_interpreter_default = void 0;
 &nbsp;
 // src/utils/infer-parser.js
-var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/).pop();</span>
+var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/u).pop();</span>
 function getLanguageByFileName(languages, file) {
   if (!file) {
     return;
@@ -19509,7 +19511,7 @@ var htmlTrimLeadingBlankLines = (string) =&gt; string_replace_all_default(
   /* isOptionalObject */
   false,
   string,
-  /^[\t\f\r ]*\n/g,
+  /^[\t\f\r ]*\n/gu,
   ""
 );
 var htmlTrimPreserveIndentation = (string) =&gt; htmlTrimLeadingBlankLines(html_whitespace_utils_default.trimEnd(string));
@@ -19781,7 +19783,7 @@ function getNodeCssStyleDisplay(node, options2) {
     return "block";
   }
   if (((_a = node.prev) == null ? void 0 : _a.type) === "comment") {
-    const match = node.prev.value.match(/^\s*display:\s*([a-z]+)\s*$/);
+    const match = node.prev.value.match(/^\s*display:\s*([a-z]+)\s*$/u);
     if (match) {
       return match[1];
     }
@@ -19881,7 +19883,7 @@ function isVueScriptTag(node, options2) {
 }
 &nbsp;
 // src/language-html/embed/angular-interpolation.js
-var interpolationRegex = /{{(.+?)}}/s;
+var interpolationRegex = /\{\{(.+?)\}\}/su;
 async function printAngularInterpolation(text, textToDoc) {
   const parts = [];
   for (const [index, part] of text.split(interpolationRegex).entries()) {
@@ -19933,15 +19935,15 @@ function printAngularAttribute(path, options2) {
   if (attributeName.startsWith("(") &amp;&amp; attributeName.endsWith(")") || attributeName.startsWith("on-")) {
     return printNgAction;
   }
-  if (attributeName.startsWith("[") &amp;&amp; attributeName.endsWith("]") || /^bind(?:on)?-/.test(attributeName) || // Unofficial rudimentary support for some of the most used directives of AngularJS 1.x
-  /^ng-(?:if|show|hide|class|style)$/.test(attributeName)) {
+  if (attributeName.startsWith("[") &amp;&amp; attributeName.endsWith("]") || /^bind(?:on)?-/u.test(attributeName) || // Unofficial rudimentary support for some of the most used directives of AngularJS 1.x
+  /^ng-(?:if|show|hide|class|style)$/u.test(attributeName)) {
     return printNgBinding;
   }
   if (attributeName.startsWith("*")) {
     return printNgDirective;
   }
   const value = getUnescapedAttributeValue(node);
-  if (/^i18n(?:-.+)?$/.test(attributeName)) {
+  if (/^i18n(?:-.+)?$/u.test(attributeName)) {
     return () =&gt; printExpand(
       fill(getTextValueParts(node, value.trim())),
       !value.includes("@@")
@@ -19958,7 +19960,7 @@ function printClassNames(path, options2) {
   const { node } = path;
   const value = getUnescapedAttributeValue(node);
   if (node.fullName === "class" &amp;&amp; !options2.parentParser &amp;&amp; !value.includes("{{")) {
-    return () =&gt; value.trim().split(/\s+/).join(" ");
+    return () =&gt; value.trim().split(/\s+/u).join(" ");
   }
 }
 var class_names_default = printClassNames;
@@ -20235,8 +20237,8 @@ function printVueBindings(text, textToDoc, { parseWithTs }) {
   });
 }
 function isVueEventBindingExpression(eventBindingValue) {
-  const fnExpRE = /^(?:[\w$]+|\([^)]*\))\s*=&gt;|^function\s*\(/;
-  const simplePathRE = /^[$_a-z][\w$]*(?:\.[$_a-z][\w$]*|\['[^']*']|\["[^"]*"]|\[\d+]|\[[$_a-z][\w$]*])*$/i;
+  const fnExpRE = /^(?:[\w$]+|\([^)]*\))\s*=&gt;|^function\s*\(/u;
+  const simplePathRE = /^[$_a-z][\w$]*(?:\.[$_a-z][\w$]*|\['[^']*'\]|\["[^"]*"\]|\[\d+\]|\[[$_a-z][\w$]*\])*$/iu;
   const value = eventBindingValue.trim();
   return fnExpRE.test(value) || simplePathRE.test(value);
 }
@@ -20258,9 +20260,9 @@ async function printVueVForDirective(textToDoc, print2, path, options2) {
   })];
 }
 function parseVueVForDirective(value) {
-  const forAliasRE = /(.*?)\s+(in|of)\s+(.*)/s;
-  const forIteratorRE = /,([^,\]}]*)(?:,([^,\]}]*))?$/;
-  const stripParensRE = /^\(|\)$/g;
+  const forAliasRE = /(.*?)\s+(in|of)\s+(.*)/su;
+  const forIteratorRE = /,([^,\]}]*)(?:,([^,\]}]*))?$/u;
+  const stripParensRE = /^\(|\)$/gu;
   const inMatch = value.match(forAliasRE);
   if (!inMatch) {
     return;
@@ -20365,7 +20367,7 @@ function printAttribute(path, options2) {
   }
   if (
     // lit-html: html`&lt;my-element obj=${obj}&gt;&lt;/my-element&gt;`
-    /^PRETTIER_HTML_PLACEHOLDER_\d+_\d+_IN_JS$/.test(options2.originalText.slice(node.valueSpan.start.offset, node.valueSpan.end.offset)) || // lwc: html`&lt;my-element data-for={value}&gt;&lt;/my-element&gt;`
+    /^PRETTIER_HTML_PLACEHOLDER_\d+_\d+_IN_JS$/u.test(options2.originalText.slice(node.valueSpan.start.offset, node.valueSpan.end.offset)) || // lwc: html`&lt;my-element data-for={value}&gt;&lt;/my-element&gt;`
     options2.parser === "lwc" &amp;&amp; node.value.startsWith("{") &amp;&amp; node.value.endsWith("}")
   ) {
     return [node.rawName, "=", node.value];
@@ -20494,14 +20496,14 @@ function needsToBorrowNextOpeningTagStartMarker(node) {
   return node.next &amp;&amp; !isTextLikeNode(node.next) &amp;&amp; isTextLikeNode(node) &amp;&amp; node.isTrailingSpaceSensitive &amp;&amp; !node.hasTrailingSpaces;
 }
 function getPrettierIgnoreAttributeCommentData(value) {
-  const match = value.trim().match(/^prettier-ignore-attribute(?:\s+(.+))?$/s);
+  const match = value.trim().match(/^prettier-ignore-attribute(?:\s+(.+))?$/su);
   if (!match) {
     return false;
   }
   if (!match[1]) {
     return true;
   }
-  return match[1].split(/\s+/);
+  return match[1].split(/\s+/u);
 }
 function needsToBorrowParentOpeningTagEndMarker(node) {
   return !node.prev &amp;&amp; node.isLeadingSpaceSensitive &amp;&amp; !node.hasLeadingSpaces;
@@ -20651,7 +20653,7 @@ function embed(path, options2) {
         }
         return async (textToDoc, print2) =&gt; {
           const content = get_node_content_default(node, options2);
-          let isEmpty = /^\s*$/.test(content);
+          let isEmpty = /^\s*$/u.test(content);
           let doc = "";
           if (!isEmpty) {
             doc = await textToDoc(htmlTrimPreserveIndentation(content), {
@@ -20677,7 +20679,7 @@ function embed(path, options2) {
         const parser2 = inferElementParser(node.parent, options2);
         if (parser2) {
           return async (textToDoc) =&gt; {
-            const value = parser2 === "markdown" ? dedentString(node.value.replace(/^[^\S\n]*\n/, "")) : node.value;
+            const value = parser2 === "markdown" ? dedentString(node.value.replace(/^[^\S\n]*\n/u, "")) : node.value;
             const textToDocOptions = { parser: parser2, __embeddedInHtml: true };
             if (options2.parser === "html" &amp;&amp; parser2 === "babel") {
               let sourceType = "script";
@@ -20801,7 +20803,7 @@ var get_visitor_keys_default = getVisitorKeys;
 &nbsp;
 // src/language-html/pragma.js
 function hasPragma(text) {
-  return /^\s*&lt;!--\s*@(?:format|prettier)\s*--&gt;/.test(text);
+  return /^\s*&lt;!--\s*@(?:format|prettier)\s*--&gt;/u.test(text);
 }
 function insertPragma(text) {
   return "&lt;!-- @format --&gt;\n\n" + text;
@@ -21109,7 +21111,8 @@ function printElement(path, options2, print2) {
       return line;
     }
     if ((node.lastChild.type === "comment" || node.lastChild.type === "text" &amp;&amp; node.isWhitespaceSensitive &amp;&amp; node.isIndentationSensitive) &amp;&amp; new RegExp(
-      `\\n[\\t ]{${options2.tabWidth * (path.ancestors.length - 1)}}$`
+      `\\n[\\t ]{${options2.tabWidth * (path.ancestors.length - 1)}}$`,
+      "u"
     ).test(node.lastChild.value)) {
       return "";
     }
@@ -21478,7 +21481,7 @@ function extractInterpolation(ast, options2) {
   if (options2.parser === "html") {
     return;
   }
-  const interpolationRegex2 = /{{(.+?)}}/s;
+  const interpolationRegex2 = /\{\{(.+?)\}\}/su;
   ast.walk((node) =&gt; {
     if (!canHaveInterpolation(node)) {
       return;
@@ -21591,7 +21594,7 @@ function addHasHtmComponentClosingTag(ast, options2) {
     if (node.type !== "element") {
       return;
     }
-    node.hasHtmComponentClosingTag = node.endSourceSpan &amp;&amp; /^&lt;\s*\/\s*\/\s*&gt;$/.test(
+    node.hasHtmComponentClosingTag = node.endSourceSpan &amp;&amp; /^&lt;\s*\/\s*\/\s*&gt;$/u.test(
       options2.originalText.slice(
         node.endSourceSpan.start.offset,
         node.endSourceSpan.end.offset
@@ -21666,7 +21669,7 @@ function genericPrint(path, options2, print2) {
       return [printOpeningTagStart(node, options2), ...path.map(print2, "children"), printClosingTagEnd(node, options2)];
     case "text": {
       if (node.parent.type === "interpolation") {
-        const trailingNewlineRegex = /\n[^\S\n]*$/;
+        const trailingNewlineRegex = /\n[^\S\n]*$/u;
         const hasTrailingNewline = trailingNewlineRegex.test(node.value);
         const value = hasTrailingNewline ? node.value.replace(trailingNewlineRegex, "") : node.value;
         return [replaceEndOfLine(value), hasTrailingNewline ? hardline : ""];
@@ -21681,8 +21684,8 @@ function genericPrint(path, options2, print2) {
       return [group([printOpeningTagStart(node, options2), " ", string_replace_all_default(
         /* isOptionalObject */
         false,
-        node.value.replace(/^html\b/i, "html"),
-        /\s+/g,
+        node.value.replace(/^html\b/iu, "html"),
+        /\s+/gu,
         " "
       )]), printClosingTagEnd(node, options2)];
     case "comment":
@@ -26500,7 +26503,7 @@ ${startDelimiter}`, firstLineBreakIndex);
 <span class="cstat-no" title="statement not covered" >  }</span>
   const frontMatterEndIndex = endDelimiterIndex + 1 + DELIMITER_LENGTH;
   const nextCharacter = text.charAt(frontMatterEndIndex + 1);
-  if (!/\s?/.test(nextCharacter)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (!/\s?/u.test(nextCharacter)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   const raw = text.slice(0, frontMatterEndIndex);
@@ -26530,7 +26533,7 @@ function parse2(text) {
       /* isOptionalObject */
       false,
       raw,
-      /[^\n]/g,
+      /[^\n]/gu,
       " "
     ) + text.slice(raw.length)
   };
@@ -26678,15 +26681,15 @@ var Node = class _Node {
 // src/language-html/conditional-comment.js
 var parseFunctions = [{
   // &lt;!--[if ... ]&gt; ... &lt;![endif]--&gt;
-  regex: /^(\[if([^\]]*)]&gt;)(.*?)&lt;!\s*\[endif]$/s,
+  regex: /^(\[if([^\]]*)\]&gt;)(.*?)&lt;!\s*\[endif\]$/su,
   parse: parseIeConditionalStartEndComment
 }, {
   // &lt;!--[if ... ]&gt;&lt;!--&gt;
-  regex: /^\[if([^\]]*)]&gt;&lt;!$/,
+  regex: /^\[if([^\]]*)\]&gt;&lt;!$/u,
   parse: parseIeConditionalStartComment
 }, {
   // &lt;!--&lt;![endif]--&gt;
-  regex: /^&lt;!\s*\[endif]$/,
+  regex: /^&lt;!\s*\[endif\]$/u,
   parse: parseIeConditionalEndComment
 }];
 function parseIeConditionalComment(node, parseHtml) {
@@ -26728,7 +26731,7 @@ function parseIeConditionalStartEndComment(node, parseHtml, match) {
       /* isOptionalObject */
       false,
       condition.trim(),
-      /\s+/g,
+      /\s+/gu,
       " "
     ),
     sourceSpan: node.sourceSpan,
@@ -26744,7 +26747,7 @@ function parseIeConditionalStartComment(node, parseHtml, match) {
       /* isOptionalObject */
       false,
       condition.trim(),
-      /\s+/g,
+      /\s+/gu,
       " "
     ),
     sourceSpan: node.sourceSpan
@@ -27747,7 +27750,7 @@ function normalizeAngularControlFlowBlock(node) {
     /* isOptionalObject */
     false,
     node.name.toLowerCase(),
-    /\s+/g,
+    /\s+/gu,
     " "
   ).trim();
   node.type = "angularControlFlowBlock";
@@ -27852,7 +27855,7 @@ function ngHtmlParser(input, parseOptions, options2) {
             attr.value = null;
           } else {
             attr.value = attr.valueSpan.toString();
-            if (/["']/.test(attr.value[0])) {
+            if (/["']/u.test(attr.value[0])) {
               attr.value = attr.value.slice(1, -1);
             }
           }
@@ -27981,7 +27984,7 @@ function parse3(text, parseOptions, options2 = {}, shouldParseFrontMatter = true
       /* isOptionalObject */
       false,
       text.slice(0, offset),
-      /[^\n\r]/g,
+      /[^\n\r]/gu,
       " "
     );
     const realContent = subContent;
@@ -28072,7 +28075,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-17T00:26:58.894Z
+                at 2024-06-18T00:26:36.316Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

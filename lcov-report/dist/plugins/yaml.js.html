@@ -22287,10 +22287,10 @@
 <span class="cstat-no" title="statement not covered" >      return false;</span>
     };
   }
-  var skipWhitespace = skip(/\s/);
+  var skipWhitespace = skip(/\s/u);
   var skipSpaces = skip(" 	");
   var skipToLineEnd = skip(",; 	");
-  var skipEverythingButNewLine = skip(/[^\n\r]/);
+  var skipEverythingButNewLine = skip(/[^\n\r]/u);
 &nbsp;
   // src/utils/skip-newline.js
 <span class="fstat-no" title="function not covered" >  function skipNewline(text, startIndex, options2) {</span>
@@ -22346,7 +22346,7 @@
   // src/language-yaml/embed.js
   function embed(path, options2) {
     const { node } = path;
-    if (node.type === "root" &amp;&amp; options2.filepath <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /(?:[/\\]|^)\.(?:prettier|stylelint|lintstaged)rc$/.test(options2.filepath))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (node.type === "root" &amp;&amp; options2.filepath <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /(?:[/\\]|^)\.(?:prettier|stylelint|lintstaged)rc$/u.test(options2.filepath))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return async (textToDoc) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const doc = await textToDoc(options2.originalText, { parser: "json" });</span>
 <span class="cstat-no" title="statement not covered" >        return doc ? [doc, hardline] : void 0;</span>
@@ -22454,10 +22454,10 @@
 &nbsp;
   // src/language-yaml/pragma.js
 <span class="fstat-no" title="function not covered" >  function isPragma(text) {</span>
-<span class="cstat-no" title="statement not covered" >    return /^\s*@(?:prettier|format)\s*$/.test(text);</span>
+<span class="cstat-no" title="statement not covered" >    return /^\s*@(?:prettier|format)\s*$/u.test(text);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function hasPragma(text) {</span>
-<span class="cstat-no" title="statement not covered" >    return /^\s*#[^\S\n]*@(?:prettier|format)\s*?(?:\n|$)/.test(text);</span>
+<span class="cstat-no" title="statement not covered" >    return /^\s*#[^\S\n]*@(?:prettier|format)\s*?(?:\n|$)/u.test(text);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function insertPragma(text) {</span>
 <span class="cstat-no" title="statement not covered" >    return `# @format</span>
@@ -22495,7 +22495,7 @@
       if (char === "\n") {
         newlineCount++;
       }
-      if (newlineCount === 1 &amp;&amp; /\S/.test(char)) {
+      if (newlineCount === 1 &amp;&amp; /\S/u.test(char)) {
         return false;
       }
       if (newlineCount === 2) {
@@ -22579,7 +22579,7 @@
 <span class="fstat-no" title="function not covered" >  function splitWithSingleSpace(text) {</span>
 <span class="cstat-no" title="statement not covered" >    const parts = [];</span>
 <span class="cstat-no" title="statement not covered" >    let lastPart;</span>
-<span class="cstat-no" title="statement not covered" >    for (const part of text.split(/( +)/)) {</span>
+<span class="cstat-no" title="statement not covered" >    for (const part of text.split(/( +)/u)) {</span>
 <span class="cstat-no" title="statement not covered" >      if (part !== " ") {</span>
 <span class="cstat-no" title="statement not covered" >        if (lastPart === " ") {</span>
 <span class="cstat-no" title="statement not covered" >          parts.push(part);</span>
@@ -22628,10 +22628,10 @@
     isLastDescendant,
     options: options2
   }) {
-    const content = node.position.start.line === node.position.end.line <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: options2.originalText.slice(node.position.start.offset, node.position.end.offset).match(/^[^\n]*\n(.*)$/s)[1];
+    const content = node.position.start.line === node.position.end.line <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: options2.originalText.slice(node.position.start.offset, node.position.end.offset).match(/^[^\n]*\n(.*)$/su)[1];
     let leadingSpaceCount;
     if (node.indent === null) {
-      const matches = content.match(/^(?&lt;leadingSpace&gt; *)[^\n\r ]/m);
+      const matches = content.match(/^(?&lt;leadingSpace&gt; *)[^\n\r ]/mu);
       leadingSpaceCount = matches ? matches.groups.leadingSpace.length <span class="branch-0 cbranch-no" title="branch not covered" >: Number.POSITIVE_INFINITY;</span>
     }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
 <span class="cstat-no" title="statement not covered" >      leadingSpaceCount = node.indent - 1 + parentIndent;</span>
@@ -22640,7 +22640,7 @@
     if (options2.proseWrap === "preserve" <span class="branch-0 cbranch-no" title="branch not covered" >|| node.type === "blockLiteral")</span> {
       return removeUnnecessaryTrailingNewlines(rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : [lineContent]));
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return removeUnnecessaryTrailingNewlines(rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : splitWithSingleSpace(lineContent)).reduce((reduced, lineContentWords, index) =&gt; index !== 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; lineContentWords.length &gt; 0 &amp;&amp; !/^\s/.test(lineContentWords[0]) &amp;&amp; !/^\s|\s$/.test(at_default(</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return removeUnnecessaryTrailingNewlines(rawLineContents.map((lineContent) =&gt; lineContent.length === 0 ? [] : splitWithSingleSpace(lineContent)).reduce((reduced, lineContentWords, index) =&gt; index !== 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; lineContentWords.length &gt; 0 &amp;&amp; !/^\s/u.test(lineContentWords[0]) &amp;&amp; !/^\s|\s$/u.test(at_default(</span></span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      reduced,</span>
@@ -22652,7 +22652,7 @@
 <span class="cstat-no" title="statement not covered" >      -1</span>
 <span class="cstat-no" title="statement not covered" >    ), ...lineContentWords]] : [...reduced, lineContentWords], []).map((lineContentWords) =&gt; lineContentWords.reduce((reduced, word) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >      // disallow trailing spaces</span>
-<span class="cstat-no" title="statement not covered" >      reduced.length &gt; 0 &amp;&amp; /\s$/.test(at_default(</span>
+<span class="cstat-no" title="statement not covered" >      reduced.length &gt; 0 &amp;&amp; /\s$/u.test(at_default(</span>
 <span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        reduced,</span>
@@ -22903,7 +22903,7 @@
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    if (</span></span>
 <span class="cstat-no" title="statement not covered" >      // backslash-newline</span>
-<span class="cstat-no" title="statement not covered" >      /\\$/m.test(</span>
+<span class="cstat-no" title="statement not covered" >      /\\$/mu.test(</span>
 <span class="cstat-no" title="statement not covered" >        options2.originalText.slice(</span>
 <span class="cstat-no" title="statement not covered" >          node.position.start.offset,</span>
 <span class="cstat-no" title="statement not covered" >          node.position.end.offset</span>
@@ -22916,7 +22916,7 @@
 <span class="cstat-no" title="statement not covered" >      case "never":</span>
 <span class="cstat-no" title="statement not covered" >        return !node.value.includes("\n");</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "always":</span>
-<span class="cstat-no" title="statement not covered" >        return !/[\n ]/.test(node.value);</span>
+<span class="cstat-no" title="statement not covered" >        return !/[\n ]/u.test(node.value);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      default:</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
     }
@@ -23106,7 +23106,7 @@
 <span class="cstat-no" title="statement not covered" >        const singleQuote = "'";</span>
 <span class="cstat-no" title="statement not covered" >        const doubleQuote = '"';</span>
 <span class="cstat-no" title="statement not covered" >        const raw = options2.originalText.slice(node.position.start.offset + 1, node.position.end.offset - 1);</span>
-<span class="cstat-no" title="statement not covered" >        if (node.type === "quoteSingle" &amp;&amp; raw.includes("\\") || node.type === "quoteDouble" &amp;&amp; /\\[^"]/.test(raw)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (node.type === "quoteSingle" &amp;&amp; raw.includes("\\") || node.type === "quoteDouble" &amp;&amp; /\\[^"]/u.test(raw)) {</span>
 <span class="cstat-no" title="statement not covered" >          const originalQuote = node.type === "quoteDouble" ? doubleQuote : singleQuote;</span>
 <span class="cstat-no" title="statement not covered" >          return [originalQuote, printFlowScalarContent(node.type, raw, options2), originalQuote];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -23192,7 +23192,7 @@
        * ---
        * preserve the first document head end marker
        */
-      path.isFirst &amp;&amp; /---(?:\s|$)/.test(options2.originalText.slice(locStart(document), locStart(document) + 4)) <span class="branch-0 cbranch-no" title="branch not covered" >|| /**</span>
+      path.isFirst &amp;&amp; /---(?:\s|$)/u.test(options2.originalText.slice(locStart(document), locStart(document) + 4)) <span class="branch-0 cbranch-no" title="branch not covered" >|| /**</span>
 <span class="cstat-no" title="statement not covered" >       * %DIRECTIVE</span>
 <span class="cstat-no" title="statement not covered" >       * ---</span>
 <span class="cstat-no" title="statement not covered" >       */</span>
@@ -24697,7 +24697,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-17T00:26:58.894Z
+                at 2024-06-18T00:26:36.316Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
