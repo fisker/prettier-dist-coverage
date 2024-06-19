@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.94% </span>
+                <span class="strong">71.92% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7964/11070</span>
+                <span class='fraction'>7959/11065</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.79% </span>
+                <span class="strong">85.81% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2367/2759</span>
+                <span class='fraction'>2366/2757</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.75% </span>
+                <span class="strong">64.7% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>496/766</span>
+                <span class='fraction'>495/765</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.94% </span>
+                <span class="strong">71.92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7964/11070</span>
+                <span class='fraction'>7959/11065</span>
             </div>
         
             
@@ -11128,12 +11128,7 @@
 <a name='L11063'></a><a href='#L11063'>11063</a>
 <a name='L11064'></a><a href='#L11064'>11064</a>
 <a name='L11065'></a><a href='#L11065'>11065</a>
-<a name='L11066'></a><a href='#L11066'>11066</a>
-<a name='L11067'></a><a href='#L11067'>11067</a>
-<a name='L11068'></a><a href='#L11068'>11068</a>
-<a name='L11069'></a><a href='#L11069'>11069</a>
-<a name='L11070'></a><a href='#L11070'>11070</a>
-<a name='L11071'></a><a href='#L11071'>11071</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
+<a name='L11066'></a><a href='#L11066'>11066</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -20367,11 +20362,6 @@
 <span class="cline-any cline-yes">2668x</span>
 <span class="cline-any cline-yes">2668x</span>
 <span class="cline-any cline-yes">2668x</span>
-<span class="cline-any cline-yes">458x</span>
-<span class="cline-any cline-yes">458x</span>
-<span class="cline-any cline-yes">458x</span>
-<span class="cline-any cline-yes">458x</span>
-<span class="cline-any cline-yes">458x</span>
 <span class="cline-any cline-yes">1900x</span>
 <span class="cline-any cline-yes">1900x</span>
 <span class="cline-any cline-yes">1900x</span>
@@ -31437,11 +31427,6 @@ function isURLFunctionNode(node) {
 function isVarFunctionNode(node) {
   return node.type === "value-func" &amp;&amp; node.value.toLowerCase() === "var";
 }
-function isLastNode(path, node) {
-  var _a;
-  const nodes = (_a = path.parent) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.nodes;
-  return nodes &amp;&amp; nodes.indexOf(node) === nodes.length - 1;
-}
 function isDetachedRulesetDeclarationNode(node) {
   const { selector } = node;
   if (!selector) {
@@ -32322,7 +32307,7 @@ function genericPrint(path, options2, print3) {
         node.raws.important ? node.raws.important.replace(/\s*!\s*important/iu, " !important") : node.important ? " !important" : "",
         node.raws.scssDefault ? node.raws.scssDefault.replace(/\s*!default/iu, " !default") : node.scssDefault ? " !default" : "",
         node.raws.scssGlobal ? node.raws.scssGlobal.replace(/\s*!global/iu, " !global") : node.scssGlobal ? " !global" : "",
-        node.nodes ? [" {", indent([softline, sequence_default(path, options2, print3)]), softline, "}"] : isTemplatePropNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !parentNode.raws.semicolon <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; options2.originalText[locEnd(node) - 1] !== ";" <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: options2.__isHTMLStyleAttribute &amp;&amp; isLastNode(path, node) ? ifBreak(";") : ";"
+        node.nodes ? [" {", indent([softline, sequence_default(path, options2, print3)]), softline, "}"] : isTemplatePropNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !parentNode.raws.semicolon <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; options2.originalText[locEnd(node) - 1] !== ";" <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: options2.__isHTMLStyleAttribute &amp;&amp; path.isLast ? ifBreak(";") : ";"
       ];
     }
     case "css-atrule": {
@@ -32365,7 +32350,7 @@ function genericPrint(path, options2, print3) {
       return group(indent(join(line, parts)));
     }
     case "media-query":
-      return [join(" ", path.map(print3, "nodes")), isLastNode(path, node) ? "" : ","];
+      return [join(" ", path.map(print3, "nodes")), path.isLast ? "" : ","];
     case "media-type":
       return adjustNumbers(adjustStrings(node.value, options2));
     case "media-feature-expression":
@@ -32423,7 +32408,7 @@ function genericPrint(path, options2, print3) {
       if (node.value === "+" || node.value === "&gt;" || node.value === "~" || node.value === "&gt;&gt;&gt;") {
         const parentNode = path.parent;
         const leading2 = parentNode.type === "selector-selector" &amp;&amp; parentNode.nodes[0] === node ? "" : line;
-        return [leading2, node.value, isLastNode(path, node) ? "" : " "];
+        return [leading2, node.value, path.isLast ? "" : " "];
       }
       const leading = node.value.trim().startsWith("(") ? line : "";
       const value = adjustNumbers(adjustStrings(node.value.trim(), options2)) || line;
@@ -33280,7 +33265,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-18T00:26:36.316Z
+                at 2024-06-19T00:25:45.170Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
