@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.16% </span>
+                <span class="strong">85.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9733/11428</span>
+                <span class='fraction'>9735/11430</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.16% </span>
+                <span class="strong">85.17% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9733/11428</span>
+                <span class='fraction'>9735/11430</span>
             </div>
         
             
@@ -11491,7 +11491,9 @@
 <a name='L11426'></a><a href='#L11426'>11426</a>
 <a name='L11427'></a><a href='#L11427'>11427</a>
 <a name='L11428'></a><a href='#L11428'>11428</a>
-<a name='L11429'></a><a href='#L11429'>11429</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11429'></a><a href='#L11429'>11429</a>
+<a name='L11430'></a><a href='#L11430'>11430</a>
+<a name='L11431'></a><a href='#L11431'>11431</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20937,28 +20939,30 @@
 <span class="cline-any cline-yes">4429x</span>
 <span class="cline-any cline-yes">29513x</span>
 <span class="cline-any cline-yes">5147x</span>
-<span class="cline-any cline-yes">551x</span>
-<span class="cline-any cline-yes">551x</span>
-<span class="cline-any cline-yes">551x</span>
-<span class="cline-any cline-yes">551x</span>
-<span class="cline-any cline-yes">551x</span>
-<span class="cline-any cline-yes">551x</span>
-<span class="cline-any cline-yes">551x</span>
-<span class="cline-any cline-yes">551x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
+<span class="cline-any cline-yes">475x</span>
 <span class="cline-any cline-yes">696x</span>
 <span class="cline-any cline-yes">696x</span>
-<span class="cline-any cline-yes">466x</span>
-<span class="cline-any cline-yes">466x</span>
-<span class="cline-any cline-yes">696x</span>
-<span class="cline-any cline-yes">102x</span>
-<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">568x</span>
+<span class="cline-any cline-yes">568x</span>
 <span class="cline-any cline-yes">128x</span>
-<span class="cline-any cline-yes">128x</span>
 <span class="cline-any cline-yes">696x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">116x</span>
+<span class="cline-any cline-yes">72x</span>
+<span class="cline-any cline-yes">72x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">696x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">696x</span>
 <span class="cline-any cline-yes">696x</span>
 <span class="cline-any cline-yes">253x</span>
 <span class="cline-any cline-yes">253x</span>
@@ -32365,28 +32369,30 @@ function splitText(text) {
     }
   }
 }
-function getOrderedListItemInfo(orderListItem, originalText) {
-  const [, numberText, marker, leadingSpaces] = originalText.slice(orderListItem.position.start.offset, orderListItem.position.end.offset).match(/^\s*(\d+)(\.|\))(\s*)/u);
-  return {
+function getOrderedListItemInfo(orderListItem, options2) {
+  const text = options2.originalText.slice(orderListItem.position.start.offset, orderListItem.position.end.offset);
+  const {
     numberText,
-    marker,
+    leadingSpaces
+  } = text.match(/^\s*(?&lt;numberText&gt;\d+)(\.|\))(?&lt;leadingSpaces&gt;\s*)/u).groups;
+  return {
+    number: Number(numberText),
     leadingSpaces
   };
 }
 function hasGitDiffFriendlyOrderedList(node, options2) {
-  if (!node.ordered) {
+  if (!node.ordered || node.children.length &lt; 2) {
     return false;
   }
-  if (node.children.length &lt; 2) {
+  const secondNumber = getOrderedListItemInfo(node.children[1], options2).number;
+  if (secondNumber !== 1) {
     return false;
   }
-  const firstNumber = Number(getOrderedListItemInfo(node.children[0], options2.originalText).numberText);
-  const secondNumber = Number(getOrderedListItemInfo(node.children[1], options2.originalText).numberText);
-  if (firstNumber === 0 &amp;&amp; node.children.length &gt; 2) {
-    const thirdNumber = Number(getOrderedListItemInfo(node.children[2], options2.originalText).numberText);
-    return secondNumber === 1 &amp;&amp; thirdNumber === 1;
+  const firstNumber = getOrderedListItemInfo(node.children[0], options2).number;
+  if (firstNumber !== 0) {
+    return true;
   }
-  return secondNumber === 1;
+  return node.children.length &gt; 2 &amp;&amp; getOrderedListItemInfo(node.children[2], options2).number === 1;
 }
 function getFencedCodeBlockValue(node, originalText) {
   const {
@@ -33382,7 +33388,7 @@ function markAlignedList(ast, options2) {
       return true;
     }
     const [firstItem, secondItem] = list.children;
-    const firstInfo = getOrderedListItemInfo(firstItem, options2.originalText);
+    const firstInfo = getOrderedListItemInfo(firstItem, options2);
     if (firstInfo.leadingSpaces.length &gt; 1) {
       return true;
     }
@@ -33400,7 +33406,7 @@ function markAlignedList(ast, options2) {
     if (firstStart % options2.tabWidth === 0) {
       return true;
     }
-    const secondInfo = getOrderedListItemInfo(secondItem, options2.originalText);
+    const secondInfo = getOrderedListItemInfo(secondItem, options2);
     return secondInfo.leadingSpaces.length &gt; 1;
   }
 }
@@ -34354,7 +34360,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-24T00:27:21.596Z
+                at 2024-06-25T00:25:32.421Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.18% </span>
+                <span class="strong">70.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8033/11445</span>
+                <span class='fraction'>8033/11447</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.18% </span>
+                <span class="strong">70.17% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8033/11445</span>
+                <span class='fraction'>8033/11447</span>
             </div>
         
             
@@ -11507,7 +11507,9 @@
 <a name='L11442'></a><a href='#L11442'>11442</a>
 <a name='L11443'></a><a href='#L11443'>11443</a>
 <a name='L11444'></a><a href='#L11444'>11444</a>
-<a name='L11445'></a><a href='#L11445'>11445</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11445'></a><a href='#L11445'>11445</a>
+<a name='L11446'></a><a href='#L11446'>11446</a>
+<a name='L11447'></a><a href='#L11447'>11447</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20986,20 +20988,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -32422,28 +32426,30 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
   }
-<span class="fstat-no" title="function not covered" >  function getOrderedListItemInfo(orderListItem, originalText) {</span>
-<span class="cstat-no" title="statement not covered" >    const [, numberText, marker, leadingSpaces] = originalText.slice(orderListItem.position.start.offset, orderListItem.position.end.offset).match(/^\s*(\d+)(\.|\))(\s*)/u);</span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="fstat-no" title="function not covered" >  function getOrderedListItemInfo(orderListItem, options2) {</span>
+<span class="cstat-no" title="statement not covered" >    const text = options2.originalText.slice(orderListItem.position.start.offset, orderListItem.position.end.offset);</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      numberText,</span>
-<span class="cstat-no" title="statement not covered" >      marker,</span>
+<span class="cstat-no" title="statement not covered" >      leadingSpaces</span>
+<span class="cstat-no" title="statement not covered" >    } = text.match(/^\s*(?&lt;numberText&gt;\d+)(\.|\))(?&lt;leadingSpaces&gt;\s*)/u).groups;</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >      number: Number(numberText),</span>
 <span class="cstat-no" title="statement not covered" >      leadingSpaces</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function hasGitDiffFriendlyOrderedList(node, options2) {
-    if (!node.ordered) {
+    if (!node.ordered <span class="branch-0 cbranch-no" title="branch not covered" >|| node.children.length &lt; 2)</span> {
       return false;
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    if (node.children.length &lt; 2) {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const secondNumber = getOrderedListItemInfo(node.children[1], options2).number;</span></span>
+<span class="cstat-no" title="statement not covered" >    if (secondNumber !== 1) {</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const firstNumber = Number(getOrderedListItemInfo(node.children[0], options2.originalText).numberText);</span>
-<span class="cstat-no" title="statement not covered" >    const secondNumber = Number(getOrderedListItemInfo(node.children[1], options2.originalText).numberText);</span>
-    if (firstNumber === 0 &amp;&amp; node.children.length &gt; 2) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      const thirdNumber = Number(getOrderedListItemInfo(node.children[2], options2.originalText).numberText);</span>
-<span class="cstat-no" title="statement not covered" >      return secondNumber === 1 &amp;&amp; thirdNumber === 1;</span>
+<span class="cstat-no" title="statement not covered" >    const firstNumber = getOrderedListItemInfo(node.children[0], options2).number;</span>
+<span class="cstat-no" title="statement not covered" >    if (firstNumber !== 0) {</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return secondNumber === 1;</span>
+    return node.children.length &gt; 2 &amp;&amp; getOrderedListItemInfo(node.children[2], options2).number === 1;
   }
   function getFencedCodeBlockValue(node, originalText) {
     const {
@@ -33439,7 +33445,7 @@
         return true;
       }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >      const [firstItem, secondItem] = list.children;</span></span>
-<span class="cstat-no" title="statement not covered" >      const firstInfo = getOrderedListItemInfo(firstItem, options2.originalText);</span>
+<span class="cstat-no" title="statement not covered" >      const firstInfo = getOrderedListItemInfo(firstItem, options2);</span>
 <span class="cstat-no" title="statement not covered" >      if (firstInfo.leadingSpaces.length &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -33457,7 +33463,7 @@
 <span class="cstat-no" title="statement not covered" >      if (firstStart % options2.tabWidth === 0) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const secondInfo = getOrderedListItemInfo(secondItem, options2.originalText);</span>
+<span class="cstat-no" title="statement not covered" >      const secondInfo = getOrderedListItemInfo(secondItem, options2);</span>
 <span class="cstat-no" title="statement not covered" >      return secondInfo.leadingSpaces.length &gt; 1;</span>
     }
   }
@@ -34402,7 +34408,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-24T00:27:21.596Z
+                at 2024-06-25T00:25:32.421Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
