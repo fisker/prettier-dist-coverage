@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.59% </span>
+                <span class="strong">57.6% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3078/5344</span>
+                <span class='fraction'>3084/5354</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.81% </span>
+                <span class="strong">72.84% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>632/868</span>
+                <span class='fraction'>633/869</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.1% </span>
+                <span class="strong">48.59% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>192/391</span>
+                <span class='fraction'>190/391</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.59% </span>
+                <span class="strong">57.6% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3078/5344</span>
+                <span class='fraction'>3084/5354</span>
             </div>
         
             
@@ -5407,7 +5407,17 @@
 <a name='L5342'></a><a href='#L5342'>5342</a>
 <a name='L5343'></a><a href='#L5343'>5343</a>
 <a name='L5344'></a><a href='#L5344'>5344</a>
-<a name='L5345'></a><a href='#L5345'>5345</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5345'></a><a href='#L5345'>5345</a>
+<a name='L5346'></a><a href='#L5346'>5346</a>
+<a name='L5347'></a><a href='#L5347'>5347</a>
+<a name='L5348'></a><a href='#L5348'>5348</a>
+<a name='L5349'></a><a href='#L5349'>5349</a>
+<a name='L5350'></a><a href='#L5350'>5350</a>
+<a name='L5351'></a><a href='#L5351'>5351</a>
+<a name='L5352'></a><a href='#L5352'>5352</a>
+<a name='L5353'></a><a href='#L5353'>5353</a>
+<a name='L5354'></a><a href='#L5354'>5354</a>
+<a name='L5355'></a><a href='#L5355'>5355</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -6290,10 +6300,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6873,6 +6883,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
@@ -7302,6 +7313,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">73x</span>
+<span class="cline-any cline-yes">146x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">146x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">73x</span>
@@ -11574,7 +11594,7 @@ function traverseDoc(doc, onEnter, onExit, shouldTraverseConditionalGroups) {
 var traverse_doc_default = traverseDoc;
 &nbsp;
 // src/document/utils/assert-doc.js
-var noop = () =&gt; {
+var noop = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 };
 var assertDoc = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: function(doc) {</span>
 <span class="cstat-no" title="statement not covered" >  traverse_doc_default(doc, (doc2) =&gt; {</span>
@@ -11634,10 +11654,10 @@ var assertDocArray = true ? noop <span class="branch-0 cbranch-no" title="branch
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function conditionalGroup(states, opts) {</span></span>
 <span class="cstat-no" title="statement not covered" >  return group(states[0], { ...opts, expandedStates: states });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-function fill(parts) {
-  assertDocArray(parts);
-  return { type: DOC_TYPE_FILL, parts };
-}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function fill(parts) {</span></span>
+<span class="cstat-no" title="statement not covered" >  assertDocArray(parts);</span>
+<span class="cstat-no" title="statement not covered" >  return { type: DOC_TYPE_FILL, parts };</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function ifBreak(breakContents, flatContents = "", opts = {}) {</span></span>
 <span class="cstat-no" title="statement not covered" >  assertDoc(breakContents);</span>
 <span class="cstat-no" title="statement not covered" >  if (flatContents !== "") {</span>
@@ -12217,6 +12237,7 @@ function inheritLabel(doc, fn) {
 var MODE_BREAK = Symbol("MODE_BREAK");
 var MODE_FLAT = Symbol("MODE_FLAT");
 var CURSOR_PLACEHOLDER = Symbol("cursor");
+var IS_MUTABLE_FILL = Symbol("IS_MUTABLE_FILL");
 function rootIndent() {
   return {
     value: "",
@@ -12644,13 +12665,22 @@ function printDocToString(doc, options) {
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        parts.splice(0, 2);
+        const secondContent = parts[2];
+        let remainingDoc = doc2;
+        if (doc2[IS_MUTABLE_FILL]) {
+          parts.splice(0, 2);
+        } else {
+          remainingDoc = {
+            ...doc2,
+            parts: parts.slice(2),
+            [IS_MUTABLE_FILL]: true
+          };
+        }
         const remainingCmd = {
           ind,
           mode,
-          doc: fill(parts)
+          doc: remainingDoc
         };
-        const secondContent = parts[0];
         const firstAndSecondContentFlatCmd = {
           ind,
           mode: MODE_FLAT,
@@ -16102,7 +16132,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-26T00:26:30.370Z
+                at 2024-07-27T00:26:08.951Z
             </div>
         <script src="../prettify.js"></script>
         <script>

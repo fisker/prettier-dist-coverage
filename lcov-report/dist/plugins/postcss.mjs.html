@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.92% </span>
+                <span class="strong">71.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7959/11065</span>
+                <span class='fraction'>7959/11069</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.92% </span>
+                <span class="strong">71.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7959/11065</span>
+                <span class='fraction'>7959/11069</span>
             </div>
         
             
@@ -11128,7 +11128,11 @@
 <a name='L11063'></a><a href='#L11063'>11063</a>
 <a name='L11064'></a><a href='#L11064'>11064</a>
 <a name='L11065'></a><a href='#L11065'>11065</a>
-<a name='L11066'></a><a href='#L11066'>11066</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
+<a name='L11066'></a><a href='#L11066'>11066</a>
+<a name='L11067'></a><a href='#L11067'>11067</a>
+<a name='L11068'></a><a href='#L11068'>11068</a>
+<a name='L11069'></a><a href='#L11069'>11069</a>
+<a name='L11070'></a><a href='#L11070'>11070</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -12086,6 +12090,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23038,11 +23046,11 @@ var require_container = __commonJS({
 <span class="cstat-no" title="statement not covered" >        return i;</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="fstat-no" title="function not covered" >    function markDirtyUp(node) {</span>
+<span class="fstat-no" title="function not covered" >    function markTreeDirty(node) {</span>
 <span class="cstat-no" title="statement not covered" >      node[isClean] = false;</span>
 <span class="cstat-no" title="statement not covered" >      if (node.proxyOf.nodes) {</span>
 <span class="cstat-no" title="statement not covered" >        for (let i of node.proxyOf.nodes) {</span>
-<span class="cstat-no" title="statement not covered" >          markDirtyUp(i);</span>
+<span class="cstat-no" title="statement not covered" >          markTreeDirty(i);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -23153,7 +23161,11 @@ var require_container = __commonJS({
 <span class="fstat-no" title="function not covered" >      insertBefore(exist, add) {</span>
 <span class="cstat-no" title="statement not covered" >        let existIndex = this.index(exist);</span>
 <span class="cstat-no" title="statement not covered" >        let type = existIndex === 0 ? "prepend" : false;</span>
-<span class="cstat-no" title="statement not covered" >        let nodes = this.normalize(add, this.proxyOf.nodes[existIndex], type).reverse();</span>
+<span class="cstat-no" title="statement not covered" >        let nodes = this.normalize(</span>
+<span class="cstat-no" title="statement not covered" >          add,</span>
+<span class="cstat-no" title="statement not covered" >          this.proxyOf.nodes[existIndex],</span>
+<span class="cstat-no" title="statement not covered" >          type</span>
+<span class="cstat-no" title="statement not covered" >        ).reverse();</span>
 <span class="cstat-no" title="statement not covered" >        existIndex = this.index(exist);</span>
 <span class="cstat-no" title="statement not covered" >        for (let node of nodes) this.proxyOf.nodes.splice(existIndex, 0, node);</span>
 <span class="cstat-no" title="statement not covered" >        let index;</span>
@@ -23203,7 +23215,7 @@ var require_container = __commonJS({
 <span class="cstat-no" title="statement not covered" >          if (!i[my]) _Container.rebuild(i);</span>
 <span class="cstat-no" title="statement not covered" >          i = i.proxyOf;</span>
 <span class="cstat-no" title="statement not covered" >          if (i.parent) i.parent.removeChild(i);</span>
-<span class="cstat-no" title="statement not covered" >          if (i[isClean]) markDirtyUp(i);</span>
+<span class="cstat-no" title="statement not covered" >          if (i[isClean]) markTreeDirty(i);</span>
 <span class="cstat-no" title="statement not covered" >          if (typeof i.raws.before === "undefined") {</span>
 <span class="cstat-no" title="statement not covered" >            if (sample &amp;&amp; typeof sample.raws.before !== "undefined") {</span>
 <span class="cstat-no" title="statement not covered" >              i.raws.before = sample.raws.before.replace(/\S/g, "");</span>
@@ -25726,7 +25738,7 @@ var require_processor = __commonJS({
     var Root = require_root();
     var Processor = class {
 <span class="fstat-no" title="function not covered" >      constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >        this.version = "8.4.39";</span>
+<span class="cstat-no" title="statement not covered" >        this.version = "8.4.40";</span>
 <span class="cstat-no" title="statement not covered" >        this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="fstat-no" title="function not covered" >      normalize(plugins) {</span>
@@ -33265,7 +33277,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-26T00:26:27.545Z
+                at 2024-07-27T00:26:06.184Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
