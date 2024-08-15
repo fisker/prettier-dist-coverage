@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.67% </span>
+                <span class="strong">52.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5841/11089</span>
+                <span class='fraction'>5843/11091</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.84% </span>
+                <span class="strong">60.91% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1077/1770</span>
+                <span class='fraction'>1080/1773</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.67% </span>
+                <span class="strong">52.68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5841/11089</span>
+                <span class='fraction'>5843/11091</span>
             </div>
         
             
@@ -11151,7 +11151,9 @@
 <a name='L11086'></a><a href='#L11086'>11086</a>
 <a name='L11087'></a><a href='#L11087'>11087</a>
 <a name='L11088'></a><a href='#L11088'>11088</a>
-<a name='L11089'></a><a href='#L11089'>11089</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11089'></a><a href='#L11089'>11089</a>
+<a name='L11090'></a><a href='#L11090'>11090</a>
+<a name='L11091'></a><a href='#L11091'>11091</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -19342,9 +19344,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21381,6 +21383,8 @@
 <span class="cline-any cline-yes">179x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">179x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">179x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -30594,12 +30598,12 @@
   // src/utils/get-preferred-quote.js
   var SINGLE_QUOTE = "'";
   var DOUBLE_QUOTE = '"';
-  function getPreferredQuote(rawContent, preferredQuoteOrPreferSingleQuote) {
+  function getPreferredQuote(text, preferredQuoteOrPreferSingleQuote) {
     const preferred = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? SINGLE_QUOTE </span>: DOUBLE_QUOTE;
     const alternate = preferred === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? DOUBLE_QUOTE </span>: SINGLE_QUOTE;
     let preferredQuoteCount = 0;
     let alternateQuoteCount = 0;
-    for (const character of rawContent) {
+    for (const character of text) {
       if (character === preferred) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        preferredQuoteCount++;</span>
       } else if (character === alternate) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -32468,8 +32472,10 @@
 <span class="cstat-no" title="statement not covered" >        return node.value;</span>
       case "selector-root":
         return group([insideAtRuleNode(path, "custom-selector") <span class="branch-0 cbranch-no" title="branch not covered" >? [path.findAncestor((node2) =&gt; node2.type === "css-atrule").customSelector, line] </span>: "", join([",", insideAtRuleNode(path, ["extend", "custom-selector", "nest"]) <span class="branch-0 cbranch-no" title="branch not covered" >? line </span>: hardline], path.map(print3, "nodes"))]);
-      case "selector-selector":
-        return group(indent(path.map(print3, "nodes")));
+      case "selector-selector": {
+        const shouldIndent = node.nodes.length &gt; 1;
+        return group((shouldIndent ? indent : (x) =&gt; x)(path.map(print3, "nodes")));
+      }
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "selector-comment":</span>
 <span class="cstat-no" title="statement not covered" >        return node.value;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "selector-string":</span>
@@ -33334,7 +33340,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-14T00:27:03.726Z
+                at 2024-08-15T00:26:36.091Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
