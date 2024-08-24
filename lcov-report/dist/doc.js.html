@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.93% </span>
+                <span class="strong">16.98% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>225/1329</span>
+                <span class='fraction'>225/1325</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.93% </span>
+                <span class="strong">16.98% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>225/1329</span>
+                <span class='fraction'>225/1325</span>
             </div>
         
             
@@ -1387,11 +1387,7 @@
 <a name='L1322'></a><a href='#L1322'>1322</a>
 <a name='L1323'></a><a href='#L1323'>1323</a>
 <a name='L1324'></a><a href='#L1324'>1324</a>
-<a name='L1325'></a><a href='#L1325'>1325</a>
-<a name='L1326'></a><a href='#L1326'>1326</a>
-<a name='L1327'></a><a href='#L1327'>1327</a>
-<a name='L1328'></a><a href='#L1328'>1328</a>
-<a name='L1329'></a><a href='#L1329'>1329</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1325'></a><a href='#L1325'>1325</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2673,10 +2669,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3434,7 +3426,7 @@
   var MODE_BREAK = Symbol("MODE_BREAK");
   var MODE_FLAT = Symbol("MODE_FLAT");
   var CURSOR_PLACEHOLDER = Symbol("cursor");
-  var IS_MUTABLE_FILL = Symbol("IS_MUTABLE_FILL");
+  var DOC_FILL_PRINTED_LENGTH = Symbol("DOC_FILL_PRINTED_LENGTH");
 <span class="fstat-no" title="function not covered" >  function rootIndent() {</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >      value: "",</span>
@@ -3818,13 +3810,16 @@
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        case DOC_TYPE_FILL: {</span>
 <span class="cstat-no" title="statement not covered" >          const rem = width - pos;</span>
+<span class="cstat-no" title="statement not covered" >          const offset = doc2[DOC_FILL_PRINTED_LENGTH] ?? 0;</span>
 <span class="cstat-no" title="statement not covered" >          const {</span>
 <span class="cstat-no" title="statement not covered" >            parts</span>
 <span class="cstat-no" title="statement not covered" >          } = doc2;</span>
-<span class="cstat-no" title="statement not covered" >          if (parts.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >          const length = parts.length - offset;</span>
+<span class="cstat-no" title="statement not covered" >          if (length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          const [content, whitespace] = parts;</span>
+<span class="cstat-no" title="statement not covered" >          const content = parts[offset + 0];</span>
+<span class="cstat-no" title="statement not covered" >          const whitespace = parts[offset + 1];</span>
 <span class="cstat-no" title="statement not covered" >          const contentFlatCmd = {</span>
 <span class="cstat-no" title="statement not covered" >            ind,</span>
 <span class="cstat-no" title="statement not covered" >            mode: MODE_FLAT,</span>
@@ -3836,7 +3831,7 @@
 <span class="cstat-no" title="statement not covered" >            doc: content</span>
 <span class="cstat-no" title="statement not covered" >          };</span>
 <span class="cstat-no" title="statement not covered" >          const contentFits = fits(contentFlatCmd, [], rem, lineSuffix2.length &gt; 0, groupModeMap, true);</span>
-<span class="cstat-no" title="statement not covered" >          if (parts.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >          if (length === 1) {</span>
 <span class="cstat-no" title="statement not covered" >            if (contentFits) {</span>
 <span class="cstat-no" title="statement not covered" >              cmds.push(contentFlatCmd);</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
@@ -3854,7 +3849,7 @@
 <span class="cstat-no" title="statement not covered" >            mode: MODE_BREAK,</span>
 <span class="cstat-no" title="statement not covered" >            doc: whitespace</span>
 <span class="cstat-no" title="statement not covered" >          };</span>
-<span class="cstat-no" title="statement not covered" >          if (parts.length === 2) {</span>
+<span class="cstat-no" title="statement not covered" >          if (length === 2) {</span>
 <span class="cstat-no" title="statement not covered" >            if (contentFits) {</span>
 <span class="cstat-no" title="statement not covered" >              cmds.push(whitespaceFlatCmd, contentFlatCmd);</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
@@ -3862,21 +3857,14 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          const secondContent = parts[2];</span>
-<span class="cstat-no" title="statement not covered" >          let remainingDoc = doc2;</span>
-<span class="cstat-no" title="statement not covered" >          if (doc2[IS_MUTABLE_FILL]) {</span>
-<span class="cstat-no" title="statement not covered" >            parts.splice(0, 2);</span>
-<span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            remainingDoc = {</span>
-<span class="cstat-no" title="statement not covered" >              ...doc2,</span>
-<span class="cstat-no" title="statement not covered" >              parts: parts.slice(2),</span>
-<span class="cstat-no" title="statement not covered" >              [IS_MUTABLE_FILL]: true</span>
-<span class="cstat-no" title="statement not covered" >            };</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          const secondContent = parts[offset + 2];</span>
 <span class="cstat-no" title="statement not covered" >          const remainingCmd = {</span>
 <span class="cstat-no" title="statement not covered" >            ind,</span>
 <span class="cstat-no" title="statement not covered" >            mode,</span>
-<span class="cstat-no" title="statement not covered" >            doc: remainingDoc</span>
+<span class="cstat-no" title="statement not covered" >            doc: {</span>
+<span class="cstat-no" title="statement not covered" >              ...doc2,</span>
+<span class="cstat-no" title="statement not covered" >              [DOC_FILL_PRINTED_LENGTH]: offset + 2</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          };</span>
 <span class="cstat-no" title="statement not covered" >          const firstAndSecondContentFlatCmd = {</span>
 <span class="cstat-no" title="statement not covered" >            ind,</span>
@@ -4054,7 +4042,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-23T00:27:04.067Z
+                at 2024-08-24T00:26:22.085Z
             </div>
         <script src="../prettify.js"></script>
         <script>
