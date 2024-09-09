@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.19% </span>
+                <span class="strong">61.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5604/9158</span>
+                <span class='fraction'>5611/9165</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.19% </span>
+                <span class="strong">61.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5604/9158</span>
+                <span class='fraction'>5611/9165</span>
             </div>
         
             
@@ -9220,7 +9220,14 @@
 <a name='L9155'></a><a href='#L9155'>9155</a>
 <a name='L9156'></a><a href='#L9156'>9156</a>
 <a name='L9157'></a><a href='#L9157'>9157</a>
-<a name='L9158'></a><a href='#L9158'>9158</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9158'></a><a href='#L9158'>9158</a>
+<a name='L9159'></a><a href='#L9159'>9159</a>
+<a name='L9160'></a><a href='#L9160'>9160</a>
+<a name='L9161'></a><a href='#L9161'>9161</a>
+<a name='L9162'></a><a href='#L9162'>9162</a>
+<a name='L9163'></a><a href='#L9163'>9163</a>
+<a name='L9164'></a><a href='#L9164'>9164</a>
+<a name='L9165'></a><a href='#L9165'>9165</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10063,6 +10070,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -17336,6 +17346,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -17352,6 +17363,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -17361,6 +17373,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -19221,8 +19235,11 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "NullLiteral":</span>
 <span class="cstat-no" title="statement not covered" >        return "null";</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "AtHead":</span>
+      // Handled in `printPathExpression`
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "VarHead":</span>
+      // Handled in `printPathExpression`
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ThisHead":</span>
+      // Handled in `printPathExpression`
 <span class="branch-0 cbranch-no" title="branch not covered" >      default:</span>
 <span class="cstat-no" title="statement not covered" >        throw new unexpected_node_error_default(node, "Handlebars");</span>
     }
@@ -26491,6 +26508,7 @@
         });
       }
       switch (tokenizer.state) {
+        // Tag helpers
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "tagOpen":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "tagName":</span>
 <span class="cstat-no" title="statement not covered" >          throw generateSyntaxError(`Cannot use mustaches in an elements tagname`, mustache.loc);</span>
@@ -26508,6 +26526,7 @@
 <span class="cstat-no" title="statement not covered" >          addElementModifier(this.currentStartTag, mustache);</span>
 <span class="cstat-no" title="statement not covered" >          tokenizer.transitionTo(BEFORE_ATTRIBUTE_NAME);</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+        // Attribute values
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "beforeAttributeValue":</span>
 <span class="cstat-no" title="statement not covered" >          this.beginAttributeValue(false);</span>
 <span class="cstat-no" title="statement not covered" >          this.appendDynamicAttributeValuePart(mustache);</span>
@@ -26518,6 +26537,8 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "attributeValueUnquoted":</span>
 <span class="cstat-no" title="statement not covered" >          this.appendDynamicAttributeValuePart(mustache);</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+        // TODO: Only append child when the tokenizer state makes
+        // sense to do so, otherwise throw an error.
         default:
           appendChild(this.currentElement(), mustache);
       }
@@ -27541,7 +27562,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-08T00:31:17.497Z
+                at 2024-09-09T00:29:57.499Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

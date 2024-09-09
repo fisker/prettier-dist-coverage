@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.86% </span>
+                <span class="strong">50.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4103/8067</span>
+                <span class='fraction'>4107/8071</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.86% </span>
+                <span class="strong">50.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4103/8067</span>
+                <span class='fraction'>4107/8071</span>
             </div>
         
             
@@ -8129,7 +8129,11 @@
 <a name='L8064'></a><a href='#L8064'>8064</a>
 <a name='L8065'></a><a href='#L8065'>8065</a>
 <a name='L8066'></a><a href='#L8066'>8066</a>
-<a name='L8067'></a><a href='#L8067'>8067</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8067'></a><a href='#L8067'>8067</a>
+<a name='L8068'></a><a href='#L8068'>8068</a>
+<a name='L8069'></a><a href='#L8069'>8069</a>
+<a name='L8070'></a><a href='#L8070'>8070</a>
+<a name='L8071'></a><a href='#L8071'>8071</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15870,6 +15874,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">135x</span>
+<span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15881,6 +15886,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">135x</span>
@@ -15894,6 +15900,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">135x</span>
+<span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15915,6 +15922,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23935,6 +23943,7 @@
 <span class="cstat-no" title="statement not covered" >            return rebalanceLogicalTree(node);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+        // fix unexpected locEnd caused by --no-semi style
         case "VariableDeclaration": {
           const lastDeclaration = at_default(
             /* isOptionalObject */
@@ -23947,6 +23956,7 @@
           }
           break;
         }
+        // remove redundant TypeScript nodes
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "TSParenthesizedType":</span>
 <span class="cstat-no" title="statement not covered" >          return node.typeAnnotation;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "TSTypeParameter":</span>
@@ -23959,6 +23969,7 @@
 <span class="cstat-no" title="statement not covered" >            };</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+        // For hack-style pipeline
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "TopicReference":</span>
 <span class="cstat-no" title="statement not covered" >          ast.extra = {</span>
 <span class="cstat-no" title="statement not covered" >            ...ast.extra,</span>
@@ -23981,6 +23992,7 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+        // In Flow parser, it doesn't generate union/intersection types for single type
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "TSUnionType":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "TSIntersectionType":</span>
 <span class="cstat-no" title="statement not covered" >          if (node.types.length === 1) {</span>
@@ -24268,7 +24280,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-08T00:31:17.497Z
+                at 2024-09-09T00:29:57.499Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

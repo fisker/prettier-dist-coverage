@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.98% </span>
+                <span class="strong">16.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>225/1325</span>
+                <span class='fraction'>225/1347</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.98% </span>
+                <span class="strong">16.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>225/1325</span>
+                <span class='fraction'>225/1347</span>
             </div>
         
             
@@ -1387,7 +1387,29 @@
 <a name='L1322'></a><a href='#L1322'>1322</a>
 <a name='L1323'></a><a href='#L1323'>1323</a>
 <a name='L1324'></a><a href='#L1324'>1324</a>
-<a name='L1325'></a><a href='#L1325'>1325</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1325'></a><a href='#L1325'>1325</a>
+<a name='L1326'></a><a href='#L1326'>1326</a>
+<a name='L1327'></a><a href='#L1327'>1327</a>
+<a name='L1328'></a><a href='#L1328'>1328</a>
+<a name='L1329'></a><a href='#L1329'>1329</a>
+<a name='L1330'></a><a href='#L1330'>1330</a>
+<a name='L1331'></a><a href='#L1331'>1331</a>
+<a name='L1332'></a><a href='#L1332'>1332</a>
+<a name='L1333'></a><a href='#L1333'>1333</a>
+<a name='L1334'></a><a href='#L1334'>1334</a>
+<a name='L1335'></a><a href='#L1335'>1335</a>
+<a name='L1336'></a><a href='#L1336'>1336</a>
+<a name='L1337'></a><a href='#L1337'>1337</a>
+<a name='L1338'></a><a href='#L1338'>1338</a>
+<a name='L1339'></a><a href='#L1339'>1339</a>
+<a name='L1340'></a><a href='#L1340'>1340</a>
+<a name='L1341'></a><a href='#L1341'>1341</a>
+<a name='L1342'></a><a href='#L1342'>1342</a>
+<a name='L1343'></a><a href='#L1343'>1343</a>
+<a name='L1344'></a><a href='#L1344'>1344</a>
+<a name='L1345'></a><a href='#L1345'>1345</a>
+<a name='L1346'></a><a href='#L1346'>1346</a>
+<a name='L1347'></a><a href='#L1347'>1347</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2336,6 +2358,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3739,6 +3783,7 @@
 <span class="cstat-no" title="statement not covered" >                });</span>
 <span class="cstat-no" title="statement not covered" >                break;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >            // fallthrough</span>
 <span class="cstat-no" title="statement not covered" >            case MODE_BREAK: {</span>
 <span class="cstat-no" title="statement not covered" >              shouldRemeasure = false;</span>
 <span class="cstat-no" title="statement not covered" >              const next = {</span>
@@ -3808,6 +3853,26 @@
 <span class="cstat-no" title="statement not covered" >            ).mode;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >        // Fills each line with as much code as possible before moving to a new</span>
+<span class="cstat-no" title="statement not covered" >        // line with the same indentation.</span>
+<span class="cstat-no" title="statement not covered" >        //</span>
+<span class="cstat-no" title="statement not covered" >        // Expects doc.parts to be an array of alternating content and</span>
+<span class="cstat-no" title="statement not covered" >        // whitespace. The whitespace contains the linebreaks.</span>
+<span class="cstat-no" title="statement not covered" >        //</span>
+<span class="cstat-no" title="statement not covered" >        // For example:</span>
+<span class="cstat-no" title="statement not covered" >        //   ["I", line, "love", line, "monkeys"]</span>
+<span class="cstat-no" title="statement not covered" >        // or</span>
+<span class="cstat-no" title="statement not covered" >        //   [{ type: group, ... }, softline, { type: group, ... }]</span>
+<span class="cstat-no" title="statement not covered" >        //</span>
+<span class="cstat-no" title="statement not covered" >        // It uses this parts structure to handle three main layout cases:</span>
+<span class="cstat-no" title="statement not covered" >        // * The first two content items fit on the same line without</span>
+<span class="cstat-no" title="statement not covered" >        //   breaking</span>
+<span class="cstat-no" title="statement not covered" >        //   -&gt; output the first content item and the whitespace "flat".</span>
+<span class="cstat-no" title="statement not covered" >        // * Only the first content item fits on the line without breaking</span>
+<span class="cstat-no" title="statement not covered" >        //   -&gt; output the first content item "flat" and the whitespace with</span>
+<span class="cstat-no" title="statement not covered" >        //   "break".</span>
+<span class="cstat-no" title="statement not covered" >        // * Neither content item fits on the line without breaking</span>
+<span class="cstat-no" title="statement not covered" >        //   -&gt; output the first content item and the whitespace with "break".</span>
 <span class="cstat-no" title="statement not covered" >        case DOC_TYPE_FILL: {</span>
 <span class="cstat-no" title="statement not covered" >          const rem = width - pos;</span>
 <span class="cstat-no" title="statement not covered" >          const offset = doc2[DOC_FILL_PRINTED_LENGTH] ?? 0;</span>
@@ -3934,6 +3999,7 @@
 <span class="cstat-no" title="statement not covered" >              } else {</span>
 <span class="cstat-no" title="statement not covered" >                shouldRemeasure = true;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >            // fallthrough</span>
 <span class="cstat-no" title="statement not covered" >            case MODE_BREAK:</span>
 <span class="cstat-no" title="statement not covered" >              if (lineSuffix2.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >                cmds.push({</span>
@@ -4042,7 +4108,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-08T00:31:17.497Z
+                at 2024-09-09T00:29:57.499Z
             </div>
         <script src="../prettify.js"></script>
         <script>

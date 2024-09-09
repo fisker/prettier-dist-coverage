@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.95% </span>
+                <span class="strong">72.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6945/9520</span>
+                <span class='fraction'>6950/9525</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.95% </span>
+                <span class="strong">72.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6945/9520</span>
+                <span class='fraction'>6950/9525</span>
             </div>
         
             
@@ -9582,7 +9582,12 @@
 <a name='L9517'></a><a href='#L9517'>9517</a>
 <a name='L9518'></a><a href='#L9518'>9518</a>
 <a name='L9519'></a><a href='#L9519'>9519</a>
-<a name='L9520'></a><a href='#L9520'>9520</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9520'></a><a href='#L9520'>9520</a>
+<a name='L9521'></a><a href='#L9521'>9521</a>
+<a name='L9522'></a><a href='#L9522'>9522</a>
+<a name='L9523'></a><a href='#L9523'>9523</a>
+<a name='L9524'></a><a href='#L9524'>9524</a>
+<a name='L9525'></a><a href='#L9525'>9525</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11274,6 +11279,7 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11292,6 +11298,7 @@
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">37x</span>
@@ -11412,6 +11419,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">37x</span>
+<span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">37x</span>
@@ -11424,6 +11432,7 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -12545,6 +12554,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20789,6 +20799,7 @@
         if (node.hasHtmComponentClosingTag) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return "&lt;//";</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+      // fall through
       default:
         return `&lt;/${node.rawName}`;
     }
@@ -20811,6 +20822,7 @@
         if (node.isSelfClosing) {
           return "/&gt;";
         }
+      // fall through
       default:
         return "&gt;";
     }
@@ -20930,6 +20942,7 @@
         if (node.condition) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return `&lt;!--[if ${node.condition}]&gt;&lt;!--&gt;&lt;${node.rawName}`;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+      // fall through
       default:
         return `&lt;${node.rawName}`;
     }
@@ -20943,6 +20956,7 @@
         if (node.condition) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return "&gt;&lt;!--&lt;![endif]--&gt;";</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+      // fall through
       default:
         return "&gt;";
     }
@@ -22065,6 +22079,7 @@
         )), quote];
       }
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "cdata":</span>
+      // Transformed into `text`
 <span class="branch-0 cbranch-no" title="branch not covered" >      default:</span>
 <span class="cstat-no" title="statement not covered" >        throw new unexpected_node_error_default(node, "HTML");</span>
     }
@@ -28627,7 +28642,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-08T00:31:14.666Z
+                at 2024-09-09T00:29:54.748Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
