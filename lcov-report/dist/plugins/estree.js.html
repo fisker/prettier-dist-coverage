@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.93% </span>
+                <span class="strong">60.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7310/11996</span>
+                <span class='fraction'>7312/12005</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.51% </span>
+                <span class="strong">50.4% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1429/2829</span>
+                <span class='fraction'>1429/2835</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.93% </span>
+                <span class="strong">60.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7310/11996</span>
+                <span class='fraction'>7312/12005</span>
             </div>
         
             
@@ -12058,7 +12058,16 @@
 <a name='L11993'></a><a href='#L11993'>11993</a>
 <a name='L11994'></a><a href='#L11994'>11994</a>
 <a name='L11995'></a><a href='#L11995'>11995</a>
-<a name='L11996'></a><a href='#L11996'>11996</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11996'></a><a href='#L11996'>11996</a>
+<a name='L11997'></a><a href='#L11997'>11997</a>
+<a name='L11998'></a><a href='#L11998'>11998</a>
+<a name='L11999'></a><a href='#L11999'>11999</a>
+<a name='L12000'></a><a href='#L12000'>12000</a>
+<a name='L12001'></a><a href='#L12001'>12001</a>
+<a name='L12002'></a><a href='#L12002'>12002</a>
+<a name='L12003'></a><a href='#L12003'>12003</a>
+<a name='L12004'></a><a href='#L12004'>12004</a>
+<a name='L12005'></a><a href='#L12005'>12005</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16453,6 +16462,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -18274,6 +18288,10 @@
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -28439,6 +28457,11 @@
     const cursorPlaceholderIndex = out.indexOf(CURSOR_PLACEHOLDER);
     if (cursorPlaceholderIndex !== -1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      const otherCursorPlaceholderIndex = out.indexOf(CURSOR_PLACEHOLDER, cursorPlaceholderIndex + 1);</span>
+<span class="cstat-no" title="statement not covered" >      if (otherCursorPlaceholderIndex === -1) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+<span class="cstat-no" title="statement not covered" >          formatted: out.filter((char) =&gt; char !== CURSOR_PLACEHOLDER).join("")</span>
+<span class="cstat-no" title="statement not covered" >        };</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const beforeCursor = out.slice(0, cursorPlaceholderIndex).join("");</span>
 <span class="cstat-no" title="statement not covered" >      const aroundCursor = out.slice(cursorPlaceholderIndex + 1, otherCursorPlaceholderIndex).join("");</span>
 <span class="cstat-no" title="statement not covered" >      const afterCursor = out.slice(otherCursorPlaceholderIndex + 1).join("");</span>
@@ -30186,7 +30209,7 @@
   var jsxWhitespaceUtils = new whitespace_utils_default(" \n\r	");
   var isEmptyStringOrAnyLine = (doc) =&gt; doc === "" || doc === line || doc === hardline || doc === softline;
   function printJsxElementInternal(path, options2, print3) {
-    var _a, _b, _c;
+    var _a, _b, _c, _d, _e;
     const {
       node
     } = path;
@@ -30271,6 +30294,10 @@
     });
     if (((_c = options2.cursorNode) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _c.type)</span> === "JSXText" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.children.includes(options2.cursorNode))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      content = [cursor, content, cursor];</span>
+    } else if (((_d = options2.nodeBeforeCursor) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _d.type)</span> === "JSXText" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.children.includes(options2.nodeBeforeCursor))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      content = [cursor, content];</span>
+    } else if (((_e = options2.nodeAfterCursor) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _e.type)</span> === "JSXText" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.children.includes(options2.nodeAfterCursor))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      content = [content, cursor];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (isMdxBlock) {
       return content;
@@ -36055,7 +36082,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-27T00:29:51.196Z
+                at 2024-09-29T00:33:00.607Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
