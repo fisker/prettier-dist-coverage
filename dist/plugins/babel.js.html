@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.03% </span>
+                <span class="strong">52.02% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8240/15835</span>
+                <span class='fraction'>8237/15834</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.95% </span>
+                <span class="strong">56.93% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1277/2242</span>
+                <span class='fraction'>1277/2243</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.03% </span>
+                <span class="strong">52.02% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8240/15835</span>
+                <span class='fraction'>8237/15834</span>
             </div>
         
             
@@ -15896,8 +15896,7 @@
 <a name='L15831'></a><a href='#L15831'>15831</a>
 <a name='L15832'></a><a href='#L15832'>15832</a>
 <a name='L15833'></a><a href='#L15833'>15833</a>
-<a name='L15834'></a><a href='#L15834'>15834</a>
-<a name='L15835'></a><a href='#L15835'>15835</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L15834'></a><a href='#L15834'>15834</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -29332,8 +29331,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -29651,16 +29650,16 @@
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">212x</span>
-<span class="cline-any cline-yes">212x</span>
-<span class="cline-any cline-yes">189x</span>
-<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">201x</span>
+<span class="cline-any cline-yes">201x</span>
+<span class="cline-any cline-yes">178x</span>
+<span class="cline-any cline-yes">201x</span>
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">23x</span>
-<span class="cline-any cline-yes">212x</span>
-<span class="cline-any cline-yes">212x</span>
-<span class="cline-any cline-yes">212x</span>
-<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">201x</span>
+<span class="cline-any cline-yes">201x</span>
+<span class="cline-any cline-yes">201x</span>
+<span class="cline-any cline-yes">201x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -31406,7 +31405,6 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -45165,9 +45163,9 @@
           if (phase === "module") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.expectPlugin("importReflection", loc);</span>
 <span class="cstat-no" title="statement not covered" >            node.module = true;</span>
-          } else if (this.hasPlugin("importReflection")) {
-            node.module = false;
-          }
+          } else if (this.hasPlugin("importReflection")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            node.module = false;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
           if (phase === "source") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.expectPlugin("sourcePhaseImports", loc);</span>
 <span class="cstat-no" title="statement not covered" >            node.phase = "source";</span>
@@ -47268,7 +47266,6 @@
       "asyncDoExpressions",
       "destructuringPrivate",
       "decoratorAutoAccessors",
-      "importReflection",
       "explicitResourceManagement",
       ["importAttributes", { deprecatedAssertSyntax: true }],
       "sourcePhaseImports",
@@ -47572,7 +47569,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-08T00:29:52.497Z
+                at 2024-10-09T00:29:48.995Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
