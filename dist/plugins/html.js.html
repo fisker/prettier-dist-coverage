@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.98% </span>
+                <span class="strong">72.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6955/9530</span>
+                <span class='fraction'>6954/9531</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.45% </span>
+                <span class="strong">61.58% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>295/480</span>
+                <span class='fraction'>295/479</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.98% </span>
+                <span class="strong">72.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6955/9530</span>
+                <span class='fraction'>6954/9531</span>
             </div>
         
             
@@ -9592,7 +9592,8 @@
 <a name='L9527'></a><a href='#L9527'>9527</a>
 <a name='L9528'></a><a href='#L9528'>9528</a>
 <a name='L9529'></a><a href='#L9529'>9529</a>
-<a name='L9530'></a><a href='#L9530'>9530</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9530'></a><a href='#L9530'>9530</a>
+<a name='L9531'></a><a href='#L9531'>9531</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11064,12 +11065,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11156,6 +11151,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20592,12 +20594,6 @@
 <span class="cstat-no" title="statement not covered" >      __isVueBindings: true</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  function isVueEventBindingExpression(eventBindingValue) {</span>
-<span class="cstat-no" title="statement not covered" >    const fnExpRE = /^(?:[\w$]+|\([^)]*\))\s*=&gt;|^function\s*\(/u;</span>
-<span class="cstat-no" title="statement not covered" >    const simplePathRE = /^[$_a-z][\w$]*(?:\.[$_a-z][\w$]*|\['[^']*'\]|\["[^"]*"\]|\[\d+\]|\[[$_a-z][\w$]*\])*$/iu;</span>
-<span class="cstat-no" title="statement not covered" >    const value = eventBindingValue.trim();</span>
-<span class="cstat-no" title="statement not covered" >    return fnExpRE.test(value) || simplePathRE.test(value);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/language-html/embed/vue-v-for-directive.js
 <span class="fstat-no" title="function not covered" >  async function printVueVForDirective(textToDoc, print2, path, options2) {</span>
@@ -20684,14 +20680,21 @@
 <span class="cstat-no" title="statement not covered" >      return (textToDoc) =&gt; printExpression(value, textToDoc, { parseWithTs });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
-<span class="fstat-no" title="function not covered" >  function printVueVOnDirective(text, textToDoc, { parseWithTs }) {</span>
-<span class="cstat-no" title="statement not covered" >    if (isVueEventBindingExpression(text)) {</span>
-<span class="cstat-no" title="statement not covered" >      return printExpression(text, textToDoc, { parseWithTs });</span>
+<span class="fstat-no" title="function not covered" >  async function printVueVOnDirective(text, textToDoc, { parseWithTs }) {</span>
+<span class="cstat-no" title="statement not covered" >    var _a;</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      return await printExpression(text, textToDoc, { parseWithTs });</span>
+<span class="cstat-no" title="statement not covered" >    } catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >      if (((_a = error.cause) == null ? void 0 : _a.code) !== "BABEL_PARSER_SYNTAX_ERROR") {</span>
+<span class="cstat-no" title="statement not covered" >        throw error;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return formatAttributeValue(</span>
 <span class="cstat-no" title="statement not covered" >      text,</span>
 <span class="cstat-no" title="statement not covered" >      textToDoc,</span>
-<span class="cstat-no" title="statement not covered" >      { parser: parseWithTs ? "__vue_ts_event_binding" : "__vue_event_binding" },</span>
+<span class="cstat-no" title="statement not covered" >      {</span>
+<span class="cstat-no" title="statement not covered" >        parser: parseWithTs ? "__vue_ts_event_binding" : "__vue_event_binding"</span>
+<span class="cstat-no" title="statement not covered" >      },</span>
 <span class="cstat-no" title="statement not covered" >      shouldHugJsExpression</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -28657,7 +28660,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-18T00:30:02.744Z
+                at 2024-10-19T00:29:46.637Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
