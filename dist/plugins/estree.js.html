@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.02% </span>
+                <span class="strong">61.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7329/12010</span>
+                <span class='fraction'>7331/12010</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.02% </span>
+                <span class="strong">61.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7329/12010</span>
+                <span class='fraction'>7331/12010</span>
             </div>
         
             
@@ -13834,6 +13834,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
@@ -15271,6 +15273,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23526,11 +23531,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">658x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">658x</span>
@@ -25116,10 +25116,12 @@
     "DeclareExportDeclaration": [
       "declaration",
       "specifiers",
-      "source"
+      "source",
+      "attributes"
     ],
     "DeclareExportAllDeclaration": [
-      "source"
+      "source",
+      "attributes"
     ],
     "DeclaredPredicate": [
       "value"
@@ -27280,18 +27282,21 @@
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (precedingNode === enclosingNode.consequent &amp;&amp; followingNode === enclosingNode.alternate) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      if (precedingNode.type === "BlockStatement") {</span>
-<span class="cstat-no" title="statement not covered" >        addTrailingComment(precedingNode, comment);</span>
-<span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        const isSingleLineComment = isLineComment(comment) || comment.loc.start.line === comment.loc.end.line;</span>
-<span class="cstat-no" title="statement not covered" >        const isSameLineComment = comment.loc.start.line === precedingNode.loc.start.line;</span>
-<span class="cstat-no" title="statement not covered" >        if (isSingleLineComment &amp;&amp; isSameLineComment) {</span>
+<span class="cstat-no" title="statement not covered" >      const maybeElseTokenIndex = get_next_non_space_non_comment_character_index_default(text, locEnd(enclosingNode.consequent));</span>
+<span class="cstat-no" title="statement not covered" >      if (locStart(comment) &lt; maybeElseTokenIndex || enclosingNode.alternate.type === "BlockStatement") {</span>
+<span class="cstat-no" title="statement not covered" >        if (precedingNode.type === "BlockStatement") {</span>
 <span class="cstat-no" title="statement not covered" >          addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >          addDanglingComment(enclosingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >          const isSingleLineComment = isLineComment(comment) || comment.loc.start.line === comment.loc.end.line;</span>
+<span class="cstat-no" title="statement not covered" >          const isSameLineComment = comment.loc.start.line === precedingNode.loc.start.line;</span>
+<span class="cstat-no" title="statement not covered" >          if (isSingleLineComment &amp;&amp; isSameLineComment) {</span>
+<span class="cstat-no" title="statement not covered" >            addTrailingComment(precedingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >          } else {</span>
+<span class="cstat-no" title="statement not covered" >            addDanglingComment(enclosingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (followingNode.type === "BlockStatement") {</span>
 <span class="cstat-no" title="statement not covered" >      addBlockStatementFirstComment(followingNode, comment);</span>
@@ -35521,13 +35526,8 @@
 <span class="cstat-no" title="statement not covered" >          parts.push(".");</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          parts.push(printDeclareToken(path));</span>
-<span class="cstat-no" title="statement not covered" >          const isGlobal = node.kind === "global" || // TODO: Use `node.kind` when babel update AST</span>
-<span class="cstat-no" title="statement not covered" >          // https://github.com/typescript-eslint/typescript-eslint/pull/6443</span>
-<span class="cstat-no" title="statement not covered" >          node.global;</span>
-<span class="cstat-no" title="statement not covered" >          if (!isGlobal) {</span>
-<span class="cstat-no" title="statement not covered" >            const kind = node.kind ?? // TODO: Use `node.kind` when babel update AST</span>
-<span class="cstat-no" title="statement not covered" >            (isStringLiteral(node.id) || get_text_without_comments_default(options2, locStart(node), locStart(node.id)).trim().endsWith("module") ? "module" : "namespace");</span>
-<span class="cstat-no" title="statement not covered" >            parts.push(kind, " ");</span>
+<span class="cstat-no" title="statement not covered" >          if (node.kind !== "global") {</span>
+<span class="cstat-no" title="statement not covered" >            parts.push(node.kind, " ");</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        parts.push(print3("id"));</span>
@@ -36097,7 +36097,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-29T00:30:59.121Z
+                at 2024-10-30T00:30:24.357Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
