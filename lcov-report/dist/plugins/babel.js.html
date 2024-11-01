@@ -17525,8 +17525,8 @@
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">175x</span>
 <span class="cline-any cline-yes">175x</span>
@@ -17926,7 +17926,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1430x</span>
 <span class="cline-any cline-yes">1430x</span>
-<span class="cline-any cline-yes">1430x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -18246,6 +18245,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">702x</span>
 <span class="cline-any cline-yes">702x</span>
 <span class="cline-any cline-yes">702x</span>
 <span class="cline-any cline-yes">702x</span>
@@ -32967,6 +32967,9 @@
         name: createToken("name", {
           startsExpr
         }),
+        placeholder: createToken("%%", {
+          startsExpr: true
+        }),
         string: createToken("string", {
           startsExpr
         }),
@@ -32993,22 +32996,19 @@
         jsxTagStart: createToken("jsxTagStart", {
           startsExpr: true
         }),
-        jsxTagEnd: createToken("jsxTagEnd"),
-        placeholder: createToken("%%", {
-          startsExpr: true
-        })
+        jsxTagEnd: createToken("jsxTagEnd")
       };
       function tokenIsIdentifier(token) {
-        return token &gt;= 93 &amp;&amp; token &lt;= 132;
+        return token &gt;= 93 &amp;&amp; token &lt;= 133;
       }
       function tokenKeywordOrIdentifierIsKeyword(token) {
         return token &lt;= 92;
       }
       function tokenIsKeywordOrIdentifier(token) {
-        return token &gt;= 58 &amp;&amp; token &lt;= 132;
+        return token &gt;= 58 &amp;&amp; token &lt;= 133;
       }
       function tokenIsLiteralPropertyName(token) {
-        return token &gt;= 58 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; token &lt;= 136;</span>
+        return token &gt;= 58 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; token &lt;= 137;</span>
       }
       function tokenComesBeforeExpression(token) {
         return tokenBeforeExprs[token];
@@ -33072,7 +33072,7 @@
 <span class="cstat-no" title="statement not covered" >            context.push(types.template);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
         };
-        tokenTypes[142].updateContext = <span class="fstat-no" title="function not covered" >(context) =&gt; {</span>
+        tokenTypes[143].updateContext = <span class="fstat-no" title="function not covered" >(context) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >          context.push(types.j_expr, types.j_oTag);</span>
         };
       }
@@ -33622,7 +33622,7 @@
           this.commentsLen = 0;
           this.commentStack = [];
           this.pos = 0;
-          this.type = 139;
+          this.type = 140;
           this.value = null;
           this.start = 0;
           this.end = 0;
@@ -33738,8 +33738,7 @@
 <span class="cstat-no" title="statement not covered" >          else this.flags &amp;= -4097;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         curPosition() {
-          const index = this.startIndex + this.pos;
-          return new Position(this.curLine, index - this.lineStart, index);
+          return new Position(this.curLine, this.pos - this.lineStart, this.pos + this.startIndex);
         }
         clone() {
           const state = new _State();
@@ -34060,10 +34059,11 @@
       var VALID_REGEX_FLAGS = /* @__PURE__ */ new Set([103, 109, 115, 105, 121, 117, 100, 118]);
       var Token = class {
         constructor(state) {
+          const startIndex = state.startIndex || 0;
           this.type = state.type;
           this.value = state.value;
-          this.start = state.start;
-          this.end = state.end;
+          this.start = startIndex + state.start;
+          this.end = startIndex + state.end;
           this.loc = new SourceLocation(state.startLoc, state.endLoc);
         }
       };
@@ -34204,7 +34204,7 @@
           this.state.start = this.state.pos;
           if (!this.isLookahead) this.state.startLoc = this.state.curPosition();
           if (this.state.pos &gt;= this.length) {
-            this.finishToken(139);
+            this.finishToken(140);
             return;
           }
           this.getTokenFromCode(this.codePointAtPos(this.state.pos));
@@ -34227,8 +34227,8 @@
           const comment = {
             type: "CommentBlock",
             value: this.input.slice(start + 2, end),
-            start,
-            end: end + commentEnd.length,
+            start: this.sourceToOffsetPos(start),
+            end: this.sourceToOffsetPos(end + commentEnd.length),
             loc: new SourceLocation(startLoc, this.state.curPosition())
           };
           if (this.options.tokens) this.pushToken(comment);
@@ -34250,8 +34250,8 @@
           const comment = {
             type: "CommentLine",
             value,
-            start,
-            end,
+            start: this.sourceToOffsetPos(start),
+            end: this.sourceToOffsetPos(end),
             loc: new SourceLocation(startLoc, this.state.curPosition())
           };
           if (this.options.tokens) this.pushToken(comment);
@@ -34380,10 +34380,10 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          } else if (isIdentifierStart(next)) {</span>
 <span class="cstat-no" title="statement not covered" >            ++this.state.pos;</span>
-<span class="cstat-no" title="statement not covered" >            this.finishToken(138, this.readWord1(next));</span>
+<span class="cstat-no" title="statement not covered" >            this.finishToken(139, this.readWord1(next));</span>
 <span class="cstat-no" title="statement not covered" >          } else if (next === 92) {</span>
 <span class="cstat-no" title="statement not covered" >            ++this.state.pos;</span>
-<span class="cstat-no" title="statement not covered" >            this.finishToken(138, this.readWord1());</span>
+<span class="cstat-no" title="statement not covered" >            this.finishToken(139, this.readWord1());</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            this.finishOp(27, 1);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -34794,7 +34794,7 @@
             mods += char;
           }
           this.state.pos = pos;
-          this.finishToken(137, {
+          this.finishToken(138, {
             pattern: content,
             flags: mods
           });
@@ -34830,10 +34830,10 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (isBigInt) {</span>
 <span class="cstat-no" title="statement not covered" >            const str = this.input.slice(start, this.state.pos).replace(/[_n]/g, "");</span>
-<span class="cstat-no" title="statement not covered" >            this.finishToken(135, str);</span>
+<span class="cstat-no" title="statement not covered" >            this.finishToken(136, str);</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          this.finishToken(134, val);</span>
+<span class="cstat-no" title="statement not covered" >          this.finishToken(135, val);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         readNumber(startsWithDot) {
           const start = this.state.pos;
@@ -34896,15 +34896,15 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
           const str = this.input.slice(start, this.state.pos).replace(/[_mn]/g, "");
           if (isBigInt) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            this.finishToken(135, str);</span>
-<span class="cstat-no" title="statement not covered" >            return;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-          if (isDecimal) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.finishToken(136, str);</span>
 <span class="cstat-no" title="statement not covered" >            return;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
+          if (isDecimal) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            this.finishToken(137, str);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
           const val = isOctal <span class="branch-0 cbranch-no" title="branch not covered" >? parseInt(str, 8) </span>: parseFloat(str);
-          this.finishToken(134, val);
+          this.finishToken(135, val);
         }
 <span class="fstat-no" title="function not covered" >        readCodePoint(throwOnInvalid) {</span>
 <span class="cstat-no" title="statement not covered" >          const {</span>
@@ -34924,7 +34924,7 @@
           this.state.pos = pos + 1;
           this.state.lineStart = lineStart;
           this.state.curLine = curLine;
-          this.finishToken(133, str);
+          this.finishToken(134, str);
         }
         readTemplateContinuation() {
           if (!this.match(8)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -34946,7 +34946,7 @@
           this.state.lineStart = lineStart;
           this.state.curLine = curLine;
           if (firstInvalidLoc) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            this.state.firstInvalidTemplateEscapePos = new Position(firstInvalidLoc.curLine, firstInvalidLoc.pos - firstInvalidLoc.lineStart, firstInvalidLoc.pos);</span>
+<span class="cstat-no" title="statement not covered" >            this.state.firstInvalidTemplateEscapePos = new Position(firstInvalidLoc.curLine, firstInvalidLoc.pos - firstInvalidLoc.lineStart, this.sourceToOffsetPos(firstInvalidLoc.pos));</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           if (this.input.codePointAt(pos) === 96) {
             this.finishToken(24, firstInvalidLoc <span class="branch-0 cbranch-no" title="branch not covered" >? null </span>: opening + str + "`");
@@ -35335,7 +35335,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
         }
         canInsertSemicolon() {
-          return this.match(139) || this.match(8) || this.hasPrecedingLineBreak();
+          return this.match(140) || this.match(8) || this.hasPrecedingLineBreak();
         }
         hasPrecedingLineBreak() {
           return hasNewLine(this.input, this.offsetToSourcePos(this.state.lastTokEndLoc.index), this.state.start);
@@ -35740,7 +35740,7 @@
           return this.getPluginOption("flow", "all") <span class="branch-0 cbranch-no" title="branch not covered" >|| this.flowPragma === "flow";</span>
         }
         finishToken(type, val) {
-          if (type !== 133 &amp;&amp; type !== 13 &amp;&amp; type !== 28) {
+          if (type !== 134 &amp;&amp; type !== 13 &amp;&amp; type !== 28) {
             if (this.flowPragma === void 0) {
               this.flowPragma = null;
             }
@@ -35869,7 +35869,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        flowParseDeclareModule(node) {</span>
 <span class="cstat-no" title="statement not covered" >          this.scope.enter(0);</span>
-<span class="cstat-no" title="statement not covered" >          if (this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >            node.id = super.parseExprAtom();</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            node.id = this.parseIdentifier();</span>
@@ -36096,7 +36096,7 @@
           const node = this.startNode();
           node.params = [];
           this.state.inType = true;
-          if (this.match(47) <span class="branch-0 cbranch-no" title="branch not covered" >|| this.match(142))</span> {
+          if (this.match(47) <span class="branch-0 cbranch-no" title="branch not covered" >|| this.match(143))</span> {
             this.next();
           }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
 <span class="cstat-no" title="statement not covered" >            this.unexpected();</span>
@@ -36170,7 +36170,7 @@
 <span class="cstat-no" title="statement not covered" >          return this.finishNode(node, "InterfaceTypeAnnotation");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         flowParseObjectPropertyKey() {
-          return this.match(134) || this.match(133) <span class="branch-0 cbranch-no" title="branch not covered" >? super.parseExprAtom() </span>: this.parseIdentifier(true);
+          return this.match(135) || this.match(134) <span class="branch-0 cbranch-no" title="branch not covered" >? super.parseExprAtom() </span>: this.parseIdentifier(true);
         }
 <span class="fstat-no" title="function not covered" >        flowParseObjectTypeIndexer(node, isStatic, variance) {</span>
 <span class="cstat-no" title="statement not covered" >          node.static = isStatic;</span>
@@ -36612,7 +36612,7 @@
               node2.typeParameters = null;
               return this.finishNode(node2, "FunctionTypeAnnotation");
             }
-            case 133:
+            case 134:
               return this.parseLiteral(this.state.value, "StringLiteralTypeAnnotation");
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 85:</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 86:</span>
@@ -36622,19 +36622,19 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 53:</span>
 <span class="cstat-no" title="statement not covered" >              if (this.state.value === "-") {</span>
 <span class="cstat-no" title="statement not covered" >                this.next();</span>
-<span class="cstat-no" title="statement not covered" >                if (this.match(134)) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.match(135)) {</span>
 <span class="cstat-no" title="statement not covered" >                  return this.parseLiteralAtNode(-this.state.value, "NumberLiteralTypeAnnotation", node);</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                if (this.match(135)) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.match(136)) {</span>
 <span class="cstat-no" title="statement not covered" >                  return this.parseLiteralAtNode(-this.state.value, "BigIntLiteralTypeAnnotation", node);</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                throw this.raise(FlowErrors.UnexpectedSubtractionOperand, this.state.startLoc);</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              this.unexpected();</span>
 <span class="cstat-no" title="statement not covered" >              return;</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 134:</span>
-<span class="cstat-no" title="statement not covered" >              return this.parseLiteral(this.state.value, "NumberLiteralTypeAnnotation");</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 135:</span>
+<span class="cstat-no" title="statement not covered" >              return this.parseLiteral(this.state.value, "NumberLiteralTypeAnnotation");</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >            case 136:</span>
 <span class="cstat-no" title="statement not covered" >              return this.parseLiteral(this.state.value, "BigIntLiteralTypeAnnotation");</span>
             case 88:
               this.next();
@@ -37387,7 +37387,7 @@
           var _jsx;
           let state = null;
           let jsx2;
-          if (this.hasPlugin("jsx") &amp;&amp; (this.match(142) || this.match(47))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (this.hasPlugin("jsx") &amp;&amp; (this.match(143) || this.match(47))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            state = this.state.clone();</span>
 <span class="cstat-no" title="statement not covered" >            jsx2 = this.tryParse(() =&gt; super.parseMaybeAssign(refExpressionErrors, afterLeftParse), state);</span>
 <span class="cstat-no" title="statement not covered" >            if (!jsx2.error) return jsx2.node;</span>
@@ -37646,7 +37646,7 @@
 <span class="cstat-no" title="statement not covered" >          const startLoc = this.state.startLoc;</span>
 <span class="cstat-no" title="statement not covered" >          const endOfInit = () =&gt; this.match(12) || this.match(8);</span>
 <span class="cstat-no" title="statement not covered" >          switch (this.state.type) {</span>
-<span class="cstat-no" title="statement not covered" >            case 134: {</span>
+<span class="cstat-no" title="statement not covered" >            case 135: {</span>
 <span class="cstat-no" title="statement not covered" >              const literal = this.parseNumericLiteral(this.state.value);</span>
 <span class="cstat-no" title="statement not covered" >              if (endOfInit()) {</span>
 <span class="cstat-no" title="statement not covered" >                return {</span>
@@ -37660,7 +37660,7 @@
 <span class="cstat-no" title="statement not covered" >                loc: startLoc</span>
 <span class="cstat-no" title="statement not covered" >              };</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            case 133: {</span>
+<span class="cstat-no" title="statement not covered" >            case 134: {</span>
 <span class="cstat-no" title="statement not covered" >              const literal = this.parseStringLiteral(this.state.value);</span>
 <span class="cstat-no" title="statement not covered" >              if (endOfInit()) {</span>
 <span class="cstat-no" title="statement not covered" >                return {</span>
@@ -38001,14 +38001,14 @@
                 if (this.state.pos === this.state.start) {
                   if (ch === 60 &amp;&amp; this.state.canStartJSXElement) {
                     ++this.state.pos;
-                    this.finishToken(142);
+                    this.finishToken(143);
                   } else {
                     super.getTokenFromCode(ch);
                   }
                   return;
                 }
                 out += this.input.slice(chunkStart, this.state.pos);
-                this.finishToken(141, out);
+                this.finishToken(142, out);
                 return;
 <span class="branch-0 cbranch-no" title="branch not covered" >              case 38:</span>
 <span class="cstat-no" title="statement not covered" >                out += this.input.slice(chunkStart, this.state.pos);</span>
@@ -38064,7 +38064,7 @@
             }
           }
           out += this.input.slice(chunkStart, this.state.pos++);
-          this.finishToken(133, out);
+          this.finishToken(134, out);
         }
 <span class="fstat-no" title="function not covered" >        jsxReadEntity() {</span>
 <span class="cstat-no" title="statement not covered" >          const startPos = ++this.state.pos;</span>
@@ -38104,11 +38104,11 @@
           do {
             ch = this.input.charCodeAt(++this.state.pos);
           } while (isIdentifierChar(ch) || ch === 45);
-          this.finishToken(140, this.input.slice(start, this.state.pos));
+          this.finishToken(141, this.input.slice(start, this.state.pos));
         }
         jsxParseIdentifier() {
           const node = this.startNode();
-          if (this.match(140)) {
+          if (this.match(141)) {
             node.name = this.state.value;
           }<span class="branch-0 cbranch-no" title="branch not covered" > else if (tokenIsKeyword(this.state.type)) {</span>
 <span class="cstat-no" title="statement not covered" >            node.name = tokenLabelName(this.state.type);</span>
@@ -38153,8 +38153,8 @@
 <span class="cstat-no" title="statement not covered" >                this.raise(JsxErrors.AttributeIsEmpty, node);</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
               return node;
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 142:</span>
-            case 133:
+<span class="branch-0 cbranch-no" title="branch not covered" >            case 143:</span>
+            case 134:
               return this.parseExprAtom();
 <span class="branch-0 cbranch-no" title="branch not covered" >            default:</span>
 <span class="cstat-no" title="statement not covered" >              throw this.raise(JsxErrors.UnsupportedJsxValue, this.state.startLoc);</span>
@@ -38202,7 +38202,7 @@
         }
         jsxParseOpeningElementAt(startLoc) {
           const node = this.startNodeAt(startLoc);
-          if (this.eat(143)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (this.eat(144)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            return this.finishNode(node, "JSXOpeningFragment");</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           node.name = this.jsxParseElementName();
@@ -38210,21 +38210,21 @@
         }
         jsxParseOpeningElementAfterName(node) {
           const attributes = [];
-          while (!this.match(56) &amp;&amp; !this.match(143)) {
+          while (!this.match(56) &amp;&amp; !this.match(144)) {
             attributes.push(this.jsxParseAttribute());
           }
           node.attributes = attributes;
           node.selfClosing = this.eat(56);
-          this.expect(143);
+          this.expect(144);
           return this.finishNode(node, "JSXOpeningElement");
         }
         jsxParseClosingElementAt(startLoc) {
           const node = this.startNodeAt(startLoc);
-          if (this.eat(143)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (this.eat(144)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            return this.finishNode(node, "JSXClosingFragment");</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           node.name = this.jsxParseElementName();
-          this.expect(143);
+          this.expect(144);
           return this.finishNode(node, "JSXClosingElement");
         }
         jsxParseElementAt(startLoc) {
@@ -38235,7 +38235,7 @@
           if (!openingElement.selfClosing) {
             contents: for (; ; ) {
               switch (this.state.type) {
-                case 142:
+                case 143:
                   startLoc = this.state.startLoc;
                   this.next();
                   if (this.eat(56)) {
@@ -38244,7 +38244,7 @@
                   }
                   children.push(this.jsxParseElementAt(startLoc));
                   break;
-                case 141:
+                case 142:
                   children.push(this.parseLiteral(this.state.value, "JSXText"));
                   break;
                 case 5: {
@@ -38301,10 +38301,10 @@
           context[context.length - 1] = newContext;
         }
         parseExprAtom(refExpressionErrors) {
-          if (this.match(142)) {
+          if (this.match(143)) {
             return this.jsxParseElement();
           } else if (this.match(47) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; this.input.charCodeAt(this.state.pos) !== 33)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            this.replaceToken(142);</span>
+<span class="cstat-no" title="statement not covered" >            this.replaceToken(143);</span>
 <span class="cstat-no" title="statement not covered" >            return this.jsxParseElement();</span>
           } else {
             return super.parseExprAtom(refExpressionErrors);
@@ -38327,7 +38327,7 @@
             }
             if (code2 === 62) {
               ++this.state.pos;
-              this.finishToken(143);
+              this.finishToken(144);
               return;
             }
             if ((code2 === 34 || code2 === 39) &amp;&amp; context === types.j_oTag) {
@@ -38337,7 +38337,7 @@
           }
           if (code2 === 60 &amp;&amp; this.state.canStartJSXElement &amp;&amp; this.input.charCodeAt(this.state.pos + 1) !== 33) {
             ++this.state.pos;
-            this.finishToken(142);
+            this.finishToken(143);
             return;
           }
           super.getTokenFromCode(code2);
@@ -38347,12 +38347,12 @@
             context,
             type
           } = this.state;
-          if (type === 56 &amp;&amp; prevType === 142) {
+          if (type === 56 &amp;&amp; prevType === 143) {
             context.splice(-2, 2, types.j_cTag);
             this.state.canStartJSXElement = false;
-          } else if (type === 142) {
-            context.push(types.j_oTag);
           } else if (type === 143) {
+            context.push(types.j_oTag);
+          } else if (type === 144) {
             const out = context[context.length - 1];
             if (out === types.j_oTag &amp;&amp; prevType === 56 || out === types.j_cTag) {
               context.pop();
@@ -38705,7 +38705,7 @@
 <span class="cstat-no" title="statement not covered" >            return this.parseBindingRestProperty(this.startNode());</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           const prop = this.startNode();
-          if (type === 138) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (type === 139) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.expectPlugin("destructuringPrivate", startLoc);</span>
 <span class="cstat-no" title="statement not covered" >            this.classScope.usePrivateName(this.state.value, startLoc);</span>
 <span class="cstat-no" title="statement not covered" >            prop.key = this.parsePrivateName();</span>
@@ -39029,7 +39029,7 @@
           return tokenIsIdentifier(this.state.type);
         }
 <span class="fstat-no" title="function not covered" >        tsTokenCanFollowModifier() {</span>
-<span class="cstat-no" title="statement not covered" >          return this.match(0) || this.match(5) || this.match(55) || this.match(21) || this.match(138) || this.isLiteralPropertyName();</span>
+<span class="cstat-no" title="statement not covered" >          return this.match(0) || this.match(5) || this.match(55) || this.match(21) || this.match(139) || this.isLiteralPropertyName();</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        tsNextTokenOnSameLineAndCanFollowModifier() {</span>
 <span class="cstat-no" title="statement not covered" >          this.next();</span>
@@ -39200,7 +39200,7 @@
 <span class="cstat-no" title="statement not covered" >          const node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >          this.expect(83);</span>
 <span class="cstat-no" title="statement not covered" >          this.expect(10);</span>
-<span class="cstat-no" title="statement not covered" >          if (!this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (!this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >            this.raise(TSErrors.UnsupportedImportTypeArgument, this.state.startLoc);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          node.argument = super.parseExprAtom();</span>
@@ -39278,7 +39278,7 @@
         }
 <span class="fstat-no" title="function not covered" >        tsParseTypeParameters(parseModifiers) {</span>
 <span class="cstat-no" title="statement not covered" >          const node = this.startNode();</span>
-<span class="cstat-no" title="statement not covered" >          if (this.match(47) || this.match(142)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (this.match(47) || this.match(143)) {</span>
 <span class="cstat-no" title="statement not covered" >            this.next();</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            this.unexpected();</span>
@@ -39602,9 +39602,9 @@
         tsParseLiteralTypeNode() {
           const node = this.startNode();
           switch (this.state.type) {
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 134:</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 135:</span>
-            case 133:
+<span class="branch-0 cbranch-no" title="branch not covered" >            case 136:</span>
+            case 134:
             case 85:
             case 86:
               node.literal = super.parseExprAtom();
@@ -39633,9 +39633,9 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
         tsParseNonArrayType() {
           switch (this.state.type) {
-            case 133:
             case 134:
             case 135:
+            case 136:
             case 85:
             case 86:
               return this.tsParseLiteralTypeNode();
@@ -39643,7 +39643,7 @@
 <span class="cstat-no" title="statement not covered" >              if (this.state.value === "-") {</span>
 <span class="cstat-no" title="statement not covered" >                const node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >                const nextToken = this.lookahead();</span>
-<span class="cstat-no" title="statement not covered" >                if (nextToken.type !== 134 &amp;&amp; nextToken.type !== 135) {</span>
+<span class="cstat-no" title="statement not covered" >                if (nextToken.type !== 135 &amp;&amp; nextToken.type !== 136) {</span>
 <span class="cstat-no" title="statement not covered" >                  this.unexpected();</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                node.literal = this.parseMaybeUnary();</span>
@@ -40048,7 +40048,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        tsParseEnumMember() {</span>
 <span class="cstat-no" title="statement not covered" >          const node = this.startNode();</span>
-<span class="cstat-no" title="statement not covered" >          node.id = this.match(133) ? super.parseStringLiteral(this.state.value) : this.parseIdentifier(true);</span>
+<span class="cstat-no" title="statement not covered" >          node.id = this.match(134) ? super.parseStringLiteral(this.state.value) : this.parseIdentifier(true);</span>
 <span class="cstat-no" title="statement not covered" >          if (this.eat(29)) {</span>
 <span class="cstat-no" title="statement not covered" >            node.initializer = super.parseMaybeAssignAllowIn();</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -40096,7 +40096,7 @@
 <span class="cstat-no" title="statement not covered" >            node.kind = "global";</span>
 <span class="cstat-no" title="statement not covered" >            node.global = true;</span>
 <span class="cstat-no" title="statement not covered" >            node.id = this.parseIdentifier();</span>
-<span class="cstat-no" title="statement not covered" >          } else if (this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >          } else if (this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >            node.kind = "module";</span>
 <span class="cstat-no" title="statement not covered" >            node.id = super.parseStringLiteral(this.state.value);</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
@@ -40136,7 +40136,7 @@
 <span class="cstat-no" title="statement not covered" >          const node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >          this.expectContextual(119);</span>
 <span class="cstat-no" title="statement not covered" >          this.expect(10);</span>
-<span class="cstat-no" title="statement not covered" >          if (!this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (!this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >            this.unexpected();</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          node.expression = super.parseExprAtom();</span>
@@ -40251,7 +40251,7 @@
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >              break;</span></span>
 <span class="branch-0 cbranch-no" title="branch not covered" >            case "module":</span>
 <span class="cstat-no" title="statement not covered" >              if (this.tsCheckLineTerminator(next)) {</span>
-<span class="cstat-no" title="statement not covered" >                if (this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >                  return this.tsParseAmbientExternalModuleDeclaration(node);</span>
 <span class="cstat-no" title="statement not covered" >                } else if (tokenIsIdentifier(this.state.type)) {</span>
 <span class="cstat-no" title="statement not covered" >                  node.kind = "module";</span>
@@ -40546,7 +40546,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
         }
 <span class="fstat-no" title="function not covered" >        parseImport(node) {</span>
-<span class="cstat-no" title="statement not covered" >          if (this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >            node.importKind = "value";</span>
 <span class="cstat-no" title="statement not covered" >            return super.parseImport(node);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -40908,7 +40908,7 @@
           let state;
           let jsx2;
           let typeCast;
-          if (this.hasPlugin("jsx") &amp;&amp; (this.match(142) || this.match(47))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (this.hasPlugin("jsx") &amp;&amp; (this.match(143) || this.match(47))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            state = this.state.clone();</span>
 <span class="cstat-no" title="statement not covered" >            jsx2 = this.tryParse(() =&gt; super.parseMaybeAssign(refExpressionErrors, afterLeftParse), state);</span>
 <span class="cstat-no" title="statement not covered" >            if (!jsx2.error) return jsx2.node;</span>
@@ -41416,13 +41416,13 @@
       });
       var placeholders = <span class="fstat-no" title="function not covered" >(superClass) =&gt; class PlaceholdersParserMixin extends superClass {</span>
 <span class="cstat-no" title="statement not covered" >        parsePlaceholder(expectedNode) {</span>
-<span class="cstat-no" title="statement not covered" >          if (this.match(144)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (this.match(133)) {</span>
 <span class="cstat-no" title="statement not covered" >            const node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >            this.next();</span>
 <span class="cstat-no" title="statement not covered" >            this.assertNoSpace();</span>
 <span class="cstat-no" title="statement not covered" >            node.name = super.parseIdentifier(true);</span>
 <span class="cstat-no" title="statement not covered" >            this.assertNoSpace();</span>
-<span class="cstat-no" title="statement not covered" >            this.expect(144);</span>
+<span class="cstat-no" title="statement not covered" >            this.expect(133);</span>
 <span class="cstat-no" title="statement not covered" >            return this.finishPlaceholder(node, expectedNode);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -41436,7 +41436,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        getTokenFromCode(code2) {</span>
 <span class="cstat-no" title="statement not covered" >          if (code2 === 37 &amp;&amp; this.input.charCodeAt(this.state.pos + 1) === 37) {</span>
-<span class="cstat-no" title="statement not covered" >            this.finishOp(144, 2);</span>
+<span class="cstat-no" title="statement not covered" >            this.finishOp(133, 2);</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            super.getTokenFromCode(code2);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -41470,7 +41470,7 @@
 <span class="cstat-no" title="statement not covered" >            return true;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          const nextToken = this.lookahead();</span>
-<span class="cstat-no" title="statement not covered" >          if (nextToken.type === 144) {</span>
+<span class="cstat-no" title="statement not covered" >          if (nextToken.type === 133) {</span>
 <span class="cstat-no" title="statement not covered" >            return true;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return false;</span>
@@ -41508,7 +41508,7 @@
 <span class="cstat-no" title="statement not covered" >          const oldStrict = this.state.strict;</span>
 <span class="cstat-no" title="statement not covered" >          const placeholder = this.parsePlaceholder("Identifier");</span>
 <span class="cstat-no" title="statement not covered" >          if (placeholder) {</span>
-<span class="cstat-no" title="statement not covered" >            if (this.match(81) || this.match(144) || this.match(5)) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.match(81) || this.match(133) || this.match(5)) {</span>
 <span class="cstat-no" title="statement not covered" >              node.id = placeholder;</span>
 <span class="cstat-no" title="statement not covered" >            } else if (optionalId || !isStatement) {</span>
 <span class="cstat-no" title="statement not covered" >              node.id = null;</span>
@@ -41544,7 +41544,7 @@
 <span class="cstat-no" title="statement not covered" >          if (this.match(65)) {</span>
 <span class="cstat-no" title="statement not covered" >            const next = this.nextTokenStart();</span>
 <span class="cstat-no" title="statement not covered" >            if (this.isUnparsedContextual(next, "from")) {</span>
-<span class="cstat-no" title="statement not covered" >              if (this.input.startsWith(tokenLabelName(144), this.nextTokenStartSince(next + 4))) {</span>
+<span class="cstat-no" title="statement not covered" >              if (this.input.startsWith(tokenLabelName(133), this.nextTokenStartSince(next + 4))) {</span>
 <span class="cstat-no" title="statement not covered" >                return true;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -41797,7 +41797,7 @@
           this.enterInitialScopes();
           this.nextToken();
           const expr = this.parseExpression();
-          if (!this.match(139)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (!this.match(140)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.unexpected();</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           this.finalizeRemainingComments();
@@ -41917,7 +41917,7 @@
           return expr;
         }
         parseMaybeUnaryOrPrivate(refExpressionErrors) {
-          return this.match(138) <span class="branch-0 cbranch-no" title="branch not covered" >? this.parsePrivateName() </span>: this.parseMaybeUnary(refExpressionErrors);
+          return this.match(139) <span class="branch-0 cbranch-no" title="branch not covered" >? this.parsePrivateName() </span>: this.parseMaybeUnary(refExpressionErrors);
         }
         parseExprOps(refExpressionErrors) {
           const startLoc = this.state.startLoc;
@@ -42156,7 +42156,7 @@
           if (computed) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            node.property = this.parseExpression();</span>
 <span class="cstat-no" title="statement not covered" >            this.expect(3);</span>
-          } else if (this.match(138)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          } else if (this.match(139)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            if (base.type === "Super") {</span>
 <span class="cstat-no" title="statement not covered" >              this.raise(Errors.SuperPrivateField, startLoc);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -42329,11 +42329,11 @@
               this.readRegexp();
               return this.parseRegExpLiteral(this.state.value);
             }
-            case 134:
+            case 135:
               return this.parseNumericLiteral(this.state.value);
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 135:</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >            case 136:</span>
 <span class="cstat-no" title="statement not covered" >              return this.parseBigIntLiteral(this.state.value);</span>
-            case 133:
+            case 134:
               return this.parseStringLiteral(this.state.value);
             case 84:
               return this.parseNullLiteral();
@@ -42381,7 +42381,7 @@
 <span class="cstat-no" title="statement not covered" >                throw this.raise(Errors.UnsupportedBind, callee);</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >            case 138: {</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >            case 139: {</span>
 <span class="cstat-no" title="statement not covered" >              this.raise(Errors.PrivateInExpectedIn, this.state.startLoc, {</span>
 <span class="cstat-no" title="statement not covered" >                identifierName: this.state.value</span>
 <span class="cstat-no" title="statement not covered" >              });</span>
@@ -42417,7 +42417,7 @@
 <span class="cstat-no" title="statement not covered" >              break;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
             default:
-              if (type === 136) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+              if (type === 137) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                return this.parseDecimalLiteral(this.state.value);</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
               if (tokenIsIdentifier(type)) {
@@ -42999,16 +42999,16 @@
               key = this.parseIdentifier(true);
             } else {
               switch (type) {
-<span class="branch-0 cbranch-no" title="branch not covered" >                case 134:</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >                case 135:</span>
 <span class="cstat-no" title="statement not covered" >                  key = this.parseNumericLiteral(value);</span>
 <span class="cstat-no" title="statement not covered" >                  break;</span>
-                case 133:
+                case 134:
                   key = this.parseStringLiteral(value);
                   break;
-<span class="branch-0 cbranch-no" title="branch not covered" >                case 135:</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >                case 136:</span>
 <span class="cstat-no" title="statement not covered" >                  key = this.parseBigIntLiteral(value);</span>
 <span class="cstat-no" title="statement not covered" >                  break;</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >                case 138: {</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >                case 139: {</span>
 <span class="cstat-no" title="statement not covered" >                  const privateKeyLoc = this.state.startLoc;</span>
 <span class="cstat-no" title="statement not covered" >                  if (refExpressionErrors != null) {</span>
 <span class="cstat-no" title="statement not covered" >                    if (refExpressionErrors.privateKeyLoc === null) {</span>
@@ -43021,7 +43021,7 @@
 <span class="cstat-no" title="statement not covered" >                  break;</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >                default:</span>
-<span class="cstat-no" title="statement not covered" >                  if (type === 136) {</span>
+<span class="cstat-no" title="statement not covered" >                  if (type === 137) {</span>
 <span class="cstat-no" title="statement not covered" >                    key = this.parseDecimalLiteral(value);</span>
 <span class="cstat-no" title="statement not covered" >                    break;</span>
 <span class="cstat-no" title="statement not covered" >                  }</span>
@@ -43029,7 +43029,7 @@
               }
             }
             prop.key = key;
-            if (type !== 138) {
+            if (type !== 139) {
               prop.computed = false;
             }
           }
@@ -43283,7 +43283,7 @@
 <span class="cstat-no" title="statement not covered" >          const {</span>
 <span class="cstat-no" title="statement not covered" >            type</span>
 <span class="cstat-no" title="statement not covered" >          } = this.state;</span>
-<span class="cstat-no" title="statement not covered" >          return type === 53 || type === 10 || type === 0 || tokenIsTemplate(type) || type === 102 &amp;&amp; !this.state.containsEsc || type === 137 || type === 56 || this.hasPlugin("v8intrinsic") &amp;&amp; type === 54;</span>
+<span class="cstat-no" title="statement not covered" >          return type === 53 || type === 10 || type === 0 || tokenIsTemplate(type) || type === 102 &amp;&amp; !this.state.containsEsc || type === 138 || type === 56 || this.hasPlugin("v8intrinsic") &amp;&amp; type === 54;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        parseYield() {</span>
 <span class="cstat-no" title="statement not covered" >          const node = this.startNode();</span>
@@ -43295,7 +43295,7 @@
 <span class="cstat-no" title="statement not covered" >            delegating = this.eat(55);</span>
 <span class="cstat-no" title="statement not covered" >            switch (this.state.type) {</span>
 <span class="cstat-no" title="statement not covered" >              case 13:</span>
-<span class="cstat-no" title="statement not covered" >              case 139:</span>
+<span class="cstat-no" title="statement not covered" >              case 140:</span>
 <span class="cstat-no" title="statement not covered" >              case 8:</span>
 <span class="cstat-no" title="statement not covered" >              case 11:</span>
 <span class="cstat-no" title="statement not covered" >              case 3:</span>
@@ -43480,7 +43480,7 @@
       };
       var loneSurrogate = /[\uD800-\uDFFF]/u;
       var keywordRelationalOperator = /in(?:stanceof)?/y;
-      function babel7CompatTokens(tokens, input) {
+      function babel7CompatTokens(tokens, input, startIndex) {
         for (let i = 0; i &lt; tokens.length; i++) {
           const token = tokens[i];
           const {
@@ -43488,7 +43488,7 @@
           } = token;
           if (typeof type === "number") {
             {
-              if (type === 138) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+              if (type === 139) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                const {</span>
 <span class="cstat-no" title="statement not covered" >                  loc,</span>
 <span class="cstat-no" title="statement not covered" >                  start,</span>
@@ -43525,7 +43525,7 @@
                 const backquoteEnd = start + 1;
                 const backquoteEndLoc = createPositionWithColumnOffset(loc.start, 1);
                 let startToken;
-                if (input.charCodeAt(start) === 96) {
+                if (input.charCodeAt(start - startIndex) === 96) {
                   startToken = new Token({
                     type: getExportedToken(22),
                     value: "`",
@@ -43592,11 +43592,11 @@
           file.program = this.parseProgram(program);
           file.comments = this.comments;
           if (this.options.tokens) {
-            file.tokens = babel7CompatTokens(this.tokens, this.input);
+            file.tokens = babel7CompatTokens(this.tokens, this.input, this.startIndex);
           }
           return this.finishNode(file, "File");
         }
-        parseProgram(program, end = 139, sourceType = this.options.sourceType) {
+        parseProgram(program, end = 140, sourceType = this.options.sourceType) {
           program.sourceType = sourceType;
           program.interpreter = this.parseInterpreterDirective();
           this.parseBlockBody(program, true, true, end);
@@ -43611,7 +43611,7 @@
             this.addExtra(program, "topLevelAwait", this.state.hasTopLevelAwait);
           }
           let finishedProgram;
-          if (end === 139) {
+          if (end === 140) {
             finishedProgram = this.finishNode(program, "Program");
           }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
 <span class="cstat-no" title="statement not covered" >            finishedProgram = this.finishNodeAt(program, "Program", createPositionWithColumnOffset(this.state.startLoc, -1));</span>
@@ -43926,7 +43926,7 @@
 <span class="cstat-no" title="statement not covered" >              while (this.eat(16)) {</span>
 <span class="cstat-no" title="statement not covered" >                const node2 = this.startNodeAt(startLoc);</span>
 <span class="cstat-no" title="statement not covered" >                node2.object = expr;</span>
-<span class="cstat-no" title="statement not covered" >                if (this.match(138)) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.match(139)) {</span>
 <span class="cstat-no" title="statement not covered" >                  this.classScope.usePrivateName(this.state.value, this.state.startLoc);</span>
 <span class="cstat-no" title="statement not covered" >                  node2.property = this.parsePrivateName();</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
@@ -44529,7 +44529,7 @@
           this.parsePropertyNamePrefixOperator(member);
           if (this.eat(55)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            method.kind = "method";</span>
-<span class="cstat-no" title="statement not covered" >            const isPrivateName = this.match(138);</span>
+<span class="cstat-no" title="statement not covered" >            const isPrivateName = this.match(139);</span>
 <span class="cstat-no" title="statement not covered" >            this.parseClassElementName(method);</span>
 <span class="cstat-no" title="statement not covered" >            if (isPrivateName) {</span>
 <span class="cstat-no" title="statement not covered" >              this.pushClassPrivateMethod(classBody, privateMethod, true, false);</span>
@@ -44580,7 +44580,7 @@
 <span class="cstat-no" title="statement not covered" >              this.unexpected(maybeQuestionTokenStartLoc);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            method.kind = "method";</span>
-<span class="cstat-no" title="statement not covered" >            const isPrivate2 = this.match(138);</span>
+<span class="cstat-no" title="statement not covered" >            const isPrivate2 = this.match(139);</span>
 <span class="cstat-no" title="statement not covered" >            this.parseClassElementName(method);</span>
 <span class="cstat-no" title="statement not covered" >            this.parsePostMemberNameModifiers(publicMember);</span>
 <span class="cstat-no" title="statement not covered" >            if (isPrivate2) {</span>
@@ -44594,7 +44594,7 @@
           } else if ((maybeContextualKw === "get" <span class="branch-0 cbranch-no" title="branch not covered" >|| maybeContextualKw === "set")</span> &amp;&amp; !(this.match(55) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; this.isLineTerminator())</span>) {
             this.resetPreviousNodeTrailingComments(key);
             method.kind = maybeContextualKw;
-            const isPrivate2 = this.match(138);
+            const isPrivate2 = this.match(139);
             this.parseClassElementName(publicMethod);
             if (isPrivate2) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >              this.pushClassPrivateMethod(classBody, privateMethod, false, false);</span>
@@ -44608,7 +44608,7 @@
           }<span class="branch-0 cbranch-no" title="branch not covered" > else if (maybeContextualKw === "accessor" &amp;&amp; !this.isLineTerminator()) {</span>
 <span class="cstat-no" title="statement not covered" >            this.expectPlugin("decoratorAutoAccessors");</span>
 <span class="cstat-no" title="statement not covered" >            this.resetPreviousNodeTrailingComments(key);</span>
-<span class="cstat-no" title="statement not covered" >            const isPrivate2 = this.match(138);</span>
+<span class="cstat-no" title="statement not covered" >            const isPrivate2 = this.match(139);</span>
 <span class="cstat-no" title="statement not covered" >            this.parseClassElementName(publicProp);</span>
 <span class="cstat-no" title="statement not covered" >            this.pushClassAccessorProperty(classBody, accessorProp, isPrivate2);</span>
 <span class="cstat-no" title="statement not covered" >          } else if (this.isLineTerminator()) {</span>
@@ -44626,10 +44626,10 @@
             type,
             value
           } = this.state;
-          if ((type === 132 || type === 133) &amp;&amp; member.static <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; value === "prototype")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if ((type === 132 || type === 134) &amp;&amp; member.static <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; value === "prototype")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.raise(Errors.StaticPrototype, this.state.startLoc);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          if (type === 138) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (type === 139) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            if (value === "constructor") {</span>
 <span class="cstat-no" title="statement not covered" >              this.raise(Errors.ConstructorClassPrivateField, this.state.startLoc);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -45041,7 +45041,7 @@
 <span class="cstat-no" title="statement not covered" >              if (this.eat(8)) break;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            const isMaybeTypeOnly = this.isContextual(130);</span>
-<span class="cstat-no" title="statement not covered" >            const isString = this.match(133);</span>
+<span class="cstat-no" title="statement not covered" >            const isString = this.match(134);</span>
 <span class="cstat-no" title="statement not covered" >            const node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >            node.local = this.parseModuleExportName();</span>
 <span class="cstat-no" title="statement not covered" >            nodes.push(this.parseExportSpecifier(node, isString, isInTypeExport, isMaybeTypeOnly));</span>
@@ -45059,7 +45059,7 @@
 <span class="cstat-no" title="statement not covered" >          return this.finishNode(node, "ExportSpecifier");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         parseModuleExportName() {
-          if (this.match(133)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (this.match(134)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            const result = this.parseStringLiteral(this.state.value);</span>
 <span class="cstat-no" title="statement not covered" >            const surrogate = loneSurrogate.exec(result.value);</span>
 <span class="cstat-no" title="statement not covered" >            if (surrogate) {</span>
@@ -45178,7 +45178,7 @@
 <span class="cstat-no" title="statement not covered" >          return tokenIsIdentifier(type) ? type !== 98 || this.lookaheadCharCode() === 102 : type !== 12;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         parseImport(node) {
-          if (this.match(133)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (this.match(134)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            return this.parseImportSourceAndAttributes(node);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           return this.parseImportSpecifiersAndAfter(node, this.parseMaybeImportPhase(node, false));
@@ -45203,7 +45203,7 @@
           return this.finishNode(node, "ImportDeclaration");
         }
         parseImportSource() {
-          if (!this.match(133)) <span class="branch-0 cbranch-no" title="branch not covered" >this.unexpected();</span>
+          if (!this.match(134)) <span class="branch-0 cbranch-no" title="branch not covered" >this.unexpected();</span>
           return this.parseExprAtom();
         }
 <span class="fstat-no" title="function not covered" >        parseImportSpecifierLocal(node, specifier, type) {</span>
@@ -45232,13 +45232,13 @@
 <span class="cstat-no" title="statement not covered" >              });</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            attrNames.add(keyName);</span>
-<span class="cstat-no" title="statement not covered" >            if (this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >              node.key = this.parseStringLiteral(keyName);</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
 <span class="cstat-no" title="statement not covered" >              node.key = this.parseIdentifier(true);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            this.expect(14);</span>
-<span class="cstat-no" title="statement not covered" >            if (!this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >              throw this.raise(Errors.ModuleAttributeInvalidValue, this.state.startLoc);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            node.value = this.parseStringLiteral(this.state.value);</span>
@@ -45263,7 +45263,7 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            attributes.add(node.key.name);</span>
 <span class="cstat-no" title="statement not covered" >            this.expect(14);</span>
-<span class="cstat-no" title="statement not covered" >            if (!this.match(133)) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!this.match(134)) {</span>
 <span class="cstat-no" title="statement not covered" >              throw this.raise(Errors.ModuleAttributeInvalidValue, this.state.startLoc);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            node.value = this.parseStringLiteral(this.state.value);</span>
@@ -45343,7 +45343,7 @@
 <span class="cstat-no" title="statement not covered" >              if (this.eat(8)) break;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
             const specifier = this.startNode();
-            const importedIsString = this.match(133);
+            const importedIsString = this.match(134);
             const isMaybeTypeOnly = this.isContextual(130);
             specifier.imported = this.parseModuleExportName();
             const importSpecifier = this.parseImportSpecifier(specifier, importedIsString, node.importKind === "type" || node.importKind === "typeof", isMaybeTypeOnly, void 0);
@@ -47512,7 +47512,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-31T00:30:42.400Z
+                at 2024-11-01T00:33:34.426Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
