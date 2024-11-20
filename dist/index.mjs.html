@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.65% </span>
+                <span class="strong">67.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14904/22028</span>
+                <span class='fraction'>14906/22035</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.81% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3696/4750</span>
+                <span class='fraction'>3696/4752</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.65% </span>
+                <span class="strong">67.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14904/22028</span>
+                <span class='fraction'>14906/22035</span>
             </div>
         
             
@@ -22091,7 +22091,14 @@
 <a name='L22026'></a><a href='#L22026'>22026</a>
 <a name='L22027'></a><a href='#L22027'>22027</a>
 <a name='L22028'></a><a href='#L22028'>22028</a>
-<a name='L22029'></a><a href='#L22029'>22029</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">401x</span>
+<a name='L22029'></a><a href='#L22029'>22029</a>
+<a name='L22030'></a><a href='#L22030'>22030</a>
+<a name='L22031'></a><a href='#L22031'>22031</a>
+<a name='L22032'></a><a href='#L22032'>22032</a>
+<a name='L22033'></a><a href='#L22033'>22033</a>
+<a name='L22034'></a><a href='#L22034'>22034</a>
+<a name='L22035'></a><a href='#L22035'>22035</a>
+<a name='L22036'></a><a href='#L22036'>22036</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
 <span class="cline-any cline-yes">401x</span>
@@ -37046,6 +37053,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -37317,6 +37330,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -59072,10 +59086,16 @@ function sliceAndTrimEndOf(str2, startPtr, endPtr, allowNewLines) {
   }
   return [trimmed, commentIdx];
 }
-function extractValue(str2, ptr, end) {
+function extractValue(str2, ptr, end, depth) {
+  if (depth === 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    throw new TomlError("document contains excessively nested structures. aborting.", {</span>
+<span class="cstat-no" title="statement not covered" >      toml: str2,</span>
+<span class="cstat-no" title="statement not covered" >      ptr</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   let c2 = str2[ptr];
   if (c2 === "[" || c2 === "{") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    let [value, endPtr2] = c2 === "[" ? parseArray(str2, ptr) : parseInlineTable(str2, ptr);</span>
+<span class="cstat-no" title="statement not covered" >    let [value, endPtr2] = c2 === "[" ? parseArray(str2, ptr, depth) : parseInlineTable(str2, ptr, depth);</span>
 <span class="cstat-no" title="statement not covered" >    let newPtr = skipUntil(str2, endPtr2, ",", end);</span>
 <span class="cstat-no" title="statement not covered" >    if (end === "}") {</span>
 <span class="cstat-no" title="statement not covered" >      let nextNewLine = indexOfNewline(str2, endPtr2, newPtr);</span>
@@ -59191,7 +59211,7 @@ function parseKey(str2, ptr, end = "=") {
   } while (dot + 1 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; dot &lt; endPtr)</span>;
   return [parsed, skipVoid(str2, endPtr + 1, true, true)];
 }
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function parseInlineTable(str2, ptr) {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function parseInlineTable(str2, ptr, depth) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let res = {};</span>
 <span class="cstat-no" title="statement not covered" >  let seen = /* @__PURE__ */ new Set();</span>
 <span class="cstat-no" title="statement not covered" >  let c2;</span>
@@ -59238,7 +59258,7 @@ function parseKey(str2, ptr, end = "=") {
 <span class="cstat-no" title="statement not covered" >          ptr</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      let [value, valueEndPtr] = extractValue(str2, keyEndPtr, "}");</span>
+<span class="cstat-no" title="statement not covered" >      let [value, valueEndPtr] = extractValue(str2, keyEndPtr, "}", depth - 1);</span>
 <span class="cstat-no" title="statement not covered" >      seen.add(value);</span>
 <span class="cstat-no" title="statement not covered" >      t[k] = value;</span>
 <span class="cstat-no" title="statement not covered" >      ptr = valueEndPtr;</span>
@@ -59259,7 +59279,7 @@ function parseKey(str2, ptr, end = "=") {
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return [res, ptr];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function parseArray(str2, ptr) {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function parseArray(str2, ptr, depth) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let res = [];</span>
 <span class="cstat-no" title="statement not covered" >  let c2;</span>
 <span class="cstat-no" title="statement not covered" >  ptr++;</span>
@@ -59272,7 +59292,7 @@ function parseKey(str2, ptr, end = "=") {
 <span class="cstat-no" title="statement not covered" >    } else if (c2 === "#")</span>
 <span class="cstat-no" title="statement not covered" >      ptr = skipComment(str2, ptr);</span>
 <span class="cstat-no" title="statement not covered" >    else if (c2 !== " " &amp;&amp; c2 !== "	" &amp;&amp; c2 !== "\n" &amp;&amp; c2 !== "\r") {</span>
-<span class="cstat-no" title="statement not covered" >      let e = extractValue(str2, ptr - 1, "]");</span>
+<span class="cstat-no" title="statement not covered" >      let e = extractValue(str2, ptr - 1, "]", depth - 1);</span>
 <span class="cstat-no" title="statement not covered" >      res.push(e[0]);</span>
 <span class="cstat-no" title="statement not covered" >      ptr = e[1];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -59347,7 +59367,8 @@ function peekTable(key2, table, meta, type2) {
 <span class="cstat-no" title="statement not covered" >  }</span>
   return [k, t, state.c];
 }
-function parse4(toml) {
+function parse4(toml, opts) {
+  let maxDepth = (opts == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: opts.maxDepth)</span> ?? 1e3;
   let res = {};
   let meta = {};
   let tbl = res;
@@ -59396,7 +59417,7 @@ function parse4(toml) {
 <span class="cstat-no" title="statement not covered" >          ptr</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      let v = extractValue(toml, k[1]);
+      let v = extractValue(toml, k[1], void 0, maxDepth);
       p[1][p[0]] = v[0];
       ptr = v[1];
     }
@@ -66154,7 +66175,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-19T00:31:44.147Z
+                at 2024-11-20T00:31:29.953Z
             </div>
         <script src="../prettify.js"></script>
         <script>
