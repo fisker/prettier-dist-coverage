@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.93% </span>
+                <span class="strong">51.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1751/3438</span>
+                <span class='fraction'>1762/3446</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.24% </span>
+                <span class="strong">57.53% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>166/290</span>
+                <span class='fraction'>168/292</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.62% </span>
+                <span class="strong">42.93% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>78/183</span>
+                <span class='fraction'>79/184</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.93% </span>
+                <span class="strong">51.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1751/3438</span>
+                <span class='fraction'>1762/3446</span>
             </div>
         
             
@@ -3500,7 +3500,15 @@
 <a name='L3435'></a><a href='#L3435'>3435</a>
 <a name='L3436'></a><a href='#L3436'>3436</a>
 <a name='L3437'></a><a href='#L3437'>3437</a>
-<a name='L3438'></a><a href='#L3438'>3438</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L3438'></a><a href='#L3438'>3438</a>
+<a name='L3439'></a><a href='#L3439'>3439</a>
+<a name='L3440'></a><a href='#L3440'>3440</a>
+<a name='L3441'></a><a href='#L3441'>3441</a>
+<a name='L3442'></a><a href='#L3442'>3442</a>
+<a name='L3443'></a><a href='#L3443'>3443</a>
+<a name='L3444'></a><a href='#L3444'>3444</a>
+<a name='L3445'></a><a href='#L3445'>3445</a>
+<a name='L3446'></a><a href='#L3446'>3446</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -5648,6 +5656,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
@@ -6862,15 +6878,15 @@
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9072,7 +9088,12 @@
   // node_modules/graphql/language/parser.mjs
   function parse(source, options2) {
     const parser = new Parser(source, options2);
-    return parser.parseDocument();
+    const document = parser.parseDocument();
+    Object.defineProperty(document, "tokenCount", {
+      enumerable: false,
+      value: parser.tokenCount
+    });
+    return document;
   }
   var Parser = class {
     constructor(source, options2 = {}) {
@@ -9080,6 +9101,9 @@
       this._lexer = new Lexer(sourceObj);
       this._options = options2;
       this._tokenCounter = 0;
+    }
+    get tokenCount() {
+      return this._tokenCounter;
     }
     /**
      * Converts a name lex token into a name parse node.
@@ -10298,16 +10322,16 @@
     advanceLexer() {
       const { maxTokens } = this._options;
       const token = this._lexer.advance();
-      if (maxTokens !== void 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; token.kind !== TokenKind.EOF)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        ++this._tokenCounter;</span>
-<span class="cstat-no" title="statement not covered" >        if (this._tokenCounter &gt; maxTokens) {</span>
+      if (token.kind !== TokenKind.EOF) {
+        ++this._tokenCounter;
+        if (maxTokens !== void 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; this._tokenCounter &gt; maxTokens)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          throw syntaxError(</span>
 <span class="cstat-no" title="statement not covered" >            this._lexer.source,</span>
 <span class="cstat-no" title="statement not covered" >            token.start,</span>
 <span class="cstat-no" title="statement not covered" >            `Document contains more that ${maxTokens} tokens. Parsing aborted.`</span>
 <span class="cstat-no" title="statement not covered" >          );</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+      }
     }
   };
 <span class="fstat-no" title="function not covered" >  function getTokenDesc(token) {</span>
@@ -10381,7 +10405,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-16T00:34:19.819Z
+                at 2024-12-17T00:32:48.945Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
