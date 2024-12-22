@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.97% </span>
+                <span class="strong">71.99% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8107/11264</span>
+                <span class='fraction'>8117/11274</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.03% </span>
+                <span class="strong">86.07% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2397/2786</span>
+                <span class='fraction'>2405/2794</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.76% </span>
+                <span class="strong">64.81% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>500/772</span>
+                <span class='fraction'>501/773</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.97% </span>
+                <span class="strong">71.99% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8107/11264</span>
+                <span class='fraction'>8117/11274</span>
             </div>
         
             
@@ -11327,7 +11327,17 @@
 <a name='L11262'></a><a href='#L11262'>11262</a>
 <a name='L11263'></a><a href='#L11263'>11263</a>
 <a name='L11264'></a><a href='#L11264'>11264</a>
-<a name='L11265'></a><a href='#L11265'>11265</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
+<a name='L11265'></a><a href='#L11265'>11265</a>
+<a name='L11266'></a><a href='#L11266'>11266</a>
+<a name='L11267'></a><a href='#L11267'>11267</a>
+<a name='L11268'></a><a href='#L11268'>11268</a>
+<a name='L11269'></a><a href='#L11269'>11269</a>
+<a name='L11270'></a><a href='#L11270'>11270</a>
+<a name='L11271'></a><a href='#L11271'>11271</a>
+<a name='L11272'></a><a href='#L11272'>11272</a>
+<a name='L11273'></a><a href='#L11273'>11273</a>
+<a name='L11274'></a><a href='#L11274'>11274</a>
+<a name='L11275'></a><a href='#L11275'>11275</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -21385,6 +21395,8 @@
 <span class="cline-any cline-yes">161x</span>
 <span class="cline-any cline-yes">161x</span>
 <span class="cline-any cline-yes">161x</span>
+<span class="cline-any cline-yes">161x</span>
+<span class="cline-any cline-yes">161x</span>
 <span class="cline-any cline-yes">2730x</span>
 <span class="cline-any cline-yes">4379x</span>
 <span class="cline-any cline-yes">4379x</span>
@@ -21434,6 +21446,14 @@
 <span class="cline-any cline-yes">166x</span>
 <span class="cline-any cline-yes">166x</span>
 <span class="cline-any cline-yes">166x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
 <span class="cline-any cline-yes">161x</span>
 <span class="cline-any cline-yes">161x</span>
 <span class="cline-any cline-yes">161x</span>
@@ -32647,7 +32667,9 @@ function printParenthesizedValueGroup(path, options2, print3) {
     assertDocArray(groupDocs);
     const withComma = chunk(join(",", groupDocs), 2);
     const parts2 = join(forceHardLine ? hardline : line, withComma);
-    return indent(forceHardLine ? [hardline, parts2] : group(fill(parts2)));
+    return indent(
+      forceHardLine ? [hardline, parts2] : group([shouldPrecededBySoftline(path) ? softline : "", fill(parts2)])
+    );
   }
   const parts = path.map(({ node: child, isLast, index }) =&gt; {
     var _a;
@@ -32696,6 +32718,14 @@ function shouldBreakList(path) {
     (node, key) =&gt; key === "group" &amp;&amp; node.type === "value-value",
     (node, key) =&gt; key === "group" &amp;&amp; node.type === "value-root",
     (node, key) =&gt; key === "value" &amp;&amp; (node.type === "css-decl" &amp;&amp; !node.prop.startsWith("--") || node.type === "css-atrule" &amp;&amp; node.variable)
+  );
+}
+function shouldPrecededBySoftline(path) {
+  return path.match(
+    (node) =&gt; node.type === "value-paren_group" &amp;&amp; !node.open,
+    (node, key) =&gt; key === "group" &amp;&amp; node.type === "value-value",
+    (node, key) =&gt; key === "group" &amp;&amp; node.type === "value-root",
+    (node, key) =&gt; key === "value" &amp;&amp; node.type === "css-decl"
   );
 }
 function chunk(array, size) {
@@ -33862,7 +33892,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-21T00:30:15.224Z
+                at 2024-12-22T00:33:26.265Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
