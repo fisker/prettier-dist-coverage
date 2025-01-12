@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.7% </span>
+                <span class="strong">67.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15022/22187</span>
+                <span class='fraction'>15026/22187</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.76% </span>
+                <span class="strong">77.74% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3710/4771</span>
+                <span class='fraction'>3711/4773</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.6% </span>
+                <span class="strong">67.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>989/1463</span>
+                <span class='fraction'>990/1463</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.7% </span>
+                <span class="strong">67.72% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15022/22187</span>
+                <span class='fraction'>15026/22187</span>
             </div>
         
             
@@ -39317,6 +39317,9 @@
 <span class="cline-any cline-yes">921x</span>
 <span class="cline-any cline-yes">921x</span>
 <span class="cline-any cline-yes">404x</span>
+<span class="cline-any cline-yes">921x</span>
+<span class="cline-any cline-yes">921x</span>
+<span class="cline-any cline-yes">921x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -39331,10 +39334,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">921x</span>
 <span class="cline-any cline-yes">404x</span>
 <span class="cline-any cline-yes">1581x</span>
 <span class="cline-any cline-yes">188x</span>
@@ -39355,18 +39355,18 @@
 <span class="cline-any cline-yes">1581x</span>
 <span class="cline-any cline-yes">1581x</span>
 <span class="cline-any cline-yes">404x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">404x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">404x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">404x</span>
+<span class="cline-any cline-yes">404x</span>
 <span class="cline-any cline-yes">921x</span>
 <span class="cline-any cline-yes">921x</span>
-<span class="cline-any cline-yes">404x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">404x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">404x</span>
-<span class="cline-any cline-yes">404x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">404x</span>
 <span class="cline-any cline-yes">404x</span>
 <span class="cline-any cline-yes">404x</span>
@@ -61503,11 +61503,11 @@ var Ignore = class {
     );
     return this._t(path13, cache3, checkUnignored, slices);
   }
-<span class="fstat-no" title="function not covered" >  checkIgnore(path13) {</span>
-<span class="cstat-no" title="statement not covered" >    if (!REGEX_TEST_TRAILING_SLASH.test(path13)) {</span>
-<span class="cstat-no" title="statement not covered" >      return this.test(path13);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const slices = path13.split(SLASH).filter(Boolean);</span>
+  checkIgnore(path13) {
+    if (!REGEX_TEST_TRAILING_SLASH.test(path13)) {
+      return this.test(path13);
+    }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const slices = path13.split(SLASH).filter(Boolean);</span></span>
 <span class="cstat-no" title="statement not covered" >    slices.pop();</span>
 <span class="cstat-no" title="statement not covered" >    if (slices.length) {</span>
 <span class="cstat-no" title="statement not covered" >      const parent = this._t(</span>
@@ -61521,7 +61521,7 @@ var Ignore = class {
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return this._rules.test(path13, false, MODE_CHECK_IGNORE);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  }
   _t(path13, cache3, checkUnignored, slices) {
     if (path13 in cache3) {
       return cache3[path13];
@@ -61541,9 +61541,9 @@ var Ignore = class {
     );
     return cache3[path13] = parent.ignored ? parent : this._rules.test(path13, checkUnignored, MODE_IGNORE);
   }
-  ignores(path13) {
-    return this._test(path13, this._ignoreCache, false).ignored;
-  }
+<span class="fstat-no" title="function not covered" >  ignores(path13) {</span>
+<span class="cstat-no" title="statement not covered" >    return this._test(path13, this._ignoreCache, false).ignored;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  createFilter() {</span>
 <span class="cstat-no" title="statement not covered" >    return (path13) =&gt; !this.ignores(path13);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -61551,9 +61551,9 @@ var Ignore = class {
 <span class="cstat-no" title="statement not covered" >    return makeArray(paths).filter(this.createFilter());</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   // @returns {TestResult}
-<span class="fstat-no" title="function not covered" >  test(path13) {</span>
-<span class="cstat-no" title="statement not covered" >    return this._test(path13, this._testCache, true);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  test(path13) {
+    return this._test(path13, this._testCache, true);
+  }
 };
 var factory = (options8) =&gt; new Ignore(options8);
 var isPathValid = <span class="fstat-no" title="function not covered" >(path13) =&gt; checkPath(path13 &amp;&amp; checkPath.convert(path13), path13, RETURN_FALSE);</span>
@@ -61599,7 +61599,7 @@ async function createSingleIsIgnoredFunction(ignoreFile, withNodeModules) {
     return;
   }
   const ignore = ignore_default({ allowRelativePaths: true }).add(content);
-  return (file) =&gt; ignore.ignores(slash(getRelativePath(file, ignoreFile)));
+  return (file) =&gt; ignore.checkIgnore(slash(getRelativePath(file, ignoreFile))).ignored;
 }
 async function createIsIgnoredFunction(ignoreFiles, withNodeModules) {
   if (ignoreFiles.length === 0 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !withNodeModules)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -66631,7 +66631,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-11T00:30:30.166Z
+                at 2025-01-12T00:33:43.460Z
             </div>
         <script src="../prettify.js"></script>
         <script>
