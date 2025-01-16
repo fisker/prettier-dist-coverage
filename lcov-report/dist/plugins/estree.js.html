@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.63% </span>
+                <span class="strong">61.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7605/12339</span>
+                <span class='fraction'>7622/12356</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.3% </span>
+                <span class="strong">50.31% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1422/2827</span>
+                <span class='fraction'>1423/2828</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.63% </span>
+                <span class="strong">61.68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7605/12339</span>
+                <span class='fraction'>7622/12356</span>
             </div>
         
             
@@ -12401,7 +12401,24 @@
 <a name='L12336'></a><a href='#L12336'>12336</a>
 <a name='L12337'></a><a href='#L12337'>12337</a>
 <a name='L12338'></a><a href='#L12338'>12338</a>
-<a name='L12339'></a><a href='#L12339'>12339</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12339'></a><a href='#L12339'>12339</a>
+<a name='L12340'></a><a href='#L12340'>12340</a>
+<a name='L12341'></a><a href='#L12341'>12341</a>
+<a name='L12342'></a><a href='#L12342'>12342</a>
+<a name='L12343'></a><a href='#L12343'>12343</a>
+<a name='L12344'></a><a href='#L12344'>12344</a>
+<a name='L12345'></a><a href='#L12345'>12345</a>
+<a name='L12346'></a><a href='#L12346'>12346</a>
+<a name='L12347'></a><a href='#L12347'>12347</a>
+<a name='L12348'></a><a href='#L12348'>12348</a>
+<a name='L12349'></a><a href='#L12349'>12349</a>
+<a name='L12350'></a><a href='#L12350'>12350</a>
+<a name='L12351'></a><a href='#L12351'>12351</a>
+<a name='L12352'></a><a href='#L12352'>12352</a>
+<a name='L12353'></a><a href='#L12353'>12353</a>
+<a name='L12354'></a><a href='#L12354'>12354</a>
+<a name='L12355'></a><a href='#L12355'>12355</a>
+<a name='L12356'></a><a href='#L12356'>12356</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -24739,6 +24756,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">(function (factory) {
   function interopModuleDefault() {
     var module = factory();
@@ -33966,7 +34000,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function printTypescriptMappedType(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
-<span class="cstat-no" title="statement not covered" >    const shouldBreak = has_newline_in_range_default(</span>
+<span class="cstat-no" title="statement not covered" >    const shouldBreak = options2.objectWrap === "preserve" &amp;&amp; has_newline_in_range_default(</span>
 <span class="cstat-no" title="statement not covered" >      options2.originalText,</span>
 <span class="cstat-no" title="statement not covered" >      locStart(node),</span>
 <span class="cstat-no" title="statement not covered" >      // Ideally, this should be the next token after `{`, but there is no node starts with it.</span>
@@ -34835,7 +34869,7 @@
     const isFlowInterfaceLikeBody = isTypeAnnotation &amp;&amp; key === "body" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (parent.type === "InterfaceDeclaration" || parent.type === "DeclareInterface" || parent.type === "DeclareClass");</span>
     const shouldBreak = node.type === "TSInterfaceBody" || isEnumBody || isFlowInterfaceLikeBody || node.type === "ObjectPattern" &amp;&amp; parent.type !== "FunctionDeclaration" &amp;&amp; parent.type !== "FunctionExpression" &amp;&amp; parent.type !== "ArrowFunctionExpression" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type !== "ObjectMethod" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "ClassMethod" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "ClassPrivateMethod" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "AssignmentPattern" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "CatchClause" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.properties.some(</span>
 <span class="cstat-no" title="statement not covered" >      (property) =&gt; property.value &amp;&amp; (property.value.type === "ObjectPattern" || property.value.type === "ArrayPattern")</span>
-    ) || node.type !== "ObjectPattern" &amp;&amp; propsAndLoc.length &gt; 0 &amp;&amp; has_newline_in_range_default(
+    ) || node.type !== "ObjectPattern" &amp;&amp; options2.objectWrap === "preserve" &amp;&amp; propsAndLoc.length &gt; 0 &amp;&amp; has_newline_in_range_default(
       options2.originalText,
       locStart(node),
       propsAndLoc[0].loc
@@ -36925,6 +36959,22 @@
       "description": "Print spaces between brackets.",
       "oppositeDescription": "Do not print spaces between brackets."
     },
+    "objectWrap": {
+      "category": "Common",
+      "type": "choice",
+      "default": "preserve",
+      "description": "How to wrap object literals.",
+      "choices": [
+        {
+          "value": "preserve",
+          "description": "Keep as multi-line, if there is a newline between the opening brace and first property."
+        },
+        {
+          "value": "collapse",
+          "description": "Fit to a single line when possible."
+        }
+      ]
+    },
     "singleQuote": {
       "category": "Common",
       "type": "boolean",
@@ -36985,6 +37035,7 @@
       ]
     },
     bracketSameLine: common_options_evaluate_default.bracketSameLine,
+    objectWrap: common_options_evaluate_default.objectWrap,
     bracketSpacing: common_options_evaluate_default.bracketSpacing,
     jsxBracketSameLine: {
       category: CATEGORY_JAVASCRIPT,
@@ -37084,7 +37135,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-15T00:29:44.722Z
+                at 2025-01-16T00:29:40.113Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
