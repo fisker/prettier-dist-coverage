@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.06% </span>
+                <span class="strong">35.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1650/4705</span>
+                <span class='fraction'>1655/4710</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.06% </span>
+                <span class="strong">35.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1650/4705</span>
+                <span class='fraction'>1655/4710</span>
             </div>
         
             
@@ -4767,7 +4767,12 @@
 <a name='L4702'></a><a href='#L4702'>4702</a>
 <a name='L4703'></a><a href='#L4703'>4703</a>
 <a name='L4704'></a><a href='#L4704'>4704</a>
-<a name='L4705'></a><a href='#L4705'>4705</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L4705'></a><a href='#L4705'>4705</a>
+<a name='L4706'></a><a href='#L4706'>4706</a>
+<a name='L4707'></a><a href='#L4707'>4707</a>
+<a name='L4708'></a><a href='#L4708'>4708</a>
+<a name='L4709'></a><a href='#L4709'>4709</a>
+<a name='L4710'></a><a href='#L4710'>4710</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -5990,6 +5995,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6596,6 +6605,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10613,6 +10623,10 @@
     static declareLet = { name: "\u0275\u0275declareLet", moduleName: CORE };
     static storeLet = { name: "\u0275\u0275storeLet", moduleName: CORE };
     static readContextLet = { name: "\u0275\u0275readContextLet", moduleName: CORE };
+    static attachSourceLocations = {
+      name: "\u0275\u0275attachSourceLocations",
+      moduleName: CORE
+    };
     static NgOnChangesFeature = { name: "\u0275\u0275NgOnChangesFeature", moduleName: CORE };
     static InheritDefinitionFeature = {
       name: "\u0275\u0275InheritDefinitionFeature",
@@ -10974,7 +10988,7 @@
 <span class="cstat-no" title="statement not covered" >      this.expression = expression;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    visit(visitor, context = null) {</span>
-<span class="cstat-no" title="statement not covered" >      return visitor.visitTypeofExpresion(this, context);</span>
+<span class="cstat-no" title="statement not covered" >      return visitor.visitTypeofExpression(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
   var NonNullAssert = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
@@ -11130,7 +11144,7 @@
 <span class="fstat-no" title="function not covered" >    visitPrefixNot(ast, context) {</span>
 <span class="cstat-no" title="statement not covered" >      this.visit(ast.expression, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="fstat-no" title="function not covered" >    visitTypeofExpresion(ast, context) {</span>
+<span class="fstat-no" title="function not covered" >    visitTypeofExpression(ast, context) {</span>
 <span class="cstat-no" title="statement not covered" >      this.visit(ast.expression, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    visitNonNullAssert(ast, context) {</span>
@@ -11392,6 +11406,7 @@
     OpKind2[OpKind2["IcuPlaceholder"] = 47] = "IcuPlaceholder";
     OpKind2[OpKind2["I18nContext"] = 48] = "I18nContext";
     OpKind2[OpKind2["I18nAttributes"] = 49] = "I18nAttributes";
+    OpKind2[OpKind2["SourceLocation"] = 50] = "SourceLocation";
   })(OpKind || (OpKind = {}));
   var ExpressionKind;
   (function(ExpressionKind2) {
@@ -12226,7 +12241,7 @@
      * parsing errors in case the given expression is invalid.
      *
      * For example,
-     * ```
+     * ```html
      *   &lt;div *ngFor="let item of items"&gt;
      *         ^      ^ absoluteValueOffset for `templateValue`
      *         absoluteKeyOffset for `templateKey`
@@ -12237,7 +12252,7 @@
      * 3. ngForOf -&gt; items
      *
      * This is apparent from the de-sugared template:
-     * ```
+     * ```html
      *   &lt;ng-template ngFor let-item [ngForOf]="items"&gt;
      * ```
      *
@@ -13005,7 +13020,7 @@
 <span class="cstat-no" title="statement not covered" >     * parsing errors in case the given expression is invalid.</span>
 <span class="cstat-no" title="statement not covered" >     *</span>
 <span class="cstat-no" title="statement not covered" >     * For example,</span>
-<span class="cstat-no" title="statement not covered" >     * ```</span>
+<span class="cstat-no" title="statement not covered" >     * ```html</span>
 <span class="cstat-no" title="statement not covered" >     *   &lt;div *ngFor="let item of items; index as i; trackBy: func"&gt;</span>
 <span class="cstat-no" title="statement not covered" >     * ```</span>
 <span class="cstat-no" title="statement not covered" >     * contains five bindings:</span>
@@ -13365,7 +13380,7 @@
   var COMPONENT_VARIABLE = "%COMP%";
   var HOST_ATTR = `_nghost-${COMPONENT_VARIABLE}`;
   var CONTENT_ATTR = `_ngcontent-${COMPONENT_VARIABLE}`;
-  var VERSION = new Version("19.0.1");
+  var VERSION = new Version("19.1.1");
   var _VisitorMode;
   (function(_VisitorMode2) {
     _VisitorMode2[_VisitorMode2["Extract"] = 0] = "Extract";
@@ -14182,7 +14197,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-16T00:29:40.113Z
+                at 2025-01-17T00:29:34.672Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
