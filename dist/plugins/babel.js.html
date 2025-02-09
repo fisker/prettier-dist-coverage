@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.94% </span>
+                <span class="strong">51.92% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8312/16002</span>
+                <span class='fraction'>8315/16012</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.95% </span>
+                <span class="strong">56.92% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1294/2272</span>
+                <span class='fraction'>1294/2273</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.94% </span>
+                <span class="strong">51.92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8312/16002</span>
+                <span class='fraction'>8315/16012</span>
             </div>
         
             
@@ -16064,7 +16064,17 @@
 <a name='L15999'></a><a href='#L15999'>15999</a>
 <a name='L16000'></a><a href='#L16000'>16000</a>
 <a name='L16001'></a><a href='#L16001'>16001</a>
-<a name='L16002'></a><a href='#L16002'>16002</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16002'></a><a href='#L16002'>16002</a>
+<a name='L16003'></a><a href='#L16003'>16003</a>
+<a name='L16004'></a><a href='#L16004'>16004</a>
+<a name='L16005'></a><a href='#L16005'>16005</a>
+<a name='L16006'></a><a href='#L16006'>16006</a>
+<a name='L16007'></a><a href='#L16007'>16007</a>
+<a name='L16008'></a><a href='#L16008'>16008</a>
+<a name='L16009'></a><a href='#L16009'>16009</a>
+<a name='L16010'></a><a href='#L16010'>16010</a>
+<a name='L16011'></a><a href='#L16011'>16011</a>
+<a name='L16012'></a><a href='#L16012'>16012</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -24136,6 +24146,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24200,6 +24212,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24660,6 +24675,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -25115,6 +25132,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -40032,10 +40052,11 @@
 <span class="cstat-no" title="statement not covered" >          return this.finishNode(node, "TSTupleType");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        tsParseTupleElementType() {</span>
+<span class="cstat-no" title="statement not covered" >          const restStartLoc = this.state.startLoc;</span>
+<span class="cstat-no" title="statement not covered" >          const rest = this.eat(21);</span>
 <span class="cstat-no" title="statement not covered" >          const {</span>
 <span class="cstat-no" title="statement not covered" >            startLoc</span>
 <span class="cstat-no" title="statement not covered" >          } = this.state;</span>
-<span class="cstat-no" title="statement not covered" >          const rest = this.eat(21);</span>
 <span class="cstat-no" title="statement not covered" >          let labeled;</span>
 <span class="cstat-no" title="statement not covered" >          let label;</span>
 <span class="cstat-no" title="statement not covered" >          let optional;</span>
@@ -40050,12 +40071,11 @@
 <span class="cstat-no" title="statement not covered" >            type = this.tsParseType();</span>
 <span class="cstat-no" title="statement not covered" >          } else if (chAfterWord === 63) {</span>
 <span class="cstat-no" title="statement not covered" >            optional = true;</span>
-<span class="cstat-no" title="statement not covered" >            const startLoc2 = this.state.startLoc;</span>
 <span class="cstat-no" title="statement not covered" >            const wordName = this.state.value;</span>
 <span class="cstat-no" title="statement not covered" >            const typeOrLabel = this.tsParseNonArrayType();</span>
 <span class="cstat-no" title="statement not covered" >            if (this.lookaheadCharCode() === 58) {</span>
 <span class="cstat-no" title="statement not covered" >              labeled = true;</span>
-<span class="cstat-no" title="statement not covered" >              label = this.createIdentifier(this.startNodeAt(startLoc2), wordName);</span>
+<span class="cstat-no" title="statement not covered" >              label = this.createIdentifier(this.startNodeAt(startLoc), wordName);</span>
 <span class="cstat-no" title="statement not covered" >              this.expect(17);</span>
 <span class="cstat-no" title="statement not covered" >              this.expect(14);</span>
 <span class="cstat-no" title="statement not covered" >              type = this.tsParseType();</span>
@@ -40072,7 +40092,7 @@
 <span class="cstat-no" title="statement not covered" >          if (labeled) {</span>
 <span class="cstat-no" title="statement not covered" >            let labeledNode;</span>
 <span class="cstat-no" title="statement not covered" >            if (label) {</span>
-<span class="cstat-no" title="statement not covered" >              labeledNode = this.startNodeAtNode(label);</span>
+<span class="cstat-no" title="statement not covered" >              labeledNode = this.startNodeAt(startLoc);</span>
 <span class="cstat-no" title="statement not covered" >              labeledNode.optional = optional;</span>
 <span class="cstat-no" title="statement not covered" >              labeledNode.label = label;</span>
 <span class="cstat-no" title="statement not covered" >              labeledNode.elementType = type;</span>
@@ -40081,7 +40101,7 @@
 <span class="cstat-no" title="statement not covered" >                this.raise(TSErrors.TupleOptionalAfterType, this.state.lastTokStartLoc);</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >              labeledNode = this.startNodeAtNode(type);</span>
+<span class="cstat-no" title="statement not covered" >              labeledNode = this.startNodeAt(startLoc);</span>
 <span class="cstat-no" title="statement not covered" >              labeledNode.optional = optional;</span>
 <span class="cstat-no" title="statement not covered" >              this.raise(TSErrors.InvalidTupleMemberLabel, type);</span>
 <span class="cstat-no" title="statement not covered" >              labeledNode.label = type;</span>
@@ -40089,12 +40109,12 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            type = this.finishNode(labeledNode, "TSNamedTupleMember");</span>
 <span class="cstat-no" title="statement not covered" >          } else if (optional) {</span>
-<span class="cstat-no" title="statement not covered" >            const optionalTypeNode = this.startNodeAtNode(type);</span>
+<span class="cstat-no" title="statement not covered" >            const optionalTypeNode = this.startNodeAt(startLoc);</span>
 <span class="cstat-no" title="statement not covered" >            optionalTypeNode.typeAnnotation = type;</span>
 <span class="cstat-no" title="statement not covered" >            type = this.finishNode(optionalTypeNode, "TSOptionalType");</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (rest) {</span>
-<span class="cstat-no" title="statement not covered" >            const restNode = this.startNodeAt(startLoc);</span>
+<span class="cstat-no" title="statement not covered" >            const restNode = this.startNodeAt(restStartLoc);</span>
 <span class="cstat-no" title="statement not covered" >            restNode.typeAnnotation = type;</span>
 <span class="cstat-no" title="statement not covered" >            type = this.finishNode(restNode, "TSRestType");</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -40133,9 +40153,11 @@
           return this.finishNode(node, "TSLiteralType");
         }
 <span class="fstat-no" title="function not covered" >        tsParseTemplateLiteralType() {</span>
-<span class="cstat-no" title="statement not covered" >          const node = this.startNode();</span>
-<span class="cstat-no" title="statement not covered" >          node.literal = super.parseTemplate(false);</span>
-<span class="cstat-no" title="statement not covered" >          return this.finishNode(node, "TSLiteralType");</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            const node = this.startNode();</span>
+<span class="cstat-no" title="statement not covered" >            node.literal = super.parseTemplate(false);</span>
+<span class="cstat-no" title="statement not covered" >            return this.finishNode(node, "TSLiteralType");</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        parseTemplateSubstitution() {</span>
 <span class="cstat-no" title="statement not covered" >          if (this.state.inType) return this.tsParseType();</span>
@@ -40201,15 +40223,18 @@
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >          this.unexpected();</span></span>
         }
         tsParseArrayTypeOrHigher() {
+          const {
+            startLoc
+          } = this.state;
           let type = this.tsParseNonArrayType();
           while (!this.hasPrecedingLineBreak() &amp;&amp; this.eat(0)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            if (this.match(3)) {</span>
-<span class="cstat-no" title="statement not covered" >              const node = this.startNodeAtNode(type);</span>
+<span class="cstat-no" title="statement not covered" >              const node = this.startNodeAt(startLoc);</span>
 <span class="cstat-no" title="statement not covered" >              node.elementType = type;</span>
 <span class="cstat-no" title="statement not covered" >              this.expect(3);</span>
 <span class="cstat-no" title="statement not covered" >              type = this.finishNode(node, "TSArrayType");</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >              const node = this.startNodeAtNode(type);</span>
+<span class="cstat-no" title="statement not covered" >              const node = this.startNodeAt(startLoc);</span>
 <span class="cstat-no" title="statement not covered" >              node.objectType = type;</span>
 <span class="cstat-no" title="statement not covered" >              node.indexType = this.tsParseType();</span>
 <span class="cstat-no" title="statement not covered" >              this.expect(3);</span>
@@ -40649,7 +40674,9 @@
 <span class="cstat-no" title="statement not covered" >          return this.finishNode(node, "TSModuleDeclaration");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        tsParseImportEqualsDeclaration(node, maybeDefaultIdentifier, isExport) {</span>
-<span class="cstat-no" title="statement not covered" >          node.isExport = isExport || false;</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            node.isExport = isExport || false;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          node.id = maybeDefaultIdentifier || this.parseIdentifier();</span>
 <span class="cstat-no" title="statement not covered" >          this.checkIdentifier(node.id, 4096);</span>
 <span class="cstat-no" title="statement not covered" >          this.expect(29);</span>
@@ -41116,15 +41143,18 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
         parseExport(node, decorators) {
           if (this.match(83)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            this.next();</span>
 <span class="cstat-no" title="statement not covered" >            const nodeImportEquals = node;</span>
+<span class="cstat-no" title="statement not covered" >            this.next();</span>
 <span class="cstat-no" title="statement not covered" >            let maybeDefaultIdentifier = null;</span>
 <span class="cstat-no" title="statement not covered" >            if (this.isContextual(130) &amp;&amp; this.isPotentialImportPhase(false)) {</span>
 <span class="cstat-no" title="statement not covered" >              maybeDefaultIdentifier = this.parseMaybeImportPhase(nodeImportEquals, false);</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
 <span class="cstat-no" title="statement not covered" >              nodeImportEquals.importKind = "value";</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            return this.tsParseImportEqualsDeclaration(nodeImportEquals, maybeDefaultIdentifier, true);</span>
+<span class="cstat-no" title="statement not covered" >            const declaration = this.tsParseImportEqualsDeclaration(nodeImportEquals, maybeDefaultIdentifier, true);</span>
+<span class="cstat-no" title="statement not covered" >            {</span>
+<span class="cstat-no" title="statement not covered" >              return declaration;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
           } else if (this.eat(29)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            const assign = node;</span>
 <span class="cstat-no" title="statement not covered" >            assign.expression = super.parseExpression();</span>
@@ -41324,7 +41354,7 @@
           if (declaration.type === "TSInterfaceDeclaration" || declaration.type === "TSTypeAliasDeclaration" || isDeclare) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            node.exportKind = "type";</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          if (isDeclare) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (isDeclare <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; declaration.type !== "TSImportEqualsDeclaration")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            this.resetStartLocation(declaration, startLoc);</span>
 <span class="cstat-no" title="statement not covered" >            declaration.declare = true;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -47089,6 +47119,10 @@
       "nameType",
       "typeAnnotation"
     ],
+    "TSTemplateLiteralType": [
+      "quasis",
+      "types"
+    ],
     "TSLiteralType": [
       "literal"
     ],
@@ -47254,10 +47288,6 @@
     "TSPublicKeyword": [],
     "TSReadonlyKeyword": [],
     "TSStaticKeyword": [],
-    "TSTemplateLiteralType": [
-      "quasis",
-      "types"
-    ],
     "AsConstExpression": [
       "expression"
     ],
@@ -48073,7 +48103,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-08T00:29:15.206Z
+                at 2025-02-09T00:32:39.157Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
