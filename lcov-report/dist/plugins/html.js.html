@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.9% </span>
+                <span class="strong">72.87% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7068/9695</span>
+                <span class='fraction'>7067/9698</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.97% </span>
+                <span class="strong">72.81% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>926/1269</span>
+                <span class='fraction'>924/1269</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.88% </span>
+                <span class="strong">62.47% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>305/485</span>
+                <span class='fraction'>303/485</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.9% </span>
+                <span class="strong">72.87% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7068/9695</span>
+                <span class='fraction'>7067/9698</span>
             </div>
         
             
@@ -9757,7 +9757,10 @@
 <a name='L9692'></a><a href='#L9692'>9692</a>
 <a name='L9693'></a><a href='#L9693'>9693</a>
 <a name='L9694'></a><a href='#L9694'>9694</a>
-<a name='L9695'></a><a href='#L9695'>9695</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9695'></a><a href='#L9695'>9695</a>
+<a name='L9696'></a><a href='#L9696'>9696</a>
+<a name='L9697'></a><a href='#L9697'>9697</a>
+<a name='L9698'></a><a href='#L9698'>9698</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11437,7 +11440,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11477,6 +11479,8 @@
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11649,6 +11653,8 @@
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21126,9 +21132,8 @@
   var attribute_default = printAttribute;
 &nbsp;
   // scripts/build/shims/assert.js
-  var assert = new Proxy(() =&gt; {
-  }, { get: () =&gt; assert });
-  var assert_default = assert;
+  var assert = new Proxy(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+  }, { get: <span class="fstat-no" title="function not covered" >() =&gt; assert </span>});
 &nbsp;
   // src/utils/is-non-empty-array.js
   function isNonEmptyArray(object) {
@@ -21170,7 +21175,9 @@
     return needsToBorrowParentClosingTagStartMarker(node) ? printClosingTagStartMarker(node.parent, options2) : needsToBorrowNextOpeningTagStartMarker(node) ? printOpeningTagStartMarker(node.next, options2) : "";
   }
   function printClosingTagStartMarker(node, options2) {
-    assert_default.ok(!node.isSelfClosing);
+    if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      assert_default.ok(!node.isSelfClosing);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     if (shouldNotPrintClosingTag(node, options2)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -21342,7 +21349,9 @@
     }
   }
   function printOpeningTagEndMarker(node) {
-    assert_default.ok(!node.isSelfClosing);
+    if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      assert_default.ok(!node.isSelfClosing);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     switch (node.type) {
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ieConditionalComment":</span>
 <span class="cstat-no" title="statement not covered" >        return "]&gt;";</span>
@@ -29152,7 +29161,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-26T00:30:45.746Z
+                at 2025-02-27T00:31:04.357Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
