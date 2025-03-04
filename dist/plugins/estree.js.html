@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.66% </span>
+                <span class="strong">61.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7666/12432</span>
+                <span class='fraction'>7669/12430</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.84% </span>
+                <span class="strong">50.95% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1445/2842</span>
+                <span class='fraction'>1445/2836</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.94% </span>
+                <span class="strong">66.18% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>368/558</span>
+                <span class='fraction'>368/556</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.66% </span>
+                <span class="strong">61.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7666/12432</span>
+                <span class='fraction'>7669/12430</span>
             </div>
         
             
@@ -12492,9 +12492,7 @@
 <a name='L12427'></a><a href='#L12427'>12427</a>
 <a name='L12428'></a><a href='#L12428'>12428</a>
 <a name='L12429'></a><a href='#L12429'>12429</a>
-<a name='L12430'></a><a href='#L12430'>12430</a>
-<a name='L12431'></a><a href='#L12431'>12431</a>
-<a name='L12432'></a><a href='#L12432'>12432</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12430'></a><a href='#L12430'>12430</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14278,9 +14276,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">30x</span>
-<span class="cline-any cline-yes">30x</span>
-<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14981,6 +14979,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -18054,6 +18056,7 @@
 <span class="cline-any cline-yes">998x</span>
 <span class="cline-any cline-yes">998x</span>
 <span class="cline-any cline-yes">998x</span>
+<span class="cline-any cline-yes">998x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18136,13 +18139,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">998x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">998x</span>
 <span class="cline-any cline-yes">998x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22971,7 +22967,7 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -27422,12 +27418,16 @@
     "SatisfiesExpression"
   ]);
   var isUnionType = create_type_check_function_default([
-    "UnionTypeAnnotation",
-    "TSUnionType"
+    "TSUnionType",
+    "UnionTypeAnnotation"
   ]);
   var isIntersectionType = create_type_check_function_default([
-    "IntersectionTypeAnnotation",
-    "TSIntersectionType"
+    "TSIntersectionType",
+    "IntersectionTypeAnnotation"
+  ]);
+  var isConditionalType = create_type_check_function_default([
+    "TSConditionalType",
+    "ConditionalTypeAnnotation"
   ]);
 &nbsp;
   // src/language-js/clean.js
@@ -28429,11 +28429,11 @@
     if (!options2.experimentalTernaries) {
       return false;
     }
-<span class="branch-0 cbranch-no" title="branch not covered" >    const enclosingIsCond = (enclosingNode == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" ></span>: enclosingNode.type)</span> === "ConditionalExpression" <span class="branch-0 cbranch-no" title="branch not covered" >|| (enclosingNode == null ? void 0 : enclosingNode.type) === "ConditionalTypeAnnotation" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| (enclosingNode == null ? void 0 : enclosingNode.type) === "TSConditionalType";</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >    const enclosingIsCond = (enclosingNode == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" ></span>: enclosingNode.type)</span> === "ConditionalExpression" <span class="branch-0 cbranch-no" title="branch not covered" >|| isConditionalType(enclosingNode);</span>
     if (!enclosingIsCond) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    const followingIsCond = (followingNode == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: followingNode.type)</span> === "ConditionalExpression" <span class="branch-0 cbranch-no" title="branch not covered" >|| (followingNode == null ? void 0 : followingNode.type) === "ConditionalTypeAnnotation" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| (followingNode == null ? void 0 : followingNode.type) === "TSConditionalType";</span>
+    const followingIsCond = (followingNode == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: followingNode.type)</span> === "ConditionalExpression" <span class="branch-0 cbranch-no" title="branch not covered" >|| isConditionalType(followingNode);</span>
     if (followingIsCond) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      addDanglingComment(enclosingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
@@ -28449,7 +28449,7 @@
     options: options2
   }) {
     const isSameLineAsPrecedingNode = precedingNode &amp;&amp; !has_newline_in_range_default(text, locEnd(precedingNode), locStart(comment));
-    if ((!precedingNode || !isSameLineAsPrecedingNode) &amp;&amp; ((enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "ConditionalExpression" || (enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "ConditionalTypeAnnotation" || (enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "TSConditionalType") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; followingNode)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if ((!precedingNode || !isSameLineAsPrecedingNode) &amp;&amp; ((enclosingNode == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: enclosingNode.type) === "ConditionalExpression" || isConditionalType(enclosingNode)) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; followingNode)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      if (options2.experimentalTernaries &amp;&amp; enclosingNode.alternate === followingNode &amp;&amp; !(is_block_comment_default(comment) &amp;&amp; !has_newline_in_range_default(</span>
 <span class="cstat-no" title="statement not covered" >        options2.originalText,</span>
 <span class="cstat-no" title="statement not covered" >        locStart(comment),</span>
@@ -30476,8 +30476,8 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "TSFunctionType":</span>
 <span class="cstat-no" title="statement not covered" >        if (path.match(</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >          (node2) =&gt; node2.type === "TSFunctionType",</span></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >          (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "TSTypeAnnotation",</span></span>
+<span class="cstat-no" title="statement not covered" >          (node2) =&gt; node2.type === "TSFunctionType",</span>
+<span class="cstat-no" title="statement not covered" >          (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "TSTypeAnnotation",</span>
 <span class="cstat-no" title="statement not covered" >          (node2, key2) =&gt; key2 === "returnType" &amp;&amp; node2.type === "ArrowFunctionExpression"</span>
 <span class="cstat-no" title="statement not covered" >        )) {</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
@@ -30485,10 +30485,14 @@
       // fallthrough
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "TSConditionalType":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "TSConstructorType":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "ConditionalTypeAnnotation":</span>
+<span class="cstat-no" title="statement not covered" >        if (key === "extendsType" &amp;&amp; isConditionalType(node) &amp;&amp; parent.type === node.type) {</span>
+<span class="cstat-no" title="statement not covered" >          return true;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (key === "checkType" &amp;&amp; isConditionalType(parent)) {</span>
+<span class="cstat-no" title="statement not covered" >          return true;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (key === "extendsType" &amp;&amp; parent.type === "TSConditionalType") {</span>
-<span class="cstat-no" title="statement not covered" >          if (node.type === "TSConditionalType") {</span>
-<span class="cstat-no" title="statement not covered" >            return true;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          let { typeAnnotation } = node.returnType || node.typeAnnotation;</span>
 <span class="cstat-no" title="statement not covered" >          if (typeAnnotation.type === "TSTypePredicate" &amp;&amp; typeAnnotation.typeAnnotation) {</span>
 <span class="cstat-no" title="statement not covered" >            typeAnnotation = typeAnnotation.typeAnnotation.typeAnnotation;</span>
@@ -30497,13 +30501,10 @@
 <span class="cstat-no" title="statement not covered" >            return true;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (key === "checkType" &amp;&amp; parent.type === "TSConditionalType") {</span>
-<span class="cstat-no" title="statement not covered" >          return true;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
       // fallthrough
       case "TSUnionType":
       case "TSIntersectionType":
-        if ((parent.type === "TSUnionType" || parent.type === "TSIntersectionType") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.types.length &gt; 1 <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; (!node.types || node.types.length &gt; 1))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+        if ((isUnionType(parent) || isIntersectionType(parent)) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.types.length &gt; 1 <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; (!node.types || node.types.length &gt; 1))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       // fallthrough
@@ -30567,13 +30568,6 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
         );
       }
-<span class="branch-0 cbranch-no" title="branch not covered" >      case "ConditionalTypeAnnotation":</span>
-<span class="cstat-no" title="statement not covered" >        if (key === "extendsType" &amp;&amp; parent.type === "ConditionalTypeAnnotation" &amp;&amp; node.type === "ConditionalTypeAnnotation") {</span>
-<span class="cstat-no" title="statement not covered" >          return true;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (key === "checkType" &amp;&amp; parent.type === "ConditionalTypeAnnotation") {</span>
-<span class="cstat-no" title="statement not covered" >          return true;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
       // fallthrough
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "OptionalIndexedAccessType":</span>
 <span class="cstat-no" title="statement not covered" >        return key === "objectType" &amp;&amp; parent.type === "IndexedAccessType";</span>
@@ -33204,7 +33198,7 @@
   function printUnionType(path, options2, print3) {
     const { node } = path;
     const { parent } = path;
-    const shouldIndent = parent.type !== "TypeParameterInstantiation" &amp;&amp; (parent.type !== "TSConditionalType" <span class="branch-0 cbranch-no" title="branch not covered" >|| !options2.experimentalTernaries)</span> &amp;&amp; (parent.type !== "ConditionalTypeAnnotation" <span class="branch-0 cbranch-no" title="branch not covered" >|| !options2.experimentalTernaries)</span> &amp;&amp; parent.type !== "TSTypeParameterInstantiation" &amp;&amp; parent.type !== "GenericTypeAnnotation" &amp;&amp; parent.type !== "TSTypeReference" &amp;&amp; parent.type !== "TSTypeAssertion" &amp;&amp; parent.type !== "TupleTypeAnnotation" &amp;&amp; parent.type !== "TSTupleType" &amp;&amp; !(parent.type === "FunctionTypeParam" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !parent.name <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; path.grandparent.this !== parent)</span> &amp;&amp; !((parent.type === "TypeAlias" || parent.type === "VariableDeclarator" || parent.type === "TSTypeAliasDeclaration") &amp;&amp; hasLeadingOwnLineComment(options2.originalText, node));
+    const shouldIndent = parent.type !== "TypeParameterInstantiation" &amp;&amp; (!isConditionalType(parent) <span class="branch-0 cbranch-no" title="branch not covered" >|| !options2.experimentalTernaries)</span> &amp;&amp; parent.type !== "TSTypeParameterInstantiation" &amp;&amp; parent.type !== "GenericTypeAnnotation" &amp;&amp; parent.type !== "TSTypeReference" &amp;&amp; parent.type !== "TSTypeAssertion" &amp;&amp; parent.type !== "TupleTypeAnnotation" &amp;&amp; parent.type !== "TSTupleType" &amp;&amp; !(parent.type === "FunctionTypeParam" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !parent.name <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; path.grandparent.this !== parent)</span> &amp;&amp; !((parent.type === "TypeAlias" || parent.type === "VariableDeclarator" || parent.type === "TSTypeAliasDeclaration") &amp;&amp; hasLeadingOwnLineComment(options2.originalText, node));
     const shouldHug = shouldHugType(node);
     const printed = path.map((typePath) =&gt; {
       let printedType = print3();
@@ -35402,8 +35396,8 @@
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const { node } = path;</span></span>
 <span class="cstat-no" title="statement not covered" >    const isConditionalExpression = node.type === "ConditionalExpression";</span>
-    const isTSConditional = node.type === "TSConditionalType" || node.type === "ConditionalTypeAnnotation";
-    const consequentNodePropertyName = isConditionalExpression <span class="branch-0 cbranch-no" title="branch not covered" >? "consequent" <span class="branch-0 cbranch-no" title="branch not covered" ></span>: "trueType";</span>
+<span class="cstat-no" title="statement not covered" >    const isTSConditional = isConditionalType(node);</span>
+    const consequentNodePropertyName = isConditionalExpression ? "consequent" <span class="branch-0 cbranch-no" title="branch not covered" >: "trueType";</span>
     const alternateNodePropertyName = isConditionalExpression <span class="branch-0 cbranch-no" title="branch not covered" >? "alternate" <span class="branch-0 cbranch-no" title="branch not covered" ></span>: "falseType";</span>
     const testNodePropertyNames = isConditionalExpression <span class="branch-0 cbranch-no" title="branch not covered" >? ["test"] <span class="branch-0 cbranch-no" title="branch not covered" ></span>: ["checkType", "extendsType"];</span>
     const consequentNode = node[consequentNodePropertyName];
@@ -35492,7 +35486,7 @@
 <span class="cstat-no" title="statement not covered" >      " ",</span>
 <span class="cstat-no" title="statement not covered" >      "extends",</span>
 <span class="cstat-no" title="statement not covered" >      " ",</span>
-<span class="cstat-no" title="statement not covered" >      node.extendsType.type === "TSConditionalType" || node.extendsType.type === "ConditionalTypeAnnotation" || node.extendsType.type === "TSMappedType" ? print3("extendsType") : group(wrapInParens(print3("extendsType")))</span>
+<span class="cstat-no" title="statement not covered" >      isConditionalType(node.extendsType) || node.extendsType.type === "TSMappedType" ? print3("extendsType") : group(wrapInParens(print3("extendsType")))</span>
     ];
     const printedTestWithQuestionMark = group([printedTest, " ?"], {
       id: testId
@@ -37363,7 +37357,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-03T00:32:34.728Z
+                at 2025-03-04T00:31:18.555Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
