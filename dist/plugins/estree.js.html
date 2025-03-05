@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.69% </span>
+                <span class="strong">61.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7669/12430</span>
+                <span class='fraction'>7669/12436</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.69% </span>
+                <span class="strong">61.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7669/12430</span>
+                <span class='fraction'>7669/12436</span>
             </div>
         
             
@@ -12492,7 +12492,13 @@
 <a name='L12427'></a><a href='#L12427'>12427</a>
 <a name='L12428'></a><a href='#L12428'>12428</a>
 <a name='L12429'></a><a href='#L12429'>12429</a>
-<a name='L12430'></a><a href='#L12430'>12430</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12430'></a><a href='#L12430'>12430</a>
+<a name='L12431'></a><a href='#L12431'>12431</a>
+<a name='L12432'></a><a href='#L12432'>12432</a>
+<a name='L12433'></a><a href='#L12433'>12433</a>
+<a name='L12434'></a><a href='#L12434'>12434</a>
+<a name='L12435'></a><a href='#L12435'>12435</a>
+<a name='L12436'></a><a href='#L12436'>12436</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -19460,6 +19466,9 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -20741,6 +20750,9 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -30578,7 +30590,7 @@
 <span class="cstat-no" title="statement not covered" >          const grandParent = path.grandparent;</span>
 <span class="cstat-no" title="statement not covered" >          return grandParent.type === "Program" || grandParent.type === "BlockStatement";</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        return key === "object" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type === "MemberExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; typeof node.value === "number";</span>
+        return key === "object" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isMemberExpression(parent) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; isNumericLiteral(node);</span>
       case "AssignmentExpression":
         if ((key === "init" || key === "update") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type === "ForStatement")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return false;</span>
@@ -31888,7 +31900,10 @@
     ) : "";
     let right;
     if (shouldInline) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      right = [operator, " ", print3("right"), rightSuffix];</span>
+<span class="cstat-no" title="statement not covered" >      right = [</span>
+<span class="cstat-no" title="statement not covered" >        operator,</span>
+<span class="cstat-no" title="statement not covered" >        hasLeadingOwnLineComment(options2.originalText, node.right) ? indent([line, print3("right"), rightSuffix]) : [" ", print3("right"), rightSuffix]</span>
+<span class="cstat-no" title="statement not covered" >      ];</span>
     } else {
       const isHackPipeline = operator === "|&gt;" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; ((_a = path.root.extra) == null ? void 0 : _a.__isUsingHackPipeline);</span>
       const rightContent = isHackPipeline <span class="branch-0 cbranch-no" title="branch not covered" >? path.call(</span>
@@ -33182,7 +33197,10 @@
 <span class="cstat-no" title="statement not covered" >        if (previousIsObjectType &amp;&amp; currentIsObjectType) {</span>
 <span class="cstat-no" title="statement not covered" >          return [" &amp; ", wasIndented ? indent(doc) : doc];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (!previousIsObjectType &amp;&amp; !currentIsObjectType) {</span>
+<span class="cstat-no" title="statement not covered" >        if (</span>
+<span class="cstat-no" title="statement not covered" >          // If no object is involved, go to the next line if it breaks</span>
+<span class="cstat-no" title="statement not covered" >          !previousIsObjectType &amp;&amp; !currentIsObjectType || hasLeadingOwnLineComment(options2.originalText, node)</span>
+<span class="cstat-no" title="statement not covered" >        ) {</span>
 <span class="cstat-no" title="statement not covered" >          if (options2.experimentalOperatorPosition === "start") {</span>
 <span class="cstat-no" title="statement not covered" >            return indent([line, "&amp; ", doc]);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -37357,7 +37375,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-04T00:31:18.555Z
+                at 2025-03-05T00:31:22.450Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
