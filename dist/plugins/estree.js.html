@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.66% </span>
+                <span class="strong">61.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7669/12436</span>
+                <span class='fraction'>7668/12429</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.95% </span>
+                <span class="strong">50.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1445/2836</span>
+                <span class='fraction'>1445/2835</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.66% </span>
+                <span class="strong">61.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7669/12436</span>
+                <span class='fraction'>7668/12429</span>
             </div>
         
             
@@ -12491,14 +12491,7 @@
 <a name='L12426'></a><a href='#L12426'>12426</a>
 <a name='L12427'></a><a href='#L12427'>12427</a>
 <a name='L12428'></a><a href='#L12428'>12428</a>
-<a name='L12429'></a><a href='#L12429'>12429</a>
-<a name='L12430'></a><a href='#L12430'>12430</a>
-<a name='L12431'></a><a href='#L12431'>12431</a>
-<a name='L12432'></a><a href='#L12432'>12432</a>
-<a name='L12433'></a><a href='#L12433'>12433</a>
-<a name='L12434'></a><a href='#L12434'>12434</a>
-<a name='L12435'></a><a href='#L12435'>12435</a>
-<a name='L12436'></a><a href='#L12436'>12436</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12429'></a><a href='#L12429'>12429</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -18011,10 +18004,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">998x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21652,9 +21641,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -30442,14 +30428,10 @@
             return false;
         }
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "SequenceExpression":</span>
-<span class="cstat-no" title="statement not covered" >        switch (parent.type) {</span>
-<span class="cstat-no" title="statement not covered" >          case "ForStatement":</span>
-<span class="cstat-no" title="statement not covered" >            return false;</span>
-<span class="cstat-no" title="statement not covered" >          case "ArrowFunctionExpression":</span>
-<span class="cstat-no" title="statement not covered" >            return key !== "body";</span>
-<span class="cstat-no" title="statement not covered" >          default:</span>
-<span class="cstat-no" title="statement not covered" >            return true;</span>
+<span class="cstat-no" title="statement not covered" >        if (parent.type === "ForStatement") {</span>
+<span class="cstat-no" title="statement not covered" >          return false;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "YieldExpression":</span>
 <span class="cstat-no" title="statement not covered" >        if (parent.type === "AwaitExpression" || parent.type === "TSTypeAssertion") {</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
@@ -34089,9 +34071,6 @@
 <span class="cstat-no" title="statement not covered" >        bodyComments</span>
 <span class="cstat-no" title="statement not covered" >      ];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (shouldAlwaysAddParens(functionBody)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      bodyDoc = group(["(", indent([softline, bodyDoc]), softline, ")"]);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
     return shouldPutBodyOnSameLine ? [" ", bodyDoc, bodyComments] <span class="branch-0 cbranch-no" title="branch not covered" >: [indent([line, bodyDoc, bodyComments]), trailingComma, trailingSpace];</span>
   }
 &nbsp;
@@ -35738,7 +35717,7 @@
 <span class="cstat-no" title="statement not covered" >          return group(parts3);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const parts2 = join([",", line], path.map(print3, "expressions"));</span>
-<span class="cstat-no" title="statement not covered" >        if (parent.type === "ReturnStatement" || parent.type === "ThrowStatement") {</span>
+<span class="cstat-no" title="statement not covered" >        if ((parent.type === "ReturnStatement" || parent.type === "ThrowStatement") &amp;&amp; path.key === "argument" || parent.type === "ArrowFunctionExpression" &amp;&amp; path.key === "body") {</span>
 <span class="cstat-no" title="statement not covered" >          return group(ifBreak([indent([softline, parts2]), softline], parts2));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return group(parts2);</span>
@@ -37375,7 +37354,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-06T00:31:35.071Z
+                at 2025-03-07T00:31:28.317Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
