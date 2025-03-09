@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.43% </span>
+                <span class="strong">79.53% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>815/1026</span>
+                <span class='fraction'>820/1031</span>
             </div>
         
             
@@ -5973,12 +5973,12 @@
 <span class="cline-any cline-yes">404x</span>
 <span class="cline-any cline-yes">404x</span>
 <span class="cline-any cline-yes">404x</span>
-<span class="cline-any cline-yes">3176x</span>
-<span class="cline-any cline-yes">3176x</span>
-<span class="cline-any cline-yes">3176x</span>
-<span class="cline-any cline-yes">3176x</span>
-<span class="cline-any cline-yes">3176x</span>
-<span class="cline-any cline-yes">3176x</span>
+<span class="cline-any cline-yes">6344x</span>
+<span class="cline-any cline-yes">6344x</span>
+<span class="cline-any cline-yes">6344x</span>
+<span class="cline-any cline-yes">6344x</span>
+<span class="cline-any cline-yes">6344x</span>
+<span class="cline-any cline-yes">6344x</span>
 <span class="cline-any cline-yes">404x</span>
 <span class="cline-any cline-yes">404x</span>
 <span class="cline-any cline-yes">404x</span>
@@ -5988,19 +5988,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6012,13 +6001,6 @@
 <span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6026,11 +6008,29 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">808x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">808x</span>
+<span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">808x</span>
+<span class="cline-any cline-yes">808x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">792x</span>
+<span class="cline-any cline-yes">792x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">792x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">792x</span>
+<span class="cline-any cline-yes">808x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">808x</span>
+<span class="cline-any cline-yes">792x</span>
+<span class="cline-any cline-yes">792x</span>
 <span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-yes">808x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -10847,15 +10847,15 @@ if (hasFlag("no-color") || hasFlag("no-colors") || hasFlag("color=false") || has
 <span class="cstat-no" title="statement not covered" >  flagForceColor = 1;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 function envForceColor() {
-  if ("FORCE_COLOR" in env) {
-    if (env.FORCE_COLOR === "true") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if ("FORCE_COLOR" in env) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (env.FORCE_COLOR === "true") {</span>
 <span class="cstat-no" title="statement not covered" >      return 1;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (env.FORCE_COLOR === "false") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (env.FORCE_COLOR === "false") {</span>
 <span class="cstat-no" title="statement not covered" >      return 0;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    return env.FORCE_COLOR.length === 0 <span class="branch-0 cbranch-no" title="branch not covered" >? 1 </span>: Math.min(Number.parseInt(env.FORCE_COLOR, 10), 3);
-  }
+<span class="cstat-no" title="statement not covered" >    return env.FORCE_COLOR.length === 0 ? 1 : Math.min(Number.parseInt(env.FORCE_COLOR, 10), 3);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 }
 function translateLevel(level) {
   if (level === 0) {
@@ -10870,28 +10870,28 @@ function translateLevel(level) {
 }
 function _supportsColor(haveStream, { streamIsTTY, sniffFlags = true } = {}) {
   const noFlagForceColor = envForceColor();
-  if (noFlagForceColor !== void 0) {
-    flagForceColor = noFlagForceColor;
-  }
+  if (noFlagForceColor !== void 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    flagForceColor = noFlagForceColor;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   const forceColor = sniffFlags ? flagForceColor <span class="branch-0 cbranch-no" title="branch not covered" >: noFlagForceColor;</span>
   if (forceColor === 0) {
     return 0;
   }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  if (sniffFlags) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (hasFlag("color=16m") || hasFlag("color=full") || hasFlag("color=truecolor")) {</span>
+  if (sniffFlags) {
+    if (hasFlag("color=16m") || hasFlag("color=full") || hasFlag("color=truecolor")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return 3;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (hasFlag("color=256")) {</span>
+    if (hasFlag("color=256")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return 2;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-  if ("TF_BUILD" in env &amp;&amp; "AGENT_NAME" in env) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  }
+  if ("TF_BUILD" in env <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; "AGENT_NAME" in env)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return 1;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if (haveStream &amp;&amp; !streamIsTTY <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; forceColor === void 0)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    return 0;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-  const min = forceColor || 0;
+  if (haveStream &amp;&amp; !streamIsTTY &amp;&amp; forceColor === void 0) {
+    return 0;
+  }
+<span class="branch-0 cbranch-no" title="branch not covered" >  const min = forceColor || 0;</span>
   if (env.TERM === "dumb") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return min;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -14650,7 +14650,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-08T00:25:59.083Z
+                at 2025-03-09T00:28:41.308Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
