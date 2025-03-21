@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.37% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4201/8339</span>
+                <span class='fraction'>4205/8347</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.91% </span>
+                <span class="strong">44.92% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>331/737</span>
+                <span class='fraction'>332/739</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.37% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4201/8339</span>
+                <span class='fraction'>4205/8347</span>
             </div>
         
             
@@ -8401,7 +8401,15 @@
 <a name='L8336'></a><a href='#L8336'>8336</a>
 <a name='L8337'></a><a href='#L8337'>8337</a>
 <a name='L8338'></a><a href='#L8338'>8338</a>
-<a name='L8339'></a><a href='#L8339'>8339</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8339'></a><a href='#L8339'>8339</a>
+<a name='L8340'></a><a href='#L8340'>8340</a>
+<a name='L8341'></a><a href='#L8341'>8341</a>
+<a name='L8342'></a><a href='#L8342'>8342</a>
+<a name='L8343'></a><a href='#L8343'>8343</a>
+<a name='L8344'></a><a href='#L8344'>8344</a>
+<a name='L8345'></a><a href='#L8345'>8345</a>
+<a name='L8346'></a><a href='#L8346'>8346</a>
+<a name='L8347'></a><a href='#L8347'>8347</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16410,6 +16418,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16442,14 +16451,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">135x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">135x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16488,6 +16501,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">135x</span>
+<span class="cline-any cline-yes">135x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -24740,6 +24756,7 @@
     // ESTree
     "Literal",
     "JSXText",
+    "TemplateElement",
     // Flow
     "StringLiteralTypeAnnotation",
     "NumberLiteralTypeAnnotation",
@@ -24779,15 +24796,19 @@
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     ast = visit_node_default(ast, (node) =&gt; {
-      if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        assertRaw(node, text);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
       switch (node.type) {
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "LogicalExpression":</span>
 <span class="cstat-no" title="statement not covered" >          if (isUnbalancedLogicalTree(node)) {</span>
 <span class="cstat-no" title="statement not covered" >            return rebalanceLogicalTree(node);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+        case "TemplateElement":
+          if (parser === "flow" || parser === "espree" || parser === "typescript") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            const start = locStart(node) + 1;</span>
+<span class="cstat-no" title="statement not covered" >            const end = locEnd(node) - (node.tail ? 1 : 2);</span>
+<span class="cstat-no" title="statement not covered" >            node.range = [start, end];</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+          break;
         // fix unexpected locEnd caused by --no-semi style
         case "VariableDeclaration": {
           const lastDeclaration = at_default(
@@ -24826,6 +24847,9 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
       }
+      if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        assertRaw(node, text);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
     });
     if (is_non_empty_array_default(ast.comments)) {
       let followingComment;
@@ -25084,7 +25108,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-20T00:31:31.496Z
+                at 2025-03-21T00:32:00.993Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
