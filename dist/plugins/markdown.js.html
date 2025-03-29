@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">70.01% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8160/11655</span>
+                <span class='fraction'>8166/11663</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.42% </span>
+                <span class="strong">67.44% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1041/1544</span>
+                <span class='fraction'>1042/1545</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">70.01% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8160/11655</span>
+                <span class='fraction'>8166/11663</span>
             </div>
         
             
@@ -11717,7 +11717,15 @@
 <a name='L11652'></a><a href='#L11652'>11652</a>
 <a name='L11653'></a><a href='#L11653'>11653</a>
 <a name='L11654'></a><a href='#L11654'>11654</a>
-<a name='L11655'></a><a href='#L11655'>11655</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11655'></a><a href='#L11655'>11655</a>
+<a name='L11656'></a><a href='#L11656'>11656</a>
+<a name='L11657'></a><a href='#L11657'>11657</a>
+<a name='L11658'></a><a href='#L11658'>11658</a>
+<a name='L11659'></a><a href='#L11659'>11659</a>
+<a name='L11660'></a><a href='#L11660'>11660</a>
+<a name='L11661'></a><a href='#L11661'>11661</a>
+<a name='L11662'></a><a href='#L11662'>11662</a>
+<a name='L11663'></a><a href='#L11663'>11663</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22184,6 +22192,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -22193,9 +22202,16 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -33836,7 +33852,8 @@
   var html_whitespace_utils_default = htmlWhitespaceUtils;
 &nbsp;
   // src/language-markdown/print-preprocess.js
-  var isSingleCharRegex = /^.$/su;
+  var isSingleCharRegex = /^\\?.$/su;
+  var isNewLineBlockquoteRegex = /^\n *&gt;[ &gt;]*$/u;
   function preprocess(ast, options2) {
     ast = restoreUnescapedCharacter(ast, options2);
     ast = mergeContinuousTexts(ast);
@@ -33846,17 +33863,24 @@
     return ast;
   }
   function restoreUnescapedCharacter(ast, options2) {
-    return mapAst(
-      ast,
-      (node) =&gt; node.type !== "text" || node.value === "*" || node.value === "_" || // handle these cases in printer
-      !isSingleCharRegex.test(node.value) <span class="branch-0 cbranch-no" title="branch not covered" >|| node.position.end.offset - node.position.start.offset === node.value.length </span>? node <span class="branch-0 cbranch-no" title="branch not covered" >: {</span>
-<span class="cstat-no" title="statement not covered" >        ...node,</span>
-<span class="cstat-no" title="statement not covered" >        value: options2.originalText.slice(</span>
-<span class="cstat-no" title="statement not covered" >          node.position.start.offset,</span>
-<span class="cstat-no" title="statement not covered" >          node.position.end.offset</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+    return mapAst(ast, (node) =&gt; {
+      if (node.type !== "text") {
+        return node;
+      }
+      const { value } = node;
+      if (value === "*" || value === "_" || // handle these cases in printer
+      !isSingleCharRegex.test(value) <span class="branch-0 cbranch-no" title="branch not covered" >|| node.position.end.offset - node.position.start.offset === value.length)</span> {
+        return node;
+      }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >      const text = options2.originalText.slice(</span></span>
+<span class="cstat-no" title="statement not covered" >        node.position.start.offset,</span>
+<span class="cstat-no" title="statement not covered" >        node.position.end.offset</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      if (isNewLineBlockquoteRegex.test(text)) {</span>
+<span class="cstat-no" title="statement not covered" >        return node;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-    );
+<span class="cstat-no" title="statement not covered" >      return { ...node, value: text };</span>
+    });
   }
   function mergeChildren(ast, shouldMerge, mergeNode) {
     return mapAst(ast, (node) =&gt; {
@@ -35032,7 +35056,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-28T00:32:11.898Z
+                at 2025-03-29T00:32:00.231Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
