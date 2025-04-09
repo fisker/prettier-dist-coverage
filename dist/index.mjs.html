@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">67.91% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14831/21839</span>
+                <span class='fraction'>14830/21836</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.79% </span>
+                <span class="strong">77.8% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3657/4701</span>
+                <span class='fraction'>3656/4699</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.96% </span>
+                <span class="strong">67.94% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>976/1436</span>
+                <span class='fraction'>975/1435</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">67.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14831/21839</span>
+                <span class='fraction'>14830/21836</span>
             </div>
         
             
@@ -21899,10 +21899,7 @@
 <a name='L21834'></a><a href='#L21834'>21834</a>
 <a name='L21835'></a><a href='#L21835'>21835</a>
 <a name='L21836'></a><a href='#L21836'>21836</a>
-<a name='L21837'></a><a href='#L21837'>21837</a>
-<a name='L21838'></a><a href='#L21838'>21838</a>
-<a name='L21839'></a><a href='#L21839'>21839</a>
-<a name='L21840'></a><a href='#L21840'>21840</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">405x</span>
+<a name='L21837'></a><a href='#L21837'>21837</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">405x</span>
 <span class="cline-any cline-yes">405x</span>
 <span class="cline-any cline-yes">405x</span>
 <span class="cline-any cline-yes">405x</span>
@@ -36066,14 +36063,11 @@
 <span class="cline-any cline-yes">405x</span>
 <span class="cline-any cline-yes">405x</span>
 <span class="cline-any cline-yes">405x</span>
-<span class="cline-any cline-yes">405x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -57905,24 +57899,21 @@ var dist_default = { parse: parse2 };
 var import_code_frame = __toESM(require_lib2(), 1);
 &nbsp;
 // node_modules/index-to-position/index.js
-var safeLastIndexOf = (string, searchString, index) =&gt; index &lt; 0 <span class="branch-0 cbranch-no" title="branch not covered" >? -1 </span>: string.lastIndexOf(searchString, index);
 function getPosition(text, textIndex) {
-  const lineBreakBefore = safeLastIndexOf(text, "\n", textIndex - 1);
-  const column2 = textIndex - lineBreakBefore - 1;
-  let line3 = 0;
-  for (let index = lineBreakBefore; index &gt;= 0; index = safeLastIndexOf(text, "\n", index - 1)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    line3++;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-  return { line: line3, column: column2 };
+  const lineBreakBefore = textIndex === 0 <span class="branch-0 cbranch-no" title="branch not covered" >? -1 </span>: text.lastIndexOf("\n", textIndex - 1);
+  return {
+    line: lineBreakBefore === -1 ? 0 <span class="branch-0 cbranch-no" title="branch not covered" >: text.slice(0, lineBreakBefore + 1).match(/\n/g).length,</span>
+    column: textIndex - lineBreakBefore - 1
+  };
 }
-function indexToLineColumn(text, textIndex, { oneBased = false } = {}) {
+function indexToPosition(text, textIndex, { oneBased = false } = {}) {
   if (typeof text !== "string") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    throw new TypeError("Text parameter should be a string");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   if (!Number.isInteger(textIndex)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    throw new TypeError("Index parameter should be an integer");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if (textIndex &lt; 0 || textIndex &gt;= text.length <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; text.length &gt; 0)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (textIndex &lt; 0 || textIndex &gt; text.length) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    throw new RangeError("Index out of bounds");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   const position = getPosition(text, textIndex);
@@ -58016,10 +58007,10 @@ var getErrorLocation = (string, message) =&gt; {
 <span class="cstat-no" title="statement not covered" >  }</span>
   index = Number(index);
   if (index === string.length) {
-    const { line: line4, column: column3 } = indexToLineColumn(string, string.length - 1, { oneBased: true });
+    const { line: line4, column: column3 } = indexToPosition(string, string.length - 1, { oneBased: true });
     return { line: line4, column: column3 + 1 };
   }
-  return indexToLineColumn(string, index, { oneBased: true });
+  return indexToPosition(string, index, { oneBased: true });
 };
 var addCodePointToUnexpectedToken = (message) =&gt; message.replace(
   // TODO[engine:node@&gt;=20]: The token always quoted after Node.js 20
@@ -65587,7 +65578,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-08T00:32:17.516Z
+                at 2025-04-09T00:32:42.548Z
             </div>
         <script src="../prettify.js"></script>
         <script>
