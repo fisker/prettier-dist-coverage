@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.35% </span>
+                <span class="strong">85.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9940/11646</span>
+                <span class='fraction'>9943/11658</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.29% </span>
+                <span class="strong">82.12% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>409/497</span>
+                <span class='fraction'>409/498</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.35% </span>
+                <span class="strong">85.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9940/11646</span>
+                <span class='fraction'>9943/11658</span>
             </div>
         
             
@@ -11709,7 +11709,19 @@
 <a name='L11644'></a><a href='#L11644'>11644</a>
 <a name='L11645'></a><a href='#L11645'>11645</a>
 <a name='L11646'></a><a href='#L11646'>11646</a>
-<a name='L11647'></a><a href='#L11647'>11647</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11647'></a><a href='#L11647'>11647</a>
+<a name='L11648'></a><a href='#L11648'>11648</a>
+<a name='L11649'></a><a href='#L11649'>11649</a>
+<a name='L11650'></a><a href='#L11650'>11650</a>
+<a name='L11651'></a><a href='#L11651'>11651</a>
+<a name='L11652'></a><a href='#L11652'>11652</a>
+<a name='L11653'></a><a href='#L11653'>11653</a>
+<a name='L11654'></a><a href='#L11654'>11654</a>
+<a name='L11655'></a><a href='#L11655'>11655</a>
+<a name='L11656'></a><a href='#L11656'>11656</a>
+<a name='L11657'></a><a href='#L11657'>11657</a>
+<a name='L11658'></a><a href='#L11658'>11658</a>
+<a name='L11659'></a><a href='#L11659'>11659</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21035,6 +21047,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">80x</span>
 <span class="cline-any cline-yes">80x</span>
@@ -21057,6 +21075,12 @@
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32680,6 +32704,12 @@ var print_default = print;
 // src/utils/get-interpreter.js
 var get_interpreter_default = void 0;
 &nbsp;
+// src/utils/is-non-empty-array.js
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isNonEmptyArray(object) {</span></span>
+<span class="cstat-no" title="statement not covered" >  return Array.isArray(object) &amp;&amp; object.length &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+var is_non_empty_array_default = isNonEmptyArray;
+&nbsp;
 // src/utils/infer-parser.js
 var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/u).pop();</span>
 function getLanguageByFileName(languages, file) {
@@ -32703,12 +32733,18 @@ function getLanguageByInterpreter(languages, file) {
   if (true) {
     return;
   }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  const interpreter = get_interpreter_default(file);</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  const languagesWithInterpreters = languages.filter(</span></span>
+<span class="cstat-no" title="statement not covered" >    ({ interpreters }) =&gt; is_non_empty_array_default(interpreters)</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >  if (languagesWithInterpreters.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const interpreter = get_interpreter_default(file);</span>
 <span class="cstat-no" title="statement not covered" >  if (!interpreter) {</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return languages.find(</span>
-<span class="cstat-no" title="statement not covered" >    ({ interpreters }) =&gt; interpreters == null ? void 0 : interpreters.includes(interpreter)</span>
+<span class="cstat-no" title="statement not covered" >  return languagesWithInterpreters.find(</span>
+<span class="cstat-no" title="statement not covered" >    ({ interpreters }) =&gt; interpreters.includes(interpreter)</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 }
 function inferParser(options2, fileInfo) {
@@ -35008,7 +35044,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-13T00:58:54.066Z
+                at 2025-04-14T00:35:04.018Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

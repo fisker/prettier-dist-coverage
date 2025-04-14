@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.73% </span>
+                <span class="strong">61.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7679/12438</span>
+                <span class='fraction'>7680/12442</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.3% </span>
+                <span class="strong">66.18% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>368/555</span>
+                <span class='fraction'>368/556</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.73% </span>
+                <span class="strong">61.72% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7679/12438</span>
+                <span class='fraction'>7680/12442</span>
             </div>
         
             
@@ -12500,7 +12500,11 @@
 <a name='L12435'></a><a href='#L12435'>12435</a>
 <a name='L12436'></a><a href='#L12436'>12436</a>
 <a name='L12437'></a><a href='#L12437'>12437</a>
-<a name='L12438'></a><a href='#L12438'>12438</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12438'></a><a href='#L12438'>12438</a>
+<a name='L12439'></a><a href='#L12439'>12439</a>
+<a name='L12440'></a><a href='#L12440'>12440</a>
+<a name='L12441'></a><a href='#L12441'>12441</a>
+<a name='L12442'></a><a href='#L12442'>12442</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -19615,6 +19619,10 @@
 <span class="cline-any cline-yes">916x</span>
 <span class="cline-any cline-yes">916x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32032,7 +32040,7 @@
 <span class="cstat-no" title="statement not covered" >        ];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "NGMicrosyntaxKeyedExpression": {</span>
 <span class="cstat-no" title="statement not covered" >        const { index, parent } = path;</span>
-<span class="cstat-no" title="statement not covered" >        const shouldNotPrintColon = isNgForOf(path) || (index === 1 &amp;&amp; (node.key.name === "then" || node.key.name === "else" || node.key.name === "as") || (index === 2 || index === 3) &amp;&amp; (node.key.name === "else" &amp;&amp; parent.body[index - 1].type === "NGMicrosyntaxKeyedExpression" &amp;&amp; parent.body[index - 1].key.name === "then" || node.key.name === "track")) &amp;&amp; parent.body[0].type === "NGMicrosyntaxExpression";</span>
+<span class="cstat-no" title="statement not covered" >        const shouldNotPrintColon = isNgForOf(path) || isNgForOfTrack(path) || (index === 1 &amp;&amp; (node.key.name === "then" || node.key.name === "else" || node.key.name === "as") || index === 2 &amp;&amp; (node.key.name === "else" &amp;&amp; parent.body[index - 1].type === "NGMicrosyntaxKeyedExpression" &amp;&amp; parent.body[index - 1].key.name === "then" || node.key.name === "track")) &amp;&amp; parent.body[0].type === "NGMicrosyntaxExpression";</span>
 <span class="cstat-no" title="statement not covered" >        return [</span>
 <span class="cstat-no" title="statement not covered" >          print3("key"),</span>
 <span class="cstat-no" title="statement not covered" >          shouldNotPrintColon ? " " : ": ",</span>
@@ -32053,6 +32061,10 @@
   }
 <span class="fstat-no" title="function not covered" >  function isNgForOf({ node, index }) {</span>
 <span class="cstat-no" title="statement not covered" >    return node.type === "NGMicrosyntaxKeyedExpression" &amp;&amp; node.key.name === "of" &amp;&amp; index === 1;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="fstat-no" title="function not covered" >  function isNgForOfTrack(path) {</span>
+<span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >    return path.parent.body[1].key.name === "of" &amp;&amp; node.type === "NGMicrosyntaxKeyedExpression" &amp;&amp; node.key.name === "track" &amp;&amp; node.key.type === "NGMicrosyntaxKey";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var hasSideEffect = create_type_check_function_default([
     "CallExpression",
@@ -37381,7 +37393,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-13T00:58:56.113Z
+                at 2025-04-14T00:35:06.055Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

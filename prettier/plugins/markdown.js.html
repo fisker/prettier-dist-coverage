@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.01% </span>
+                <span class="strong">69.97% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8166/11663</span>
+                <span class='fraction'>8170/11675</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.29% </span>
+                <span class="strong">73.14% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>365/498</span>
+                <span class='fraction'>365/499</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.01% </span>
+                <span class="strong">69.97% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8166/11663</span>
+                <span class='fraction'>8170/11675</span>
             </div>
         
             
@@ -11725,7 +11725,19 @@
 <a name='L11660'></a><a href='#L11660'>11660</a>
 <a name='L11661'></a><a href='#L11661'>11661</a>
 <a name='L11662'></a><a href='#L11662'>11662</a>
-<a name='L11663'></a><a href='#L11663'>11663</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11663'></a><a href='#L11663'>11663</a>
+<a name='L11664'></a><a href='#L11664'>11664</a>
+<a name='L11665'></a><a href='#L11665'>11665</a>
+<a name='L11666'></a><a href='#L11666'>11666</a>
+<a name='L11667'></a><a href='#L11667'>11667</a>
+<a name='L11668'></a><a href='#L11668'>11668</a>
+<a name='L11669'></a><a href='#L11669'>11669</a>
+<a name='L11670'></a><a href='#L11670'>11670</a>
+<a name='L11671'></a><a href='#L11671'>11671</a>
+<a name='L11672'></a><a href='#L11672'>11672</a>
+<a name='L11673'></a><a href='#L11673'>11673</a>
+<a name='L11674'></a><a href='#L11674'>11674</a>
+<a name='L11675'></a><a href='#L11675'>11675</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21077,6 +21089,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -21098,6 +21116,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32737,6 +32761,12 @@
   // src/utils/get-interpreter.js
   var get_interpreter_default = void 0;
 &nbsp;
+  // src/utils/is-non-empty-array.js
+<span class="fstat-no" title="function not covered" >  function isNonEmptyArray(object) {</span>
+<span class="cstat-no" title="statement not covered" >    return Array.isArray(object) &amp;&amp; object.length &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+  var is_non_empty_array_default = isNonEmptyArray;
+&nbsp;
   // src/utils/infer-parser.js
   var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/u).pop();</span>
   function getLanguageByFileName(languages, file) {
@@ -32760,12 +32790,18 @@
     if (true) {
       return;
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const interpreter = get_interpreter_default(file);</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const languagesWithInterpreters = languages.filter(</span></span>
+<span class="cstat-no" title="statement not covered" >      ({ interpreters }) =&gt; is_non_empty_array_default(interpreters)</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    if (languagesWithInterpreters.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const interpreter = get_interpreter_default(file);</span>
 <span class="cstat-no" title="statement not covered" >    if (!interpreter) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return languages.find(</span>
-<span class="cstat-no" title="statement not covered" >      ({ interpreters }) =&gt; interpreters == null ? void 0 : interpreters.includes(interpreter)</span>
+<span class="cstat-no" title="statement not covered" >    return languagesWithInterpreters.find(</span>
+<span class="cstat-no" title="statement not covered" >      ({ interpreters }) =&gt; interpreters.includes(interpreter)</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
   }
   function inferParser(options2, fileInfo) {
@@ -35056,7 +35092,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-13T00:58:56.113Z
+                at 2025-04-14T00:35:06.055Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
