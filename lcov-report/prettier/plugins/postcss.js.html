@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.7% </span>
+                <span class="strong">52.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5979/11345</span>
+                <span class='fraction'>5980/11348</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.59% </span>
+                <span class="strong">60.43% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1092/1802</span>
+                <span class='fraction'>1092/1807</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.7% </span>
+                <span class="strong">52.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5979/11345</span>
+                <span class='fraction'>5980/11348</span>
             </div>
         
             
@@ -11407,7 +11407,10 @@
 <a name='L11342'></a><a href='#L11342'>11342</a>
 <a name='L11343'></a><a href='#L11343'>11343</a>
 <a name='L11344'></a><a href='#L11344'>11344</a>
-<a name='L11345'></a><a href='#L11345'>11345</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11345'></a><a href='#L11345'>11345</a>
+<a name='L11346'></a><a href='#L11346'>11346</a>
+<a name='L11347'></a><a href='#L11347'>11347</a>
+<a name='L11348'></a><a href='#L11348'>11348</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20735,12 +20738,12 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">69x</span>
+<span class="cline-any cline-yes">69x</span>
+<span class="cline-any cline-yes">69x</span>
+<span class="cline-any cline-yes">69x</span>
+<span class="cline-any cline-yes">69x</span>
+<span class="cline-any cline-yes">69x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -20958,6 +20961,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">27x</span>
@@ -32307,6 +32313,9 @@
       if (insideAtRuleNode(path, "forward") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNode.type === "value-word" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNode.value <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iPrevNode !== void 0 <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iPrevNode.type === "value-word" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iPrevNode.value === "as" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode.type === "value-operator" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode.value === "*")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+      if (insideAtRuleNode(path, "utility") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNode.type === "value-word" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode.type === "value-operator" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode.value === "*")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
       if (!iNextNode) {
         continue;
       }
@@ -34102,7 +34111,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-16T00:33:34.532Z
+                at 2025-04-17T00:32:54.606Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
