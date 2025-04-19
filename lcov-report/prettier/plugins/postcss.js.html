@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.69% </span>
+                <span class="strong">52.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5980/11348</span>
+                <span class='fraction'>5987/11360</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.87% </span>
+                <span class="strong">51.74% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>401/773</span>
+                <span class='fraction'>401/775</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.69% </span>
+                <span class="strong">52.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5980/11348</span>
+                <span class='fraction'>5987/11360</span>
             </div>
         
             
@@ -11410,7 +11410,19 @@
 <a name='L11345'></a><a href='#L11345'>11345</a>
 <a name='L11346'></a><a href='#L11346'>11346</a>
 <a name='L11347'></a><a href='#L11347'>11347</a>
-<a name='L11348'></a><a href='#L11348'>11348</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11348'></a><a href='#L11348'>11348</a>
+<a name='L11349'></a><a href='#L11349'>11349</a>
+<a name='L11350'></a><a href='#L11350'>11350</a>
+<a name='L11351'></a><a href='#L11351'>11351</a>
+<a name='L11352'></a><a href='#L11352'>11352</a>
+<a name='L11353'></a><a href='#L11353'>11353</a>
+<a name='L11354'></a><a href='#L11354'>11354</a>
+<a name='L11355'></a><a href='#L11355'>11355</a>
+<a name='L11356'></a><a href='#L11356'>11356</a>
+<a name='L11357'></a><a href='#L11357'>11357</a>
+<a name='L11358'></a><a href='#L11358'>11358</a>
+<a name='L11359'></a><a href='#L11359'>11359</a>
+<a name='L11360'></a><a href='#L11360'>11360</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20563,6 +20575,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20581,6 +20597,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20668,6 +20688,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22730,6 +22753,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -31902,6 +31926,10 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/utils/pragma/pragma.evaluate.js
+  var FORMAT_IGNORE_PRAGMAS = [
+    "noformat",
+    "noprettier"
+  ];
   var FORMAT_PRAGMAS = [
     "format",
     "prettier"
@@ -31934,6 +31962,10 @@
 <span class="fstat-no" title="function not covered" >  function hasPragma(text) {</span>
 <span class="cstat-no" title="statement not covered" >    const { pragmas } = parseDocBlock(text);</span>
 <span class="cstat-no" title="statement not covered" >    return FORMAT_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="fstat-no" title="function not covered" >  function hasIgnorePragma(text) {</span>
+<span class="cstat-no" title="statement not covered" >    const { pragmas } = parseDocBlock(text);</span>
+<span class="cstat-no" title="statement not covered" >    return FORMAT_IGNORE_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function insertPragma(originalText) {</span>
 <span class="cstat-no" title="statement not covered" >    const { shebang, text, pragmas, comments } = parseDocBlock(originalText);</span>
@@ -32017,6 +32049,9 @@
   // src/language-css/pragma.js
 <span class="fstat-no" title="function not covered" >  function hasPragma2(text) {</span>
 <span class="cstat-no" title="statement not covered" >    return hasPragma(parse_default(text).content);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="fstat-no" title="function not covered" >  function hasIgnorePragma2(text) {</span>
+<span class="cstat-no" title="statement not covered" >    return hasIgnorePragma(parse_default(text).content);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function insertPragma2(text) {</span>
 <span class="cstat-no" title="statement not covered" >    const { frontMatter, content } = parse_default(text);</span>
@@ -34092,6 +34127,7 @@
   var postCssParser = {
     astFormat: "postcss",
     hasPragma: hasPragma2,
+    hasIgnorePragma: hasIgnorePragma2,
     locStart,
     locEnd
   };
@@ -34111,7 +34147,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-18T00:32:42.123Z
+                at 2025-04-19T00:31:29.467Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
