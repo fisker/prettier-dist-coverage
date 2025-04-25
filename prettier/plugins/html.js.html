@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.83% </span>
+                <span class="strong">72.82% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7100/9748</span>
+                <span class='fraction'>7101/9751</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.27% </span>
+                <span class="strong">73.19% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>932/1272</span>
+                <span class='fraction'>931/1272</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.29% </span>
+                <span class="strong">62.09% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>304/488</span>
+                <span class='fraction'>303/488</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.83% </span>
+                <span class="strong">72.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7100/9748</span>
+                <span class='fraction'>7101/9751</span>
             </div>
         
             
@@ -9810,7 +9810,10 @@
 <a name='L9745'></a><a href='#L9745'>9745</a>
 <a name='L9746'></a><a href='#L9746'>9746</a>
 <a name='L9747'></a><a href='#L9747'>9747</a>
-<a name='L9748'></a><a href='#L9748'>9748</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9748'></a><a href='#L9748'>9748</a>
+<a name='L9749'></a><a href='#L9749'>9749</a>
+<a name='L9750'></a><a href='#L9750'>9750</a>
+<a name='L9751'></a><a href='#L9751'>9751</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11512,8 +11515,8 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11699,6 +11702,9 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -21258,9 +21264,9 @@
   function locStart(node) {
     return node.sourceSpan.start.offset;
   }
-  function locEnd(node) {
-    return node.sourceSpan.end.offset;
-  }
+<span class="fstat-no" title="function not covered" >  function locEnd(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return node.sourceSpan.end.offset;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/language-html/print/tag.js
   function printClosingTag(node, options2) {
@@ -21442,13 +21448,16 @@
 <span class="cstat-no" title="statement not covered" >        return "{{";</span>
       case "docType": {
         if (node.value === "html") {
-          const filepath = options2.filepath ?? "";
-          if (/\.html?$/u.test(filepath)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          const { filepath } = options2;
+          if (filepath <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /\.html?$/u.test(filepath))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            return HTML5_DOCTYPE_START_MARKER;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
         }
-        const original = options2.originalText.slice(locStart(node), locEnd(node));
-        return original.slice(0, HTML5_DOCTYPE_START_MARKER.length);
+        const start = locStart(node);
+        return options2.originalText.slice(
+          start,
+          start + HTML5_DOCTYPE_START_MARKER.length
+        );
       }
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "angularIcuExpression":</span>
 <span class="cstat-no" title="statement not covered" >        return "{";</span>
@@ -29311,7 +29320,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-24T00:32:17.193Z
+                at 2025-04-25T00:32:48.813Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
