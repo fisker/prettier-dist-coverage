@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.54% </span>
+                <span class="strong">77.49% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3551/4579</span>
+                <span class='fraction'>3554/4586</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.58% </span>
+                <span class="strong">60.19% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>186/307</span>
+                <span class='fraction'>186/309</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.54% </span>
+                <span class="strong">77.49% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3551/4579</span>
+                <span class='fraction'>3554/4586</span>
             </div>
         
             
@@ -4642,7 +4642,14 @@
 <a name='L4577'></a><a href='#L4577'>4577</a>
 <a name='L4578'></a><a href='#L4578'>4578</a>
 <a name='L4579'></a><a href='#L4579'>4579</a>
-<a name='L4580'></a><a href='#L4580'>4580</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">421x</span>
+<a name='L4580'></a><a href='#L4580'>4580</a>
+<a name='L4581'></a><a href='#L4581'>4581</a>
+<a name='L4582'></a><a href='#L4582'>4582</a>
+<a name='L4583'></a><a href='#L4583'>4583</a>
+<a name='L4584'></a><a href='#L4584'>4584</a>
+<a name='L4585'></a><a href='#L4585'>4585</a>
+<a name='L4586'></a><a href='#L4586'>4586</a>
+<a name='L4587'></a><a href='#L4587'>4587</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">421x</span>
@@ -6571,7 +6578,6 @@
 <span class="cline-any cline-yes">279x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">279x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6584,7 +6590,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">279x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">279x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">279x</span>
@@ -7074,6 +7087,7 @@
 <span class="cline-any cline-yes">186x</span>
 <span class="cline-any cline-yes">186x</span>
 <span class="cline-any cline-yes">186x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -11056,16 +11070,16 @@ var n = class {
   constructor(e) {
     this._eventListeners = /* @__PURE__ */ new Map(), this._maxListeners = 100, this._logger = e == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: e.logger;
   }
-<span class="fstat-no" title="function not covered" >  once(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = (...r) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      this.off(e, t), s(...r);</span>
+<span class="fstat-no" title="function not covered" >  once(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = (...r) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.off(e, s), t(...r);</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
-<span class="cstat-no" title="statement not covered" >    return this.on(e, t), this;</span>
+<span class="cstat-no" title="statement not covered" >    return this.on(e, s), this;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  listenerCount(e) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!e) return this.getAllListeners().length;</span>
-<span class="cstat-no" title="statement not covered" >    let s = this._eventListeners.get(e);</span>
-<span class="cstat-no" title="statement not covered" >    return s ? s.length : 0;</span>
+<span class="cstat-no" title="statement not covered" >    let t = this._eventListeners.get(e);</span>
+<span class="cstat-no" title="statement not covered" >    return t ? t.length : 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  eventNames() {</span>
 <span class="cstat-no" title="statement not covered" >    return Array.from(this._eventListeners.keys());</span>
@@ -11073,38 +11087,38 @@ var n = class {
 <span class="fstat-no" title="function not covered" >  rawListeners(e) {</span>
 <span class="cstat-no" title="statement not covered" >    return e ? this._eventListeners.get(e) ?? [] : this.getAllListeners();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  prependListener(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = this._eventListeners.get(e) ?? [];</span>
-<span class="cstat-no" title="statement not covered" >    return t.unshift(s), this._eventListeners.set(e, t), this;</span>
+<span class="fstat-no" title="function not covered" >  prependListener(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = this._eventListeners.get(e) ?? [];</span>
+<span class="cstat-no" title="statement not covered" >    return s.unshift(t), this._eventListeners.set(e, s), this;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  prependOnceListener(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = (...r) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      this.off(e, t), s(...r);</span>
+<span class="fstat-no" title="function not covered" >  prependOnceListener(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = (...r) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.off(e, s), t(...r);</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
-<span class="cstat-no" title="statement not covered" >    return this.prependListener(e, t), this;</span>
+<span class="cstat-no" title="statement not covered" >    return this.prependListener(e, s), this;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  maxListeners() {</span>
 <span class="cstat-no" title="statement not covered" >    return this._maxListeners;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  addListener(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.on(e, s), this;</span>
+<span class="fstat-no" title="function not covered" >  addListener(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    return this.on(e, t), this;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  on(e, s) {</span>
+<span class="fstat-no" title="function not covered" >  on(e, t) {</span>
 <span class="cstat-no" title="statement not covered" >    this._eventListeners.has(e) || this._eventListeners.set(e, []);</span>
-<span class="cstat-no" title="statement not covered" >    let t = this._eventListeners.get(e);</span>
-<span class="cstat-no" title="statement not covered" >    return t &amp;&amp; (t.length &gt;= this._maxListeners &amp;&amp; console.warn(`MaxListenersExceededWarning: Possible event memory leak detected. ${t.length + 1} ${e} listeners added. Use setMaxListeners() to increase limit.`), t.push(s)), this;</span>
+<span class="cstat-no" title="statement not covered" >    let s = this._eventListeners.get(e);</span>
+<span class="cstat-no" title="statement not covered" >    return s &amp;&amp; (s.length &gt;= this._maxListeners &amp;&amp; console.warn(`MaxListenersExceededWarning: Possible event memory leak detected. ${s.length + 1} ${e} listeners added. Use setMaxListeners() to increase limit.`), s.push(t)), this;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  removeListener(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.off(e, s), this;</span>
+<span class="fstat-no" title="function not covered" >  removeListener(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    return this.off(e, t), this;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  off(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = this._eventListeners.get(e) ?? [], r = t.indexOf(s);</span>
-<span class="cstat-no" title="statement not covered" >    return r !== -1 &amp;&amp; t.splice(r, 1), t.length === 0 &amp;&amp; this._eventListeners.delete(e), this;</span>
+<span class="fstat-no" title="function not covered" >  off(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = this._eventListeners.get(e) ?? [], r = s.indexOf(t);</span>
+<span class="cstat-no" title="statement not covered" >    return r !== -1 &amp;&amp; s.splice(r, 1), s.length === 0 &amp;&amp; this._eventListeners.delete(e), this;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  emit(e, ...s) {
-    let t = false, r = this._eventListeners.get(e);
-    if (r <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; r.length &gt; 0)</span> <span class="branch-0 cbranch-no" title="branch not covered" >for (let i of r) i(...s), t = true;</span>
-    return t;
+  emit(e, ...t) {
+    let s = false, r = this._eventListeners.get(e);
+    if (r <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; r.length &gt; 0)</span> <span class="branch-0 cbranch-no" title="branch not covered" >for (let i of r) i(...t), s = true;</span>
+    return s;
   }
 <span class="fstat-no" title="function not covered" >  listeners(e) {</span>
 <span class="cstat-no" title="statement not covered" >    return this._eventListeners.get(e) ?? [];</span>
@@ -11114,11 +11128,11 @@ var n = class {
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  setMaxListeners(e) {</span>
 <span class="cstat-no" title="statement not covered" >    this._maxListeners = e;</span>
-<span class="cstat-no" title="statement not covered" >    for (let s of this._eventListeners.values()) s.length &gt; e &amp;&amp; s.splice(e);</span>
+<span class="cstat-no" title="statement not covered" >    for (let t of this._eventListeners.values()) t.length &gt; e &amp;&amp; t.splice(e);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  getAllListeners() {</span>
 <span class="cstat-no" title="statement not covered" >    let e = new Array();</span>
-<span class="cstat-no" title="statement not covered" >    for (let s of this._eventListeners.values()) e = e.concat(s);</span>
+<span class="cstat-no" title="statement not covered" >    for (let t of this._eventListeners.values()) e = e.concat(t);</span>
 <span class="cstat-no" title="statement not covered" >    return e;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 };
@@ -11143,33 +11157,39 @@ var l = class extends n {
 <span class="fstat-no" title="function not covered" >  set logger(e) {</span>
 <span class="cstat-no" title="statement not covered" >    this._logger = e;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  onHook(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = this._hooks.get(e);</span>
-<span class="cstat-no" title="statement not covered" >    t ? t.push(s) : this._hooks.set(e, [s]);</span>
+<span class="fstat-no" title="function not covered" >  onHook(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = this._hooks.get(e);</span>
+<span class="cstat-no" title="statement not covered" >    s ? s.push(t) : this._hooks.set(e, [t]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  prependHook(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = this._hooks.get(e);</span>
-<span class="cstat-no" title="statement not covered" >    t ? t.unshift(s) : this._hooks.set(e, [s]);</span>
+<span class="fstat-no" title="function not covered" >  onHooks(e) {</span>
+<span class="cstat-no" title="statement not covered" >    for (let t of e) this.onHook(t.event, t.handler);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  prependOnceHook(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = async (...r) =&gt; (this.removeHook(e, t), s(...r));</span>
-<span class="cstat-no" title="statement not covered" >    this.prependHook(e, t);</span>
+<span class="fstat-no" title="function not covered" >  prependHook(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = this._hooks.get(e);</span>
+<span class="cstat-no" title="statement not covered" >    s ? s.unshift(t) : this._hooks.set(e, [t]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  onceHook(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = async (...r) =&gt; (this.removeHook(e, t), s(...r));</span>
-<span class="cstat-no" title="statement not covered" >    this.onHook(e, t);</span>
+<span class="fstat-no" title="function not covered" >  prependOnceHook(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = async (...r) =&gt; (this.removeHook(e, s), t(...r));</span>
+<span class="cstat-no" title="statement not covered" >    this.prependHook(e, s);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  removeHook(e, s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = this._hooks.get(e);</span>
-<span class="cstat-no" title="statement not covered" >    if (t) {</span>
-<span class="cstat-no" title="statement not covered" >      let r = t.indexOf(s);</span>
-<span class="cstat-no" title="statement not covered" >      r !== -1 &amp;&amp; t.splice(r, 1);</span>
+<span class="fstat-no" title="function not covered" >  onceHook(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = async (...r) =&gt; (this.removeHook(e, s), t(...r));</span>
+<span class="cstat-no" title="statement not covered" >    this.onHook(e, s);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="fstat-no" title="function not covered" >  removeHook(e, t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = this._hooks.get(e);</span>
+<span class="cstat-no" title="statement not covered" >    if (s) {</span>
+<span class="cstat-no" title="statement not covered" >      let r = s.indexOf(t);</span>
+<span class="cstat-no" title="statement not covered" >      r !== -1 &amp;&amp; s.splice(r, 1);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  async hook(e, ...s) {</span>
-<span class="cstat-no" title="statement not covered" >    let t = this._hooks.get(e);</span>
-<span class="cstat-no" title="statement not covered" >    if (t) for (let r of t) try {</span>
-<span class="cstat-no" title="statement not covered" >      await r(...s);</span>
+<span class="fstat-no" title="function not covered" >  removeHooks(e) {</span>
+<span class="cstat-no" title="statement not covered" >    for (let t of e) this.removeHook(t.event, t.handler);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="fstat-no" title="function not covered" >  async hook(e, ...t) {</span>
+<span class="cstat-no" title="statement not covered" >    let s = this._hooks.get(e);</span>
+<span class="cstat-no" title="statement not covered" >    if (s) for (let r of s) try {</span>
+<span class="cstat-no" title="statement not covered" >      await r(...t);</span>
 <span class="cstat-no" title="statement not covered" >    } catch (i) {</span>
 <span class="cstat-no" title="statement not covered" >      let o = `${e}: ${i.message}`;</span>
 <span class="cstat-no" title="statement not covered" >      if (this.emit("error", new Error(o)), this._logger &amp;&amp; this._logger.error(o), this._throwHookErrors) throw new Error(o);</span>
@@ -11655,6 +11675,7 @@ var CacheableMemory = class extends l {
   delete(key) {
     const store = this.getStore(key);
     store.delete(key);
+    this._hashCache.delete(key);
   }
   /**
    * Delete the keys
@@ -11739,7 +11760,7 @@ var CacheableMemory = class extends l {
    */
   hashKey(key) {
     const cacheHashNumber = this._hashCache.get(key);
-    if (cacheHashNumber) {
+    if (typeof cacheHashNumber === "number") {
       return cacheHashNumber;
     }
     let hash2 = 0;
@@ -13807,7 +13828,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-13T00:33:37.879Z
+                at 2025-05-14T00:33:29.352Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
