@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">51.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8389/16341</span>
+                <span class='fraction'>8388/16340</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.69% </span>
+                <span class="strong">56.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1300/2293</span>
+                <span class='fraction'>1315/2308</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.18% </span>
+                <span class="strong">55.77% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>585/1060</span>
+                <span class='fraction'>599/1074</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">51.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8389/16341</span>
+                <span class='fraction'>8388/16340</span>
             </div>
         
             
@@ -16402,8 +16402,7 @@
 <a name='L16337'></a><a href='#L16337'>16337</a>
 <a name='L16338'></a><a href='#L16338'>16338</a>
 <a name='L16339'></a><a href='#L16339'>16339</a>
-<a name='L16340'></a><a href='#L16340'>16340</a>
-<a name='L16341'></a><a href='#L16341'>16341</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16340'></a><a href='#L16340'>16340</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16437,8 +16436,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -30652,6 +30651,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -32600,17 +32612,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32725,9 +32726,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">144x</span>
 <span class="cline-any cline-yes">144x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -46982,12 +46980,25 @@
   });
 &nbsp;
   // src/plugins/babel.js
-  var babel_exports = {};
-  __export(babel_exports, {
+  var babel_exports2 = {};
+  __export(babel_exports2, {
     parsers: () =&gt; parsers
   });
 &nbsp;
   // src/language-js/parse/babel.js
+  var babel_exports = {};
+  __export(babel_exports, {
+    __babel_estree: () =&gt; babelEstree,
+    __js_expression: () =&gt; babelExpression,
+    __ts_expression: () =&gt; babelTSExpression,
+    __vue_event_binding: () =&gt; babel,
+    __vue_expression: () =&gt; babelExpression,
+    __vue_ts_event_binding: () =&gt; babelTs,
+    __vue_ts_expression: () =&gt; babelTSExpression,
+    babel: () =&gt; babel,
+    "babel-flow": () =&gt; babelFlow,
+    "babel-ts": () =&gt; babelTs
+  });
   var import_parser = __toESM(require_lib(), 1);
 &nbsp;
   // src/utils/skip.js
@@ -48924,26 +48935,15 @@
       (options) =&gt; appendPlugins(["estree"], options)
     )
   });
-  var babel_default = {
-    babel,
-    "babel-flow": babelFlow,
-    "babel-ts": babelTs,
-    /** @internal */
-    __js_expression: babelExpression,
-    __ts_expression: babelTSExpression,
-    /** for vue filter */
-    __vue_expression: babelExpression,
-    /** for vue filter written in TS */
-    __vue_ts_expression: babelTSExpression,
-    /** for vue event binding to handle semicolon */
-    __vue_event_binding: babel,
-    /** for vue event binding written in TS to handle semicolon */
-    __vue_ts_event_binding: babelTs,
-    /** verify that we can print this AST */
-    __babel_estree: babelEstree
-  };
 &nbsp;
   // src/language-json/parser-json.js
+  var parser_json_exports = {};
+  __export(parser_json_exports, {
+    json: () =&gt; json,
+    "json-stringify": () =&gt; jsonStringify,
+    json5: () =&gt; json5,
+    jsonc: () =&gt; jsonc
+  });
   var import_parser2 = __toESM(require_lib(), 1);
   var babelParseOptions = {
     tokens: true,
@@ -49065,24 +49065,21 @@
 <span class="cstat-no" title="statement not covered" >        throw createJsonError(node, `'${node.type}'`);</span>
     }
   }
-  var jsonParsers = {
-    json: create_parser_default({
-      parse: (text) =&gt; parseJson(text),
-      hasPragma: <span class="fstat-no" title="function not covered" >() =&gt; true,</span>
-      hasIgnorePragma: <span class="fstat-no" title="function not covered" >() =&gt; false</span>
-    }),
-    json5: create_parser_default((text) =&gt; parseJson(text)),
-    jsonc: create_parser_default((text) =&gt; parseJson(text, { allowEmpty: true })),
-    "json-stringify": create_parser_default({
-      parse: (text) =&gt; parseJson(text, { allowComments: false }),
-      astFormat: "estree-json"
-    })
-  };
-  var parser_json_default = jsonParsers;
+  var json = create_parser_default({
+    parse: (text) =&gt; parseJson(text),
+    hasPragma: <span class="fstat-no" title="function not covered" >() =&gt; true,</span>
+    hasIgnorePragma: <span class="fstat-no" title="function not covered" >() =&gt; false</span>
+  });
+  var json5 = create_parser_default((text) =&gt; parseJson(text));
+  var jsonc = create_parser_default((text) =&gt; parseJson(text, { allowEmpty: true }));
+  var jsonStringify = create_parser_default({
+    parse: (text) =&gt; parseJson(text, { allowComments: false }),
+    astFormat: "estree-json"
+  });
 &nbsp;
   // src/plugins/babel.js
-  var parsers = { ...babel_default, ...parser_json_default };
-  return __toCommonJS(babel_exports);
+  var parsers = { ...babel_exports, ...parser_json_exports };
+  return __toCommonJS(babel_exports2);
 });</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -49090,7 +49087,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-14T00:33:29.352Z
+                at 2025-05-15T00:32:53.478Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
