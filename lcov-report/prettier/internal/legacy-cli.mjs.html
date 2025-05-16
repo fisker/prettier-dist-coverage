@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.49% </span>
+                <span class="strong">77.51% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3554/4586</span>
+                <span class='fraction'>3558/4590</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.57% </span>
+                <span class="strong">80.32% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>780/968</span>
+                <span class='fraction'>784/976</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.49% </span>
+                <span class="strong">77.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3554/4586</span>
+                <span class='fraction'>3558/4590</span>
             </div>
         
             
@@ -4649,7 +4649,11 @@
 <a name='L4584'></a><a href='#L4584'>4584</a>
 <a name='L4585'></a><a href='#L4585'>4585</a>
 <a name='L4586'></a><a href='#L4586'>4586</a>
-<a name='L4587'></a><a href='#L4587'>4587</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">421x</span>
+<a name='L4587'></a><a href='#L4587'>4587</a>
+<a name='L4588'></a><a href='#L4588'>4588</a>
+<a name='L4589'></a><a href='#L4589'>4589</a>
+<a name='L4590'></a><a href='#L4590'>4590</a>
+<a name='L4591'></a><a href='#L4591'>4591</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">421x</span>
@@ -8909,6 +8913,9 @@
 <span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">421x</span>
+<span class="cline-any cline-yes">421x</span>
+<span class="cline-any cline-yes">421x</span>
+<span class="cline-any cline-yes">421x</span>
 <span class="cline-any cline-yes">437x</span>
 <span class="cline-any cline-yes">437x</span>
 <span class="cline-any cline-yes">437x</span>
@@ -8921,6 +8928,7 @@
 <span class="cline-any cline-yes">1748x</span>
 <span class="cline-any cline-yes">463x</span>
 <span class="cline-any cline-yes">463x</span>
+<span class="cline-any cline-yes">1748x</span>
 <span class="cline-any cline-yes">1748x</span>
 <span class="cline-any cline-yes">1748x</span>
 <span class="cline-any cline-yes">1748x</span>
@@ -9360,7 +9368,7 @@ var require_minimist = __commonJS({
 <span class="cstat-no" title="statement not covered" >        }</span>
       });
       var defaults = opts.default <span class="branch-0 cbranch-no" title="branch not covered" >|| {};</span>
-      var argv = { _: [] };
+      var argv2 = { _: [] };
 <span class="fstat-no" title="function not covered" >      function argDefined(key2, arg2) {</span>
 <span class="cstat-no" title="statement not covered" >        return flags.allBools &amp;&amp; /^--[^=]+$/.test(arg2) || flags.strings[key2] || flags.bools[key2] || aliases[key2];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -9407,9 +9415,9 @@ var require_minimist = __commonJS({
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         var value2 = !flags.strings[key2] &amp;&amp; isNumber(val) <span class="branch-0 cbranch-no" title="branch not covered" >? Number(val) </span>: val;
-        setKey(argv, key2.split("."), value2);
+        setKey(argv2, key2.split("."), value2);
         (aliases[key2] || []).forEach(function(x) {
-<span class="cstat-no" title="statement not covered" >          setKey(argv, x.split("."), value2);</span>
+<span class="cstat-no" title="statement not covered" >          setKey(argv2, x.split("."), value2);</span>
         });
       }
       Object.keys(flags.bools).forEach(function(key2) {
@@ -9488,30 +9496,30 @@ var require_minimist = __commonJS({
           }
         } else {
           if (!flags.unknownFn <span class="branch-0 cbranch-no" title="branch not covered" >|| flags.unknownFn(arg) !== false)</span> {
-            argv._.push(flags.strings._ || !isNumber(arg) ? arg : Number(arg));
+            argv2._.push(flags.strings._ || !isNumber(arg) ? arg : Number(arg));
           }
           if (opts.stopEarly) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            argv._.push.apply(argv._, args.slice(i + 1));</span>
+<span class="cstat-no" title="statement not covered" >            argv2._.push.apply(argv2._, args.slice(i + 1));</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
         }
       }
       Object.keys(defaults).forEach(function(k) {
-        if (!hasKey(argv, k.split("."))) {
-          setKey(argv, k.split("."), defaults[k]);
+        if (!hasKey(argv2, k.split("."))) {
+          setKey(argv2, k.split("."), defaults[k]);
           (aliases[k] || []).forEach(function(x) {
-<span class="cstat-no" title="statement not covered" >            setKey(argv, x.split("."), defaults[k]);</span>
+<span class="cstat-no" title="statement not covered" >            setKey(argv2, x.split("."), defaults[k]);</span>
           });
         }
       });
       if (opts["--"]) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        argv["--"] = notFlags.slice();</span>
+<span class="cstat-no" title="statement not covered" >        argv2["--"] = notFlags.slice();</span>
       } else {
         notFlags.forEach(function(k) {
-<span class="cstat-no" title="statement not covered" >          argv._.push(k);</span>
+<span class="cstat-no" title="statement not covered" >          argv2._.push(k);</span>
         });
       }
-      return argv;
+      return argv2;
     };
   }
 });
@@ -9968,7 +9976,7 @@ var require_ci_info = __commonJS({
   "node_modules/ci-info/index.js"(exports) {
     "use strict";
     var vendors = require_vendors();
-    var env2 = process.env;
+    var env3 = process.env;
     Object.defineProperty(exports, "_vendors", {
       value: vendors.map(function(v) {
         return v.constant;
@@ -9990,47 +9998,47 @@ var require_ci_info = __commonJS({
       exports.isPR = checkPR(vendor);
       exports.id = vendor.constant;
     });
-    exports.isCI = !!(env2.CI !== "false" &amp;&amp; // Bypass all checks if CI env is explicitly set to 'false'
-    (env2.BUILD_ID || // Jenkins, Cloudbees
-    env2.BUILD_NUMBER || // Jenkins, TeamCity
-    env2.CI <span class="branch-0 cbranch-no" title="branch not covered" >|| // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari, Cloudflare Pages</span>
-    env2.CI_APP_ID <span class="branch-0 cbranch-no" title="branch not covered" >|| // Appflow</span>
-    env2.CI_BUILD_ID <span class="branch-0 cbranch-no" title="branch not covered" >|| // Appflow</span>
-    env2.CI_BUILD_NUMBER <span class="branch-0 cbranch-no" title="branch not covered" >|| // Appflow</span>
-    env2.CI_NAME <span class="branch-0 cbranch-no" title="branch not covered" >|| // Codeship and others</span>
-    env2.CONTINUOUS_INTEGRATION <span class="branch-0 cbranch-no" title="branch not covered" >|| // Travis CI, Cirrus CI</span>
-    env2.RUN_ID <span class="branch-0 cbranch-no" title="branch not covered" >|| // TaskCluster, dsari</span>
+    exports.isCI = !!(env3.CI !== "false" &amp;&amp; // Bypass all checks if CI env is explicitly set to 'false'
+    (env3.BUILD_ID || // Jenkins, Cloudbees
+    env3.BUILD_NUMBER || // Jenkins, TeamCity
+    env3.CI <span class="branch-0 cbranch-no" title="branch not covered" >|| // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari, Cloudflare Pages</span>
+    env3.CI_APP_ID <span class="branch-0 cbranch-no" title="branch not covered" >|| // Appflow</span>
+    env3.CI_BUILD_ID <span class="branch-0 cbranch-no" title="branch not covered" >|| // Appflow</span>
+    env3.CI_BUILD_NUMBER <span class="branch-0 cbranch-no" title="branch not covered" >|| // Appflow</span>
+    env3.CI_NAME <span class="branch-0 cbranch-no" title="branch not covered" >|| // Codeship and others</span>
+    env3.CONTINUOUS_INTEGRATION <span class="branch-0 cbranch-no" title="branch not covered" >|| // Travis CI, Cirrus CI</span>
+    env3.RUN_ID <span class="branch-0 cbranch-no" title="branch not covered" >|| // TaskCluster, dsari</span>
     exports.name <span class="branch-0 cbranch-no" title="branch not covered" >|| false)</span>);
     function checkEnv(obj) {
-      if (typeof obj === "string") return !!env2[obj];
+      if (typeof obj === "string") return !!env3[obj];
       if ("env" in obj) {
-        return env2[obj.env] <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; env2[obj.env].includes(obj.includes);</span>
+        return env3[obj.env] <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; env3[obj.env].includes(obj.includes);</span>
       }
       if ("any" in obj) {
         return obj.any.some(function(k) {
-          return !!env2[k];
+          return !!env3[k];
         });
       }
       return Object.keys(obj).every(function(k) {
-        return env2[k] === obj[k];
+        return env3[k] === obj[k];
       });
     }
     function checkPR(vendor) {
       switch (typeof vendor.pr) {
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "string":</span>
-<span class="cstat-no" title="statement not covered" >          return !!env2[vendor.pr];</span>
+<span class="cstat-no" title="statement not covered" >          return !!env3[vendor.pr];</span>
         case "object":
           if ("env" in vendor.pr) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            if ("any" in vendor.pr) {</span>
 <span class="cstat-no" title="statement not covered" >              return vendor.pr.any.some(function(key) {</span>
-<span class="cstat-no" title="statement not covered" >                return env2[vendor.pr.env] === key;</span>
+<span class="cstat-no" title="statement not covered" >                return env3[vendor.pr.env] === key;</span>
 <span class="cstat-no" title="statement not covered" >              });</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >              return vendor.pr.env in env2 &amp;&amp; env2[vendor.pr.env] !== vendor.pr.ne;</span>
+<span class="cstat-no" title="statement not covered" >              return vendor.pr.env in env3 &amp;&amp; env3[vendor.pr.env] !== vendor.pr.ne;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
           } else if ("any" in vendor.pr) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            return vendor.pr.any.some(function(key) {</span>
-<span class="cstat-no" title="statement not covered" >              return !!env2[key];</span>
+<span class="cstat-no" title="statement not covered" >              return !!env3[key];</span>
 <span class="cstat-no" title="statement not covered" >            });</span>
           } else {
             return checkEnv(vendor.pr);
@@ -10583,14 +10591,14 @@ var normalize_cli_options_default = normalizeCliOptions;
 function parseArgv(rawArguments, detailedOptions, logger, keys2) {
   var _a;
   const minimistOptions = createMinimistOptions(detailedOptions);
-  let argv = minimistParse(rawArguments, minimistOptions);
+  let argv2 = minimistParse(rawArguments, minimistOptions);
   if (keys2) {
     detailedOptions = detailedOptions.filter(
       (option) =&gt; keys2.includes(option.name)
     );
-    argv = pick(argv, keys2);
+    argv2 = pick(argv2, keys2);
   }
-  const normalized = normalize_cli_options_default(argv, detailedOptions, { logger });
+  const normalized = normalize_cli_options_default(argv2, detailedOptions, { logger });
   return {
     ...Object.fromEntries(
       Object.entries(normalized).map(([key, value]) =&gt; {
@@ -10600,7 +10608,7 @@ function parseArgv(rawArguments, detailedOptions, logger, keys2) {
     ),
     _: (_a = normalized._) == null ? void 0 : _a.map(String),
     get __raw() {
-      return argv;
+      return argv2;
     }
   };
 }
@@ -10628,9 +10636,9 @@ var Context = class {
       "plugin"
     ]);
     await this.pushContextPlugins(plugins);
-    const argv = parseArgv(rawArguments, this.detailedOptions, logger);
-    this.argv = argv;
-    this.filePatterns = argv._;
+    const argv2 = parseArgv(rawArguments, this.detailedOptions, logger);
+    this.argv = argv2;
+    this.filePatterns = argv2._;
   }
   /**
    * @param {string[]} plugins
@@ -13028,9 +13036,9 @@ var mockable_default = mockable.mocked;
 // src/cli/options/get-options-for-file.js
 var import_dashify2 = __toESM(require_dashify(), 1);
 import { resolveConfig } from "../index.mjs";
-function getOptions(argv, detailedOptions) {
+function getOptions(argv2, detailedOptions) {
   return Object.fromEntries(
-    detailedOptions.filter(({ forwardToApi }) =&gt; forwardToApi).map(({ forwardToApi, name }) =&gt; [forwardToApi, argv[name]])
+    detailedOptions.filter(({ forwardToApi }) =&gt; forwardToApi).map(({ forwardToApi, name }) =&gt; [forwardToApi, argv2[name]])
   );
 }
 function cliifyOptions(object2, apiDetailedOptionMap) {
@@ -13493,6 +13501,9 @@ ${error2.message}`
 }
 &nbsp;
 // src/cli/logger.js
+var { argv, env: env2 } = process;
+var isStderrColorSupported = !(Boolean(env2.NO_COLOR) || argv.includes("--no-color")) &amp;&amp; (Boolean(env2.FORCE_COLOR) <span class="branch-0 cbranch-no" title="branch not covered" >|| argv.includes("--color") <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| process.platform === "win32" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| process.stderr.isTTY &amp;&amp; env2.TERM !== "dumb" <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| Boolean(env2.CI))</span>;
+var picocolorsStderr = picocolors.createColors(isStderrColorSupported);
 var emptyLogResult = { <span class="fstat-no" title="function not covered" >clear() {</span>
 } };
 function createLogger(logLevel = "log") {
@@ -13508,7 +13519,8 @@ function createLogger(logLevel = "log") {
       return () =&gt; emptyLogResult;
     }
     const stream = process[loggerName === "log" ? "stdout" : "stderr"];
-    const prefix = color ? `[${picocolors[color](loggerName)}] ` : "";
+    const colors = loggerName === "log" ? picocolors : picocolorsStderr;
+    const prefix = color ? `[${colors[color](loggerName)}] ` : "";
     return (message, options) =&gt; {
       options = {
         newline: true,
@@ -13828,7 +13840,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-15T00:32:51.240Z
+                at 2025-05-16T00:33:59.353Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
