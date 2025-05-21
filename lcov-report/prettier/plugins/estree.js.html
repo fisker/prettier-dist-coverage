@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.66% </span>
+                <span class="strong">61.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7660/12422</span>
+                <span class='fraction'>7660/12413</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.66% </span>
+                <span class="strong">61.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7660/12422</span>
+                <span class='fraction'>7660/12413</span>
             </div>
         
             
@@ -12475,16 +12475,7 @@
 <a name='L12410'></a><a href='#L12410'>12410</a>
 <a name='L12411'></a><a href='#L12411'>12411</a>
 <a name='L12412'></a><a href='#L12412'>12412</a>
-<a name='L12413'></a><a href='#L12413'>12413</a>
-<a name='L12414'></a><a href='#L12414'>12414</a>
-<a name='L12415'></a><a href='#L12415'>12415</a>
-<a name='L12416'></a><a href='#L12416'>12416</a>
-<a name='L12417'></a><a href='#L12417'>12417</a>
-<a name='L12418'></a><a href='#L12418'>12418</a>
-<a name='L12419'></a><a href='#L12419'>12419</a>
-<a name='L12420'></a><a href='#L12420'>12420</a>
-<a name='L12421'></a><a href='#L12421'>12421</a>
-<a name='L12422'></a><a href='#L12422'>12422</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12413'></a><a href='#L12413'>12413</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15008,15 +14999,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27428,8 +27410,8 @@
 <span class="cstat-no" title="statement not covered" >      delete templateElement.value;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-<span class="fstat-no" title="function not covered" >  function clean(original, cloned, parent) {</span>
-<span class="cstat-no" title="statement not covered" >    var _a, _b;</span>
+<span class="fstat-no" title="function not covered" >  function clean(original, cloned) {</span>
+<span class="cstat-no" title="statement not covered" >    var _a;</span>
 <span class="cstat-no" title="statement not covered" >    if (original.type === "Program") {</span>
 <span class="cstat-no" title="statement not covered" >      delete cloned.sourceType;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -27502,16 +27484,7 @@
 <span class="cstat-no" title="statement not covered" >      removeTemplateElementsValue(cloned.quasi);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (original.type === "TemplateLiteral") {</span>
-<span class="cstat-no" title="statement not covered" >      const hasLanguageComment2 = (_b = original.leadingComments) == null ? void 0 : _b.some(</span>
-<span class="cstat-no" title="statement not covered" >        (comment) =&gt; is_block_comment_default(comment) &amp;&amp; ["GraphQL", "HTML"].some(</span>
-<span class="cstat-no" title="statement not covered" >          (languageName) =&gt; comment.value === ` ${languageName} `</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >      if (hasLanguageComment2 || parent.type === "CallExpression" &amp;&amp; parent.callee.name === "graphql" || // TODO: check parser</span>
-<span class="cstat-no" title="statement not covered" >      // `flow` and `typescript` don't have `leadingComments`</span>
-<span class="cstat-no" title="statement not covered" >      !original.leadingComments) {</span>
-<span class="cstat-no" title="statement not covered" >        removeTemplateElementsValue(cloned);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      removeTemplateElementsValue(cloned);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (original.type === "ChainExpression" &amp;&amp; original.expression.type === "TSNonNullExpression") {</span>
 <span class="cstat-no" title="statement not covered" >      cloned.type = "TSNonNullExpression";</span>
@@ -37333,7 +37306,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-20T00:34:27.090Z
+                at 2025-05-21T00:34:04.527Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
