@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">49.3% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4126/8368</span>
+                <span class='fraction'>4122/8360</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.07% </span>
+                <span class="strong">42.99% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>311/722</span>
+                <span class='fraction'>310/721</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.2% </span>
+                <span class="strong">42.97% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>108/250</span>
+                <span class='fraction'>107/249</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">49.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4126/8368</span>
+                <span class='fraction'>4122/8360</span>
             </div>
         
             
@@ -8422,15 +8422,7 @@
 <a name='L8357'></a><a href='#L8357'>8357</a>
 <a name='L8358'></a><a href='#L8358'>8358</a>
 <a name='L8359'></a><a href='#L8359'>8359</a>
-<a name='L8360'></a><a href='#L8360'>8360</a>
-<a name='L8361'></a><a href='#L8361'>8361</a>
-<a name='L8362'></a><a href='#L8362'>8362</a>
-<a name='L8363'></a><a href='#L8363'>8363</a>
-<a name='L8364'></a><a href='#L8364'>8364</a>
-<a name='L8365'></a><a href='#L8365'>8365</a>
-<a name='L8366'></a><a href='#L8366'>8366</a>
-<a name='L8367'></a><a href='#L8367'>8367</a>
-<a name='L8368'></a><a href='#L8368'>8368</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8360'></a><a href='#L8360'>8360</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15165,12 +15157,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -16451,10 +16437,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23530,12 +23514,6 @@
   var assert = new Proxy(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
   }, { get: <span class="fstat-no" title="function not covered" >() =&gt; assert </span>});
 &nbsp;
-  // src/utils/is-non-empty-array.js
-  function isNonEmptyArray(object) {
-    return Array.isArray(object) &amp;&amp; object.length &gt; 0;
-  }
-  var is_non_empty_array_default = isNonEmptyArray;
-&nbsp;
   // src/language-js/loc.js
   function locStart(node) {
     var _a, _b, _c;
@@ -23592,7 +23570,7 @@
     "HTMLClose",
     // `espree`
     "Hashbang",
-    // Babel hashbang
+    // `babel` and `flow` hashbang
     "InterpreterDirective"
   ]);
   var is_line_comment_default = isLineComment;
@@ -24765,12 +24743,12 @@
       "typeAnnotation"
     ],
     "NeverTypeAnnotation": [],
-    "UndefinedTypeAnnotation": [],
-    "UnknownTypeAnnotation": [],
     "SatisfiesExpression": [
       "expression",
       "typeAnnotation"
-    ]
+    ],
+    "UndefinedTypeAnnotation": [],
+    "UnknownTypeAnnotation": []
   };
 &nbsp;
   // src/language-js/traverse/get-visitor-keys.js
@@ -24817,15 +24795,13 @@
   ]);
   function postprocess(ast, options) {
     const { parser, text } = options;
-    if (ast.type === "File" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; ast.program.interpreter)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      const {</span>
-<span class="cstat-no" title="statement not covered" >        program: { interpreter },</span>
-<span class="cstat-no" title="statement not covered" >        comments</span>
-<span class="cstat-no" title="statement not covered" >      } = ast;</span>
-<span class="cstat-no" title="statement not covered" >      delete ast.program.interpreter;</span>
-<span class="cstat-no" title="statement not covered" >      comments.unshift(interpreter);</span>
+    const program = ast.type === "File" <span class="branch-0 cbranch-no" title="branch not covered" >? ast.program </span>: ast;
+    const { interpreter } = program;
+    if (interpreter) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      ast.comments.unshift(interpreter);</span>
+<span class="cstat-no" title="statement not covered" >      delete program.interpreter;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (is_non_empty_array_default(ast.comments)) {
+    if (ast.comments.length &gt; 0) {
       let followingComment;
       for (let i = ast.comments.length - 1; i &gt;= 0; i--) {
         const comment = ast.comments[i];
@@ -25171,7 +25147,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-22T00:33:36.566Z
+                at 2025-05-23T00:33:59.567Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
