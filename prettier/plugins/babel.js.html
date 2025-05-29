@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8241/16431</span>
+                <span class='fraction'>8242/16434</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.85% </span>
+                <span class="strong">55.9% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1283/2297</span>
+                <span class='fraction'>1283/2295</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8241/16431</span>
+                <span class='fraction'>8242/16434</span>
             </div>
         
             
@@ -16493,7 +16493,10 @@
 <a name='L16428'></a><a href='#L16428'>16428</a>
 <a name='L16429'></a><a href='#L16429'>16429</a>
 <a name='L16430'></a><a href='#L16430'>16430</a>
-<a name='L16431'></a><a href='#L16431'>16431</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16431'></a><a href='#L16431'>16431</a>
+<a name='L16432'></a><a href='#L16432'>16432</a>
+<a name='L16433'></a><a href='#L16433'>16433</a>
+<a name='L16434'></a><a href='#L16434'>16434</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32552,19 +32555,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32631,7 +32634,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32657,6 +32659,10 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -48980,21 +48986,21 @@
   }
   var create_parser_default = createParser;
 &nbsp;
-  // src/language-js/parse/utils/get-source-type.js
-  function getSourceType(options) {
-    let { filepath } = options;
-    if (!filepath) {
+  // src/language-js/parse/utils/source-types.js
+  var SOURCE_TYPE_MODULE = "module";
+  var SOURCE_TYPE_SCRIPT = "script";
+  function getSourceType(filepath) {
+    if (typeof filepath !== "string") {
       return;
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    filepath = filepath.toLowerCase();</span></span>
-    if (filepath.endsWith(".cjs") || filepath.endsWith(".cts")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return "script";</span>
+<span class="cstat-no" title="statement not covered" >    if (/\.(?:mjs|mts)$/iu.test(filepath)) {</span>
+<span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_MODULE;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (filepath.endsWith(".mjs") || filepath.endsWith(".mts")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return "module";</span>
+<span class="cstat-no" title="statement not covered" >    if (/\.(?:cjs|cts)$/iu.test(filepath)) {</span>
+<span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_SCRIPT;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
-  var get_source_type_default = getSourceType;
 &nbsp;
   // src/language-js/parse/utils/wrap-babel-expression.js
   function wrapBabelExpression(expression, options) {
@@ -49016,7 +49022,7 @@
   // src/language-js/parse/babel.js
   var createBabelParser = (options) =&gt; create_parser_default(createParse(options));
   var parseOptions = {
-    sourceType: "module",
+    sourceType: SOURCE_TYPE_MODULE,
     allowImportExportEverywhere: true,
     allowReturnOutsideFunction: true,
     allowNewTargetOutsideFunction: true,
@@ -49060,9 +49066,8 @@
     plugins: [...options.plugins, ...plugins]
   });
   var FLOW_PRAGMA_REGEX = /@(?:no)?flow\b/u;
-  function isFlowFile(text, options) {
-    var _a;
-    if ((_a = options.filepath) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a.endsWith(".js.flow"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  function isFlowFile(text, filepath) {
+    if (filepath == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: filepath.endsWith(".js.flow"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const shebang = get_shebang_default(text);
@@ -49087,16 +49092,20 @@
   }
   function createParse({ isExpression = false, optionsCombinations }) {
     return (text, options = {}) =&gt; {
-      if ((options.parser === "babel" || options.parser === "__babel_estree") &amp;&amp; isFlowFile(text, options)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      let { filepath } = options;
+      if (typeof filepath !== "string") {
+        filepath = void 0;
+      }
+      if ((options.parser === "babel" || options.parser === "__babel_estree") &amp;&amp; isFlowFile(text, filepath)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        options.parser = "babel-flow";</span>
 <span class="cstat-no" title="statement not covered" >        return babelFlow.parse(text, options);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       let combinations = optionsCombinations;
-      const sourceType = options.__babelSourceType ?? get_source_type_default(options);
-      if (sourceType === "script") {
+      const sourceType = options.__babelSourceType ?? getSourceType(filepath);
+      if (sourceType === SOURCE_TYPE_SCRIPT) {
         combinations = combinations.map((options2) =&gt; ({
           ...options2,
-          sourceType: "script"
+          sourceType
         }));
       }
       const shouldEnableV8intrinsicPlugin = /%[A-Z]/u.test(text);
@@ -49360,7 +49369,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-28T00:34:01.542Z
+                at 2025-05-29T00:33:47.646Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
