@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.32% </span>
+                <span class="strong">94.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1730/1834</span>
+                <span class='fraction'>1736/1844</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.71% </span>
+                <span class="strong">78.43% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>159/197</span>
+                <span class='fraction'>160/204</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.32% </span>
+                <span class="strong">94.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1730/1834</span>
+                <span class='fraction'>1736/1844</span>
             </div>
         
             
@@ -1897,7 +1897,17 @@
 <a name='L1832'></a><a href='#L1832'>1832</a>
 <a name='L1833'></a><a href='#L1833'>1833</a>
 <a name='L1834'></a><a href='#L1834'>1834</a>
-<a name='L1835'></a><a href='#L1835'>1835</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L1835'></a><a href='#L1835'>1835</a>
+<a name='L1836'></a><a href='#L1836'>1836</a>
+<a name='L1837'></a><a href='#L1837'>1837</a>
+<a name='L1838'></a><a href='#L1838'>1838</a>
+<a name='L1839'></a><a href='#L1839'>1839</a>
+<a name='L1840'></a><a href='#L1840'>1840</a>
+<a name='L1841'></a><a href='#L1841'>1841</a>
+<a name='L1842'></a><a href='#L1842'>1842</a>
+<a name='L1843'></a><a href='#L1843'>1843</a>
+<a name='L1844'></a><a href='#L1844'>1844</a>
+<a name='L1845'></a><a href='#L1845'>1845</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -3441,6 +3451,12 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">199696x</span>
 <span class="cline-any cline-yes">199696x</span>
+<span class="cline-any cline-yes">87x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">87x</span>
+<span class="cline-any cline-yes">199696x</span>
+<span class="cline-any cline-yes">199696x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3089x</span>
@@ -3640,6 +3656,10 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">139x</span>
+<span class="cline-any cline-yes">139x</span>
+<span class="cline-any cline-yes">139x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">139x</span>
 <span class="cline-any cline-yes">139x</span>
 <span class="cline-any cline-yes">139x</span>
@@ -5038,26 +5058,27 @@ var visitor_keys_evaluate_default = {
     "typeAnnotation",
     "asserts"
   ],
-  "NGRoot": [
-    "node"
+  "NGChainedExpression": [
+    "expressions"
   ],
+  "NGEmptyExpression": [],
   "NGPipeExpression": [
     "left",
     "right",
     "arguments"
   ],
-  "NGChainedExpression": [
-    "expressions"
-  ],
-  "NGEmptyExpression": [],
   "NGMicrosyntax": [
     "body"
   ],
-  "NGMicrosyntaxKey": [],
+  "NGMicrosyntaxAs": [
+    "key",
+    "alias"
+  ],
   "NGMicrosyntaxExpression": [
     "expression",
     "alias"
   ],
+  "NGMicrosyntaxKey": [],
   "NGMicrosyntaxKeyedExpression": [
     "key",
     "expression"
@@ -5066,9 +5087,8 @@ var visitor_keys_evaluate_default = {
     "key",
     "value"
   ],
-  "NGMicrosyntaxAs": [
-    "key",
-    "alias"
+  "NGRoot": [
+    "node"
   ],
   "JsExpressionRoot": [
     "node"
@@ -5202,7 +5222,7 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >        }</span>
         break;
       case "TemplateElement":
-        if (parser === "flow" || parser === "espree" || parser === "typescript" || parser === "oxc" &amp;&amp; options.oxcAstType === "ts") {
+        if (parser === "flow" || parser === "hermes" || parser === "espree" || parser === "typescript" || parser === "oxc" &amp;&amp; options.oxcAstType === "ts") {
           const start = locStart(node) + 1;
           const end = locEnd(node) - (node.tail ? 1 : 2);
           node.range = [start, end];
@@ -5271,6 +5291,12 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >            range: [start, locEnd(node)]</span>
 <span class="cstat-no" title="statement not covered" >          };</span>
 <span class="cstat-no" title="statement not covered" >          delete node.members;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+        break;
+      // https://github.com/facebook/hermes/issues/1712
+      case "ImportExpression":
+        if (parser === "hermes" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.attributes <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !node.options)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          node.options = node.attributes;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         break;
     }
@@ -5474,6 +5500,10 @@ function getSourceType(filepath) {
 &nbsp;
 // src/language-js/parse/oxc.js
 function createParseError(error, { text }) {
+  var _a;
+  if (!((_a = error == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: error.labels) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a[0])) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    return error;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   const {
     message,
     labels: [{ start: startIndex, end: endIndex }]
@@ -5572,7 +5602,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-29T00:33:47.646Z
+                at 2025-05-30T00:34:06.625Z
             </div>
         <script src="../prettify.js"></script>
         <script>

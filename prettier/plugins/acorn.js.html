@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.4% </span>
+                <span class="strong">58.38% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4869/8337</span>
+                <span class='fraction'>4871/8343</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.11% </span>
+                <span class="strong">53.07% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>648/1220</span>
+                <span class='fraction'>648/1221</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.4% </span>
+                <span class="strong">58.38% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4869/8337</span>
+                <span class='fraction'>4871/8343</span>
             </div>
         
             
@@ -8399,7 +8399,13 @@
 <a name='L8334'></a><a href='#L8334'>8334</a>
 <a name='L8335'></a><a href='#L8335'>8335</a>
 <a name='L8336'></a><a href='#L8336'>8336</a>
-<a name='L8337'></a><a href='#L8337'>8337</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8337'></a><a href='#L8337'>8337</a>
+<a name='L8338'></a><a href='#L8338'>8338</a>
+<a name='L8339'></a><a href='#L8339'>8339</a>
+<a name='L8340'></a><a href='#L8340'>8340</a>
+<a name='L8341'></a><a href='#L8341'>8341</a>
+<a name='L8342'></a><a href='#L8342'>8342</a>
+<a name='L8343'></a><a href='#L8343'>8343</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15924,6 +15930,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">271x</span>
+<span class="cline-any cline-yes">271x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24029,26 +24041,27 @@
       "typeAnnotation",
       "asserts"
     ],
-    "NGRoot": [
-      "node"
+    "NGChainedExpression": [
+      "expressions"
     ],
+    "NGEmptyExpression": [],
     "NGPipeExpression": [
       "left",
       "right",
       "arguments"
     ],
-    "NGChainedExpression": [
-      "expressions"
-    ],
-    "NGEmptyExpression": [],
     "NGMicrosyntax": [
       "body"
     ],
-    "NGMicrosyntaxKey": [],
+    "NGMicrosyntaxAs": [
+      "key",
+      "alias"
+    ],
     "NGMicrosyntaxExpression": [
       "expression",
       "alias"
     ],
+    "NGMicrosyntaxKey": [],
     "NGMicrosyntaxKeyedExpression": [
       "key",
       "expression"
@@ -24057,9 +24070,8 @@
       "key",
       "value"
     ],
-    "NGMicrosyntaxAs": [
-      "key",
-      "alias"
+    "NGRoot": [
+      "node"
     ],
     "JsExpressionRoot": [
       "node"
@@ -24193,7 +24205,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
           break;
         case "TemplateElement":
-          if (parser2 === "flow" || parser2 === "espree" || parser2 === "typescript" || parser2 === "oxc" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; options.oxcAstType === "ts")</span> {
+          if (parser2 === "flow" || parser2 === "hermes" || parser2 === "espree" || parser2 === "typescript" || parser2 === "oxc" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; options.oxcAstType === "ts")</span> {
             const start = locStart(node) + 1;
             const end = locEnd(node) - (node.tail ? 1 : 2);
             node.range = [start, end];
@@ -24262,6 +24274,12 @@
 <span class="cstat-no" title="statement not covered" >              range: [start, locEnd(node)]</span>
 <span class="cstat-no" title="statement not covered" >            };</span>
 <span class="cstat-no" title="statement not covered" >            delete node.members;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        // https://github.com/facebook/hermes/issues/1712
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "ImportExpression":</span>
+<span class="cstat-no" title="statement not covered" >          if (parser2 === "hermes" &amp;&amp; node.attributes &amp;&amp; !node.options) {</span>
+<span class="cstat-no" title="statement not covered" >            node.options = node.attributes;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
       }
@@ -25078,7 +25096,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-29T00:33:47.646Z
+                at 2025-05-30T00:34:06.625Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

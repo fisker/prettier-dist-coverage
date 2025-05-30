@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.15% </span>
+                <span class="strong">50.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8242/16434</span>
+                <span class='fraction'>8244/16440</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.9% </span>
+                <span class="strong">55.87% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1283/2295</span>
+                <span class='fraction'>1283/2296</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.15% </span>
+                <span class="strong">50.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8242/16434</span>
+                <span class='fraction'>8244/16440</span>
             </div>
         
             
@@ -16496,7 +16496,13 @@
 <a name='L16431'></a><a href='#L16431'>16431</a>
 <a name='L16432'></a><a href='#L16432'>16432</a>
 <a name='L16433'></a><a href='#L16433'>16433</a>
-<a name='L16434'></a><a href='#L16434'>16434</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16434'></a><a href='#L16434'>16434</a>
+<a name='L16435'></a><a href='#L16435'>16435</a>
+<a name='L16436'></a><a href='#L16436'>16436</a>
+<a name='L16437'></a><a href='#L16437'>16437</a>
+<a name='L16438'></a><a href='#L16438'>16438</a>
+<a name='L16439'></a><a href='#L16439'>16439</a>
+<a name='L16440'></a><a href='#L16440'>16440</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32350,6 +32356,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-yes">409x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -48552,26 +48564,27 @@
       "typeAnnotation",
       "asserts"
     ],
-    "NGRoot": [
-      "node"
+    "NGChainedExpression": [
+      "expressions"
     ],
+    "NGEmptyExpression": [],
     "NGPipeExpression": [
       "left",
       "right",
       "arguments"
     ],
-    "NGChainedExpression": [
-      "expressions"
-    ],
-    "NGEmptyExpression": [],
     "NGMicrosyntax": [
       "body"
     ],
-    "NGMicrosyntaxKey": [],
+    "NGMicrosyntaxAs": [
+      "key",
+      "alias"
+    ],
     "NGMicrosyntaxExpression": [
       "expression",
       "alias"
     ],
+    "NGMicrosyntaxKey": [],
     "NGMicrosyntaxKeyedExpression": [
       "key",
       "expression"
@@ -48580,9 +48593,8 @@
       "key",
       "value"
     ],
-    "NGMicrosyntaxAs": [
-      "key",
-      "alias"
+    "NGRoot": [
+      "node"
     ],
     "JsExpressionRoot": [
       "node"
@@ -48716,7 +48728,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
           break;
         case "TemplateElement":
-          if (parser === "flow" || parser === "espree" || parser === "typescript" || parser === "oxc" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; options.oxcAstType === "ts")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          if (parser === "flow" || parser === "hermes" || parser === "espree" || parser === "typescript" || parser === "oxc" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; options.oxcAstType === "ts")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            const start = locStart(node) + 1;</span>
 <span class="cstat-no" title="statement not covered" >            const end = locEnd(node) - (node.tail ? 1 : 2);</span>
 <span class="cstat-no" title="statement not covered" >            node.range = [start, end];</span>
@@ -48787,6 +48799,12 @@
 <span class="cstat-no" title="statement not covered" >            delete node.members;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+        // https://github.com/facebook/hermes/issues/1712
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "ImportExpression":</span>
+<span class="cstat-no" title="statement not covered" >          if (parser === "hermes" &amp;&amp; node.attributes &amp;&amp; !node.options) {</span>
+<span class="cstat-no" title="statement not covered" >            node.options = node.attributes;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
       }
       if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        assertRaw(node, text);</span>
@@ -48842,11 +48860,11 @@
 &nbsp;
   // src/language-js/parse/utils/create-babel-parse-error.js
 <span class="fstat-no" title="function not covered" >  function createBabelParseError(error) {</span>
-<span class="cstat-no" title="statement not covered" >    let {</span>
-<span class="cstat-no" title="statement not covered" >      message,</span>
-<span class="cstat-no" title="statement not covered" >      loc: { line, column },</span>
-<span class="cstat-no" title="statement not covered" >      reasonCode</span>
-<span class="cstat-no" title="statement not covered" >    } = error;</span>
+<span class="cstat-no" title="statement not covered" >    let { message, loc, reasonCode } = error;</span>
+<span class="cstat-no" title="statement not covered" >    if (!loc) {</span>
+<span class="cstat-no" title="statement not covered" >      return error;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const { line, column } = loc;</span>
 <span class="cstat-no" title="statement not covered" >    let cause = error;</span>
 <span class="cstat-no" title="statement not covered" >    if (reasonCode === "MissingPlugin" || reasonCode === "MissingOneOfPlugins") {</span>
 <span class="cstat-no" title="statement not covered" >      message = "Unexpected token.";</span>
@@ -49369,7 +49387,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-29T00:33:47.646Z
+                at 2025-05-30T00:34:06.625Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
