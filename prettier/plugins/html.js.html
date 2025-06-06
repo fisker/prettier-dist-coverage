@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.66% </span>
+                <span class="strong">72.59% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7125/9805</span>
+                <span class='fraction'>7130/9821</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.66% </span>
+                <span class="strong">61.53% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>304/493</span>
+                <span class='fraction'>304/494</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.66% </span>
+                <span class="strong">72.59% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7125/9805</span>
+                <span class='fraction'>7130/9821</span>
             </div>
         
             
@@ -9867,7 +9867,23 @@
 <a name='L9802'></a><a href='#L9802'>9802</a>
 <a name='L9803'></a><a href='#L9803'>9803</a>
 <a name='L9804'></a><a href='#L9804'>9804</a>
-<a name='L9805'></a><a href='#L9805'>9805</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L9805'></a><a href='#L9805'>9805</a>
+<a name='L9806'></a><a href='#L9806'>9806</a>
+<a name='L9807'></a><a href='#L9807'>9807</a>
+<a name='L9808'></a><a href='#L9808'>9808</a>
+<a name='L9809'></a><a href='#L9809'>9809</a>
+<a name='L9810'></a><a href='#L9810'>9810</a>
+<a name='L9811'></a><a href='#L9811'>9811</a>
+<a name='L9812'></a><a href='#L9812'>9812</a>
+<a name='L9813'></a><a href='#L9813'>9813</a>
+<a name='L9814'></a><a href='#L9814'>9814</a>
+<a name='L9815'></a><a href='#L9815'>9815</a>
+<a name='L9816'></a><a href='#L9816'>9816</a>
+<a name='L9817'></a><a href='#L9817'>9817</a>
+<a name='L9818'></a><a href='#L9818'>9818</a>
+<a name='L9819'></a><a href='#L9819'>9819</a>
+<a name='L9820'></a><a href='#L9820'>9820</a>
+<a name='L9821'></a><a href='#L9821'>9821</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10491,6 +10507,18 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10581,6 +10609,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20293,6 +20325,18 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var angular_control_flow_block_parameters_default = printAngularControlFlowBlockParameters;
 &nbsp;
+  // scripts/build/shims/array-to-reversed.js
+  var arrayToReversed = <span class="fstat-no" title="function not covered" >(isOptionalObject, array) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (isOptionalObject &amp;&amp; (array === void 0 || array === null)) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (array.toReversed || !Array.isArray(array)) {</span>
+<span class="cstat-no" title="statement not covered" >      return array.toReversed();</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return [...array].reverse();</span>
+  };
+  var array_to_reversed_default = arrayToReversed;
+&nbsp;
   // src/utils/get-interpreter.js
   var get_interpreter_default = void 0;
 &nbsp;
@@ -20385,7 +20429,11 @@
 <span class="cstat-no" title="statement not covered" >    return languages.find(({ isSupported }) =&gt; isSupported == null ? void 0 : isSupported({ filepath: file }));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function inferParser(options2, fileInfo) {</span>
-<span class="cstat-no" title="statement not covered" >    const languages = options2.plugins.flatMap(</span>
+<span class="cstat-no" title="statement not covered" >    const languages = array_to_reversed_default(</span>
+<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
+<span class="cstat-no" title="statement not covered" >      false,</span>
+<span class="cstat-no" title="statement not covered" >      options2.plugins</span>
+<span class="cstat-no" title="statement not covered" >    ).flatMap(</span>
 <span class="cstat-no" title="statement not covered" >      (plugin) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >        // @ts-expect-error -- Safe</span>
 <span class="cstat-no" title="statement not covered" >        plugin.languages ?? []</span>
@@ -29482,7 +29530,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-05T00:34:25.979Z
+                at 2025-06-06T00:33:53.730Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

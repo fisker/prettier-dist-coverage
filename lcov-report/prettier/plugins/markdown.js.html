@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.87% </span>
+                <span class="strong">69.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8199/11734</span>
+                <span class='fraction'>8212/11750</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.2% </span>
+                <span class="strong">67.05% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1045/1555</span>
+                <span class='fraction'>1046/1560</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.47% </span>
+                <span class="strong">72.52% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>366/505</span>
+                <span class='fraction'>367/506</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.87% </span>
+                <span class="strong">69.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8199/11734</span>
+                <span class='fraction'>8212/11750</span>
             </div>
         
             
@@ -11796,7 +11796,23 @@
 <a name='L11731'></a><a href='#L11731'>11731</a>
 <a name='L11732'></a><a href='#L11732'>11732</a>
 <a name='L11733'></a><a href='#L11733'>11733</a>
-<a name='L11734'></a><a href='#L11734'>11734</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11734'></a><a href='#L11734'>11734</a>
+<a name='L11735'></a><a href='#L11735'>11735</a>
+<a name='L11736'></a><a href='#L11736'>11736</a>
+<a name='L11737'></a><a href='#L11737'>11737</a>
+<a name='L11738'></a><a href='#L11738'>11738</a>
+<a name='L11739'></a><a href='#L11739'>11739</a>
+<a name='L11740'></a><a href='#L11740'>11740</a>
+<a name='L11741'></a><a href='#L11741'>11741</a>
+<a name='L11742'></a><a href='#L11742'>11742</a>
+<a name='L11743'></a><a href='#L11743'>11743</a>
+<a name='L11744'></a><a href='#L11744'>11744</a>
+<a name='L11745'></a><a href='#L11745'>11745</a>
+<a name='L11746'></a><a href='#L11746'>11746</a>
+<a name='L11747'></a><a href='#L11747'>11747</a>
+<a name='L11748'></a><a href='#L11748'>11748</a>
+<a name='L11749'></a><a href='#L11749'>11749</a>
+<a name='L11750'></a><a href='#L11750'>11750</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21158,6 +21174,18 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21248,6 +21276,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">39x</span>
@@ -32889,6 +32921,18 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var print_default = print;
 &nbsp;
+  // scripts/build/shims/array-to-reversed.js
+  var arrayToReversed = (isOptionalObject, array) =&gt; {
+    if (isOptionalObject <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (array === void 0 || array === null))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    if (array.toReversed <span class="branch-0 cbranch-no" title="branch not covered" >|| !Array.isArray(array))</span> {
+      return array.toReversed();
+    }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return [...array].reverse();</span></span>
+  };
+  var array_to_reversed_default = arrayToReversed;
+&nbsp;
   // src/utils/get-interpreter.js
   var get_interpreter_default = void 0;
 &nbsp;
@@ -32981,7 +33025,11 @@
 <span class="cstat-no" title="statement not covered" >    return languages.find(({ isSupported }) =&gt; isSupported == null ? void 0 : isSupported({ filepath: file }));</span>
   }
   function inferParser(options2, fileInfo) {
-    const languages = options2.plugins.flatMap(
+    const languages = array_to_reversed_default(
+      /* isOptionalObject */
+      false,
+      options2.plugins
+    ).flatMap(
       (plugin) =&gt; (
         // @ts-expect-error -- Safe
         plugin.languages ?? []
@@ -35269,7 +35317,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-05T00:34:23.917Z
+                at 2025-06-06T00:33:51.451Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
