@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">57.98% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4900/8451</span>
+                <span class='fraction'>4904/8457</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.33% </span>
+                <span class="strong">53.41% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>648/1215</span>
+                <span class='fraction'>650/1217</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">57.98% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4900/8451</span>
+                <span class='fraction'>4904/8457</span>
             </div>
         
             
@@ -8513,7 +8513,13 @@
 <a name='L8448'></a><a href='#L8448'>8448</a>
 <a name='L8449'></a><a href='#L8449'>8449</a>
 <a name='L8450'></a><a href='#L8450'>8450</a>
-<a name='L8451'></a><a href='#L8451'>8451</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8451'></a><a href='#L8451'>8451</a>
+<a name='L8452'></a><a href='#L8452'>8452</a>
+<a name='L8453'></a><a href='#L8453'>8453</a>
+<a name='L8454'></a><a href='#L8454'>8454</a>
+<a name='L8455'></a><a href='#L8455'>8455</a>
+<a name='L8456'></a><a href='#L8456'>8456</a>
+<a name='L8457'></a><a href='#L8457'>8457</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9382,8 +9388,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -9441,11 +9447,11 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -16366,6 +16372,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -17831,9 +17843,9 @@
     } else if (options.ecmaVersion &gt;= 2015) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      options.ecmaVersion -= 2009;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (options.allowReserved == null) {
-      options.allowReserved = options.ecmaVersion &lt; 5;
-    }
+    if (options.allowReserved == null) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      options.allowReserved = options.ecmaVersion &lt; 5;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     if (!opts || opts.allowHashBang == null) {
       options.allowHashBang = options.ecmaVersion &gt;= 14;
     }
@@ -17897,7 +17909,7 @@
       }
     }
     this.reservedWords = wordsRegexp(reserved);
-    var reservedStrict = (reserved ? reserved + " " <span class="branch-0 cbranch-no" title="branch not covered" >: "")</span> + reservedWords.strict;
+    var reservedStrict = (reserved ? reserved + " " : "") + reservedWords.strict;
     this.reservedWordsStrict = wordsRegexp(reservedStrict);
     this.reservedWordsStrictBind = wordsRegexp(reservedStrict + " " + reservedWords.strictBind);
     this.input = String(input);
@@ -24808,9 +24820,15 @@
   var parseOptions = {
     ecmaVersion: "latest",
     // sourceType: "module",
+    // onInsertedSemicolon: null,
+    // onTrailingComma: null,
+    allowReserved: true,
     allowReturnOutsideFunction: true,
     // allowImportExportEverywhere: true,
+    // allowAwaitOutsideFunction: null,
     allowSuperOutsideMethod: true,
+    // allowHashBang: true,
+    checkPrivateFields: false,
     locations: false,
     ranges: true,
     preserveParens: true
@@ -25420,7 +25438,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-11T00:34:34.899Z
+                at 2025-06-12T00:34:21.294Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
