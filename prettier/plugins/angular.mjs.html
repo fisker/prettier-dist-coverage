@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.07% </span>
+                <span class="strong">77.02% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3742/4855</span>
+                <span class='fraction'>3742/4858</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.16% </span>
+                <span class="strong">90.06% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>798/885</span>
+                <span class='fraction'>798/886</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.07% </span>
+                <span class="strong">77.02% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3742/4855</span>
+                <span class='fraction'>3742/4858</span>
             </div>
         
             
@@ -4918,7 +4918,10 @@
 <a name='L4853'></a><a href='#L4853'>4853</a>
 <a name='L4854'></a><a href='#L4854'>4854</a>
 <a name='L4855'></a><a href='#L4855'>4855</a>
-<a name='L4856'></a><a href='#L4856'>4856</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L4856'></a><a href='#L4856'>4856</a>
+<a name='L4857'></a><a href='#L4857'>4857</a>
+<a name='L4858'></a><a href='#L4858'>4858</a>
+<a name='L4859'></a><a href='#L4859'>4859</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -8013,10 +8016,10 @@
 <span class="cline-any cline-yes">2149x</span>
 <span class="cline-any cline-yes">2149x</span>
 <span class="cline-any cline-yes">2149x</span>
-<span class="cline-any cline-yes">721x</span>
-<span class="cline-any cline-yes">721x</span>
+<span class="cline-any cline-yes">631x</span>
+<span class="cline-any cline-yes">631x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">721x</span>
+<span class="cline-any cline-yes">631x</span>
 <span class="cline-any cline-yes">2149x</span>
 <span class="cline-any cline-yes">30289x</span>
 <span class="cline-any cline-yes">659x</span>
@@ -8317,6 +8320,9 @@
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">90x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">3886x</span>
@@ -8347,7 +8353,7 @@
 <span class="cline-any cline-yes">129x</span>
 <span class="cline-any cline-yes">3653x</span>
 <span class="cline-any cline-yes">2834x</span>
-<span class="cline-any cline-yes">3524x</span>
+<span class="cline-any cline-yes">3518x</span>
 <span class="cline-any cline-yes">409x</span>
 <span class="cline-any cline-yes">409x</span>
 <span class="cline-any cline-yes">409x</span>
@@ -8458,9 +8464,9 @@
 <span class="cline-any cline-yes">257x</span>
 <span class="cline-any cline-yes">257x</span>
 <span class="cline-any cline-yes">145x</span>
-<span class="cline-any cline-yes">253x</span>
+<span class="cline-any cline-yes">252x</span>
 <span class="cline-any cline-yes">271x</span>
-<span class="cline-any cline-yes">253x</span>
+<span class="cline-any cline-yes">252x</span>
 <span class="cline-any cline-yes">145x</span>
 <span class="cline-any cline-yes">257x</span>
 <span class="cline-any cline-yes">2149x</span>
@@ -8637,7 +8643,7 @@
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
-<span class="cline-any cline-yes">386x</span>
+<span class="cline-any cline-yes">387x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">147x</span>
@@ -9551,7 +9557,7 @@
 <span class="cline-any cline-yes">747x</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">662x</span>
+<span class="cline-any cline-yes">674x</span>
 <span class="cline-any cline-yes">140x</span>
 <span class="cline-any cline-yes">140x</span>
 <span class="cline-any cline-yes">20x</span>
@@ -13171,8 +13177,11 @@ var _ParseAST = class {
     if (this.consumeOptionalCharacter($LPAREN)) {
       this.rparensExpected++;
       const result = this.parsePipe();
+      if (!this.consumeOptionalCharacter($RPAREN)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        this.error("Missing closing parentheses");</span>
+<span class="cstat-no" title="statement not covered" >        this.consumeOptionalCharacter($RPAREN);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
       this.rparensExpected--;
-      this.expectCharacter($RPAREN);
       return new ParenthesizedExpression(this.span(start), this.sourceSpan(start), result);
     } else if (this.next.isKeywordNull()) {
       this.advance();
@@ -13771,7 +13780,7 @@ var _VisitorMode;
   _VisitorMode2[_VisitorMode2["Extract"] = 0] = "Extract";
   _VisitorMode2[_VisitorMode2["Merge"] = 1] = "Merge";
 })(_VisitorMode || (_VisitorMode = {}));
-var VERSION = new Version("20.0.0");
+var VERSION = new Version("20.0.4");
 &nbsp;
 // node_modules/angular-estree-parser/lib/utils.js
 function stripSurroundingSpaces({ start: startIndex, end: endIndex }, text) {
@@ -14635,7 +14644,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-18T00:34:30.799Z
+                at 2025-06-19T00:34:54.504Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
