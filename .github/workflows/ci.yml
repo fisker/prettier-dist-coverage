@@ -52,7 +52,7 @@ jobs:
             fs.writeFileSync('./package.json', JSON.stringify(packageJson, undefined, 2))
 
       - name: Run Tests
-        run: yarn c8 yarn test:dist
+        run: yarn c8 yarn test:production
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
@@ -64,4 +64,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-commit: ${{ env.PRETTIER_BRANCH }}
+
 
