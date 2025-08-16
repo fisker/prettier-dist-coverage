@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.26% </span>
+                <span class="strong">50.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8386/16682</span>
+                <span class='fraction'>8386/16687</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.26% </span>
+                <span class="strong">50.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8386/16682</span>
+                <span class='fraction'>8386/16687</span>
             </div>
         
             
@@ -16744,7 +16744,12 @@
 <a name='L16679'></a><a href='#L16679'>16679</a>
 <a name='L16680'></a><a href='#L16680'>16680</a>
 <a name='L16681'></a><a href='#L16681'>16681</a>
-<a name='L16682'></a><a href='#L16682'>16682</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16682'></a><a href='#L16682'>16682</a>
+<a name='L16683'></a><a href='#L16683'>16683</a>
+<a name='L16684'></a><a href='#L16684'>16684</a>
+<a name='L16685'></a><a href='#L16685'>16685</a>
+<a name='L16686'></a><a href='#L16686'>16686</a>
+<a name='L16687'></a><a href='#L16687'>16687</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -17308,6 +17313,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24541,6 +24549,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -25829,6 +25838,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -34267,11 +34277,14 @@
 <span class="cstat-no" title="statement not covered" >        finishCallExpression(unfinished, optional) {</span>
 <span class="cstat-no" title="statement not covered" >          const node = super.finishCallExpression(unfinished, optional);</span>
 <span class="cstat-no" title="statement not covered" >          if (node.callee.type === "Import") {</span>
-<span class="cstat-no" title="statement not covered" >            var _ref, _ref2;</span>
+<span class="cstat-no" title="statement not covered" >            var _ref;</span>
 <span class="cstat-no" title="statement not covered" >            this.castNodeTo(node, "ImportExpression");</span>
 <span class="cstat-no" title="statement not covered" >            node.source = node.arguments[0];</span>
 <span class="cstat-no" title="statement not covered" >            node.options = (_ref = node.arguments[1]) != null ? _ref : null;</span>
-<span class="cstat-no" title="statement not covered" >            node.attributes = (_ref2 = node.arguments[1]) != null ? _ref2 : null;</span>
+<span class="cstat-no" title="statement not covered" >            {</span>
+<span class="cstat-no" title="statement not covered" >              var _ref2;</span>
+<span class="cstat-no" title="statement not covered" >              node.attributes = (_ref2 = node.arguments[1]) != null ? _ref2 : null;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            delete node.arguments;</span>
 <span class="cstat-no" title="statement not covered" >            delete node.callee;</span>
 <span class="cstat-no" title="statement not covered" >          } else if (node.type === "OptionalCallExpression") {</span>
@@ -41219,6 +41232,7 @@
 <span class="cstat-no" title="statement not covered" >          this.expect(14);</span>
 <span class="cstat-no" title="statement not covered" >          withProperty.value = this.tsParseImportTypeWithPropertyValue();</span>
 <span class="cstat-no" title="statement not covered" >          node.properties = [this.finishObjectProperty(withProperty)];</span>
+<span class="cstat-no" title="statement not covered" >          this.eat(12);</span>
 <span class="cstat-no" title="statement not covered" >          this.expect(8);</span>
 <span class="cstat-no" title="statement not covered" >          return this.finishNode(node, "ObjectExpression");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -42515,6 +42529,7 @@
 <span class="cstat-no" title="statement not covered" >              if (!noCalls &amp;&amp; this.atPossibleAsyncArrow(base)) {</span>
 <span class="cstat-no" title="statement not covered" >                const asyncArrowFn = this.tsTryParseGenericAsyncArrowFunction(startLoc);</span>
 <span class="cstat-no" title="statement not covered" >                if (asyncArrowFn) {</span>
+<span class="cstat-no" title="statement not covered" >                  state.stop = true;</span>
 <span class="cstat-no" title="statement not covered" >                  return asyncArrowFn;</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
@@ -50113,7 +50128,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-15T00:35:54.023Z
+                at 2025-08-16T00:33:27.880Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
