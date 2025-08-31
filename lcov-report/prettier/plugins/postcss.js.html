@@ -27711,7 +27711,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return cloned;</span>
       };
-      var _class = function() {
+      var _class = (function() {
         function _class2() {
           var opts = arguments.length &gt; 0 &amp;&amp; arguments[0] !== void 0 ? arguments[0] : {};
           _classCallCheck(this, _class2);
@@ -27757,7 +27757,7 @@
 <span class="cstat-no" title="statement not covered" >          return [this.spaces.before, String(this.value), this.spaces.after].join("");</span>
         };
         return _class2;
-      }();
+      })();
       exports.default = _class;
       module.exports = exports["default"];
     }
@@ -27788,7 +27788,7 @@
     "node_modules/postcss-selector-parser/dist/selectors/container.js"(exports, module) {
       "use strict";
       exports.__esModule = true;
-      var _createClass = /* @__PURE__ */ function() {
+      var _createClass = /* @__PURE__ */ (function() {
         function defineProperties(target, props) {
           for (var i = 0; i &lt; props.length; i++) {
             var descriptor = props[i];
@@ -27803,7 +27803,7 @@
           if (staticProps) <span class="branch-0 cbranch-no" title="branch not covered" >defineProperties(Constructor, staticProps);</span>
           return Constructor;
         };
-      }();
+      })();
       var _node = require_node2();
       var _node2 = _interopRequireDefault(_node);
       var _types = require_types();
@@ -27843,7 +27843,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Container = function(_Node) {
+      var Container = (function(_Node) {
         _inherits(Container2, _Node);
         function Container2(opts) {
           _classCallCheck(this, Container2);
@@ -28092,7 +28092,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
         }]);
         return Container2;
-      }(_node2.default);
+      })(_node2.default);
       exports.default = Container;
       module.exports = exports["default"];
     }
@@ -28127,7 +28127,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Root = function(_Container) {
+      var Root = (function(_Container) {
         _inherits(Root2, _Container);
         function Root2(opts) {
           _classCallCheck(this, Root2);
@@ -28143,7 +28143,7 @@
 <span class="cstat-no" title="statement not covered" >          return this.trailingComma ? str + "," : str;</span>
         };
         return Root2;
-      }(_container2.default);
+      })(_container2.default);
       exports.default = Root;
       module.exports = exports["default"];
     }
@@ -28178,7 +28178,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Selector = function(_Container) {
+      var Selector = (function(_Container) {
         _inherits(Selector2, _Container);
         function Selector2(opts) {
           _classCallCheck(this, Selector2);
@@ -28187,7 +28187,7 @@
           return _this;
         }
         return Selector2;
-      }(_container2.default);
+      })(_container2.default);
       exports.default = Selector;
       module.exports = exports["default"];
     }
@@ -28198,7 +28198,7 @@
     "node_modules/postcss-selector-parser/dist/selectors/namespace.js"(exports, module) {
       "use strict";
       exports.__esModule = true;
-      var _createClass = /* @__PURE__ */ function() {
+      var _createClass = /* @__PURE__ */ (function() {
         function defineProperties(target, props) {
           for (var i = 0; i &lt; props.length; i++) {
             var descriptor = props[i];
@@ -28213,7 +28213,7 @@
           if (staticProps) <span class="branch-0 cbranch-no" title="branch not covered" >defineProperties(Constructor, staticProps);</span>
           return Constructor;
         };
-      }();
+      })();
       var _node = require_node2();
       var _node2 = _interopRequireDefault(_node);
       function _interopRequireDefault(obj) {
@@ -28237,7 +28237,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Namespace = function(_Node) {
+      var Namespace = (function(_Node) {
         _inherits(Namespace2, _Node);
         function Namespace2() {
           _classCallCheck(this, Namespace2);
@@ -28254,7 +28254,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
         }]);
         return Namespace2;
-      }(_node2.default);
+      })(_node2.default);
       exports.default = Namespace;
       module.exports = exports["default"];
     }
@@ -28289,7 +28289,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var ClassName = function(_Namespace) {
+      var ClassName = (function(_Namespace) {
         _inherits(ClassName2, _Namespace);
         function ClassName2(opts) {
           _classCallCheck(this, ClassName2);
@@ -28301,7 +28301,7 @@
 <span class="cstat-no" title="statement not covered" >          return [this.spaces.before, this.ns, String("." + this.value), this.spaces.after].join("");</span>
         };
         return ClassName2;
-      }(_namespace2.default);
+      })(_namespace2.default);
       exports.default = ClassName;
       module.exports = exports["default"];
     }
@@ -28336,7 +28336,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Comment = function(_Node) {
+      var Comment = (function(_Node) {
         _inherits(Comment2, _Node);
 <span class="fstat-no" title="function not covered" >        function Comment2(opts) {</span>
 <span class="cstat-no" title="statement not covered" >          _classCallCheck(this, Comment2);</span>
@@ -28345,7 +28345,7 @@
 <span class="cstat-no" title="statement not covered" >          return _this;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         return Comment2;
-      }(_node2.default);
+      })(_node2.default);
       exports.default = Comment;
       module.exports = exports["default"];
     }
@@ -28380,7 +28380,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var ID = function(_Namespace) {
+      var ID = (function(_Namespace) {
         _inherits(ID2, _Namespace);
 <span class="fstat-no" title="function not covered" >        function ID2(opts) {</span>
 <span class="cstat-no" title="statement not covered" >          _classCallCheck(this, ID2);</span>
@@ -28392,7 +28392,7 @@
 <span class="cstat-no" title="statement not covered" >          return [this.spaces.before, this.ns, String("#" + this.value), this.spaces.after].join("");</span>
         };
         return ID2;
-      }(_namespace2.default);
+      })(_namespace2.default);
       exports.default = ID;
       module.exports = exports["default"];
     }
@@ -28427,7 +28427,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Tag = function(_Namespace) {
+      var Tag = (function(_Namespace) {
         _inherits(Tag2, _Namespace);
 <span class="fstat-no" title="function not covered" >        function Tag2(opts) {</span>
 <span class="cstat-no" title="statement not covered" >          _classCallCheck(this, Tag2);</span>
@@ -28436,7 +28436,7 @@
 <span class="cstat-no" title="statement not covered" >          return _this;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         return Tag2;
-      }(_namespace2.default);
+      })(_namespace2.default);
       exports.default = Tag;
       module.exports = exports["default"];
     }
@@ -28471,7 +28471,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var String2 = function(_Node) {
+      var String2 = (function(_Node) {
         _inherits(String3, _Node);
 <span class="fstat-no" title="function not covered" >        function String3(opts) {</span>
 <span class="cstat-no" title="statement not covered" >          _classCallCheck(this, String3);</span>
@@ -28480,7 +28480,7 @@
 <span class="cstat-no" title="statement not covered" >          return _this;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         return String3;
-      }(_node2.default);
+      })(_node2.default);
       exports.default = String2;
       module.exports = exports["default"];
     }
@@ -28515,7 +28515,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Pseudo = function(_Container) {
+      var Pseudo = (function(_Container) {
         _inherits(Pseudo2, _Container);
 <span class="fstat-no" title="function not covered" >        function Pseudo2(opts) {</span>
 <span class="cstat-no" title="statement not covered" >          _classCallCheck(this, Pseudo2);</span>
@@ -28528,7 +28528,7 @@
 <span class="cstat-no" title="statement not covered" >          return [this.spaces.before, String(this.value), params, this.spaces.after].join("");</span>
         };
         return Pseudo2;
-      }(_container2.default);
+      })(_container2.default);
       exports.default = Pseudo;
       module.exports = exports["default"];
     }
@@ -28563,7 +28563,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Attribute = function(_Namespace) {
+      var Attribute = (function(_Namespace) {
         _inherits(Attribute2, _Namespace);
         function Attribute2(opts) {
           _classCallCheck(this, Attribute2);
@@ -28589,7 +28589,7 @@
 <span class="cstat-no" title="statement not covered" >          return selector.concat(this.spaces.after).join("");</span>
         };
         return Attribute2;
-      }(_namespace2.default);
+      })(_namespace2.default);
       exports.default = Attribute;
       module.exports = exports["default"];
     }
@@ -28624,7 +28624,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Universal = function(_Namespace) {
+      var Universal = (function(_Namespace) {
         _inherits(Universal2, _Namespace);
 <span class="fstat-no" title="function not covered" >        function Universal2(opts) {</span>
 <span class="cstat-no" title="statement not covered" >          _classCallCheck(this, Universal2);</span>
@@ -28634,7 +28634,7 @@
 <span class="cstat-no" title="statement not covered" >          return _this;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         return Universal2;
-      }(_namespace2.default);
+      })(_namespace2.default);
       exports.default = Universal;
       module.exports = exports["default"];
     }
@@ -28669,7 +28669,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Combinator = function(_Node) {
+      var Combinator = (function(_Node) {
         _inherits(Combinator2, _Node);
         function Combinator2(opts) {
           _classCallCheck(this, Combinator2);
@@ -28678,7 +28678,7 @@
           return _this;
         }
         return Combinator2;
-      }(_node2.default);
+      })(_node2.default);
       exports.default = Combinator;
       module.exports = exports["default"];
     }
@@ -28713,7 +28713,7 @@
         subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
         if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) <span class="branch-0 cbranch-no" title="branch not covered" >: subClass.__proto__ = superClass;</span>
       }
-      var Nesting = function(_Node) {
+      var Nesting = (function(_Node) {
         _inherits(Nesting2, _Node);
 <span class="fstat-no" title="function not covered" >        function Nesting2(opts) {</span>
 <span class="cstat-no" title="statement not covered" >          _classCallCheck(this, Nesting2);</span>
@@ -28723,7 +28723,7 @@
 <span class="cstat-no" title="statement not covered" >          return _this;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         return Nesting2;
-      }(_node2.default);
+      })(_node2.default);
       exports.default = Nesting;
       module.exports = exports["default"];
     }
@@ -28944,7 +28944,7 @@
     "node_modules/postcss-selector-parser/dist/parser.js"(exports, module) {
       "use strict";
       exports.__esModule = true;
-      var _createClass = /* @__PURE__ */ function() {
+      var _createClass = /* @__PURE__ */ (function() {
         function defineProperties(target, props) {
           for (var i = 0; i &lt; props.length; i++) {
             var descriptor = props[i];
@@ -28959,7 +28959,7 @@
           if (staticProps) <span class="branch-0 cbranch-no" title="branch not covered" >defineProperties(Constructor, staticProps);</span>
           return Constructor;
         };
-      }();
+      })();
       var _flatten = require_flatten();
       var _flatten2 = _interopRequireDefault(_flatten);
       var _indexesOf = require_indexes_of();
@@ -29018,7 +29018,7 @@
 <span class="cstat-no" title="statement not covered" >          throw new TypeError("Cannot call a class as a function");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       }
-      var Parser = function() {
+      var Parser = (function() {
         function Parser2(input) {
           _classCallCheck(this, Parser2);
           this.input = input;
@@ -29530,7 +29530,7 @@
           }
         }]);
         return Parser2;
-      }();
+      })();
       exports.default = Parser;
       module.exports = exports["default"];
     }
@@ -29541,7 +29541,7 @@
     "node_modules/postcss-selector-parser/dist/processor.js"(exports, module) {
       "use strict";
       exports.__esModule = true;
-      var _createClass = /* @__PURE__ */ function() {
+      var _createClass = /* @__PURE__ */ (function() {
         function defineProperties(target, props) {
           for (var i = 0; i &lt; props.length; i++) {
             var descriptor = props[i];
@@ -29556,7 +29556,7 @@
           if (staticProps) <span class="branch-0 cbranch-no" title="branch not covered" >defineProperties(Constructor, staticProps);</span>
           return Constructor;
         };
-      }();
+      })();
       var _parser = require_parser2();
       var _parser2 = _interopRequireDefault(_parser);
       function _interopRequireDefault(obj) {
@@ -29567,7 +29567,7 @@
 <span class="cstat-no" title="statement not covered" >          throw new TypeError("Cannot call a class as a function");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       }
-      var Processor = function() {
+      var Processor = (function() {
         function Processor2(func) {
           _classCallCheck(this, Processor2);
           this.func = func <span class="branch-0 cbranch-no" title="branch not covered" >|| <span class="fstat-no" title="function not covered" >function noop2() {</span></span>
@@ -29594,7 +29594,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
         }]);
         return Processor2;
-      }();
+      })();
       exports.default = Processor;
       module.exports = exports["default"];
     }
@@ -34291,7 +34291,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-30T00:30:53.160Z
+                at 2025-08-31T00:35:39.578Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

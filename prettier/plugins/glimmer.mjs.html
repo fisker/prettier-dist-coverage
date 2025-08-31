@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.37% </span>
+                <span class="strong">79.36% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1074/1353</span>
+                <span class='fraction'>1073/1352</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.48% </span>
+                <span class="strong">61.28% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>356/579</span>
+                <span class='fraction'>353/576</span>
             </div>
         
             
@@ -9167,7 +9167,7 @@
 <span class="cline-any cline-yes">79x</span>
 <span class="cline-any cline-yes">1326x</span>
 <span class="cline-any cline-yes">1326x</span>
-<span class="cline-any cline-yes">1370x</span>
+<span class="cline-any cline-yes">1409x</span>
 <span class="cline-any cline-yes">1209x</span>
 <span class="cline-any cline-yes">1209x</span>
 <span class="cline-any cline-yes">1209x</span>
@@ -9223,7 +9223,7 @@
 <span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">38x</span>
-<span class="cline-any cline-yes">596x</span>
+<span class="cline-any cline-yes">473x</span>
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -9239,18 +9239,18 @@
 <span class="cline-any cline-yes">1560x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">596x</span>
+<span class="cline-any cline-yes">473x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-yes">596x</span>
+<span class="cline-any cline-yes">473x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
-<span class="cline-any cline-yes">596x</span>
+<span class="cline-any cline-yes">473x</span>
 <span class="cline-any cline-yes">68x</span>
 <span class="cline-any cline-yes">68x</span>
-<span class="cline-any cline-yes">596x</span>
+<span class="cline-any cline-yes">473x</span>
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">92x</span>
@@ -13622,7 +13622,7 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -17951,7 +17951,7 @@ var LOGGER = console;
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // node_modules/@handlebars/parser/dist/esm/parser.js
-var parser = function() {
+var parser = (function() {
   var o = function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v)
       ;
@@ -18299,7 +18299,7 @@ var parser = function() {
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >      return true;</span></span>
     }
   };
-  var lexer = /* @__PURE__ */ function() {
+  var lexer = /* @__PURE__ */ (function() {
     var lexer2 = {
       EOF: 1,
       parseError: <span class="fstat-no" title="function not covered" >function parseError(str, hash) {</span>
@@ -18771,7 +18771,7 @@ var parser = function() {
       conditions: { "mu": { "rules": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 46, 47], "inclusive": false }, "emu": { "rules": [2], "inclusive": false }, "com": { "rules": [6], "inclusive": false }, "raw": { "rules": [3, 4, 5], "inclusive": false }, "escl": { "rules": [45], "inclusive": false }, "INITIAL": { "rules": [0, 1, 47], "inclusive": true } }
     };
     return lexer2;
-  }();
+  })();
   parser2.lexer = lexer;
   function Parser2() {
     this.yy = {};
@@ -18779,7 +18779,7 @@ var parser = function() {
   Parser2.prototype = parser2;
   parser2.Parser = Parser2;
   return new Parser2();
-}();
+})();
 var parser_default = parser;
 &nbsp;
 // node_modules/@handlebars/parser/dist/esm/exception.js
@@ -21478,7 +21478,7 @@ var CHARCODE = /^#([0-9]+)$/;
 var NAMED = /^([A-Za-z0-9]+)$/;
 var EntityParser = (
   /** @class */
-  function() {
+  (function() {
     function EntityParser2(named) {
       this.named = named;
     }
@@ -21500,7 +21500,7 @@ var EntityParser = (
 <span class="cstat-no" title="statement not covered" >      }</span>
     };
     return EntityParser2;
-  }()
+  })()
 );
 var WSP = /[\t\n\f ]/;
 var ALPHA = /[A-Za-z]/;
@@ -21516,7 +21516,7 @@ function preprocessInput(input) {
 }
 var EventedTokenizer = (
   /** @class */
-  function() {
+  (function() {
     function EventedTokenizer2(delegate, entityParser, mode) {
       if (mode === void 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        mode = "precompile";</span>
@@ -22356,11 +22356,11 @@ var EventedTokenizer = (
       return tag === "title" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; this.input.substring(this.index, this.index + 8) !== "&lt;/title&gt;" </span>|| tag === "style" &amp;&amp; this.input.substring(this.index, this.index + 8) !== "&lt;/style&gt;" || tag === "script" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; this.input.substring(this.index, this.index + 9) !== "&lt;\/script&gt;";</span>
     };
     return EventedTokenizer2;
-  }()
+  })()
 );
 var Tokenizer = (
   /** @class */
-  function() {
+  (function() {
 <span class="fstat-no" title="function not covered" >    function Tokenizer2(entityParser, options) {</span>
 <span class="cstat-no" title="statement not covered" >      if (options === void 0) {</span>
 <span class="cstat-no" title="statement not covered" >        options = {};</span>
@@ -22552,7 +22552,7 @@ var Tokenizer = (
 <span class="cstat-no" title="statement not covered" >      this.current().syntaxError = message;</span>
     };
     return Tokenizer2;
-  }()
+  })()
 );
 &nbsp;
 // node_modules/@glimmer/wire-format/dist/dev/index.js
@@ -22672,7 +22672,7 @@ var When = class {
     this._map.set(pattern, out);
   }
   match(kind) {
-    const pattern = function(kind2) {
+    const pattern = (function(kind2) {
       switch (kind2) {
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "Broken":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "InternalsSynthetic":</span>
@@ -22681,7 +22681,7 @@ var When = class {
         default:
           return kind2;
       }
-    }(kind), out = [], exact = this._map.get(pattern), fallback = this._map.get("MATCH_ANY");
+    })(kind), out = [], exact = this._map.get(pattern), fallback = this._map.get("MATCH_ANY");
     return exact &amp;&amp; out.push(exact), fallback &amp;&amp; out.push(fallback), out;
   }
   constructor() {
@@ -22703,7 +22703,7 @@ var Matcher = class {
     return isPresentArray(nesteds), new WhenList(nesteds).first(right);
   }
   when(left, right, callback) {
-    return this._whens.get(left, () =&gt; new When()).add(right, callback), this;
+    return this._whens.get(left, (() =&gt; new When())).add(right, callback), this;
   }
   constructor() {
     this._whens = new When();
@@ -23034,19 +23034,19 @@ var InvisibleSpan = class {
 <span class="cstat-no" title="statement not covered" >    return BROKEN_LOCATION;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 };
-var span = match((m) =&gt; m.when("HbsPosition", "HbsPosition", (left, right) =&gt; new HbsSpan(left.source, {
+var span = match(((m) =&gt; m.when("HbsPosition", "HbsPosition", ((left, right) =&gt; new HbsSpan(left.source, {
   start: left,
   end: right
-}).wrap()).when("CharPosition", "CharPosition", (left, right) =&gt; new CharPositionSpan(left.source, {
+}).wrap())).when("CharPosition", "CharPosition", ((left, right) =&gt; new CharPositionSpan(left.source, {
   start: left,
   end: right
-}).wrap()).when("CharPosition", "HbsPosition", (left, right) =&gt; {
+}).wrap())).when("CharPosition", "HbsPosition", ((left, right) =&gt; {
   const rightCharPos = right.toCharPos();
   return null === rightCharPos <span class="branch-0 cbranch-no" title="branch not covered" >? new InvisibleSpan("Broken", BROKEN_LOCATION).wrap() </span>: span(left, rightCharPos);
-}).when("HbsPosition", "CharPosition", (left, right) =&gt; {
+})).when("HbsPosition", "CharPosition", ((left, right) =&gt; {
 <span class="cstat-no" title="statement not covered" >  const leftCharPos = left.toCharPos();</span>
 <span class="cstat-no" title="statement not covered" >  return null === leftCharPos ? new InvisibleSpan("Broken", BROKEN_LOCATION).wrap() : span(leftCharPos, right);</span>
-}).when("IS_INVISIBLE", "MATCH_ANY", (left) =&gt; new InvisibleSpan(left.kind, BROKEN_LOCATION).wrap()).when("MATCH_ANY", "IS_INVISIBLE", (_, right) =&gt; new InvisibleSpan(right.kind, BROKEN_LOCATION).wrap()));
+})).when("IS_INVISIBLE", "MATCH_ANY", ((left) =&gt; new InvisibleSpan(left.kind, BROKEN_LOCATION).wrap())).when("MATCH_ANY", "IS_INVISIBLE", ((_, right) =&gt; new InvisibleSpan(right.kind, BROKEN_LOCATION).wrap()))));
 var BROKEN = "BROKEN";
 var SourceOffset = class _SourceOffset {
   /**
@@ -23234,13 +23234,13 @@ var InvisiblePosition = class {
 <span class="cstat-no" title="statement not covered" >    return null;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 };
-var eql = match((m) =&gt; m.when("HbsPosition", "HbsPosition", ({ hbsPos: left }, { hbsPos: right }) =&gt; left.column === right.column &amp;&amp; left.line === right.line).when("CharPosition", "CharPosition", ({ charPos: left }, { charPos: right }) =&gt; left === right).when("CharPosition", "HbsPosition", ({ offset: left }, right) =&gt; {
+var eql = match(((m) =&gt; m.when("HbsPosition", "HbsPosition", (({ hbsPos: left }, { hbsPos: right }) =&gt; left.column === right.column &amp;&amp; left.line === right.line)).when("CharPosition", "CharPosition", (({ charPos: left }, { charPos: right }) =&gt; left === right)).when("CharPosition", "HbsPosition", (({ offset: left }, right) =&gt; {
 <span class="cstat-no" title="statement not covered" >  var _a;</span>
 <span class="cstat-no" title="statement not covered" >  return left === ((_a = right.toCharPos()) == null ? void 0 : _a.offset);</span>
-}).when("HbsPosition", "CharPosition", (left, { offset: right }) =&gt; {
+})).when("HbsPosition", "CharPosition", ((left, { offset: right }) =&gt; {
 <span class="cstat-no" title="statement not covered" >  var _a;</span>
 <span class="cstat-no" title="statement not covered" >  return ((_a = left.toCharPos()) == null ? void 0 : _a.offset) === right;</span>
-}).when("MATCH_ANY", "MATCH_ANY", () =&gt; false));
+})).when("MATCH_ANY", "MATCH_ANY", (() =&gt; false))));
 var Source = class _Source {
   static <span class="fstat-no" title="function not covered" >from(source, options = {}) {</span>
 <span class="cstat-no" title="statement not covered" >    var _a;</span>
@@ -23338,14 +23338,14 @@ var visitorKeys = {
   Hash: ["pairs"],
   HashPair: ["value"]
 };
-var TraversalError = function() {
+var TraversalError = (function() {
 <span class="fstat-no" title="function not covered" >  function TraversalError2(message, node, parent, key) {</span>
 <span class="cstat-no" title="statement not covered" >    let error = Error.call(this, message);</span>
 <span class="cstat-no" title="statement not covered" >    this.key = key, this.message = message, this.node = node, this.parent = parent, error.stack &amp;&amp; (this.stack = error.stack);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   return TraversalError2.prototype = Object.create(Error.prototype), // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   TraversalError2.prototype.constructor = TraversalError2, TraversalError2;
-}();
+})();
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function cannotRemoveNode(node, parent, key) {</span></span>
 <span class="cstat-no" title="statement not covered" >  return new TraversalError("Cannot remove a node unless it is part of an array", node, parent, key);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -23389,12 +23389,12 @@ function getExitFunction(handler) {
   return "function" == typeof handler ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: handler.exit;</span>
 }
 function visitNode(visitor, path) {
-  let enter, exit, result, { node, parent, parentKey } = path, handler = function(visitor2, nodeType) {
+  let enter, exit, result, { node, parent, parentKey } = path, handler = (function(visitor2, nodeType) {
     if (visitor2.Program <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; ("Template" === nodeType &amp;&amp; !visitor2.Template || "Block" === nodeType &amp;&amp; !visitor2.Block))</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      return visitor2.Program;</span>
     let handler2 = visitor2[nodeType];
     return void 0 !== handler2 <span class="branch-0 cbranch-no" title="branch not covered" >? handler2 </span>: visitor2.All;
-  }(visitor, node.type);
+  })(visitor, node.type);
   if (void 0 !== handler &amp;&amp; (enter = getEnterFunction(handler), exit = getExitFunction(handler)), void 0 !== enter &amp;&amp; (result = enter(node, path)), null != result) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    if (JSON.stringify(node) !== JSON.stringify(result)) return Array.isArray(result) ? (visitArray(visitor, result, parent, parentKey), result) : visitNode(visitor, new WalkerPath(result, parent, parentKey)) || result;</span>
 <span class="cstat-no" title="statement not covered" >    result = void 0;</span>
@@ -23411,17 +23411,17 @@ function visitNode(visitor, path) {
 <span class="cstat-no" title="statement not covered" >  node[key] = value;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 function visitKey(visitor, handler, path, key) {
-  let keyEnter, keyExit, { node } = path, value = function(node2, key2) {
+  let keyEnter, keyExit, { node } = path, value = (function(node2, key2) {
     return node2[key2];
-  }(node, key);
+  })(node, key);
   if (value) {
     if (void 0 !== handler) {
-      let keyHandler = function(handler2, key2) {
+      let keyHandler = (function(handler2, key2) {
         let keyVisitor = "function" != typeof handler2 <span class="branch-0 cbranch-no" title="branch not covered" >? handler2.keys </span>: void 0;
         if (void 0 === keyVisitor) return;
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        let keyHandler2 = keyVisitor[key2];</span></span>
         return void 0 !== keyHandler2 ? keyHandler2 <span class="branch-0 cbranch-no" title="branch not covered" >: keyVisitor.All;</span>
-      }(handler, key);
+      })(handler, key);
       void 0 !== keyHandler <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (keyEnter = getEnterFunction(keyHandler), keyExit = getExitFunction(keyHandler));</span>
     }
     if (void 0 !== keyEnter <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; void 0 !== keyEnter(node, key))</span> <span class="branch-0 cbranch-no" title="branch not covered" >throw cannotReplaceOrRemoveInKeyHandlerYet(node, key);</span>
@@ -23431,13 +23431,13 @@ function visitKey(visitor, handler, path, key) {
       void 0 !== result <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; // TODO: dynamically check the results by having a table of</span>
 <span class="cstat-no" title="statement not covered" >      // expected node types in value space, not just type space</span>
 <span class="cstat-no" title="statement not covered" >      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any</span>
-<span class="cstat-no" title="statement not covered" >      function(node2, key2, value2, result2) {</span>
+<span class="cstat-no" title="statement not covered" >      (function(node2, key2, value2, result2) {</span>
 <span class="cstat-no" title="statement not covered" >        if (null === result2) throw cannotRemoveNode(value2, node2, key2);</span>
 <span class="cstat-no" title="statement not covered" >        if (Array.isArray(result2)) {</span>
 <span class="cstat-no" title="statement not covered" >          if (1 !== result2.length) throw 0 === result2.length ? cannotRemoveNode(value2, node2, key2) : cannotReplaceNode(value2, node2, key2);</span>
 <span class="cstat-no" title="statement not covered" >          set(node2, key2, result2[0]);</span>
 <span class="cstat-no" title="statement not covered" >        } else set(node2, key2, result2);</span>
-      }(node, key, value, result);
+      })(node, key, value, result);
     }
     if (void 0 !== keyExit <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; void 0 !== keyExit(node, key))</span> <span class="branch-0 cbranch-no" title="branch not covered" >throw cannotReplaceOrRemoveInKeyHandlerYet(node, key);</span>
   }
@@ -23497,7 +23497,7 @@ var _SOURCE;
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  let { head, tail } = function(original, loc2) {</span>
+<span class="cstat-no" title="statement not covered" >  let { head, tail } = (function(original, loc2) {</span>
 <span class="cstat-no" title="statement not covered" >    let [head2, ...tail2] = original.split("."), headNode = b.head({</span>
 <span class="cstat-no" title="statement not covered" >      original: head2,</span>
 <span class="cstat-no" title="statement not covered" >      loc: buildLoc(loc2 || null)</span>
@@ -23507,7 +23507,7 @@ var _SOURCE;
 <span class="cstat-no" title="statement not covered" >      tail: tail2,</span>
 <span class="cstat-no" title="statement not covered" >      loc: buildLoc(loc2 || null)</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >  }(path, span2);</span>
+<span class="cstat-no" title="statement not covered" >  })(path, span2);</span>
 <span class="cstat-no" title="statement not covered" >  return b.path({</span>
 <span class="cstat-no" title="statement not covered" >    head,</span>
 <span class="cstat-no" title="statement not covered" >    tail,</span>
@@ -23528,10 +23528,10 @@ var _SOURCE;
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function buildBlockParams(params) {</span></span>
-<span class="cstat-no" title="statement not covered" >  return params.map((p) =&gt; "string" == typeof p ? b.var({</span>
+<span class="cstat-no" title="statement not covered" >  return params.map(((p) =&gt; "string" == typeof p ? b.var({</span>
 <span class="cstat-no" title="statement not covered" >    name: p,</span>
 <span class="cstat-no" title="statement not covered" >    loc: SourceSpan.synthetic(p)</span>
-<span class="cstat-no" title="statement not covered" >  }) : p);</span>
+<span class="cstat-no" title="statement not covered" >  }) : p));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function buildBlockItself(body = [], params = [], chained = false, loc) {</span></span>
 <span class="cstat-no" title="statement not covered" >  return b.blockItself({</span>
@@ -23615,7 +23615,7 @@ var publicBuilder = {
   element: <span class="fstat-no" title="function not covered" >function(tag, options = {}) {</span>
 <span class="cstat-no" title="statement not covered" >    let path, selfClosing, { attrs, blockParams, modifiers, comments, children, openTag, closeTag: _closeTag, loc } = options;</span>
 <span class="cstat-no" title="statement not covered" >    "string" == typeof tag ? tag.endsWith("/") ? (path = buildPath(tag.slice(0, -1)), selfClosing = true) : path = buildPath(tag) : "type" in tag ? (tag.type, tag.type, path = tag) : "path" in tag ? (tag.path.type, tag.path.type, path = tag.path, selfClosing = tag.selfClosing) : (path = buildPath(tag.name), selfClosing = tag.selfClosing);</span>
-<span class="cstat-no" title="statement not covered" >    let params = blockParams == null ? void 0 : blockParams.map((param) =&gt; "string" == typeof param ? buildVar(param) : param), closeTag = null;</span>
+<span class="cstat-no" title="statement not covered" >    let params = blockParams == null ? void 0 : blockParams.map(((param) =&gt; "string" == typeof param ? buildVar(param) : param)), closeTag = null;</span>
 <span class="cstat-no" title="statement not covered" >    return _closeTag ? closeTag = buildLoc(_closeTag) : void 0 === _closeTag &amp;&amp; (closeTag = selfClosing || isVoidTag2(path.original) ? null : buildLoc(null)), b.element({</span>
 <span class="cstat-no" title="statement not covered" >      path,</span>
 <span class="cstat-no" title="statement not covered" >      selfClosing: selfClosing || false,</span>
@@ -23746,13 +23746,13 @@ class {
       body,
       params: params1,
       get blockParams() {
-        return this.params.map((p) =&gt; p.name);
+        return this.params.map(((p) =&gt; p.name));
       },
 <span class="fstat-no" title="function not covered" >      set blockParams(params) {</span>
-<span class="cstat-no" title="statement not covered" >        this.params = params.map((name1) =&gt; b.var({</span>
+<span class="cstat-no" title="statement not covered" >        this.params = params.map(((name1) =&gt; b.var({</span>
 <span class="cstat-no" title="statement not covered" >          name: name1,</span>
 <span class="cstat-no" title="statement not covered" >          loc: SourceSpan.synthetic(name1)</span>
-<span class="cstat-no" title="statement not covered" >        }));</span>
+<span class="cstat-no" title="statement not covered" >        })));</span>
       },
       chained,
       loc
@@ -23767,7 +23767,7 @@ class {
     };
   }
   mustache({ path, params: params1, hash, trusting, loc, strip = DEFAULT_STRIP }) {
-    return function({ path: path2, params, hash: hash2, trusting: trusting2, strip: strip2, loc: loc2 }) {
+    return (function({ path: path2, params, hash: hash2, trusting: trusting2, strip: strip2, loc: loc2 }) {
       const node = {
         type: "MustacheStatement",
         path: path2,
@@ -23786,7 +23786,7 @@ class {
 <span class="cstat-no" title="statement not covered" >          this.trusting = !value1;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       }), node;
-    }({
+    })({
       path,
       params: params1,
       hash,
@@ -23850,13 +23850,13 @@ class {
 <span class="cstat-no" title="statement not covered" >        this.path.original = name;</span>
       },
       get blockParams() {
-        return this.params.map((p) =&gt; p.name);
+        return this.params.map(((p) =&gt; p.name));
       },
 <span class="fstat-no" title="function not covered" >      set blockParams(params) {</span>
-<span class="cstat-no" title="statement not covered" >        this.params = params.map((name1) =&gt; b.var({</span>
+<span class="cstat-no" title="statement not covered" >        this.params = params.map(((name1) =&gt; b.var({</span>
 <span class="cstat-no" title="statement not covered" >          name: name1,</span>
 <span class="cstat-no" title="statement not covered" >          loc: SourceSpan.synthetic(name1)</span>
-<span class="cstat-no" title="statement not covered" >        }));</span>
+<span class="cstat-no" title="statement not covered" >        })));</span>
       },
       get selfClosing() {
         return _selfClosing;
@@ -23900,7 +23900,7 @@ class {
     };
   }
   path({ head, tail, loc }) {
-    return function({ head: head2, tail: tail2, loc: loc2 }) {
+    return (function({ head: head2, tail: tail2, loc: loc2 }) {
       const node = {
         type: "PathExpression",
         head: head2,
@@ -23940,7 +23940,7 @@ class {
 <span class="cstat-no" title="statement not covered" >          return "AtHead" === this.head.type;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       }), node;
-    }({
+    })({
       head,
       tail,
       loc
@@ -24022,7 +24022,7 @@ class {
     };
   }
   literal({ type, value: value1, loc }) {
-    return function({ type: type2, value: value12, loc: loc2 }) {
+    return (function({ type: type2, value: value12, loc: loc2 }) {
       const node = {
         type: type2,
         value: value12,
@@ -24037,7 +24037,7 @@ class {
 <span class="cstat-no" title="statement not covered" >          this.value = value13;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
       }), node;
-    }({
+    })({
       type,
       value: value1,
       loc
@@ -24241,9 +24241,9 @@ var HandlebarsNodeVisitors = class extends Parser {
     this.currentAttr.currentPart = null;
   }
   ContentStatement(content) {
-    !function(tokenizer, content2) {
+    !(function(tokenizer, content2) {
       let line2 = content2.loc.start.line, column = content2.loc.start.column;
-      const offsets = function(original, value) {
+      const offsets = (function(original, value) {
         if ("" === value)
 <span class="branch-0 cbranch-no" title="branch not covered" >          return {</span>
 <span class="cstat-no" title="statement not covered" >            lines: original.split("\n").length - 1,</span>
@@ -24254,9 +24254,9 @@ var HandlebarsNodeVisitors = class extends Parser {
           lines: lineCount,
           columns: lines[lineCount].length
         };
-      }(content2.original, content2.value);
+      })(content2.original, content2.value);
       line2 += offsets.lines, offsets.lines <span class="branch-0 cbranch-no" title="branch not covered" >? column = offsets.columns </span>: column += offsets.columns, tokenizer.line = line2, tokenizer.column = column;
-    }(this.tokenizer, content), this.tokenizer.tokenizePart(content.value), this.tokenizer.flushData();
+    })(this.tokenizer, content), this.tokenizer.tokenizePart(content.value), this.tokenizer.flushData();
   }
   CommentStatement(rawComment) {
     const { tokenizer } = this;
@@ -24356,11 +24356,11 @@ var HandlebarsNodeVisitors = class extends Parser {
     });
   }
   Hash(hash) {
-    const pairs = hash.pairs.map((pair) =&gt; b.pair({
+    const pairs = hash.pairs.map(((pair) =&gt; b.pair({
       key: pair.key,
       value: this.acceptNode(pair.value),
       loc: this.source.spanFor(pair.loc)
-    }));
+    })));
     return b.hash({
       pairs,
       loc: this.source.spanFor(hash.loc)
@@ -24430,7 +24430,7 @@ function acceptCallNodes(compiler, node) {
 <span class="cstat-no" title="statement not covered" >      throw value = "BooleanLiteral" === node.path.type ? node.path.original.toString() : "StringLiteral" === node.path.type ? `"${node.path.original}"` : "NullLiteral" === node.path.type ? "null" : "NumberLiteral" === node.path.type ? node.path.value.toString() : "undefined", generateSyntaxError(`${node.path.type} "${"StringLiteral" === node.path.type ? node.path.original : value}" cannot be called as a sub-expression, replace (${value}) with ${value}`, compiler.source.spanFor(node.path.loc));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
-  const params = node.params.map((e) =&gt; compiler.acceptNode(e)), end = isPresentArray(params) ? getLast(params).loc : path.loc;
+  const params = node.params.map(((e) =&gt; compiler.acceptNode(e))), end = isPresentArray(params) ? getLast(params).loc : path.loc;
   return {
     path,
     params,
@@ -24443,9 +24443,9 @@ function acceptCallNodes(compiler, node) {
 function addElementModifier(element, mustache) {
   const { path, params, hash, loc } = mustache;
   if (isHBSLiteral(path)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    const modifier2 = `{{${function(literal2) {</span>
+<span class="cstat-no" title="statement not covered" >    const modifier2 = `{{${(function(literal2) {</span>
 <span class="cstat-no" title="statement not covered" >      return "UndefinedLiteral" === literal2.type ? "undefined" : JSON.stringify(literal2.value);</span>
-<span class="cstat-no" title="statement not covered" >    }(path)}}}`;</span>
+<span class="cstat-no" title="statement not covered" >    })(path)}}}`;</span>
 <span class="cstat-no" title="statement not covered" >    throw generateSyntaxError(`In &lt;${element.name} ... ${modifier2} ..., ${modifier2} is not a valid modifier`, mustache.loc);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   const modifier = b.elementModifier({
@@ -24985,7 +24985,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-30T00:30:55.623Z
+                at 2025-08-31T00:35:42.005Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
