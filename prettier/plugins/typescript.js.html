@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.72% </span>
+                <span class="strong">42.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13879/32481</span>
+                <span class='fraction'>13879/32492</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.72% </span>
+                <span class="strong">42.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13879/32481</span>
+                <span class='fraction'>13879/32492</span>
             </div>
         
             
@@ -32543,7 +32543,18 @@
 <a name='L32478'></a><a href='#L32478'>32478</a>
 <a name='L32479'></a><a href='#L32479'>32479</a>
 <a name='L32480'></a><a href='#L32480'>32480</a>
-<a name='L32481'></a><a href='#L32481'>32481</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L32481'></a><a href='#L32481'>32481</a>
+<a name='L32482'></a><a href='#L32482'>32482</a>
+<a name='L32483'></a><a href='#L32483'>32483</a>
+<a name='L32484'></a><a href='#L32484'>32484</a>
+<a name='L32485'></a><a href='#L32485'>32485</a>
+<a name='L32486'></a><a href='#L32486'>32486</a>
+<a name='L32487'></a><a href='#L32487'>32487</a>
+<a name='L32488'></a><a href='#L32488'>32488</a>
+<a name='L32489'></a><a href='#L32489'>32489</a>
+<a name='L32490'></a><a href='#L32490'>32490</a>
+<a name='L32491'></a><a href='#L32491'>32491</a>
+<a name='L32492'></a><a href='#L32492'>32492</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -62259,6 +62270,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">47x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -62768,6 +62785,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -94732,12 +94754,18 @@
 <span class="cstat-no" title="statement not covered" >          return this.fixExports(node, result);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case SyntaxKind3.EnumMember: {</span>
-<span class="cstat-no" title="statement not covered" >          return this.createNode(node, {</span>
+<span class="cstat-no" title="statement not covered" >          const computed = node.name.kind === SyntaxKind.ComputedPropertyName;</span>
+<span class="cstat-no" title="statement not covered" >          if (computed) {</span>
+<span class="cstat-no" title="statement not covered" >            __privateMethod(this, _Converter_instances, throwUnlessAllowInvalidAST_fn).call(this, node.name, "Computed property names are not allowed in enums.");</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          if (node.name.kind === SyntaxKind3.NumericLiteral || node.name.kind === SyntaxKind3.BigIntLiteral) {</span>
+<span class="cstat-no" title="statement not covered" >            __privateMethod(this, _Converter_instances, throwUnlessAllowInvalidAST_fn).call(this, node.name, "An enum member cannot have a numeric name.");</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          return this.createNode(node, __privateMethod(this, _Converter_instances, withDeprecatedGetter_fn).call(this, {</span>
 <span class="cstat-no" title="statement not covered" >            type: AST_NODE_TYPES2.TSEnumMember,</span>
-<span class="cstat-no" title="statement not covered" >            computed: node.name.kind === SyntaxKind.ComputedPropertyName,</span>
 <span class="cstat-no" title="statement not covered" >            id: this.convertChild(node.name),</span>
 <span class="cstat-no" title="statement not covered" >            initializer: node.initializer &amp;&amp; this.convertChild(node.initializer)</span>
-<span class="cstat-no" title="statement not covered" >          });</span>
+<span class="cstat-no" title="statement not covered" >          }, "computed", void 0, computed));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case SyntaxKind3.ModuleDeclaration: {</span>
 <span class="cstat-no" title="statement not covered" >          let isDeclare = (0, hasModifier)(SyntaxKind3.DeclareKeyword, node);</span>
@@ -95253,7 +95281,12 @@
 <span class="cstat-no" title="statement not covered" >      configurable: true,</span>
 <span class="cstat-no" title="statement not covered" >      get: this.options.suppressDeprecatedPropertyWarnings ? () =&gt; value : () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (!warned) {</span>
-<span class="cstat-no" title="statement not covered" >          (void 0)(`The '${deprecatedKey}' property is deprecated on ${node.type} nodes. Use ${preferredKey} instead. See https://typescript-eslint.io/troubleshooting/faqs/general#the-key-property-is-deprecated-on-type-nodes-use-key-instead-warnings.`, "DeprecationWarning");</span>
+<span class="cstat-no" title="statement not covered" >          let message = `The '${deprecatedKey}' property is deprecated on ${node.type} nodes.`;</span>
+<span class="cstat-no" title="statement not covered" >          if (preferredKey) {</span>
+<span class="cstat-no" title="statement not covered" >            message += ` Use ${preferredKey} instead.`;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          message += " See https://typescript-eslint.io/troubleshooting/faqs/general#the-key-property-is-deprecated-on-type-nodes-use-key-instead-warnings.";</span>
+<span class="cstat-no" title="statement not covered" >          (void 0)(message, "DeprecationWarning");</span>
 <span class="cstat-no" title="statement not covered" >          warned = true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return value;</span>
@@ -97510,7 +97543,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-05T00:31:49.507Z
+                at 2025-09-06T00:30:29.687Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
