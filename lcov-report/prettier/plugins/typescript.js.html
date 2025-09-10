@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.71% </span>
+                <span class="strong">42.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13879/32492</span>
+                <span class='fraction'>13881/32501</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.34% </span>
+                <span class="strong">53.32% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1259/2360</span>
+                <span class='fraction'>1259/2361</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.71% </span>
+                <span class="strong">42.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13879/32492</span>
+                <span class='fraction'>13881/32501</span>
             </div>
         
             
@@ -32554,7 +32554,16 @@
 <a name='L32489'></a><a href='#L32489'>32489</a>
 <a name='L32490'></a><a href='#L32490'>32490</a>
 <a name='L32491'></a><a href='#L32491'>32491</a>
-<a name='L32492'></a><a href='#L32492'>32492</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L32492'></a><a href='#L32492'>32492</a>
+<a name='L32493'></a><a href='#L32493'>32493</a>
+<a name='L32494'></a><a href='#L32494'>32494</a>
+<a name='L32495'></a><a href='#L32495'>32495</a>
+<a name='L32496'></a><a href='#L32496'>32496</a>
+<a name='L32497'></a><a href='#L32497'>32497</a>
+<a name='L32498'></a><a href='#L32498'>32498</a>
+<a name='L32499'></a><a href='#L32499'>32499</a>
+<a name='L32500'></a><a href='#L32500'>32500</a>
+<a name='L32501'></a><a href='#L32501'>32501</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -60495,6 +60504,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -60505,6 +60516,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -62741,6 +62757,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -92984,9 +93002,13 @@
      */
     convertTypeArgumentsToTypeParameterInstantiation(typeArguments, node) {
       const greaterThanToken = (0, findNextToken)(typeArguments, this.ast, this.ast);
+      const range = [typeArguments.pos - 1, greaterThanToken.end];
+      if (typeArguments.length === 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        __privateMethod(this, _Converter_instances, throwError_fn).call(this, range, "Type argument list cannot be empty.");</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
       return this.createNode(node, {
         type: AST_NODE_TYPES2.TSTypeParameterInstantiation,
-        range: [typeArguments.pos - 1, greaterThanToken.end],
+        range,
         params: typeArguments.map((typeArgument) =&gt; this.convertChild(typeArgument))
       });
     }
@@ -93001,6 +93023,9 @@
 <span class="cstat-no" title="statement not covered" >        typeParameters.pos - 1,</span>
 <span class="cstat-no" title="statement not covered" >        greaterThanToken.end</span>
 <span class="cstat-no" title="statement not covered" >      ];</span>
+<span class="cstat-no" title="statement not covered" >      if (typeParameters.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >        __privateMethod(this, _Converter_instances, throwError_fn).call(this, range, "Type parameter list cannot be empty.");</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
 <span class="cstat-no" title="statement not covered" >        type: AST_NODE_TYPES2.TSTypeParameterDeclaration,</span>
 <span class="cstat-no" title="statement not covered" >        loc: (0, getLocFor)(range, this.ast),</span>
@@ -95234,7 +95259,9 @@
   throwError_fn = <span class="fstat-no" title="function not covered" >function(node, message) {</span>
 <span class="cstat-no" title="statement not covered" >    let start;</span>
 <span class="cstat-no" title="statement not covered" >    let end;</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof node === "number") {</span>
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(node)) {</span>
+<span class="cstat-no" title="statement not covered" >      [start, end] = node;</span>
+<span class="cstat-no" title="statement not covered" >    } else if (typeof node === "number") {</span>
 <span class="cstat-no" title="statement not covered" >      start = end = node;</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      start = node.getStart(this.ast);</span>
@@ -97543,7 +97570,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-09T00:32:19.315Z
+                at 2025-09-10T00:31:16.368Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
