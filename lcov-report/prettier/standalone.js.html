@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.44% </span>
+                <span class="strong">57.48% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2999/5221</span>
+                <span class='fraction'>3004/5226</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.19% </span>
+                <span class="strong">71.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>618/856</span>
+                <span class='fraction'>619/860</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.16% </span>
+                <span class="strong">48.3% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>184/382</span>
+                <span class='fraction'>185/383</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.44% </span>
+                <span class="strong">57.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2999/5221</span>
+                <span class='fraction'>3004/5226</span>
             </div>
         
             
@@ -5283,7 +5283,12 @@
 <a name='L5218'></a><a href='#L5218'>5218</a>
 <a name='L5219'></a><a href='#L5219'>5219</a>
 <a name='L5220'></a><a href='#L5220'>5220</a>
-<a name='L5221'></a><a href='#L5221'>5221</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5221'></a><a href='#L5221'>5221</a>
+<a name='L5222'></a><a href='#L5222'>5222</a>
+<a name='L5223'></a><a href='#L5223'>5223</a>
+<a name='L5224'></a><a href='#L5224'>5224</a>
+<a name='L5225'></a><a href='#L5225'>5225</a>
+<a name='L5226'></a><a href='#L5226'>5226</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8277,6 +8282,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -10723,7 +10733,7 @@
 <span class="cstat-no" title="statement not covered" >      return this.diffWithOptionsObj(oldTokens, newTokens, options, callback);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    diffWithOptionsObj(oldTokens, newTokens, options, callback) {</span>
-<span class="cstat-no" title="statement not covered" >      var _a2;</span>
+<span class="cstat-no" title="statement not covered" >      var _a;</span>
 <span class="cstat-no" title="statement not covered" >      const done = (value) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        value = this.postProcess(value, options);</span>
 <span class="cstat-no" title="statement not covered" >        if (callback) {</span>
@@ -10741,7 +10751,7 @@
 <span class="cstat-no" title="statement not covered" >      if (options.maxEditLength != null) {</span>
 <span class="cstat-no" title="statement not covered" >        maxEditLength = Math.min(maxEditLength, options.maxEditLength);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const maxExecutionTime = (_a2 = options.timeout) !== null &amp;&amp; _a2 !== void 0 ? _a2 : Infinity;</span>
+<span class="cstat-no" title="statement not covered" >      const maxExecutionTime = (_a = options.timeout) !== null &amp;&amp; _a !== void 0 ? _a : Infinity;</span>
 <span class="cstat-no" title="statement not covered" >      const abortAfterTimestamp = Date.now() + maxExecutionTime;</span>
 <span class="cstat-no" title="statement not covered" >      const bestPath = [{ oldPos: -1, lastComponent: void 0 }];</span>
 <span class="cstat-no" title="statement not covered" >      let newPos = this.extractCommon(bestPath[0], newTokens, oldTokens, 0, options);</span>
@@ -11587,7 +11597,7 @@
 &nbsp;
   // src/document/debug.js
 <span class="fstat-no" title="function not covered" >  function flattenDoc(doc) {</span>
-<span class="cstat-no" title="statement not covered" >    var _a2;</span>
+<span class="cstat-no" title="statement not covered" >    var _a;</span>
 <span class="cstat-no" title="statement not covered" >    if (!doc) {</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -11616,7 +11626,7 @@
 <span class="cstat-no" title="statement not covered" >      return {</span>
 <span class="cstat-no" title="statement not covered" >        ...doc,</span>
 <span class="cstat-no" title="statement not covered" >        contents: flattenDoc(doc.contents),</span>
-<span class="cstat-no" title="statement not covered" >        expandedStates: (_a2 = doc.expandedStates) == null ? void 0 : _a2.map(flattenDoc)</span>
+<span class="cstat-no" title="statement not covered" >        expandedStates: (_a = doc.expandedStates) == null ? void 0 : _a.map(flattenDoc)</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (doc.type === DOC_TYPE_FILL) {</span>
@@ -11632,7 +11642,7 @@
 <span class="cstat-no" title="statement not covered" >    const usedKeysForSymbols = /* @__PURE__ */ new Set();</span>
 <span class="cstat-no" title="statement not covered" >    return printDoc(flattenDoc(doc));</span>
 <span class="cstat-no" title="statement not covered" >    function printDoc(doc2, index, parentParts) {</span>
-<span class="cstat-no" title="statement not covered" >      var _a2, _b2;</span>
+<span class="cstat-no" title="statement not covered" >      var _a, _b;</span>
 <span class="cstat-no" title="statement not covered" >      if (typeof doc2 === "string") {</span>
 <span class="cstat-no" title="statement not covered" >        return JSON.stringify(doc2);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -11641,7 +11651,7 @@
 <span class="cstat-no" title="statement not covered" >        return printed.length === 1 ? printed[0] : `[${printed.join(", ")}]`;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (doc2.type === DOC_TYPE_LINE) {</span>
-<span class="cstat-no" title="statement not covered" >        const withBreakParent = ((_a2 = parentParts == null ? void 0 : parentParts[index + 1]) == null ? void 0 : _a2.type) === DOC_TYPE_BREAK_PARENT;</span>
+<span class="cstat-no" title="statement not covered" >        const withBreakParent = ((_a = parentParts == null ? void 0 : parentParts[index + 1]) == null ? void 0 : _a.type) === DOC_TYPE_BREAK_PARENT;</span>
 <span class="cstat-no" title="statement not covered" >        if (doc2.literal) {</span>
 <span class="cstat-no" title="statement not covered" >          return withBreakParent ? "literalline" : "literallineWithoutBreakParent";</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -11654,7 +11664,7 @@
 <span class="cstat-no" title="statement not covered" >        return "line";</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (doc2.type === DOC_TYPE_BREAK_PARENT) {</span>
-<span class="cstat-no" title="statement not covered" >        const afterHardline = ((_b2 = parentParts == null ? void 0 : parentParts[index - 1]) == null ? void 0 : _b2.type) === DOC_TYPE_LINE &amp;&amp; parentParts[index - 1].hard;</span>
+<span class="cstat-no" title="statement not covered" >        const afterHardline = ((_b = parentParts == null ? void 0 : parentParts[index - 1]) == null ? void 0 : _b.type) === DOC_TYPE_LINE &amp;&amp; parentParts[index - 1].hard;</span>
 <span class="cstat-no" title="statement not covered" >        return afterHardline ? void 0 : "breakParent";</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (doc2.type === DOC_TYPE_TRIM) {</span>
@@ -11739,7 +11749,7 @@
 <span class="cstat-no" title="statement not covered" >    return x === 12288 || x &gt;= 65281 &amp;&amp; x &lt;= 65376 || x &gt;= 65504 &amp;&amp; x &lt;= 65510;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function isWide(x) {</span>
-<span class="cstat-no" title="statement not covered" >    return x &gt;= 4352 &amp;&amp; x &lt;= 4447 || x === 8986 || x === 8987 || x === 9001 || x === 9002 || x &gt;= 9193 &amp;&amp; x &lt;= 9196 || x === 9200 || x === 9203 || x === 9725 || x === 9726 || x === 9748 || x === 9749 || x &gt;= 9776 &amp;&amp; x &lt;= 9783 || x &gt;= 9800 &amp;&amp; x &lt;= 9811 || x === 9855 || x &gt;= 9866 &amp;&amp; x &lt;= 9871 || x === 9875 || x === 9889 || x === 9898 || x === 9899 || x === 9917 || x === 9918 || x === 9924 || x === 9925 || x === 9934 || x === 9940 || x === 9962 || x === 9970 || x === 9971 || x === 9973 || x === 9978 || x === 9981 || x === 9989 || x === 9994 || x === 9995 || x === 10024 || x === 10060 || x === 10062 || x &gt;= 10067 &amp;&amp; x &lt;= 10069 || x === 10071 || x &gt;= 10133 &amp;&amp; x &lt;= 10135 || x === 10160 || x === 10175 || x === 11035 || x === 11036 || x === 11088 || x === 11093 || x &gt;= 11904 &amp;&amp; x &lt;= 11929 || x &gt;= 11931 &amp;&amp; x &lt;= 12019 || x &gt;= 12032 &amp;&amp; x &lt;= 12245 || x &gt;= 12272 &amp;&amp; x &lt;= 12287 || x &gt;= 12289 &amp;&amp; x &lt;= 12350 || x &gt;= 12353 &amp;&amp; x &lt;= 12438 || x &gt;= 12441 &amp;&amp; x &lt;= 12543 || x &gt;= 12549 &amp;&amp; x &lt;= 12591 || x &gt;= 12593 &amp;&amp; x &lt;= 12686 || x &gt;= 12688 &amp;&amp; x &lt;= 12773 || x &gt;= 12783 &amp;&amp; x &lt;= 12830 || x &gt;= 12832 &amp;&amp; x &lt;= 12871 || x &gt;= 12880 &amp;&amp; x &lt;= 42124 || x &gt;= 42128 &amp;&amp; x &lt;= 42182 || x &gt;= 43360 &amp;&amp; x &lt;= 43388 || x &gt;= 44032 &amp;&amp; x &lt;= 55203 || x &gt;= 63744 &amp;&amp; x &lt;= 64255 || x &gt;= 65040 &amp;&amp; x &lt;= 65049 || x &gt;= 65072 &amp;&amp; x &lt;= 65106 || x &gt;= 65108 &amp;&amp; x &lt;= 65126 || x &gt;= 65128 &amp;&amp; x &lt;= 65131 || x &gt;= 94176 &amp;&amp; x &lt;= 94180 || x === 94192 || x === 94193 || x &gt;= 94208 &amp;&amp; x &lt;= 100343 || x &gt;= 100352 &amp;&amp; x &lt;= 101589 || x &gt;= 101631 &amp;&amp; x &lt;= 101640 || x &gt;= 110576 &amp;&amp; x &lt;= 110579 || x &gt;= 110581 &amp;&amp; x &lt;= 110587 || x === 110589 || x === 110590 || x &gt;= 110592 &amp;&amp; x &lt;= 110882 || x === 110898 || x &gt;= 110928 &amp;&amp; x &lt;= 110930 || x === 110933 || x &gt;= 110948 &amp;&amp; x &lt;= 110951 || x &gt;= 110960 &amp;&amp; x &lt;= 111355 || x &gt;= 119552 &amp;&amp; x &lt;= 119638 || x &gt;= 119648 &amp;&amp; x &lt;= 119670 || x === 126980 || x === 127183 || x === 127374 || x &gt;= 127377 &amp;&amp; x &lt;= 127386 || x &gt;= 127488 &amp;&amp; x &lt;= 127490 || x &gt;= 127504 &amp;&amp; x &lt;= 127547 || x &gt;= 127552 &amp;&amp; x &lt;= 127560 || x === 127568 || x === 127569 || x &gt;= 127584 &amp;&amp; x &lt;= 127589 || x &gt;= 127744 &amp;&amp; x &lt;= 127776 || x &gt;= 127789 &amp;&amp; x &lt;= 127797 || x &gt;= 127799 &amp;&amp; x &lt;= 127868 || x &gt;= 127870 &amp;&amp; x &lt;= 127891 || x &gt;= 127904 &amp;&amp; x &lt;= 127946 || x &gt;= 127951 &amp;&amp; x &lt;= 127955 || x &gt;= 127968 &amp;&amp; x &lt;= 127984 || x === 127988 || x &gt;= 127992 &amp;&amp; x &lt;= 128062 || x === 128064 || x &gt;= 128066 &amp;&amp; x &lt;= 128252 || x &gt;= 128255 &amp;&amp; x &lt;= 128317 || x &gt;= 128331 &amp;&amp; x &lt;= 128334 || x &gt;= 128336 &amp;&amp; x &lt;= 128359 || x === 128378 || x === 128405 || x === 128406 || x === 128420 || x &gt;= 128507 &amp;&amp; x &lt;= 128591 || x &gt;= 128640 &amp;&amp; x &lt;= 128709 || x === 128716 || x &gt;= 128720 &amp;&amp; x &lt;= 128722 || x &gt;= 128725 &amp;&amp; x &lt;= 128727 || x &gt;= 128732 &amp;&amp; x &lt;= 128735 || x === 128747 || x === 128748 || x &gt;= 128756 &amp;&amp; x &lt;= 128764 || x &gt;= 128992 &amp;&amp; x &lt;= 129003 || x === 129008 || x &gt;= 129292 &amp;&amp; x &lt;= 129338 || x &gt;= 129340 &amp;&amp; x &lt;= 129349 || x &gt;= 129351 &amp;&amp; x &lt;= 129535 || x &gt;= 129648 &amp;&amp; x &lt;= 129660 || x &gt;= 129664 &amp;&amp; x &lt;= 129673 || x &gt;= 129679 &amp;&amp; x &lt;= 129734 || x &gt;= 129742 &amp;&amp; x &lt;= 129756 || x &gt;= 129759 &amp;&amp; x &lt;= 129769 || x &gt;= 129776 &amp;&amp; x &lt;= 129784 || x &gt;= 131072 &amp;&amp; x &lt;= 196605 || x &gt;= 196608 &amp;&amp; x &lt;= 262141;</span>
+<span class="cstat-no" title="statement not covered" >    return x &gt;= 4352 &amp;&amp; x &lt;= 4447 || x === 8986 || x === 8987 || x === 9001 || x === 9002 || x &gt;= 9193 &amp;&amp; x &lt;= 9196 || x === 9200 || x === 9203 || x === 9725 || x === 9726 || x === 9748 || x === 9749 || x &gt;= 9776 &amp;&amp; x &lt;= 9783 || x &gt;= 9800 &amp;&amp; x &lt;= 9811 || x === 9855 || x &gt;= 9866 &amp;&amp; x &lt;= 9871 || x === 9875 || x === 9889 || x === 9898 || x === 9899 || x === 9917 || x === 9918 || x === 9924 || x === 9925 || x === 9934 || x === 9940 || x === 9962 || x === 9970 || x === 9971 || x === 9973 || x === 9978 || x === 9981 || x === 9989 || x === 9994 || x === 9995 || x === 10024 || x === 10060 || x === 10062 || x &gt;= 10067 &amp;&amp; x &lt;= 10069 || x === 10071 || x &gt;= 10133 &amp;&amp; x &lt;= 10135 || x === 10160 || x === 10175 || x === 11035 || x === 11036 || x === 11088 || x === 11093 || x &gt;= 11904 &amp;&amp; x &lt;= 11929 || x &gt;= 11931 &amp;&amp; x &lt;= 12019 || x &gt;= 12032 &amp;&amp; x &lt;= 12245 || x &gt;= 12272 &amp;&amp; x &lt;= 12287 || x &gt;= 12289 &amp;&amp; x &lt;= 12350 || x &gt;= 12353 &amp;&amp; x &lt;= 12438 || x &gt;= 12441 &amp;&amp; x &lt;= 12543 || x &gt;= 12549 &amp;&amp; x &lt;= 12591 || x &gt;= 12593 &amp;&amp; x &lt;= 12686 || x &gt;= 12688 &amp;&amp; x &lt;= 12773 || x &gt;= 12783 &amp;&amp; x &lt;= 12830 || x &gt;= 12832 &amp;&amp; x &lt;= 12871 || x &gt;= 12880 &amp;&amp; x &lt;= 42124 || x &gt;= 42128 &amp;&amp; x &lt;= 42182 || x &gt;= 43360 &amp;&amp; x &lt;= 43388 || x &gt;= 44032 &amp;&amp; x &lt;= 55203 || x &gt;= 63744 &amp;&amp; x &lt;= 64255 || x &gt;= 65040 &amp;&amp; x &lt;= 65049 || x &gt;= 65072 &amp;&amp; x &lt;= 65106 || x &gt;= 65108 &amp;&amp; x &lt;= 65126 || x &gt;= 65128 &amp;&amp; x &lt;= 65131 || x &gt;= 94176 &amp;&amp; x &lt;= 94180 || x &gt;= 94192 &amp;&amp; x &lt;= 94198 || x &gt;= 94208 &amp;&amp; x &lt;= 101589 || x &gt;= 101631 &amp;&amp; x &lt;= 101662 || x &gt;= 101760 &amp;&amp; x &lt;= 101874 || x &gt;= 110576 &amp;&amp; x &lt;= 110579 || x &gt;= 110581 &amp;&amp; x &lt;= 110587 || x === 110589 || x === 110590 || x &gt;= 110592 &amp;&amp; x &lt;= 110882 || x === 110898 || x &gt;= 110928 &amp;&amp; x &lt;= 110930 || x === 110933 || x &gt;= 110948 &amp;&amp; x &lt;= 110951 || x &gt;= 110960 &amp;&amp; x &lt;= 111355 || x &gt;= 119552 &amp;&amp; x &lt;= 119638 || x &gt;= 119648 &amp;&amp; x &lt;= 119670 || x === 126980 || x === 127183 || x === 127374 || x &gt;= 127377 &amp;&amp; x &lt;= 127386 || x &gt;= 127488 &amp;&amp; x &lt;= 127490 || x &gt;= 127504 &amp;&amp; x &lt;= 127547 || x &gt;= 127552 &amp;&amp; x &lt;= 127560 || x === 127568 || x === 127569 || x &gt;= 127584 &amp;&amp; x &lt;= 127589 || x &gt;= 127744 &amp;&amp; x &lt;= 127776 || x &gt;= 127789 &amp;&amp; x &lt;= 127797 || x &gt;= 127799 &amp;&amp; x &lt;= 127868 || x &gt;= 127870 &amp;&amp; x &lt;= 127891 || x &gt;= 127904 &amp;&amp; x &lt;= 127946 || x &gt;= 127951 &amp;&amp; x &lt;= 127955 || x &gt;= 127968 &amp;&amp; x &lt;= 127984 || x === 127988 || x &gt;= 127992 &amp;&amp; x &lt;= 128062 || x === 128064 || x &gt;= 128066 &amp;&amp; x &lt;= 128252 || x &gt;= 128255 &amp;&amp; x &lt;= 128317 || x &gt;= 128331 &amp;&amp; x &lt;= 128334 || x &gt;= 128336 &amp;&amp; x &lt;= 128359 || x === 128378 || x === 128405 || x === 128406 || x === 128420 || x &gt;= 128507 &amp;&amp; x &lt;= 128591 || x &gt;= 128640 &amp;&amp; x &lt;= 128709 || x === 128716 || x &gt;= 128720 &amp;&amp; x &lt;= 128722 || x &gt;= 128725 &amp;&amp; x &lt;= 128728 || x &gt;= 128732 &amp;&amp; x &lt;= 128735 || x === 128747 || x === 128748 || x &gt;= 128756 &amp;&amp; x &lt;= 128764 || x &gt;= 128992 &amp;&amp; x &lt;= 129003 || x === 129008 || x &gt;= 129292 &amp;&amp; x &lt;= 129338 || x &gt;= 129340 &amp;&amp; x &lt;= 129349 || x &gt;= 129351 &amp;&amp; x &lt;= 129535 || x &gt;= 129648 &amp;&amp; x &lt;= 129660 || x &gt;= 129664 &amp;&amp; x &lt;= 129674 || x &gt;= 129678 &amp;&amp; x &lt;= 129734 || x === 129736 || x &gt;= 129741 &amp;&amp; x &lt;= 129756 || x &gt;= 129759 &amp;&amp; x &lt;= 129770 || x &gt;= 129775 &amp;&amp; x &lt;= 129784 || x &gt;= 131072 &amp;&amp; x &lt;= 196605 || x &gt;= 196608 &amp;&amp; x &lt;= 262141;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/utils/get-string-width.js
@@ -12944,7 +12954,7 @@
     return has_newline_default(text, end);
   }
   function breakTies(tiesToBreak, options) {
-    var _a2, _b2;
+    var _a, _b;
     const tieCount = tiesToBreak.length;
     if (tieCount === 0) {
       return;
@@ -12961,7 +12971,7 @@
 <span class="cstat-no" title="statement not covered" >      assert_default.strictEqual(currentCommentPrecedingNode, precedingNode);</span>
 <span class="cstat-no" title="statement not covered" >      assert_default.strictEqual(currentCommentFollowingNode, followingNode);</span>
 <span class="cstat-no" title="statement not covered" >      const gap = options.originalText.slice(options.locEnd(comment), gapEndPos);</span>
-<span class="cstat-no" title="statement not covered" >      if (((_b2 = (_a2 = options.printer).isGap) == null ? void 0 : _b2.call(_a2, gap, options)) ?? /^[\s(]*$/u.test(gap)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (((_b = (_a = options.printer).isGap) == null ? void 0 : _b.call(_a, gap, options)) ?? /^[\s(]*$/u.test(gap)) {</span>
 <span class="cstat-no" title="statement not covered" >        gapEndPos = options.locStart(comment);</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
@@ -13009,11 +13019,11 @@
     return options.printer.printComment(path, options);
   }
   function printLeadingComment(path, options) {
-    var _a2;
+    var _a;
     const comment = path.node;
     const parts = [printComment(path, options)];
     const { printer: printer2, originalText, locStart, locEnd } = options;
-    const isBlock = (_a2 = printer2.isBlockComment) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a2.call(printer2, comment);
+    const isBlock = (_a = printer2.isBlockComment) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.call(printer2, comment);
     if (isBlock) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      const lineBreak = has_newline_default(originalText, locEnd(comment)) ? has_newline_default(originalText, locStart(comment), {</span>
 <span class="cstat-no" title="statement not covered" >        backwards: true</span>
@@ -13032,11 +13042,11 @@
     return parts;
   }
 <span class="fstat-no" title="function not covered" >  function printTrailingComment(path, options, previousComment) {</span>
-<span class="cstat-no" title="statement not covered" >    var _a2;</span>
+<span class="cstat-no" title="statement not covered" >    var _a;</span>
 <span class="cstat-no" title="statement not covered" >    const comment = path.node;</span>
 <span class="cstat-no" title="statement not covered" >    const printed = printComment(path, options);</span>
 <span class="cstat-no" title="statement not covered" >    const { printer: printer2, originalText, locStart } = options;</span>
-<span class="cstat-no" title="statement not covered" >    const isBlock = (_a2 = printer2.isBlockComment) == null ? void 0 : _a2.call(printer2, comment);</span>
+<span class="cstat-no" title="statement not covered" >    const isBlock = (_a = printer2.isBlockComment) == null ? void 0 : _a.call(printer2, comment);</span>
 <span class="cstat-no" title="statement not covered" >    if ((previousComment == null ? void 0 : previousComment.hasLineSuffix) &amp;&amp; !(previousComment == null ? void 0 : previousComment.isBlock) || has_newline_default(originalText, locStart(comment), { backwards: true })) {</span>
 <span class="cstat-no" title="statement not covered" >      const isLineBeforeEmpty = is_previous_line_empty_default(</span>
 <span class="cstat-no" title="statement not covered" >        originalText,</span>
@@ -13433,8 +13443,8 @@
       }
       option.pluginDefaults = Object.fromEntries(
         plugins.filter((plugin) =&gt; {
-          var _a2;
-          return ((_a2 = plugin.defaultOptions) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a2[option.name])</span> !== void 0;
+          var _a;
+          return ((_a = plugin.defaultOptions) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a[option.name])</span> !== void 0;
         }).map((plugin) =&gt; [plugin.name, plugin.defaultOptions[option.name]])
       );
       options.push(option);
@@ -13494,8 +13504,13 @@
   var get_interpreter_default = void 0;
 &nbsp;
   // node_modules/deno-path-from-file-url/index.js
-  var _a, _b, _c, _d, _e;
-  var isWindows = ((_a = globalThis.Deno) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a.build.os)</span> === "windows" || ((_c = (_b = globalThis.navigator) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _b.platform)</span> == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _c.startsWith("Win"))</span> || ((_e = (_d = globalThis.process) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _d.platform) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _e.startsWith("win")) || false;
+  function checkWindows() {
+    var _a, _b, _c, _d, _e, _f;
+    const global = globalThis;
+    const os = (_b = (_a = global.Deno) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a.build)</span> == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _b.os;</span>
+    return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: ((_d = (_c = global.navigator) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _c.platform)</span> == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _d.startsWith("Win"))</span> ?? ((_f = (_e = global.process) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _e.platform) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _f.startsWith("win")) <span class="branch-0 cbranch-no" title="branch not covered" >?? false;</span>
+  }
+  var isWindows = checkWindows();
 <span class="fstat-no" title="function not covered" >  function assertArg(url) {</span>
 <span class="cstat-no" title="statement not covered" >    url = url instanceof URL ? url : new URL(url);</span>
 <span class="cstat-no" title="statement not covered" >    if (url.protocol !== "file:") {</span>
@@ -14509,7 +14524,7 @@
     locEnd: null
   };
   async function normalizeFormatOptions(options, opts = {}) {
-    var _a2;
+    var _a;
     const rawOptions = { ...options };
     if (!rawOptions.parser) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      if (!rawOptions.filepath) {</span>
@@ -14545,7 +14560,7 @@
     rawOptions.astFormat = parser.astFormat;
     rawOptions.locEnd = parser.locEnd;
     rawOptions.locStart = parser.locStart;
-    const printerPlugin = ((_a2 = parserPlugin.printers) == null ? void 0 : _a2[parser.astFormat]) ? parserPlugin : getPrinterPluginByAstFormat(rawOptions.plugins, parser.astFormat);
+    const printerPlugin = ((_a = parserPlugin.printers) == null ? void 0 : _a[parser.astFormat]) ? parserPlugin : getPrinterPluginByAstFormat(rawOptions.plugins, parser.astFormat);
     const printer2 = await initPrinter(printerPlugin, parser.astFormat);
     rawOptions.printer = printer2;
     const pluginDefaults = printerPlugin.defaultOptions <span class="branch-0 cbranch-no" title="branch not covered" >? Object.fromEntries(</span>
@@ -14766,11 +14781,11 @@
     }
   }
   function callPluginPrintFunction(path, options, printPath, args, embeds) {
-    var _a2;
+    var _a;
     const { node } = path;
     const { printer: printer2 } = options;
     let doc;
-    if ((_a2 = printer2.hasPrettierIgnore) == null ? void 0 : _a2.call(printer2, path)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if ((_a = printer2.hasPrettierIgnore) == null ? void 0 : _a.call(printer2, path)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      doc = print_ignored_default(path, options);</span>
     } else if (embeds.has(node)) {
       doc = embeds.get(node);
@@ -15326,9 +15341,9 @@
 <span class="cstat-no" title="statement not covered" >    return !selectedParser.hasPragma || selectedParser.hasPragma(text);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  async function hasIgnorePragma(text, options) {</span>
-<span class="cstat-no" title="statement not covered" >    var _a2;</span>
+<span class="cstat-no" title="statement not covered" >    var _a;</span>
 <span class="cstat-no" title="statement not covered" >    const selectedParser = await resolveParser(options);</span>
-<span class="cstat-no" title="statement not covered" >    return (_a2 = selectedParser.hasIgnorePragma) == null ? void 0 : _a2.call(selectedParser, text);</span>
+<span class="cstat-no" title="statement not covered" >    return (_a = selectedParser.hasIgnorePragma) == null ? void 0 : _a.call(selectedParser, text);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   async function formatWithCursor(originalText, originalOptions) {
     let { hasBOM, text, options } = normalizeInputAndOptions(
@@ -15730,7 +15745,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-10T00:31:16.368Z
+                at 2025-09-11T00:31:49.647Z
             </div>
         <script src="../prettify.js"></script>
         <script>
