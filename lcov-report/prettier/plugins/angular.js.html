@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.14% </span>
+                <span class="strong">34.2% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1736/5084</span>
+                <span class='fraction'>1736/5076</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.14% </span>
+                <span class="strong">34.2% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1736/5084</span>
+                <span class='fraction'>1736/5076</span>
             </div>
         
             
@@ -5138,15 +5138,7 @@
 <a name='L5073'></a><a href='#L5073'>5073</a>
 <a name='L5074'></a><a href='#L5074'>5074</a>
 <a name='L5075'></a><a href='#L5075'>5075</a>
-<a name='L5076'></a><a href='#L5076'>5076</a>
-<a name='L5077'></a><a href='#L5077'>5077</a>
-<a name='L5078'></a><a href='#L5078'>5078</a>
-<a name='L5079'></a><a href='#L5079'>5079</a>
-<a name='L5080'></a><a href='#L5080'>5080</a>
-<a name='L5081'></a><a href='#L5081'>5081</a>
-<a name='L5082'></a><a href='#L5082'>5082</a>
-<a name='L5083'></a><a href='#L5083'>5083</a>
-<a name='L5084'></a><a href='#L5084'>5084</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5076'></a><a href='#L5076'>5076</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -5586,7 +5578,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6276,7 +6267,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7359,8 +7349,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8133,7 +8121,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -9617,7 +9604,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -10199,9 +10185,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -10667,8 +10651,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitConditionalExpr(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    clone() {</span>
-<span class="cstat-no" title="statement not covered" >      var _a;</span>
-<span class="cstat-no" title="statement not covered" >      return new _ConditionalExpr(this.condition.clone(), this.trueCase.clone(), (_a = this.falseCase) == null ? void 0 : _a.clone(), this.type, this.sourceSpan);</span>
+<span class="cstat-no" title="statement not covered" >      return new _ConditionalExpr(this.condition.clone(), this.trueCase.clone(), this.falseCase?.clone(), this.type, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
   var BinaryOperatorExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _BinaryOperatorExpr extends Expression {</span></span>
@@ -11359,8 +11342,7 @@
   };
   var ThisReceiver = class extends ImplicitReceiver {
 <span class="fstat-no" title="function not covered" >    visit(visitor, context = null) {</span>
-<span class="cstat-no" title="statement not covered" >      var _a;</span>
-<span class="cstat-no" title="statement not covered" >      return (_a = visitor.visitThisReceiver) == null ? void 0 : _a.call(visitor, this, context);</span>
+<span class="cstat-no" title="statement not covered" >      return visitor.visitThisReceiver?.(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
   var Chain = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
@@ -12412,8 +12394,7 @@
 <span class="cstat-no" title="statement not covered" >      this.args = args;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    visitExpression(visitor, context) {</span>
-<span class="cstat-no" title="statement not covered" >      var _a;</span>
-<span class="cstat-no" title="statement not covered" >      (_a = this.body) == null ? void 0 : _a.visitExpression(visitor, context);</span>
+<span class="cstat-no" title="statement not covered" >      this.body?.visitExpression(visitor, context);</span>
 <span class="cstat-no" title="statement not covered" >      for (const arg of this.args) {</span>
 <span class="cstat-no" title="statement not covered" >        arg.visitExpression(visitor, context);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -12438,9 +12419,8 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    clone() {</span>
-<span class="cstat-no" title="statement not covered" >      var _a, _b;</span>
-<span class="cstat-no" title="statement not covered" >      const expr = new _PureFunctionExpr(((_a = this.body) == null ? void 0 : _a.clone()) ?? null, this.args.map((arg) =&gt; arg.clone()));</span>
-<span class="cstat-no" title="statement not covered" >      expr.fn = ((_b = this.fn) == null ? void 0 : _b.clone()) ?? null;</span>
+<span class="cstat-no" title="statement not covered" >      const expr = new _PureFunctionExpr(this.body?.clone() ?? null, this.args.map((arg) =&gt; arg.clone()));</span>
+<span class="cstat-no" title="statement not covered" >      expr.fn = this.fn?.clone() ?? null;</span>
 <span class="cstat-no" title="statement not covered" >      expr.varOffset = this.varOffset;</span>
 <span class="cstat-no" title="statement not covered" >      return expr;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -13216,14 +13196,13 @@
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    parseInterpolation(input, parseSourceSpan, absoluteOffset, interpolatedTokens, interpolationConfig = DEFAULT_INTERPOLATION_CONFIG) {</span>
-<span class="cstat-no" title="statement not covered" >      var _a;</span>
 <span class="cstat-no" title="statement not covered" >      const errors = [];</span>
 <span class="cstat-no" title="statement not covered" >      const { strings, expressions, offsets } = this.splitInterpolation(input, parseSourceSpan, errors, interpolatedTokens, interpolationConfig);</span>
 <span class="cstat-no" title="statement not covered" >      if (expressions.length === 0)</span>
 <span class="cstat-no" title="statement not covered" >        return null;</span>
 <span class="cstat-no" title="statement not covered" >      const expressionNodes = [];</span>
 <span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; expressions.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >        const expressionSpan = (_a = interpolatedTokens == null ? void 0 : interpolatedTokens[i * 2 + 1]) == null ? void 0 : _a.sourceSpan;</span>
+<span class="cstat-no" title="statement not covered" >        const expressionSpan = interpolatedTokens?.[i * 2 + 1]?.sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >        const expressionText = expressions[i].text;</span>
 <span class="cstat-no" title="statement not covered" >        const { stripped: sourceToLex, hasComments } = this._stripComments(expressionText);</span>
 <span class="cstat-no" title="statement not covered" >        const tokens = this._lexer.tokenize(sourceToLex);</span>
@@ -13295,7 +13274,7 @@
 <span class="cstat-no" title="statement not covered" >            errors.push(getParseError("Blank expressions are not allowed in interpolated strings", input, `at column ${i} in`, parseSourceSpan));</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          expressions.push({ text, start: fullStart, end: fullEnd });</span>
-<span class="cstat-no" title="statement not covered" >          const startInOriginalTemplate = (inputToTemplateIndexMap == null ? void 0 : inputToTemplateIndexMap.get(fullStart)) ?? fullStart;</span>
+<span class="cstat-no" title="statement not covered" >          const startInOriginalTemplate = inputToTemplateIndexMap?.get(fullStart) ?? fullStart;</span>
 <span class="cstat-no" title="statement not covered" >          const offset = startInOriginalTemplate + interpStart.length;</span>
 <span class="cstat-no" title="statement not covered" >          offsets.push(offset);</span>
 <span class="cstat-no" title="statement not covered" >          i = fullEnd;</span>
@@ -14491,7 +14470,7 @@
     _VisitorMode2[_VisitorMode2["Extract"] = 0] = "Extract";
     _VisitorMode2[_VisitorMode2["Merge"] = 1] = "Merge";
   })(_VisitorMode || (_VisitorMode = {}));
-  var VERSION = new Version("20.2.1");
+  var VERSION = new Version("20.3.0");
 &nbsp;
   // node_modules/angular-estree-parser/lib/utils.js
 <span class="fstat-no" title="function not covered" >  function stripSurroundingSpaces({ start: startIndex, end: endIndex }, text) {</span>
@@ -14698,8 +14677,7 @@
 &nbsp;
   // node_modules/angular-estree-parser/lib/transform-node.js
 <span class="fstat-no" title="function not covered" >  function isParenthesized(node) {</span>
-<span class="cstat-no" title="statement not covered" >    var _a;</span>
-<span class="cstat-no" title="statement not covered" >    return Boolean((_a = node.extra) == null ? void 0 : _a.parenthesized);</span>
+<span class="cstat-no" title="statement not covered" >    return Boolean(node.extra?.parenthesized);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function getOuterStart(node) {</span>
 <span class="cstat-no" title="statement not covered" >    return isParenthesized(node) ? node.extra.parenStart : node.start;</span>
@@ -15272,20 +15250,18 @@
 &nbsp;
   // src/language-js/loc.js
 <span class="fstat-no" title="function not covered" >  function locStart(node) {</span>
-<span class="cstat-no" title="statement not covered" >    var _a, _b, _c;</span>
-<span class="cstat-no" title="statement not covered" >    const start = ((_a = node.range) == null ? void 0 : _a[0]) ?? node.start;</span>
+<span class="cstat-no" title="statement not covered" >    const start = node.range?.[0] ?? node.start;</span>
 <span class="cstat-no" title="statement not covered" >    if (false) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new TypeError("Can't not locate node.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const firstDecorator = (_c = ((_b = node.declaration) == null ? void 0 : _b.decorators) ?? node.decorators) == null ? void 0 : _c[0];</span>
+<span class="cstat-no" title="statement not covered" >    const firstDecorator = (node.declaration?.decorators ?? node.decorators)?.[0];</span>
 <span class="cstat-no" title="statement not covered" >    if (firstDecorator) {</span>
 <span class="cstat-no" title="statement not covered" >      return Math.min(locStart(firstDecorator), start);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return start;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function locEnd(node) {</span>
-<span class="cstat-no" title="statement not covered" >    var _a;</span>
-<span class="cstat-no" title="statement not covered" >    const end = ((_a = node.range) == null ? void 0 : _a[1]) ?? node.end;</span>
+<span class="cstat-no" title="statement not covered" >    const end = node.range?.[1] ?? node.end;</span>
 <span class="cstat-no" title="statement not covered" >    if (false) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new TypeError("Can't not locate node.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -15319,7 +15295,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-11T00:31:49.647Z
+                at 2025-09-12T00:31:25.636Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

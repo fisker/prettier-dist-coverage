@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.38% </span>
+                <span class="strong">51.41% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1784/3472</span>
+                <span class='fraction'>1784/3470</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.53% </span>
+                <span class="strong">57.43% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>168/292</span>
+                <span class='fraction'>166/289</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.38% </span>
+                <span class="strong">51.41% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1784/3472</span>
+                <span class='fraction'>1784/3470</span>
             </div>
         
             
@@ -3532,9 +3532,7 @@
 <a name='L3467'></a><a href='#L3467'>3467</a>
 <a name='L3468'></a><a href='#L3468'>3468</a>
 <a name='L3469'></a><a href='#L3469'>3469</a>
-<a name='L3470'></a><a href='#L3470'>3470</a>
-<a name='L3471'></a><a href='#L3471'>3471</a>
-<a name='L3472'></a><a href='#L3472'>3472</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L3470'></a><a href='#L3470'>3470</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4453,7 +4451,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -4502,7 +4499,6 @@
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">54x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7156,7 +7152,7 @@
   // src/utils/skip.js
   function skip(characters) {
     return (text, startIndex, options2) =&gt; {
-      const backwards = Boolean(options2 == null ? void 0 : options2.backwards);
+      const backwards = Boolean(options2?.backwards);
       if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -7186,7 +7182,7 @@
 &nbsp;
   // src/utils/skip-newline.js
   function skipNewline(text, startIndex, options2) {
-    const backwards = Boolean(options2 == null ? void 0 : options2.backwards);
+    const backwards = Boolean(options2?.backwards);
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -7918,8 +7914,7 @@
 <span class="fstat-no" title="function not covered" >  function canAttachComment(node) {</span>
 <span class="cstat-no" title="statement not covered" >    return node.kind !== "Comment";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  function printComment(commentPath) {</span>
-<span class="cstat-no" title="statement not covered" >    const comment = commentPath.node;</span>
+<span class="fstat-no" title="function not covered" >  function printComment({ node: comment }) {</span>
 <span class="cstat-no" title="statement not covered" >    if (comment.kind === "Comment") {</span>
 <span class="cstat-no" title="statement not covered" >      return "#" + comment.value.trimEnd();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -7970,10 +7965,9 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   clean.ignoredProperties = /* @__PURE__ */ new Set(["loc", "comments"]);
   function hasPrettierIgnore(path) {
-    var _a;
     const { node } = path;
-    return (_a = node == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: node.comments) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a.some(</span>
-<span class="cstat-no" title="statement not covered" >      (comment) =&gt; comment.value.trim() === "prettier-ignore"</span>
+    return node?.comments<span class="branch-0 cbranch-no" title="branch not covered" >?.some(</span>
+      (comment) =&gt; comment.value.trim() === "prettier-ignore"
     );
   }
   var printer = {
@@ -10443,7 +10437,7 @@
     allowLegacyFragmentVariables: true
   };
 <span class="fstat-no" title="function not covered" >  function createParseError(error) {</span>
-<span class="cstat-no" title="statement not covered" >    if ((error == null ? void 0 : error.name) === "GraphQLError") {</span>
+<span class="cstat-no" title="statement not covered" >    if (error?.name === "GraphQLError") {</span>
 <span class="cstat-no" title="statement not covered" >      const {</span>
 <span class="cstat-no" title="statement not covered" >        message,</span>
 <span class="cstat-no" title="statement not covered" >        locations: [start]</span>
@@ -10483,7 +10477,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-11T00:31:52.133Z
+                at 2025-09-12T00:31:28.060Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

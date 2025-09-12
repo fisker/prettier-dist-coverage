@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.88% </span>
+                <span class="strong">69.87% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8211/11749</span>
+                <span class='fraction'>8208/11746</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.92% </span>
+                <span class="strong">67.22% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1048/1566</span>
+                <span class='fraction'>1042/1550</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.88% </span>
+                <span class="strong">69.87% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8211/11749</span>
+                <span class='fraction'>8208/11746</span>
             </div>
         
             
@@ -11808,10 +11808,7 @@
 <a name='L11743'></a><a href='#L11743'>11743</a>
 <a name='L11744'></a><a href='#L11744'>11744</a>
 <a name='L11745'></a><a href='#L11745'>11745</a>
-<a name='L11746'></a><a href='#L11746'>11746</a>
-<a name='L11747'></a><a href='#L11747'>11747</a>
-<a name='L11748'></a><a href='#L11748'>11748</a>
-<a name='L11749'></a><a href='#L11749'>11749</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11746'></a><a href='#L11746'>11746</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21200,7 +21197,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22657,7 +22653,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22671,7 +22666,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">142x</span>
 <span class="cline-any cline-yes">142x</span>
 <span class="cline-any cline-yes">142x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -32370,7 +32364,7 @@
       if (!docType) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        throw new invalid_doc_error_default(doc2);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      if ((onEnter == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: onEnter(doc2)) === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      if (onEnter?.(doc2) === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       switch (docType) {
@@ -32717,7 +32711,7 @@
 &nbsp;
   // src/utils/front-matter/is-front-matter.js
 <span class="fstat-no" title="function not covered" >  function isFrontMatter(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return (node == null ? void 0 : node.type) === "front-matter";</span>
+<span class="cstat-no" title="statement not covered" >    return node?.type === "front-matter";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var is_front_matter_default = isFrontMatter;
 &nbsp;
@@ -32812,7 +32806,7 @@
 <span class="cstat-no" title="statement not covered" >      "mu"</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    const matched = text.match(regex);</span>
-<span class="cstat-no" title="statement not covered" >    return (matched == null ? void 0 : matched.index) === 0;</span>
+<span class="cstat-no" title="statement not covered" >    return matched?.index === 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var hasPragma = <span class="fstat-no" title="function not covered" >(text) =&gt; startWithPragma(parse_default(text).content.trimStart(), FORMAT_PRAGMAS);</span>
   var hasIgnorePragma = <span class="fstat-no" title="function not covered" >(text) =&gt; startWithPragma(</span>
@@ -32891,7 +32885,7 @@
 <span class="cstat-no" title="statement not covered" >        ""</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if ((parent == null ? void 0 : parent.type) === "root" &amp;&amp; parent.children.length &gt; 0 &amp;&amp; (parent.children[0] === original || is_front_matter_default(parent.children[0]) &amp;&amp; parent.children[1] === original) &amp;&amp; original.type === "html" &amp;&amp; startWithPragma(original.value, FORMAT_PRAGMAS)) {</span>
+<span class="cstat-no" title="statement not covered" >    if (parent?.type === "root" &amp;&amp; parent.children.length &gt; 0 &amp;&amp; (parent.children[0] === original || is_front_matter_default(parent.children[0]) &amp;&amp; parent.children[1] === original) &amp;&amp; original.type === "html" &amp;&amp; startWithPragma(original.value, FORMAT_PRAGMAS)) {</span>
 <span class="cstat-no" title="statement not covered" >      return null;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -32942,10 +32936,9 @@
 &nbsp;
   // node_modules/deno-path-from-file-url/index.js
   function checkWindows() {
-    var _a, _b, _c, _d, _e, _f;
     const global = globalThis;
-    const os = (_b = (_a = global.Deno) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _a.build)</span> == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _b.os;</span>
-    return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: ((_d = (_c = global.navigator) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _c.platform)</span> == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _d.startsWith("Win"))</span> ?? ((_f = (_e = global.process) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _e.platform) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _f.startsWith("win")) <span class="branch-0 cbranch-no" title="branch not covered" >?? false;</span>
+    const os = global.Deno<span class="branch-0 cbranch-no" title="branch not covered" >?.build?.os;</span>
+    return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: global.navigator<span class="branch-0 cbranch-no" title="branch not covered" >?.platform?.startsWith(</span>"Win") ?? global.process?.platform?.startsWith("win") <span class="branch-0 cbranch-no" title="branch not covered" >?? false;</span>
   }
   var isWindows = checkWindows();
 <span class="fstat-no" title="function not covered" >  function assertArg(url) {</span>
@@ -32982,16 +32975,16 @@
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const basename = getFileBasename(file).toLowerCase();</span></span>
 <span class="cstat-no" title="statement not covered" >    return languages.find(</span>
-<span class="cstat-no" title="statement not covered" >      ({ filenames }) =&gt; filenames == null ? void 0 : filenames.some((name) =&gt; name.toLowerCase() === basename)</span>
+<span class="cstat-no" title="statement not covered" >      ({ filenames }) =&gt; filenames?.some((name) =&gt; name.toLowerCase() === basename)</span>
 <span class="cstat-no" title="statement not covered" >    ) ?? languages.find(</span>
-<span class="cstat-no" title="statement not covered" >      ({ extensions }) =&gt; extensions == null ? void 0 : extensions.some((extension) =&gt; basename.endsWith(extension))</span>
+<span class="cstat-no" title="statement not covered" >      ({ extensions }) =&gt; extensions?.some((extension) =&gt; basename.endsWith(extension))</span>
     );
   }
   function getLanguageByLanguageName(languages, languageName) {
     if (!languageName) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    return languages.find(({ name }) =&gt; name.toLowerCase() === languageName) ?? languages.find(({ aliases }) =&gt; aliases == null ? void 0 : aliases.includes(languageName)) ?? languages.find(({ extensions }) =&gt; extensions == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: extensions.includes(`.${languageName}`));
+    return languages.find(({ name }) =&gt; name.toLowerCase() === languageName) ?? languages.find(({ aliases }) =&gt; aliases?.includes(languageName)) ?? languages.find(({ extensions }) =&gt; extensions?.includes(`.${languageName}`));
   }
   function getLanguageByInterpreter(languages, file) {
     if (true) {
@@ -33025,7 +33018,7 @@
 <span class="cstat-no" title="statement not covered" >    if (typeof file !== "string") {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return languages.find(({ isSupported }) =&gt; isSupported == null ? void 0 : isSupported({ filepath: file }));</span>
+<span class="cstat-no" title="statement not covered" >    return languages.find(({ isSupported }) =&gt; isSupported?.({ filepath: file }));</span>
   }
   function inferParser(options2, fileInfo) {
     const languages = array_to_reversed_default(
@@ -33039,7 +33032,7 @@
       )
     );
     const language = getLanguageByLanguageName(languages, fileInfo.language) ?? getLanguageByFileName(languages, fileInfo.physicalFile) ?? getLanguageByFileName(languages, fileInfo.file) ?? getLanguageByIsSupported(languages, fileInfo.physicalFile) ?? getLanguageByIsSupported(languages, fileInfo.file) ?? getLanguageByInterpreter(languages, fileInfo.physicalFile);
-    return language == null ? void 0 : language.parsers[0];
+    return language?.parsers[0];
   }
   var infer_parser_default = inferParser;
 &nbsp;
@@ -33172,7 +33165,7 @@
         nodes,
         -1
       );
-      if ((lastNode == null ? void 0 : lastNode.type) === "word" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !isBetween(KIND_NON_CJK, KIND_CJK_PUNCTUATION) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; // disallow leading/trailing full-width whitespace</span>
+      if (lastNode?.type === "word" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !isBetween(KIND_NON_CJK, KIND_CJK_PUNCTUATION) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; // disallow leading/trailing full-width whitespace</span>
       ![lastNode.value, node.value].some((value) =&gt; /\u3000/u.test(value))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        nodes.push({ type: "whitespace", value: "" });</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -33226,7 +33219,7 @@
     })(ast, null, []);
   }
   function isAutolink(node) {
-    if ((node == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: node.type) !== "link" <span class="branch-0 cbranch-no" title="branch not covered" >|| node.children.length !== 1)</span> {
+    if (node?.type !== "link" <span class="branch-0 cbranch-no" title="branch not covered" >|| node.children.length !== 1)</span> {
       return false;
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const [child] = node.children;</span></span>
@@ -34403,23 +34396,21 @@
   // src/language-markdown/printer-markdown.js
   var SIBLING_NODE_TYPES = /* @__PURE__ */ new Set(["listItem", "definition"]);
   function prevOrNextWord(path) {
-    var _a, _b;
     const { previous, next } = path;
-    const hasPrevOrNextWord = (previous == null ? void 0 : previous.type) === "sentence" &amp;&amp; ((_a = at_default(
+    const hasPrevOrNextWord = previous?.type === "sentence" &amp;&amp; at_default(
       /* isOptionalObject */
       false,
       previous.children,
       -1
-    )) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.type) === "word" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !at_default(</span>
+    )?.type === "word" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !at_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >      false,</span>
 <span class="cstat-no" title="statement not covered" >      previous.children,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
-    ).hasTrailingPunctuation || (next == null ? void 0 : next.type) === "sentence" &amp;&amp; ((_b = next.children[0]) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _b.type) === "word" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !next.children[0].hasLeadingPunctuation;</span>
+    ).hasTrailingPunctuation || next?.type === "sentence" &amp;&amp; next.children[0]?.type === "word" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !next.children[0].hasLeadingPunctuation;</span>
     return hasPrevOrNextWord;
   }
   function genericPrint(path, options2, print2) {
-    var _a;
     const { node } = path;
     if (shouldRemainTheSameContent(path)) {
       const parts = [""];
@@ -34515,7 +34506,7 @@
           const hasPrevOrNextWord = prevOrNextWord(path);
           const inStrongAndHasPrevOrNextWord = (
             // `1***2***3` is considered strong emphasis but `1**_2_**3` is not
-            ((_a = path.parent) == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: _a.type) === "strong" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; prevOrNextWord(path.ancestors)</span>
+            path.parent?.type === "strong" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; prevOrNextWord(path.ancestors)</span>
           );
           style = hasPrevOrNextWord || inStrongAndHasPrevOrNextWord || path.hasAncestor((node2) =&gt; node2.type === "emphasis") <span class="branch-0 cbranch-no" title="branch not covered" >? "*" </span>: "_";
         }
@@ -34639,21 +34630,21 @@
           options2
         );
         return printChildren(path, options2, print2, {
-          processor(childPath) {
+          processor() {
             const prefix = getPrefix();
-            const childNode = childPath.node;
+            const { node: childNode } = path;
             if (childNode.children.length === 2 &amp;&amp; childNode.children[1].type === "html" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; childNode.children[0].position.start.column !== childNode.children[1].position.start.column)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >              return [prefix, printListItem(childPath, options2, print2, prefix)];</span>
+<span class="cstat-no" title="statement not covered" >              return [prefix, printListItem(path, options2, print2, prefix)];</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
             return [
               prefix,
               align(
                 " ".repeat(prefix.length),
-                printListItem(childPath, options2, print2, prefix)
+                printListItem(path, options2, print2, prefix)
               )
             ];
             function getPrefix() {
-              const rawPrefix = node.ordered <span class="branch-0 cbranch-no" title="branch not covered" >? (childPath.isFirst ? node.start : isGitDiffFriendlyOrderedList ? 1 : node.start + childPath.index) + (nthSiblingIndex % 2 === 0 ? ". " : ") ") </span>: nthSiblingIndex % 2 === 0 ? "- " <span class="branch-0 cbranch-no" title="branch not covered" >: "* ";</span>
+              const rawPrefix = node.ordered <span class="branch-0 cbranch-no" title="branch not covered" >? (path.isFirst ? node.start : isGitDiffFriendlyOrderedList ? 1 : node.start + path.index) + (nthSiblingIndex % 2 === 0 ? ". " : ") ") </span>: nthSiblingIndex % 2 === 0 ? "- " <span class="branch-0 cbranch-no" title="branch not covered" >: "* ";</span>
               return (node.isAligned <span class="branch-0 cbranch-no" title="branch not covered" >|| /* workaround for https://github.com/remarkjs/remark/issues/315 */</span>
               node.hasIndentedCodeblock) &amp;&amp; node.ordered <span class="branch-0 cbranch-no" title="branch not covered" >? alignListPrefix(rawPrefix, options2) </span>: rawPrefix;
             }
@@ -35314,7 +35305,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-11T00:31:49.647Z
+                at 2025-09-12T00:31:25.636Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

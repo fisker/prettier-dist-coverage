@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8384/16689</span>
+                <span class='fraction'>8382/16687</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.89% </span>
+                <span class="strong">55.88% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1294/2315</span>
+                <span class='fraction'>1291/2310</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8384/16689</span>
+                <span class='fraction'>8382/16687</span>
             </div>
         
             
@@ -16749,9 +16749,7 @@
 <a name='L16684'></a><a href='#L16684'>16684</a>
 <a name='L16685'></a><a href='#L16685'>16685</a>
 <a name='L16686'></a><a href='#L16686'>16686</a>
-<a name='L16687'></a><a href='#L16687'>16687</a>
-<a name='L16688'></a><a href='#L16688'>16688</a>
-<a name='L16689'></a><a href='#L16689'>16689</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16687'></a><a href='#L16687'>16687</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -31312,7 +31310,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">84x</span>
-<span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">84x</span>
@@ -31322,7 +31319,6 @@
 <span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -47839,7 +47835,7 @@
   // src/utils/skip.js
   function skip(characters) {
     return (text, startIndex, options) =&gt; {
-      const backwards = Boolean(options == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: options.backwards)</span>;
+      const backwards = Boolean(options<span class="branch-0 cbranch-no" title="branch not covered" >?.backwards)</span>;
       if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -47885,7 +47881,7 @@
 &nbsp;
   // src/utils/skip-newline.js
   function skipNewline(text, startIndex, options) {
-    const backwards = Boolean(options == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: options.backwards)</span>;
+    const backwards = Boolean(options<span class="branch-0 cbranch-no" title="branch not covered" >?.backwards)</span>;
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -47998,20 +47994,18 @@
 &nbsp;
   // src/language-js/loc.js
   function locStart(node) {
-    var _a, _b, _c;
-    const start = ((_a = node.range) == null ? void 0 : _a[0]) ?? node.start;
+    const start = node.range?.[0] ?? node.start;
     if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      throw new TypeError("Can't not locate node.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    const firstDecorator = (_c = ((_b = node.declaration) == null ? void 0 : _b.decorators) ?? node.decorators) == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: _c[0];</span>
+    const firstDecorator = (node.declaration?.decorators ?? node.decorators)<span class="branch-0 cbranch-no" title="branch not covered" >?.[0];</span>
     if (firstDecorator) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return Math.min(locStart(firstDecorator), start);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return start;
   }
   function locEnd(node) {
-    var _a;
-    const end = ((_a = node.range) == null ? void 0 : _a[1]) ?? node.end;
+    const end = node.range?.[1] ?? node.end;
     if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      throw new TypeError("Can't not locate node.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -48021,7 +48015,7 @@
   // src/language-js/utils/create-type-check-function.js
   function createTypeCheckFunction(typesArray) {
     const types = new Set(typesArray);
-    return (node) =&gt; types.has(node == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: node.type);
+    return (node) =&gt; types.has(node?.type);
   }
   var create_type_check_function_default = createTypeCheckFunction;
 &nbsp;
@@ -49465,7 +49459,7 @@
             node.declarations,
             -1
           );
-          if ((lastDeclaration == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: lastDeclaration.init) &amp;&amp; text[locEnd(lastDeclaration)] !== ";") {
+          if (lastDeclaration?.init &amp;&amp; text[locEnd(lastDeclaration)] !== ";") {
             node.range = [locStart(node), locEnd(lastDeclaration)];
           }
           break;
@@ -49824,7 +49818,7 @@
   });
   var FLOW_PRAGMA_REGEX = /@(?:no)?flow\b/u;
   function isFlowFile(text, filepath) {
-    if (filepath == null ? void 0 <span class="branch-0 cbranch-no" title="branch not covered" >: filepath.endsWith(".js.flow"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (filepath<span class="branch-0 cbranch-no" title="branch not covered" >?.endsWith(</span>".js.flow")) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const shebang = get_shebang_default(text);
@@ -50134,7 +50128,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-11T00:31:52.133Z
+                at 2025-09-12T00:31:28.060Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
