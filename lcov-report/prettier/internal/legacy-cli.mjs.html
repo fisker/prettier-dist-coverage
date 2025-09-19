@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.09% </span>
+                <span class="strong">76% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3654/4802</span>
+                <span class='fraction'>3665/4822</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.14% </span>
+                <span class="strong">81.9% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>782/952</span>
+                <span class='fraction'>783/956</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.66% </span>
+                <span class="strong">57.62% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>188/326</span>
+                <span class='fraction'>189/328</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.09% </span>
+                <span class="strong">76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3654/4802</span>
+                <span class='fraction'>3665/4822</span>
             </div>
         
             
@@ -4865,7 +4865,27 @@
 <a name='L4800'></a><a href='#L4800'>4800</a>
 <a name='L4801'></a><a href='#L4801'>4801</a>
 <a name='L4802'></a><a href='#L4802'>4802</a>
-<a name='L4803'></a><a href='#L4803'>4803</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">428x</span>
+<a name='L4803'></a><a href='#L4803'>4803</a>
+<a name='L4804'></a><a href='#L4804'>4804</a>
+<a name='L4805'></a><a href='#L4805'>4805</a>
+<a name='L4806'></a><a href='#L4806'>4806</a>
+<a name='L4807'></a><a href='#L4807'>4807</a>
+<a name='L4808'></a><a href='#L4808'>4808</a>
+<a name='L4809'></a><a href='#L4809'>4809</a>
+<a name='L4810'></a><a href='#L4810'>4810</a>
+<a name='L4811'></a><a href='#L4811'>4811</a>
+<a name='L4812'></a><a href='#L4812'>4812</a>
+<a name='L4813'></a><a href='#L4813'>4813</a>
+<a name='L4814'></a><a href='#L4814'>4814</a>
+<a name='L4815'></a><a href='#L4815'>4815</a>
+<a name='L4816'></a><a href='#L4816'>4816</a>
+<a name='L4817'></a><a href='#L4817'>4817</a>
+<a name='L4818'></a><a href='#L4818'>4818</a>
+<a name='L4819'></a><a href='#L4819'>4819</a>
+<a name='L4820'></a><a href='#L4820'>4820</a>
+<a name='L4821'></a><a href='#L4821'>4821</a>
+<a name='L4822'></a><a href='#L4822'>4822</a>
+<a name='L4823'></a><a href='#L4823'>4823</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">428x</span>
 <span class="cline-any cline-yes">428x</span>
 <span class="cline-any cline-yes">428x</span>
 <span class="cline-any cline-yes">428x</span>
@@ -6062,6 +6082,11 @@
 <span class="cline-any cline-yes">428x</span>
 <span class="cline-any cline-yes">428x</span>
 <span class="cline-any cline-yes">428x</span>
+<span class="cline-any cline-yes">428x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">64x</span>
@@ -6069,6 +6094,21 @@
 <span class="cline-any cline-yes">11352x</span>
 <span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">428x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">428x</span>
 <span class="cline-any cline-yes">428x</span>
 <span class="cline-any cline-yes">428x</span>
 <span class="cline-any cline-yes">428x</span>
@@ -10864,13 +10904,33 @@ import fs from "fs/promises";
 import path from "path";
 &nbsp;
 // node_modules/sdbm/index.js
-function sdbm(string) {
-  let hash2 = 0;
-  for (let i = 0; i &lt; string.length; i++) {
-    hash2 = string.charCodeAt(i) + (hash2 &lt;&lt; 6) + (hash2 &lt;&lt; 16) - hash2;
-  }
-  return hash2 &gt;&gt;&gt; 0;
+var textEncoder = new TextEncoder();
+function sdbmHash(input, options) {
+  if (typeof input === "string") {
+    if (options<span class="branch-0 cbranch-no" title="branch not covered" >?.bytes)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      input = textEncoder.encode(input);</span>
+    } else {
+      let hash3 = 0n;
+      for (let index = 0; index &lt; input.length; index++) {
+        hash3 = BigInt(input.charCodeAt(index)) + (hash3 &lt;&lt; 6n) + (hash3 &lt;&lt; 16n) - hash3;
+      }
+      return hash3;
+    }
+  }<span class="branch-0 cbranch-no" title="branch not covered" > else if (!(input instanceof Uint8Array)) {</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError("Expected a string or Uint8Array");</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  let hash2 = 0n;</span>
+<span class="cstat-no" title="statement not covered" >  for (const byte of input) {</span>
+<span class="cstat-no" title="statement not covered" >    hash2 = BigInt(byte) + (hash2 &lt;&lt; 6n) + (hash2 &lt;&lt; 16n) - hash2;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return hash2;</span>
 }
+function sdbm(input, options) {
+  return Number(BigInt.asUintN(32, sdbmHash(input, options)));
+}
+sdbm.bigint = <span class="fstat-no" title="function not covered" >function(input, options) {</span>
+<span class="cstat-no" title="statement not covered" >  return BigInt.asUintN(64, sdbmHash(input, options));</span>
+};
 &nbsp;
 // src/cli/utils.js
 import { __internal as sharedWithCli2 } from "../index.mjs";
@@ -14476,7 +14536,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-18T00:31:05.111Z
+                at 2025-09-19T00:32:05.160Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
