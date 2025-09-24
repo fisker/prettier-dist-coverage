@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.41% </span>
+                <span class="strong">51.51% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1784/3470</span>
+                <span class='fraction'>1784/3463</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.41% </span>
+                <span class="strong">51.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1784/3470</span>
+                <span class='fraction'>1784/3463</span>
             </div>
         
             
@@ -3525,14 +3525,7 @@
 <a name='L3460'></a><a href='#L3460'>3460</a>
 <a name='L3461'></a><a href='#L3461'>3461</a>
 <a name='L3462'></a><a href='#L3462'>3462</a>
-<a name='L3463'></a><a href='#L3463'>3463</a>
-<a name='L3464'></a><a href='#L3464'>3464</a>
-<a name='L3465'></a><a href='#L3465'>3465</a>
-<a name='L3466'></a><a href='#L3466'>3466</a>
-<a name='L3467'></a><a href='#L3467'>3467</a>
-<a name='L3468'></a><a href='#L3468'>3468</a>
-<a name='L3469'></a><a href='#L3469'>3469</a>
-<a name='L3470'></a><a href='#L3470'>3470</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L3463'></a><a href='#L3463'>3463</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3595,6 +3588,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4029,8 +4025,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4040,15 +4034,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7074,10 +7060,13 @@
   var DOC_TYPE_LINE = "line";
   var DOC_TYPE_BREAK_PARENT = "break-parent";
 &nbsp;
-  // src/document/utils/assert-doc.js
+  // src/utils/noop.js
   var noop = () =&gt; {
   };
-  var assertDoc = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: function(doc) {</span>
+  var noop_default = noop;
+&nbsp;
+  // src/document/utils/assert-doc.js
+  var assertDoc = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: function(doc) {</span>
 <span class="cstat-no" title="statement not covered" >    traverse_doc_default(doc, (doc2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (checked.has(doc2)) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
@@ -7087,7 +7076,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
   };
-  var assertDocArray = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: function(docs, optional = false) {</span>
+  var assertDocArray = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: function(docs, optional = false) {</span>
 <span class="cstat-no" title="statement not covered" >    if (optional &amp;&amp; !docs) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -7494,12 +7483,8 @@
   var get_visitor_keys_default = getVisitorKeys;
 &nbsp;
   // src/language-graphql/loc.js
-  function locStart(nodeOrToken) {
-    return nodeOrToken.loc.start;
-  }
-  function locEnd(nodeOrToken) {
-    return nodeOrToken.loc.end;
-  }
+  var locStart = (nodeOrToken) =&gt; nodeOrToken.loc.start;
+  var locEnd = (nodeOrToken) =&gt; nodeOrToken.loc.end;
 &nbsp;
   // src/utils/pragma/pragma.evaluate.js
   var FORMAT_PRAGMA_TO_INSERT = "format";
@@ -7507,17 +7492,11 @@
   var GRAPHQL_HAS_PRAGMA_REGEXP = /^\s*#[^\S\n]*@(?:format|prettier)\s*(?:\n|$)/u;
 &nbsp;
   // src/language-graphql/pragma.js
-<span class="fstat-no" title="function not covered" >  function hasPragma(text) {</span>
-<span class="cstat-no" title="statement not covered" >    return GRAPHQL_HAS_PRAGMA_REGEXP.test(text);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  function hasIgnorePragma(text) {</span>
-<span class="cstat-no" title="statement not covered" >    return GRAPHQL_HAS_IGNORE_PRAGMA_REGEXP.test(text);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  function insertPragma(text) {</span>
-<span class="cstat-no" title="statement not covered" >    return `# @${FORMAT_PRAGMA_TO_INSERT}</span>
+  var hasPragma = <span class="fstat-no" title="function not covered" >(text) =&gt; GRAPHQL_HAS_PRAGMA_REGEXP.test(text);</span>
+  var hasIgnorePragma = <span class="fstat-no" title="function not covered" >(text) =&gt; GRAPHQL_HAS_IGNORE_PRAGMA_REGEXP.test(text);</span>
+  var insertPragma = <span class="fstat-no" title="function not covered" >(text) =&gt; `# @${FORMAT_PRAGMA_TO_INSERT}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >${text}`;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+${text}`;
 &nbsp;
   // src/language-graphql/print/description.js
 <span class="fstat-no" title="function not covered" >  function printDescription(path, options2, print) {</span>
@@ -10477,7 +10456,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-23T00:31:38.622Z
+                at 2025-09-24T00:32:30.087Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

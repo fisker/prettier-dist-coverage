@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.2% </span>
+                <span class="strong">56.3% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>702/1249</span>
+                <span class='fraction'>705/1252</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.47% </span>
+                <span class="strong">70.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>148/210</span>
+                <span class='fraction'>147/209</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.2% </span>
+                <span class="strong">56.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>702/1249</span>
+                <span class='fraction'>705/1252</span>
             </div>
         
             
@@ -1312,7 +1312,10 @@
 <a name='L1247'></a><a href='#L1247'>1247</a>
 <a name='L1248'></a><a href='#L1248'>1248</a>
 <a name='L1249'></a><a href='#L1249'>1249</a>
-<a name='L1250'></a><a href='#L1250'>1250</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">436x</span>
+<a name='L1250'></a><a href='#L1250'>1250</a>
+<a name='L1251'></a><a href='#L1251'>1251</a>
+<a name='L1252'></a><a href='#L1252'>1252</a>
+<a name='L1253'></a><a href='#L1253'>1253</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
@@ -1367,6 +1370,11 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">436x</span>
+<span class="cline-any cline-yes">436x</span>
+<span class="cline-any cline-yes">436x</span>
+<span class="cline-any cline-yes">436x</span>
+<span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
@@ -1391,7 +1399,7 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">184x</span>
-<span class="cline-any cline-yes">266x</span>
+<span class="cline-any cline-yes">294x</span>
 <span class="cline-any cline-yes">130x</span>
 <span class="cline-any cline-yes">130x</span>
 <span class="cline-any cline-yes">353x</span>
@@ -1779,8 +1787,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">436x</span>
-<span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
 <span class="cline-any cline-yes">436x</span>
@@ -2619,6 +2625,11 @@ var at = (isOptionalObject, object, index) =&gt; {
 };
 var at_default = at;
 &nbsp;
+// src/utils/noop.js
+var noop = () =&gt; {
+};
+var noop_default = noop;
+&nbsp;
 // node_modules/trim-newlines/index.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function trimNewlinesEnd(string) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let end = string.length;</span>
@@ -3030,9 +3041,7 @@ function propagateBreaks(doc) {
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // src/document/utils/assert-doc.js
-var noop = () =&gt; {
-};
-var assertDoc = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: function(doc) {</span>
+var assertDoc = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: function(doc) {</span>
 <span class="cstat-no" title="statement not covered" >  traverse_doc_default(doc, (doc2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (checked.has(doc2)) {</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
@@ -3042,7 +3051,7 @@ var assertDoc = true ? noop <span class="branch-0 cbranch-no" title="branch not 
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
 };
-var assertDocArray = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: function(docs, optional = false) {</span>
+var assertDocArray = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: function(docs, optional = false) {</span>
 <span class="cstat-no" title="statement not covered" >  if (optional &amp;&amp; !docs) {</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -3053,7 +3062,7 @@ var assertDocArray = true ? noop <span class="branch-0 cbranch-no" title="branch
 <span class="cstat-no" title="statement not covered" >    assertDoc(doc);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 };
-var assertDocFillParts = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: (</span>
+var assertDocFillParts = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: (</span>
 <span class="cstat-no" title="statement not covered" >  /**</span>
 <span class="cstat-no" title="statement not covered" >   * @param {Doc[]} parts</span>
 <span class="cstat-no" title="statement not covered" >   */</span>
@@ -3817,7 +3826,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-23T00:31:38.622Z
+                at 2025-09-24T00:32:30.087Z
             </div>
         <script src="../prettify.js"></script>
         <script>

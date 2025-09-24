@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.41% </span>
+                <span class="strong">63.45% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5286/8336</span>
+                <span class='fraction'>5289/8335</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.41% </span>
+                <span class="strong">63.45% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5286/8336</span>
+                <span class='fraction'>5289/8335</span>
             </div>
         
             
@@ -8397,8 +8397,7 @@
 <a name='L8332'></a><a href='#L8332'>8332</a>
 <a name='L8333'></a><a href='#L8333'>8333</a>
 <a name='L8334'></a><a href='#L8334'>8334</a>
-<a name='L8335'></a><a href='#L8335'>8335</a>
-<a name='L8336'></a><a href='#L8336'>8336</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8335'></a><a href='#L8335'>8335</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8516,6 +8515,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8623,8 +8627,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9056,11 +9058,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16849,6 +16847,11 @@
   };
   var at_default = at;
 &nbsp;
+  // src/utils/noop.js
+  var noop = () =&gt; {
+  };
+  var noop_default = noop;
+&nbsp;
   // src/document/utils/get-doc-type.js
 <span class="fstat-no" title="function not covered" >  function getDocType(doc) {</span>
 <span class="cstat-no" title="statement not covered" >    if (typeof doc === "string") {</span>
@@ -16960,9 +16963,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/document/utils/assert-doc.js
-  var noop = () =&gt; {
-  };
-  var assertDoc = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: function(doc) {</span>
+  var assertDoc = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: function(doc) {</span>
 <span class="cstat-no" title="statement not covered" >    traverse_doc_default(doc, (doc2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (checked.has(doc2)) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
@@ -16972,7 +16973,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
   };
-  var assertDocArray = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: function(docs, optional = false) {</span>
+  var assertDocArray = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: function(docs, optional = false) {</span>
 <span class="cstat-no" title="statement not covered" >    if (optional &amp;&amp; !docs) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -16983,7 +16984,7 @@
 <span class="cstat-no" title="statement not covered" >      assertDoc(doc);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var assertDocFillParts = true ? noop <span class="branch-0 cbranch-no" title="branch not covered" >: (</span>
+  var assertDocFillParts = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: (</span>
 <span class="cstat-no" title="statement not covered" >    /**</span>
 <span class="cstat-no" title="statement not covered" >     * @param {Doc[]} parts</span>
 <span class="cstat-no" title="statement not covered" >     */</span>
@@ -17390,12 +17391,8 @@
   var get_visitor_keys_default = getVisitorKeys;
 &nbsp;
   // src/language-handlebars/loc.js
-<span class="fstat-no" title="function not covered" >  function locStart(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return node.loc.start.offset;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  function locEnd(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return node.loc.end.offset;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  var locStart = <span class="fstat-no" title="function not covered" >(node) =&gt; node.loc.start.offset;</span>
+  var locEnd = <span class="fstat-no" title="function not covered" >(node) =&gt; node.loc.end.offset;</span>
 &nbsp;
   // src/language-handlebars/html-void-elements.evaluate.js
   var html_void_elements_evaluate_default = /* @__PURE__ */ new Set([
@@ -25075,7 +25072,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-23T00:31:38.622Z
+                at 2025-09-24T00:32:30.087Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
