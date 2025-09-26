@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.01% </span>
+                <span class="strong">69.99% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8209/11725</span>
+                <span class='fraction'>8206/11724</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">67.2% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1041/1549</span>
+                <span class='fraction'>1043/1552</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.01% </span>
+                <span class="strong">69.99% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8209/11725</span>
+                <span class='fraction'>8206/11724</span>
             </div>
         
             
@@ -11786,8 +11786,7 @@
 <a name='L11721'></a><a href='#L11721'>11721</a>
 <a name='L11722'></a><a href='#L11722'>11722</a>
 <a name='L11723'></a><a href='#L11723'>11723</a>
-<a name='L11724'></a><a href='#L11724'>11724</a>
-<a name='L11725'></a><a href='#L11725'>11725</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11724'></a><a href='#L11724'>11724</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20465,12 +20464,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">186x</span>
+<span class="cline-any cline-yes">113x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">186x</span>
-<span class="cline-any cline-yes">186x</span>
-<span class="cline-any cline-yes">186x</span>
+<span class="cline-any cline-yes">113x</span>
+<span class="cline-any cline-yes">113x</span>
+<span class="cline-any cline-yes">113x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22357,20 +22356,19 @@
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">75x</span>
 <span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">73x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">73x</span>
-<span class="cline-any cline-yes">38x</span>
-<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">73x</span>
+<span class="cline-any cline-yes">75x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -34080,21 +34078,20 @@
       if (!node.children) {
         return node;
       }
-      const children = node.children.reduce((current, child) =&gt; {
-        const lastChild = at_default(
-          /* isOptionalObject */
-          false,
-          current,
-          -1
-        );
+      const children = [];
+      let lastChild;
+      let changed;
+      for (let child of node.children) {
         if (lastChild &amp;&amp; shouldMerge(lastChild, child)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          current.splice(-1, 1, mergeNode(lastChild, child));</span>
+<span class="cstat-no" title="statement not covered" >          child = mergeNode(lastChild, child);</span>
+<span class="cstat-no" title="statement not covered" >          children.splice(-1, 1, child);</span>
+<span class="cstat-no" title="statement not covered" >          changed || (changed = true);</span>
         } else {
-          current.push(child);
+          children.push(child);
         }
-        return current;
-      }, []);
-      return { ...node, children };
+        lastChild = child;
+      }
+      return changed <span class="branch-0 cbranch-no" title="branch not covered" >? { ...node, children } </span>: node;
     });
   }
   function mergeContinuousTexts(ast) {
@@ -35242,7 +35239,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-25T00:32:09.426Z
+                at 2025-09-26T00:31:31.694Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

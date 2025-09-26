@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.28% </span>
+                <span class="strong">51.27% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4269/8324</span>
+                <span class='fraction'>4270/8327</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.27% </span>
+                <span class="strong">62.21% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>685/1100</span>
+                <span class='fraction'>685/1101</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.28% </span>
+                <span class="strong">51.27% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4269/8324</span>
+                <span class='fraction'>4270/8327</span>
             </div>
         
             
@@ -8386,7 +8386,10 @@
 <a name='L8321'></a><a href='#L8321'>8321</a>
 <a name='L8322'></a><a href='#L8322'>8322</a>
 <a name='L8323'></a><a href='#L8323'>8323</a>
-<a name='L8324'></a><a href='#L8324'>8324</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8324'></a><a href='#L8324'>8324</a>
+<a name='L8325'></a><a href='#L8325'>8325</a>
+<a name='L8326'></a><a href='#L8326'>8326</a>
+<a name='L8327'></a><a href='#L8327'>8327</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14579,6 +14582,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -14597,6 +14602,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22878,30 +22884,32 @@ ${text}`;
         (lineContent) =&gt; lineContent.length === 0 <span class="branch-0 cbranch-no" title="branch not covered" >? [] </span>: [lineContent]
       );
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return rawLineContents.map(</span></span>
-<span class="cstat-no" title="statement not covered" >      (lineContent) =&gt; lineContent.length === 0 ? [] : splitWithSingleSpace(lineContent)</span>
-<span class="cstat-no" title="statement not covered" >    ).reduce(</span>
-<span class="cstat-no" title="statement not covered" >      (reduced, lineContentWords, index) =&gt; index !== 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; lineContentWords.length &gt; 0 &amp;&amp; !// trailing backslash in quoteDouble should be preserved</span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const lines = [];</span></span>
+<span class="cstat-no" title="statement not covered" >    for (const [index, line2] of rawLineContents.entries()) {</span>
+<span class="cstat-no" title="statement not covered" >      const words = line2.length === 0 ? [] : splitWithSingleSpace(line2);</span>
+<span class="cstat-no" title="statement not covered" >      if (index &gt; 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; words.length &gt; 0 &amp;&amp; !// trailing backslash in quoteDouble should be preserved</span>
 <span class="cstat-no" title="statement not covered" >      (nodeType === "quoteDouble" &amp;&amp; at_default(</span>
 <span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >        false,</span>
 <span class="cstat-no" title="statement not covered" >        at_default(</span>
 <span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
-<span class="cstat-no" title="statement not covered" >          reduced,</span>
+<span class="cstat-no" title="statement not covered" >          lines,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
 <span class="cstat-no" title="statement not covered" >        ),</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
-<span class="cstat-no" title="statement not covered" >      ).endsWith("\\")) ? [...reduced.slice(0, -1), [...at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >        false,</span>
-<span class="cstat-no" title="statement not covered" >        reduced,</span>
-<span class="cstat-no" title="statement not covered" >        -1</span>
-<span class="cstat-no" title="statement not covered" >      ), ...lineContentWords]] : [...reduced, lineContentWords],</span>
-<span class="cstat-no" title="statement not covered" >      []</span>
-<span class="cstat-no" title="statement not covered" >    ).map(</span>
-<span class="cstat-no" title="statement not covered" >      (lineContentWords) =&gt; options2.proseWrap === "never" ? [lineContentWords.join(" ")] : lineContentWords</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >      ).endsWith("\\"))) {</span>
+<span class="cstat-no" title="statement not covered" >        lines[lines.length - 1] = [...at_default(</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
+<span class="cstat-no" title="statement not covered" >          false,</span>
+<span class="cstat-no" title="statement not covered" >          lines,</span>
+<span class="cstat-no" title="statement not covered" >          -1</span>
+<span class="cstat-no" title="statement not covered" >        ), ...words];</span>
+<span class="cstat-no" title="statement not covered" >      } else {</span>
+<span class="cstat-no" title="statement not covered" >        lines.push(words);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    return options2.proseWrap === "never" ? lines.map((words) =&gt; [words.join(" ")]) <span class="branch-0 cbranch-no" title="branch not covered" >: lines;</span>
   }
   function getBlockValueLineContents(node, { parentIndent, isLastDescendant, options: options2 }) {
     const content = node.position.start.line === node.position.end.line <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: options2.originalText.slice(node.position.start.offset, node.position.end.offset).match(/^[^\n]*\n(.*)$/su)[1];
@@ -22920,47 +22928,48 @@ ${text}`;
         )
       );
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return removeUnnecessaryTrailingNewlines(</span></span>
-<span class="cstat-no" title="statement not covered" >      rawLineContents.map(</span>
-<span class="cstat-no" title="statement not covered" >        (lineContent) =&gt; lineContent.length === 0 ? [] : splitWithSingleSpace(lineContent)</span>
-<span class="cstat-no" title="statement not covered" >      ).reduce(</span>
-<span class="cstat-no" title="statement not covered" >        (reduced, lineContentWords, index) =&gt; index !== 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; lineContentWords.length &gt; 0 &amp;&amp; !/^\s/u.test(lineContentWords[0]) &amp;&amp; !/^\s|\s$/u.test(at_default(</span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    let lines = [];</span></span>
+<span class="cstat-no" title="statement not covered" >    for (const [index, line2] of rawLineContents.entries()) {</span>
+<span class="cstat-no" title="statement not covered" >      const words = line2.length === 0 ? [] : splitWithSingleSpace(line2);</span>
+<span class="cstat-no" title="statement not covered" >      if (index &gt; 0 &amp;&amp; words.length &gt; 0 &amp;&amp; rawLineContents[index - 1].length &gt; 0 &amp;&amp; !/^\s/u.test(words[0]) &amp;&amp; // This test against a `string[]`, should be a mistake</span>
+<span class="cstat-no" title="statement not covered" >      // originally introduced in https://github.com/prettier/prettier/pull/4742/files#diff-a4dc2e1922e1d8d5ac20818480f777c9a2d5af739eaa3a0409b08bf29a9d0f74R282</span>
+<span class="cstat-no" title="statement not covered" >      // @ts-expect-error -- see comment above</span>
+<span class="cstat-no" title="statement not covered" >      !/^\s|\s$/u.test(at_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
+<span class="cstat-no" title="statement not covered" >        false,</span>
+<span class="cstat-no" title="statement not covered" >        lines,</span>
+<span class="cstat-no" title="statement not covered" >        -1</span>
+<span class="cstat-no" title="statement not covered" >      ))) {</span>
+<span class="cstat-no" title="statement not covered" >        lines[lines.length - 1] = [...at_default(</span>
 <span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
 <span class="cstat-no" title="statement not covered" >          false,</span>
-<span class="cstat-no" title="statement not covered" >          reduced,</span>
+<span class="cstat-no" title="statement not covered" >          lines,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
-<span class="cstat-no" title="statement not covered" >        )) ? [</span>
-<span class="cstat-no" title="statement not covered" >          ...reduced.slice(0, -1),</span>
-<span class="cstat-no" title="statement not covered" >          [...at_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >            false,</span>
-<span class="cstat-no" title="statement not covered" >            reduced,</span>
-<span class="cstat-no" title="statement not covered" >            -1</span>
-<span class="cstat-no" title="statement not covered" >          ), ...lineContentWords]</span>
-<span class="cstat-no" title="statement not covered" >        ] : [...reduced, lineContentWords],</span>
-<span class="cstat-no" title="statement not covered" >        []</span>
-<span class="cstat-no" title="statement not covered" >      ).map(</span>
-<span class="cstat-no" title="statement not covered" >        (lineContentWords) =&gt; lineContentWords.reduce(</span>
-<span class="cstat-no" title="statement not covered" >          (reduced, word) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >            // disallow trailing spaces</span>
-<span class="cstat-no" title="statement not covered" >            reduced.length &gt; 0 &amp;&amp; /\s$/u.test(at_default(</span>
-<span class="cstat-no" title="statement not covered" >              /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >              false,</span>
-<span class="cstat-no" title="statement not covered" >              reduced,</span>
-<span class="cstat-no" title="statement not covered" >              -1</span>
-<span class="cstat-no" title="statement not covered" >            )) ? [...reduced.slice(0, -1), at_default(</span>
-<span class="cstat-no" title="statement not covered" >              /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >              false,</span>
-<span class="cstat-no" title="statement not covered" >              reduced,</span>
-<span class="cstat-no" title="statement not covered" >              -1</span>
-<span class="cstat-no" title="statement not covered" >            ) + " " + word] : [...reduced, word]</span>
-<span class="cstat-no" title="statement not covered" >          ),</span>
-<span class="cstat-no" title="statement not covered" >          []</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >      ).map(</span>
-<span class="cstat-no" title="statement not covered" >        (lineContentWords) =&gt; options2.proseWrap === "never" ? [lineContentWords.join(" ")] : lineContentWords</span>
-<span class="cstat-no" title="statement not covered" >      )</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >        ), ...words];</span>
+<span class="cstat-no" title="statement not covered" >      } else {</span>
+<span class="cstat-no" title="statement not covered" >        lines.push(words);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    lines = lines.map((originalWords) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const words = [];</span>
+<span class="cstat-no" title="statement not covered" >      for (const word of originalWords) {</span>
+<span class="cstat-no" title="statement not covered" >        if (words.length &gt; 0 &amp;&amp; /\s$/u.test(at_default(</span>
+<span class="cstat-no" title="statement not covered" >          /* isOptionalObject */</span>
+<span class="cstat-no" title="statement not covered" >          false,</span>
+<span class="cstat-no" title="statement not covered" >          words,</span>
+<span class="cstat-no" title="statement not covered" >          -1</span>
+<span class="cstat-no" title="statement not covered" >        ))) {</span>
+<span class="cstat-no" title="statement not covered" >          words[words.length - 1] += " " + word;</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >          words.push(word);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      return words;</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" >    if (options2.proseWrap === "never") {</span>
+<span class="cstat-no" title="statement not covered" >      lines = lines.map((words) =&gt; [words.join(" ")]);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return removeUnnecessaryTrailingNewlines(lines);</span>
 <span class="cstat-no" title="statement not covered" >    function removeUnnecessaryTrailingNewlines(lineContents) {</span>
       if (node.chomping === "keep") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return at_default(</span>
@@ -25039,7 +25048,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-25T00:32:09.426Z
+                at 2025-09-26T00:31:31.694Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
