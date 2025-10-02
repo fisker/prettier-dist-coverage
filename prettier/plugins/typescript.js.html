@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.73% </span>
+                <span class="strong">42.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13846/32402</span>
+                <span class='fraction'>13840/32396</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.64% </span>
+                <span class="strong">53.68% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1252/2334</span>
+                <span class='fraction'>1252/2332</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.73% </span>
+                <span class="strong">42.72% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13846/32402</span>
+                <span class='fraction'>13840/32396</span>
             </div>
         
             
@@ -32458,13 +32458,7 @@
 <a name='L32393'></a><a href='#L32393'>32393</a>
 <a name='L32394'></a><a href='#L32394'>32394</a>
 <a name='L32395'></a><a href='#L32395'>32395</a>
-<a name='L32396'></a><a href='#L32396'>32396</a>
-<a name='L32397'></a><a href='#L32397'>32397</a>
-<a name='L32398'></a><a href='#L32398'>32398</a>
-<a name='L32399'></a><a href='#L32399'>32399</a>
-<a name='L32400'></a><a href='#L32400'>32400</a>
-<a name='L32401'></a><a href='#L32401'>32401</a>
-<a name='L32402'></a><a href='#L32402'>32402</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L32396'></a><a href='#L32396'>32396</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -41018,8 +41012,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">51x</span>
-<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -59063,15 +59057,9 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -67407,10 +67395,10 @@
     ] = "Latest";
     return ScriptTarget12;
   })(ScriptTarget || {});
-  var LanguageVariant = /* @__PURE__ */ ((LanguageVariant3) =&gt; {
-    LanguageVariant3[LanguageVariant3["Standard"] = 0] = "Standard";
-    LanguageVariant3[LanguageVariant3["JSX"] = 1] = "JSX";
-    return LanguageVariant3;
+  var LanguageVariant = /* @__PURE__ */ ((LanguageVariant4) =&gt; {
+    LanguageVariant4[LanguageVariant4["Standard"] = 0] = "Standard";
+    LanguageVariant4[LanguageVariant4["JSX"] = 1] = "JSX";
+    return LanguageVariant4;
   })(LanguageVariant || {});
   var Extension = /* @__PURE__ */ ((Extension2) =&gt; {
     Extension2["Ts"] = ".ts";
@@ -91456,9 +91444,7 @@
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >      return children;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    const languageVariant = (sourceFile == null <span class="branch-0 cbranch-no" title="branch not covered" >? void 0 </span>: sourceFile.languageVariant) <span class="branch-0 cbranch-no" title="branch not covered" >?? 0;</span>
     scanner.setText((sourceFile <span class="branch-0 cbranch-no" title="branch not covered" >|| node.getSourceFile())</span>.text);
-    scanner.setLanguageVariant(languageVariant);
     let pos = node.pos;
     const processNode = (child) =&gt; {
       addSyntheticNodes(children, pos, child.pos, node);
@@ -91475,10 +91461,6 @@
     node.forEachChild(processNode, processNodes);
     addSyntheticNodes(children, pos, node.end, node);
     scanner.setText(void 0);
-    scanner.setLanguageVariant(
-      0
-      /* Standard */
-    );
     return children;
   }
   function addSyntheticNodes(nodes, pos, end, parent2) {
@@ -97273,7 +97255,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-01T00:36:45.174Z
+                at 2025-10-02T00:31:23.042Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
