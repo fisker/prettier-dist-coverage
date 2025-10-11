@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.1% </span>
+                <span class="strong">34.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1732/5078</span>
+                <span class='fraction'>1731/5077</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.05% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>25/276</span>
+                <span class='fraction'>25/275</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.1% </span>
+                <span class="strong">34.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1732/5078</span>
+                <span class='fraction'>1731/5077</span>
             </div>
         
             
@@ -5139,8 +5139,7 @@
 <a name='L5074'></a><a href='#L5074'>5074</a>
 <a name='L5075'></a><a href='#L5075'>5075</a>
 <a name='L5076'></a><a href='#L5076'>5076</a>
-<a name='L5077'></a><a href='#L5077'>5077</a>
-<a name='L5078'></a><a href='#L5078'>5078</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5077'></a><a href='#L5077'>5077</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7624,8 +7623,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -7639,7 +7636,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8297,6 +8293,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12698,9 +12696,6 @@
 <span class="fstat-no" title="function not covered" >    isTemplateLiteralInterpolationStart() {</span>
 <span class="cstat-no" title="statement not covered" >      return this.isOperator("${");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="fstat-no" title="function not covered" >    isTemplateLiteralInterpolationEnd() {</span>
-<span class="cstat-no" title="statement not covered" >      return this.isOperator("}");</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    toString() {</span>
 <span class="cstat-no" title="statement not covered" >      switch (this.type) {</span>
 <span class="cstat-no" title="statement not covered" >        case TokenType.Character:</span>
@@ -12868,7 +12863,7 @@
 <span class="cstat-no" title="statement not covered" >      this.advance();</span>
 <span class="cstat-no" title="statement not covered" >      const currentBrace = this.braceStack.pop();</span>
 <span class="cstat-no" title="statement not covered" >      if (currentBrace === "interpolation") {</span>
-<span class="cstat-no" title="statement not covered" >        this.tokens.push(newOperatorToken(start, this.index, "}"));</span>
+<span class="cstat-no" title="statement not covered" >        this.tokens.push(newCharacterToken(start, this.index, $RBRACE));</span>
 <span class="cstat-no" title="statement not covered" >        return this.scanTemplateLiteralPart(this.index);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return newCharacterToken(start, this.index, code);</span>
@@ -14182,12 +14177,14 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        } else if (token.isTemplateLiteralInterpolationStart()) {</span>
 <span class="cstat-no" title="statement not covered" >          this.advance();</span>
+<span class="cstat-no" title="statement not covered" >          this.rbracesExpected++;</span>
 <span class="cstat-no" title="statement not covered" >          const expression = this.parsePipe();</span>
 <span class="cstat-no" title="statement not covered" >          if (expression instanceof EmptyExpr$1) {</span>
 <span class="cstat-no" title="statement not covered" >            this.error("Template literal interpolation cannot be empty");</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            expressions.push(expression);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          this.rbracesExpected--;</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          this.advance();</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -14470,7 +14467,7 @@
     _VisitorMode2[_VisitorMode2["Extract"] = 0] = "Extract";
     _VisitorMode2[_VisitorMode2["Merge"] = 1] = "Merge";
   })(_VisitorMode || (_VisitorMode = {}));
-  var VERSION = new Version("20.3.1");
+  var VERSION = new Version("20.3.4");
 &nbsp;
   // node_modules/angular-estree-parser/lib/utils.js
 <span class="fstat-no" title="function not covered" >  function stripSurroundingSpaces({ start: startIndex, end: endIndex }, text) {</span>
@@ -15301,7 +15298,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-10T00:32:27.361Z
+                at 2025-10-11T00:30:21.243Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
