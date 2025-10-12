@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.06% </span>
+                <span class="strong">61% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7716/12636</span>
+                <span class='fraction'>7717/12650</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.31% </span>
+                <span class="strong">51.25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1425/2777</span>
+                <span class='fraction'>1425/2780</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.06% </span>
+                <span class="strong">61% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7716/12636</span>
+                <span class='fraction'>7717/12650</span>
             </div>
         
             
@@ -12698,7 +12698,21 @@
 <a name='L12633'></a><a href='#L12633'>12633</a>
 <a name='L12634'></a><a href='#L12634'>12634</a>
 <a name='L12635'></a><a href='#L12635'>12635</a>
-<a name='L12636'></a><a href='#L12636'>12636</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12636'></a><a href='#L12636'>12636</a>
+<a name='L12637'></a><a href='#L12637'>12637</a>
+<a name='L12638'></a><a href='#L12638'>12638</a>
+<a name='L12639'></a><a href='#L12639'>12639</a>
+<a name='L12640'></a><a href='#L12640'>12640</a>
+<a name='L12641'></a><a href='#L12641'>12641</a>
+<a name='L12642'></a><a href='#L12642'>12642</a>
+<a name='L12643'></a><a href='#L12643'>12643</a>
+<a name='L12644'></a><a href='#L12644'>12644</a>
+<a name='L12645'></a><a href='#L12645'>12645</a>
+<a name='L12646'></a><a href='#L12646'>12646</a>
+<a name='L12647'></a><a href='#L12647'>12647</a>
+<a name='L12648'></a><a href='#L12648'>12648</a>
+<a name='L12649'></a><a href='#L12649'>12649</a>
+<a name='L12650'></a><a href='#L12650'>12650</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16134,6 +16148,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22141,6 +22163,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
@@ -28768,11 +28796,19 @@
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+    if (followingNode.type === "BlockStatement" &amp;&amp; followingNode === enclosingNode.consequent <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; locStart(comment) &gt;= locEnd(precedingNode) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; locEnd(comment) &lt;= locStart(followingNode))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      addLeadingComment(followingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     if (precedingNode === enclosingNode.consequent &amp;&amp; followingNode === enclosingNode.alternate) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      const maybeElseTokenIndex = get_next_non_space_non_comment_character_index_default(</span>
 <span class="cstat-no" title="statement not covered" >        text,</span>
 <span class="cstat-no" title="statement not covered" >        locEnd(enclosingNode.consequent)</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      if (followingNode.type === "BlockStatement" &amp;&amp; locStart(comment) &gt;= maybeElseTokenIndex &amp;&amp; locEnd(comment) &lt;= locStart(followingNode)) {</span>
+<span class="cstat-no" title="statement not covered" >        addLeadingComment(followingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (locStart(comment) &lt; maybeElseTokenIndex || enclosingNode.alternate.type === "BlockStatement") {</span>
 <span class="cstat-no" title="statement not covered" >        if (precedingNode.type === "BlockStatement") {</span>
 <span class="cstat-no" title="statement not covered" >          addTrailingComment(precedingNode, comment);</span>
@@ -34776,7 +34812,13 @@
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (node.default) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      parts.push(" = ", print3("default"));</span>
+<span class="cstat-no" title="statement not covered" >      const groupId = Symbol("default");</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(</span>
+<span class="cstat-no" title="statement not covered" >        " =",</span>
+<span class="cstat-no" title="statement not covered" >        group(indent(line), { id: groupId }),</span>
+<span class="cstat-no" title="statement not covered" >        lineSuffixBoundary,</span>
+<span class="cstat-no" title="statement not covered" >        indentIfBreak(print3("default"), { groupId })</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return group(parts);
   }
@@ -37975,7 +38017,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-11T00:30:23.855Z
+                at 2025-10-12T00:34:00.127Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
