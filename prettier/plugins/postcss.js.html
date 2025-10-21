@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.33% </span>
+                <span class="strong">52.29% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6039/11539</span>
+                <span class='fraction'>6040/11550</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.84% </span>
+                <span class="strong">60.83% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1083/1780</span>
+                <span class='fraction'>1084/1782</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.33% </span>
+                <span class="strong">52.29% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6039/11539</span>
+                <span class='fraction'>6040/11550</span>
             </div>
         
             
@@ -11601,7 +11601,18 @@
 <a name='L11536'></a><a href='#L11536'>11536</a>
 <a name='L11537'></a><a href='#L11537'>11537</a>
 <a name='L11538'></a><a href='#L11538'>11538</a>
-<a name='L11539'></a><a href='#L11539'>11539</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11539'></a><a href='#L11539'>11539</a>
+<a name='L11540'></a><a href='#L11540'>11540</a>
+<a name='L11541'></a><a href='#L11541'>11541</a>
+<a name='L11542'></a><a href='#L11542'>11542</a>
+<a name='L11543'></a><a href='#L11543'>11543</a>
+<a name='L11544'></a><a href='#L11544'>11544</a>
+<a name='L11545'></a><a href='#L11545'>11545</a>
+<a name='L11546'></a><a href='#L11546'>11546</a>
+<a name='L11547'></a><a href='#L11547'>11547</a>
+<a name='L11548'></a><a href='#L11548'>11548</a>
+<a name='L11549'></a><a href='#L11549'>11549</a>
+<a name='L11550'></a><a href='#L11550'>11550</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21363,6 +21374,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">27x</span>
@@ -32050,7 +32072,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (original.type === "value-comma_group" &amp;&amp; original.groups.some(</span>
-<span class="cstat-no" title="statement not covered" >      (node) =&gt; node.type === "value-atword" &amp;&amp; node.value.endsWith("[") || node.type === "value-word" &amp;&amp; node.value.startsWith("]")</span>
+<span class="cstat-no" title="statement not covered" >      (node) =&gt; node.type === "value-atword" &amp;&amp; (node.value.endsWith("[") || node.value.endsWith("]")) || node.type === "value-word" &amp;&amp; (node.value.startsWith("]") || node.value.startsWith("["))</span>
 <span class="cstat-no" title="statement not covered" >    )) {</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
 <span class="cstat-no" title="statement not covered" >        type: "value-atword",</span>
@@ -32891,9 +32913,9 @@
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (iNode.type === "value-atword" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (iNode.value === "" || /*</span>
-<span class="cstat-no" title="statement not covered" >          @var[ @notVarNested ][notVar]</span>
-<span class="cstat-no" title="statement not covered" >          ^^^^^</span>
-<span class="cstat-no" title="statement not covered" >          */</span>
+<span class="cstat-no" title="statement not covered" >      @var[ @notVarNested ][notVar]</span>
+<span class="cstat-no" title="statement not covered" >      ^^^^^</span>
+<span class="cstat-no" title="statement not covered" >      */</span>
       iNode.value.endsWith("["))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -32902,6 +32924,17 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (iNode.value === "~") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+      if (options2.parser === "less") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        if (iNextNode?.type === "value-word" &amp;&amp; iNextNode.value === "[") {</span>
+<span class="cstat-no" title="statement not covered" >          continue;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (iNode.type === "value-word" &amp;&amp; iNode.value === "[" &amp;&amp; (iNextNode?.type === "value-atword" || iNextNode?.type === "value-word")) {</span>
+<span class="cstat-no" title="statement not covered" >          continue;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (iNode.type === "value-word" &amp;&amp; iNode.value === "][" &amp;&amp; iNextNode?.type === "value-word") {</span>
+<span class="cstat-no" title="statement not covered" >          continue;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (iNode.type !== "value-string" &amp;&amp; iNode.value &amp;&amp; iNode.value.includes("\\") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNextNode <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode.type !== "value-comment")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
@@ -34684,7 +34717,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-20T00:35:26.414Z
+                at 2025-10-21T00:33:03.125Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
