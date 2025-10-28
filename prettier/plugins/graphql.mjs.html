@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.46% </span>
+                <span class="strong">83.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2867/3435</span>
+                <span class='fraction'>2876/3444</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.25% </span>
+                <span class="strong">84.35% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>519/616</span>
+                <span class='fraction'>523/620</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.06% </span>
+                <span class="strong">82.6% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>152/183</span>
+                <span class='fraction'>152/184</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.46% </span>
+                <span class="strong">83.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2867/3435</span>
+                <span class='fraction'>2876/3444</span>
             </div>
         
             
@@ -3498,7 +3498,16 @@
 <a name='L3433'></a><a href='#L3433'>3433</a>
 <a name='L3434'></a><a href='#L3434'>3434</a>
 <a name='L3435'></a><a href='#L3435'>3435</a>
-<a name='L3436'></a><a href='#L3436'>3436</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L3436'></a><a href='#L3436'>3436</a>
+<a name='L3437'></a><a href='#L3437'>3437</a>
+<a name='L3438'></a><a href='#L3438'>3438</a>
+<a name='L3439'></a><a href='#L3439'>3439</a>
+<a name='L3440'></a><a href='#L3440'>3440</a>
+<a name='L3441'></a><a href='#L3441'>3441</a>
+<a name='L3442'></a><a href='#L3442'>3442</a>
+<a name='L3443'></a><a href='#L3443'>3443</a>
+<a name='L3444'></a><a href='#L3444'>3444</a>
+<a name='L3445'></a><a href='#L3445'>3445</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -3515,16 +3524,25 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">217x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">217x</span>
 <span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">217x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-yes">217x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -3982,7 +4000,7 @@
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">349x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">349x</span>
+<span class="cline-any cline-yes">216x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">54x</span>
@@ -5742,7 +5760,7 @@
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">119x</span>
 <span class="cline-any cline-yes">119x</span>
-<span class="cline-any cline-yes">145x</span>
+<span class="cline-any cline-yes">152x</span>
 <span class="cline-any cline-yes">103x</span>
 <span class="cline-any cline-yes">103x</span>
 <span class="cline-any cline-yes">119x</span>
@@ -6948,20 +6966,29 @@ __export(graphql_exports, {
   printers: () =&gt; printers
 });
 &nbsp;
-// scripts/build/shims/string-replace-all.js
-var stringReplaceAll = (isOptionalObject, original, pattern, replacement) =&gt; {
-  if (isOptionalObject <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (original === void 0 || original === null))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+// scripts/build/shims/shared.js
+var OPTIONAL_OBJECT = 1;
+var createMethodShim = (methodName, getImplementation) =&gt; (flags, object, ...arguments_) =&gt; {
+  if (flags | OPTIONAL_OBJECT &amp;&amp; (object === void 0 || object === null)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if (original.replaceAll) {
-    return original.replaceAll(pattern, replacement);
-  }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  if (pattern.global) {</span></span>
-<span class="cstat-no" title="statement not covered" >    return original.replace(pattern, replacement);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return original.split(pattern).join(replacement);</span>
+  const implementation = getImplementation.call(object) <span class="branch-0 cbranch-no" title="branch not covered" >?? object[methodName];</span>
+  return implementation.apply(object, arguments_);
 };
-var string_replace_all_default = stringReplaceAll;
+&nbsp;
+// scripts/build/shims/method-replace-all.js
+var stringReplaceAll = String.prototype.replaceAll <span class="branch-0 cbranch-no" title="branch not covered" >?? <span class="fstat-no" title="function not covered" >function(pattern, replacement) {</span></span>
+<span class="cstat-no" title="statement not covered" >  if (pattern.global) {</span>
+<span class="cstat-no" title="statement not covered" >    return this.replace(pattern, replacement);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return this.split(pattern).join(replacement);</span>
+};
+var replaceAll = createMethodShim("replaceAll", function() {
+  if (typeof this === "string") {
+    return stringReplaceAll;
+  }
+});
+var method_replace_all_default = replaceAll;
 &nbsp;
 // src/document/constants.js
 var DOC_TYPE_INDENT = "indent";
@@ -7491,12 +7518,12 @@ function genericPrint(path, options2, print) {
       return node.value;
     case "StringValue":
       if (node.block) {
-        const lines = string_replace_all_default(
-          /* isOptionalObject */
-          false,
+        const lines = method_replace_all_default(
+          /* OPTIONAL_OBJECT: false */
+          0,
           node.value,
           '"""',
-          String.raw`\"""`
+          '\\"""'
         ).split("\n");
         if (lines.length === 1) {
           lines[0] = lines[0].trim();
@@ -7508,18 +7535,18 @@ function genericPrint(path, options2, print) {
       }
       return [
         '"',
-        string_replace_all_default(
-          /* isOptionalObject */
-          false,
-          string_replace_all_default(
-            /* isOptionalObject */
-            false,
+        method_replace_all_default(
+          /* OPTIONAL_OBJECT: false */
+          0,
+          method_replace_all_default(
+            /* OPTIONAL_OBJECT: false */
+            0,
             node.value,
             /["\\]/gu,
-            String.raw`\$&amp;`
+            "\\$&amp;"
           ),
           "\n",
-          String.raw`\n`
+          "\\n"
         ),
         '"'
       ];
@@ -10375,7 +10402,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-27T00:37:21.986Z
+                at 2025-10-28T00:32:28.701Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

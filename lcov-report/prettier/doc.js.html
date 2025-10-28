@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.28% </span>
+                <span class="strong">18.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>234/1280</span>
+                <span class='fraction'>242/1288</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.7% </span>
+                <span class="strong">63.15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/17</span>
+                <span class='fraction'>12/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10% </span>
+                <span class="strong">11.47% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/60</span>
+                <span class='fraction'>7/61</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.28% </span>
+                <span class="strong">18.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>234/1280</span>
+                <span class='fraction'>242/1288</span>
             </div>
         
             
@@ -1342,7 +1342,15 @@
 <a name='L1277'></a><a href='#L1277'>1277</a>
 <a name='L1278'></a><a href='#L1278'>1278</a>
 <a name='L1279'></a><a href='#L1279'>1279</a>
-<a name='L1280'></a><a href='#L1280'>1280</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1280'></a><a href='#L1280'>1280</a>
+<a name='L1281'></a><a href='#L1281'>1281</a>
+<a name='L1282'></a><a href='#L1282'>1282</a>
+<a name='L1283'></a><a href='#L1283'>1283</a>
+<a name='L1284'></a><a href='#L1284'>1284</a>
+<a name='L1285'></a><a href='#L1285'>1285</a>
+<a name='L1286'></a><a href='#L1286'>1286</a>
+<a name='L1287'></a><a href='#L1287'>1287</a>
+<a name='L1288'></a><a href='#L1288'>1288</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1425,10 +1433,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -2007,13 +2024,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -2702,17 +2718,26 @@
     DOC_TYPE_BREAK_PARENT
   ]);
 &nbsp;
-  // scripts/build/shims/at.js
-  var at = <span class="fstat-no" title="function not covered" >(isOptionalObject, object, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (isOptionalObject &amp;&amp; (object === void 0 || object === null)) {</span>
+  // scripts/build/shims/shared.js
+  var OPTIONAL_OBJECT = 1;
+  var createMethodShim = (methodName, getImplementation) =&gt; (flags, object, ...arguments_) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (flags | OPTIONAL_OBJECT &amp;&amp; (object === void 0 || object === null)) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (Array.isArray(object) || typeof object === "string") {</span>
-<span class="cstat-no" title="statement not covered" >      return object[index &lt; 0 ? object.length + index : index];</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return object.at(index);</span>
+<span class="cstat-no" title="statement not covered" >    const implementation = getImplementation.call(object) ?? object[methodName];</span>
+<span class="cstat-no" title="statement not covered" >    return implementation.apply(object, arguments_);</span>
   };
-  var at_default = at;
+&nbsp;
+  // scripts/build/shims/method-at.js
+<span class="fstat-no" title="function not covered" >  function stringOrArrayAt(index) {</span>
+<span class="cstat-no" title="statement not covered" >    return this[index &lt; 0 ? this.length + index : index];</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+  var at = createMethodShim("at", function() {
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(this) || typeof this === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      return stringOrArrayAt;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  });
+  var method_at_default = at;
 &nbsp;
   // src/utils/noop.js
   var noop = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
@@ -2925,9 +2950,9 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function breakParentGroup(groupStack) {</span>
 <span class="cstat-no" title="statement not covered" >    if (groupStack.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      const parentGroup = at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >        false,</span>
+<span class="cstat-no" title="statement not covered" >      const parentGroup = method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        groupStack,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
@@ -2982,23 +3007,23 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function stripTrailingHardlineFromParts(parts) {</span>
 <span class="cstat-no" title="statement not covered" >    parts = [...parts];</span>
-<span class="cstat-no" title="statement not covered" >    while (parts.length &gt;= 2 &amp;&amp; at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >      false,</span>
+<span class="cstat-no" title="statement not covered" >    while (parts.length &gt;= 2 &amp;&amp; method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >      0,</span>
 <span class="cstat-no" title="statement not covered" >      parts,</span>
 <span class="cstat-no" title="statement not covered" >      -2</span>
-<span class="cstat-no" title="statement not covered" >    ).type === DOC_TYPE_LINE &amp;&amp; at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >      false,</span>
+<span class="cstat-no" title="statement not covered" >    ).type === DOC_TYPE_LINE &amp;&amp; method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >      0,</span>
 <span class="cstat-no" title="statement not covered" >      parts,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
 <span class="cstat-no" title="statement not covered" >    ).type === DOC_TYPE_BREAK_PARENT) {</span>
 <span class="cstat-no" title="statement not covered" >      parts.length -= 2;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (parts.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      const lastPart = stripTrailingHardlineFromDoc(at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >        false,</span>
+<span class="cstat-no" title="statement not covered" >      const lastPart = stripTrailingHardlineFromDoc(method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        parts,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
 <span class="cstat-no" title="statement not covered" >      ));</span>
@@ -3078,9 +3103,9 @@
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          const [currentPart, ...restParts] = Array.isArray(part) ? part : [part];</span>
-<span class="cstat-no" title="statement not covered" >          if (typeof currentPart === "string" &amp;&amp; typeof at_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >            false,</span>
+<span class="cstat-no" title="statement not covered" >          if (typeof currentPart === "string" &amp;&amp; typeof method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >            /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >            0,</span>
 <span class="cstat-no" title="statement not covered" >            parts,</span>
 <span class="cstat-no" title="statement not covered" >            -1</span>
 <span class="cstat-no" title="statement not covered" >          ) === "string") {</span>
@@ -3157,9 +3182,9 @@
 <span class="cstat-no" title="statement not covered" >     */</span>
 <span class="cstat-no" title="statement not covered" >    function(parts) {</span>
 <span class="cstat-no" title="statement not covered" >      assertDocArray(parts);</span>
-<span class="cstat-no" title="statement not covered" >      if (parts.length &gt; 1 &amp;&amp; isEmptyDoc(at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >        false,</span>
+<span class="cstat-no" title="statement not covered" >      if (parts.length &gt; 1 &amp;&amp; isEmptyDoc(method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        parts,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
 <span class="cstat-no" title="statement not covered" >      ))) {</span>
@@ -3284,20 +3309,19 @@
 <span class="cstat-no" title="statement not covered" >    return label2 ? { type: DOC_TYPE_LABEL, label: label2, contents } : contents;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  // scripts/build/shims/string-replace-all.js
-  var stringReplaceAll = <span class="fstat-no" title="function not covered" >(isOptionalObject, original, pattern, replacement) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (isOptionalObject &amp;&amp; (original === void 0 || original === null)) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (original.replaceAll) {</span>
-<span class="cstat-no" title="statement not covered" >      return original.replaceAll(pattern, replacement);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+  // scripts/build/shims/method-replace-all.js
+  var stringReplaceAll = String.prototype.replaceAll <span class="branch-0 cbranch-no" title="branch not covered" >?? <span class="fstat-no" title="function not covered" >function(pattern, replacement) {</span></span>
 <span class="cstat-no" title="statement not covered" >    if (pattern.global) {</span>
-<span class="cstat-no" title="statement not covered" >      return original.replace(pattern, replacement);</span>
+<span class="cstat-no" title="statement not covered" >      return this.replace(pattern, replacement);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return original.split(pattern).join(replacement);</span>
+<span class="cstat-no" title="statement not covered" >    return this.split(pattern).join(replacement);</span>
   };
-  var string_replace_all_default = stringReplaceAll;
+  var replaceAll = createMethodShim("replaceAll", function() {
+<span class="cstat-no" title="statement not covered" >    if (typeof this === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      return stringReplaceAll;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  });
+  var method_replace_all_default = replaceAll;
 &nbsp;
   // src/common/end-of-line.js
 <span class="fstat-no" title="function not covered" >  function convertEndOfLineToChars(value) {</span>
@@ -3525,9 +3549,9 @@
 <span class="cstat-no" title="statement not covered" >            return false;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          const groupMode = doc.break ? MODE_BREAK : mode;</span>
-<span class="cstat-no" title="statement not covered" >          const contents = doc.expandedStates &amp;&amp; groupMode === MODE_BREAK ? at_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >            false,</span>
+<span class="cstat-no" title="statement not covered" >          const contents = doc.expandedStates &amp;&amp; groupMode === MODE_BREAK ? method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >            /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >            0,</span>
 <span class="cstat-no" title="statement not covered" >            doc.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >            -1</span>
 <span class="cstat-no" title="statement not covered" >          ) : doc.contents;</span>
@@ -3578,9 +3602,9 @@
 <span class="cstat-no" title="statement not covered" >      const { ind, mode, doc: doc2 } = cmds.pop();</span>
 <span class="cstat-no" title="statement not covered" >      switch (get_doc_type_default(doc2)) {</span>
 <span class="cstat-no" title="statement not covered" >        case DOC_TYPE_STRING: {</span>
-<span class="cstat-no" title="statement not covered" >          const formatted = newLine !== "\n" ? string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >            false,</span>
+<span class="cstat-no" title="statement not covered" >          const formatted = newLine !== "\n" ? method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >            /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >            0,</span>
 <span class="cstat-no" title="statement not covered" >            doc2,</span>
 <span class="cstat-no" title="statement not covered" >            "\n",</span>
 <span class="cstat-no" title="statement not covered" >            newLine</span>
@@ -3637,9 +3661,9 @@
 <span class="cstat-no" title="statement not covered" >                cmds.push(next);</span>
 <span class="cstat-no" title="statement not covered" >              } else {</span>
 <span class="cstat-no" title="statement not covered" >                if (doc2.expandedStates) {</span>
-<span class="cstat-no" title="statement not covered" >                  const mostExpanded = at_default(</span>
-<span class="cstat-no" title="statement not covered" >                    /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >                    false,</span>
+<span class="cstat-no" title="statement not covered" >                  const mostExpanded = method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >                    /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >                    0,</span>
 <span class="cstat-no" title="statement not covered" >                    doc2.expandedStates,</span>
 <span class="cstat-no" title="statement not covered" >                    -1</span>
 <span class="cstat-no" title="statement not covered" >                  );</span>
@@ -3669,9 +3693,9 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (doc2.id) {</span>
-<span class="cstat-no" title="statement not covered" >            groupModeMap[doc2.id] = at_default(</span>
-<span class="cstat-no" title="statement not covered" >              /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >              false,</span>
+<span class="cstat-no" title="statement not covered" >            groupModeMap[doc2.id] = method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >              /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >              0,</span>
 <span class="cstat-no" title="statement not covered" >              cmds,</span>
 <span class="cstat-no" title="statement not covered" >              -1</span>
 <span class="cstat-no" title="statement not covered" >            ).mode;</span>
@@ -3907,7 +3931,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-27T00:37:19.502Z
+                at 2025-10-28T00:32:26.233Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.13% </span>
+                <span class="strong">22.16% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6927/31289</span>
+                <span class='fraction'>6937/31296</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.1% </span>
+                <span class="strong">45.09% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1000/2217</span>
+                <span class='fraction'>1001/2220</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.17% </span>
+                <span class="strong">28.23% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>370/1313</span>
+                <span class='fraction'>371/1314</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.13% </span>
+                <span class="strong">22.16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6927/31289</span>
+                <span class='fraction'>6937/31296</span>
             </div>
         
             
@@ -31351,7 +31351,14 @@
 <a name='L31286'></a><a href='#L31286'>31286</a>
 <a name='L31287'></a><a href='#L31287'>31287</a>
 <a name='L31288'></a><a href='#L31288'>31288</a>
-<a name='L31289'></a><a href='#L31289'>31289</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31289'></a><a href='#L31289'>31289</a>
+<a name='L31290'></a><a href='#L31290'>31290</a>
+<a name='L31291'></a><a href='#L31291'>31291</a>
+<a name='L31292'></a><a href='#L31292'>31292</a>
+<a name='L31293'></a><a href='#L31293'>31293</a>
+<a name='L31294'></a><a href='#L31294'>31294</a>
+<a name='L31295'></a><a href='#L31295'>31295</a>
+<a name='L31296'></a><a href='#L31296'>31296</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -60935,15 +60942,24 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -60954,8 +60970,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -62462,9 +62477,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -92221,34 +92235,42 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var parser_create_error_default = createError;
 &nbsp;
-  // scripts/build/shims/array-find-last.js
-  var arrayFindLast = <span class="fstat-no" title="function not covered" >(isOptionalObject, array, callback) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (isOptionalObject &amp;&amp; (array === void 0 || array === null)) {</span>
+  // scripts/build/shims/shared.js
+  var OPTIONAL_OBJECT = 1;
+  var createMethodShim = (methodName, getImplementation) =&gt; (flags, object, ...arguments_) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (flags | OPTIONAL_OBJECT &amp;&amp; (object === void 0 || object === null)) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (array.findLast) {</span>
-<span class="cstat-no" title="statement not covered" >      return array.findLast(callback);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    for (let index = array.length - 1; index &gt;= 0; index--) {</span>
-<span class="cstat-no" title="statement not covered" >      const element = array[index];</span>
-<span class="cstat-no" title="statement not covered" >      if (callback(element, index, array)) {</span>
+<span class="cstat-no" title="statement not covered" >    const implementation = getImplementation.call(object) ?? object[methodName];</span>
+<span class="cstat-no" title="statement not covered" >    return implementation.apply(object, arguments_);</span>
+  };
+&nbsp;
+  // scripts/build/shims/method-find-last.js
+  var arrayFindLast = Array.prototype.findLast <span class="branch-0 cbranch-no" title="branch not covered" >?? <span class="fstat-no" title="function not covered" >function(callback) {</span></span>
+<span class="cstat-no" title="statement not covered" >    for (let index = this.length - 1; index &gt;= 0; index--) {</span>
+<span class="cstat-no" title="statement not covered" >      const element = this[index];</span>
+<span class="cstat-no" title="statement not covered" >      if (callback(element, index, this)) {</span>
 <span class="cstat-no" title="statement not covered" >        return element;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var array_find_last_default = arrayFindLast;
+  var findLast = createMethodShim("findLast", function() {
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(this)) {</span>
+<span class="cstat-no" title="statement not covered" >      return arrayFindLast;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  });
+  var method_find_last_default = findLast;
 &nbsp;
-  // scripts/build/shims/at.js
-  var at = <span class="fstat-no" title="function not covered" >(isOptionalObject, object, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (isOptionalObject &amp;&amp; (object === void 0 || object === null)) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
+  // scripts/build/shims/method-at.js
+<span class="fstat-no" title="function not covered" >  function stringOrArrayAt(index) {</span>
+<span class="cstat-no" title="statement not covered" >    return this[index &lt; 0 ? this.length + index : index];</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+  var at = createMethodShim("at", function() {
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(this) || typeof this === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      return stringOrArrayAt;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (Array.isArray(object) || typeof object === "string") {</span>
-<span class="cstat-no" title="statement not covered" >      return object[index &lt; 0 ? object.length + index : index];</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return object.at(index);</span>
-  };
-  var at_default = at;
+  });
+  var method_at_default = at;
 &nbsp;
   // src/language-js/loc.js
 <span class="fstat-no" title="function not covered" >  function locStart(node) {</span>
@@ -93631,9 +93653,9 @@
 <span class="cstat-no" title="statement not covered" >                  }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              const previousCommentEnd = array_find_last_default(</span>
-<span class="cstat-no" title="statement not covered" >                /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >                false,</span>
+<span class="cstat-no" title="statement not covered" >              const previousCommentEnd = method_find_last_default(</span>
+<span class="cstat-no" title="statement not covered" >                /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >                0,</span>
 <span class="cstat-no" title="statement not covered" >                typeCastCommentsEnds,</span>
 <span class="cstat-no" title="statement not covered" >                (end) =&gt; end &lt;= start</span>
 <span class="cstat-no" title="statement not covered" >              );</span>
@@ -93667,9 +93689,9 @@
 <span class="cstat-no" title="statement not covered" >            break;</span>
           // fix unexpected locEnd caused by --no-semi style
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "VariableDeclaration": {</span>
-<span class="cstat-no" title="statement not covered" >            const lastDeclaration = at_default(</span>
-<span class="cstat-no" title="statement not covered" >              /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >              false,</span>
+<span class="cstat-no" title="statement not covered" >            const lastDeclaration = method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >              /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >              0,</span>
 <span class="cstat-no" title="statement not covered" >              node.declarations,</span>
 <span class="cstat-no" title="statement not covered" >              -1</span>
 <span class="cstat-no" title="statement not covered" >            );</span>
@@ -93744,20 +93766,19 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var postprocess_default = postprocess;
 &nbsp;
-  // scripts/build/shims/string-replace-all.js
-  var stringReplaceAll = <span class="fstat-no" title="function not covered" >(isOptionalObject, original, pattern, replacement) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (isOptionalObject &amp;&amp; (original === void 0 || original === null)) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (original.replaceAll) {</span>
-<span class="cstat-no" title="statement not covered" >      return original.replaceAll(pattern, replacement);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+  // scripts/build/shims/method-replace-all.js
+  var stringReplaceAll = String.prototype.replaceAll <span class="branch-0 cbranch-no" title="branch not covered" >?? <span class="fstat-no" title="function not covered" >function(pattern, replacement) {</span></span>
 <span class="cstat-no" title="statement not covered" >    if (pattern.global) {</span>
-<span class="cstat-no" title="statement not covered" >      return original.replace(pattern, replacement);</span>
+<span class="cstat-no" title="statement not covered" >      return this.replace(pattern, replacement);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return original.split(pattern).join(replacement);</span>
+<span class="cstat-no" title="statement not covered" >    return this.split(pattern).join(replacement);</span>
   };
-  var string_replace_all_default = stringReplaceAll;
+  var replaceAll = createMethodShim("replaceAll", function() {
+<span class="cstat-no" title="statement not covered" >    if (typeof this === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      return stringReplaceAll;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  });
+  var method_replace_all_default = replaceAll;
 &nbsp;
   // node_modules/jest-docblock/build/index.js
   var commentEndRe = /\*\/$/;
@@ -93775,9 +93796,9 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function parseWithComments(docblock) {</span>
 <span class="cstat-no" title="statement not covered" >    const line = "\n";</span>
-<span class="cstat-no" title="statement not covered" >    docblock = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >      false,</span>
+<span class="cstat-no" title="statement not covered" >    docblock = method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >      0,</span>
 <span class="cstat-no" title="statement not covered" >      docblock.replace(commentStartRe, "").replace(commentEndRe, ""),</span>
 <span class="cstat-no" title="statement not covered" >      stringStartRe,</span>
 <span class="cstat-no" title="statement not covered" >      "$1"</span>
@@ -93785,9 +93806,9 @@
 <span class="cstat-no" title="statement not covered" >    let prev = "";</span>
 <span class="cstat-no" title="statement not covered" >    while (prev !== docblock) {</span>
 <span class="cstat-no" title="statement not covered" >      prev = docblock;</span>
-<span class="cstat-no" title="statement not covered" >      docblock = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >        false,</span>
+<span class="cstat-no" title="statement not covered" >      docblock = method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        docblock,</span>
 <span class="cstat-no" title="statement not covered" >        multilineRe,</span>
 <span class="cstat-no" title="statement not covered" >        `${line}$1 $2${line}`</span>
@@ -93795,18 +93816,18 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    docblock = docblock.replace(ltrimNewlineRe, "").trimEnd();</span>
 <span class="cstat-no" title="statement not covered" >    const result = /* @__PURE__ */ Object.create(null);</span>
-<span class="cstat-no" title="statement not covered" >    const comments = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >      false,</span>
+<span class="cstat-no" title="statement not covered" >    const comments = method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >      0,</span>
 <span class="cstat-no" title="statement not covered" >      docblock,</span>
 <span class="cstat-no" title="statement not covered" >      propertyRe,</span>
 <span class="cstat-no" title="statement not covered" >      ""</span>
 <span class="cstat-no" title="statement not covered" >    ).replace(ltrimNewlineRe, "").trimEnd();</span>
 <span class="cstat-no" title="statement not covered" >    let match;</span>
 <span class="cstat-no" title="statement not covered" >    while (match = propertyRe.exec(docblock)) {</span>
-<span class="cstat-no" title="statement not covered" >      const nextPragma = string_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* isOptionalObject */</span>
-<span class="cstat-no" title="statement not covered" >        false,</span>
+<span class="cstat-no" title="statement not covered" >      const nextPragma = method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        match[2],</span>
 <span class="cstat-no" title="statement not covered" >        lineCommentRe,</span>
 <span class="cstat-no" title="statement not covered" >        ""</span>
@@ -93934,7 +93955,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-27T00:37:21.986Z
+                at 2025-10-28T00:32:28.701Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
