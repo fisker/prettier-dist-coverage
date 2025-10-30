@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.18% </span>
+                <span class="strong">61.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7841/12816</span>
+                <span class='fraction'>7842/12823</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.01% </span>
+                <span class="strong">50.99% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1437/2817</span>
+                <span class='fraction'>1437/2818</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.18% </span>
+                <span class="strong">61.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7841/12816</span>
+                <span class='fraction'>7842/12823</span>
             </div>
         
             
@@ -12878,7 +12878,14 @@
 <a name='L12813'></a><a href='#L12813'>12813</a>
 <a name='L12814'></a><a href='#L12814'>12814</a>
 <a name='L12815'></a><a href='#L12815'>12815</a>
-<a name='L12816'></a><a href='#L12816'>12816</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12816'></a><a href='#L12816'>12816</a>
+<a name='L12817'></a><a href='#L12817'>12817</a>
+<a name='L12818'></a><a href='#L12818'>12818</a>
+<a name='L12819'></a><a href='#L12819'>12819</a>
+<a name='L12820'></a><a href='#L12820'>12820</a>
+<a name='L12821'></a><a href='#L12821'>12821</a>
+<a name='L12822'></a><a href='#L12822'>12822</a>
+<a name='L12823'></a><a href='#L12823'>12823</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14697,9 +14704,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -27513,6 +27527,13 @@
   // src/language-js/utils/create-type-check-function.js
   function createTypeCheckFunction(typesArray) {
     const types = new Set(typesArray);
+    if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      noop_default(</span>
+<span class="cstat-no" title="statement not covered" >        typesArray.length,</span>
+<span class="cstat-no" title="statement not covered" >        types.size,</span>
+<span class="cstat-no" title="statement not covered" >        "'typesArray' should be unique."</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     return (node) =&gt; types.has(node?.type);
   }
   var create_type_check_function_default = createTypeCheckFunction;
@@ -29284,7 +29305,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     return false;
   }
-  var classLikeNodeTypes = /* @__PURE__ */ new Set([
+  var isClassLikeNode = create_type_check_function_default([
     "ClassDeclaration",
     "ClassExpression",
     "DeclareClass",
@@ -29298,7 +29319,7 @@
     enclosingNode,
     followingNode
   }) {
-    if (classLikeNodeTypes.has(enclosingNode?.type)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (isClassLikeNode(enclosingNode)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      if (is_non_empty_array_default(enclosingNode.decorators) &amp;&amp; !(followingNode?.type === "Decorator")) {</span>
 <span class="cstat-no" title="statement not covered" >        addTrailingComment(method_at_default(</span>
 <span class="cstat-no" title="statement not covered" >          /* OPTIONAL_OBJECT: false */</span>
@@ -29331,7 +29352,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     return false;
   }
-  var propertyLikeNodeTypes = /* @__PURE__ */ new Set([
+  var isPropertyLikeNode = create_type_check_function_default([
     "ClassMethod",
     "ClassProperty",
     "PropertyDefinition",
@@ -29357,13 +29378,13 @@
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (precedingNode?.type === "Decorator" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; propertyLikeNodeTypes.has(enclosingNode?.type) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; (is_line_comment_default(comment) || comment.placement === "ownLine"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (precedingNode?.type === "Decorator" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isPropertyLikeNode(enclosingNode) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; (is_line_comment_default(comment) || comment.placement === "ownLine"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return false;
   }
-  var functionLikeNodeTypes = /* @__PURE__ */ new Set([
+  var isFunctionLikeNode = create_type_check_function_default([
     "FunctionDeclaration",
     "FunctionExpression",
     "ClassMethod",
@@ -29379,7 +29400,7 @@
     if (get_next_non_space_non_comment_character_default(text, locEnd(comment)) !== "(") {
       return false;
     }
-<span class="branch-0 cbranch-no" title="branch not covered" >    if (precedingNode &amp;&amp; functionLikeNodeTypes.has(enclosingNode?.type))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >    if (precedingNode &amp;&amp; isFunctionLikeNode(enclosingNode))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -29583,13 +29604,13 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     return false;
   }
-  var assignmentLikeNodeTypes = /* @__PURE__ */ new Set([
+  var isAssignmentLikeNode = create_type_check_function_default([
     "VariableDeclarator",
     "AssignmentExpression",
     "TypeAlias",
     "TSTypeAliasDeclaration"
   ]);
-  var complexExprNodeTypes = /* @__PURE__ */ new Set([
+  var isComplexExprNode = create_type_check_function_default([
     "ObjectExpression",
     "ArrayExpression",
     "TemplateLiteral",
@@ -29602,7 +29623,7 @@
 <span class="cstat-no" title="statement not covered" >    enclosingNode,</span>
 <span class="cstat-no" title="statement not covered" >    followingNode</span>
 <span class="cstat-no" title="statement not covered" >  }) {</span>
-<span class="cstat-no" title="statement not covered" >    if (assignmentLikeNodeTypes.has(enclosingNode?.type) &amp;&amp; followingNode &amp;&amp; (complexExprNodeTypes.has(followingNode.type) || is_block_comment_default(comment))) {</span>
+<span class="cstat-no" title="statement not covered" >    if (isAssignmentLikeNode(enclosingNode) &amp;&amp; followingNode &amp;&amp; (isComplexExprNode(followingNode) || is_block_comment_default(comment))) {</span>
 <span class="cstat-no" title="statement not covered" >      addLeadingComment(followingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -32297,7 +32318,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return hardline;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var NO_WRAP_PARENTS = /* @__PURE__ */ new Set([
+  var isNoWrapParent = create_type_check_function_default([
     "ArrayExpression",
     "JSXAttribute",
     "JSXElement",
@@ -32312,7 +32333,7 @@
   ]);
   function maybeWrapJsxElementInParens(path, elem, options2) {
     const { parent } = path;
-    if (NO_WRAP_PARENTS.has(parent.type)) {
+    if (isNoWrapParent(parent)) {
       return elem;
     }
     const shouldBreak = shouldBreakJsxElement(path);
@@ -35135,7 +35156,7 @@
       (node, name) =&gt; name === "id" &amp;&amp; node.type === "VariableDeclarator" &amp;&amp; node.definite
     ) <span class="branch-0 cbranch-no" title="branch not covered" >? "!" </span>: "";
   }
-  var flowDeclareNodeTypes = /* @__PURE__ */ new Set([
+  var isFlowDeclareNode = create_type_check_function_default([
     "DeclareClass",
     "DeclareComponent",
     "DeclareFunction",
@@ -35153,16 +35174,16 @@
     return (
       // TypeScript
       node.declare || // Flow
-      flowDeclareNodeTypes.has(node.type) &amp;&amp; path.parent.type !== "DeclareExportDeclaration" ? "declare " : ""
+      isFlowDeclareNode(node) &amp;&amp; path.parent.type !== "DeclareExportDeclaration" ? "declare " : ""
     );
   }
-  var tsAbstractNodeTypes = /* @__PURE__ */ new Set([
+  var isTsAbstractNode = create_type_check_function_default([
     "TSAbstractMethodDefinition",
     "TSAbstractPropertyDefinition",
     "TSAbstractAccessorProperty"
   ]);
   function printAbstractToken({ node }) {
-    return node.abstract || tsAbstractNodeTypes.has(node.type) ? "abstract " : "";
+    return node.abstract || isTsAbstractNode(node) ? "abstract " : "";
   }
 <span class="fstat-no" title="function not covered" >  function printBindExpressionCallee(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >    return ["::", print3("callee")];</span>
@@ -38515,7 +38536,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-29T00:34:20.686Z
+                at 2025-10-30T00:34:43.414Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
