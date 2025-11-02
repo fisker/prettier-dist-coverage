@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">84.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2892/3441</span>
+                <span class='fraction'>2893/3442</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.54% </span>
+                <span class="strong">84.49% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>536/634</span>
+                <span class='fraction'>534/632</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.15% </span>
+                <span class="strong">83.24% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>153/184</span>
+                <span class='fraction'>154/185</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">84.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2892/3441</span>
+                <span class='fraction'>2893/3442</span>
             </div>
         
             
@@ -3504,7 +3504,8 @@
 <a name='L3439'></a><a href='#L3439'>3439</a>
 <a name='L3440'></a><a href='#L3440'>3440</a>
 <a name='L3441'></a><a href='#L3441'>3441</a>
-<a name='L3442'></a><a href='#L3442'>3442</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L3442'></a><a href='#L3442'>3442</a>
+<a name='L3443'></a><a href='#L3443'>3443</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -3654,6 +3655,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -3997,7 +3999,7 @@
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">349x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">263x</span>
+<span class="cline-any cline-yes">349x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">54x</span>
@@ -4184,7 +4186,7 @@
 <span class="cline-any cline-yes">58x</span>
 <span class="cline-any cline-yes">83x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">83x</span>
@@ -5757,7 +5759,7 @@
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">119x</span>
 <span class="cline-any cline-yes">119x</span>
-<span class="cline-any cline-yes">147x</span>
+<span class="cline-any cline-yes">142x</span>
 <span class="cline-any cline-yes">103x</span>
 <span class="cline-any cline-yes">103x</span>
 <span class="cline-any cline-yes">119x</span>
@@ -7101,6 +7103,7 @@ var skipToLineEnd = skip(",; 	");
 var skipEverythingButNewLine = skip(/[^\n\r]/u);
 &nbsp;
 // src/utils/skip-newline.js
+var isNewlineCharacter = (character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";
 function skipNewline(text, startIndex, options2) {
   const backwards = Boolean(options2?.backwards);
   if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -7111,14 +7114,14 @@ function skipNewline(text, startIndex, options2) {
 <span class="cstat-no" title="statement not covered" >    if (text.charAt(startIndex - 1) === "\r" &amp;&amp; character === "\n") {</span>
 <span class="cstat-no" title="statement not covered" >      return startIndex - 2;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029") {</span>
+<span class="cstat-no" title="statement not covered" >    if (isNewlineCharacter(character)) {</span>
 <span class="cstat-no" title="statement not covered" >      return startIndex - 1;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   } else {
     if (character === "\r" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; text.charAt(startIndex + 1) === "\n")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return startIndex + 2;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029") {
+    if (isNewlineCharacter(character)) {
       return startIndex + 1;
     }
   }
@@ -10393,7 +10396,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-01T00:36:10.224Z
+                at 2025-11-02T00:36:33.518Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
