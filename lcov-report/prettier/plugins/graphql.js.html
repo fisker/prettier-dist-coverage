@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.94% </span>
+                <span class="strong">53.79% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1770/3281</span>
+                <span class='fraction'>1770/3290</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.94% </span>
+                <span class="strong">53.79% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1770/3281</span>
+                <span class='fraction'>1770/3290</span>
             </div>
         
             
@@ -3343,7 +3343,16 @@
 <a name='L3278'></a><a href='#L3278'>3278</a>
 <a name='L3279'></a><a href='#L3279'>3279</a>
 <a name='L3280'></a><a href='#L3280'>3280</a>
-<a name='L3281'></a><a href='#L3281'>3281</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L3281'></a><a href='#L3281'>3281</a>
+<a name='L3282'></a><a href='#L3282'>3282</a>
+<a name='L3283'></a><a href='#L3283'>3283</a>
+<a name='L3284'></a><a href='#L3284'>3284</a>
+<a name='L3285'></a><a href='#L3285'>3285</a>
+<a name='L3286'></a><a href='#L3286'>3286</a>
+<a name='L3287'></a><a href='#L3287'>3287</a>
+<a name='L3288'></a><a href='#L3288'>3288</a>
+<a name='L3289'></a><a href='#L3289'>3289</a>
+<a name='L3290'></a><a href='#L3290'>3290</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3455,8 +3464,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6726,27 +6744,36 @@
   );
 &nbsp;
   // src/document/utilities/assert-doc.js
-  var assertDoc = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: function(doc) {</span>
-<span class="cstat-no" title="statement not covered" >    traverse_doc_default(doc, (doc2) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      if (checked.has(doc2)) {</span>
-<span class="cstat-no" title="statement not covered" >        return false;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof doc2 !== "string") {</span>
+  var assertDoc = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: (</span>
+<span class="cstat-no" title="statement not covered" >    /**</span>
+<span class="cstat-no" title="statement not covered" >    @param {Doc} doc</span>
+<span class="cstat-no" title="statement not covered" >    */</span>
+<span class="cstat-no" title="statement not covered" >    function(doc) {</span>
+<span class="cstat-no" title="statement not covered" >      traverse_doc_default(doc, (doc2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof doc2 === "string" || checked.has(doc2)) {</span>
+<span class="cstat-no" title="statement not covered" >          return false;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        checked.add(doc2);</span>
+<span class="cstat-no" title="statement not covered" >      });</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  );
+  var assertDocArray = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: (</span>
+<span class="cstat-no" title="statement not covered" >    /**</span>
+<span class="cstat-no" title="statement not covered" >    @param {readonly Doc[]} docs</span>
+<span class="cstat-no" title="statement not covered" >    @param {boolean} [optional = false]</span>
+<span class="cstat-no" title="statement not covered" >    */</span>
+<span class="cstat-no" title="statement not covered" >    function(docs, optional = false) {</span>
+<span class="cstat-no" title="statement not covered" >      if (optional &amp;&amp; !docs) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-  };
-  var assertDocArray = true ? noop_default <span class="branch-0 cbranch-no" title="branch not covered" >: function(docs, optional = false) {</span>
-<span class="cstat-no" title="statement not covered" >    if (optional &amp;&amp; !docs) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >      if (!Array.isArray(docs)) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new TypeError("Unexpected doc array.");</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      for (const doc of docs) {</span>
+<span class="cstat-no" title="statement not covered" >        assertDoc(doc);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (!Array.isArray(docs)) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new TypeError("Unexpected doc array.");</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    for (const doc of docs) {</span>
-<span class="cstat-no" title="statement not covered" >      assertDoc(doc);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-  };
+  );
 &nbsp;
   // src/document/builders/indent.js
   function indent(contents) {
@@ -9910,7 +9937,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-03T00:37:40.837Z
+                at 2025-11-04T00:33:17.906Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
