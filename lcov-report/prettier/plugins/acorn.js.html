@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.48% </span>
+                <span class="strong">58.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4947/8458</span>
+                <span class='fraction'>4932/8439</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.87% </span>
+                <span class="strong">53.96% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>654/1214</span>
+                <span class='fraction'>654/1212</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.48% </span>
+                <span class="strong">58.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4947/8458</span>
+                <span class='fraction'>4932/8439</span>
             </div>
         
             
@@ -8501,26 +8501,7 @@
 <a name='L8436'></a><a href='#L8436'>8436</a>
 <a name='L8437'></a><a href='#L8437'>8437</a>
 <a name='L8438'></a><a href='#L8438'>8438</a>
-<a name='L8439'></a><a href='#L8439'>8439</a>
-<a name='L8440'></a><a href='#L8440'>8440</a>
-<a name='L8441'></a><a href='#L8441'>8441</a>
-<a name='L8442'></a><a href='#L8442'>8442</a>
-<a name='L8443'></a><a href='#L8443'>8443</a>
-<a name='L8444'></a><a href='#L8444'>8444</a>
-<a name='L8445'></a><a href='#L8445'>8445</a>
-<a name='L8446'></a><a href='#L8446'>8446</a>
-<a name='L8447'></a><a href='#L8447'>8447</a>
-<a name='L8448'></a><a href='#L8448'>8448</a>
-<a name='L8449'></a><a href='#L8449'>8449</a>
-<a name='L8450'></a><a href='#L8450'>8450</a>
-<a name='L8451'></a><a href='#L8451'>8451</a>
-<a name='L8452'></a><a href='#L8452'>8452</a>
-<a name='L8453'></a><a href='#L8453'>8453</a>
-<a name='L8454'></a><a href='#L8454'>8454</a>
-<a name='L8455'></a><a href='#L8455'>8455</a>
-<a name='L8456'></a><a href='#L8456'>8456</a>
-<a name='L8457'></a><a href='#L8457'>8457</a>
-<a name='L8458'></a><a href='#L8458'>8458</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8439'></a><a href='#L8439'>8439</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16790,25 +16771,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -25247,25 +25209,6 @@
         if (extra.tokens) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          program.tokens = extra.tokens;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        if (program.body.length) {
-          const [firstNode] = program.body;
-          if (program.range) {
-            program.range[0] = firstNode.range[0];
-          }
-          if (program.loc) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            program.loc.start = firstNode.loc.start;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-          program.start = firstNode.start;
-        }
-        if (extra.lastToken) {
-          if (program.range) {
-            program.range[1] = extra.lastToken.range[1];
-          }
-          if (program.loc) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            program.loc.end = extra.lastToken.loc.end;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-          program.end = extra.lastToken.end;
-        }
         this[STATE].templateElements.forEach((templateElement) =&gt; {
           const startOffset = -1;
           const endOffset = templateElement.tail ? 1 : 2;
@@ -25441,7 +25384,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-11T00:34:23.223Z
+                at 2025-11-12T00:34:17.224Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
