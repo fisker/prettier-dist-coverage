@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.92% </span>
+                <span class="strong">49.91% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6706/13433</span>
+                <span class='fraction'>6706/13435</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.92% </span>
+                <span class="strong">49.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6706/13433</span>
+                <span class='fraction'>6706/13435</span>
             </div>
         
             
@@ -13496,7 +13496,9 @@
 <a name='L13431'></a><a href='#L13431'>13431</a>
 <a name='L13432'></a><a href='#L13432'>13432</a>
 <a name='L13433'></a><a href='#L13433'>13433</a>
-<a name='L13434'></a><a href='#L13434'>13434</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
+<a name='L13434'></a><a href='#L13434'>13434</a>
+<a name='L13435'></a><a href='#L13435'>13435</a>
+<a name='L13436'></a><a href='#L13436'>13436</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -21930,6 +21932,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -25135,7 +25139,7 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -25167,8 +25171,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -35316,14 +35320,13 @@ var init_parse4 = __esm({
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let res = "";</span>
 <span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; array.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    res += `[[${key2}]]</span>
+<span class="cstat-no" title="statement not covered" >    res += `${res &amp;&amp; "\n"}[[${key2}]]</span>
 <span class="cstat-no" title="statement not covered" >`;</span>
-<span class="cstat-no" title="statement not covered" >    res += stringifyTable(array[i], key2, depth, numberAsFloat);</span>
-<span class="cstat-no" title="statement not covered" >    res += "\n\n";</span>
+<span class="cstat-no" title="statement not covered" >    res += stringifyTable(0, array[i], key2, depth, numberAsFloat);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return res;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function stringifyTable(obj, prefix, depth, numberAsFloat) {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function stringifyTable(tableKey, obj, prefix, depth, numberAsFloat) {</span></span>
 <span class="cstat-no" title="statement not covered" >  if (depth === 0) {</span>
 <span class="cstat-no" title="statement not covered" >    throw new Error("Could not stringify the object: maximum object depth exceeded");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -35339,13 +35342,10 @@ var init_parse4 = __esm({
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let key2 = BARE_KEY.test(k) ? k : formatString(k);</span>
 <span class="cstat-no" title="statement not covered" >      if (type2 === "array" &amp;&amp; isArrayOfTables(obj[k])) {</span>
-<span class="cstat-no" title="statement not covered" >        tables += stringifyArrayTable(obj[k], prefix ? `${prefix}.${key2}` : key2, depth - 1, numberAsFloat);</span>
+<span class="cstat-no" title="statement not covered" >        tables += (tables &amp;&amp; "\n") + stringifyArrayTable(obj[k], prefix ? `${prefix}.${key2}` : key2, depth - 1, numberAsFloat);</span>
 <span class="cstat-no" title="statement not covered" >      } else if (type2 === "object") {</span>
 <span class="cstat-no" title="statement not covered" >        let tblKey = prefix ? `${prefix}.${key2}` : key2;</span>
-<span class="cstat-no" title="statement not covered" >        tables += `[${tblKey}]</span>
-<span class="cstat-no" title="statement not covered" >`;</span>
-<span class="cstat-no" title="statement not covered" >        tables += stringifyTable(obj[k], tblKey, depth - 1, numberAsFloat);</span>
-<span class="cstat-no" title="statement not covered" >        tables += "\n\n";</span>
+<span class="cstat-no" title="statement not covered" >        tables += (tables &amp;&amp; "\n") + stringifyTable(tblKey, obj[k], tblKey, depth - 1, numberAsFloat);</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        preamble += key2;</span>
 <span class="cstat-no" title="statement not covered" >        preamble += " = ";</span>
@@ -35354,14 +35354,20 @@ var init_parse4 = __esm({
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return `${preamble}</span>
-<span class="cstat-no" title="statement not covered" >${tables}`.trim();</span>
+<span class="cstat-no" title="statement not covered" >  if (tableKey &amp;&amp; (preamble || !tables))</span>
+<span class="cstat-no" title="statement not covered" >    preamble = preamble ? `[${tableKey}]</span>
+<span class="cstat-no" title="statement not covered" >${preamble}` : `[${tableKey}]`;</span>
+<span class="cstat-no" title="statement not covered" >  return preamble &amp;&amp; tables ? `${preamble}</span>
+<span class="cstat-no" title="statement not covered" >${tables}` : preamble || tables;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function stringify4(obj, { maxDepth = 1e3, numbersAsFloat = false } = {}) {</span></span>
 <span class="cstat-no" title="statement not covered" >  if (extendedTypeOf(obj) !== "object") {</span>
 <span class="cstat-no" title="statement not covered" >    throw new TypeError("stringify can only be called with an object");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return stringifyTable(obj, "", maxDepth, numbersAsFloat);</span>
+<span class="cstat-no" title="statement not covered" >  let str2 = stringifyTable(0, obj, "", maxDepth, numbersAsFloat);</span>
+<span class="cstat-no" title="statement not covered" >  if (str2[str2.length - 1] !== "\n")</span>
+<span class="cstat-no" title="statement not covered" >    return str2 + "\n";</span>
+<span class="cstat-no" title="statement not covered" >  return str2;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 var BARE_KEY;
 var init_stringify = __esm({
@@ -40369,7 +40375,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-16T00:37:04.313Z
+                at 2025-11-17T00:37:41.907Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

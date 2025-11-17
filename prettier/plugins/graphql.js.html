@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.87% </span>
+                <span class="strong">53.76% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1837/3410</span>
+                <span class='fraction'>1827/3398</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.95% </span>
+                <span class="strong">57% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>172/302</span>
+                <span class='fraction'>171/300</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.44% </span>
+                <span class="strong">44.14% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>84/189</span>
+                <span class='fraction'>83/188</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.87% </span>
+                <span class="strong">53.76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1837/3410</span>
+                <span class='fraction'>1827/3398</span>
             </div>
         
             
@@ -3460,19 +3460,7 @@
 <a name='L3395'></a><a href='#L3395'>3395</a>
 <a name='L3396'></a><a href='#L3396'>3396</a>
 <a name='L3397'></a><a href='#L3397'>3397</a>
-<a name='L3398'></a><a href='#L3398'>3398</a>
-<a name='L3399'></a><a href='#L3399'>3399</a>
-<a name='L3400'></a><a href='#L3400'>3400</a>
-<a name='L3401'></a><a href='#L3401'>3401</a>
-<a name='L3402'></a><a href='#L3402'>3402</a>
-<a name='L3403'></a><a href='#L3403'>3403</a>
-<a name='L3404'></a><a href='#L3404'>3404</a>
-<a name='L3405'></a><a href='#L3405'>3405</a>
-<a name='L3406'></a><a href='#L3406'>3406</a>
-<a name='L3407'></a><a href='#L3407'>3407</a>
-<a name='L3408'></a><a href='#L3408'>3408</a>
-<a name='L3409'></a><a href='#L3409'>3409</a>
-<a name='L3410'></a><a href='#L3410'>3410</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L3398'></a><a href='#L3398'>3398</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4026,23 +4014,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7429,29 +7405,17 @@
     OperationTypeNode2["SUBSCRIPTION"] = "subscription";
   })(OperationTypeNode || (OperationTypeNode = {}));
 &nbsp;
-  // src/language-js/traverse/utilities.js
-  function removeNodeTypes(visitorKeys2, nodeTypesToRemove) {
-    const result = {
-      ...visitorKeys2
-    };
-    for (const type of nodeTypesToRemove) {
-      if (!Object.prototype.hasOwnProperty.call(result, type)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Node type "${type}" does not exists in visitor keys.`);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-      delete result[type];
-    }
-    return result;
-  }
-&nbsp;
   // src/language-graphql/visitor-keys.js
-  var visitorKeys = QueryDocumentKeys;
-  visitorKeys = removeNodeTypes(visitorKeys, [
+  var visitorKeys = { ...QueryDocumentKeys };
+  for (const kind of [
     "ArgumentCoordinate",
     "DirectiveArgumentCoordinate",
     "DirectiveCoordinate",
     "MemberCoordinate",
     "TypeCoordinate"
-  ]);
+  ]) {
+    delete visitorKeys[kind];
+  }
   var visitor_keys_default = visitorKeys;
 &nbsp;
   // src/language-graphql/get-visitor-keys.js
@@ -10297,7 +10261,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-16T00:37:06.949Z
+                at 2025-11-17T00:37:44.430Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

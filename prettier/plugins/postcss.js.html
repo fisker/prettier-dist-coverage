@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.6% </span>
+                <span class="strong">52.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6006/11417</span>
+                <span class='fraction'>6007/11397</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.6% </span>
+                <span class="strong">52.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6006/11417</span>
+                <span class='fraction'>6007/11397</span>
             </div>
         
             
@@ -11459,27 +11459,7 @@
 <a name='L11394'></a><a href='#L11394'>11394</a>
 <a name='L11395'></a><a href='#L11395'>11395</a>
 <a name='L11396'></a><a href='#L11396'>11396</a>
-<a name='L11397'></a><a href='#L11397'>11397</a>
-<a name='L11398'></a><a href='#L11398'>11398</a>
-<a name='L11399'></a><a href='#L11399'>11399</a>
-<a name='L11400'></a><a href='#L11400'>11400</a>
-<a name='L11401'></a><a href='#L11401'>11401</a>
-<a name='L11402'></a><a href='#L11402'>11402</a>
-<a name='L11403'></a><a href='#L11403'>11403</a>
-<a name='L11404'></a><a href='#L11404'>11404</a>
-<a name='L11405'></a><a href='#L11405'>11405</a>
-<a name='L11406'></a><a href='#L11406'>11406</a>
-<a name='L11407'></a><a href='#L11407'>11407</a>
-<a name='L11408'></a><a href='#L11408'>11408</a>
-<a name='L11409'></a><a href='#L11409'>11409</a>
-<a name='L11410'></a><a href='#L11410'>11410</a>
-<a name='L11411'></a><a href='#L11411'>11411</a>
-<a name='L11412'></a><a href='#L11412'>11412</a>
-<a name='L11413'></a><a href='#L11413'>11413</a>
-<a name='L11414'></a><a href='#L11414'>11414</a>
-<a name='L11415'></a><a href='#L11415'>11415</a>
-<a name='L11416'></a><a href='#L11416'>11416</a>
-<a name='L11417'></a><a href='#L11417'>11417</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11397'></a><a href='#L11397'>11397</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20045,20 +20025,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20084,13 +20051,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -31460,28 +31420,15 @@
   var get_preferred_quote_default = getPreferredQuote;
 &nbsp;
   // src/utils/make-string.js
-<span class="fstat-no" title="function not covered" >  function makeString(rawText, enclosingQuote, unescapeUnnecessaryEscapes) {</span>
-<span class="cstat-no" title="statement not covered" >    const otherQuote = enclosingQuote === '"' ? "'" : '"';</span>
-<span class="cstat-no" title="statement not covered" >    const regex = /\\(.)|(["'])/gsu;</span>
-<span class="cstat-no" title="statement not covered" >    const raw = method_replace_all_default(</span>
+  var REGEX = /\\?(?&lt;quote&gt;["'])/gu;
+<span class="fstat-no" title="function not covered" >  function makeString(rawText, enclosingQuote) {</span>
+<span class="cstat-no" title="statement not covered" >    return enclosingQuote + method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >      0,</span>
 <span class="cstat-no" title="statement not covered" >      rawText,</span>
-<span class="cstat-no" title="statement not covered" >      regex,</span>
-<span class="cstat-no" title="statement not covered" >      (match, escaped, quote) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (escaped === otherQuote) {</span>
-<span class="cstat-no" title="statement not covered" >          return escaped;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (quote === enclosingQuote) {</span>
-<span class="cstat-no" title="statement not covered" >          return "\\" + quote;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (quote) {</span>
-<span class="cstat-no" title="statement not covered" >          return quote;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return unescapeUnnecessaryEscapes &amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/u.test(escaped) ? escaped : "\\" + escaped;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    return enclosingQuote + raw + enclosingQuote;</span>
+<span class="cstat-no" title="statement not covered" >      REGEX,</span>
+<span class="cstat-no" title="statement not covered" >      (_, quote) =&gt; (quote === enclosingQuote ? "\\" : "") + quote</span>
+<span class="cstat-no" title="statement not covered" >    ) + enclosingQuote;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var make_string_default = makeString;
 &nbsp;
@@ -31500,14 +31447,7 @@
     if (originalQuote === enclosingQuote) {
       return raw;
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return make_string_default(</span></span>
-<span class="cstat-no" title="statement not covered" >      rawContent,</span>
-<span class="cstat-no" title="statement not covered" >      enclosingQuote,</span>
-<span class="cstat-no" title="statement not covered" >      // Until Prettier 3.3.3, this option was set to true for most parsers, with some exceptions like CSS.</span>
-<span class="cstat-no" title="statement not covered" >      // Since Prettier 3.3.4, it is set to false for all parsers.</span>
-<span class="cstat-no" title="statement not covered" >      // For more details, please see https://github.com/prettier/prettier/issues/16542#issuecomment-2282249280.</span>
-<span class="cstat-no" title="statement not covered" >      false</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return make_string_default(rawContent, enclosingQuote);</span></span>
   }
   var print_string_default = printString;
 &nbsp;
@@ -34318,7 +34258,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-16T00:37:06.949Z
+                at 2025-11-17T00:37:44.430Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
