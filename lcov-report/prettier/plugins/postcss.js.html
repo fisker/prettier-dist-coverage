@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.7% </span>
+                <span class="strong">52.73% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6007/11397</span>
+                <span class='fraction'>6009/11395</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.19% </span>
+                <span class="strong">61.22% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1088/1778</span>
+                <span class='fraction'>1088/1777</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.7% </span>
+                <span class="strong">52.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6007/11397</span>
+                <span class='fraction'>6009/11395</span>
             </div>
         
             
@@ -11457,9 +11457,7 @@
 <a name='L11392'></a><a href='#L11392'>11392</a>
 <a name='L11393'></a><a href='#L11393'>11393</a>
 <a name='L11394'></a><a href='#L11394'>11394</a>
-<a name='L11395'></a><a href='#L11395'>11395</a>
-<a name='L11396'></a><a href='#L11396'>11396</a>
-<a name='L11397'></a><a href='#L11397'>11397</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11395'></a><a href='#L11395'>11395</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21040,8 +21038,8 @@
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">65x</span>
-<span class="cline-any cline-yes">65x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -21103,6 +21101,8 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
@@ -21113,14 +21113,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21276,6 +21268,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
@@ -32483,16 +32479,18 @@
 &nbsp;
   // src/language-css/print/comma-separated-value-group.js
   function printCommaSeparatedValueGroup(path, options2, print2) {
-    const {
-      node
-    } = path;
+    const { node } = path;
     const parentNode = path.parent;
     const parentParentNode = path.grandparent;
     const declAncestorProp = getPropOfDeclNode(path);
     const isGridValue = declAncestorProp &amp;&amp; parentNode.type === "value-value" &amp;&amp; (declAncestorProp === "grid" || declAncestorProp.startsWith("grid-template"));
-    const atRuleAncestorNode = path.findAncestor((node2) =&gt; node2.type === "css-atrule");
+    const atRuleAncestorNode = path.findAncestor(
+      (node2) =&gt; node2.type === "css-atrule"
+    );
     const isControlDirective = atRuleAncestorNode &amp;&amp; isSCSSControlDirectiveNode(atRuleAncestorNode, options2);
-    const hasInlineComment = node.groups.some((node2) =&gt; isInlineValueCommentNode(node2));
+    const hasInlineComment = node.groups.some(
+      (node2) =&gt; isInlineValueCommentNode(node2)
+    );
     const printed = path.map(print2, "groups");
     let parts = [""];
     const insideURLFunction = insideValueFunctionNode(path, "url");
@@ -32513,14 +32511,6 @@
 <span class="cstat-no" title="statement not covered" >          parts.push([parts.pop(), " "]);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-      if (isColonNode(iNextNode) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNode.type === "value-word" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parts.length &gt; 2 <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.groups.slice(0, i).every((group2) =&gt; group2.type === "value-comment") <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !isInlineValueCommentNode(iPrevNode))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        parts[parts.length - 2] = dedent(method_at_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >          0,</span>
-<span class="cstat-no" title="statement not covered" >          parts,</span>
-<span class="cstat-no" title="statement not covered" >          -2</span>
-<span class="cstat-no" title="statement not covered" >        ));</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (insideAtRuleNode(path, "forward") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNode.type === "value-word" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNode.value <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iPrevNode !== void 0 <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iPrevNode.type === "value-word" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iPrevNode.value === "as" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode.type === "value-operator" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; iNextNode.value === "*")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
@@ -32672,6 +32662,10 @@
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (isInlineValueCommentNode(iNextNode) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !iNextNextNode)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+      if (!atRuleAncestorNode <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; iNode.type === "value-comment" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !iNode.inline <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.groups.slice(0, i).every((group2) =&gt; group2.type === "value-comment"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(dedent(line), "");</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       parts.push(line, "");
@@ -33247,7 +33241,7 @@
         const isValueAllSpace = typeof node.value === "string" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /^ *$/u.test(node.value);</span>
         let value = typeof node.value === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? node.value </span>: print2("value");
         value = hasComposesNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >? removeLines(value) </span>: value;
-        if (!isColon <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; lastLineHasInlineComment(trimmedBetween) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !(node.value?.group?.group &amp;&amp; path.call(() =&gt; shouldBreakList(path), "value", "group", "group")))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+        if (!isColon <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; lastLineHasInlineComment(trimmedBetween) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !path.call(() =&gt; shouldBreakList(path), "value", "group", "group"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          value = indent([hardline, dedent(value)]);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         return [
@@ -34258,7 +34252,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-17T00:37:41.907Z
+                at 2025-11-18T00:34:21.568Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
