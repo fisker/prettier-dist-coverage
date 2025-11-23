@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.99% </span>
+                <span class="strong">51.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4321/8311</span>
+                <span class='fraction'>4321/8319</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.17% </span>
+                <span class="strong">62.23% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>679/1092</span>
+                <span class='fraction'>679/1091</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.99% </span>
+                <span class="strong">51.94% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4321/8311</span>
+                <span class='fraction'>4321/8319</span>
             </div>
         
             
@@ -8373,7 +8373,15 @@
 <a name='L8308'></a><a href='#L8308'>8308</a>
 <a name='L8309'></a><a href='#L8309'>8309</a>
 <a name='L8310'></a><a href='#L8310'>8310</a>
-<a name='L8311'></a><a href='#L8311'>8311</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8311'></a><a href='#L8311'>8311</a>
+<a name='L8312'></a><a href='#L8312'>8312</a>
+<a name='L8313'></a><a href='#L8313'>8313</a>
+<a name='L8314'></a><a href='#L8314'>8314</a>
+<a name='L8315'></a><a href='#L8315'>8315</a>
+<a name='L8316'></a><a href='#L8316'>8316</a>
+<a name='L8317'></a><a href='#L8317'>8317</a>
+<a name='L8318'></a><a href='#L8318'>8318</a>
+<a name='L8319'></a><a href='#L8319'>8319</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14391,6 +14399,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15076,18 +15088,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15218,6 +15231,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22696,8 +22712,12 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >        cloned.type = "quote";</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      case "document":</span>
-<span class="cstat-no" title="statement not covered" >        delete cloned.directivesEndMarker;</span>
-<span class="cstat-no" title="statement not covered" >        delete cloned.documentEndMarker;</span>
+<span class="cstat-no" title="statement not covered" >        if (!cloned.directivesEndMarker) {</span>
+<span class="cstat-no" title="statement not covered" >          delete cloned.directivesEndMarker;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (!cloned.documentEndMarker) {</span>
+<span class="cstat-no" title="statement not covered" >          delete cloned.documentEndMarker;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -23379,10 +23399,11 @@ ${text}`;
     } = path;
     switch (node.type) {
       case "root": {
+        const lastDescendantNode = getLastDescendantNode(node);
+        const shouldPrintHardline = !(isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; lastDescendantNode.chomping === "keep");
         const parts = [];
         path.each(({
           node: document,
-          next: nextDocument,
           isFirst
         }) =&gt; {
           if (!isFirst) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -23390,16 +23411,16 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >          }</span>
           parts.push(print());
           if (shouldPrintDocumentEndMarker(path)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            parts.push(hardline, "...");</span>
+<span class="cstat-no" title="statement not covered" >            if (shouldPrintHardline) {</span>
+<span class="cstat-no" title="statement not covered" >              parts.push(hardline);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            parts.push("...");</span>
 <span class="cstat-no" title="statement not covered" >            if (hasTrailingComment(document)) {</span>
 <span class="cstat-no" title="statement not covered" >              parts.push(" ", print("trailingComment"));</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-          } else if (nextDocument <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !hasTrailingComment(nextDocument.head))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            parts.push(hardline, "---");</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
         }, "children");
-        const lastDescendantNode = getLastDescendantNode(node);
-        if (!isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) || lastDescendantNode.chomping !== "keep") {
+        if (shouldPrintHardline) {
           parts.push(hardline);
         }
         return parts;
@@ -23528,6 +23549,9 @@ ${text}`;
   }
   function shouldPrintDocumentEndMarker(path) {
     const document = path.node;
+    if (document.documentEndMarker) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     if (hasTrailingComment(document)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -23556,7 +23580,7 @@ ${text}`;
        * ---
        * preserve the first document head end marker
        */
-      path.isFirst &amp;&amp; document.directivesEndMarker <span class="branch-0 cbranch-no" title="branch not covered" >|| /**</span>
+      document.directivesEndMarker <span class="branch-0 cbranch-no" title="branch not covered" >|| /**</span>
 <span class="cstat-no" title="statement not covered" >       * %DIRECTIVE</span>
 <span class="cstat-no" title="statement not covered" >       * ---</span>
 <span class="cstat-no" title="statement not covered" >       */</span>
@@ -25000,7 +25024,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-22T00:33:12.318Z
+                at 2025-11-23T00:41:02.381Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
