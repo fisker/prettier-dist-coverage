@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.47% </span>
+                <span class="strong">50.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8261/16366</span>
+                <span class='fraction'>8263/16373</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.26% </span>
+                <span class="strong">56.24% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1288/2289</span>
+                <span class='fraction'>1288/2290</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.47% </span>
+                <span class="strong">50.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8261/16366</span>
+                <span class='fraction'>8263/16373</span>
             </div>
         
             
@@ -16428,7 +16428,14 @@
 <a name='L16363'></a><a href='#L16363'>16363</a>
 <a name='L16364'></a><a href='#L16364'>16364</a>
 <a name='L16365'></a><a href='#L16365'>16365</a>
-<a name='L16366'></a><a href='#L16366'>16366</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16366'></a><a href='#L16366'>16366</a>
+<a name='L16367'></a><a href='#L16367'>16367</a>
+<a name='L16368'></a><a href='#L16368'>16368</a>
+<a name='L16369'></a><a href='#L16369'>16369</a>
+<a name='L16370'></a><a href='#L16370'>16370</a>
+<a name='L16371'></a><a href='#L16371'>16371</a>
+<a name='L16372'></a><a href='#L16372'>16372</a>
+<a name='L16373'></a><a href='#L16373'>16373</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -30680,7 +30687,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -32193,6 +32199,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">409x</span>
 <span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-yes">409x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -47031,7 +47045,7 @@
   var get_next_non_space_non_comment_character_index_default = getNextNonSpaceNonCommentCharacterIndex;
 &nbsp;
   // src/utils/try-combinations.js
-  function tryCombinations(combinations) {
+  function tryCombinationsSync(combinations) {
     const errors = [];
     for (const fn of combinations) {
       try {
@@ -47042,7 +47056,6 @@
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    throw Object.assign(new Error("All combinations failed"), { errors });</span></span>
   }
-  var try_combinations_default = tryCombinations;
 &nbsp;
   // src/language-js/utils/get-shebang.js
   function getShebang(text) {
@@ -48161,10 +48174,10 @@
       "moduleReference"
     ],
     "TSImportType": [
-      "argument",
       "options",
       "qualifier",
-      "typeArguments"
+      "typeArguments",
+      "source"
     ],
     "TSIndexedAccessType": [
       "objectType",
@@ -48562,6 +48575,14 @@
 <span class="cstat-no" title="statement not covered" >              node.options = node.attributes;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
+          // https://github.com/babel/babel/issues/17506
+          // https://github.com/oxc-project/oxc/issues/16074
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "TSImportType":</span>
+<span class="cstat-no" title="statement not covered" >            if (!node.source &amp;&amp; node.argument.type === "TSLiteralType") {</span>
+<span class="cstat-no" title="statement not covered" >              node.source = node.argument.literal;</span>
+<span class="cstat-no" title="statement not covered" >              delete node.argument;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
         }
         if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          assertRaw(node, text);</span>
@@ -48915,7 +48936,7 @@
       const parseFunction = isExpression ? parseExpression : parse;
       let ast;
       try {
-        ast = try_combinations_default(
+        ast = tryCombinationsSync(
           combinations.map(
             (options2) =&gt; () =&gt; parseWithOptions(parseFunction, text, options2)
           )
@@ -49165,7 +49186,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-24T00:37:17.826Z
+                at 2025-11-25T00:33:30.392Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

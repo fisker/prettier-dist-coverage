@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.95% </span>
+                <span class="strong">60.97% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7733/12687</span>
+                <span class='fraction'>7733/12683</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.95% </span>
+                <span class="strong">60.97% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7733/12687</span>
+                <span class='fraction'>7733/12683</span>
             </div>
         
             
@@ -12745,11 +12745,7 @@
 <a name='L12680'></a><a href='#L12680'>12680</a>
 <a name='L12681'></a><a href='#L12681'>12681</a>
 <a name='L12682'></a><a href='#L12682'>12682</a>
-<a name='L12683'></a><a href='#L12683'>12683</a>
-<a name='L12684'></a><a href='#L12684'>12684</a>
-<a name='L12685'></a><a href='#L12685'>12685</a>
-<a name='L12686'></a><a href='#L12686'>12686</a>
-<a name='L12687'></a><a href='#L12687'>12687</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12683'></a><a href='#L12683'>12683</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20520,6 +20516,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20541,13 +20540,6 @@
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">29x</span>
@@ -26979,10 +26971,10 @@
       "moduleReference"
     ],
     "TSImportType": [
-      "argument",
       "options",
       "qualifier",
-      "typeArguments"
+      "typeArguments",
+      "source"
     ],
     "TSIndexedAccessType": [
       "objectType",
@@ -27778,7 +27770,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     let args;
     if (node.type === "ImportExpression" || node.type === "TSImportType") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      args = [node.type === "ImportExpression" ? node.source : node.argument];</span>
+<span class="cstat-no" title="statement not covered" >      args = [node.source];</span>
 <span class="cstat-no" title="statement not covered" >      if (node.options) {</span>
 <span class="cstat-no" title="statement not covered" >        args.push(node.options);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -27798,7 +27790,7 @@
 <span class="cstat-no" title="statement not covered" >      return path.call(() =&gt; iterateCallArgumentsPath(path, iteratee), "expression");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (node.type === "ImportExpression" || node.type === "TSImportType") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      path.call(() =&gt; iteratee(path, 0), node.type === "ImportExpression" ? "source" : "argument");</span>
+<span class="cstat-no" title="statement not covered" >      path.call(() =&gt; iteratee(path, 0), "source");</span>
 <span class="cstat-no" title="statement not covered" >      if (node.options) {</span>
 <span class="cstat-no" title="statement not covered" >        path.call(() =&gt; iteratee(path, 1), "options");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -27816,7 +27808,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (node.type === "ImportExpression" || node.type === "TSImportType") {</span>
 <span class="cstat-no" title="statement not covered" >      if (index === 0 || index === (node.options ? -2 : -1)) {</span>
-<span class="cstat-no" title="statement not covered" >        return [...selectors, node.type === "ImportExpression" ? "source" : "argument"];</span>
+<span class="cstat-no" title="statement not covered" >        return [...selectors, "source"];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (node.options &amp;&amp; (index === 1 || index === -1)) {</span>
 <span class="cstat-no" title="statement not covered" >        return [...selectors, "options"];</span>
@@ -33199,8 +33191,11 @@
   }
   function printCallee(path, print3) {
     const { node } = path;
-    if (node.type === "ImportExpression" || node.type === "TSImportType") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (node.type === "ImportExpression") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return `import${node.phase ? `.${node.phase}` : ""}`;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    if (node.type === "TSImportType") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return "import";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (node.type === "TSExternalModuleReference") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return "require";</span>
@@ -33226,14 +33221,7 @@
       return false;
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const args = getCallArguments(node);</span></span>
-    if (args.length !== 1 || hasComment(args[0])) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return false;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    let source = args[0];</span>
-    if (node.type === "TSImportType" &amp;&amp; source.type === "TSLiteralType") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      source = source.literal;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return isStringLiteral(source);</span>
+    return args.length === 1 &amp;&amp; isStringLiteral(args[0]) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !hasComment(args[0]);</span>
   }
   function isCommonsJsOrAmdModuleDefinition(path) {
     const { node } = path;
@@ -38128,7 +38116,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-24T00:37:15.470Z
+                at 2025-11-25T00:33:27.748Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

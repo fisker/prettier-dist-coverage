@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.45% </span>
+                <span class="strong">58.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4934/8441</span>
+                <span class='fraction'>4936/8448</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.96% </span>
+                <span class="strong">53.91% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>654/1212</span>
+                <span class='fraction'>654/1213</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.45% </span>
+                <span class="strong">58.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4934/8441</span>
+                <span class='fraction'>4936/8448</span>
             </div>
         
             
@@ -8503,7 +8503,14 @@
 <a name='L8438'></a><a href='#L8438'>8438</a>
 <a name='L8439'></a><a href='#L8439'>8439</a>
 <a name='L8440'></a><a href='#L8440'>8440</a>
-<a name='L8441'></a><a href='#L8441'>8441</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8441'></a><a href='#L8441'>8441</a>
+<a name='L8442'></a><a href='#L8442'>8442</a>
+<a name='L8443'></a><a href='#L8443'>8443</a>
+<a name='L8444'></a><a href='#L8444'>8444</a>
+<a name='L8445'></a><a href='#L8445'>8445</a>
+<a name='L8446'></a><a href='#L8446'>8446</a>
+<a name='L8447'></a><a href='#L8447'>8447</a>
+<a name='L8448'></a><a href='#L8448'>8448</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14631,7 +14638,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16130,6 +16136,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">271x</span>
 <span class="cline-any cline-yes">271x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">271x</span>
+<span class="cline-any cline-yes">271x</span>
+<span class="cline-any cline-yes">271x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23056,7 +23070,7 @@
   var parser_create_error_default = createError;
 &nbsp;
   // src/utils/try-combinations.js
-  function tryCombinations(combinations) {
+  function tryCombinationsSync(combinations) {
     const errors = [];
     for (const fn of combinations) {
       try {
@@ -23067,7 +23081,6 @@
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    throw Object.assign(new Error("All combinations failed"), { errors });</span></span>
   }
-  var try_combinations_default = tryCombinations;
 &nbsp;
   // scripts/build/shims/shared.js
   var OPTIONAL_OBJECT = 1;
@@ -24173,10 +24186,10 @@
       "moduleReference"
     ],
     "TSImportType": [
-      "argument",
       "options",
       "qualifier",
-      "typeArguments"
+      "typeArguments",
+      "source"
     ],
     "TSIndexedAccessType": [
       "objectType",
@@ -24574,6 +24587,14 @@
 <span class="cstat-no" title="statement not covered" >              node.options = node.attributes;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
+          // https://github.com/babel/babel/issues/17506
+          // https://github.com/oxc-project/oxc/issues/16074
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "TSImportType":</span>
+<span class="cstat-no" title="statement not covered" >            if (!node.source &amp;&amp; node.argument.type === "TSLiteralType") {</span>
+<span class="cstat-no" title="statement not covered" >              node.source = node.argument.literal;</span>
+<span class="cstat-no" title="statement not covered" >              delete node.argument;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
         }
         if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          assertRaw(node, text);</span>
@@ -24839,7 +24860,7 @@
     const combinations = (sourceType <span class="branch-0 cbranch-no" title="branch not covered" >? [sourceType] </span>: SOURCE_TYPE_COMBINATIONS).map((sourceType2) =&gt; () =&gt; parseWithOptions(text, sourceType2));
     let ast;
     try {
-      ast = try_combinations_default(combinations);
+      ast = tryCombinationsSync(combinations);
     } <span class="branch-0 cbranch-no" title="branch not covered" >catch ({ errors: [error] }) {</span>
 <span class="cstat-no" title="statement not covered" >      throw createParseError(error);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -25372,7 +25393,7 @@
     );
     let ast;
     try {
-      ast = try_combinations_default(combinations);
+      ast = tryCombinationsSync(combinations);
     } <span class="branch-0 cbranch-no" title="branch not covered" >catch ({ errors: [error] }) {</span>
 <span class="cstat-no" title="statement not covered" >      throw createParseError2(error);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -25390,7 +25411,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-24T00:37:15.470Z
+                at 2025-11-25T00:33:27.748Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.66% </span>
+                <span class="strong">45.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3583/7847</span>
+                <span class='fraction'>3585/7854</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.03% </span>
+                <span class="strong">44.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>331/735</span>
+                <span class='fraction'>331/736</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.66% </span>
+                <span class="strong">45.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3583/7847</span>
+                <span class='fraction'>3585/7854</span>
             </div>
         
             
@@ -7909,7 +7909,14 @@
 <a name='L7844'></a><a href='#L7844'>7844</a>
 <a name='L7845'></a><a href='#L7845'>7845</a>
 <a name='L7846'></a><a href='#L7846'>7846</a>
-<a name='L7847'></a><a href='#L7847'>7847</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7847'></a><a href='#L7847'>7847</a>
+<a name='L7848'></a><a href='#L7848'>7848</a>
+<a name='L7849'></a><a href='#L7849'>7849</a>
+<a name='L7850'></a><a href='#L7850'>7850</a>
+<a name='L7851'></a><a href='#L7851'>7851</a>
+<a name='L7852'></a><a href='#L7852'>7852</a>
+<a name='L7853'></a><a href='#L7853'>7853</a>
+<a name='L7854'></a><a href='#L7854'>7854</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -13989,7 +13996,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15479,6 +15485,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">136x</span>
 <span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21821,7 +21835,7 @@
   var parser_create_error_default = createError;
 &nbsp;
   // src/utils/try-combinations.js
-  function tryCombinations(combinations) {
+  function tryCombinationsSync(combinations) {
     const errors = [];
     for (const fn of combinations) {
       try {
@@ -21832,7 +21846,6 @@
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    throw Object.assign(new Error("All combinations failed"), { errors });</span></span>
   }
-  var try_combinations_default = tryCombinations;
 &nbsp;
   // scripts/build/shims/method-find-last.js
   var arrayFindLast = Array.prototype.findLast <span class="branch-0 cbranch-no" title="branch not covered" >?? <span class="fstat-no" title="function not covered" >function(callback) {</span></span>
@@ -22928,10 +22941,10 @@
       "moduleReference"
     ],
     "TSImportType": [
-      "argument",
       "options",
       "qualifier",
-      "typeArguments"
+      "typeArguments",
+      "source"
     ],
     "TSIndexedAccessType": [
       "objectType",
@@ -23329,6 +23342,14 @@
 <span class="cstat-no" title="statement not covered" >              node.options = node.attributes;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
+          // https://github.com/babel/babel/issues/17506
+          // https://github.com/oxc-project/oxc/issues/16074
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "TSImportType":</span>
+<span class="cstat-no" title="statement not covered" >            if (!node.source &amp;&amp; node.argument.type === "TSLiteralType") {</span>
+<span class="cstat-no" title="statement not covered" >              node.source = node.argument.literal;</span>
+<span class="cstat-no" title="statement not covered" >              delete node.argument;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
         }
         if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          assertRaw(node, text);</span>
@@ -23593,7 +23614,7 @@
     const combinations = (sourceType <span class="branch-0 cbranch-no" title="branch not covered" >? [sourceType] </span>: SOURCE_TYPE_COMBINATIONS).map((sourceType2) =&gt; () =&gt; parseWithOptions(text, sourceType2));
     let ast;
     try {
-      ast = try_combinations_default(combinations);
+      ast = tryCombinationsSync(combinations);
     } <span class="branch-0 cbranch-no" title="branch not covered" >catch ({ errors: [error] }) {</span>
 <span class="cstat-no" title="statement not covered" >      throw createParseError(error);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -23608,7 +23629,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-24T00:37:15.470Z
+                at 2025-11-25T00:33:27.748Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
