@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.46% </span>
+                <span class="strong">50.48% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8263/16373</span>
+                <span class='fraction'>8272/16384</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.24% </span>
+                <span class="strong">56.23% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1288/2290</span>
+                <span class='fraction'>1289/2292</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.46% </span>
+                <span class="strong">50.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8263/16373</span>
+                <span class='fraction'>8272/16384</span>
             </div>
         
             
@@ -16435,7 +16435,18 @@
 <a name='L16370'></a><a href='#L16370'>16370</a>
 <a name='L16371'></a><a href='#L16371'>16371</a>
 <a name='L16372'></a><a href='#L16372'>16372</a>
-<a name='L16373'></a><a href='#L16373'>16373</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16373'></a><a href='#L16373'>16373</a>
+<a name='L16374'></a><a href='#L16374'>16374</a>
+<a name='L16375'></a><a href='#L16375'>16375</a>
+<a name='L16376'></a><a href='#L16376'>16376</a>
+<a name='L16377'></a><a href='#L16377'>16377</a>
+<a name='L16378'></a><a href='#L16378'>16378</a>
+<a name='L16379'></a><a href='#L16379'>16379</a>
+<a name='L16380'></a><a href='#L16380'>16380</a>
+<a name='L16381'></a><a href='#L16381'>16381</a>
+<a name='L16382'></a><a href='#L16382'>16382</a>
+<a name='L16383'></a><a href='#L16383'>16383</a>
+<a name='L16384'></a><a href='#L16384'>16384</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -32431,6 +32442,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -32545,6 +32562,11 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -48800,8 +48822,14 @@
   var create_parser_default = createParser;
 &nbsp;
   // src/language-js/parse/utils/source-types.js
-  var SOURCE_TYPE_MODULE = "module";
-  var SOURCE_TYPE_SCRIPT = "script";
+  var SOURCE_TYPE_MODULE = (
+    /** @type {const} */
+    "module"
+  );
+  var SOURCE_TYPE_COMMONJS = (
+    /** @type {const} */
+    "commonjs"
+  );
   function getSourceType(filepath) {
     if (typeof filepath !== "string") {
       return;
@@ -48811,7 +48839,7 @@
 <span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_MODULE;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (/\.(?:cjs|cts)$/iu.test(filepath)) {</span>
-<span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_SCRIPT;</span>
+<span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_COMMONJS;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
 &nbsp;
@@ -48914,10 +48942,15 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
       let combinations = optionsCombinations;
       const sourceType = options.__babelSourceType ?? getSourceType(filepath);
-      if (sourceType === SOURCE_TYPE_SCRIPT) {
+      if (sourceType &amp;&amp; sourceType !== SOURCE_TYPE_MODULE) {
         combinations = combinations.map((options2) =&gt; ({
           ...options2,
-          sourceType
+          sourceType,
+          // `sourceType: "commonjs"` does not allow these two properties
+          ...sourceType === SOURCE_TYPE_COMMONJS <span class="branch-0 cbranch-no" title="branch not covered" >? {</span>
+<span class="cstat-no" title="statement not covered" >            allowReturnOutsideFunction: void 0,</span>
+<span class="cstat-no" title="statement not covered" >            allowNewTargetOutsideFunction: void 0</span>
+          } : void 0
         }));
       }
       const shouldEnableV8intrinsicPlugin = /%[A-Z]/u.test(text);
@@ -49186,7 +49219,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-27T00:34:06.557Z
+                at 2025-11-28T00:33:44.950Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

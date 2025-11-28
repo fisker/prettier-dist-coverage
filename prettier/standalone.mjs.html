@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.73% </span>
+                <span class="strong">54.8% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3315/6057</span>
+                <span class='fraction'>3323/6063</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.73% </span>
+                <span class="strong">54.8% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3315/6057</span>
+                <span class='fraction'>3323/6063</span>
             </div>
         
             
@@ -6120,7 +6120,13 @@
 <a name='L6055'></a><a href='#L6055'>6055</a>
 <a name='L6056'></a><a href='#L6056'>6056</a>
 <a name='L6057'></a><a href='#L6057'>6057</a>
-<a name='L6058'></a><a href='#L6058'>6058</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L6058'></a><a href='#L6058'>6058</a>
+<a name='L6059'></a><a href='#L6059'>6059</a>
+<a name='L6060'></a><a href='#L6060'>6060</a>
+<a name='L6061'></a><a href='#L6061'>6061</a>
+<a name='L6062'></a><a href='#L6062'>6062</a>
+<a name='L6063'></a><a href='#L6063'>6063</a>
+<a name='L6064'></a><a href='#L6064'>6064</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8030,6 +8036,9 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">9346x</span>
 <span class="cline-any cline-yes">9346x</span>
 <span class="cline-any cline-yes">9346x</span>
@@ -8062,9 +8071,6 @@
 <span class="cline-any cline-yes">7822x</span>
 <span class="cline-any cline-yes">2946x</span>
 <span class="cline-any cline-yes">9346x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8366,6 +8372,7 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8385,6 +8392,11 @@
 <span class="cline-any cline-yes">541x</span>
 <span class="cline-any cline-yes">541x</span>
 <span class="cline-any cline-yes">541x</span>
+<span class="cline-any cline-yes">541x</span>
+<span class="cline-any cline-yes">541x</span>
+<span class="cline-any cline-yes">541x</span>
+<span class="cline-any cline-yes">541x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">541x</span>
@@ -14081,10 +14093,13 @@ function printDocToString(doc, options) {
     mode: MODE_BREAK,
     doc
   }];
-  let out = [];
+  let output = "";
   let shouldRemeasure = false;
   const lineSuffix2 = [];
   const cursorPositions = [];
+  const settledOutput = [];
+  const settledCursorPositions = [];
+  let settledTextLength = 0;
   propagateBreaks(doc);
   while (commands.length &gt; 0) {
     const {
@@ -14102,7 +14117,7 @@ function printDocToString(doc, options) {
 <span class="cstat-no" title="statement not covered" >          newLine</span>
         ) : doc2;
         if (formatted2) {
-          out.push(formatted2);
+          output += formatted2;
           if (commands.length &gt; 0) {
             position += get_string_width_default(formatted2);
           }
@@ -14118,15 +14133,12 @@ function printDocToString(doc, options) {
           });
         }
         break;
-<span class="branch-0 cbranch-no" title="branch not covered" >      case DOC_TYPE_CURSOR: {</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case DOC_TYPE_CURSOR:</span>
 <span class="cstat-no" title="statement not covered" >        if (cursorPositions.length &gt;= 2) {</span>
 <span class="cstat-no" title="statement not covered" >          throw new Error("There are too many 'cursor' in doc.");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        const text = out.join("");</span>
-<span class="cstat-no" title="statement not covered" >        out = [text];</span>
-<span class="cstat-no" title="statement not covered" >        cursorPositions.push(text.length - 1);</span>
+<span class="cstat-no" title="statement not covered" >        cursorPositions.push(settledTextLength + output.length);</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
       case DOC_TYPE_INDENT:
         commands.push({
           indent: makeIndent(indent2, options),
@@ -14365,7 +14377,7 @@ function printDocToString(doc, options) {
           case MODE_FLAT:
             if (!doc2.hard) {
               if (!doc2.soft) {
-                out.push(" ");
+                output += " ";
                 position += 1;
               }
               break;
@@ -14384,17 +14396,17 @@ function printDocToString(doc, options) {
 <span class="cstat-no" title="statement not covered" >              break;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
             if (doc2.literal) {
-              out.push(newLine);
+              output += newLine;
               position = 0;
               if (indent2.root) {
                 if (indent2.root.value) {
-                  out.push(indent2.root.value);
+                  output += indent2.root.value;
                 }
                 position = indent2.root.length;
               }
             } else {
               trim2();
-              out.push(newLine + indent2.value);
+              output += newLine + indent2.value;
               position = indent2.length;
             }
             break;
@@ -14417,32 +14429,38 @@ function printDocToString(doc, options) {
 <span class="cstat-no" title="statement not covered" >      lineSuffix2.length = 0;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
-  const formatted = out.join("");
-  if (cursorPositions.length !== 2) {
+  const formatted = settledOutput.join("") + output;
+  const finalCursorPositions = [...settledCursorPositions, ...cursorPositions];
+  if (finalCursorPositions.length !== 2) {
     return {
       formatted
     };
   }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  const cursorNodeStart = cursorPositions[0] + 1;</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >  const cursorNodeStart = finalCursorPositions[0];</span></span>
 <span class="cstat-no" title="statement not covered" >  return {</span>
 <span class="cstat-no" title="statement not covered" >    formatted,</span>
 <span class="cstat-no" title="statement not covered" >    cursorNodeStart,</span>
 <span class="cstat-no" title="statement not covered" >    cursorNodeText: formatted.slice(cursorNodeStart, method_at_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >      0,</span>
-<span class="cstat-no" title="statement not covered" >      cursorPositions,</span>
+<span class="cstat-no" title="statement not covered" >      finalCursorPositions,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
-<span class="cstat-no" title="statement not covered" >    ) + 1)</span>
+<span class="cstat-no" title="statement not covered" >    ))</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  function trim2() {</span>
     const {
-      text,
+      text: trimmed,
       count
-    } = trimIndentation(out.join(""));
-    out = [text];
+    } = trimIndentation(output);
+    if (trimmed) {
+      settledOutput.push(trimmed);
+      settledTextLength += trimmed.length;
+    }
+    output = "";
     position -= count;
-    for (let index = 0; index &lt; cursorPositions.length; index++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      cursorPositions[index] = Math.min(cursorPositions[index], text.length - 1);</span>
+    if (cursorPositions.length &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      settledCursorPositions.push(...cursorPositions.map((position2) =&gt; Math.min(position2, settledTextLength)));</span>
+<span class="cstat-no" title="statement not covered" >      cursorPositions.length = 0;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
 }
@@ -17961,7 +17979,7 @@ var utils = {
 };
 &nbsp;
 // src/main/version.evaluate.js
-var version_evaluate_default = "3.7.0-dev";
+var version_evaluate_default = "3.8.0-dev";
 &nbsp;
 // src/utils/public.js
 var public_exports2 = {};
@@ -18241,7 +18259,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-27T00:34:09.283Z
+                at 2025-11-28T00:33:47.649Z
             </div>
         <script src="../prettify.js"></script>
         <script>

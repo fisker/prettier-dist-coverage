@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.42% </span>
+                <span class="strong">58.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4936/8448</span>
+                <span class='fraction'>4946/8458</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.91% </span>
+                <span class="strong">53.87% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>654/1213</span>
+                <span class='fraction'>654/1214</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.42% </span>
+                <span class="strong">58.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4936/8448</span>
+                <span class='fraction'>4946/8458</span>
             </div>
         
             
@@ -8510,7 +8510,17 @@
 <a name='L8445'></a><a href='#L8445'>8445</a>
 <a name='L8446'></a><a href='#L8446'>8446</a>
 <a name='L8447'></a><a href='#L8447'>8447</a>
-<a name='L8448'></a><a href='#L8448'>8448</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8448'></a><a href='#L8448'>8448</a>
+<a name='L8449'></a><a href='#L8449'>8449</a>
+<a name='L8450'></a><a href='#L8450'>8450</a>
+<a name='L8451'></a><a href='#L8451'>8451</a>
+<a name='L8452'></a><a href='#L8452'>8452</a>
+<a name='L8453'></a><a href='#L8453'>8453</a>
+<a name='L8454'></a><a href='#L8454'>8454</a>
+<a name='L8455'></a><a href='#L8455'>8455</a>
+<a name='L8456'></a><a href='#L8456'>8456</a>
+<a name='L8457'></a><a href='#L8457'>8457</a>
+<a name='L8458'></a><a href='#L8458'>8458</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16349,6 +16359,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -16391,6 +16411,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16897,7 +16918,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -24789,11 +24809,21 @@
   var create_parser_default = createParser;
 &nbsp;
   // src/language-js/parse/utils/source-types.js
-  var SOURCE_TYPE_MODULE = "module";
-  var SOURCE_TYPE_SCRIPT = "script";
+  var SOURCE_TYPE_MODULE = (
+    /** @type {const} */
+    "module"
+  );
+  var SOURCE_TYPE_SCRIPT = (
+    /** @type {const} */
+    "script"
+  );
+  var SOURCE_TYPE_COMMONJS = (
+    /** @type {const} */
+    "commonjs"
+  );
   var SOURCE_TYPE_COMBINATIONS = [
     SOURCE_TYPE_MODULE,
-    SOURCE_TYPE_SCRIPT
+    SOURCE_TYPE_COMMONJS
   ];
   function getSourceType(filepath) {
     if (typeof filepath !== "string") {
@@ -24804,7 +24834,7 @@
 <span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_MODULE;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (/\.(?:cjs|cts)$/iu.test(filepath)) {</span>
-<span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_SCRIPT;</span>
+<span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_COMMONJS;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
 &nbsp;
@@ -24848,7 +24878,8 @@
     const comments = [];
     const ast = parser2.parse(text, {
       ...parseOptions,
-      sourceType,
+      // https://github.com/acornjs/acorn/pull/1377 not released yet
+      sourceType: sourceType === SOURCE_TYPE_COMMONJS <span class="branch-0 cbranch-no" title="branch not covered" >? SOURCE_TYPE_SCRIPT </span>: sourceType,
       allowImportExportEverywhere: sourceType === SOURCE_TYPE_MODULE,
       onComment: comments
     });
@@ -25372,7 +25403,6 @@
     tokens: false,
     ecmaFeatures: {
       jsx: true,
-      globalReturn: true,
       impliedStrict: false
     }
   };
@@ -25411,7 +25441,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-27T00:34:09.283Z
+                at 2025-11-28T00:33:47.649Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
