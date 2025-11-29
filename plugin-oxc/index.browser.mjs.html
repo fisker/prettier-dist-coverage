@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25615</span>
+                <span class='fraction'>0/25609</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25615</span>
+                <span class='fraction'>0/25609</span>
             </div>
         
             
@@ -25672,19 +25672,7 @@
 <a name='L25607'></a><a href='#L25607'>25607</a>
 <a name='L25608'></a><a href='#L25608'>25608</a>
 <a name='L25609'></a><a href='#L25609'>25609</a>
-<a name='L25610'></a><a href='#L25610'>25610</a>
-<a name='L25611'></a><a href='#L25611'>25611</a>
-<a name='L25612'></a><a href='#L25612'>25612</a>
-<a name='L25613'></a><a href='#L25613'>25613</a>
-<a name='L25614'></a><a href='#L25614'>25614</a>
-<a name='L25615'></a><a href='#L25615'>25615</a>
-<a name='L25616'></a><a href='#L25616'>25616</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L25610'></a><a href='#L25610'>25610</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -66336,15 +66324,22 @@
 <span class="cstat-no" title="statement not covered" >var get_preferred_quote_default = getPreferredQuote;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/utils/make-string.js</span>
-<span class="cstat-no" title="statement not covered" >var REGEX = /\\?(?&lt;quote&gt;["'])/gu;</span>
+<span class="cstat-no" title="statement not covered" >var REGEX = /\\(["'\\])|(["'])/gu;</span>
 <span class="cstat-no" title="statement not covered" >function makeString(rawText, enclosingQuote) {</span>
-<span class="cstat-no" title="statement not covered" >  return enclosingQuote + method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >  const otherQuote = enclosingQuote === '"' ? "'" : '"';</span>
+<span class="cstat-no" title="statement not covered" >  const raw = method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >    /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >    0,</span>
 <span class="cstat-no" title="statement not covered" >    rawText,</span>
 <span class="cstat-no" title="statement not covered" >    REGEX,</span>
-<span class="cstat-no" title="statement not covered" >    (_, quote) =&gt; (quote === enclosingQuote ? "\\" : "") + quote</span>
-<span class="cstat-no" title="statement not covered" >  ) + enclosingQuote;</span>
+<span class="cstat-no" title="statement not covered" >    (match, escaped, unescaped) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (escaped) {</span>
+<span class="cstat-no" title="statement not covered" >        return escaped === otherQuote ? otherQuote : match;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      return unescaped === enclosingQuote ? "\\" + unescaped : unescaped;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >  return enclosingQuote + raw + enclosingQuote;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var make_string_default = makeString;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -72852,6 +72847,7 @@
 <span class="cstat-no" title="statement not covered" >  const isFlowTypeAnnotation = node.type === "ObjectTypeAnnotation";</span>
 <span class="cstat-no" title="statement not covered" >  const isObjectType2 = !isClassBody(path);</span>
 <span class="cstat-no" title="statement not covered" >  const separator = isObjectType2 ? line : hardline;</span>
+<span class="cstat-no" title="statement not covered" >  const hasDanglingComments = hasComment(node, CommentCheckFlags.Dangling);</span>
 <span class="cstat-no" title="statement not covered" >  const [openingBrace, closingBrace] = isFlowTypeAnnotation &amp;&amp; node.exact ? ["{|", "|}"] : "{}";</span>
 <span class="cstat-no" title="statement not covered" >  let firstMember;</span>
 <span class="cstat-no" title="statement not covered" >  iterateClassMembers(path, ({</span>
@@ -72887,7 +72883,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >  if (hasComment(node, CommentCheckFlags.Dangling)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (hasDanglingComments) {</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(printDanglingComments(path, options2));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type === "ObjectTypeAnnotation" &amp;&amp; node.inexact) {</span>
@@ -72906,7 +72902,7 @@
 <span class="cstat-no" title="statement not covered" >    parts.push(printed);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (isObjectType2) {</span>
-<span class="cstat-no" title="statement not covered" >    const shouldBreak = options2.objectWrap === "preserve" &amp;&amp; firstMember &amp;&amp; has_newline_in_range_default(options2.originalText, locStart(node), locStart(firstMember));</span>
+<span class="cstat-no" title="statement not covered" >    const shouldBreak = hasDanglingComments || options2.objectWrap === "preserve" &amp;&amp; firstMember &amp;&amp; has_newline_in_range_default(options2.originalText, locStart(node), locStart(firstMember));</span>
 <span class="cstat-no" title="statement not covered" >    let content;</span>
 <span class="cstat-no" title="statement not covered" >    if (parts.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      content = openingBrace + closingBrace;</span>
@@ -74755,21 +74751,7 @@
 <span class="cstat-no" title="statement not covered" >      parent.type !== node.type || parent[alternateNodePropertyName] === node || isParentTest ? part : options2.useTabs ? dedent(indent(part)) : align(Math.max(0, options2.tabWidth - 2), part)</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const shouldBreak = [</span>
-<span class="cstat-no" title="statement not covered" >    consequentNodePropertyName,</span>
-<span class="cstat-no" title="statement not covered" >    alternateNodePropertyName,</span>
-<span class="cstat-no" title="statement not covered" >    ...testNodePropertyNames</span>
-<span class="cstat-no" title="statement not covered" >  ].some(</span>
-<span class="cstat-no" title="statement not covered" >    (property) =&gt; hasComment(</span>
-<span class="cstat-no" title="statement not covered" >      node[property],</span>
-<span class="cstat-no" title="statement not covered" >      (comment) =&gt; is_block_comment_default(comment) &amp;&amp; has_newline_in_range_default(</span>
-<span class="cstat-no" title="statement not covered" >        options2.originalText,</span>
-<span class="cstat-no" title="statement not covered" >        locStart(comment),</span>
-<span class="cstat-no" title="statement not covered" >        locEnd(comment)</span>
-<span class="cstat-no" title="statement not covered" >      )</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >  const maybeGroup = (doc) =&gt; parent === firstNonConditionalParent ? group(doc, { shouldBreak }) : shouldBreak ? [doc, breakParent] : doc;</span>
+<span class="cstat-no" title="statement not covered" >  const maybeGroup = (doc) =&gt; parent === firstNonConditionalParent ? group(doc) : doc;</span>
 <span class="cstat-no" title="statement not covered" >  const breakClosingParen = !jsxMode &amp;&amp; (isMemberExpression(parent) || parent.type === "NGPipeExpression" &amp;&amp; parent.left === node) &amp;&amp; !parent.computed;</span>
 <span class="cstat-no" title="statement not covered" >  const shouldExtraIndent = shouldExtraIndentForConditionalExpression(path);</span>
 <span class="cstat-no" title="statement not covered" >  const result = maybeGroup([</span>
@@ -76915,7 +76897,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-28T00:33:47.649Z
+                at 2025-11-29T00:33:52.677Z
             </div>
         <script src="../prettify.js"></script>
         <script>
