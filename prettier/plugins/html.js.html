@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.8% </span>
+                <span class="strong">73.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7428/10064</span>
+                <span class='fraction'>7445/10081</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.7% </span>
+                <span class="strong">71.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>930/1297</span>
+                <span class='fraction'>930/1296</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.8% </span>
+                <span class="strong">73.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7428/10064</span>
+                <span class='fraction'>7445/10081</span>
             </div>
         
             
@@ -10126,7 +10126,24 @@
 <a name='L10061'></a><a href='#L10061'>10061</a>
 <a name='L10062'></a><a href='#L10062'>10062</a>
 <a name='L10063'></a><a href='#L10063'>10063</a>
-<a name='L10064'></a><a href='#L10064'>10064</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10064'></a><a href='#L10064'>10064</a>
+<a name='L10065'></a><a href='#L10065'>10065</a>
+<a name='L10066'></a><a href='#L10066'>10066</a>
+<a name='L10067'></a><a href='#L10067'>10067</a>
+<a name='L10068'></a><a href='#L10068'>10068</a>
+<a name='L10069'></a><a href='#L10069'>10069</a>
+<a name='L10070'></a><a href='#L10070'>10070</a>
+<a name='L10071'></a><a href='#L10071'>10071</a>
+<a name='L10072'></a><a href='#L10072'>10072</a>
+<a name='L10073'></a><a href='#L10073'>10073</a>
+<a name='L10074'></a><a href='#L10074'>10074</a>
+<a name='L10075'></a><a href='#L10075'>10075</a>
+<a name='L10076'></a><a href='#L10076'>10076</a>
+<a name='L10077'></a><a href='#L10077'>10077</a>
+<a name='L10078'></a><a href='#L10078'>10078</a>
+<a name='L10079'></a><a href='#L10079'>10079</a>
+<a name='L10080'></a><a href='#L10080'>10080</a>
+<a name='L10081'></a><a href='#L10081'>10081</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10578,11 +10595,28 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">241x</span>
 <span class="cline-any cline-yes">241x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">241x</span>
@@ -20283,7 +20317,7 @@
   });
   var method_at_default = at;
 &nbsp;
-  // src/utils/noop.js
+  // src/utilities/noop.js
   var noop = () =&gt; {
   };
   var noop_default = noop;
@@ -20637,22 +20671,39 @@
   };
   var literalline = [literallineWithoutBreakParent, breakParent];
 &nbsp;
-  // src/utils/get-preferred-quote.js
+  // src/utilities/get-preferred-quote.js
   var SINGLE_QUOTE = "'";
   var DOUBLE_QUOTE = '"';
+  var SINGLE_QUOTE_DATA = Object.freeze({
+    character: SINGLE_QUOTE,
+    codePoint: 39
+  });
+  var DOUBLE_QUOTE_DATA = Object.freeze({
+    character: DOUBLE_QUOTE,
+    codePoint: 34
+  });
+  var SINGLE_QUOTE_SETTINGS = Object.freeze({
+    preferred: SINGLE_QUOTE_DATA,
+    alternate: DOUBLE_QUOTE_DATA
+  });
+  var DOUBLE_QUOTE_SETTINGS = Object.freeze({
+    preferred: DOUBLE_QUOTE_DATA,
+    alternate: SINGLE_QUOTE_DATA
+  });
   function getPreferredQuote(text, preferredQuoteOrPreferSingleQuote) {
-    const preferred = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? SINGLE_QUOTE </span>: DOUBLE_QUOTE;
-    const alternate = preferred === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? DOUBLE_QUOTE </span>: SINGLE_QUOTE;
+    const { preferred, alternate } = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? SINGLE_QUOTE_SETTINGS </span>: DOUBLE_QUOTE_SETTINGS;
+    const { length } = text;
     let preferredQuoteCount = 0;
     let alternateQuoteCount = 0;
-    for (const character of text) {
-      if (character === preferred) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    for (let index = 0; index &lt; length; index++) {
+      const codePoint = text.charCodeAt(index);
+      if (codePoint === preferred.codePoint) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        preferredQuoteCount++;</span>
-      } else if (character === alternate) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      } else if (codePoint === alternate.codePoint) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        alternateQuoteCount++;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
-    return preferredQuoteCount &gt; alternateQuoteCount <span class="branch-0 cbranch-no" title="branch not covered" >? alternate </span>: preferred;
+    return (preferredQuoteCount &gt; alternateQuoteCount <span class="branch-0 cbranch-no" title="branch not covered" >? alternate </span>: preferred).character;
   }
   var get_preferred_quote_default = getPreferredQuote;
 &nbsp;
@@ -20664,8 +20715,8 @@
     return string.replace(/[|\\{}()[\]^$+*?.]/g, "\\$&amp;").replace(/-/g, "\\x2d");
   }
 &nbsp;
-  // src/utils/whitespace-utils.js
-  var WhitespaceUtils = class {
+  // src/utilities/whitespace-utilities.js
+  var WhitespaceUtilities = class {
     #whitespaceCharacters;
     constructor(whitespaceCharacters) {
       this.#whitespaceCharacters = new Set(whitespaceCharacters);
@@ -20760,14 +20811,14 @@
 <span class="cstat-no" title="statement not covered" >      return minIndent === 0 ? text : text.split("\n").map((lineText) =&gt; lineText.slice(minIndent)).join("\n");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var whitespace_utils_default = WhitespaceUtils;
+  var whitespace_utilities_default = WhitespaceUtilities;
 &nbsp;
-  // src/utils/html-whitespace-utils.js
+  // src/utilities/html-whitespace.js
   var HTML_WHITESPACE_CHARACTERS = ["	", "\n", "\f", "\r", " "];
-  var htmlWhitespaceUtils = new whitespace_utils_default(HTML_WHITESPACE_CHARACTERS);
-  var html_whitespace_utils_default = htmlWhitespaceUtils;
+  var htmlWhitespace = new whitespace_utilities_default(HTML_WHITESPACE_CHARACTERS);
+  var html_whitespace_default = htmlWhitespace;
 &nbsp;
-  // src/utils/unexpected-node-error.js
+  // src/utilities/unexpected-node-error.js
   var UnexpectedNodeError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
 <span class="cstat-no" title="statement not covered" >    name = "UnexpectedNodeError";</span>
 <span class="cstat-no" title="statement not covered" >    constructor(node, language, typeProperty = "type") {</span>
@@ -20844,7 +20895,7 @@
   clean.ignoredProperties = ignoredProperties;
   var clean_default = clean;
 &nbsp;
-  // src/language-html/embed/utils.js
+  // src/language-html/embed/utilities.js
 <span class="fstat-no" title="function not covered" >  function printExpand(doc, canHaveTrailingWhitespace = true) {</span>
 <span class="cstat-no" title="statement not covered" >    return [indent([softline, doc]), canHaveTrailingWhitespace ? softline : ""];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -20937,13 +20988,13 @@
   var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/u).pop();</span>
   var isUrl = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).startsWith("file:");</span>
 &nbsp;
-  // src/utils/is-non-empty-array.js
+  // src/utilities/is-non-empty-array.js
   function isNonEmptyArray(object) {
     return Array.isArray(object) &amp;&amp; object.length &gt; 0;
   }
   var is_non_empty_array_default = isNonEmptyArray;
 &nbsp;
-  // src/utils/infer-parser.js
+  // src/utilities/infer-parser.js
 <span class="fstat-no" title="function not covered" >  function getLanguageByFileName(languages, file) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!file) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -21197,13 +21248,13 @@
     "textarea": "pre-wrap"
   };
 &nbsp;
-  // src/language-html/utils/is-unknown-namespace.js
+  // src/language-html/utilities/is-unknown-namespace.js
   function isUnknownNamespace(node) {
     return node.kind === "element" &amp;&amp; !node.hasExplicitNamespace &amp;&amp; !["html", "svg"].includes(node.namespace);
   }
   var is_unknown_namespace_default = isUnknownNamespace;
 &nbsp;
-  // src/language-html/utils/index.js
+  // src/language-html/utilities/index.js
   var htmlTrimLeadingBlankLines = <span class="fstat-no" title="function not covered" >(string) =&gt; method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >    /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >    0,</span>
@@ -21211,14 +21262,14 @@
 <span class="cstat-no" title="statement not covered" >    /^[\t\f\r ]*\n/gu,</span>
 <span class="cstat-no" title="statement not covered" >    ""</span>
   );
-  var htmlTrimPreserveIndentation = <span class="fstat-no" title="function not covered" >(string) =&gt; htmlTrimLeadingBlankLines(html_whitespace_utils_default.trimEnd(string));</span>
+  var htmlTrimPreserveIndentation = <span class="fstat-no" title="function not covered" >(string) =&gt; htmlTrimLeadingBlankLines(html_whitespace_default.trimEnd(string));</span>
   var getLeadingAndTrailingHtmlWhitespace = (string) =&gt; {
     let text = string;
-    const leadingWhitespace = html_whitespace_utils_default.getLeadingWhitespace(text);
+    const leadingWhitespace = html_whitespace_default.getLeadingWhitespace(text);
     if (leadingWhitespace) {
       text = text.slice(leadingWhitespace.length);
     }
-    const trailingWhitespace = html_whitespace_utils_default.getTrailingWhitespace(text);
+    const trailingWhitespace = html_whitespace_default.getTrailingWhitespace(text);
     if (trailingWhitespace) {
       text = text.slice(0, -trailingWhitespace.length);
     }
@@ -21557,7 +21608,7 @@
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function getTextValueParts(node, value = node.value) {
-    return node.parent.isWhitespaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" >? node.parent.isIndentationSensitive ? replaceEndOfLine(value) : replaceEndOfLine(html_whitespace_utils_default.dedentString(htmlTrimPreserveIndentation(value)), hardline) </span>: join(line, html_whitespace_utils_default.split(value));
+    return node.parent.isWhitespaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" >? node.parent.isIndentationSensitive ? replaceEndOfLine(value) : replaceEndOfLine(html_whitespace_default.dedentString(htmlTrimPreserveIndentation(value)), hardline) </span>: join(line, html_whitespace_default.split(value));
   }
 <span class="fstat-no" title="function not covered" >  function isVueScriptTag(node, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    return isVueSfcBlock(node, options2) &amp;&amp; node.name === "script";</span>
@@ -21778,11 +21829,11 @@
 <span class="fstat-no" title="function not covered" >  function parsePermissionsPolicy(policy) {</span>
 <span class="cstat-no" title="statement not covered" >    const directives = [];</span>
 <span class="cstat-no" title="statement not covered" >    for (let token of policy.split(";")) {</span>
-<span class="cstat-no" title="statement not covered" >      token = html_whitespace_utils_default.trim(token);</span>
+<span class="cstat-no" title="statement not covered" >      token = html_whitespace_default.trim(token);</span>
 <span class="cstat-no" title="statement not covered" >      if (!token) {</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const [name, ...value] = html_whitespace_utils_default.split(token);</span>
+<span class="cstat-no" title="statement not covered" >      const [name, ...value] = html_whitespace_default.split(token);</span>
 <span class="cstat-no" title="statement not covered" >      directives.push({ name, value });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return directives;</span>
@@ -22032,7 +22083,7 @@
 <span class="cstat-no" title="statement not covered" >    })</span>
   );
 &nbsp;
-  // src/language-html/utils/is-vue-sfc-with-typescript-script.js
+  // src/language-html/utilities/is-vue-sfc-with-typescript-script.js
   var cache = /* @__PURE__ */ new WeakMap();
 <span class="fstat-no" title="function not covered" >  function isVueSfcWithTypescriptScript(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    const { root } = path;</span>
@@ -22574,7 +22625,7 @@
           const parser2 = inferElementParser(node.parent, options2);
           if (parser2) {
             return async (textToDoc) =&gt; {
-              const value = parser2 === "markdown" <span class="branch-0 cbranch-no" title="branch not covered" >? html_whitespace_utils_default.dedentString(</span>
+              const value = parser2 === "markdown" <span class="branch-0 cbranch-no" title="branch not covered" >? html_whitespace_default.dedentString(</span>
 <span class="cstat-no" title="statement not covered" >                node.value.replace(/^[^\S\n]*\n/u, "")</span>
               ) : node.value;
               const textToDocOptions = { parser: parser2, __embeddedInHtml: true };
@@ -22653,7 +22704,7 @@
     return FastObject(object);
   }
 &nbsp;
-  // src/utils/create-get-visitor-keys.js
+  // src/utilities/create-get-visitor-keys.js
   function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {
     toFastproperties(visitorKeys2);
     function getVisitorKeys2(node) {
@@ -22702,7 +22753,7 @@
   var getVisitorKeys = create_get_visitor_keys_default(visitor_keys_default, "kind");
   var get_visitor_keys_default = getVisitorKeys;
 &nbsp;
-  // src/utils/pragma/pragma.evaluate.js
+  // src/utilities/pragma/pragma.evaluate.js
   var FORMAT_PRAGMA_TO_INSERT = "format";
   var HTML_HAS_IGNORE_PRAGMA_REGEXP = /^\s*&lt;!--\s*@(?:noformat|noprettier)\s*--&gt;/u;
   var HTML_HAS_PRAGMA_REGEXP = /^\s*&lt;!--\s*@(?:format|prettier)\s*--&gt;/u;
@@ -22787,7 +22838,7 @@ ${text}`;
     const child = path.node;
     if (hasPrettierIgnore(child)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      const endLocation = getEndLocation(child);</span>
-<span class="cstat-no" title="statement not covered" >      return [printOpeningTagPrefix(child, options2), replaceEndOfLine(html_whitespace_utils_default.trimEnd(options2.originalText.slice(locStart(child) + (child.prev &amp;&amp; needsToBorrowNextOpeningTagStartMarker(child.prev) ? printOpeningTagStartMarker(child).length : 0), endLocation - (child.next &amp;&amp; needsToBorrowPrevClosingTagEndMarker(child.next) ? printClosingTagEndMarker(child, options2).length : 0)))), printClosingTagSuffix(child, options2)];</span>
+<span class="cstat-no" title="statement not covered" >      return [printOpeningTagPrefix(child, options2), replaceEndOfLine(html_whitespace_default.trimEnd(options2.originalText.slice(locStart(child) + (child.prev &amp;&amp; needsToBorrowNextOpeningTagStartMarker(child.prev) ? printOpeningTagStartMarker(child).length : 0), endLocation - (child.next &amp;&amp; needsToBorrowPrevClosingTagEndMarker(child.next) ? printClosingTagEndMarker(child, options2).length : 0)))), printClosingTagSuffix(child, options2)];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return print();
   }
@@ -28074,7 +28125,7 @@ ${text}`;
     );
   }
   function mergeSimpleElementIntoText(ast) {
-    const isSimpleElement = (node) =&gt; node.kind === "element" &amp;&amp; node.attrs.length === 0 &amp;&amp; node.children.length === 1 &amp;&amp; node.firstChild.kind === "text" &amp;&amp; !html_whitespace_utils_default.hasWhitespaceCharacter(node.children[0].value) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !node.firstChild.hasLeadingSpaces <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !node.firstChild.hasTrailingSpaces <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.isLeadingSpaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !node.hasLeadingSpaces <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.isTrailingSpaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !node.hasTrailingSpaces <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.prev?.kind === "text" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.next?.kind === "text";</span>
+    const isSimpleElement = (node) =&gt; node.kind === "element" &amp;&amp; node.attrs.length === 0 &amp;&amp; node.children.length === 1 &amp;&amp; node.firstChild.kind === "text" &amp;&amp; !html_whitespace_default.hasWhitespaceCharacter(node.children[0].value) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !node.firstChild.hasLeadingSpaces <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !node.firstChild.hasTrailingSpaces <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.isLeadingSpaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !node.hasLeadingSpaces <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.isTrailingSpaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !node.hasTrailingSpaces <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.prev?.kind === "text" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.next?.kind === "text";</span>
     ast.walk((node) =&gt; {
       if (node.children) {
         for (let i = 0; i &lt; node.children.length; i++) {
@@ -28153,7 +28204,7 @@ ${text}`;
       if (!children) {
         return;
       }
-      if (children.length === 0 || children.length === 1 &amp;&amp; children[0].kind === "text" &amp;&amp; html_whitespace_utils_default.trim(children[0].value).length === 0) {
+      if (children.length === 0 || children.length === 1 &amp;&amp; children[0].kind === "text" &amp;&amp; html_whitespace_default.trim(children[0].value).length === 0) {
         node.hasDanglingSpaces = children.length &gt; 0;
         node.$children = [];
         return;
@@ -28280,7 +28331,7 @@ ${text}`;
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "angularControlFlowBlockParameters":</span>
 <span class="cstat-no" title="statement not covered" >        return printAngularControlFlowBlockParameters2(path, options2, print);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "angularControlFlowBlockParameter":</span>
-<span class="cstat-no" title="statement not covered" >        return html_whitespace_utils_default.trim(node.expression);</span>
+<span class="cstat-no" title="statement not covered" >        return html_whitespace_default.trim(node.expression);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "angularLetDeclaration":</span>
 <span class="cstat-no" title="statement not covered" >        return group([</span>
 <span class="cstat-no" title="statement not covered" >          "@let ",</span>
@@ -28634,7 +28685,7 @@ ${text}`;
     };
   }
 &nbsp;
-  // src/language-html/utils/html-elements-attributes.evaluate.js
+  // src/language-html/utilities/html-elements-attributes.evaluate.js
   var html_elements_attributes_evaluate_default = /* @__PURE__ */ new Map([
     [
       "*",
@@ -29472,7 +29523,7 @@ ${text}`;
     ]
   ]);
 &nbsp;
-  // src/language-html/utils/html-tags.evaluate.js
+  // src/language-html/utilities/html-tags.evaluate.js
   var html_tags_evaluate_default = /* @__PURE__ */ new Set([
     "a",
     "abbr",
@@ -30259,7 +30310,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-30T00:39:17.729Z
+                at 2025-12-01T00:42:18.381Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

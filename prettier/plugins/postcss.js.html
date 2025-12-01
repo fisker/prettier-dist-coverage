@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.7% </span>
+                <span class="strong">52.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6009/11402</span>
+                <span class='fraction'>6026/11419</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.22% </span>
+                <span class="strong">61.26% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1088/1777</span>
+                <span class='fraction'>1088/1776</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.7% </span>
+                <span class="strong">52.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6009/11402</span>
+                <span class='fraction'>6026/11419</span>
             </div>
         
             
@@ -11464,7 +11464,24 @@
 <a name='L11399'></a><a href='#L11399'>11399</a>
 <a name='L11400'></a><a href='#L11400'>11400</a>
 <a name='L11401'></a><a href='#L11401'>11401</a>
-<a name='L11402'></a><a href='#L11402'>11402</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11402'></a><a href='#L11402'>11402</a>
+<a name='L11403'></a><a href='#L11403'>11403</a>
+<a name='L11404'></a><a href='#L11404'>11404</a>
+<a name='L11405'></a><a href='#L11405'>11405</a>
+<a name='L11406'></a><a href='#L11406'>11406</a>
+<a name='L11407'></a><a href='#L11407'>11407</a>
+<a name='L11408'></a><a href='#L11408'>11408</a>
+<a name='L11409'></a><a href='#L11409'>11409</a>
+<a name='L11410'></a><a href='#L11410'>11410</a>
+<a name='L11411'></a><a href='#L11411'>11411</a>
+<a name='L11412'></a><a href='#L11412'>11412</a>
+<a name='L11413'></a><a href='#L11413'>11413</a>
+<a name='L11414'></a><a href='#L11414'>11414</a>
+<a name='L11415'></a><a href='#L11415'>11415</a>
+<a name='L11416'></a><a href='#L11416'>11416</a>
+<a name='L11417'></a><a href='#L11417'>11417</a>
+<a name='L11418'></a><a href='#L11418'>11418</a>
+<a name='L11419'></a><a href='#L11419'>11419</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20018,6 +20035,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -31052,7 +31086,7 @@
   });
   var method_at_default = at;
 &nbsp;
-  // src/utils/noop.js
+  // src/utilities/noop.js
   var noop = () =&gt; {
   };
   var noop_default = noop;
@@ -31404,32 +31438,49 @@
 <span class="cstat-no" title="statement not covered" >    return { type: DOC_TYPE_LINE_SUFFIX, contents };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  // src/utils/is-non-empty-array.js
+  // src/utilities/is-non-empty-array.js
 <span class="fstat-no" title="function not covered" >  function isNonEmptyArray(object) {</span>
 <span class="cstat-no" title="statement not covered" >    return Array.isArray(object) &amp;&amp; object.length &gt; 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var is_non_empty_array_default = isNonEmptyArray;
 &nbsp;
-  // src/utils/get-preferred-quote.js
+  // src/utilities/get-preferred-quote.js
   var SINGLE_QUOTE = "'";
   var DOUBLE_QUOTE = '"';
+  var SINGLE_QUOTE_DATA = Object.freeze({
+    character: SINGLE_QUOTE,
+    codePoint: 39
+  });
+  var DOUBLE_QUOTE_DATA = Object.freeze({
+    character: DOUBLE_QUOTE,
+    codePoint: 34
+  });
+  var SINGLE_QUOTE_SETTINGS = Object.freeze({
+    preferred: SINGLE_QUOTE_DATA,
+    alternate: DOUBLE_QUOTE_DATA
+  });
+  var DOUBLE_QUOTE_SETTINGS = Object.freeze({
+    preferred: DOUBLE_QUOTE_DATA,
+    alternate: SINGLE_QUOTE_DATA
+  });
   function getPreferredQuote(text, preferredQuoteOrPreferSingleQuote) {
-    const preferred = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? SINGLE_QUOTE </span>: DOUBLE_QUOTE;
-    const alternate = preferred === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? DOUBLE_QUOTE </span>: SINGLE_QUOTE;
+    const { preferred, alternate } = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? SINGLE_QUOTE_SETTINGS </span>: DOUBLE_QUOTE_SETTINGS;
+    const { length } = text;
     let preferredQuoteCount = 0;
     let alternateQuoteCount = 0;
-    for (const character of text) {
-      if (character === preferred) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    for (let index = 0; index &lt; length; index++) {
+      const codePoint = text.charCodeAt(index);
+      if (codePoint === preferred.codePoint) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        preferredQuoteCount++;</span>
-      } else if (character === alternate) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      } else if (codePoint === alternate.codePoint) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        alternateQuoteCount++;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
-    return preferredQuoteCount &gt; alternateQuoteCount <span class="branch-0 cbranch-no" title="branch not covered" >? alternate </span>: preferred;
+    return (preferredQuoteCount &gt; alternateQuoteCount <span class="branch-0 cbranch-no" title="branch not covered" >? alternate </span>: preferred).character;
   }
   var get_preferred_quote_default = getPreferredQuote;
 &nbsp;
-  // src/utils/make-string.js
+  // src/utilities/make-string.js
   var REGEX = /\\(["'\\])|(["'])/gu;
 <span class="fstat-no" title="function not covered" >  function makeString(rawText, enclosingQuote) {</span>
 <span class="cstat-no" title="statement not covered" >    const otherQuote = enclosingQuote === '"' ? "'" : '"';</span>
@@ -31449,7 +31500,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var make_string_default = makeString;
 &nbsp;
-  // src/utils/print-string.js
+  // src/utilities/print-string.js
   function printString(raw, options2) {
     noop_default(/^(?&lt;quote&gt;["']).*\k&lt;quote&gt;$/su.test(raw));
     const rawContent = raw.slice(1, -1);
@@ -31468,7 +31519,7 @@
   }
   var print_string_default = printString;
 &nbsp;
-  // src/utils/unexpected-node-error.js
+  // src/utilities/unexpected-node-error.js
   var UnexpectedNodeError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
 <span class="cstat-no" title="statement not covered" >    name = "UnexpectedNodeError";</span>
 <span class="cstat-no" title="statement not covered" >    constructor(node, language, typeProperty = "type") {</span>
@@ -31774,7 +31825,7 @@
     return FastObject(object);
   }
 &nbsp;
-  // src/utils/create-get-visitor-keys.js
+  // src/utilities/create-get-visitor-keys.js
   function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {
     toFastproperties(visitorKeys2);
 <span class="fstat-no" title="function not covered" >    function getVisitorKeys2(node) {</span>
@@ -31849,7 +31900,7 @@
   var getVisitorKeys = create_get_visitor_keys_default(visitor_keys_default);
   var get_visitor_keys_default = getVisitorKeys;
 &nbsp;
-  // src/utils/line-column-to-index.js
+  // src/utilities/line-column-to-index.js
   function lineColumnToIndex(lineColumn, text) {
     let index = 0;
     for (let i = 0; i &lt; lineColumn.line - 1; ++i) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -31859,7 +31910,7 @@
   }
   var line_column_to_index_default = lineColumnToIndex;
 &nbsp;
-  // src/utils/skip.js
+  // src/utilities/skip.js
   function skip(characters) {
     return (text, startIndex, options2) =&gt; {
       const backwards = Boolean(options2?.backwards);
@@ -32183,7 +32234,7 @@
 <span class="cstat-no" title="statement not covered" >    return [...STRING_ARRAY, ...Array.isArray(valueOrArray) ? valueOrArray : [valueOrArray]].map((value) =&gt; `@${key} ${value}`.trim());</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  // src/utils/pragma/pragma.evaluate.js
+  // src/utilities/pragma/pragma.evaluate.js
   var FORMAT_IGNORE_PRAGMAS = [
     "noformat",
     "noprettier"
@@ -32194,7 +32245,7 @@
   ];
   var FORMAT_PRAGMA_TO_INSERT = "format";
 &nbsp;
-  // src/language-js/utils/get-shebang.js
+  // src/language-js/utilities/get-shebang.js
 <span class="fstat-no" title="function not covered" >  function getShebang(text) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!text.startsWith("#!")) {</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
@@ -32267,7 +32318,7 @@
 <span class="cstat-no" title="statement not covered" >    return (frontMatter ? frontMatter.raw + "\n\n" : "") + insertPragma(content);</span>
   };
 &nbsp;
-  // src/language-css/utils/index.js
+  // src/language-css/utilities/index.js
   var colorAdjusterFunctions = /* @__PURE__ */ new Set([
     "red",
     "green",
@@ -32717,7 +32768,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var comma_separated_value_group_default = printCommaSeparatedValueGroup;
 &nbsp;
-  // src/utils/print-number.js
+  // src/utilities/print-number.js
   function printNumber(rawNumber) {
     if (rawNumber.length === 1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return rawNumber;</span>
@@ -33035,7 +33086,7 @@
     return options2.trailingComma === "es5" || options2.trailingComma === "all";
   }
 &nbsp;
-  // src/utils/skip-newline.js
+  // src/utilities/skip-newline.js
   var isNewlineCharacter = (character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";
   function skipNewline(text, startIndex, options2) {
     const backwards = Boolean(options2?.backwards);
@@ -33062,7 +33113,7 @@
   }
   var skip_newline_default = skipNewline;
 &nbsp;
-  // src/utils/has-newline.js
+  // src/utilities/has-newline.js
   function hasNewline(text, startIndex, options2 = {}) {
     const idx = skipSpaces(
       text,
@@ -33074,7 +33125,7 @@
   }
   var has_newline_default = hasNewline;
 &nbsp;
-  // src/utils/skip-inline-comment.js
+  // src/utilities/skip-inline-comment.js
   function skipInlineComment(text, startIndex) {
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
@@ -33090,7 +33141,7 @@
   }
   var skip_inline_comment_default = skipInlineComment;
 &nbsp;
-  // src/utils/skip-trailing-comment.js
+  // src/utilities/skip-trailing-comment.js
   function skipTrailingComment(text, startIndex) {
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
@@ -33102,7 +33153,7 @@
   }
   var skip_trailing_comment_default = skipTrailingComment;
 &nbsp;
-  // src/utils/is-next-line-empty.js
+  // src/utilities/is-next-line-empty.js
   function isNextLineEmpty(text, startIndex) {
     let oldIdx = null;
     let idx = startIndex;
@@ -33660,7 +33711,7 @@
   // src/language-css/parse/parse-media-query.js
   var import_postcss_media_query_parser = __toESM(require_dist(), 1);
 &nbsp;
-  // src/language-css/parse/utils.js
+  // src/language-css/parse/utilities.js
   function addTypePrefix(node, prefix, skipPrefix) {
     if (node &amp;&amp; typeof node === "object") {
       delete node.parent;
@@ -33735,7 +33786,7 @@
   // src/language-css/parse/parse-value.js
   var import_parser = __toESM(require_parser3(), 1);
 &nbsp;
-  // src/language-css/utils/get-value-root.js
+  // src/language-css/utilities/get-value-root.js
   var getValueRoot = <span class="fstat-no" title="function not covered" >(node) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    while (node.parent) {</span>
 <span class="cstat-no" title="statement not covered" >      node = node.parent;</span>
@@ -33744,13 +33795,13 @@
   };
   var get_value_root_default = getValueRoot;
 &nbsp;
-  // src/language-css/utils/get-function-arguments-text.js
+  // src/language-css/utilities/get-function-arguments-text.js
 <span class="fstat-no" title="function not covered" >  function getFunctionArgumentsText(node) {</span>
 <span class="cstat-no" title="statement not covered" >    return get_value_root_default(node).text.slice(node.group.open.sourceIndex + 1, node.group.close.sourceIndex).trim();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var get_function_arguments_text_default = getFunctionArgumentsText;
 &nbsp;
-  // src/language-css/utils/has-scss-interpolation.js
+  // src/language-css/utilities/has-scss-interpolation.js
 <span class="fstat-no" title="function not covered" >  function hasSCSSInterpolation(groupList) {</span>
 <span class="cstat-no" title="statement not covered" >    if (is_non_empty_array_default(groupList)) {</span>
 <span class="cstat-no" title="statement not covered" >      for (let i = groupList.length - 1; i &gt; 0; i--) {</span>
@@ -33763,7 +33814,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var has_scss_interpolation_default = hasSCSSInterpolation;
 &nbsp;
-  // src/language-css/utils/has-string-or-function.js
+  // src/language-css/utilities/has-string-or-function.js
 <span class="fstat-no" title="function not covered" >  function hasStringOrFunction(groupList) {</span>
 <span class="cstat-no" title="statement not covered" >    return groupList.some(</span>
 <span class="cstat-no" title="statement not covered" >      (group2) =&gt; group2.type === "string" || group2.type === "func" &amp;&amp; // workaround false-positive func</span>
@@ -33772,7 +33823,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var has_string_or_function_default = hasStringOrFunction;
 &nbsp;
-  // src/language-css/utils/is-scss-variable.js
+  // src/language-css/utilities/is-scss-variable.js
 <span class="fstat-no" title="function not covered" >  function isSCSSVariable(node, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    return Boolean(</span>
 <span class="cstat-no" title="statement not covered" >      options2.parser === "scss" &amp;&amp; node?.type === "word" &amp;&amp; node.value.startsWith("$")</span>
@@ -33931,14 +33982,14 @@
   }
   var parse_value_default = parseValue;
 &nbsp;
-  // src/language-css/utils/is-module-rule-name.js
+  // src/language-css/utilities/is-module-rule-name.js
   var moduleRuleNames = /* @__PURE__ */ new Set(["import", "use", "forward"]);
   function isModuleRuleName(name) {
     return moduleRuleNames.has(name);
   }
   var is_module_rule_name_default = isModuleRuleName;
 &nbsp;
-  // src/language-css/utils/is-scss-nested-property-node.js
+  // src/language-css/utilities/is-scss-nested-property-node.js
   function isSCSSNestedPropertyNode(node, options2) {
     if (options2.parser !== "scss") {
       return false;
@@ -34273,7 +34324,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-30T00:39:17.729Z
+                at 2025-12-01T00:42:18.381Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

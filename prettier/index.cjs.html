@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.07% </span>
+                <span class="strong">51.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>352/703</span>
+                <span class='fraction'>368/720</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.07% </span>
+                <span class="strong">51.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>352/703</span>
+                <span class='fraction'>368/720</span>
             </div>
         
             
@@ -766,7 +766,24 @@
 <a name='L701'></a><a href='#L701'>701</a>
 <a name='L702'></a><a href='#L702'>702</a>
 <a name='L703'></a><a href='#L703'>703</a>
-<a name='L704'></a><a href='#L704'>704</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L704'></a><a href='#L704'>704</a>
+<a name='L705'></a><a href='#L705'>705</a>
+<a name='L706'></a><a href='#L706'>706</a>
+<a name='L707'></a><a href='#L707'>707</a>
+<a name='L708'></a><a href='#L708'>708</a>
+<a name='L709'></a><a href='#L709'>709</a>
+<a name='L710'></a><a href='#L710'>710</a>
+<a name='L711'></a><a href='#L711'>711</a>
+<a name='L712'></a><a href='#L712'>712</a>
+<a name='L713'></a><a href='#L713'>713</a>
+<a name='L714'></a><a href='#L714'>714</a>
+<a name='L715'></a><a href='#L715'>715</a>
+<a name='L716'></a><a href='#L716'>716</a>
+<a name='L717'></a><a href='#L717'>717</a>
+<a name='L718'></a><a href='#L718'>718</a>
+<a name='L719'></a><a href='#L719'>719</a>
+<a name='L720'></a><a href='#L720'>720</a>
+<a name='L721'></a><a href='#L721'>721</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1167,6 +1184,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1536,7 +1570,7 @@ var init_method_replace_all = __esm({
   }
 });
 &nbsp;
-// src/utils/skip.js
+// src/utilities/skip.js
 function skip(characters) {
   return (text, startIndex, options) =&gt; {
 <span class="cstat-no" title="statement not covered" >    const backwards = Boolean(options?.backwards);</span>
@@ -1564,7 +1598,7 @@ function skip(characters) {
 }
 var skipWhitespace, skipSpaces, skipToLineEnd, skipEverythingButNewLine;
 var init_skip = __esm({
-  "src/utils/skip.js"() {
+  "src/utilities/skip.js"() {
     skipWhitespace = skip(/\s/u);
     skipSpaces = skip(" 	");
     skipToLineEnd = skip(",; 	");
@@ -1572,7 +1606,7 @@ var init_skip = __esm({
   }
 });
 &nbsp;
-// src/utils/skip-inline-comment.js
+// src/utilities/skip-inline-comment.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function skipInlineComment(text, startIndex) {</span></span>
 <span class="cstat-no" title="statement not covered" >  if (startIndex === false) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
@@ -1588,12 +1622,12 @@ var init_skip = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var skip_inline_comment_default;
 var init_skip_inline_comment = __esm({
-  "src/utils/skip-inline-comment.js"() {
+  "src/utilities/skip-inline-comment.js"() {
     skip_inline_comment_default = skipInlineComment;
   }
 });
 &nbsp;
-// src/utils/skip-newline.js
+// src/utilities/skip-newline.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function skipNewline(text, startIndex, options) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const backwards = Boolean(options?.backwards);</span>
 <span class="cstat-no" title="statement not covered" >  if (startIndex === false) {</span>
@@ -1619,13 +1653,13 @@ var init_skip_inline_comment = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var isNewlineCharacter, skip_newline_default;
 var init_skip_newline = __esm({
-  "src/utils/skip-newline.js"() {
+  "src/utilities/skip-newline.js"() {
     isNewlineCharacter = <span class="fstat-no" title="function not covered" >(character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";</span>
     skip_newline_default = skipNewline;
   }
 });
 &nbsp;
-// src/utils/skip-trailing-comment.js
+// src/utilities/skip-trailing-comment.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function skipTrailingComment(text, startIndex) {</span></span>
 <span class="cstat-no" title="statement not covered" >  if (startIndex === false) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
@@ -1637,13 +1671,13 @@ var init_skip_newline = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var skip_trailing_comment_default;
 var init_skip_trailing_comment = __esm({
-  "src/utils/skip-trailing-comment.js"() {
+  "src/utilities/skip-trailing-comment.js"() {
     init_skip();
     skip_trailing_comment_default = skipTrailingComment;
   }
 });
 &nbsp;
-// src/utils/get-next-non-space-non-comment-character-index.js
+// src/utilities/get-next-non-space-non-comment-character-index.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getNextNonSpaceNonCommentCharacterIndex(text, startIndex) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let oldIdx = null;</span>
 <span class="cstat-no" title="statement not covered" >  let nextIdx = startIndex;</span>
@@ -1658,7 +1692,7 @@ var init_skip_trailing_comment = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var get_next_non_space_non_comment_character_index_default;
 var init_get_next_non_space_non_comment_character_index = __esm({
-  "src/utils/get-next-non-space-non-comment-character-index.js"() {
+  "src/utilities/get-next-non-space-non-comment-character-index.js"() {
     init_skip();
     init_skip_inline_comment();
     init_skip_newline();
@@ -1667,7 +1701,7 @@ var init_get_next_non_space_non_comment_character_index = __esm({
   }
 });
 &nbsp;
-// src/utils/has-newline.js
+// src/utilities/has-newline.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function hasNewline(text, startIndex, options = {}) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const idx = skipSpaces(</span>
 <span class="cstat-no" title="statement not covered" >    text,</span>
@@ -1679,14 +1713,14 @@ var init_get_next_non_space_non_comment_character_index = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var has_newline_default;
 var init_has_newline = __esm({
-  "src/utils/has-newline.js"() {
+  "src/utilities/has-newline.js"() {
     init_skip();
     init_skip_newline();
     has_newline_default = hasNewline;
   }
 });
 &nbsp;
-// src/utils/is-next-line-empty.js
+// src/utilities/is-next-line-empty.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isNextLineEmpty(text, startIndex) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let oldIdx = null;</span>
 <span class="cstat-no" title="statement not covered" >  let idx = startIndex;</span>
@@ -1702,7 +1736,7 @@ var init_has_newline = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var is_next_line_empty_default;
 var init_is_next_line_empty = __esm({
-  "src/utils/is-next-line-empty.js"() {
+  "src/utilities/is-next-line-empty.js"() {
     init_has_newline();
     init_skip();
     init_skip_inline_comment();
@@ -1712,7 +1746,7 @@ var init_is_next_line_empty = __esm({
   }
 });
 &nbsp;
-// src/utils/is-previous-line-empty.js
+// src/utilities/is-previous-line-empty.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isPreviousLineEmpty(text, startIndex) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let idx = startIndex - 1;</span>
 <span class="cstat-no" title="statement not covered" >  idx = skipSpaces(text, idx, { backwards: true });</span>
@@ -1723,14 +1757,14 @@ var init_is_next_line_empty = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var is_previous_line_empty_default;
 var init_is_previous_line_empty = __esm({
-  "src/utils/is-previous-line-empty.js"() {
+  "src/utilities/is-previous-line-empty.js"() {
     init_skip();
     init_skip_newline();
     is_previous_line_empty_default = isPreviousLineEmpty;
   }
 });
 &nbsp;
-// src/main/comments/utils.js
+// src/main/comments/utilities.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function describeNodeForDebugging(node) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const nodeType = node.type || node.kind || "(unknown type)";</span>
 <span class="cstat-no" title="statement not covered" >  let nodeName = String(</span>
@@ -1765,12 +1799,12 @@ var init_is_previous_line_empty = __esm({
 <span class="cstat-no" title="statement not covered" >  comment.trailing = true;</span>
 <span class="cstat-no" title="statement not covered" >  addCommentHelper(node, comment);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-var init_utils = __esm({
-  "src/main/comments/utils.js"() {
+var init_utilities = __esm({
+  "src/main/comments/utilities.js"() {
   }
 });
 &nbsp;
-// src/utils/get-alignment-size.js
+// src/utilities/get-alignment-size.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getAlignmentSize(text, tabWidth, startIndex = 0) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let size = 0;</span>
 <span class="cstat-no" title="statement not covered" >  for (let i = startIndex; i &lt; text.length; ++i) {</span>
@@ -1784,12 +1818,12 @@ var init_utils = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var get_alignment_size_default;
 var init_get_alignment_size = __esm({
-  "src/utils/get-alignment-size.js"() {
+  "src/utilities/get-alignment-size.js"() {
     get_alignment_size_default = getAlignmentSize;
   }
 });
 &nbsp;
-// src/utils/get-indent-size.js
+// src/utilities/get-indent-size.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getIndentSize(value, tabWidth) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const lastNewlineIndex = value.lastIndexOf("\n");</span>
 <span class="cstat-no" title="statement not covered" >  if (lastNewlineIndex === -1) {</span>
@@ -1803,7 +1837,7 @@ var init_get_alignment_size = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var get_indent_size_default;
 var init_get_indent_size = __esm({
-  "src/utils/get-indent-size.js"() {
+  "src/utilities/get-indent-size.js"() {
     init_get_alignment_size();
     get_indent_size_default = getIndentSize;
   }
@@ -1821,7 +1855,7 @@ var init_escape_string_regexp = __esm({
   }
 });
 &nbsp;
-// src/utils/get-max-continuous-count.js
+// src/utilities/get-max-continuous-count.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getMaxContinuousCount(text, searchString) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let results = text.matchAll(</span>
 <span class="cstat-no" title="statement not covered" >    new RegExp(`(?:${escapeStringRegexp(searchString)})+`, "gu")</span>
@@ -1836,45 +1870,62 @@ var init_escape_string_regexp = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var get_max_continuous_count_default;
 var init_get_max_continuous_count = __esm({
-  "src/utils/get-max-continuous-count.js"() {
+  "src/utilities/get-max-continuous-count.js"() {
     init_escape_string_regexp();
     get_max_continuous_count_default = getMaxContinuousCount;
   }
 });
 &nbsp;
-// src/utils/get-next-non-space-non-comment-character.js
+// src/utilities/get-next-non-space-non-comment-character.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getNextNonSpaceNonCommentCharacter(text, startIndex) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const index = get_next_non_space_non_comment_character_index_default(text, startIndex);</span>
 <span class="cstat-no" title="statement not covered" >  return index === false ? "" : text.charAt(index);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 var get_next_non_space_non_comment_character_default;
 var init_get_next_non_space_non_comment_character = __esm({
-  "src/utils/get-next-non-space-non-comment-character.js"() {
+  "src/utilities/get-next-non-space-non-comment-character.js"() {
     init_get_next_non_space_non_comment_character_index();
     get_next_non_space_non_comment_character_default = getNextNonSpaceNonCommentCharacter;
   }
 });
 &nbsp;
-// src/utils/get-preferred-quote.js
+// src/utilities/get-preferred-quote.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getPreferredQuote(text, preferredQuoteOrPreferSingleQuote) {</span></span>
-<span class="cstat-no" title="statement not covered" >  const preferred = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE ? SINGLE_QUOTE : DOUBLE_QUOTE;</span>
-<span class="cstat-no" title="statement not covered" >  const alternate = preferred === SINGLE_QUOTE ? DOUBLE_QUOTE : SINGLE_QUOTE;</span>
+<span class="cstat-no" title="statement not covered" >  const { preferred, alternate } = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE ? SINGLE_QUOTE_SETTINGS : DOUBLE_QUOTE_SETTINGS;</span>
+<span class="cstat-no" title="statement not covered" >  const { length } = text;</span>
 <span class="cstat-no" title="statement not covered" >  let preferredQuoteCount = 0;</span>
 <span class="cstat-no" title="statement not covered" >  let alternateQuoteCount = 0;</span>
-<span class="cstat-no" title="statement not covered" >  for (const character of text) {</span>
-<span class="cstat-no" title="statement not covered" >    if (character === preferred) {</span>
+<span class="cstat-no" title="statement not covered" >  for (let index = 0; index &lt; length; index++) {</span>
+<span class="cstat-no" title="statement not covered" >    const codePoint = text.charCodeAt(index);</span>
+<span class="cstat-no" title="statement not covered" >    if (codePoint === preferred.codePoint) {</span>
 <span class="cstat-no" title="statement not covered" >      preferredQuoteCount++;</span>
-<span class="cstat-no" title="statement not covered" >    } else if (character === alternate) {</span>
+<span class="cstat-no" title="statement not covered" >    } else if (codePoint === alternate.codePoint) {</span>
 <span class="cstat-no" title="statement not covered" >      alternateQuoteCount++;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return preferredQuoteCount &gt; alternateQuoteCount ? alternate : preferred;</span>
+<span class="cstat-no" title="statement not covered" >  return (preferredQuoteCount &gt; alternateQuoteCount ? alternate : preferred).character;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-var SINGLE_QUOTE, DOUBLE_QUOTE, get_preferred_quote_default;
+var SINGLE_QUOTE, DOUBLE_QUOTE, SINGLE_QUOTE_DATA, DOUBLE_QUOTE_DATA, SINGLE_QUOTE_SETTINGS, DOUBLE_QUOTE_SETTINGS, get_preferred_quote_default;
 var init_get_preferred_quote = __esm({
-  "src/utils/get-preferred-quote.js"() {
+  "src/utilities/get-preferred-quote.js"() {
     SINGLE_QUOTE = "'";
     DOUBLE_QUOTE = '"';
+    SINGLE_QUOTE_DATA = Object.freeze({
+      character: SINGLE_QUOTE,
+      codePoint: 39
+    });
+    DOUBLE_QUOTE_DATA = Object.freeze({
+      character: DOUBLE_QUOTE,
+      codePoint: 34
+    });
+    SINGLE_QUOTE_SETTINGS = Object.freeze({
+      preferred: SINGLE_QUOTE_DATA,
+      alternate: DOUBLE_QUOTE_DATA
+    });
+    DOUBLE_QUOTE_SETTINGS = Object.freeze({
+      preferred: DOUBLE_QUOTE_DATA,
+      alternate: SINGLE_QUOTE_DATA
+    });
     get_preferred_quote_default = getPreferredQuote;
   }
 });
@@ -1908,15 +1959,15 @@ var init_get_east_asian_width = __esm({
   }
 });
 &nbsp;
-// src/utils/narrow-emojis.evaluate.js
+// src/utilities/narrow-emojis.evaluate.js
 var narrow_emojis_evaluate_default;
 var init_narrow_emojis_evaluate = __esm({
-  "src/utils/narrow-emojis.evaluate.js"() {
+  "src/utilities/narrow-emojis.evaluate.js"() {
     narrow_emojis_evaluate_default = "\xA9\xAE\u203C\u2049\u2122\u2139\u2194\u2195\u2196\u2197\u2198\u2199\u21A9\u21AA\u2328\u23CF\u23F1\u23F2\u23F8\u23F9\u23FA\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600\u2601\u2602\u2603\u2604\u260E\u2611\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638\u2639\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694\u2695\u2696\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F1\u26F7\u26F8\u26F9\u2702\u2708\u2709\u270C\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u2764\u27A1\u2934\u2935\u2B05\u2B06\u2B07";
   }
 });
 &nbsp;
-// src/utils/get-string-width.js
+// src/utilities/get-string-width.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getStringWidth(text) {</span></span>
 <span class="cstat-no" title="statement not covered" >  if (!text) {</span>
 <span class="cstat-no" title="statement not covered" >    return 0;</span>
@@ -1946,7 +1997,7 @@ var init_narrow_emojis_evaluate = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var notAsciiRegex, narrowEmojisSet, get_string_width_default;
 var init_get_string_width = __esm({
-  "src/utils/get-string-width.js"() {
+  "src/utilities/get-string-width.js"() {
     init_emoji_regex();
     init_get_east_asian_width();
     init_narrow_emojis_evaluate();
@@ -1956,7 +2007,7 @@ var init_get_string_width = __esm({
   }
 });
 &nbsp;
-// src/utils/has-newline-in-range.js
+// src/utilities/has-newline-in-range.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function hasNewlineInRange(text, startIndex, endIndex) {</span></span>
 <span class="cstat-no" title="statement not covered" >  for (let i = startIndex; i &lt; endIndex; ++i) {</span>
 <span class="cstat-no" title="statement not covered" >    if (text.charAt(i) === "\n") {</span>
@@ -1967,12 +2018,12 @@ var init_get_string_width = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var has_newline_in_range_default;
 var init_has_newline_in_range = __esm({
-  "src/utils/has-newline-in-range.js"() {
+  "src/utilities/has-newline-in-range.js"() {
     has_newline_in_range_default = hasNewlineInRange;
   }
 });
 &nbsp;
-// src/utils/has-spaces.js
+// src/utilities/has-spaces.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function hasSpaces(text, startIndex, options = {}) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const idx = skipSpaces(</span>
 <span class="cstat-no" title="statement not covered" >    text,</span>
@@ -1983,13 +2034,13 @@ var init_has_newline_in_range = __esm({
 <span class="cstat-no" title="statement not covered" >}</span>
 var has_spaces_default;
 var init_has_spaces = __esm({
-  "src/utils/has-spaces.js"() {
+  "src/utilities/has-spaces.js"() {
     init_skip();
     has_spaces_default = hasSpaces;
   }
 });
 &nbsp;
-// src/utils/public.js
+// src/utilities/public.js
 var public_exports = {};
 __export(public_exports, {
   addDanglingComment: <span class="fstat-no" title="function not covered" >() =&gt; addDanglingComment,</span>
@@ -2072,12 +2123,12 @@ __export(public_exports, {
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 var init_public = __esm({
-  "src/utils/public.js"() {
+  "src/utilities/public.js"() {
     init_method_replace_all();
     init_get_next_non_space_non_comment_character_index();
     init_is_next_line_empty();
     init_is_previous_line_empty();
-    init_utils();
+    init_utilities();
     init_get_alignment_size();
     init_get_indent_size();
     init_get_max_continuous_count();
@@ -2179,7 +2230,7 @@ module.exports = prettier;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-30T00:39:17.729Z
+                at 2025-12-01T00:42:18.381Z
             </div>
         <script src="../prettify.js"></script>
         <script>

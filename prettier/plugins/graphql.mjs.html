@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.5% </span>
+                <span class="strong">84.48% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>540/639</span>
+                <span class='fraction'>539/638</span>
             </div>
         
             
@@ -3984,7 +3984,7 @@
 <span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">640x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">447x</span>
+<span class="cline-any cline-yes">640x</span>
 <span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">64x</span>
@@ -4086,7 +4086,7 @@
 <span class="cline-any cline-yes">58x</span>
 <span class="cline-any cline-yes">83x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">83x</span>
@@ -5486,7 +5486,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">315x</span>
+<span class="cline-any cline-yes">325x</span>
 <span class="cline-any cline-yes">311x</span>
 <span class="cline-any cline-yes">311x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -5513,7 +5513,7 @@
 <span class="cline-any cline-yes">311x</span>
 <span class="cline-any cline-yes">44x</span>
 <span class="cline-any cline-yes">311x</span>
-<span class="cline-any cline-yes">311x</span>
+<span class="cline-any cline-yes">164x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -6836,7 +6836,7 @@ var replaceAll = createMethodShim("replaceAll", function() {
 });
 var method_replace_all_default = replaceAll;
 &nbsp;
-// src/utils/noop.js
+// src/utilities/noop.js
 var noop = () =&gt; {
 };
 var noop_default = noop;
@@ -6955,7 +6955,7 @@ var softline = { type: DOC_TYPE_LINE, soft: true };
 var hardlineWithoutBreakParent = { type: DOC_TYPE_LINE, hard: true };
 var hardline = [hardlineWithoutBreakParent, breakParent];
 &nbsp;
-// src/utils/skip.js
+// src/utilities/skip.js
 function skip(characters) {
   return (text, startIndex, options2) =&gt; {
     const backwards = Boolean(options2?.backwards);
@@ -6986,7 +6986,7 @@ var skipSpaces = skip(" 	");
 var skipToLineEnd = skip(",; 	");
 var skipEverythingButNewLine = skip(/[^\n\r]/u);
 &nbsp;
-// src/utils/skip-newline.js
+// src/utilities/skip-newline.js
 var isNewlineCharacter = (character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";
 function skipNewline(text, startIndex, options2) {
   const backwards = Boolean(options2?.backwards);
@@ -7013,7 +7013,7 @@ function skipNewline(text, startIndex, options2) {
 }
 var skip_newline_default = skipNewline;
 &nbsp;
-// src/utils/has-newline.js
+// src/utilities/has-newline.js
 function hasNewline(text, startIndex, options2 = {}) {
   const idx = skipSpaces(
     text,
@@ -7025,7 +7025,7 @@ function hasNewline(text, startIndex, options2 = {}) {
 }
 var has_newline_default = hasNewline;
 &nbsp;
-// src/utils/skip-inline-comment.js
+// src/utilities/skip-inline-comment.js
 function skipInlineComment(text, startIndex) {
   if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
@@ -7041,7 +7041,7 @@ function skipInlineComment(text, startIndex) {
 }
 var skip_inline_comment_default = skipInlineComment;
 &nbsp;
-// src/utils/skip-trailing-comment.js
+// src/utilities/skip-trailing-comment.js
 function skipTrailingComment(text, startIndex) {
   if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
@@ -7053,7 +7053,7 @@ function skipTrailingComment(text, startIndex) {
 }
 var skip_trailing_comment_default = skipTrailingComment;
 &nbsp;
-// src/utils/is-next-line-empty.js
+// src/utilities/is-next-line-empty.js
 function isNextLineEmpty(text, startIndex) {
   let oldIdx = null;
   let idx = startIndex;
@@ -7069,13 +7069,13 @@ function isNextLineEmpty(text, startIndex) {
 }
 var is_next_line_empty_default = isNextLineEmpty;
 &nbsp;
-// src/utils/is-non-empty-array.js
+// src/utilities/is-non-empty-array.js
 function isNonEmptyArray(object) {
   return Array.isArray(object) &amp;&amp; object.length &gt; 0;
 }
 var is_non_empty_array_default = isNonEmptyArray;
 &nbsp;
-// src/utils/unexpected-node-error.js
+// src/utilities/unexpected-node-error.js
 var UnexpectedNodeError = <span class="fstat-no" title="function not covered" >class extends Error {</span>
 <span class="cstat-no" title="statement not covered" >  name = "UnexpectedNodeError";</span>
 <span class="cstat-no" title="statement not covered" >  constructor(node, language, typeProperty = "type") {</span>
@@ -7108,7 +7108,7 @@ function toFastproperties(object) {
   return FastObject(object);
 }
 &nbsp;
-// src/utils/create-get-visitor-keys.js
+// src/utilities/create-get-visitor-keys.js
 function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {
   toFastproperties(visitorKeys2);
   function getVisitorKeys2(node) {
@@ -7330,7 +7330,7 @@ var get_visitor_keys_default = getVisitorKeys;
 var locStart = (nodeOrToken) =&gt; nodeOrToken.loc.start;
 var locEnd = (nodeOrToken) =&gt; nodeOrToken.loc.end;
 &nbsp;
-// src/utils/pragma/pragma.evaluate.js
+// src/utilities/pragma/pragma.evaluate.js
 var FORMAT_PRAGMA_TO_INSERT = "format";
 var GRAPHQL_HAS_IGNORE_PRAGMA_REGEXP = /^\s*#[^\S\n]*@(?:noformat|noprettier)\s*(?:\n|$)/u;
 var GRAPHQL_HAS_PRAGMA_REGEXP = /^\s*#[^\S\n]*@(?:format|prettier)\s*(?:\n|$)/u;
@@ -10171,7 +10171,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-30T00:39:17.729Z
+                at 2025-12-01T00:42:18.381Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.93% </span>
+                <span class="strong">63.01% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5487/8718</span>
+                <span class='fraction'>5504/8735</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.25% </span>
+                <span class="strong">57.32% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>458/800</span>
+                <span class='fraction'>458/799</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.93% </span>
+                <span class="strong">63.01% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5487/8718</span>
+                <span class='fraction'>5504/8735</span>
             </div>
         
             
@@ -8780,7 +8780,24 @@
 <a name='L8715'></a><a href='#L8715'>8715</a>
 <a name='L8716'></a><a href='#L8716'>8716</a>
 <a name='L8717'></a><a href='#L8717'>8717</a>
-<a name='L8718'></a><a href='#L8718'>8718</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8718'></a><a href='#L8718'>8718</a>
+<a name='L8719'></a><a href='#L8719'>8719</a>
+<a name='L8720'></a><a href='#L8720'>8720</a>
+<a name='L8721'></a><a href='#L8721'>8721</a>
+<a name='L8722'></a><a href='#L8722'>8722</a>
+<a name='L8723'></a><a href='#L8723'>8723</a>
+<a name='L8724'></a><a href='#L8724'>8724</a>
+<a name='L8725'></a><a href='#L8725'>8725</a>
+<a name='L8726'></a><a href='#L8726'>8726</a>
+<a name='L8727'></a><a href='#L8727'>8727</a>
+<a name='L8728'></a><a href='#L8728'>8728</a>
+<a name='L8729'></a><a href='#L8729'>8729</a>
+<a name='L8730'></a><a href='#L8730'>8730</a>
+<a name='L8731'></a><a href='#L8731'>8731</a>
+<a name='L8732'></a><a href='#L8732'>8732</a>
+<a name='L8733'></a><a href='#L8733'>8733</a>
+<a name='L8734'></a><a href='#L8734'>8734</a>
+<a name='L8735'></a><a href='#L8735'>8735</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9212,11 +9229,28 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
@@ -17582,7 +17616,7 @@
   });
   var method_at_default = at;
 &nbsp;
-  // src/utils/noop.js
+  // src/utilities/noop.js
   var noop = () =&gt; {
   };
   var noop_default = noop;
@@ -17925,22 +17959,39 @@
   };
   var literalline = [literallineWithoutBreakParent, breakParent];
 &nbsp;
-  // src/utils/get-preferred-quote.js
+  // src/utilities/get-preferred-quote.js
   var SINGLE_QUOTE = "'";
   var DOUBLE_QUOTE = '"';
+  var SINGLE_QUOTE_DATA = Object.freeze({
+    character: SINGLE_QUOTE,
+    codePoint: 39
+  });
+  var DOUBLE_QUOTE_DATA = Object.freeze({
+    character: DOUBLE_QUOTE,
+    codePoint: 34
+  });
+  var SINGLE_QUOTE_SETTINGS = Object.freeze({
+    preferred: SINGLE_QUOTE_DATA,
+    alternate: DOUBLE_QUOTE_DATA
+  });
+  var DOUBLE_QUOTE_SETTINGS = Object.freeze({
+    preferred: DOUBLE_QUOTE_DATA,
+    alternate: SINGLE_QUOTE_DATA
+  });
   function getPreferredQuote(text, preferredQuoteOrPreferSingleQuote) {
-    const preferred = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? SINGLE_QUOTE </span>: DOUBLE_QUOTE;
-    const alternate = preferred === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? DOUBLE_QUOTE </span>: SINGLE_QUOTE;
+    const { preferred, alternate } = preferredQuoteOrPreferSingleQuote === true || preferredQuoteOrPreferSingleQuote === SINGLE_QUOTE <span class="branch-0 cbranch-no" title="branch not covered" >? SINGLE_QUOTE_SETTINGS </span>: DOUBLE_QUOTE_SETTINGS;
+    const { length } = text;
     let preferredQuoteCount = 0;
     let alternateQuoteCount = 0;
-    for (const character of text) {
-      if (character === preferred) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    for (let index = 0; index &lt; length; index++) {
+      const codePoint = text.charCodeAt(index);
+      if (codePoint === preferred.codePoint) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        preferredQuoteCount++;</span>
-      } else if (character === alternate) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      } else if (codePoint === alternate.codePoint) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        alternateQuoteCount++;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
-    return preferredQuoteCount &gt; alternateQuoteCount <span class="branch-0 cbranch-no" title="branch not covered" >? alternate </span>: preferred;
+    return (preferredQuoteCount &gt; alternateQuoteCount <span class="branch-0 cbranch-no" title="branch not covered" >? alternate </span>: preferred).character;
   }
   var get_preferred_quote_default = getPreferredQuote;
 &nbsp;
@@ -17952,8 +18003,8 @@
 <span class="cstat-no" title="statement not covered" >    return string.replace(/[|\\{}()[\]^$+*?.]/g, "\\$&amp;").replace(/-/g, "\\x2d");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  // src/utils/whitespace-utils.js
-  var WhitespaceUtils = class {
+  // src/utilities/whitespace-utilities.js
+  var WhitespaceUtilities = class {
     #whitespaceCharacters;
     constructor(whitespaceCharacters) {
       this.#whitespaceCharacters = new Set(whitespaceCharacters);
@@ -18048,20 +18099,20 @@
 <span class="cstat-no" title="statement not covered" >      return minIndent === 0 ? text : text.split("\n").map((lineText) =&gt; lineText.slice(minIndent)).join("\n");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var whitespace_utils_default = WhitespaceUtils;
+  var whitespace_utilities_default = WhitespaceUtilities;
 &nbsp;
-  // src/utils/html-whitespace-utils.js
+  // src/utilities/html-whitespace.js
   var HTML_WHITESPACE_CHARACTERS = ["	", "\n", "\f", "\r", " "];
-  var htmlWhitespaceUtils = new whitespace_utils_default(HTML_WHITESPACE_CHARACTERS);
-  var html_whitespace_utils_default = htmlWhitespaceUtils;
+  var htmlWhitespace = new whitespace_utilities_default(HTML_WHITESPACE_CHARACTERS);
+  var html_whitespace_default = htmlWhitespace;
 &nbsp;
-  // src/utils/is-non-empty-array.js
+  // src/utilities/is-non-empty-array.js
   function isNonEmptyArray(object) {
     return Array.isArray(object) &amp;&amp; object.length &gt; 0;
   }
   var is_non_empty_array_default = isNonEmptyArray;
 &nbsp;
-  // src/utils/unexpected-node-error.js
+  // src/utilities/unexpected-node-error.js
   var UnexpectedNodeError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
 <span class="cstat-no" title="statement not covered" >    name = "UnexpectedNodeError";</span>
 <span class="cstat-no" title="statement not covered" >    constructor(node, language, typeProperty = "type") {</span>
@@ -18085,7 +18136,7 @@
 <span class="cstat-no" title="statement not covered" >      if (parent.tag === "style" &amp;&amp; parent.children.length === 1 &amp;&amp; parent.children[0] === original) {</span>
 <span class="cstat-no" title="statement not covered" >        cloned.chars = "";</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        cloned.chars = html_whitespace_utils_default.split(trimmed).join(" ");</span>
+<span class="cstat-no" title="statement not covered" >        cloned.chars = html_whitespace_default.split(trimmed).join(" ");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (original.type === "ElementNode") {</span>
@@ -18160,7 +18211,7 @@
     return FastObject(object);
   }
 &nbsp;
-  // src/utils/create-get-visitor-keys.js
+  // src/utilities/create-get-visitor-keys.js
   function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {
     toFastproperties(visitorKeys2);
     function getVisitorKeys2(node) {
@@ -18269,7 +18320,7 @@
     "wbr"
   ]);
 &nbsp;
-  // src/language-handlebars/utils.js
+  // src/language-handlebars/utilities.js
   function isUppercase(string) {
     return string.toUpperCase() === string;
   }
@@ -18368,8 +18419,8 @@
 <span class="cstat-no" title="statement not covered" >              /^\n+/gu,</span>
 <span class="cstat-no" title="statement not covered" >              ""</span>
 <span class="cstat-no" title="statement not covered" >            );</span>
-<span class="cstat-no" title="statement not covered" >            text = html_whitespace_utils_default.trimEnd(text);</span>
-<span class="cstat-no" title="statement not covered" >            text = html_whitespace_utils_default.dedentString(text);</span>
+<span class="cstat-no" title="statement not covered" >            text = html_whitespace_default.trimEnd(text);</span>
+<span class="cstat-no" title="statement not covered" >            text = html_whitespace_default.dedentString(text);</span>
 <span class="cstat-no" title="statement not covered" >            return replaceEndOfLine(text, hardline);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
         }
@@ -18398,7 +18449,7 @@
           }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >          return replaceEndOfLine(text);</span></span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        const isWhitespaceOnly = html_whitespace_utils_default.isWhitespaceOnly(text);
+        const isWhitespaceOnly = html_whitespace_default.isWhitespaceOnly(text);
         const {
           isFirst,
           isLast
@@ -18420,7 +18471,7 @@
             }
             return breaks;
           }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >          const leadingWhitespace = html_whitespace_utils_default.getLeadingWhitespace(text);</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >          const leadingWhitespace = html_whitespace_default.getLeadingWhitespace(text);</span></span>
 <span class="cstat-no" title="statement not covered" >          let leadBreaks = [];</span>
 <span class="cstat-no" title="statement not covered" >          if (leadingWhitespace) {</span>
 <span class="cstat-no" title="statement not covered" >            leadBreaks = [line];</span>
@@ -18430,7 +18481,7 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            text = text.slice(leadingWhitespace.length);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          const tailingWhitespace = html_whitespace_utils_default.getTrailingWhitespace(text);</span>
+<span class="cstat-no" title="statement not covered" >          const tailingWhitespace = html_whitespace_default.getTrailingWhitespace(text);</span>
 <span class="cstat-no" title="statement not covered" >          let trailBreaks = [];</span>
 <span class="cstat-no" title="statement not covered" >          if (tailingWhitespace) {</span>
 <span class="cstat-no" title="statement not covered" >            if (!shouldTrimTrailingNewlines) {</span>
@@ -18480,11 +18531,11 @@
 <span class="cstat-no" title="statement not covered" >          trailingLineBreaksCount = 0;</span>
 <span class="cstat-no" title="statement not covered" >          trailingSpace = "";</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (html_whitespace_utils_default.hasLeadingWhitespace(text)) {</span>
-<span class="cstat-no" title="statement not covered" >          text = leadingSpace + html_whitespace_utils_default.trimStart(text);</span>
+<span class="cstat-no" title="statement not covered" >        if (html_whitespace_default.hasLeadingWhitespace(text)) {</span>
+<span class="cstat-no" title="statement not covered" >          text = leadingSpace + html_whitespace_default.trimStart(text);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (html_whitespace_utils_default.hasTrailingWhitespace(text)) {</span>
-<span class="cstat-no" title="statement not covered" >          text = html_whitespace_utils_default.trimEnd(text) + trailingSpace;</span>
+<span class="cstat-no" title="statement not covered" >        if (html_whitespace_default.hasTrailingWhitespace(text)) {</span>
+<span class="cstat-no" title="statement not covered" >          text = html_whitespace_default.trimEnd(text) + trailingSpace;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return [...generateHardlines(leadingLineBreaksCount), fill(getTextValueParts(text)), ...generateHardlines(trailingLineBreaksCount)];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -18686,7 +18737,7 @@
 <span class="cstat-no" title="statement not covered" >    return [printElseBlock(node, options), indent(printed)];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function getTextValueParts(value) {</span>
-<span class="cstat-no" title="statement not covered" >    return join(line, html_whitespace_utils_default.split(value));</span>
+<span class="cstat-no" title="statement not covered" >    return join(line, html_whitespace_default.split(value));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function getCurrentAttributeName(path) {
     for (let depth = 0; depth &lt; 2; depth++) {
@@ -26221,7 +26272,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-30T00:39:15.048Z
+                at 2025-12-01T00:42:15.766Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

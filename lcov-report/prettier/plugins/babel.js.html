@@ -46965,7 +46965,7 @@
     return cls;
   }
 &nbsp;
-  // src/utils/skip.js
+  // src/utilities/skip.js
   function skip(characters) {
     return (text, startIndex, options) =&gt; {
       const backwards = Boolean(options<span class="branch-0 cbranch-no" title="branch not covered" >?.backwards)</span>;
@@ -46996,7 +46996,7 @@
   var skipToLineEnd = skip(",; 	");
   var skipEverythingButNewLine = skip(/[^\n\r]/u);
 &nbsp;
-  // src/utils/skip-inline-comment.js
+  // src/utilities/skip-inline-comment.js
   function skipInlineComment(text, startIndex) {
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
@@ -47012,7 +47012,7 @@
   }
   var skip_inline_comment_default = skipInlineComment;
 &nbsp;
-  // src/utils/skip-newline.js
+  // src/utilities/skip-newline.js
   var isNewlineCharacter = (character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";
   function skipNewline(text, startIndex, options) {
     const backwards = Boolean(options<span class="branch-0 cbranch-no" title="branch not covered" >?.backwards)</span>;
@@ -47039,7 +47039,7 @@
   }
   var skip_newline_default = skipNewline;
 &nbsp;
-  // src/utils/skip-trailing-comment.js
+  // src/utilities/skip-trailing-comment.js
   function skipTrailingComment(text, startIndex) {
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
@@ -47051,7 +47051,7 @@
   }
   var skip_trailing_comment_default = skipTrailingComment;
 &nbsp;
-  // src/utils/get-next-non-space-non-comment-character-index.js
+  // src/utilities/get-next-non-space-non-comment-character-index.js
   function getNextNonSpaceNonCommentCharacterIndex(text, startIndex) {
     let oldIdx = null;
     let nextIdx = startIndex;
@@ -47066,7 +47066,7 @@
   }
   var get_next_non_space_non_comment_character_index_default = getNextNonSpaceNonCommentCharacterIndex;
 &nbsp;
-  // src/utils/try-combinations.js
+  // src/utilities/try-combinations.js
   function tryCombinationsSync(combinations) {
     const errors = [];
     for (const fn of combinations) {
@@ -47079,7 +47079,7 @@
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    throw Object.assign(new Error("All combinations failed"), { errors });</span></span>
   }
 &nbsp;
-  // src/language-js/utils/get-shebang.js
+  // src/language-js/utilities/get-shebang.js
   function getShebang(text) {
     if (!text.startsWith("#!")) {
       return "";
@@ -47149,7 +47149,7 @@
     return end;
   }
 &nbsp;
-  // src/language-js/utils/create-type-check-function.js
+  // src/language-js/utilities/create-type-check-function.js
   function createTypeCheckFunction(typesArray) {
     const types2 = new Set(typesArray);
     if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -47163,7 +47163,7 @@
   }
   var create_type_check_function_default = createTypeCheckFunction;
 &nbsp;
-  // src/language-js/utils/is-block-comment.js
+  // src/language-js/utilities/is-block-comment.js
   var isBlockComment = create_type_check_function_default([
     "Block",
     "CommentBlock",
@@ -47172,7 +47172,7 @@
   ]);
   var is_block_comment_default = isBlockComment;
 &nbsp;
-  // src/language-js/utils/is-line-comment.js
+  // src/language-js/utilities/is-line-comment.js
   var isLineComment = create_type_check_function_default([
     "Line",
     "CommentLine",
@@ -47188,7 +47188,7 @@
   ]);
   var is_line_comment_default = isLineComment;
 &nbsp;
-  // src/language-js/utils/is-type-cast-comment.js
+  // src/language-js/utilities/is-type-cast-comment.js
   var cache = /* @__PURE__ */ new WeakMap();
   function isTypeCastComment(comment) {
     if (!cache.has(comment)) {
@@ -47204,7 +47204,7 @@
   }
   var is_type_cast_comment_default = isTypeCastComment;
 &nbsp;
-  // src/language-js/utils/is-indentable-block-comment.js
+  // src/language-js/utilities/is-indentable-block-comment.js
 <span class="fstat-no" title="function not covered" >  function isIndentableBlockCommentInternal(comment) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!is_block_comment_default(comment)) {</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
@@ -47261,7 +47261,7 @@
     return FastObject(object);
   }
 &nbsp;
-  // src/utils/create-get-visitor-keys.js
+  // src/utilities/create-get-visitor-keys.js
   function createGetVisitorKeys(visitorKeys, typeProperty = "type") {
     toFastproperties(visitorKeys);
     function getVisitorKeys2(node) {
@@ -48660,7 +48660,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var parser_create_error_default = createError;
 &nbsp;
-  // src/language-js/parse/utils/create-babel-parse-error.js
+  // src/language-js/parse/utilities/create-babel-parse-error.js
   var parseExpressionErrorMessagePrefix = "Unexpected parseExpression() input: ";
 <span class="fstat-no" title="function not covered" >  function createBabelParseError(error) {</span>
 <span class="cstat-no" title="statement not covered" >    let { message, loc, reasonCode } = error;</span>
@@ -48766,7 +48766,7 @@
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  // src/utils/pragma/pragma.evaluate.js
+  // src/utilities/pragma/pragma.evaluate.js
   var FORMAT_IGNORE_PRAGMAS = [
     "noformat",
     "noprettier"
@@ -48807,7 +48807,7 @@
 <span class="cstat-no" title="statement not covered" >    return FORMAT_IGNORE_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  // src/language-js/parse/utils/create-parser.js
+  // src/language-js/parse/utilities/create-parser.js
   function createParser(options) {
     options = typeof options === "function" ? { parse: options } : options;
     return {
@@ -48821,7 +48821,7 @@
   }
   var create_parser_default = createParser;
 &nbsp;
-  // src/language-js/parse/utils/source-types.js
+  // src/language-js/parse/utilities/source-types.js
   var SOURCE_TYPE_MODULE = (
     /** @type {const} */
     "module"
@@ -48843,7 +48843,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
 &nbsp;
-  // src/language-js/parse/utils/wrap-babel-expression.js
+  // src/language-js/parse/utilities/wrap-babel-expression.js
   function wrapBabelExpression(expression, options) {
     const { type = "JsExpressionRoot", rootMarker, text } = options;
     const { tokens, comments } = expression;
@@ -49067,7 +49067,7 @@
     jsonc: () =&gt; jsonc
   });
 &nbsp;
-  // src/utils/is-non-empty-array.js
+  // src/utilities/is-non-empty-array.js
   function isNonEmptyArray(object) {
     return Array.isArray(object) &amp;&amp; object.length &gt; 0;
   }
@@ -49219,7 +49219,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-30T00:39:15.048Z
+                at 2025-12-01T00:42:15.766Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
