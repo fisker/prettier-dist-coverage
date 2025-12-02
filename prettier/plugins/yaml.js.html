@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.94% </span>
+                <span class="strong">51.89% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4321/8319</span>
+                <span class='fraction'>4313/8311</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.27% </span>
+                <span class="strong">62.23% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>680/1092</span>
+                <span class='fraction'>679/1091</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.94% </span>
+                <span class="strong">51.89% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4321/8319</span>
+                <span class='fraction'>4313/8311</span>
             </div>
         
             
@@ -8373,15 +8373,7 @@
 <a name='L8308'></a><a href='#L8308'>8308</a>
 <a name='L8309'></a><a href='#L8309'>8309</a>
 <a name='L8310'></a><a href='#L8310'>8310</a>
-<a name='L8311'></a><a href='#L8311'>8311</a>
-<a name='L8312'></a><a href='#L8312'>8312</a>
-<a name='L8313'></a><a href='#L8313'>8313</a>
-<a name='L8314'></a><a href='#L8314'>8314</a>
-<a name='L8315'></a><a href='#L8315'>8315</a>
-<a name='L8316'></a><a href='#L8316'>8316</a>
-<a name='L8317'></a><a href='#L8317'>8317</a>
-<a name='L8318'></a><a href='#L8318'>8318</a>
-<a name='L8319'></a><a href='#L8319'>8319</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8311'></a><a href='#L8311'>8311</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14488,17 +14480,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22757,8 +22741,8 @@ ${text}`;
   }
 &nbsp;
   // src/utilities/create-get-visitor-keys.js
-  function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {
-    toFastproperties(visitorKeys2);
+  function createGetVisitorKeys(visitorKeys, typeProperty = "type") {
+    toFastproperties(visitorKeys);
 <span class="fstat-no" title="function not covered" >    function getVisitorKeys2(node) {</span>
 <span class="cstat-no" title="statement not covered" >      const type = node[typeProperty];</span>
 <span class="cstat-no" title="statement not covered" >      if (false) {</span>
@@ -22766,7 +22750,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >          `Can't get node type, you must pass the wrong typeProperty '${typeProperty}'`</span>
 <span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const keys = visitorKeys2[type];</span>
+<span class="cstat-no" title="statement not covered" >      const keys = visitorKeys[type];</span>
 <span class="cstat-no" title="statement not covered" >      if (!Array.isArray(keys)) {</span>
 <span class="cstat-no" title="statement not covered" >        throw Object.assign(new Error(`Missing visitor keys for '${type}'.`), {</span>
 <span class="cstat-no" title="statement not covered" >          node</span>
@@ -22778,51 +22762,43 @@ ${text}`;
   }
   var create_get_visitor_keys_default = createGetVisitorKeys;
 &nbsp;
-  // src/language-yaml/visitor-keys.js
-  var visitorKeys = Object.fromEntries(
-    Object.entries({
-      root: ["children"],
-      document: ["head", "body", "children"],
-      documentHead: ["children"],
-      documentBody: ["children"],
-      directive: [],
-      alias: [],
-      blockLiteral: [],
-      blockFolded: ["children"],
-      plain: ["children"],
-      quoteSingle: [],
-      quoteDouble: [],
-      mapping: ["children"],
-      mappingItem: ["key", "value", "children"],
-      mappingKey: ["content", "children"],
-      mappingValue: ["content", "children"],
-      sequence: ["children"],
-      sequenceItem: ["content", "children"],
-      flowMapping: ["children"],
-      flowMappingItem: ["key", "value", "children"],
-      flowSequence: ["children"],
-      flowSequenceItem: ["content", "children"],
-      comment: [],
-      tag: [],
-      anchor: []
-    }).map(([type, keys]) =&gt; [
-      type,
-      [
-        ...keys,
-        "anchor",
-        "tag",
-        "indicatorComment",
-        "leadingComments",
-        "middleComments",
-        "trailingComment",
-        "endComments"
-      ]
-    ])
-  );
-  var visitor_keys_default = visitorKeys;
+  // src/language-yaml/visitor-keys.evaluate.js
+  var vk = [
+    ["children", "anchor", "tag", "indicatorComment", "leadingComments", "middleComments", "trailingComment", "endComments"],
+    ["anchor", "tag", "indicatorComment", "leadingComments", "middleComments", "trailingComment", "endComments"],
+    ["key", "value", "children", "anchor", "tag", "indicatorComment", "leadingComments", "middleComments", "trailingComment", "endComments"],
+    ["content", "children", "anchor", "tag", "indicatorComment", "leadingComments", "middleComments", "trailingComment", "endComments"],
+    ["indicatorComment", "leadingComments", "middleComments", "trailingComment", "endComments"]
+  ];
+  var visitor_keys_evaluate_default = {
+    root: vk[0],
+    document: ["head", "body", "children", "anchor", "tag", "indicatorComment", "leadingComments", "middleComments", "trailingComment", "endComments"],
+    documentHead: vk[0],
+    documentBody: vk[0],
+    directive: vk[1],
+    alias: vk[1],
+    blockLiteral: vk[1],
+    blockFolded: vk[0],
+    plain: vk[0],
+    quoteSingle: vk[1],
+    quoteDouble: vk[1],
+    mapping: vk[0],
+    mappingItem: vk[2],
+    mappingKey: vk[3],
+    mappingValue: vk[3],
+    sequence: vk[0],
+    sequenceItem: vk[3],
+    flowMapping: vk[0],
+    flowMappingItem: vk[2],
+    flowSequence: vk[0],
+    flowSequenceItem: vk[3],
+    comment: vk[1],
+    tag: vk[4],
+    anchor: vk[4]
+  };
 &nbsp;
   // src/language-yaml/get-visitor-keys.js
-  var getVisitorKeys = create_get_visitor_keys_default(visitor_keys_default);
+  var getVisitorKeys = create_get_visitor_keys_default(visitor_keys_evaluate_default);
   var get_visitor_keys_default = getVisitorKeys;
 &nbsp;
   // src/language-yaml/loc.js
@@ -25024,7 +25000,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-01T00:42:18.381Z
+                at 2025-12-02T00:36:47.990Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

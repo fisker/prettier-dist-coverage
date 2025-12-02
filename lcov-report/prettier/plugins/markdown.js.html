@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">70.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8331/11879</span>
+                <span class='fraction'>8334/11882</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">70.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8331/11879</span>
+                <span class='fraction'>8334/11882</span>
             </div>
         
             
@@ -11941,7 +11941,10 @@
 <a name='L11876'></a><a href='#L11876'>11876</a>
 <a name='L11877'></a><a href='#L11877'>11877</a>
 <a name='L11878'></a><a href='#L11878'>11878</a>
-<a name='L11879'></a><a href='#L11879'>11879</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11879'></a><a href='#L11879'>11879</a>
+<a name='L11880'></a><a href='#L11880'>11880</a>
+<a name='L11881'></a><a href='#L11881'>11881</a>
+<a name='L11882'></a><a href='#L11882'>11882</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22467,6 +22470,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-yes">160x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -34328,8 +34334,8 @@
   }
 &nbsp;
   // src/utilities/create-get-visitor-keys.js
-  function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {
-    toFastproperties(visitorKeys2);
+  function createGetVisitorKeys(visitorKeys, typeProperty = "type") {
+    toFastproperties(visitorKeys);
     function getVisitorKeys2(node) {
       const type = node[typeProperty];
       if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -34337,7 +34343,7 @@
 <span class="cstat-no" title="statement not covered" >          `Can't get node type, you must pass the wrong typeProperty '${typeProperty}'`</span>
 <span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      const keys = visitorKeys2[type];
+      const keys = visitorKeys[type];
       if (!Array.isArray(keys)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        throw Object.assign(new Error(`Missing visitor keys for '${type}'.`), {</span>
 <span class="cstat-no" title="statement not covered" >          node</span>
@@ -34349,50 +34355,53 @@
   }
   var create_get_visitor_keys_default = createGetVisitorKeys;
 &nbsp;
-  // src/language-markdown/visitor-keys.js
-  var visitorKeys = {
-    root: ["children"],
-    paragraph: ["children"],
-    sentence: ["children"],
-    word: [],
-    whitespace: [],
-    emphasis: ["children"],
-    strong: ["children"],
-    delete: ["children"],
-    inlineCode: [],
-    wikiLink: [],
-    link: ["children"],
-    image: [],
-    blockquote: ["children"],
-    heading: ["children"],
-    code: [],
-    html: [],
-    list: ["children"],
-    thematicBreak: [],
-    linkReference: ["children"],
-    imageReference: [],
-    definition: [],
-    footnote: ["children"],
-    footnoteReference: [],
-    footnoteDefinition: ["children"],
-    table: ["children"],
-    tableCell: ["children"],
-    break: [],
-    liquidNode: [],
-    import: [],
-    export: [],
-    esComment: [],
-    jsx: [],
-    math: [],
-    inlineMath: [],
-    tableRow: ["children"],
-    listItem: ["children"],
-    text: []
+  // src/language-markdown/visitor-keys.evaluate.js
+  var vk = [
+    ["children"],
+    []
+  ];
+  var visitor_keys_evaluate_default = {
+    root: vk[0],
+    paragraph: vk[0],
+    sentence: vk[0],
+    word: vk[1],
+    whitespace: vk[1],
+    emphasis: vk[0],
+    strong: vk[0],
+    "delete": vk[0],
+    inlineCode: vk[1],
+    wikiLink: vk[1],
+    link: vk[0],
+    image: vk[1],
+    blockquote: vk[0],
+    heading: vk[0],
+    code: vk[1],
+    html: vk[1],
+    list: vk[0],
+    thematicBreak: vk[1],
+    linkReference: vk[0],
+    imageReference: vk[1],
+    definition: vk[1],
+    footnote: vk[0],
+    footnoteReference: vk[1],
+    footnoteDefinition: vk[0],
+    table: vk[0],
+    tableCell: vk[0],
+    "break": vk[1],
+    liquidNode: vk[1],
+    "import": vk[1],
+    "export": vk[1],
+    esComment: vk[1],
+    jsx: vk[1],
+    math: vk[1],
+    inlineMath: vk[1],
+    tableRow: vk[0],
+    listItem: vk[0],
+    text: vk[1]
   };
-  var visitor_keys_default = visitorKeys;
 &nbsp;
   // src/language-markdown/get-visitor-keys.js
-  var getVisitorKeys = create_get_visitor_keys_default(visitor_keys_default);
+  var getVisitorKeys = create_get_visitor_keys_default(visitor_keys_evaluate_default);
   var get_visitor_keys_default = getVisitorKeys;
 &nbsp;
   // src/language-markdown/print/children.js
@@ -35704,7 +35713,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-01T00:42:15.766Z
+                at 2025-12-02T00:36:45.482Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

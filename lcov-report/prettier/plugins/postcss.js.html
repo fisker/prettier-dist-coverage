@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.77% </span>
+                <span class="strong">52.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6026/11419</span>
+                <span class='fraction'>6036/11429</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.26% </span>
+                <span class="strong">61.21% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1088/1776</span>
+                <span class='fraction'>1086/1774</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.53% </span>
+                <span class="strong">51.6% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>402/780</span>
+                <span class='fraction'>403/781</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.77% </span>
+                <span class="strong">52.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6026/11419</span>
+                <span class='fraction'>6036/11429</span>
             </div>
         
             
@@ -11481,7 +11481,17 @@
 <a name='L11416'></a><a href='#L11416'>11416</a>
 <a name='L11417'></a><a href='#L11417'>11417</a>
 <a name='L11418'></a><a href='#L11418'>11418</a>
-<a name='L11419'></a><a href='#L11419'>11419</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11419'></a><a href='#L11419'>11419</a>
+<a name='L11420'></a><a href='#L11420'>11420</a>
+<a name='L11421'></a><a href='#L11421'>11421</a>
+<a name='L11422'></a><a href='#L11422'>11422</a>
+<a name='L11423'></a><a href='#L11423'>11423</a>
+<a name='L11424'></a><a href='#L11424'>11424</a>
+<a name='L11425'></a><a href='#L11425'>11425</a>
+<a name='L11426'></a><a href='#L11426'>11426</a>
+<a name='L11427'></a><a href='#L11427'>11427</a>
+<a name='L11428'></a><a href='#L11428'>11428</a>
+<a name='L11429'></a><a href='#L11429'>11429</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20484,6 +20494,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">69x</span>
 <span class="cline-any cline-yes">69x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22288,6 +22302,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5487x</span>
+<span class="cline-any cline-yes">5487x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -31826,8 +31846,8 @@
   }
 &nbsp;
   // src/utilities/create-get-visitor-keys.js
-  function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {
-    toFastproperties(visitorKeys2);
+  function createGetVisitorKeys(visitorKeys, typeProperty = "type") {
+    toFastproperties(visitorKeys);
 <span class="fstat-no" title="function not covered" >    function getVisitorKeys2(node) {</span>
 <span class="cstat-no" title="statement not covered" >      const type = node[typeProperty];</span>
 <span class="cstat-no" title="statement not covered" >      if (false) {</span>
@@ -31835,7 +31855,7 @@
 <span class="cstat-no" title="statement not covered" >          `Can't get node type, you must pass the wrong typeProperty '${typeProperty}'`</span>
 <span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const keys = visitorKeys2[type];</span>
+<span class="cstat-no" title="statement not covered" >      const keys = visitorKeys[type];</span>
 <span class="cstat-no" title="statement not covered" >      if (!Array.isArray(keys)) {</span>
 <span class="cstat-no" title="statement not covered" >        throw Object.assign(new Error(`Missing visitor keys for '${type}'.`), {</span>
 <span class="cstat-no" title="statement not covered" >          node</span>
@@ -31847,57 +31867,61 @@
   }
   var create_get_visitor_keys_default = createGetVisitorKeys;
 &nbsp;
-  // src/language-css/visitor-keys.js
-  var visitorKeys = {
+  // src/language-css/visitor-keys.evaluate.js
+  var vk = [
+    [],
+    ["nodes"],
+    ["group"]
+  ];
+  var visitor_keys_evaluate_default = {
     "css-root": ["frontMatter", "nodes"],
-    "css-comment": [],
+    "css-comment": vk[0],
     "css-rule": ["selector", "nodes"],
     "css-decl": ["value", "selector", "nodes"],
     "css-atrule": ["selector", "params", "value", "nodes"],
-    "media-query-list": ["nodes"],
-    "media-query": ["nodes"],
-    "media-type": [],
-    "media-feature-expression": ["nodes"],
-    "media-feature": [],
-    "media-colon": [],
-    "media-value": [],
-    "media-keyword": [],
-    "media-url": [],
-    "media-unknown": [],
-    "selector-root": ["nodes"],
-    "selector-selector": ["nodes"],
-    "selector-comment": [],
-    "selector-string": [],
-    "selector-tag": [],
-    "selector-id": [],
-    "selector-class": [],
-    "selector-attribute": [],
-    "selector-combinator": ["nodes"],
-    "selector-universal": [],
-    "selector-pseudo": ["nodes"],
-    "selector-nesting": [],
-    "selector-unknown": [],
-    "value-value": ["group"],
-    "value-root": ["group"],
-    "value-comment": [],
+    "media-query-list": vk[1],
+    "media-query": vk[1],
+    "media-type": vk[0],
+    "media-feature-expression": vk[1],
+    "media-feature": vk[0],
+    "media-colon": vk[0],
+    "media-value": vk[0],
+    "media-keyword": vk[0],
+    "media-url": vk[0],
+    "media-unknown": vk[0],
+    "selector-root": vk[1],
+    "selector-selector": vk[1],
+    "selector-comment": vk[0],
+    "selector-string": vk[0],
+    "selector-tag": vk[0],
+    "selector-id": vk[0],
+    "selector-class": vk[0],
+    "selector-attribute": vk[0],
+    "selector-combinator": vk[1],
+    "selector-universal": vk[0],
+    "selector-pseudo": vk[1],
+    "selector-nesting": vk[0],
+    "selector-unknown": vk[0],
+    "value-value": vk[2],
+    "value-root": vk[2],
+    "value-comment": vk[0],
     "value-comma_group": ["groups"],
     "value-paren_group": ["open", "groups", "close"],
-    "value-func": ["group"],
-    "value-paren": [],
-    "value-number": [],
-    "value-operator": [],
-    "value-word": [],
-    "value-colon": [],
-    "value-comma": [],
-    "value-string": [],
-    "value-atword": [],
-    "value-unicode-range": [],
-    "value-unknown": []
+    "value-func": vk[2],
+    "value-paren": vk[0],
+    "value-number": vk[0],
+    "value-operator": vk[0],
+    "value-word": vk[0],
+    "value-colon": vk[0],
+    "value-comma": vk[0],
+    "value-string": vk[0],
+    "value-atword": vk[0],
+    "value-unicode-range": vk[0],
+    "value-unknown": vk[0]
   };
-  var visitor_keys_default = visitorKeys;
 &nbsp;
   // src/language-css/get-visitor-keys.js
-  var getVisitorKeys = create_get_visitor_keys_default(visitor_keys_default);
+  var getVisitorKeys = create_get_visitor_keys_default(visitor_keys_evaluate_default);
   var get_visitor_keys_default = getVisitorKeys;
 &nbsp;
   // src/utilities/line-column-to-index.js
@@ -33708,12 +33732,18 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var parser_create_error_default = createError;
 &nbsp;
+  // src/utilities/is-object.js
+  function isObject(object) {
+    return object !== null &amp;&amp; typeof object === "object";
+  }
+  var is_object_default = isObject;
+&nbsp;
   // src/language-css/parse/parse-media-query.js
   var import_postcss_media_query_parser = __toESM(require_dist(), 1);
 &nbsp;
   // src/language-css/parse/utilities.js
   function addTypePrefix(node, prefix, skipPrefix) {
-    if (node &amp;&amp; typeof node === "object") {
+    if (is_object_default(node)) {
       delete node.parent;
       for (const key in node) {
         addTypePrefix(node[key], prefix, skipPrefix);
@@ -33725,7 +33755,7 @@
     return node;
   }
   function addMissingType(node) {
-    if (node &amp;&amp; typeof node === "object") {
+    if (is_object_default(node)) {
       delete node.parent;
       for (const key in node) {
         addMissingType(node[key]);
@@ -33945,7 +33975,7 @@
     return node;
   }
   function parseNestedValue(node, options2) {
-    if (node &amp;&amp; typeof node === "object") {
+    if (is_object_default(node)) {
       for (const key in node) {
         if (key !== "parent") {
           parseNestedValue(node[key], options2);
@@ -34005,7 +34035,7 @@
   var DEFAULT_SCSS_DIRECTIVE = /(\s*)(!default).*$/u;
   var GLOBAL_SCSS_DIRECTIVE = /(\s*)(!global).*$/u;
   function parseNestedCSS(node, options2) {
-    if (node &amp;&amp; typeof node === "object") {
+    if (is_object_default(node)) {
       delete node.parent;
       for (const key in node) {
         parseNestedCSS(node[key], options2);
@@ -34324,7 +34354,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-01T00:42:15.766Z
+                at 2025-12-02T00:36:45.482Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
