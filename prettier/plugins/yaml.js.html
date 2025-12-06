@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.92% </span>
+                <span class="strong">51.87% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4324/8328</span>
+                <span class='fraction'>4325/8337</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.13% </span>
+                <span class="strong">62.11% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>676/1088</span>
+                <span class='fraction'>677/1090</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.92% </span>
+                <span class="strong">51.87% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4324/8328</span>
+                <span class='fraction'>4325/8337</span>
             </div>
         
             
@@ -8390,7 +8390,16 @@
 <a name='L8325'></a><a href='#L8325'>8325</a>
 <a name='L8326'></a><a href='#L8326'>8326</a>
 <a name='L8327'></a><a href='#L8327'>8327</a>
-<a name='L8328'></a><a href='#L8328'>8328</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8328'></a><a href='#L8328'>8328</a>
+<a name='L8329'></a><a href='#L8329'>8329</a>
+<a name='L8330'></a><a href='#L8330'>8330</a>
+<a name='L8331'></a><a href='#L8331'>8331</a>
+<a name='L8332'></a><a href='#L8332'>8332</a>
+<a name='L8333'></a><a href='#L8333'>8333</a>
+<a name='L8334'></a><a href='#L8334'>8334</a>
+<a name='L8335'></a><a href='#L8335'>8335</a>
+<a name='L8336'></a><a href='#L8336'>8336</a>
+<a name='L8337'></a><a href='#L8337'>8337</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14412,6 +14421,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14664,6 +14679,9 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -22737,6 +22755,12 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >          delete cloned.documentEndMarker;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered" >      case "blockLiteral":</span>
+<span class="cstat-no" title="statement not covered" >      case "blockFolded":</span>
+<span class="cstat-no" title="statement not covered" >        if (original.chomping === "keep") {</span>
+<span class="cstat-no" title="statement not covered" >          cloned.value = original.value.split("\n").map((line2) =&gt; line2.replace(/[ \t]+$/u, "")).join("\n");</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   clean.ignoredProperties = /* @__PURE__ */ new Set(["position"]);
@@ -22991,6 +23015,9 @@ ${text}`;
     options: options2
   }) {
     const content = node.position.start.line === node.position.end.line <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: options2.originalText.slice(node.position.start.offset, node.position.end.offset).match(/^[^\n]*\n(.*)$/su)[1];
+    if (content === "") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return [];</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     let leadingSpaceCount;
     if (node.indent === null) {
       const matches = content.match(/^(?&lt;leadingSpace&gt; *)[^\n\r ]/mu);
@@ -23046,7 +23073,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    return removeUnnecessaryTrailingNewlines(lines);</span>
 <span class="cstat-no" title="statement not covered" >    function removeUnnecessaryTrailingNewlines(lineContents) {</span>
       if (node.chomping === "keep") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        return method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >        return content.endsWith("\n") &amp;&amp; method_at_default(</span>
 <span class="cstat-no" title="statement not covered" >          /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >          0,</span>
 <span class="cstat-no" title="statement not covered" >          lineContents,</span>
@@ -23055,7 +23082,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >      }</span>
       let trailingNewlineCount = 0;
       for (let i = lineContents.length - 1; i &gt;= 0; i--) {
-        if (lineContents[i].length === 0) {
+        if (lineContents[i].every((line2) =&gt; line2.replace(/[ \t]+$/u, "") === "")) {
           trailingNewlineCount++;
         } else {
           break;
@@ -25051,7 +25078,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-05T00:37:15.500Z
+                at 2025-12-06T00:33:38.548Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
