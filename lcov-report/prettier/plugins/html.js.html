@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.83% </span>
+                <span class="strong">73.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7456/10098</span>
+                <span class='fraction'>7456/10101</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.83% </span>
+                <span class="strong">73.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7456/10098</span>
+                <span class='fraction'>7456/10101</span>
             </div>
         
             
@@ -10160,7 +10160,10 @@
 <a name='L10095'></a><a href='#L10095'>10095</a>
 <a name='L10096'></a><a href='#L10096'>10096</a>
 <a name='L10097'></a><a href='#L10097'>10097</a>
-<a name='L10098'></a><a href='#L10098'>10098</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10098'></a><a href='#L10098'>10098</a>
+<a name='L10099'></a><a href='#L10099'>10099</a>
+<a name='L10100'></a><a href='#L10100'>10100</a>
+<a name='L10101'></a><a href='#L10101'>10101</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11068,6 +11071,9 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20935,7 +20941,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function shouldHugJsExpression(ast, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    const rootNode = ast.type === "NGRoot" ? ast.node.type === "NGMicrosyntax" &amp;&amp; ast.node.body.length === 1 &amp;&amp; ast.node.body[0].type === "NGMicrosyntaxExpression" ? ast.node.body[0].expression : ast.node : ast.type === "JsExpressionRoot" ? ast.node : ast;</span>
-<span class="cstat-no" title="statement not covered" >    return rootNode &amp;&amp; (rootNode.type === "ObjectExpression" || rootNode.type === "ArrayExpression" || (options2.parser === "__vue_expression" || options2.parser === "__vue_ts_expression") &amp;&amp; (rootNode.type === "TemplateLiteral" || rootNode.type === "StringLiteral"));</span>
+<span class="cstat-no" title="statement not covered" >    return rootNode &amp;&amp; (rootNode.type === "ObjectExpression" || rootNode.type === "ArrayExpression" || (options2.parser === "__vue_expression" || options2.parser === "__vue_ts_expression" || options2.parser === "__ng_binding" || options2.parser === "__ng_directive") &amp;&amp; (rootNode.type === "TemplateLiteral" || rootNode.type === "StringLiteral"));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  async function formatAttributeValue(code, textToDoc, options2, shouldHugJsExpression2) {</span>
 <span class="cstat-no" title="statement not covered" >    options2 = {</span>
@@ -21171,13 +21177,16 @@
 <span class="cstat-no" title="statement not covered" >        const {</span>
 <span class="cstat-no" title="statement not covered" >          raw</span>
 <span class="cstat-no" title="statement not covered" >        } = frontMatter;</span>
-<span class="cstat-no" title="statement not covered" >        return method_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >          /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >          0,</span>
-<span class="cstat-no" title="statement not covered" >          raw,</span>
-<span class="cstat-no" title="statement not covered" >          /[^\n]/gu,</span>
-<span class="cstat-no" title="statement not covered" >          " "</span>
-<span class="cstat-no" title="statement not covered" >        ) + text.slice(raw.length);</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >          // eslint-disable-next-line require-unicode-regexp -- string length matters so intentionally not using unicode flag</span>
+<span class="cstat-no" title="statement not covered" >          method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >            /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >            0,</span>
+<span class="cstat-no" title="statement not covered" >            raw,</span>
+<span class="cstat-no" title="statement not covered" >            /[^\n]/g,</span>
+<span class="cstat-no" title="statement not covered" >            " "</span>
+<span class="cstat-no" title="statement not covered" >          ) + text.slice(raw.length)</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
   }
@@ -30361,7 +30370,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-09T00:35:35.410Z
+                at 2025-12-10T00:36:40.796Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
