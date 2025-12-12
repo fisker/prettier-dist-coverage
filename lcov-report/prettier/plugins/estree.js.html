@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">58.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7190/12230</span>
+                <span class='fraction'>7193/12237</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.17% </span>
+                <span class="strong">51.19% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1478/2888</span>
+                <span class='fraction'>1478/2887</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.39% </span>
+                <span class="strong">65.28% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>395/604</span>
+                <span class='fraction'>395/605</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">58.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7190/12230</span>
+                <span class='fraction'>7193/12237</span>
             </div>
         
             
@@ -12292,7 +12292,14 @@
 <a name='L12227'></a><a href='#L12227'>12227</a>
 <a name='L12228'></a><a href='#L12228'>12228</a>
 <a name='L12229'></a><a href='#L12229'>12229</a>
-<a name='L12230'></a><a href='#L12230'>12230</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12230'></a><a href='#L12230'>12230</a>
+<a name='L12231'></a><a href='#L12231'>12231</a>
+<a name='L12232'></a><a href='#L12232'>12232</a>
+<a name='L12233'></a><a href='#L12233'>12233</a>
+<a name='L12234'></a><a href='#L12234'>12234</a>
+<a name='L12235'></a><a href='#L12235'>12235</a>
+<a name='L12236'></a><a href='#L12236'>12236</a>
+<a name='L12237'></a><a href='#L12237'>12237</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21533,6 +21540,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21545,15 +21568,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -33760,6 +33774,22 @@
 <span class="cstat-no" title="statement not covered" >    return rawText;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
+  // src/utilities/replace-non-line-breaks-with-space.js
+<span class="fstat-no" title="function not covered" >  function replaceNonLineBreaksWithSpace(string) {</span>
+<span class="cstat-no" title="statement not covered" >    const replaced = method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >      0,</span>
+<span class="cstat-no" title="statement not covered" >      string,</span>
+<span class="cstat-no" title="statement not covered" >      /[^\n]/g,</span>
+<span class="cstat-no" title="statement not covered" >      " "</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    if (false) {</span>
+<span class="cstat-no" title="statement not covered" >      noop_default(replaced.length, string.length);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return replaced;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+  var replace_non_line_breaks_with_space_default = replaceNonLineBreaksWithSpace;
+&nbsp;
   // src/language-js/utilities/get-text-without-comments.js
   function getTextWithoutComments(options2, start, end) {
     let text = options2.originalText.slice(start, end);
@@ -33774,16 +33804,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const startIndex = commentStart - start;</span>
 <span class="cstat-no" title="statement not covered" >      const endIndex = commentEnd - start;</span>
-<span class="cstat-no" title="statement not covered" >      text = text.slice(0, startIndex) + method_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >        0,</span>
-<span class="cstat-no" title="statement not covered" >        text.slice(startIndex, endIndex),</span>
-<span class="cstat-no" title="statement not covered" >        /[^\n]/gu,</span>
-<span class="cstat-no" title="statement not covered" >        " "</span>
-<span class="cstat-no" title="statement not covered" >      ) + text.slice(endIndex);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-    if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      noop_default(text.length, end - start);</span>
+<span class="cstat-no" title="statement not covered" >      text = text.slice(0, startIndex) + replace_non_line_breaks_with_space_default(text.slice(startIndex, endIndex)) + text.slice(endIndex);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return text;
   }
@@ -36757,7 +36778,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-11T00:36:26.548Z
+                at 2025-12-12T00:37:13.566Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

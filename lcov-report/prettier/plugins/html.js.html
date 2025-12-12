@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.81% </span>
+                <span class="strong">73.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7456/10101</span>
+                <span class='fraction'>7460/10102</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.81% </span>
+                <span class="strong">59.7% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>323/540</span>
+                <span class='fraction'>323/541</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.81% </span>
+                <span class="strong">73.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7456/10101</span>
+                <span class='fraction'>7460/10102</span>
             </div>
         
             
@@ -10163,7 +10163,8 @@
 <a name='L10098'></a><a href='#L10098'>10098</a>
 <a name='L10099'></a><a href='#L10099'>10099</a>
 <a name='L10100'></a><a href='#L10100'>10100</a>
-<a name='L10101'></a><a href='#L10101'>10101</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10101'></a><a href='#L10101'>10101</a>
+<a name='L10102'></a><a href='#L10102'>10102</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11004,6 +11005,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -11071,15 +11088,6 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20178,12 +20186,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -21102,6 +21104,22 @@
   }
   var is_front_matter_default = isFrontMatter;
 &nbsp;
+  // src/utilities/replace-non-line-breaks-with-space.js
+<span class="fstat-no" title="function not covered" >  function replaceNonLineBreaksWithSpace(string) {</span>
+<span class="cstat-no" title="statement not covered" >    const replaced = method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >      0,</span>
+<span class="cstat-no" title="statement not covered" >      string,</span>
+<span class="cstat-no" title="statement not covered" >      /[^\n]/g,</span>
+<span class="cstat-no" title="statement not covered" >      " "</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    if (false) {</span>
+<span class="cstat-no" title="statement not covered" >      noop_default(replaced.length, string.length);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return replaced;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+  var replace_non_line_breaks_with_space_default = replaceNonLineBreaksWithSpace;
+&nbsp;
   // src/main/front-matter/parse.js
   var DELIMITER_LENGTH = 3;
   function getFrontMatter(text) {
@@ -21177,16 +21195,7 @@
 <span class="cstat-no" title="statement not covered" >        const {</span>
 <span class="cstat-no" title="statement not covered" >          raw</span>
 <span class="cstat-no" title="statement not covered" >        } = frontMatter;</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >          // eslint-disable-next-line require-unicode-regexp -- string length matters so intentionally not using unicode flag</span>
-<span class="cstat-no" title="statement not covered" >          method_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >            /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >            0,</span>
-<span class="cstat-no" title="statement not covered" >            raw,</span>
-<span class="cstat-no" title="statement not covered" >            /[^\n]/g,</span>
-<span class="cstat-no" title="statement not covered" >            " "</span>
-<span class="cstat-no" title="statement not covered" >          ) + text.slice(raw.length)</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >        return replace_non_line_breaks_with_space_default(raw) + text.slice(raw.length);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
   }
@@ -30254,13 +30263,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      offset</span>
 <span class="cstat-no" title="statement not covered" >    } = startSpan;</span>
-<span class="cstat-no" title="statement not covered" >    const textToParse = method_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >      0,</span>
-<span class="cstat-no" title="statement not covered" >      text.slice(0, offset),</span>
-<span class="cstat-no" title="statement not covered" >      /[^\n]/gu,</span>
-<span class="cstat-no" title="statement not covered" >      " "</span>
-<span class="cstat-no" title="statement not covered" >    ) + subContent;</span>
+<span class="cstat-no" title="statement not covered" >    const textToParse = replace_non_line_breaks_with_space_default(text.slice(0, offset)) + subContent;</span>
 <span class="cstat-no" title="statement not covered" >    const subAst = parse3(textToParse, parser2, {</span>
 <span class="cstat-no" title="statement not covered" >      ...parseOptions,</span>
 <span class="cstat-no" title="statement not covered" >      shouldParseFrontMatter: false</span>
@@ -30370,7 +30373,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-11T00:36:26.548Z
+                at 2025-12-12T00:37:13.566Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

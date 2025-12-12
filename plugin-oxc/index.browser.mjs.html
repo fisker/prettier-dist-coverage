@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25163</span>
+                <span class='fraction'>0/25170</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25163</span>
+                <span class='fraction'>0/25170</span>
             </div>
         
             
@@ -25226,7 +25226,21 @@
 <a name='L25161'></a><a href='#L25161'>25161</a>
 <a name='L25162'></a><a href='#L25162'>25162</a>
 <a name='L25163'></a><a href='#L25163'>25163</a>
-<a name='L25164'></a><a href='#L25164'>25164</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25164'></a><a href='#L25164'>25164</a>
+<a name='L25165'></a><a href='#L25165'>25165</a>
+<a name='L25166'></a><a href='#L25166'>25166</a>
+<a name='L25167'></a><a href='#L25167'>25167</a>
+<a name='L25168'></a><a href='#L25168'>25168</a>
+<a name='L25169'></a><a href='#L25169'>25169</a>
+<a name='L25170'></a><a href='#L25170'>25170</a>
+<a name='L25171'></a><a href='#L25171'>25171</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -72719,6 +72733,22 @@
 <span class="cstat-no" title="statement not covered" >  return rawText;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/utilities/replace-non-line-breaks-with-space.js</span>
+<span class="cstat-no" title="statement not covered" >function replaceNonLineBreaksWithSpace(string) {</span>
+<span class="cstat-no" title="statement not covered" >  const replaced = method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >    /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >    0,</span>
+<span class="cstat-no" title="statement not covered" >    string,</span>
+<span class="cstat-no" title="statement not covered" >    /[^\n]/g,</span>
+<span class="cstat-no" title="statement not covered" >    " "</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >  if (false) {</span>
+<span class="cstat-no" title="statement not covered" >    noop_default(replaced.length, string.length);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return replaced;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >var replace_non_line_breaks_with_space_default = replaceNonLineBreaksWithSpace;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/get-text-without-comments.js</span>
 <span class="cstat-no" title="statement not covered" >function getTextWithoutComments(options2, start, end) {</span>
 <span class="cstat-no" title="statement not covered" >  let text = options2.originalText.slice(start, end);</span>
@@ -72733,16 +72763,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const startIndex = commentStart - start;</span>
 <span class="cstat-no" title="statement not covered" >    const endIndex = commentEnd - start;</span>
-<span class="cstat-no" title="statement not covered" >    text = text.slice(0, startIndex) + method_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >      0,</span>
-<span class="cstat-no" title="statement not covered" >      text.slice(startIndex, endIndex),</span>
-<span class="cstat-no" title="statement not covered" >      /[^\n]/gu,</span>
-<span class="cstat-no" title="statement not covered" >      " "</span>
-<span class="cstat-no" title="statement not covered" >    ) + text.slice(endIndex);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (false) {</span>
-<span class="cstat-no" title="statement not covered" >    noop_default(text.length, end - start);</span>
+<span class="cstat-no" title="statement not covered" >    text = text.slice(0, startIndex) + replace_non_line_breaks_with_space_default(text.slice(startIndex, endIndex)) + text.slice(endIndex);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return text;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -75559,7 +75580,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-11T00:36:29.095Z
+                at 2025-12-12T00:37:16.028Z
             </div>
         <script src="../prettify.js"></script>
         <script>
