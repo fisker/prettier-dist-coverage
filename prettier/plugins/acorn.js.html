@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.39% </span>
+                <span class="strong">54.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4192/7706</span>
+                <span class='fraction'>4204/7718</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.98% </span>
+                <span class="strong">54.06% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>657/1217</span>
+                <span class='fraction'>659/1219</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.04% </span>
+                <span class="strong">57.23% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>255/447</span>
+                <span class='fraction'>257/449</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.39% </span>
+                <span class="strong">54.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4192/7706</span>
+                <span class='fraction'>4204/7718</span>
             </div>
         
             
@@ -7768,7 +7768,19 @@
 <a name='L7703'></a><a href='#L7703'>7703</a>
 <a name='L7704'></a><a href='#L7704'>7704</a>
 <a name='L7705'></a><a href='#L7705'>7705</a>
-<a name='L7706'></a><a href='#L7706'>7706</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7706'></a><a href='#L7706'>7706</a>
+<a name='L7707'></a><a href='#L7707'>7707</a>
+<a name='L7708'></a><a href='#L7708'>7708</a>
+<a name='L7709'></a><a href='#L7709'>7709</a>
+<a name='L7710'></a><a href='#L7710'>7710</a>
+<a name='L7711'></a><a href='#L7711'>7711</a>
+<a name='L7712'></a><a href='#L7712'>7712</a>
+<a name='L7713'></a><a href='#L7713'>7713</a>
+<a name='L7714'></a><a href='#L7714'>7714</a>
+<a name='L7715'></a><a href='#L7715'>7715</a>
+<a name='L7716'></a><a href='#L7716'>7716</a>
+<a name='L7717'></a><a href='#L7717'>7717</a>
+<a name='L7718'></a><a href='#L7718'>7718</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7802,8 +7814,8 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -8250,6 +8262,12 @@
 <span class="cline-any cline-yes">348x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14958,6 +14976,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15959,9 +15983,15 @@
   });
 &nbsp;
   // src/plugins/acorn.js
-  var acorn_exports2 = {};
-  __export(acorn_exports2, {
+  var acorn_exports3 = {};
+  __export(acorn_exports3, {
     parsers: () =&gt; parsers2
+  });
+&nbsp;
+  // src/language-js/parse/acorn.js
+  var acorn_exports = {};
+  __export(acorn_exports, {
+    acorn: () =&gt; acorn
   });
 &nbsp;
   // node_modules/acorn/dist/acorn.mjs
@@ -22641,7 +22671,13 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     return postprocess_default(ast, { text });
   }
-  var acorn = create_parser_default(parse3);
+  var acorn = /* @__PURE__ */ create_parser_default(parse3);
+&nbsp;
+  // src/language-js/parse/espree.js
+  var espree_exports = {};
+  __export(espree_exports, {
+    espree: () =&gt; espree
+  });
 &nbsp;
   // node_modules/espree/espree.js
   var import_acorn_jsx2 = __toESM(require_acorn_jsx(), 1);
@@ -23173,11 +23209,11 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     return postprocess_default(ast, { parser: "espree", text });
   }
-  var espree = create_parser_default(parse5);
+  var espree = /* @__PURE__ */ create_parser_default(parse5);
 &nbsp;
   // src/plugins/acorn.js
-  var parsers2 = { acorn, espree };
-  return __toCommonJS(acorn_exports2);
+  var parsers2 = { ...acorn_exports, ...espree_exports };
+  return __toCommonJS(acorn_exports3);
 });</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -23185,7 +23221,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-14T00:40:08.269Z
+                at 2025-12-15T00:38:50.955Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

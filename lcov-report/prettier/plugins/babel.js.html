@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.09% </span>
+                <span class="strong">48.1% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7517/15631</span>
+                <span class='fraction'>7521/15635</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.09% </span>
+                <span class="strong">48.1% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7517/15631</span>
+                <span class='fraction'>7521/15635</span>
             </div>
         
             
@@ -15693,7 +15693,11 @@
 <a name='L15628'></a><a href='#L15628'>15628</a>
 <a name='L15629'></a><a href='#L15629'>15629</a>
 <a name='L15630'></a><a href='#L15630'>15630</a>
-<a name='L15631'></a><a href='#L15631'>15631</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L15631'></a><a href='#L15631'>15631</a>
+<a name='L15632'></a><a href='#L15632'>15632</a>
+<a name='L15633'></a><a href='#L15633'>15633</a>
+<a name='L15634'></a><a href='#L15634'>15634</a>
+<a name='L15635'></a><a href='#L15635'>15635</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -31323,6 +31327,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">(function (factory) {
   function interopModuleDefault() {
     var module = factory();
@@ -46771,37 +46779,37 @@
     "DeclarationMissingInitializer"
   ]);
   var babelParserOptionsCombinations = [appendPlugins(["jsx"])];
-  var babel = createBabelParser({
+  var babel = /* @__PURE__ */ createBabelParser({
     optionsCombinations: babelParserOptionsCombinations
   });
-  var babelTs = createBabelParser({
+  var babelTs = /* @__PURE__ */ createBabelParser({
     optionsCombinations: [
       appendPlugins(["jsx", "typescript"]),
       appendPlugins(["typescript"])
     ]
   });
-  var babelExpression = createBabelParser({
+  var babelExpression = /* @__PURE__ */ createBabelParser({
     isExpression: true,
     optionsCombinations: [appendPlugins(["jsx"])]
   });
-  var babelTSExpression = createBabelParser({
+  var babelTSExpression = /* @__PURE__ */ createBabelParser({
     isExpression: true,
     optionsCombinations: [appendPlugins(["typescript"])]
   });
-  var babelFlow = createBabelParser({
+  var babelFlow = /* @__PURE__ */ createBabelParser({
     optionsCombinations: [
       appendPlugins(["jsx", ["flow", { all: true }], "flowComments"])
     ]
   });
-  var babelEstree = createBabelParser({
+  var babelEstree = /* @__PURE__ */ createBabelParser({
     optionsCombinations: babelParserOptionsCombinations.map(
       (options) =&gt; appendPlugins(["estree"], options)
     )
   });
 &nbsp;
-  // src/language-json/parser-json.js
-  var parser_json_exports = {};
-  __export(parser_json_exports, {
+  // src/language-json/parsers.js
+  var parsers_exports = {};
+  __export(parsers_exports, {
     json: () =&gt; json,
     "json-stringify": () =&gt; jsonStringify,
     json5: () =&gt; json5,
@@ -46814,7 +46822,7 @@
   }
   var is_non_empty_array_default = isNonEmptyArray;
 &nbsp;
-  // src/language-json/parser-json.js
+  // src/language-json/parse/json.js
   var babelParseOptions = {
     tokens: false,
     // Ranges not available on comments, so we use `Node#{start,end}` instead
@@ -46938,20 +46946,24 @@
 <span class="cstat-no" title="statement not covered" >        throw createJsonError(node, `'${node.type}'`);</span>
     }
   }
-  var json = create_parser_default({
+&nbsp;
+  // src/language-json/parsers.js
+  var json = /* @__PURE__ */ create_parser_default({
     parse: (text) =&gt; parseJson(text),
     hasPragma: <span class="fstat-no" title="function not covered" >() =&gt; true,</span>
     hasIgnorePragma: <span class="fstat-no" title="function not covered" >() =&gt; false</span>
   });
-  var json5 = create_parser_default((text) =&gt; parseJson(text));
-  var jsonc = create_parser_default((text) =&gt; parseJson(text, { allowEmpty: true }));
-  var jsonStringify = create_parser_default({
+  var json5 = /* @__PURE__ */ create_parser_default((text) =&gt; parseJson(text));
+  var jsonc = /* @__PURE__ */ create_parser_default(
+    (text) =&gt; parseJson(text, { allowEmpty: true })
+  );
+  var jsonStringify = /* @__PURE__ */ create_parser_default({
     parse: (text) =&gt; parseJson(text, { allowComments: false }),
     astFormat: "estree-json"
   });
 &nbsp;
   // src/plugins/babel.js
-  var parsers = { ...babel_exports, ...parser_json_exports };
+  var parsers = { ...babel_exports, ...parsers_exports };
   return __toCommonJS(babel_exports2);
 });</pre></td></tr></table></pre>
 
@@ -46960,7 +46972,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-14T00:40:05.705Z
+                at 2025-12-15T00:38:48.447Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

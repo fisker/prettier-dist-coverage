@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25168</span>
+                <span class='fraction'>0/25164</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25168</span>
+                <span class='fraction'>0/25164</span>
             </div>
         
             
@@ -25227,15 +25227,7 @@
 <a name='L25162'></a><a href='#L25162'>25162</a>
 <a name='L25163'></a><a href='#L25163'>25163</a>
 <a name='L25164'></a><a href='#L25164'>25164</a>
-<a name='L25165'></a><a href='#L25165'>25165</a>
-<a name='L25166'></a><a href='#L25166'>25166</a>
-<a name='L25167'></a><a href='#L25167'>25167</a>
-<a name='L25168'></a><a href='#L25168'>25168</a>
-<a name='L25169'></a><a href='#L25169'>25169</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L25165'></a><a href='#L25165'>25165</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -64497,27 +64489,8 @@
 <span class="cstat-no" title="statement not covered" >  ast.comments = comments;</span>
 <span class="cstat-no" title="statement not covered" >  return postprocess_default(ast, { text, parser: "oxc", oxcAstType: "ts" });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >var oxc = create_parser_default(parseJs);</span>
-<span class="cstat-no" title="statement not covered" >var oxcTs = create_parser_default(parseTs);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// src/language-js/printer.js</span>
-<span class="cstat-no" title="statement not covered" >var printer_exports = {};</span>
-<span class="cstat-no" title="statement not covered" >__export(printer_exports, {</span>
-<span class="cstat-no" title="statement not covered" >  canAttachComment: () =&gt; can_attach_comment_default,</span>
-<span class="cstat-no" title="statement not covered" >  embed: () =&gt; embed_default,</span>
-<span class="cstat-no" title="statement not covered" >  features: () =&gt; features,</span>
-<span class="cstat-no" title="statement not covered" >  getVisitorKeys: () =&gt; get_visitor_keys_default,</span>
-<span class="cstat-no" title="statement not covered" >  handleComments: () =&gt; handle_comments_default,</span>
-<span class="cstat-no" title="statement not covered" >  hasPrettierIgnore: () =&gt; is_ignored_default,</span>
-<span class="cstat-no" title="statement not covered" >  insertPragma: () =&gt; insertPragma,</span>
-<span class="cstat-no" title="statement not covered" >  isBlockComment: () =&gt; is_block_comment_default,</span>
-<span class="cstat-no" title="statement not covered" >  isGap: () =&gt; is_gap_default,</span>
-<span class="cstat-no" title="statement not covered" >  massageAstNode: () =&gt; clean_default,</span>
-<span class="cstat-no" title="statement not covered" >  print: () =&gt; print_default,</span>
-<span class="cstat-no" title="statement not covered" >  printComment: () =&gt; printComment,</span>
-<span class="cstat-no" title="statement not covered" >  printPrettierIgnored: () =&gt; print_default,</span>
-<span class="cstat-no" title="statement not covered" >  willPrintOwnComments: () =&gt; will_print_own_comments_default</span>
-<span class="cstat-no" title="statement not covered" >});</span>
+<span class="cstat-no" title="statement not covered" >var oxc = /* @__PURE__ */ create_parser_default(parseJs);</span>
+<span class="cstat-no" title="statement not covered" >var oxcTs = /* @__PURE__ */ create_parser_default(parseTs);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/utilities/ast.js</span>
 <span class="cstat-no" title="statement not covered" >function* getChildren(node, options2) {</span>
@@ -75228,12 +75201,27 @@
 <span class="cstat-no" title="statement not covered" >    needsParens ? ")" : ""</span>
 <span class="cstat-no" title="statement not covered" >  ]);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >var print_default = print2;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// src/language-js/printer.js</span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/printers.js</span>
 <span class="cstat-no" title="statement not covered" >var features = {</span>
 <span class="cstat-no" title="statement not covered" >  // TODO: Make this default behavior</span>
 <span class="cstat-no" title="statement not covered" >  experimental_avoidAstMutation: true</span>
+<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" >var estree = {</span>
+<span class="cstat-no" title="statement not covered" >  features,</span>
+<span class="cstat-no" title="statement not covered" >  massageAstNode: clean_default,</span>
+<span class="cstat-no" title="statement not covered" >  canAttachComment: can_attach_comment_default,</span>
+<span class="cstat-no" title="statement not covered" >  handleComments: handle_comments_default,</span>
+<span class="cstat-no" title="statement not covered" >  isGap: is_gap_default,</span>
+<span class="cstat-no" title="statement not covered" >  willPrintOwnComments: will_print_own_comments_default,</span>
+<span class="cstat-no" title="statement not covered" >  embed: embed_default,</span>
+<span class="cstat-no" title="statement not covered" >  insertPragma,</span>
+<span class="cstat-no" title="statement not covered" >  printComment,</span>
+<span class="cstat-no" title="statement not covered" >  printPrettierIgnored: print2,</span>
+<span class="cstat-no" title="statement not covered" >  print: print2,</span>
+<span class="cstat-no" title="statement not covered" >  getVisitorKeys: get_visitor_keys_default,</span>
+<span class="cstat-no" title="statement not covered" >  isBlockComment: is_block_comment_default,</span>
+<span class="cstat-no" title="statement not covered" >  hasPrettierIgnore: is_ignored_default</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/common/common-options.evaluate.js</span>
@@ -75558,7 +75546,7 @@
 <span class="cstat-no" title="statement not covered" >  ])</span>
 <span class="cstat-no" title="statement not covered" >);</span>
 <span class="cstat-no" title="statement not covered" >var printers2 = {</span>
-<span class="cstat-no" title="statement not covered" >  [AST_FORMAT]: printer_exports</span>
+<span class="cstat-no" title="statement not covered" >  [AST_FORMAT]: estree</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 <span class="cstat-no" title="statement not covered" >export {</span>
 <span class="cstat-no" title="statement not covered" >  index_exports as default,</span>
@@ -75574,7 +75562,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-14T00:40:05.705Z
+                at 2025-12-15T00:38:48.447Z
             </div>
         <script src="../prettify.js"></script>
         <script>
