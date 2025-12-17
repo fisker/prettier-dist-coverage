@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">52.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6041/11430</span>
+                <span class='fraction'>6044/11435</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.21% </span>
+                <span class="strong">61.13% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1086/1774</span>
+                <span class='fraction'>1087/1778</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">52.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6041/11430</span>
+                <span class='fraction'>6044/11435</span>
             </div>
         
             
@@ -11492,7 +11492,12 @@
 <a name='L11427'></a><a href='#L11427'>11427</a>
 <a name='L11428'></a><a href='#L11428'>11428</a>
 <a name='L11429'></a><a href='#L11429'>11429</a>
-<a name='L11430'></a><a href='#L11430'>11430</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11430'></a><a href='#L11430'>11430</a>
+<a name='L11431'></a><a href='#L11431'>11431</a>
+<a name='L11432'></a><a href='#L11432'>11432</a>
+<a name='L11433'></a><a href='#L11433'>11433</a>
+<a name='L11434'></a><a href='#L11434'>11434</a>
+<a name='L11435'></a><a href='#L11435'>11435</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21081,6 +21086,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21911,6 +21920,7 @@
 <span class="cline-any cline-yes">179x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">179x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -32508,6 +32518,10 @@
     if (node.groups.length === 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+    const parentNode = path.parent;
+    if (parentNode &amp;&amp; parentNode.type === "value-func" &amp;&amp; parentNode.value === "if") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     const parentParentNode = path.grandparent;
     if (!isKeyValuePairInParenGroupNode(node) &amp;&amp; !(parentParentNode &amp;&amp; isKeyValuePairInParenGroupNode(parentParentNode))) {
       return false;
@@ -33346,6 +33360,7 @@
         } = node.raws;
         const trimmedBetween = rawBetween.trim();
         const isColon = trimmedBetween === ":";
+        const hasSpaceAfterColon = rawBetween.endsWith(" ") &amp;&amp; isColon;
         const isValueAllSpace = typeof node.value === "string" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; /^ *$/u.test(node.value);</span>
         let value = typeof node.value === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? node.value </span>: print2("value");
         value = hasComposesNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >? removeLines(value) </span>: value;
@@ -33364,13 +33379,13 @@
           parentNode.type === "css-atrule" &amp;&amp; parentNode.variable || insideIcssRuleNode(path) <span class="branch-0 cbranch-no" title="branch not covered" >? node.prop </span>: maybeToLowerCase(node.prop),
           trimmedBetween.startsWith("//") <span class="branch-0 cbranch-no" title="branch not covered" >? " " </span>: "",
           trimmedBetween,
-          node.extend || isValueAllSpace <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: " ",
+          node.extend || isValueAllSpace || !hasSpaceAfterColon <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.isNested <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; (isAtWordPlaceholderNode(node.value.group.group) || isAtWordPlaceholderNode(node.value.group.group.groups?.[0])) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: " ",
           options2.parser === "less" &amp;&amp; node.extend <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.selector <span class="branch-0 cbranch-no" title="branch not covered" ></span>? ["extend(", print2("selector"), ")"] </span>: "",
           value,
           node.raws.important <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.important.replace(/\s*!\s*important/iu, " !important") </span>: node.important ? " !important" : "",
           node.raws.scssDefault <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.scssDefault.replace(/\s*!default/iu, " !default") </span>: node.scssDefault <span class="branch-0 cbranch-no" title="branch not covered" >? " !default" </span>: "",
           node.raws.scssGlobal <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.scssGlobal.replace(/\s*!global/iu, " !global") </span>: node.scssGlobal <span class="branch-0 cbranch-no" title="branch not covered" >? " !global" </span>: "",
-          node.nodes <span class="branch-0 cbranch-no" title="branch not covered" >? [" {", indent([softline, sequence_default(path, options2, print2)]), softline, "}"] </span>: isTemplatePropNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !parentNode.raws.semicolon <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; options2.originalText[locEnd(node) - 1] !== ";" <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: options2.__isHTMLStyleAttribute <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; path.isLast <span class="branch-0 cbranch-no" title="branch not covered" ></span>? ifBreak(";") </span>: ";"
+          node.nodes <span class="branch-0 cbranch-no" title="branch not covered" >? [" {", node.nodes.length &gt; 0 ? indent([softline, sequence_default(path, options2, print2)]) : "", softline, "}"] </span>: isTemplatePropNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !parentNode.raws.semicolon <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; options2.originalText[locEnd(node) - 1] !== ";" <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: options2.__isHTMLStyleAttribute <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; path.isLast <span class="branch-0 cbranch-no" title="branch not covered" ></span>? ifBreak(";") </span>: ";"
         ];
       }
       case "css-atrule": {
@@ -33384,7 +33399,7 @@
 <span class="cstat-no" title="statement not covered" >            return [node.name, typeof node.params === "string" ? node.params : print2("params"), isTemplatePlaceholderNodeWithoutSemiColon ? "" : ";"];</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           if (node.variable) {
-            return ["@", node.name, ": ", node.value <span class="branch-0 cbranch-no" title="branch not covered" >? print2("value") </span>: "", node.raws.between.trim() <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.between.trim() + " " </span>: "", node.nodes ? ["{", indent([node.nodes.length &gt; 0 ? softline <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> sequence_default(path, options2, print2)]), softline, "}"] <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> isTemplatePlaceholderNodeWithoutSemiColon <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: ";"];
+            return ["@", node.name, ": ", node.value <span class="branch-0 cbranch-no" title="branch not covered" >? print2("value") </span>: "", node.raws.between.trim() <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.between.trim() + " " </span>: "", node.nodes ? ["{", node.nodes.length &gt; 0 ? indent([softline, sequence_default(path, options2, print2)]) <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> softline, "}"] <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> isTemplatePlaceholderNodeWithoutSemiColon <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: ";"];
           }
         }
         const isImportUnknownValueEndsWithSemiColon = node.name === "import" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.params?.type === "value-unknown" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.params.value.endsWith(";");</span>
@@ -33397,7 +33412,7 @@
           node.params ? [isDetachedRulesetCallNode(node) ? "" : isTemplatePlaceholderNode(node) <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.afterName === "" ? "" : node.name.endsWith(":") ? " " : /^\s*\n\s*\n/u.test(node.raws.afterName) ? [hardline, hardline] : /^\s*\n/u.test(node.raws.afterName) ? hardline : " " </span>: " ", typeof node.params === "string" ? node.params : print2("params")] : "",
           node.selector <span class="branch-0 cbranch-no" title="branch not covered" >? indent([" ", print2("selector")]) </span>: "",
           node.value ? group([" ", print2("value"), isSCSSControlDirectiveNode(node, options2) ? hasParensAroundNode(node) ? " " : line : ""]) : node.name === "else" ? " " : "",
-          node.nodes ? [isSCSSControlDirectiveNode(node, options2) ? "" : node.selector <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !node.selector.nodes <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; typeof node.selector.value === "string" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; lastLineHasInlineComment(node.selector.value) </span>|| !node.selector &amp;&amp; typeof node.params === "string" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; lastLineHasInlineComment(node.params) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? line </span>: " ", "{", indent([node.nodes.length &gt; 0 ? softline <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> sequence_default(path, options2, print2)]), softline, "}"] : isTemplatePlaceholderNodeWithoutSemiColon || isImportUnknownValueEndsWithSemiColon <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: ";"
+          node.nodes ? [isSCSSControlDirectiveNode(node, options2) ? "" : node.selector <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !node.selector.nodes <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; typeof node.selector.value === "string" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; lastLineHasInlineComment(node.selector.value) </span>|| !node.selector &amp;&amp; typeof node.params === "string" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; lastLineHasInlineComment(node.params) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? line </span>: " ", "{", node.nodes.length &gt; 0 ? indent([softline, sequence_default(path, options2, print2)]) <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> softline, "}"] : isTemplatePlaceholderNodeWithoutSemiColon || isImportUnknownValueEndsWithSemiColon <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: ";"
         ];
       }
       // postcss-media-query-parser
@@ -34357,7 +34372,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-16T00:36:43.748Z
+                at 2025-12-17T00:35:26.737Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
