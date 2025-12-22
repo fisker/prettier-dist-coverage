@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.64% </span>
+                <span class="strong">56.59% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3448/6087</span>
+                <span class='fraction'>3447/6091</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.64% </span>
+                <span class="strong">56.59% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3448/6087</span>
+                <span class='fraction'>3447/6091</span>
             </div>
         
             
@@ -6149,7 +6149,11 @@
 <a name='L6084'></a><a href='#L6084'>6084</a>
 <a name='L6085'></a><a href='#L6085'>6085</a>
 <a name='L6086'></a><a href='#L6086'>6086</a>
-<a name='L6087'></a><a href='#L6087'>6087</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L6087'></a><a href='#L6087'>6087</a>
+<a name='L6088'></a><a href='#L6088'>6088</a>
+<a name='L6089'></a><a href='#L6089'>6089</a>
+<a name='L6090'></a><a href='#L6090'>6090</a>
+<a name='L6091'></a><a href='#L6091'>6091</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9198,6 +9202,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -12127,7 +12136,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12980,7 +12988,7 @@
   function convertEndOfLineOptionToCharacter(endOfLineOption) {
     return endOfLineOption === OPTION_CR <span class="branch-0 cbranch-no" title="branch not covered" >? CHARACTER_CR </span>: endOfLineOption === OPTION_CRLF <span class="branch-0 cbranch-no" title="branch not covered" >? CHARACTER_CRLF </span>: DEFAULT_EOL;
   }
-  var regexps = /* @__PURE__ */ new Map([[CHARACTER_LF, /\n/gu], [CHARACTER_CR, /\r/gu], [CHARACTER_CRLF, /\r\n/gu]]);
+  var regexps = /* @__PURE__ */ new Map([[CHARACTER_LF, /\n/g], [CHARACTER_CR, /\r/g], [CHARACTER_CRLF, /\r\n/g]]);
 <span class="fstat-no" title="function not covered" >  function countEndOfLineCharacters(text, endOfLineCharacter) {</span>
 <span class="cstat-no" title="statement not covered" >    const regex = regexps.get(endOfLineCharacter);</span>
 <span class="cstat-no" title="statement not covered" >    if (false) {</span>
@@ -12988,7 +12996,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return text.match(regex)?.length ?? 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var END_OF_LINE_REGEXP = /\r\n?/gu;
+  var END_OF_LINE_REGEXP = /\r\n?/g;
 <span class="fstat-no" title="function not covered" >  function normalizeEndOfLine(text) {</span>
 <span class="cstat-no" title="statement not covered" >    return method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
@@ -13872,7 +13880,7 @@
   var narrow_emojis_evaluate_default = "\xA9\xAE\u203C\u2049\u2122\u2139\u2194\u2195\u2196\u2197\u2198\u2199\u21A9\u21AA\u2328\u23CF\u23F1\u23F2\u23F8\u23F9\u23FA\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600\u2601\u2602\u2603\u2604\u260E\u2611\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638\u2639\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694\u2695\u2696\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F1\u26F7\u26F8\u26F9\u2702\u2708\u2709\u270C\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u2764\u27A1\u2934\u2935\u2B05\u2B06\u2B07";
 &nbsp;
   // src/utilities/get-string-width.js
-  var notAsciiRegex = /[^\x20-\x7F]/u;
+  var notAsciiRegex = /[^\x20-\x7F]/;
   var narrowEmojisSet = new Set(narrow_emojis_evaluate_default);
   function getStringWidth(text) {
     if (!text) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -14875,10 +14883,10 @@
 <span class="cstat-no" title="statement not covered" >      return false;</span>
     };
   }
-  var skipWhitespace = skip(/\s/u);
+  var skipWhitespace = skip(/\s/);
   var skipSpaces = skip(" 	");
   var skipToLineEnd = skip(",; 	");
-  var skipEverythingButNewLine = skip(/[^\n\r]/u);
+  var skipEverythingButNewLine = skip(/[^\n\r]/);
 &nbsp;
   // src/utilities/skip-newline.js
   var isNewlineCharacter = (character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";
@@ -15179,7 +15187,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
-  var isAllEmptyAndNoLineBreak = <span class="fstat-no" title="function not covered" >(text) =&gt; !/[\S\n\u2028\u2029]/u.test(text);</span>
+  var isAllEmptyAndNoLineBreak = <span class="fstat-no" title="function not covered" >(text) =&gt; !/[\S\n\u2028\u2029]/.test(text);</span>
   function isOwnLineComment(text, options, decoratedComments, commentIndex) {
     const { comment, precedingNode } = decoratedComments[commentIndex];
     const { locStart, locEnd } = options;
@@ -15227,7 +15235,7 @@
 <span class="cstat-no" title="statement not covered" >      noop_default(currentCommentPrecedingNode, precedingNode);</span>
 <span class="cstat-no" title="statement not covered" >      noop_default(currentCommentFollowingNode, followingNode);</span>
 <span class="cstat-no" title="statement not covered" >      const gap = options.originalText.slice(options.locEnd(comment), gapEndPos);</span>
-<span class="cstat-no" title="statement not covered" >      if (options.printer.isGap?.(gap, options) ?? /^[\s(]*$/u.test(gap)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (options.printer.isGap?.(gap, options) ?? /^[\s(]*$/.test(gap)) {</span>
 <span class="cstat-no" title="statement not covered" >        gapEndPos = options.locStart(comment);</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
@@ -15280,9 +15288,14 @@
     const { printer: printer2, originalText, locStart, locEnd } = options;
     const isBlock = printer2.isBlockComment?.(comment);
     if (isBlock) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      const lineBreak = has_newline_default(originalText, locEnd(comment)) ? has_newline_default(originalText, locStart(comment), {</span>
-<span class="cstat-no" title="statement not covered" >        backwards: true</span>
-<span class="cstat-no" title="statement not covered" >      }) ? hardline : line : " ";</span>
+<span class="cstat-no" title="statement not covered" >      let lineBreak = " ";</span>
+<span class="cstat-no" title="statement not covered" >      if (has_newline_default(originalText, locEnd(comment))) {</span>
+<span class="cstat-no" title="statement not covered" >        if (has_newline_default(originalText, locStart(comment), { backwards: true })) {</span>
+<span class="cstat-no" title="statement not covered" >          lineBreak = hardline;</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >          lineBreak = line;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(lineBreak);</span>
     } else {
       parts.push(hardline);
@@ -15760,7 +15773,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/universal/index.browser.js
-  var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/u).pop();</span>
+  var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/).pop();</span>
   var isUrl = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).startsWith("file:");</span>
 &nbsp;
   // src/utilities/infer-parser.js
@@ -17668,12 +17681,12 @@
 <span class="cstat-no" title="statement not covered" >      locEnd</span>
 <span class="cstat-no" title="statement not covered" >    } = opts;</span>
 <span class="cstat-no" title="statement not covered" >    noop_default(end &gt; start);</span>
-<span class="cstat-no" title="statement not covered" >    const firstNonWhitespaceCharacterIndex = text.slice(start, end).search(/\S/u);</span>
+<span class="cstat-no" title="statement not covered" >    const firstNonWhitespaceCharacterIndex = text.slice(start, end).search(/\S/);</span>
 <span class="cstat-no" title="statement not covered" >    const isAllWhitespace = firstNonWhitespaceCharacterIndex === -1;</span>
 <span class="cstat-no" title="statement not covered" >    if (!isAllWhitespace) {</span>
 <span class="cstat-no" title="statement not covered" >      start += firstNonWhitespaceCharacterIndex;</span>
 <span class="cstat-no" title="statement not covered" >      for (; end &gt; start; --end) {</span>
-<span class="cstat-no" title="statement not covered" >        if (/\S/u.test(text[end - 1])) {</span>
+<span class="cstat-no" title="statement not covered" >        if (/\S/.test(text[end - 1])) {</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -17809,7 +17822,7 @@
 <span class="cstat-no" title="statement not covered" >    const [rangeStart, rangeEnd] = calculateRange(text, opts, ast) ?? [0, 0];</span>
 <span class="cstat-no" title="statement not covered" >    const rangeString = text.slice(rangeStart, rangeEnd);</span>
 <span class="cstat-no" title="statement not covered" >    const rangeStart2 = Math.min(rangeStart, text.lastIndexOf("\n", rangeStart) + 1);</span>
-<span class="cstat-no" title="statement not covered" >    const indentString = text.slice(rangeStart2, rangeStart).match(/^\s*/u)[0];</span>
+<span class="cstat-no" title="statement not covered" >    const indentString = text.slice(rangeStart2, rangeStart).match(/^\s*/)[0];</span>
 <span class="cstat-no" title="statement not covered" >    const alignmentSize = get_alignment_size_default(indentString, opts.tabWidth);</span>
 <span class="cstat-no" title="statement not covered" >    const rangeResult = await coreFormat(rangeString, {</span>
 <span class="cstat-no" title="statement not covered" >      ...opts,</span>
@@ -18054,7 +18067,7 @@
     getMaxContinuousCount: <span class="fstat-no" title="function not covered" >() =&gt; get_max_continuous_count_default,</span>
     getNextNonSpaceNonCommentCharacter: <span class="fstat-no" title="function not covered" >() =&gt; get_next_non_space_non_comment_character_default,</span>
     getNextNonSpaceNonCommentCharacterIndex: <span class="fstat-no" title="function not covered" >() =&gt; getNextNonSpaceNonCommentCharacterIndex2,</span>
-    getPreferredQuote: <span class="fstat-no" title="function not covered" >() =&gt; get_preferred_quote_default,</span>
+    getPreferredQuote: <span class="fstat-no" title="function not covered" >() =&gt; getPreferredQuote,</span>
     getStringWidth: <span class="fstat-no" title="function not covered" >() =&gt; get_string_width_default,</span>
     hasNewline: <span class="fstat-no" title="function not covered" >() =&gt; has_newline_default,</span>
     hasNewlineInRange: <span class="fstat-no" title="function not covered" >() =&gt; has_newline_in_range_default,</span>
@@ -18140,7 +18153,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return get_alignment_size_default(</span>
 <span class="cstat-no" title="statement not covered" >      // All the leading whitespaces</span>
-<span class="cstat-no" title="statement not covered" >      value.slice(lastNewlineIndex + 1).match(/^[\t ]*/u)[0],</span>
+<span class="cstat-no" title="statement not covered" >      value.slice(lastNewlineIndex + 1).match(/^[\t ]*/)[0],</span>
 <span class="cstat-no" title="statement not covered" >      tabWidth</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -18157,7 +18170,7 @@
   // src/utilities/get-max-continuous-count.js
 <span class="fstat-no" title="function not covered" >  function getMaxContinuousCount(text, searchString) {</span>
 <span class="cstat-no" title="statement not covered" >    let results = text.matchAll(</span>
-<span class="cstat-no" title="statement not covered" >      new RegExp(`(?:${escapeStringRegexp(searchString)})+`, "gu")</span>
+<span class="cstat-no" title="statement not covered" >      new RegExp(`(?:${escapeStringRegexp(searchString)})+`, "g")</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    if (!results.reduce) {</span>
 <span class="cstat-no" title="statement not covered" >      results = [...results];</span>
@@ -18210,7 +18223,6 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return (preferredQuoteCount &gt; alternateQuoteCount ? alternate : preferred).character;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var get_preferred_quote_default = getPreferredQuote;
 &nbsp;
   // src/utilities/has-newline-in-range.js
 <span class="fstat-no" title="function not covered" >  function hasNewlineInRange(text, startIndex, endIndex) {</span>
@@ -18260,7 +18272,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function makeString(rawText, enclosingQuote, unescapeUnnecessaryEscapes) {</span>
 <span class="cstat-no" title="statement not covered" >    const otherQuote = enclosingQuote === '"' ? "'" : '"';</span>
-<span class="cstat-no" title="statement not covered" >    const regex = /\\(.)|(["'])/gsu;</span>
+<span class="cstat-no" title="statement not covered" >    const regex = /\\(.)|(["'])/gs;</span>
 <span class="cstat-no" title="statement not covered" >    const raw = method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >      0,</span>
@@ -18276,7 +18288,7 @@
 <span class="cstat-no" title="statement not covered" >        if (quote) {</span>
 <span class="cstat-no" title="statement not covered" >          return quote;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return unescapeUnnecessaryEscapes &amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/u.test(escaped) ? escaped : "\\" + escaped;</span>
+<span class="cstat-no" title="statement not covered" >        return unescapeUnnecessaryEscapes &amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/.test(escaped) ? escaped : "\\" + escaped;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    return enclosingQuote + raw + enclosingQuote;</span>
@@ -18328,7 +18340,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-21T00:39:29.751Z
+                at 2025-12-22T00:38:30.727Z
             </div>
         <script src="../prettify.js"></script>
         <script>

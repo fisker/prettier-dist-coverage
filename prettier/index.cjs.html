@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.11% </span>
+                <span class="strong">51.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>368/720</span>
+                <span class='fraction'>367/719</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.11% </span>
+                <span class="strong">51.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>368/720</span>
+                <span class='fraction'>367/719</span>
             </div>
         
             
@@ -782,8 +782,7 @@
 <a name='L717'></a><a href='#L717'>717</a>
 <a name='L718'></a><a href='#L718'>718</a>
 <a name='L719'></a><a href='#L719'>719</a>
-<a name='L720'></a><a href='#L720'>720</a>
-<a name='L721'></a><a href='#L721'>721</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L720'></a><a href='#L720'>720</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1214,7 +1213,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1599,10 +1597,10 @@ function skip(characters) {
 var skipWhitespace, skipSpaces, skipToLineEnd, skipEverythingButNewLine;
 var init_skip = __esm({
   "src/utilities/skip.js"() {
-    skipWhitespace = skip(/\s/u);
+    skipWhitespace = skip(/\s/);
     skipSpaces = skip(" 	");
     skipToLineEnd = skip(",; 	");
-    skipEverythingButNewLine = skip(/[^\n\r]/u);
+    skipEverythingButNewLine = skip(/[^\n\r]/);
   }
 });
 &nbsp;
@@ -1831,7 +1829,7 @@ var init_get_alignment_size = __esm({
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return get_alignment_size_default(</span>
 <span class="cstat-no" title="statement not covered" >    // All the leading whitespaces</span>
-<span class="cstat-no" title="statement not covered" >    value.slice(lastNewlineIndex + 1).match(/^[\t ]*/u)[0],</span>
+<span class="cstat-no" title="statement not covered" >    value.slice(lastNewlineIndex + 1).match(/^[\t ]*/)[0],</span>
 <span class="cstat-no" title="statement not covered" >    tabWidth</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -1858,7 +1856,7 @@ var init_escape_string_regexp = __esm({
 // src/utilities/get-max-continuous-count.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getMaxContinuousCount(text, searchString) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let results = text.matchAll(</span>
-<span class="cstat-no" title="statement not covered" >    new RegExp(`(?:${escapeStringRegexp(searchString)})+`, "gu")</span>
+<span class="cstat-no" title="statement not covered" >    new RegExp(`(?:${escapeStringRegexp(searchString)})+`, "g")</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  if (!results.reduce) {</span>
 <span class="cstat-no" title="statement not covered" >    results = [...results];</span>
@@ -1905,7 +1903,7 @@ var init_get_next_non_space_non_comment_character = __esm({
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return (preferredQuoteCount &gt; alternateQuoteCount ? alternate : preferred).character;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-var SINGLE_QUOTE, DOUBLE_QUOTE, SINGLE_QUOTE_DATA, DOUBLE_QUOTE_DATA, SINGLE_QUOTE_SETTINGS, DOUBLE_QUOTE_SETTINGS, get_preferred_quote_default;
+var SINGLE_QUOTE, DOUBLE_QUOTE, SINGLE_QUOTE_DATA, DOUBLE_QUOTE_DATA, SINGLE_QUOTE_SETTINGS, DOUBLE_QUOTE_SETTINGS;
 var init_get_preferred_quote = __esm({
   "src/utilities/get-preferred-quote.js"() {
     SINGLE_QUOTE = "'";
@@ -1926,7 +1924,6 @@ var init_get_preferred_quote = __esm({
       preferred: DOUBLE_QUOTE_DATA,
       alternate: SINGLE_QUOTE_DATA
     });
-    get_preferred_quote_default = getPreferredQuote;
   }
 });
 &nbsp;
@@ -2001,7 +1998,7 @@ var init_get_string_width = __esm({
     init_emoji_regex();
     init_get_east_asian_width();
     init_narrow_emojis_evaluate();
-    notAsciiRegex = /[^\x20-\x7F]/u;
+    notAsciiRegex = /[^\x20-\x7F]/;
     narrowEmojisSet = new Set(narrow_emojis_evaluate_default);
     get_string_width_default = getStringWidth;
   }
@@ -2051,7 +2048,7 @@ __export(public_exports, {
   getMaxContinuousCount: <span class="fstat-no" title="function not covered" >() =&gt; get_max_continuous_count_default,</span>
   getNextNonSpaceNonCommentCharacter: <span class="fstat-no" title="function not covered" >() =&gt; get_next_non_space_non_comment_character_default,</span>
   getNextNonSpaceNonCommentCharacterIndex: <span class="fstat-no" title="function not covered" >() =&gt; getNextNonSpaceNonCommentCharacterIndex2,</span>
-  getPreferredQuote: <span class="fstat-no" title="function not covered" >() =&gt; get_preferred_quote_default,</span>
+  getPreferredQuote: <span class="fstat-no" title="function not covered" >() =&gt; getPreferredQuote,</span>
   getStringWidth: () =&gt; get_string_width_default,
   hasNewline: <span class="fstat-no" title="function not covered" >() =&gt; has_newline_default,</span>
   hasNewlineInRange: <span class="fstat-no" title="function not covered" >() =&gt; has_newline_in_range_default,</span>
@@ -2094,7 +2091,7 @@ __export(public_exports, {
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function makeString(rawText, enclosingQuote, unescapeUnnecessaryEscapes) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const otherQuote = enclosingQuote === '"' ? "'" : '"';</span>
-<span class="cstat-no" title="statement not covered" >  const regex = /\\(.)|(["'])/gsu;</span>
+<span class="cstat-no" title="statement not covered" >  const regex = /\\(.)|(["'])/gs;</span>
 <span class="cstat-no" title="statement not covered" >  const raw = method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >    /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >    0,</span>
@@ -2110,7 +2107,7 @@ __export(public_exports, {
 <span class="cstat-no" title="statement not covered" >      if (quote) {</span>
 <span class="cstat-no" title="statement not covered" >        return quote;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return unescapeUnnecessaryEscapes &amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/u.test(escaped) ? escaped : "\\" + escaped;</span>
+<span class="cstat-no" title="statement not covered" >      return unescapeUnnecessaryEscapes &amp;&amp; /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/.test(escaped) ? escaped : "\\" + escaped;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  return enclosingQuote + raw + enclosingQuote;</span>
@@ -2230,7 +2227,7 @@ module.exports = prettier;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-21T00:39:29.751Z
+                at 2025-12-22T00:38:30.727Z
             </div>
         <script src="../prettify.js"></script>
         <script>

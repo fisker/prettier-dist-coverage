@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">70.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8347/11901</span>
+                <span class='fraction'>8346/11900</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">70.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8347/11901</span>
+                <span class='fraction'>8346/11900</span>
             </div>
         
             
@@ -11962,8 +11962,7 @@
 <a name='L11897'></a><a href='#L11897'>11897</a>
 <a name='L11898'></a><a href='#L11898'>11898</a>
 <a name='L11899'></a><a href='#L11899'>11899</a>
-<a name='L11900'></a><a href='#L11900'>11900</a>
-<a name='L11901'></a><a href='#L11901'>11901</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11900'></a><a href='#L11900'>11900</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22756,7 +22755,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32688,11 +32686,11 @@
   var import_unified = __toESM(require_unified(), 1);
 &nbsp;
   // src/language-markdown/parse/mdx.js
-  var IMPORT_REGEX = /^import\s/u;
-  var EXPORT_REGEX = /^export\s/u;
+  var IMPORT_REGEX = /^import\s/;
+  var EXPORT_REGEX = /^export\s/;
   var BLOCKS_REGEX = "[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)*|";
-  var COMMENT_REGEX = /&lt;!----&gt;|&lt;!---?[^&gt;-](?:-?[^-])*--&gt;/u;
-  var ES_COMMENT_REGEX = /^\{\s*\/\*(.*)\*\/\s*\}/u;
+  var COMMENT_REGEX = /&lt;!----&gt;|&lt;!---?[^&gt;-](?:-?[^-])*--&gt;/;
+  var ES_COMMENT_REGEX = /^\{\s*\/\*(.*)\*\/\s*\}/;
   var EMPTY_NEWLINE = "\n\n";
   var isImport = (text) =&gt; IMPORT_REGEX.test(text);
   var isExport = (text) =&gt; EXPORT_REGEX.test(text);
@@ -33248,7 +33246,7 @@
   var narrow_emojis_evaluate_default = "\xA9\xAE\u203C\u2049\u2122\u2139\u2194\u2195\u2196\u2197\u2198\u2199\u21A9\u21AA\u2328\u23CF\u23F1\u23F2\u23F8\u23F9\u23FA\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u2600\u2601\u2602\u2603\u2604\u260E\u2611\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638\u2639\u263A\u2640\u2642\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u2692\u2694\u2695\u2696\u2697\u2699\u269B\u269C\u26A0\u26A7\u26B0\u26B1\u26C8\u26CF\u26D1\u26D3\u26E9\u26F1\u26F7\u26F8\u26F9\u2702\u2708\u2709\u270C\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2763\u2764\u27A1\u2934\u2935\u2B05\u2B06\u2B07";
 &nbsp;
   // src/utilities/get-string-width.js
-  var notAsciiRegex = /[^\x20-\x7F]/u;
+  var notAsciiRegex = /[^\x20-\x7F]/;
   var narrowEmojisSet = new Set(narrow_emojis_evaluate_default);
   function getStringWidth(text) {
     if (!text) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -33945,7 +33943,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/universal/index.browser.js
-  var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/u).pop();</span>
+  var getFileBasename = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).split(/[/\\]/).pop();</span>
   var isUrl = <span class="fstat-no" title="function not covered" >(file) =&gt; String(file).startsWith("file:");</span>
 &nbsp;
   // src/utilities/infer-parser.js
@@ -34058,7 +34056,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const frontMatterEndIndex = endDelimiterIndex + 1 + DELIMITER_LENGTH;</span>
 <span class="cstat-no" title="statement not covered" >    const nextCharacter = text.charAt(frontMatterEndIndex + 1);</span>
-<span class="cstat-no" title="statement not covered" >    if (!/\s?/u.test(nextCharacter)) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!/\s?/.test(nextCharacter)) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const raw = text.slice(0, frontMatterEndIndex);</span>
@@ -34142,12 +34140,12 @@
   var K_REGEXP = /\p{Script_Extensions=Hangul}/u;
   function splitText(text) {
     const nodes = [];
-    const tokens = text.split(/([\t\n ]+)/u);
+    const tokens = text.split(/([\t\n ]+)/);
     for (const [index, token] of tokens.entries()) {
       if (index % 2 === 1) {
         nodes.push({
           type: "whitespace",
-          value: /\n/u.test(token) ? "\n" : " "
+          value: /\n/.test(token) ? "\n" : " "
         });
         continue;
       }
@@ -34223,7 +34221,7 @@
         -1
       );
       if (lastNode?.type === "word" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !isBetween(KIND_NON_CJK, KIND_CJK_PUNCTUATION) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; // disallow leading/trailing full-width whitespace</span>
-      ![lastNode.value, node.value].some((value) =&gt; /\u3000/u.test(value))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      ![lastNode.value, node.value].some((value) =&gt; /\u3000/.test(value))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        nodes.push({</span>
 <span class="cstat-no" title="statement not covered" >          type: "whitespace",</span>
 <span class="cstat-no" title="statement not covered" >          value: ""</span>
@@ -34240,7 +34238,7 @@
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      numberText,</span>
 <span class="cstat-no" title="statement not covered" >      leadingSpaces</span>
-<span class="cstat-no" title="statement not covered" >    } = text.match(/^\s*(?&lt;numberText&gt;\d+)(\.|\))(?&lt;leadingSpaces&gt;\s*)/u).groups;</span>
+<span class="cstat-no" title="statement not covered" >    } = text.match(/^\s*(?&lt;numberText&gt;\d+)(\.|\))(?&lt;leadingSpaces&gt;\s*)/).groups;</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >      number: Number(numberText),</span>
 <span class="cstat-no" title="statement not covered" >      leadingSpaces</span>
@@ -34291,7 +34289,7 @@
   function isPrettierIgnore(node) {
     let match;
     if (node.type === "html") {
-      match = node.value.match(/^&lt;!--\s*prettier-ignore(?:-(start|end))?\s*--&gt;$/u);
+      match = node.value.match(/^&lt;!--\s*prettier-ignore(?:-(start|end))?\s*--&gt;$/);
     } else {
       let comment;
       if (node.type === "esComment") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -34300,7 +34298,7 @@
 <span class="cstat-no" title="statement not covered" >        comment = node.children[0];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (comment) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        match = comment.value.match(/^prettier-ignore(?:-(start|end))?$/u);</span>
+<span class="cstat-no" title="statement not covered" >        match = comment.value.match(/^prettier-ignore(?:-(start|end))?$/);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
     return match <span class="branch-0 cbranch-no" title="branch not covered" >? match[1] || "next" </span>: false;
@@ -34344,7 +34342,7 @@
     methods.splice(methods.indexOf("text"), 0, "liquid");
     proto.inlineTokenizers.liquid = tokenizer;
     function tokenizer(eat, value) {
-      const match = value.match(/^(\{%.*?%\}|\{\{.*?\}\})/su);
+      const match = value.match(/^(\{%.*?%\}|\{\{.*?\}\})/s);
       if (match) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return eat(match[0])({</span>
 <span class="cstat-no" title="statement not covered" >          type: "liquidNode",</span>
@@ -34361,7 +34359,7 @@
   // src/language-markdown/parse/unified-plugins/wiki-link.js
   var wikiLink = function() {
     const entityType = "wikiLink";
-    const wikiLinkRegex = /^\[\[(?&lt;linkContents&gt;.+?)\]\]/su;
+    const wikiLinkRegex = /^\[\[(?&lt;linkContents&gt;.+?)\]\]/s;
     const proto = this.Parser.prototype;
     const methods = proto.inlineMethods;
     methods.splice(methods.indexOf("link"), 0, entityType);
@@ -34399,8 +34397,8 @@
 &nbsp;
   // src/utilities/pragma/pragma.evaluate.js
   var FORMAT_PRAGMA_TO_INSERT = "format";
-  var MARKDOWN_HAS_IGNORE_PRAGMA_REGEXP = /&lt;!--\s*@(?:noformat|noprettier)\s*--&gt;|\{\s*\/\*\s*@(?:noformat|noprettier)\s*\*\/\s*\}|&lt;!--.*\r?\n[\s\S]*(^|\n)[^\S\n]*@(?:noformat|noprettier)[^\S\n]*($|\n)[\s\S]*\n.*--&gt;/mu;
-  var MARKDOWN_HAS_PRAGMA_REGEXP = /&lt;!--\s*@(?:format|prettier)\s*--&gt;|\{\s*\/\*\s*@(?:format|prettier)\s*\*\/\s*\}|&lt;!--.*\r?\n[\s\S]*(^|\n)[^\S\n]*@(?:format|prettier)[^\S\n]*($|\n)[\s\S]*\n.*--&gt;/mu;
+  var MARKDOWN_HAS_IGNORE_PRAGMA_REGEXP = /&lt;!--\s*@(?:noformat|noprettier)\s*--&gt;|\{\s*\/\*\s*@(?:noformat|noprettier)\s*\*\/\s*\}|&lt;!--.*\r?\n[\s\S]*(^|\n)[^\S\n]*@(?:noformat|noprettier)[^\S\n]*($|\n)[\s\S]*\n.*--&gt;/m;
+  var MARKDOWN_HAS_PRAGMA_REGEXP = /&lt;!--\s*@(?:format|prettier)\s*--&gt;|\{\s*\/\*\s*@(?:format|prettier)\s*\*\/\s*\}|&lt;!--.*\r?\n[\s\S]*(^|\n)[^\S\n]*@(?:format|prettier)[^\S\n]*($|\n)[\s\S]*\n.*--&gt;/m;
 &nbsp;
   // src/language-markdown/pragma.js
   var hasPragma = <span class="fstat-no" title="function not covered" >(text) =&gt; parse_default(text).content.trimStart().match(MARKDOWN_HAS_PRAGMA_REGEXP)?.index === 0;</span>
@@ -34471,7 +34469,7 @@
 <span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        original.value.trim(),</span>
-<span class="cstat-no" title="statement not covered" >        /[\t\n]+/gu,</span>
+<span class="cstat-no" title="statement not covered" >        /[\t\n]+/g,</span>
 <span class="cstat-no" title="statement not covered" >        " "</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -34494,7 +34492,7 @@
 <span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        original.title,</span>
-<span class="cstat-no" title="statement not covered" >        /\\(?=["')])/gu,</span>
+<span class="cstat-no" title="statement not covered" >        /\\(?=["')])/g,</span>
 <span class="cstat-no" title="statement not covered" >        ""</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -34516,7 +34514,7 @@
   // src/utilities/get-max-continuous-count.js
   function getMaxContinuousCount(text, searchString) {
     let results = text.matchAll(
-      new RegExp(`(?:${escapeStringRegexp(searchString)})+`, "gu")
+      new RegExp(`(?:${escapeStringRegexp(searchString)})+`, "g")
     );
     if (!results.reduce) {
       results = [...results];
@@ -34596,7 +34594,7 @@
   // src/utilities/get-min-not-present-continuous-count.js
 <span class="fstat-no" title="function not covered" >  function getMinNotPresentContinuousCount(text, searchString) {</span>
 <span class="cstat-no" title="statement not covered" >    const matches = text.match(</span>
-<span class="cstat-no" title="statement not covered" >      new RegExp(`(${escapeStringRegexp(searchString)})+`, "gu")</span>
+<span class="cstat-no" title="statement not covered" >      new RegExp(`(${escapeStringRegexp(searchString)})+`, "g")</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    if (matches === null) {</span>
 <span class="cstat-no" title="statement not covered" >      return 1;</span>
@@ -34653,7 +34651,6 @@
     }
     return (preferredQuoteCount &gt; alternateQuoteCount <span class="branch-0 cbranch-no" title="branch not covered" >? alternate </span>: preferred).character;
   }
-  var get_preferred_quote_default = getPreferredQuote;
 &nbsp;
   // src/utilities/unexpected-node-error.js
   var UnexpectedNodeError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
@@ -35038,7 +35035,7 @@
     const isFirstSentence = <span class="fstat-no" title="function not covered" >(node2, name, index) =&gt; node2.type === "sentence" &amp;&amp; index === 0;</span>
     const isLastChildAutolink = <span class="fstat-no" title="function not covered" >(node2, name, index) =&gt; isAutolink(node2.children[index - 1]);</span>
     if (escapedValue !== node.value <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (path.match(void 0, isFirstSentence, isLastChildAutolink) || path.match(void 0, isFirstSentence, (node2, name, index) =&gt; node2.type === "emphasis" &amp;&amp; index === 0, isLastChildAutolink)))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      escapedValue = escapedValue.replace(/^(\\?[*_])+/u, (prefix) =&gt; method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >      escapedValue = escapedValue.replace(/^(\\?[*_])+/, (prefix) =&gt; method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        prefix,</span>
@@ -35107,7 +35104,7 @@
         } = path;
         const proseWrap = (
           // leading char that may cause different syntax
-          next &amp;&amp; /^&gt;|^(?:[*+-]|#{1,6}|\d+[).])$/u.test(next.value) <span class="branch-0 cbranch-no" title="branch not covered" >? "never" </span>: options2.proseWrap
+          next &amp;&amp; /^&gt;|^(?:[*+-]|#{1,6}|\d+[).])$/.test(next.value) <span class="branch-0 cbranch-no" title="branch not covered" >? "never" </span>: options2.proseWrap
         );
         return printWhitespace(path, node.value, proseWrap);
       }
@@ -35141,7 +35138,7 @@
 <span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >        const backtickCount = get_min_not_present_continuous_count_default(code, "`");</span>
 <span class="cstat-no" title="statement not covered" >        const backtickString = "`".repeat(backtickCount);</span>
-<span class="cstat-no" title="statement not covered" >        const padding = code.startsWith("`") || code.endsWith("`") || /^[\n ]/u.test(code) &amp;&amp; /[\n ]$/u.test(code) &amp;&amp; /[^\n ]/u.test(code) ? " " : "";</span>
+<span class="cstat-no" title="statement not covered" >        const padding = code.startsWith("`") || code.endsWith("`") || /^[\n ]/.test(code) &amp;&amp; /[\n ]$/.test(code) &amp;&amp; /[^\n ]/.test(code) ? " " : "";</span>
 <span class="cstat-no" title="statement not covered" >        return [backtickString, padding, code, padding, backtickString];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "wikiLink": {</span>
@@ -35153,7 +35150,7 @@
 <span class="cstat-no" title="statement not covered" >            /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >            0,</span>
 <span class="cstat-no" title="statement not covered" >            node.value,</span>
-<span class="cstat-no" title="statement not covered" >            /[\t\n]+/gu,</span>
+<span class="cstat-no" title="statement not covered" >            /[\t\n]+/g,</span>
 <span class="cstat-no" title="statement not covered" >            " "</span>
 <span class="cstat-no" title="statement not covered" >          );</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -35195,7 +35192,7 @@
           isLast
         } = path;
         const value = parent.type === "root" &amp;&amp; isLast <span class="branch-0 cbranch-no" title="branch not covered" >? node.value.trimEnd() </span>: node.value;
-        const isHtmlComment = /^&lt;!--.*--&gt;$/su.test(value);
+        const isHtmlComment = /^&lt;!--.*--&gt;$/s.test(value);
         return replaceEndOfLine(value, isHtmlComment ? hardline <span class="branch-0 cbranch-no" title="branch not covered" >: markAsRoot(literalline))</span>;
       }
       case "list":
@@ -35244,7 +35241,7 @@
       case "tableCell":
         return printChildren(path, options2, print);
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "break":</span>
-<span class="cstat-no" title="statement not covered" >        return /\s/u.test(options2.originalText[node.position.start.offset]) ? ["  ", markAsRoot(literalline)] : ["\\", hardline];</span>
+<span class="cstat-no" title="statement not covered" >        return /\s/.test(options2.originalText[node.position.start.offset]) ? ["  ", markAsRoot(literalline)] : ["\\", hardline];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "liquidNode":</span>
 <span class="cstat-no" title="statement not covered" >        return replaceEndOfLine(node.value, hardline);</span>
       // MDX
@@ -35351,7 +35348,7 @@
   };
   function printUrl(url, dangerousCharOrChars = []) {
     const dangerousChars = [" ", ...Array.isArray(dangerousCharOrChars) ? dangerousCharOrChars <span class="branch-0 cbranch-no" title="branch not covered" >: [dangerousCharOrChars]]</span>;
-    return new RegExp(dangerousChars.map((x) =&gt; escapeStringRegexp(x)).join("|"), "u").test(url) <span class="branch-0 cbranch-no" title="branch not covered" >? `&lt;${encodeUrl(url, "&lt;&gt;")}&gt;` </span>: url;
+    return new RegExp(dangerousChars.map((x) =&gt; escapeStringRegexp(x)).join("|")).test(url) <span class="branch-0 cbranch-no" title="branch not covered" >? `&lt;${encodeUrl(url, "&lt;&gt;")}&gt;` </span>: url;
   }
   function printTitle(title, options2, printSpace = true) {
     if (!title) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -35364,13 +35361,13 @@
       /* OPTIONAL_OBJECT: false */
       0,
       title,
-      /\\(?=["')])/gu,
+      /\\(?=["')])/g,
       ""
     );
     if (title.includes('"') <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; title.includes("'") <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !title.includes(")"))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return `(${title})`;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    const quote = get_preferred_quote_default(title, options2.singleQuote);
+    const quote = getPreferredQuote(title, options2.singleQuote);
     title = method_replace_all_default(
       /* OPTIONAL_OBJECT: false */
       0,
@@ -35451,7 +35448,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    split(text, captureWhitespace = false) {</span>
 <span class="cstat-no" title="statement not covered" >      const pattern = `[${escapeStringRegexp([...this.#whitespaceCharacters].join(""))}]+`;</span>
-<span class="cstat-no" title="statement not covered" >      const regexp = new RegExp(captureWhitespace ? `(${pattern})` : pattern, "u");</span>
+<span class="cstat-no" title="statement not covered" >      const regexp = new RegExp(captureWhitespace ? `(${pattern})` : pattern);</span>
 <span class="cstat-no" title="statement not covered" >      return text.split(regexp);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    hasWhitespaceCharacter(text) {</span>
@@ -35499,7 +35496,7 @@
 &nbsp;
   // src/language-markdown/print/preprocess.js
   var isSingleCharRegex = /^\\?.$/su;
-  var isNewLineBlockquoteRegex = /^\n *&gt;[ &gt;]*$/u;
+  var isNewLineBlockquoteRegex = /^\n *&gt;[ &gt;]*$/;
   function preprocess(ast, options2) {
     ast = restoreUnescapedCharacter(ast, options2);
     ast = mergeContinuousTexts(ast);
@@ -35587,7 +35584,7 @@
   function transformIndentedCodeblockAndMarkItsParentList(ast, options2) {
     return mapAst(ast, (node, index, parentStack) =&gt; {
       if (node.type === "code") {
-        const isIndented = /^\n?(?: {4,}|\t)/u.test(
+        const isIndented = /^\n?(?: {4,}|\t)/.test(
           options2.originalText.slice(
             node.position.start.offset,
             node.position.end.offset
@@ -35770,7 +35767,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-21T00:39:29.751Z
+                at 2025-12-22T00:38:30.727Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
