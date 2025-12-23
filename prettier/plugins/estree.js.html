@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.97% </span>
+                <span class="strong">50.86% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1464/2872</span>
+                <span class='fraction'>1464/2878</span>
             </div>
         
             
@@ -14088,6 +14088,27 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21884,27 +21905,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -26336,6 +26336,27 @@
   function isBooleanTypeCoercion(node) {
     return node.type === "CallExpression" &amp;&amp; !node.optional &amp;&amp; node.arguments.length === 1 &amp;&amp; node.callee.type === "Identifier" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.callee.name === "Boolean";</span>
   }
+  function isShorthandSpecifier(specifier) {
+    if (specifier.type !== "ImportSpecifier" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; specifier.type !== "ExportSpecifier")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    const {
+      local,
+      [specifier.type === "ImportSpecifier" ? "imported" <span class="branch-0 cbranch-no" title="branch not covered" >: "exported"]</span>: importedOrExported
+    } = specifier;
+    if (local.type !== importedOrExported.type || !hasSameLoc(local, importedOrExported)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    if (isStringLiteral(local)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return local.value === importedOrExported.value &amp;&amp; get_raw_default(local) === get_raw_default(importedOrExported);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    switch (local.type) {
+      case "Identifier":
+        return local.name === importedOrExported.name;
+<span class="branch-0 cbranch-no" title="branch not covered" >      default:</span>
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+  }
 &nbsp;
   // src/language-js/clean.js
   var ignoredProperties = /* @__PURE__ */ new Set(["range", "raw", "comments", "leadingComments", "trailingComments", "innerComments", "extra", "start", "end", "loc", "flags", "errors", "tokens"]);
@@ -26443,7 +26464,7 @@
     // There is no similar node in Babel AST, `a?.b`
     "ChainExpression"
   ]);
-  var isChildWontPrint = (node, [parent]) =&gt; parent?.type === "ComponentParameter" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.shorthand <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.name === node <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.local !== parent.name </span>|| parent?.type === "MatchObjectPatternProperty" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.shorthand <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.key === node </span>|| parent?.type === "ObjectProperty" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.shorthand <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.key === node <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.value !== parent.key </span>|| parent?.type === "Property" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.shorthand <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.key === node <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !isMethod(parent) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.value !== parent.key;</span>
+  var isChildWontPrint = (node, [parent]) =&gt; parent?.type === "ComponentParameter" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.shorthand <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.name === node <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.local !== parent.name </span>|| parent?.type === "MatchObjectPatternProperty" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.shorthand <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.key === node </span>|| parent?.type === "ObjectProperty" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.shorthand <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.key === node <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.value !== parent.key </span>|| parent?.type === "Property" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.shorthand <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.key === node <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !isMethod(parent) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.value !== parent.key </span>|| parent?.type === "ImportSpecifier" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isShorthandSpecifier(parent) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.imported === node <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.imported !== parent.local </span>|| parent?.type === "ExportSpecifier" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isShorthandSpecifier(parent) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.local === node <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.local !== parent.exported;</span>
   var isClassMethodCantAttachComment = (node, [parent]) =&gt; Boolean(
     node.type === "FunctionExpression" &amp;&amp; parent.type === "MethodDefinition" &amp;&amp; parent.value === node &amp;&amp; getFunctionParameters(node).length === 0 &amp;&amp; !node.returnType &amp;&amp; !is_non_empty_array_default(node.typeParameters) &amp;&amp; node.body
   );
@@ -34132,27 +34153,6 @@
       right
     ];
   }
-  function isShorthandSpecifier(specifier) {
-    if (specifier.type !== "ImportSpecifier" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; specifier.type !== "ExportSpecifier")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return false;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-    const {
-      local,
-      [specifier.type === "ImportSpecifier" ? "imported" <span class="branch-0 cbranch-no" title="branch not covered" >: "exported"]</span>: importedOrExported
-    } = specifier;
-    if (local.type !== importedOrExported.type || !hasSameLoc(local, importedOrExported)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return false;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-    if (isStringLiteral(local)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      return local.value === importedOrExported.value &amp;&amp; get_raw_default(local) === get_raw_default(importedOrExported);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-    switch (local.type) {
-      case "Identifier":
-        return local.name === importedOrExported.name;
-<span class="branch-0 cbranch-no" title="branch not covered" >      default:</span>
-<span class="cstat-no" title="statement not covered" >        return false;</span>
-    }
-  }
 &nbsp;
   // src/language-js/print/rest-element.js
 <span class="fstat-no" title="function not covered" >  function printRestOrSpreadElement(path, print3) {</span>
@@ -36817,7 +36817,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-22T00:38:30.727Z
+                at 2025-12-23T00:36:00.382Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
