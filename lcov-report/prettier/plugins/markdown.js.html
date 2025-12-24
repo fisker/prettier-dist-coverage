@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.13% </span>
+                <span class="strong">70.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8346/11900</span>
+                <span class='fraction'>8351/11905</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.95% </span>
+                <span class="strong">67.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1056/1554</span>
+                <span class='fraction'>1057/1555</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.13% </span>
+                <span class="strong">70.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8346/11900</span>
+                <span class='fraction'>8351/11905</span>
             </div>
         
             
@@ -11962,7 +11962,12 @@
 <a name='L11897'></a><a href='#L11897'>11897</a>
 <a name='L11898'></a><a href='#L11898'>11898</a>
 <a name='L11899'></a><a href='#L11899'>11899</a>
-<a name='L11900'></a><a href='#L11900'>11900</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11900'></a><a href='#L11900'>11900</a>
+<a name='L11901'></a><a href='#L11901'>11901</a>
+<a name='L11902'></a><a href='#L11902'>11902</a>
+<a name='L11903'></a><a href='#L11903'>11903</a>
+<a name='L11904'></a><a href='#L11904'>11904</a>
+<a name='L11905'></a><a href='#L11905'>11905</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22631,12 +22636,15 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-yes">160x</span>
+<span class="cline-any cline-yes">160x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -22659,9 +22667,11 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">158x</span>
-<span class="cline-any cline-yes">158x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -22675,7 +22685,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">160x</span>
-<span class="cline-any cline-yes">154x</span>
+<span class="cline-any cline-yes">152x</span>
 <span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -34529,23 +34539,30 @@
   // src/language-markdown/embed.js
   function embed(path, options2) {
     const { node } = path;
-    if (node.type === "code" &amp;&amp; node.lang !== null) {
-      const parser = infer_parser_default(options2, { language: node.lang });
-      if (parser) {
+    switch (node.type) {
+      case "code": {
+        const { lang: language } = node;
+        if (!language) {
+          return;
+        }
+        const parser = infer_parser_default(options2, { language });
+        if (!parser) {
+          return;
+        }
         return async (textToDoc) =&gt; {
-          const styleUnit = options2.__inJsTemplate <span class="branch-0 cbranch-no" title="branch not covered" >? "~" </span>: "`";
-          const style = styleUnit.repeat(
-            Math.max(3, get_max_continuous_count_default(node.value, styleUnit) + 1)
-          );
-          const newOptions = { parser };
-          if (node.lang === "ts" || node.lang === "typescript") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            newOptions.filepath = "dummy.ts";</span>
-          } else if (node.lang === "tsx") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            newOptions.filepath = "dummy.tsx";</span>
+          const textToDocOptions = { parser };
+          if (language === "ts" || language === "typescript") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            textToDocOptions.filepath = "dummy.ts";</span>
+          } else if (language === "tsx") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            textToDocOptions.filepath = "dummy.tsx";</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           const doc = await textToDoc(
             getFencedCodeBlockValue(node, options2.originalText),
-            newOptions
+            textToDocOptions
+          );
+          const styleUnit = options2.__inJsTemplate <span class="branch-0 cbranch-no" title="branch not covered" >? "~" </span>: "`";
+          const style = styleUnit.repeat(
+            Math.max(3, get_max_continuous_count_default(node.value, styleUnit) + 1)
           );
           return markAsRoot([
             style,
@@ -34558,8 +34575,6 @@
           ]);
         };
       }
-    }
-    switch (node.type) {
       // MDX
       case "import":
       case "export":
@@ -35767,7 +35782,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-23T00:35:58.375Z
+                at 2025-12-24T00:36:37.904Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
