@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.23% </span>
+                <span class="strong">22.59% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>336/1511</span>
+                <span class='fraction'>336/1487</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.23% </span>
+                <span class="strong">22.59% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>336/1511</span>
+                <span class='fraction'>336/1487</span>
             </div>
         
             
@@ -1549,31 +1549,7 @@
 <a name='L1484'></a><a href='#L1484'>1484</a>
 <a name='L1485'></a><a href='#L1485'>1485</a>
 <a name='L1486'></a><a href='#L1486'>1486</a>
-<a name='L1487'></a><a href='#L1487'>1487</a>
-<a name='L1488'></a><a href='#L1488'>1488</a>
-<a name='L1489'></a><a href='#L1489'>1489</a>
-<a name='L1490'></a><a href='#L1490'>1490</a>
-<a name='L1491'></a><a href='#L1491'>1491</a>
-<a name='L1492'></a><a href='#L1492'>1492</a>
-<a name='L1493'></a><a href='#L1493'>1493</a>
-<a name='L1494'></a><a href='#L1494'>1494</a>
-<a name='L1495'></a><a href='#L1495'>1495</a>
-<a name='L1496'></a><a href='#L1496'>1496</a>
-<a name='L1497'></a><a href='#L1497'>1497</a>
-<a name='L1498'></a><a href='#L1498'>1498</a>
-<a name='L1499'></a><a href='#L1499'>1499</a>
-<a name='L1500'></a><a href='#L1500'>1500</a>
-<a name='L1501'></a><a href='#L1501'>1501</a>
-<a name='L1502'></a><a href='#L1502'>1502</a>
-<a name='L1503'></a><a href='#L1503'>1503</a>
-<a name='L1504'></a><a href='#L1504'>1504</a>
-<a name='L1505'></a><a href='#L1505'>1505</a>
-<a name='L1506'></a><a href='#L1506'>1506</a>
-<a name='L1507'></a><a href='#L1507'>1507</a>
-<a name='L1508'></a><a href='#L1508'>1508</a>
-<a name='L1509'></a><a href='#L1509'>1509</a>
-<a name='L1510'></a><a href='#L1510'>1510</a>
-<a name='L1511'></a><a href='#L1511'>1511</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1487'></a><a href='#L1487'>1487</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2661,30 +2637,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -4244,84 +4196,60 @@
 <span class="cstat-no" title="statement not covered" >          trim2();</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        case DOC_TYPE_GROUP:</span>
-<span class="cstat-no" title="statement not covered" >          switch (mode) {</span>
-<span class="cstat-no" title="statement not covered" >            case MODE_FLAT:</span>
-<span class="cstat-no" title="statement not covered" >              if (!shouldRemeasure) {</span>
-<span class="cstat-no" title="statement not covered" >                commands.push({</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            const command = (function printGroup() {</span>
+<span class="cstat-no" title="statement not covered" >              if (mode === MODE_FLAT &amp;&amp; !shouldRemeasure) {</span>
+<span class="cstat-no" title="statement not covered" >                return {</span>
 <span class="cstat-no" title="statement not covered" >                  indent: indent2,</span>
 <span class="cstat-no" title="statement not covered" >                  mode: doc2.break ? MODE_BREAK : MODE_FLAT,</span>
 <span class="cstat-no" title="statement not covered" >                  doc: doc2.contents</span>
-<span class="cstat-no" title="statement not covered" >                });</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+<span class="cstat-no" title="statement not covered" >                };</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >            // fallthrough</span>
-<span class="cstat-no" title="statement not covered" >            case MODE_BREAK: {</span>
 <span class="cstat-no" title="statement not covered" >              shouldRemeasure = false;</span>
-<span class="cstat-no" title="statement not covered" >              const next = {</span>
+<span class="cstat-no" title="statement not covered" >              const remainingWidth = width - position;</span>
+<span class="cstat-no" title="statement not covered" >              const hasLineSuffix = lineSuffix2.length &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >              const flatCommand = {</span>
 <span class="cstat-no" title="statement not covered" >                indent: indent2,</span>
 <span class="cstat-no" title="statement not covered" >                mode: MODE_FLAT,</span>
 <span class="cstat-no" title="statement not covered" >                doc: doc2.contents</span>
 <span class="cstat-no" title="statement not covered" >              };</span>
-<span class="cstat-no" title="statement not covered" >              const remainingWidth = width - position;</span>
-<span class="cstat-no" title="statement not covered" >              const hasLineSuffix = lineSuffix2.length &gt; 0;</span>
-<span class="cstat-no" title="statement not covered" >              if (!doc2.break &amp;&amp; fits(next, commands, remainingWidth, hasLineSuffix, groupModeMap)) {</span>
-<span class="cstat-no" title="statement not covered" >                commands.push(next);</span>
-<span class="cstat-no" title="statement not covered" >              } else {</span>
-<span class="cstat-no" title="statement not covered" >                if (doc2.expandedStates) {</span>
-<span class="cstat-no" title="statement not covered" >                  const mostExpanded = method_at_default(</span>
-<span class="cstat-no" title="statement not covered" >                    /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >                    0,</span>
-<span class="cstat-no" title="statement not covered" >                    doc2.expandedStates,</span>
-<span class="cstat-no" title="statement not covered" >                    -1</span>
-<span class="cstat-no" title="statement not covered" >                  );</span>
-<span class="cstat-no" title="statement not covered" >                  if (doc2.break) {</span>
-<span class="cstat-no" title="statement not covered" >                    commands.push({</span>
-<span class="cstat-no" title="statement not covered" >                      indent: indent2,</span>
-<span class="cstat-no" title="statement not covered" >                      mode: MODE_BREAK,</span>
-<span class="cstat-no" title="statement not covered" >                      doc: mostExpanded</span>
-<span class="cstat-no" title="statement not covered" >                    });</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
-<span class="cstat-no" title="statement not covered" >                  } else {</span>
-<span class="cstat-no" title="statement not covered" >                    for (let index = 1; index &lt; doc2.expandedStates.length + 1; index++) {</span>
-<span class="cstat-no" title="statement not covered" >                      if (index &gt;= doc2.expandedStates.length) {</span>
-<span class="cstat-no" title="statement not covered" >                        commands.push({</span>
-<span class="cstat-no" title="statement not covered" >                          indent: indent2,</span>
-<span class="cstat-no" title="statement not covered" >                          mode: MODE_BREAK,</span>
-<span class="cstat-no" title="statement not covered" >                          doc: mostExpanded</span>
-<span class="cstat-no" title="statement not covered" >                        });</span>
-<span class="cstat-no" title="statement not covered" >                        break;</span>
-<span class="cstat-no" title="statement not covered" >                      } else {</span>
-<span class="cstat-no" title="statement not covered" >                        const state = doc2.expandedStates[index];</span>
-<span class="cstat-no" title="statement not covered" >                        const cmd = {</span>
-<span class="cstat-no" title="statement not covered" >                          indent: indent2,</span>
-<span class="cstat-no" title="statement not covered" >                          mode: MODE_FLAT,</span>
-<span class="cstat-no" title="statement not covered" >                          doc: state</span>
-<span class="cstat-no" title="statement not covered" >                        };</span>
-<span class="cstat-no" title="statement not covered" >                        if (fits(cmd, commands, remainingWidth, hasLineSuffix, groupModeMap)) {</span>
-<span class="cstat-no" title="statement not covered" >                          commands.push(cmd);</span>
-<span class="cstat-no" title="statement not covered" >                          break;</span>
-<span class="cstat-no" title="statement not covered" >                        }</span>
-<span class="cstat-no" title="statement not covered" >                      }</span>
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                  }</span>
-<span class="cstat-no" title="statement not covered" >                } else {</span>
-<span class="cstat-no" title="statement not covered" >                  commands.push({</span>
+<span class="cstat-no" title="statement not covered" >              if (!doc2.break &amp;&amp; fits(flatCommand, commands, remainingWidth, hasLineSuffix, groupModeMap)) {</span>
+<span class="cstat-no" title="statement not covered" >                return flatCommand;</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >              if (!doc2.expandedStates) {</span>
+<span class="cstat-no" title="statement not covered" >                return {</span>
+<span class="cstat-no" title="statement not covered" >                  indent: indent2,</span>
+<span class="cstat-no" title="statement not covered" >                  mode: MODE_BREAK,</span>
+<span class="cstat-no" title="statement not covered" >                  doc: doc2.contents</span>
+<span class="cstat-no" title="statement not covered" >                };</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >              if (!doc2.break) {</span>
+<span class="cstat-no" title="statement not covered" >                for (let index = 1; index &lt; doc2.expandedStates.length - 1; index++) {</span>
+<span class="cstat-no" title="statement not covered" >                  const flatCommand2 = {</span>
 <span class="cstat-no" title="statement not covered" >                    indent: indent2,</span>
-<span class="cstat-no" title="statement not covered" >                    mode: MODE_BREAK,</span>
-<span class="cstat-no" title="statement not covered" >                    doc: doc2.contents</span>
-<span class="cstat-no" title="statement not covered" >                  });</span>
+<span class="cstat-no" title="statement not covered" >                    mode: MODE_FLAT,</span>
+<span class="cstat-no" title="statement not covered" >                    doc: doc2.expandedStates[index]</span>
+<span class="cstat-no" title="statement not covered" >                  };</span>
+<span class="cstat-no" title="statement not covered" >                  if (fits(flatCommand2, commands, remainingWidth, hasLineSuffix, groupModeMap)) {</span>
+<span class="cstat-no" title="statement not covered" >                    return flatCommand2;</span>
+<span class="cstat-no" title="statement not covered" >                  }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              break;</span>
+<span class="cstat-no" title="statement not covered" >              return {</span>
+<span class="cstat-no" title="statement not covered" >                indent: indent2,</span>
+<span class="cstat-no" title="statement not covered" >                mode: MODE_BREAK,</span>
+<span class="cstat-no" title="statement not covered" >                doc: method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >                  /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >                  0,</span>
+<span class="cstat-no" title="statement not covered" >                  doc2.expandedStates,</span>
+<span class="cstat-no" title="statement not covered" >                  -1</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >              };</span>
+<span class="cstat-no" title="statement not covered" >            })();</span>
+<span class="cstat-no" title="statement not covered" >            commands.push(command);</span>
+<span class="cstat-no" title="statement not covered" >            if (doc2.id) {</span>
+<span class="cstat-no" title="statement not covered" >              groupModeMap[doc2.id] = command.mode;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (doc2.id) {</span>
-<span class="cstat-no" title="statement not covered" >            groupModeMap[doc2.id] = method_at_default(</span>
-<span class="cstat-no" title="statement not covered" >              /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >              0,</span>
-<span class="cstat-no" title="statement not covered" >              commands,</span>
-<span class="cstat-no" title="statement not covered" >              -1</span>
-<span class="cstat-no" title="statement not covered" >            ).mode;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        // Fills each line with as much code as possible before moving to a new</span>
@@ -4600,7 +4528,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-29T00:40:03.682Z
+                at 2025-12-30T00:38:24.277Z
             </div>
         <script src="../prettify.js"></script>
         <script>
