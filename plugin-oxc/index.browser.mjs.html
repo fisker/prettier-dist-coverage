@@ -65843,7 +65843,7 @@
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/get-text-without-comments.js</span>
 <span class="cstat-no" title="statement not covered" >function getTextWithoutComments(options2, start, end) {</span>
 <span class="cstat-no" title="statement not covered" >  let text = options2.originalText.slice(start, end);</span>
-<span class="cstat-no" title="statement not covered" >  for (const comment of options2[Symbol.for("comments")]) {</span>
+<span class="cstat-no" title="statement not covered" >  for (const comment of options2[/* @__PURE__ */ Symbol.for("comments")]) {</span>
 <span class="cstat-no" title="statement not covered" >    const commentStart = locStart(comment);</span>
 <span class="cstat-no" title="statement not covered" >    if (commentStart &gt; end) {</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
@@ -67346,9 +67346,9 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/document/printer/printer.js</span>
-<span class="cstat-no" title="statement not covered" >var MODE_BREAK = Symbol("MODE_BREAK");</span>
-<span class="cstat-no" title="statement not covered" >var MODE_FLAT = Symbol("MODE_FLAT");</span>
-<span class="cstat-no" title="statement not covered" >var DOC_FILL_PRINTED_LENGTH = Symbol("DOC_FILL_PRINTED_LENGTH");</span>
+<span class="cstat-no" title="statement not covered" >var MODE_BREAK = /* @__PURE__ */ Symbol("MODE_BREAK");</span>
+<span class="cstat-no" title="statement not covered" >var MODE_FLAT = /* @__PURE__ */ Symbol("MODE_FLAT");</span>
+<span class="cstat-no" title="statement not covered" >var DOC_FILL_PRINTED_LENGTH = /* @__PURE__ */ Symbol("DOC_FILL_PRINTED_LENGTH");</span>
 <span class="cstat-no" title="statement not covered" >function fits(next, restCommands, remainingWidth, hasLineSuffix, groupModeMap, mustBeFlat) {</span>
 <span class="cstat-no" title="statement not covered" >  if (remainingWidth === Number.POSITIVE_INFINITY) {</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
@@ -68494,7 +68494,7 @@
 <span class="cstat-no" title="statement not covered" >  if (!value) {</span>
 <span class="cstat-no" title="statement not covered" >    return {};</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const ignored = options2[Symbol.for("printedComments")];</span>
+<span class="cstat-no" title="statement not covered" >  const ignored = options2[/* @__PURE__ */ Symbol.for("printedComments")];</span>
 <span class="cstat-no" title="statement not covered" >  const comments = (value.comments || []).filter(</span>
 <span class="cstat-no" title="statement not covered" >    (comment) =&gt; !ignored.has(comment)</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
@@ -69658,7 +69658,7 @@
 <span class="cstat-no" title="statement not covered" >  const firstGroupIndex = parts.findIndex((part) =&gt; typeof part !== "string" &amp;&amp; !Array.isArray(part) &amp;&amp; part.type === DOC_TYPE_GROUP);</span>
 <span class="cstat-no" title="statement not covered" >  const headParts = parts.slice(0, firstGroupIndex === -1 ? 1 : firstGroupIndex + 1);</span>
 <span class="cstat-no" title="statement not covered" >  const rest = parts.slice(headParts.length, hasJsx ? -1 : void 0);</span>
-<span class="cstat-no" title="statement not covered" >  const groupId = Symbol("logicalChain-" + ++uid);</span>
+<span class="cstat-no" title="statement not covered" >  const groupId = /* @__PURE__ */ Symbol("logicalChain-" + ++uid);</span>
 <span class="cstat-no" title="statement not covered" >  const chain = group([</span>
 <span class="cstat-no" title="statement not covered" >    // Don't include the initial expression in the indentation</span>
 <span class="cstat-no" title="statement not covered" >    // level. The first item is guaranteed to be the first</span>
@@ -69981,7 +69981,7 @@
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    const canHaveTrailingComma = lastElem?.type !== "RestElement" &amp;&amp; !node.inexact;</span>
 <span class="cstat-no" title="statement not covered" >    const needsForcedTrailingComma = lastElem === null;</span>
-<span class="cstat-no" title="statement not covered" >    const groupId = Symbol("array");</span>
+<span class="cstat-no" title="statement not covered" >    const groupId = /* @__PURE__ */ Symbol("array");</span>
 <span class="cstat-no" title="statement not covered" >    const shouldBreak = !options2.__inJestEach &amp;&amp; elements.length &gt; 1 &amp;&amp; elements.every((element, i, elements2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      const elementType = element?.type;</span>
 <span class="cstat-no" title="statement not covered" >      if (!isArrayExpression(element) &amp;&amp; !isObjectExpression(element)) {</span>
@@ -70679,7 +70679,7 @@
 <span class="cstat-no" title="statement not covered" >      return group([group(leftDoc), operator, " ", rightDoc]);</span>
 <span class="cstat-no" title="statement not covered" >    // First break right-hand side, then after operator</span>
 <span class="cstat-no" title="statement not covered" >    case "fluid": {</span>
-<span class="cstat-no" title="statement not covered" >      const groupId = Symbol("assignment");</span>
+<span class="cstat-no" title="statement not covered" >      const groupId = /* @__PURE__ */ Symbol("assignment");</span>
 <span class="cstat-no" title="statement not covered" >      return group([</span>
 <span class="cstat-no" title="statement not covered" >        group(leftDoc),</span>
 <span class="cstat-no" title="statement not covered" >        operator,</span>
@@ -71985,7 +71985,7 @@
 <span class="cstat-no" title="statement not covered" >  })();</span>
 <span class="cstat-no" title="statement not covered" >  const shouldPutBodyOnSameLine = !hasLeadingOwnLineComment(options2.originalText, functionBody) &amp;&amp; (shouldAlwaysAddParens(functionBody) || mayBreakAfterShortPrefix(functionBody, bodyDoc, options2) || !shouldBreakChain &amp;&amp; shouldAddParensIfNotBreak(functionBody));</span>
 <span class="cstat-no" title="statement not covered" >  const isCallee = path.key === "callee" &amp;&amp; isCallLikeExpression(path.parent);</span>
-<span class="cstat-no" title="statement not covered" >  const chainGroupId = Symbol("arrow-chain");</span>
+<span class="cstat-no" title="statement not covered" >  const chainGroupId = /* @__PURE__ */ Symbol("arrow-chain");</span>
 <span class="cstat-no" title="statement not covered" >  const signaturesDoc = printArrowFunctionSignatures(path, args, {</span>
 <span class="cstat-no" title="statement not covered" >    signatureDocs,</span>
 <span class="cstat-no" title="statement not covered" >    shouldBreak: shouldBreakChain</span>
@@ -73594,9 +73594,9 @@
 <span class="cstat-no" title="statement not covered" >  if (hasComment(node, CommentCheckFlags.Dangling)) {</span>
 <span class="cstat-no" title="statement not covered" >    alternateComments.push(printDanglingComments(path, options2));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const testId = Symbol("test");</span>
-<span class="cstat-no" title="statement not covered" >  const consequentId = Symbol("consequent");</span>
-<span class="cstat-no" title="statement not covered" >  const testAndConsequentId = Symbol("test-and-consequent");</span>
+<span class="cstat-no" title="statement not covered" >  const testId = /* @__PURE__ */ Symbol("test");</span>
+<span class="cstat-no" title="statement not covered" >  const consequentId = /* @__PURE__ */ Symbol("consequent");</span>
+<span class="cstat-no" title="statement not covered" >  const testAndConsequentId = /* @__PURE__ */ Symbol("test-and-consequent");</span>
 <span class="cstat-no" title="statement not covered" >  const printedTest = isConditionalExpression ? [</span>
 <span class="cstat-no" title="statement not covered" >    wrapInParens(print3("test")),</span>
 <span class="cstat-no" title="statement not covered" >    node.test.type === "ConditionalExpression" ? breakParent : ""</span>
@@ -74714,7 +74714,7 @@
 <span class="cstat-no" title="statement not covered" >    parts.push(printTypeAnnotationProperty(path, print3, "bound"));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (node.constraint) {</span>
-<span class="cstat-no" title="statement not covered" >    const groupId = Symbol("constraint");</span>
+<span class="cstat-no" title="statement not covered" >    const groupId = /* @__PURE__ */ Symbol("constraint");</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(</span>
 <span class="cstat-no" title="statement not covered" >      " extends",</span>
 <span class="cstat-no" title="statement not covered" >      group(indent(line), { id: groupId }),</span>
@@ -74723,7 +74723,7 @@
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (node.default) {</span>
-<span class="cstat-no" title="statement not covered" >    const groupId = Symbol("default");</span>
+<span class="cstat-no" title="statement not covered" >    const groupId = /* @__PURE__ */ Symbol("default");</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(</span>
 <span class="cstat-no" title="statement not covered" >      " =",</span>
 <span class="cstat-no" title="statement not covered" >      group(indent(line), { id: groupId }),</span>
@@ -75733,7 +75733,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-30T00:38:26.845Z
+                at 2025-12-31T00:38:35.451Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.84% </span>
+                <span class="strong">52.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6048/11444</span>
+                <span class='fraction'>6051/11449</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.84% </span>
+                <span class="strong">52.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6048/11444</span>
+                <span class='fraction'>6051/11449</span>
             </div>
         
             
@@ -11506,7 +11506,12 @@
 <a name='L11441'></a><a href='#L11441'>11441</a>
 <a name='L11442'></a><a href='#L11442'>11442</a>
 <a name='L11443'></a><a href='#L11443'>11443</a>
-<a name='L11444'></a><a href='#L11444'>11444</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11444'></a><a href='#L11444'>11444</a>
+<a name='L11445'></a><a href='#L11445'>11445</a>
+<a name='L11446'></a><a href='#L11446'>11446</a>
+<a name='L11447'></a><a href='#L11447'>11447</a>
+<a name='L11448'></a><a href='#L11448'>11448</a>
+<a name='L11449'></a><a href='#L11449'>11449</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -20047,6 +20052,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -22111,6 +22119,8 @@
 <span class="cline-any cline-yes">179x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">179x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">179x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -23441,8 +23451,8 @@
   var require_symbols = __commonJS({
     "node_modules/postcss/lib/symbols.js"(exports, module) {
       "use strict";
-      module.exports.isClean = Symbol("isClean");
-      module.exports.my = Symbol("my");
+      module.exports.isClean = /* @__PURE__ */ Symbol("isClean");
+      module.exports.my = /* @__PURE__ */ Symbol("my");
     }
   });
 &nbsp;
@@ -24300,7 +24310,7 @@
       var CssSyntaxError = require_css_syntax_error();
       var PreviousMap = require_previous_map();
       var terminalHighlight = require_terminal_highlight();
-      var lineToIndexCache = Symbol("lineToIndexCache");
+      var lineToIndexCache = /* @__PURE__ */ Symbol("lineToIndexCache");
       var sourceMapAvailable = Boolean(SourceMapConsumer <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; SourceMapGenerator)</span>;
       var pathAvailable = Boolean(resolve <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isAbsolute)</span>;
       function getLineToIndex(input) {
@@ -31488,6 +31498,9 @@
 <span class="cstat-no" title="statement not covered" >    return { type: DOC_TYPE_LINE_SUFFIX, contents };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
+  // src/document/builders/line-suffix-boundary.js
+  var lineSuffixBoundary = { type: DOC_TYPE_LINE_SUFFIX_BOUNDARY };
+&nbsp;
   // src/utilities/is-non-empty-array.js
 <span class="fstat-no" title="function not covered" >  function isNonEmptyArray(object) {</span>
 <span class="cstat-no" title="statement not covered" >    return Array.isArray(object) &amp;&amp; object.length &gt; 0;</span>
@@ -31590,7 +31603,7 @@
   var unexpected_node_error_default = UnexpectedNodeError;
 &nbsp;
   // src/main/front-matter/constants.js
-  var FRONT_MATTER_MARK = Symbol.for("PRETTIER_IS_FRONT_MATTER");
+  var FRONT_MATTER_MARK = /* @__PURE__ */ Symbol.for("PRETTIER_IS_FRONT_MATTER");
 &nbsp;
   // src/main/front-matter/is-front-matter.js
   function isFrontMatter(node) {
@@ -33311,7 +33324,7 @@
     const isSCSSMapItem = isSCSSMapItemNode(path, options2);
     const shouldBreak = isConfiguration || isSCSSMapItem <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !isKey;</span>
     const shouldDedent = isConfiguration || isKey;
-    const doc = group([node.open ? print2("open") <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> indent([softline, join(line, parts)]), softline, node.close ? print2("close") <span class="branch-0 cbranch-no" title="branch not covered" >: ""]</span>, {
+    const doc = group([node.open ? print2("open") <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> indent([softline, join(line, parts)]), softline, lineSuffixBoundary, node.close ? print2("close") <span class="branch-0 cbranch-no" title="branch not covered" >: ""]</span>, {
       shouldBreak
     });
     return shouldDedent <span class="branch-0 cbranch-no" title="branch not covered" >? dedent(doc) </span>: doc;
@@ -33426,7 +33439,7 @@
 <span class="cstat-no" title="statement not covered" >            return [node.name, typeof node.params === "string" ? node.params : print2("params"), isTemplatePlaceholderNodeWithoutSemiColon ? "" : ";"];</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
           if (node.variable) {
-            return ["@", node.name, ": ", node.value <span class="branch-0 cbranch-no" title="branch not covered" >? print2("value") </span>: "", node.raws.between.trim() <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.between.trim() + " " </span>: "", node.nodes ? ["{", node.nodes.length &gt; 0 ? indent([softline, sequence_default(path, options2, print2)]) <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> softline, "}"] <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> isTemplatePlaceholderNodeWithoutSemiColon <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: ";"];
+            return ["@", node.name, ": ", node.value <span class="branch-0 cbranch-no" title="branch not covered" >? [print2("value"), lineSuffixBoundary] </span>: "", node.raws.between.trim() <span class="branch-0 cbranch-no" title="branch not covered" >? node.raws.between.trim() + " " </span>: "", node.nodes ? ["{", node.nodes.length &gt; 0 ? indent([softline, sequence_default(path, options2, print2)]) <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> softline, "}"] <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> isTemplatePlaceholderNodeWithoutSemiColon <span class="branch-0 cbranch-no" title="branch not covered" >? "" </span>: ";"];
           }
         }
         const isImportUnknownValueEndsWithSemiColon = node.name === "import" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.params?.type === "value-unknown" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; node.params.value.endsWith(";");</span>
@@ -33553,8 +33566,10 @@
       case "value-value":
       case "value-root":
         return print2("group");
-<span class="branch-0 cbranch-no" title="branch not covered" >      case "value-comment":</span>
-<span class="cstat-no" title="statement not covered" >        return options2.originalText.slice(locStart(node), locEnd(node));</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "value-comment": {</span>
+<span class="cstat-no" title="statement not covered" >        const text = options2.originalText.slice(locStart(node), locEnd(node));</span>
+<span class="cstat-no" title="statement not covered" >        return node.inline ? lineSuffix(text.trimEnd()) : text;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
       case "value-comma_group":
         return comma_separated_value_group_default(path, options2, print2);
       case "value-paren_group":
@@ -34399,7 +34414,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-30T00:38:26.845Z
+                at 2025-12-31T00:38:35.451Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
