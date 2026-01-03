@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25221</span>
+                <span class='fraction'>0/25247</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25221</span>
+                <span class='fraction'>0/25247</span>
             </div>
         
             
@@ -25284,7 +25284,59 @@
 <a name='L25219'></a><a href='#L25219'>25219</a>
 <a name='L25220'></a><a href='#L25220'>25220</a>
 <a name='L25221'></a><a href='#L25221'>25221</a>
-<a name='L25222'></a><a href='#L25222'>25222</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25222'></a><a href='#L25222'>25222</a>
+<a name='L25223'></a><a href='#L25223'>25223</a>
+<a name='L25224'></a><a href='#L25224'>25224</a>
+<a name='L25225'></a><a href='#L25225'>25225</a>
+<a name='L25226'></a><a href='#L25226'>25226</a>
+<a name='L25227'></a><a href='#L25227'>25227</a>
+<a name='L25228'></a><a href='#L25228'>25228</a>
+<a name='L25229'></a><a href='#L25229'>25229</a>
+<a name='L25230'></a><a href='#L25230'>25230</a>
+<a name='L25231'></a><a href='#L25231'>25231</a>
+<a name='L25232'></a><a href='#L25232'>25232</a>
+<a name='L25233'></a><a href='#L25233'>25233</a>
+<a name='L25234'></a><a href='#L25234'>25234</a>
+<a name='L25235'></a><a href='#L25235'>25235</a>
+<a name='L25236'></a><a href='#L25236'>25236</a>
+<a name='L25237'></a><a href='#L25237'>25237</a>
+<a name='L25238'></a><a href='#L25238'>25238</a>
+<a name='L25239'></a><a href='#L25239'>25239</a>
+<a name='L25240'></a><a href='#L25240'>25240</a>
+<a name='L25241'></a><a href='#L25241'>25241</a>
+<a name='L25242'></a><a href='#L25242'>25242</a>
+<a name='L25243'></a><a href='#L25243'>25243</a>
+<a name='L25244'></a><a href='#L25244'>25244</a>
+<a name='L25245'></a><a href='#L25245'>25245</a>
+<a name='L25246'></a><a href='#L25246'>25246</a>
+<a name='L25247'></a><a href='#L25247'>25247</a>
+<a name='L25248'></a><a href='#L25248'>25248</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -67345,6 +67397,58 @@
 <span class="cstat-no" title="statement not covered" >  return { text: trimmed, count: length };</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/document/printer/print-result.js</span>
+<span class="cstat-no" title="statement not covered" >var printResult = class {</span>
+<span class="cstat-no" title="statement not covered" >  /** @type {string[]} */</span>
+<span class="cstat-no" title="statement not covered" >  #settledTexts = [];</span>
+<span class="cstat-no" title="statement not covered" >  #unsettledText = "";</span>
+<span class="cstat-no" title="statement not covered" >  #settledTextLength = 0;</span>
+<span class="cstat-no" title="statement not covered" >  /** @type {number[]} */</span>
+<span class="cstat-no" title="statement not covered" >  #settledPositions = [];</span>
+<span class="cstat-no" title="statement not covered" >  /** @type {number[]} */</span>
+<span class="cstat-no" title="statement not covered" >  #unsettledPositions = [];</span>
+<span class="cstat-no" title="statement not covered" >  #settle() {</span>
+<span class="cstat-no" title="statement not covered" >    const text = this.#unsettledText;</span>
+<span class="cstat-no" title="statement not covered" >    if (text !== "") {</span>
+<span class="cstat-no" title="statement not covered" >      this.#settledTexts.push(text);</span>
+<span class="cstat-no" title="statement not covered" >      this.#settledTextLength += text.length;</span>
+<span class="cstat-no" title="statement not covered" >      this.#unsettledText = "";</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    for (const position of this.#unsettledPositions) {</span>
+<span class="cstat-no" title="statement not covered" >      this.#settledPositions.push(Math.min(position, this.#settledTextLength));</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    this.#unsettledPositions.length = 0;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  markPosition() {</span>
+<span class="cstat-no" title="statement not covered" >    if (this.#settledPositions.length + this.#unsettledPositions.length &gt;= 2) {</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("There are too many 'cursor' in doc.");</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    this.#unsettledPositions.push(</span>
+<span class="cstat-no" title="statement not covered" >      this.#settledTextLength + this.#unsettledText.length</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  /**</span>
+<span class="cstat-no" title="statement not covered" >  @param {string} text</span>
+<span class="cstat-no" title="statement not covered" >  */</span>
+<span class="cstat-no" title="statement not covered" >  write(text) {</span>
+<span class="cstat-no" title="statement not covered" >    this.#unsettledText += text;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  trim() {</span>
+<span class="cstat-no" title="statement not covered" >    const { text: trimmed, count } = trimIndentation(this.#unsettledText);</span>
+<span class="cstat-no" title="statement not covered" >    this.#unsettledText = trimmed;</span>
+<span class="cstat-no" title="statement not covered" >    this.#settle();</span>
+<span class="cstat-no" title="statement not covered" >    return count;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  finish() {</span>
+<span class="cstat-no" title="statement not covered" >    this.#settle();</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >      text: this.#settledTexts.join(""),</span>
+<span class="cstat-no" title="statement not covered" >      positions: this.#settledPositions</span>
+<span class="cstat-no" title="statement not covered" >    };</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" >var print_result_default = printResult;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/document/printer/printer.js</span>
 <span class="cstat-no" title="statement not covered" >var MODE_BREAK = /* @__PURE__ */ Symbol("MODE_BREAK");</span>
 <span class="cstat-no" title="statement not covered" >var MODE_FLAT = /* @__PURE__ */ Symbol("MODE_FLAT");</span>
@@ -67470,13 +67574,9 @@
 <span class="cstat-no" title="statement not covered" >    mode: MODE_BREAK,</span>
 <span class="cstat-no" title="statement not covered" >    doc</span>
 <span class="cstat-no" title="statement not covered" >  }];</span>
-<span class="cstat-no" title="statement not covered" >  let output = "";</span>
 <span class="cstat-no" title="statement not covered" >  let shouldRemeasure = false;</span>
 <span class="cstat-no" title="statement not covered" >  const lineSuffix2 = [];</span>
-<span class="cstat-no" title="statement not covered" >  const cursorPositions = [];</span>
-<span class="cstat-no" title="statement not covered" >  const settledOutput = [];</span>
-<span class="cstat-no" title="statement not covered" >  const settledCursorPositions = [];</span>
-<span class="cstat-no" title="statement not covered" >  let settledTextLength = 0;</span>
+<span class="cstat-no" title="statement not covered" >  const result = new print_result_default();</span>
 <span class="cstat-no" title="statement not covered" >  propagateBreaks(doc);</span>
 <span class="cstat-no" title="statement not covered" >  while (commands.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
@@ -67494,7 +67594,7 @@
 <span class="cstat-no" title="statement not covered" >          newLine</span>
 <span class="cstat-no" title="statement not covered" >        ) : doc2;</span>
 <span class="cstat-no" title="statement not covered" >        if (formatted2) {</span>
-<span class="cstat-no" title="statement not covered" >          output += formatted2;</span>
+<span class="cstat-no" title="statement not covered" >          result.write(formatted2);</span>
 <span class="cstat-no" title="statement not covered" >          if (commands.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >            position += get_string_width_default(formatted2);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -67511,10 +67611,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      case DOC_TYPE_CURSOR:</span>
-<span class="cstat-no" title="statement not covered" >        if (cursorPositions.length &gt;= 2) {</span>
-<span class="cstat-no" title="statement not covered" >          throw new Error("There are too many 'cursor' in doc.");</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        cursorPositions.push(settledTextLength + output.length);</span>
+<span class="cstat-no" title="statement not covered" >        result.markPosition();</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      case DOC_TYPE_INDENT:</span>
 <span class="cstat-no" title="statement not covered" >        commands.push({</span>
@@ -67531,7 +67628,7 @@
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      case DOC_TYPE_TRIM:</span>
-<span class="cstat-no" title="statement not covered" >        trim();</span>
+<span class="cstat-no" title="statement not covered" >        position -= result.trim();</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      case DOC_TYPE_GROUP:</span>
 <span class="cstat-no" title="statement not covered" >        {</span>
@@ -67730,7 +67827,7 @@
 <span class="cstat-no" title="statement not covered" >          case MODE_FLAT:</span>
 <span class="cstat-no" title="statement not covered" >            if (!doc2.hard) {</span>
 <span class="cstat-no" title="statement not covered" >              if (!doc2.soft) {</span>
-<span class="cstat-no" title="statement not covered" >                output += " ";</span>
+<span class="cstat-no" title="statement not covered" >                result.write(" ");</span>
 <span class="cstat-no" title="statement not covered" >                position += 1;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              break;</span>
@@ -67749,17 +67846,17 @@
 <span class="cstat-no" title="statement not covered" >              break;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            if (doc2.literal) {</span>
-<span class="cstat-no" title="statement not covered" >              output += newLine;</span>
+<span class="cstat-no" title="statement not covered" >              result.write(newLine);</span>
 <span class="cstat-no" title="statement not covered" >              position = 0;</span>
 <span class="cstat-no" title="statement not covered" >              if (indent2.root) {</span>
 <span class="cstat-no" title="statement not covered" >                if (indent2.root.value) {</span>
-<span class="cstat-no" title="statement not covered" >                  output += indent2.root.value;</span>
+<span class="cstat-no" title="statement not covered" >                  result.write(indent2.root.value);</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                position = indent2.root.length;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >              trim();</span>
-<span class="cstat-no" title="statement not covered" >              output += newLine + indent2.value;</span>
+<span class="cstat-no" title="statement not covered" >              result.trim();</span>
+<span class="cstat-no" title="statement not covered" >              result.write(newLine + indent2.value);</span>
 <span class="cstat-no" title="statement not covered" >              position = indent2.length;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
@@ -67782,40 +67879,21 @@
 <span class="cstat-no" title="statement not covered" >      lineSuffix2.length = 0;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const formatted = settledOutput.join("") + output;</span>
-<span class="cstat-no" title="statement not covered" >  const finalCursorPositions = [...settledCursorPositions, ...cursorPositions];</span>
-<span class="cstat-no" title="statement not covered" >  if (finalCursorPositions.length !== 2) {</span>
+<span class="cstat-no" title="statement not covered" >  const {</span>
+<span class="cstat-no" title="statement not covered" >    text: formatted,</span>
+<span class="cstat-no" title="statement not covered" >    positions: cursorPositions</span>
+<span class="cstat-no" title="statement not covered" >  } = result.finish();</span>
+<span class="cstat-no" title="statement not covered" >  if (cursorPositions.length !== 2) {</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >      formatted</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const cursorNodeStart = finalCursorPositions[0];</span>
+<span class="cstat-no" title="statement not covered" >  const [cursorNodeStart, cursorNodeEnd] = cursorPositions;</span>
 <span class="cstat-no" title="statement not covered" >  return {</span>
 <span class="cstat-no" title="statement not covered" >    formatted,</span>
 <span class="cstat-no" title="statement not covered" >    cursorNodeStart,</span>
-<span class="cstat-no" title="statement not covered" >    cursorNodeText: formatted.slice(cursorNodeStart, method_at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >      0,</span>
-<span class="cstat-no" title="statement not covered" >      finalCursorPositions,</span>
-<span class="cstat-no" title="statement not covered" >      -1</span>
-<span class="cstat-no" title="statement not covered" >    ))</span>
+<span class="cstat-no" title="statement not covered" >    cursorNodeText: formatted.slice(cursorNodeStart, cursorNodeEnd)</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" >  function trim() {</span>
-<span class="cstat-no" title="statement not covered" >    const {</span>
-<span class="cstat-no" title="statement not covered" >      text: trimmed,</span>
-<span class="cstat-no" title="statement not covered" >      count</span>
-<span class="cstat-no" title="statement not covered" >    } = trimIndentation(output);</span>
-<span class="cstat-no" title="statement not covered" >    if (trimmed) {</span>
-<span class="cstat-no" title="statement not covered" >      settledOutput.push(trimmed);</span>
-<span class="cstat-no" title="statement not covered" >      settledTextLength += trimmed.length;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    output = "";</span>
-<span class="cstat-no" title="statement not covered" >    position -= count;</span>
-<span class="cstat-no" title="statement not covered" >    if (cursorPositions.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      settledCursorPositions.push(...cursorPositions.map((position2) =&gt; Math.min(position2, settledTextLength)));</span>
-<span class="cstat-no" title="statement not covered" >      cursorPositions.length = 0;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/utilities/get-alignment-size.js</span>
@@ -75733,7 +75811,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-02T00:37:35.769Z
+                at 2026-01-03T00:37:42.919Z
             </div>
         <script src="../prettify.js"></script>
         <script>
