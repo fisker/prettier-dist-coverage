@@ -4389,6 +4389,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -5309,14 +5317,6 @@
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">23x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -6925,7 +6925,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return this.split(pattern).join(replacement);</span>
   };
-  var replaceAll = createMethodShim("replaceAll", function() {
+  var replaceAll = /* @__PURE__ */ createMethodShim("replaceAll", function() {
 <span class="cstat-no" title="statement not covered" >    if (typeof this === "string") {</span>
 <span class="cstat-no" title="statement not covered" >      return stringReplaceAll;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -7439,12 +7439,12 @@
 ${text}`;
 &nbsp;
   // src/language-graphql/print/description.js
-  function printDescription(path, options2, print) {
+  function printDescription(path, options2, print2) {
     const { node } = path;
     if (!node.description) {
       return "";
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const parts = [print("description")];</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const parts = [print2("description")];</span></span>
     if (node.kind === "InputValueDefinition" &amp;&amp; !node.description.block) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(line);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
@@ -7455,24 +7455,24 @@ ${text}`;
   var description_default = printDescription;
 &nbsp;
   // src/language-graphql/printer-graphql.js
-  function genericPrint(path, options2, print) {
+  function genericPrint(path, options2, print2) {
     const {
       node
     } = path;
     switch (node.kind) {
       case "Document":
-        return [...join(hardline, printSequence(path, options2, print, "definitions")), hardline];
+        return [...join(hardline, printSequence(path, options2, print2, "definitions")), hardline];
       case "OperationDefinition": {
         const hasOperation = options2.originalText[locStart(node)] !== "{";
         const hasName = Boolean(node.name);
-        return [description_default(path, options2, print), hasOperation ? node.operation <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> hasOperation &amp;&amp; hasName ? [" ", print("name")] <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> hasOperation &amp;&amp; !hasName <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; is_non_empty_array_default(node.variableDefinitions) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? " " </span>: "", printVariableDefinitions(path, print), printDirectives(path, print, node), !hasOperation <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !hasName <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: " ", print("selectionSet")];
+        return [description_default(path, options2, print2), hasOperation ? node.operation <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> hasOperation &amp;&amp; hasName ? [" ", print2("name")] <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> hasOperation &amp;&amp; !hasName <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; is_non_empty_array_default(node.variableDefinitions) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? " " </span>: "", printVariableDefinitions(path, print2), printDirectives(path, print2, node), !hasOperation <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !hasName <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: " ", print2("selectionSet")];
       }
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "FragmentDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print), "fragment ", print("name"), printVariableDefinitions(path, print), " on ", print("typeCondition"), printDirectives(path, print, node), " ", print("selectionSet")];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "fragment ", print2("name"), printVariableDefinitions(path, print2), " on ", print2("typeCondition"), printDirectives(path, print2, node), " ", print2("selectionSet")];</span>
       case "SelectionSet":
-        return ["{", indent([hardline, join(hardline, printSequence(path, options2, print, "selections"))]), hardline, "}"];
+        return ["{", indent([hardline, join(hardline, printSequence(path, options2, print2, "selections"))]), hardline, "}"];
       case "Field":
-        return group([node.alias <span class="branch-0 cbranch-no" title="branch not covered" >? [print("alias"), ": "] </span>: "", print("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print, "arguments"))]), softline, ")"]) : "", printDirectives(path, print, node), node.selectionSet ? " " : "", print("selectionSet")]);
+        return group([node.alias <span class="branch-0 cbranch-no" title="branch not covered" >? [print2("alias"), ": "] </span>: "", print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", printDirectives(path, print2, node), node.selectionSet ? " " : "", print2("selectionSet")]);
       case "Name":
         return node.value;
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "StringValue":</span>
@@ -7514,22 +7514,22 @@ ${text}`;
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "NullValue":</span>
 <span class="cstat-no" title="statement not covered" >        return "null";</span>
       case "Variable":
-        return ["$", print("name")];
+        return ["$", print2("name")];
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ListValue":</span>
-<span class="cstat-no" title="statement not covered" >        return group(["[", indent([softline, join([ifBreak("", ", "), softline], path.map(print, "values"))]), softline, "]"]);</span>
+<span class="cstat-no" title="statement not covered" >        return group(["[", indent([softline, join([ifBreak("", ", "), softline], path.map(print2, "values"))]), softline, "]"]);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ObjectValue": {</span>
 <span class="cstat-no" title="statement not covered" >        const bracketSpace = options2.bracketSpacing &amp;&amp; node.fields.length &gt; 0 ? " " : "";</span>
-<span class="cstat-no" title="statement not covered" >        return group(["{", bracketSpace, indent([softline, join([ifBreak("", ", "), softline], path.map(print, "fields"))]), softline, ifBreak("", bracketSpace), "}"]);</span>
+<span class="cstat-no" title="statement not covered" >        return group(["{", bracketSpace, indent([softline, join([ifBreak("", ", "), softline], path.map(print2, "fields"))]), softline, ifBreak("", bracketSpace), "}"]);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ObjectField":</span>
       case "Argument":
-        return [print("name"), ": ", print("value")];
+        return [print2("name"), ": ", print2("value")];
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "Directive":</span>
-<span class="cstat-no" title="statement not covered" >        return ["@", print("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print, "arguments"))]), softline, ")"]) : ""];</span>
+<span class="cstat-no" title="statement not covered" >        return ["@", print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : ""];</span>
       case "NamedType":
-        return print("name");
+        return print2("name");
       case "VariableDefinition":
-        return [description_default(path, options2, print), print("variable"), ": ", print("type"), node.defaultValue <span class="branch-0 cbranch-no" title="branch not covered" >? [" = ", print("defaultValue")] </span>: "", printDirectives(path, print, node)];
+        return [description_default(path, options2, print2), print2("variable"), ": ", print2("type"), node.defaultValue <span class="branch-0 cbranch-no" title="branch not covered" >? [" = ", print2("defaultValue")] </span>: "", printDirectives(path, print2, node)];
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ObjectTypeExtension":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ObjectTypeDefinition":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "InputObjectTypeExtension":</span>
@@ -7541,7 +7541,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >        } = node;</span>
 <span class="cstat-no" title="statement not covered" >        const parts = [];</span>
 <span class="cstat-no" title="statement not covered" >        if (kind.endsWith("TypeDefinition")) {</span>
-<span class="cstat-no" title="statement not covered" >          parts.push(description_default(path, options2, print));</span>
+<span class="cstat-no" title="statement not covered" >          parts.push(description_default(path, options2, print2));</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          parts.push("extend ");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -7552,67 +7552,67 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          parts.push("interface");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        parts.push(" ", print("name"));</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(" ", print2("name"));</span>
 <span class="cstat-no" title="statement not covered" >        if (!kind.startsWith("InputObjectType") &amp;&amp; node.interfaces.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >          parts.push(" implements ", ...printInterfaces(path, options2, print));</span>
+<span class="cstat-no" title="statement not covered" >          parts.push(" implements ", ...printInterfaces(path, options2, print2));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        parts.push(printDirectives(path, print, node));</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(printDirectives(path, print2, node));</span>
 <span class="cstat-no" title="statement not covered" >        if (node.fields.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >          parts.push([" {", indent([hardline, join(hardline, printSequence(path, options2, print, "fields"))]), hardline, "}"]);</span>
+<span class="cstat-no" title="statement not covered" >          parts.push([" {", indent([hardline, join(hardline, printSequence(path, options2, print2, "fields"))]), hardline, "}"]);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return parts;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "FieldDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print), print("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print, "arguments"))]), softline, ")"]) : "", ": ", print("type"), printDirectives(path, print, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", ": ", print2("type"), printDirectives(path, print2, node)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "DirectiveDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print), "directive ", "@", print("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print, "arguments"))]), softline, ")"]) : "", node.repeatable ? " repeatable" : "", " on ", ...join(" | ", path.map(print, "locations"))];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "directive ", "@", print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", node.repeatable ? " repeatable" : "", " on ", ...join(" | ", path.map(print2, "locations"))];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumTypeExtension":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumTypeDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print), node.kind === "EnumTypeExtension" ? "extend " : "", "enum ", print("name"), printDirectives(path, print, node), node.values.length &gt; 0 ? [" {", indent([hardline, join(hardline, printSequence(path, options2, print, "values"))]), hardline, "}"] : ""];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), node.kind === "EnumTypeExtension" ? "extend " : "", "enum ", print2("name"), printDirectives(path, print2, node), node.values.length &gt; 0 ? [" {", indent([hardline, join(hardline, printSequence(path, options2, print2, "values"))]), hardline, "}"] : ""];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumValueDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print), print("name"), printDirectives(path, print, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), printDirectives(path, print2, node)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "InputValueDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print), print("name"), ": ", print("type"), node.defaultValue ? [" = ", print("defaultValue")] : "", printDirectives(path, print, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), ": ", print2("type"), node.defaultValue ? [" = ", print2("defaultValue")] : "", printDirectives(path, print2, node)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "SchemaExtension":</span>
-<span class="cstat-no" title="statement not covered" >        return ["extend schema", printDirectives(path, print, node), ...node.operationTypes.length &gt; 0 ? [" {", indent([hardline, join(hardline, printSequence(path, options2, print, "operationTypes"))]), hardline, "}"] : []];</span>
+<span class="cstat-no" title="statement not covered" >        return ["extend schema", printDirectives(path, print2, node), ...node.operationTypes.length &gt; 0 ? [" {", indent([hardline, join(hardline, printSequence(path, options2, print2, "operationTypes"))]), hardline, "}"] : []];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "SchemaDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print), "schema", printDirectives(path, print, node), " {", node.operationTypes.length &gt; 0 ? indent([hardline, join(hardline, printSequence(path, options2, print, "operationTypes"))]) : "", hardline, "}"];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "schema", printDirectives(path, print2, node), " {", node.operationTypes.length &gt; 0 ? indent([hardline, join(hardline, printSequence(path, options2, print2, "operationTypes"))]) : "", hardline, "}"];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "OperationTypeDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [node.operation, ": ", print("type")];</span>
+<span class="cstat-no" title="statement not covered" >        return [node.operation, ": ", print2("type")];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "FragmentSpread":</span>
-<span class="cstat-no" title="statement not covered" >        return ["...", print("name"), printDirectives(path, print, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return ["...", print2("name"), printDirectives(path, print2, node)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "InlineFragment":</span>
-<span class="cstat-no" title="statement not covered" >        return ["...", node.typeCondition ? [" on ", print("typeCondition")] : "", printDirectives(path, print, node), " ", print("selectionSet")];</span>
+<span class="cstat-no" title="statement not covered" >        return ["...", node.typeCondition ? [" on ", print2("typeCondition")] : "", printDirectives(path, print2, node), " ", print2("selectionSet")];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "UnionTypeExtension":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "UnionTypeDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return group([description_default(path, options2, print), group([node.kind === "UnionTypeExtension" ? "extend " : "", "union ", print("name"), printDirectives(path, print, node), node.types.length &gt; 0 ? [" =", ifBreak("", " "), indent([ifBreak([line, "| "]), join([line, "| "], path.map(print, "types"))])] : ""])]);</span>
+<span class="cstat-no" title="statement not covered" >        return group([description_default(path, options2, print2), group([node.kind === "UnionTypeExtension" ? "extend " : "", "union ", print2("name"), printDirectives(path, print2, node), node.types.length &gt; 0 ? [" =", ifBreak("", " "), indent([ifBreak([line, "| "]), join([line, "| "], path.map(print2, "types"))])] : ""])]);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ScalarTypeExtension":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ScalarTypeDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print), node.kind === "ScalarTypeExtension" ? "extend " : "", "scalar ", print("name"), printDirectives(path, print, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), node.kind === "ScalarTypeExtension" ? "extend " : "", "scalar ", print2("name"), printDirectives(path, print2, node)];</span>
       case "NonNullType":
-        return [print("type"), "!"];
+        return [print2("type"), "!"];
       case "ListType":
-        return ["[", print("type"), "]"];
+        return ["[", print2("type"), "]"];
 <span class="branch-0 cbranch-no" title="branch not covered" >      default:</span>
 <span class="cstat-no" title="statement not covered" >        throw new unexpected_node_error_default(node, "Graphql", "kind");</span>
     }
   }
-  function printDirectives(path, print, node) {
+  function printDirectives(path, print2, node) {
     if (node.directives.length === 0) {
       return "";
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const printed = join(line, path.map(print, "directives"));</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const printed = join(line, path.map(print2, "directives"));</span></span>
     if (node.kind === "FragmentDefinition" || node.kind === "OperationDefinition") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return group([line, printed]);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return [" ", group(indent([softline, printed]))];</span>
   }
-  function printSequence(path, options2, print, property) {
+  function printSequence(path, options2, print2, property) {
     return path.map(({
       isLast,
       node
     }) =&gt; {
-      const printed = print();
+      const printed = print2();
       if (!isLast &amp;&amp; is_next_line_empty_default(options2.originalText, locEnd(node))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return [printed, hardline];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -7630,7 +7630,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    throw new Error("Not a comment: " + JSON.stringify(comment));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  function printInterfaces(path, options2, print) {</span>
+<span class="fstat-no" title="function not covered" >  function printInterfaces(path, options2, print2) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      node</span>
 <span class="cstat-no" title="statement not covered" >    } = path;</span>
@@ -7638,7 +7638,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      interfaces</span>
 <span class="cstat-no" title="statement not covered" >    } = node;</span>
-<span class="cstat-no" title="statement not covered" >    const printed = path.map(print, "interfaces");</span>
+<span class="cstat-no" title="statement not covered" >    const printed = path.map(print2, "interfaces");</span>
 <span class="cstat-no" title="statement not covered" >    for (let index = 0; index &lt; interfaces.length; index++) {</span>
 <span class="cstat-no" title="statement not covered" >      const interfaceNode = interfaces[index];</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(printed[index]);</span>
@@ -7651,14 +7651,14 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return parts;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  function printVariableDefinitions(path, print) {
+  function printVariableDefinitions(path, print2) {
     const {
       node
     } = path;
     if (!is_non_empty_array_default(node.variableDefinitions)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    return group(["(", indent([softline, join([ifBreak("", ", "), softline], path.map(print, "variableDefinitions"))]), softline, ")"]);
+    return group(["(", indent([softline, join([ifBreak("", ", "), softline], path.map(print2, "variableDefinitions"))]), softline, ")"]);
   }
 <span class="fstat-no" title="function not covered" >  function clean(original, cloned) {</span>
 <span class="cstat-no" title="statement not covered" >    if (original.kind === "StringValue" &amp;&amp; original.block &amp;&amp; !original.value.includes("\n")) {</span>
@@ -7781,6 +7781,14 @@ ${text}`;
   __export(parser_graphql_exports, {
     graphql: () =&gt; graphql
   });
+&nbsp;
+  // node_modules/graphql/jsutils/devAssert.mjs
+<span class="fstat-no" title="function not covered" >  function devAssert(condition, message) {</span>
+<span class="cstat-no" title="statement not covered" >    const booleanCondition = Boolean(condition);</span>
+<span class="cstat-no" title="statement not covered" >    if (!booleanCondition) {</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error(message);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // node_modules/graphql/jsutils/isObjectLike.mjs
 <span class="fstat-no" title="function not covered" >  function isObjectLike(value) {</span>
@@ -8706,14 +8714,6 @@ ${text}`;
       body.slice(start, position)
     );
   }
-&nbsp;
-  // node_modules/graphql/jsutils/devAssert.mjs
-<span class="fstat-no" title="function not covered" >  function devAssert(condition, message) {</span>
-<span class="cstat-no" title="statement not covered" >    const booleanCondition = Boolean(condition);</span>
-<span class="cstat-no" title="statement not covered" >    if (!booleanCondition) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error(message);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // node_modules/graphql/jsutils/inspect.mjs
   var MAX_ARRAY_LENGTH = 10;
@@ -10221,14 +10221,14 @@ ${text}`;
     allowLegacyFragmentVariables: true
   };
 <span class="fstat-no" title="function not covered" >  function createParseError(error) {</span>
-<span class="cstat-no" title="statement not covered" >    if (error?.name === "GraphQLError") {</span>
-<span class="cstat-no" title="statement not covered" >      const {</span>
-<span class="cstat-no" title="statement not covered" >        message,</span>
-<span class="cstat-no" title="statement not covered" >        locations: [start]</span>
-<span class="cstat-no" title="statement not covered" >      } = error;</span>
-<span class="cstat-no" title="statement not covered" >      return parser_create_error_default(message, { loc: { start }, cause: error });</span>
+<span class="cstat-no" title="statement not covered" >    if (!(error instanceof GraphQLError)) {</span>
+<span class="cstat-no" title="statement not covered" >      return error;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return error;</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      message,</span>
+<span class="cstat-no" title="statement not covered" >      locations: [start]</span>
+<span class="cstat-no" title="statement not covered" >    } = error;</span>
+<span class="cstat-no" title="statement not covered" >    return parser_create_error_default(message, { loc: { start }, cause: error });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function parse2(text) {
     let ast;
@@ -10261,7 +10261,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-10T00:37:11.335Z
+                at 2026-01-11T00:41:45.224Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

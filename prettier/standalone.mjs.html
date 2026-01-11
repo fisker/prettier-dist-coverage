@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.12% </span>
+                <span class="strong">55.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3350/6077</span>
+                <span class='fraction'>3352/6080</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.12% </span>
+                <span class="strong">55.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3350/6077</span>
+                <span class='fraction'>3352/6080</span>
             </div>
         
             
@@ -6140,7 +6140,10 @@
 <a name='L6075'></a><a href='#L6075'>6075</a>
 <a name='L6076'></a><a href='#L6076'>6076</a>
 <a name='L6077'></a><a href='#L6077'>6077</a>
-<a name='L6078'></a><a href='#L6078'>6078</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L6078'></a><a href='#L6078'>6078</a>
+<a name='L6079'></a><a href='#L6079'>6079</a>
+<a name='L6080'></a><a href='#L6080'>6080</a>
+<a name='L6081'></a><a href='#L6081'>6081</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11426,6 +11429,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12688,7 +12694,7 @@ var stringReplaceAll = String.prototype.replaceAll <span class="branch-0 cbranch
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return this.split(pattern).join(replacement);</span>
 };
-var replaceAll = createMethodShim("replaceAll", function() {
+var replaceAll = /* @__PURE__ */ createMethodShim("replaceAll", function() {
 <span class="cstat-no" title="statement not covered" >  if (typeof this === "string") {</span>
 <span class="cstat-no" title="statement not covered" >    return stringReplaceAll;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -12961,7 +12967,7 @@ var END_OF_LINE_REGEXP = /\r\n?/g;
 function stringOrArrayAt(index) {
   return this[index &lt; 0 ? this.length + index <span class="branch-0 cbranch-no" title="branch not covered" >: index]</span>;
 }
-var at = createMethodShim("at", function() {
+var at = /* @__PURE__ */ createMethodShim("at", function() {
   if (Array.isArray(this) <span class="branch-0 cbranch-no" title="branch not covered" >|| typeof this === "string")</span> {
     return stringOrArrayAt;
   }
@@ -15687,7 +15693,7 @@ function normalizeOptionSettings(settings) {
 var arrayToReversed = Array.prototype.toReversed <span class="branch-0 cbranch-no" title="branch not covered" >?? <span class="fstat-no" title="function not covered" >function() {</span></span>
 <span class="cstat-no" title="statement not covered" >  return [...this].reverse();</span>
 };
-var toReversed = createMethodShim("toReversed", function() {
+var toReversed = /* @__PURE__ */ createMethodShim("toReversed", function() {
 <span class="cstat-no" title="statement not covered" >  if (Array.isArray(this)) {</span>
 <span class="cstat-no" title="statement not covered" >    return arrayToReversed;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -15804,7 +15810,7 @@ var apiDescriptor = {
 };
 &nbsp;
 // scripts/build/shims/colors.js
-var colors = new Proxy(String, { get: () =&gt; colors });
+var colors = /* @__PURE__ */ new Proxy(String, { get: () =&gt; colors });
 var colors_default = colors;
 var createColors = () =&gt; colors;
 &nbsp;
@@ -16721,7 +16727,7 @@ var arrayFindLast = Array.prototype.findLast <span class="branch-0 cbranch-no" t
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 };
-var findLast = createMethodShim("findLast", function() {
+var findLast = /* @__PURE__ */ createMethodShim("findLast", function() {
   if (Array.isArray(this)) {
     return arrayFindLast;
   }
@@ -17502,11 +17508,14 @@ var arrayFindLastIndex = Array.prototype.findLastIndex <span class="branch-0 cbr
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return -1;</span>
 };
-var findLastIndex = createMethodShim("findLastIndex", function() {
-<span class="cstat-no" title="statement not covered" >  if (Array.isArray(this)) {</span>
-<span class="cstat-no" title="statement not covered" >    return arrayFindLastIndex;</span>
+var findLastIndex = /* @__PURE__ */ createMethodShim(
+  "findLastIndex",
+  function() {
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(this)) {</span>
+<span class="cstat-no" title="statement not covered" >      return arrayFindLastIndex;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-});
+);
 var method_find_last_index_default = findLastIndex;
 &nbsp;
 // src/main/range.js
@@ -18301,7 +18310,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-10T00:37:14.154Z
+                at 2026-01-11T00:41:47.958Z
             </div>
         <script src="../prettify.js"></script>
         <script>
