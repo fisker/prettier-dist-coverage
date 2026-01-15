@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.25% </span>
+                <span class="strong">73.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7468/10194</span>
+                <span class='fraction'>7470/10207</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.7% </span>
+                <span class="strong">59.48% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>323/541</span>
+                <span class='fraction'>323/543</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.25% </span>
+                <span class="strong">73.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7468/10194</span>
+                <span class='fraction'>7470/10207</span>
             </div>
         
             
@@ -10256,7 +10256,20 @@
 <a name='L10191'></a><a href='#L10191'>10191</a>
 <a name='L10192'></a><a href='#L10192'>10192</a>
 <a name='L10193'></a><a href='#L10193'>10193</a>
-<a name='L10194'></a><a href='#L10194'>10194</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10194'></a><a href='#L10194'>10194</a>
+<a name='L10195'></a><a href='#L10195'>10195</a>
+<a name='L10196'></a><a href='#L10196'>10196</a>
+<a name='L10197'></a><a href='#L10197'>10197</a>
+<a name='L10198'></a><a href='#L10198'>10198</a>
+<a name='L10199'></a><a href='#L10199'>10199</a>
+<a name='L10200'></a><a href='#L10200'>10200</a>
+<a name='L10201'></a><a href='#L10201'>10201</a>
+<a name='L10202'></a><a href='#L10202'>10202</a>
+<a name='L10203'></a><a href='#L10203'>10203</a>
+<a name='L10204'></a><a href='#L10204'>10204</a>
+<a name='L10205'></a><a href='#L10205'>10205</a>
+<a name='L10206'></a><a href='#L10206'>10206</a>
+<a name='L10207'></a><a href='#L10207'>10207</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -13045,6 +13058,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13216,6 +13235,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16688,6 +16709,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23224,22 +23250,28 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    if (node.parameters) {</span>
 <span class="cstat-no" title="statement not covered" >      docs.push(" (", group(print("parameters")), ")");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    docs.push(" {");</span>
-<span class="cstat-no" title="statement not covered" >    const shouldPrintCloseBracket = shouldCloseBlock(node);</span>
-<span class="cstat-no" title="statement not covered" >    if (node.children.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      node.firstChild.hasLeadingSpaces = true;</span>
-<span class="cstat-no" title="statement not covered" >      node.lastChild.hasTrailingSpaces = true;</span>
-<span class="cstat-no" title="statement not covered" >      docs.push(indent([hardline, printChildren(path, options2, print)]));</span>
-<span class="cstat-no" title="statement not covered" >      if (shouldPrintCloseBracket) {</span>
-<span class="cstat-no" title="statement not covered" >        docs.push(hardline, "}");</span>
+<span class="cstat-no" title="statement not covered" >    if (!isSwitchFallthroughCase(node)) {</span>
+<span class="cstat-no" title="statement not covered" >      docs.push(" {");</span>
+<span class="cstat-no" title="statement not covered" >      const shouldPrintCloseBracket = shouldCloseBlock(node);</span>
+<span class="cstat-no" title="statement not covered" >      if (node.children.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        node.firstChild.hasLeadingSpaces = true;</span>
+<span class="cstat-no" title="statement not covered" >        node.lastChild.hasTrailingSpaces = true;</span>
+<span class="cstat-no" title="statement not covered" >        docs.push(indent([hardline, printChildren(path, options2, print)]));</span>
+<span class="cstat-no" title="statement not covered" >        if (shouldPrintCloseBracket) {</span>
+<span class="cstat-no" title="statement not covered" >          docs.push(hardline, "}");</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      } else if (shouldPrintCloseBracket) {</span>
+<span class="cstat-no" title="statement not covered" >        docs.push("}");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    } else if (shouldPrintCloseBracket) {</span>
-<span class="cstat-no" title="statement not covered" >      docs.push("}");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return group(docs, { shouldBreak: true });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function shouldCloseBlock(node) {</span>
 <span class="cstat-no" title="statement not covered" >    return !(node.next?.kind === "angularControlFlowBlock" &amp;&amp; angular_control_flow_block_settings_evaluate_default.get(node.name)?.has(node.next.name));</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+  var isSwitchCaseBlock = <span class="fstat-no" title="function not covered" >(node) =&gt; node?.kind === "angularControlFlowBlock" &amp;&amp; (node.name === "case" || node.name === "default");</span>
+<span class="fstat-no" title="function not covered" >  function isSwitchFallthroughCase(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return isSwitchCaseBlock(node) &amp;&amp; node.endSourceSpan &amp;&amp; node.endSourceSpan.start.offset === node.endSourceSpan.end.offset;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function isPreviousBlockUnClosed(path) {</span>
 <span class="cstat-no" title="statement not covered" >    const { previous } = path;</span>
@@ -23500,7 +23532,9 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >        "link|href",</span>
 <span class="cstat-no" title="statement not covered" >        "object|codebase",</span>
 <span class="cstat-no" title="statement not covered" >        "object|data",</span>
-<span class="cstat-no" title="statement not covered" >        "script|src"</span>
+<span class="cstat-no" title="statement not covered" >        "script|src",</span>
+<span class="cstat-no" title="statement not covered" >        "script|href",</span>
+<span class="cstat-no" title="statement not covered" >        "script|xlink:href"</span>
 <span class="cstat-no" title="statement not covered" >      ]);</span>
 <span class="cstat-no" title="statement not covered" >      registerContext(SecurityContext.ATTRIBUTE_NO_BINDING, [</span>
 <span class="cstat-no" title="statement not covered" >        "animate|attributeName",</span>
@@ -26896,6 +26930,11 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (this._attemptCharCode($LBRACE)) {</span>
 <span class="cstat-no" title="statement not covered" >        this._beginToken(TokenType.BLOCK_OPEN_END);</span>
+<span class="cstat-no" title="statement not covered" >        this._endToken([]);</span>
+<span class="cstat-no" title="statement not covered" >      } else if (this._isBlockStart() &amp;&amp; (startToken.parts[0] === "case" || startToken.parts[0] === "default")) {</span>
+<span class="cstat-no" title="statement not covered" >        this._beginToken(TokenType.BLOCK_OPEN_END);</span>
+<span class="cstat-no" title="statement not covered" >        this._endToken([]);</span>
+<span class="cstat-no" title="statement not covered" >        this._beginToken(TokenType.BLOCK_CLOSE);</span>
 <span class="cstat-no" title="statement not covered" >        this._endToken([]);</span>
 <span class="cstat-no" title="statement not covered" >      } else startToken.type = TokenType.INCOMPLETE_BLOCK_OPEN;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -30649,7 +30688,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-14T00:39:49.010Z
+                at 2026-01-15T00:34:24.687Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
