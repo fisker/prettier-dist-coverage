@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">41.31% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13145/31814</span>
+                <span class='fraction'>13141/31805</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.27% </span>
+                <span class="strong">53.29% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1269/2382</span>
+                <span class='fraction'>1269/2381</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">41.31% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13145/31814</span>
+                <span class='fraction'>13141/31805</span>
             </div>
         
             
@@ -31867,16 +31867,7 @@
 <a name='L31802'></a><a href='#L31802'>31802</a>
 <a name='L31803'></a><a href='#L31803'>31803</a>
 <a name='L31804'></a><a href='#L31804'>31804</a>
-<a name='L31805'></a><a href='#L31805'>31805</a>
-<a name='L31806'></a><a href='#L31806'>31806</a>
-<a name='L31807'></a><a href='#L31807'>31807</a>
-<a name='L31808'></a><a href='#L31808'>31808</a>
-<a name='L31809'></a><a href='#L31809'>31809</a>
-<a name='L31810'></a><a href='#L31810'>31810</a>
-<a name='L31811'></a><a href='#L31811'>31811</a>
-<a name='L31812'></a><a href='#L31812'>31812</a>
-<a name='L31813'></a><a href='#L31813'>31813</a>
-<a name='L31814'></a><a href='#L31814'>31814</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31805'></a><a href='#L31805'>31805</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -63376,7 +63367,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-yes">55x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -63393,14 +63383,6 @@
 <span class="cline-any cline-yes">55x</span>
 <span class="cline-any cline-yes">55x</span>
 <span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -94863,7 +94845,6 @@
     Decorator: vk[8],
     DoExpression: vk[18],
     ExportDefaultSpecifier: vk[22],
-    RecordExpression: ["properties", "recordConstructor", "typeArguments"],
     ModuleExpression: vk[18],
     TopicReference: [],
     PipelineTopicExpression: vk[8],
@@ -94928,7 +94909,7 @@
     TSEnumMember: ["id", "initializer"],
     TSModuleDeclaration: vk[30],
     TSModuleBlock: vk[18],
-    TSImportType: ["options", "qualifier", "typeArguments", "source"],
+    TSImportType: ["source", "options", "qualifier", "typeArguments"],
     TSImportEqualsDeclaration: ["id", "moduleReference"],
     TSExternalModuleReference: vk[8],
     TSNonNullExpression: vk[8],
@@ -95003,6 +94984,7 @@
     RecordDeclarationImplements: ["id", "typeArguments"],
     RecordDeclarationProperty: ["key", "typeAnnotation", "defaultValue"],
     RecordDeclarationStaticProperty: ["key", "typeAnnotation", "value"],
+    RecordExpression: ["recordConstructor", "typeArguments", "properties"],
     RecordExpressionProperties: vk[12],
     TupleTypeLabeledElement: ["label", "elementType", "variance"],
     TupleTypeSpreadElement: ["label", "typeAnnotation"],
@@ -95188,10 +95170,9 @@
 <span class="cstat-no" title="statement not covered" >              return node.types[0];</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
             break;
-          // https://github.com/facebook/hermes/issues/1712
-<span class="branch-0 cbranch-no" title="branch not covered" >          case "ImportExpression":</span>
-<span class="cstat-no" title="statement not covered" >            if (parser === "hermes" &amp;&amp; node.attributes &amp;&amp; !node.options) {</span>
-<span class="cstat-no" title="statement not covered" >              node.options = node.attributes;</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "ImportDeclaration":</span>
+<span class="cstat-no" title="statement not covered" >            if (parser === "hermes" &amp;&amp; node.assertions &amp;&amp; !node.attributes) {</span>
+<span class="cstat-no" title="statement not covered" >              node.attributes = node.assertions;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
           // babel-flow
@@ -95208,14 +95189,6 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "LogicalExpression":</span>
 <span class="cstat-no" title="statement not covered" >            if (isUnbalancedLogicalTree(node)) {</span>
 <span class="cstat-no" title="statement not covered" >              return rebalanceLogicalTree(node);</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
-          // https://github.com/babel/babel/issues/17506
-          // It's possible to have parenthesized `argument`, need do this in `onLeave`
-<span class="branch-0 cbranch-no" title="branch not covered" >          case "TSImportType":</span>
-<span class="cstat-no" title="statement not covered" >            if (!node.source &amp;&amp; node.argument.type === "TSLiteralType") {</span>
-<span class="cstat-no" title="statement not covered" >              node.source = node.argument.literal;</span>
-<span class="cstat-no" title="statement not covered" >              delete node.argument;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
         }
@@ -95509,7 +95482,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-15T00:34:24.687Z
+                at 2026-01-16T00:38:29.163Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
