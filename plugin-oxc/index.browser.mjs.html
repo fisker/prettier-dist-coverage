@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25195</span>
+                <span class='fraction'>0/25217</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25195</span>
+                <span class='fraction'>0/25217</span>
             </div>
         
             
@@ -25258,7 +25258,51 @@
 <a name='L25193'></a><a href='#L25193'>25193</a>
 <a name='L25194'></a><a href='#L25194'>25194</a>
 <a name='L25195'></a><a href='#L25195'>25195</a>
-<a name='L25196'></a><a href='#L25196'>25196</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25196'></a><a href='#L25196'>25196</a>
+<a name='L25197'></a><a href='#L25197'>25197</a>
+<a name='L25198'></a><a href='#L25198'>25198</a>
+<a name='L25199'></a><a href='#L25199'>25199</a>
+<a name='L25200'></a><a href='#L25200'>25200</a>
+<a name='L25201'></a><a href='#L25201'>25201</a>
+<a name='L25202'></a><a href='#L25202'>25202</a>
+<a name='L25203'></a><a href='#L25203'>25203</a>
+<a name='L25204'></a><a href='#L25204'>25204</a>
+<a name='L25205'></a><a href='#L25205'>25205</a>
+<a name='L25206'></a><a href='#L25206'>25206</a>
+<a name='L25207'></a><a href='#L25207'>25207</a>
+<a name='L25208'></a><a href='#L25208'>25208</a>
+<a name='L25209'></a><a href='#L25209'>25209</a>
+<a name='L25210'></a><a href='#L25210'>25210</a>
+<a name='L25211'></a><a href='#L25211'>25211</a>
+<a name='L25212'></a><a href='#L25212'>25212</a>
+<a name='L25213'></a><a href='#L25213'>25213</a>
+<a name='L25214'></a><a href='#L25214'>25214</a>
+<a name='L25215'></a><a href='#L25215'>25215</a>
+<a name='L25216'></a><a href='#L25216'>25216</a>
+<a name='L25217'></a><a href='#L25217'>25217</a>
+<a name='L25218'></a><a href='#L25218'>25218</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -64989,7 +65033,7 @@
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function hasNakedLeftSide(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return node.type === "AssignmentExpression" || node.type === "BinaryExpression" || node.type === "LogicalExpression" || node.type === "NGPipeExpression" || node.type === "ConditionalExpression" || isCallExpression(node) || isMemberExpression(node) || node.type === "SequenceExpression" || node.type === "TaggedTemplateExpression" || node.type === "BindExpression" || node.type === "UpdateExpression" &amp;&amp; !node.prefix || isBinaryCastExpression(node) || node.type === "TSNonNullExpression" || node.type === "ChainExpression";</span>
+<span class="cstat-no" title="statement not covered" >  return node.type === "AssignmentExpression" || node.type === "BinaryExpression" || node.type === "LogicalExpression" || node.type === "NGPipeExpression" || node.type === "ConditionalExpression" || isCallExpression(node) || isMemberExpression(node) || node.type === "SequenceExpression" || node.type === "TaggedTemplateExpression" || node.type === "BindExpression" || node.type === "UpdateExpression" &amp;&amp; !node.prefix || isBinaryCastExpression(node) || isChainElementWrapper(node);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function getLeftSide(node) {</span>
 <span class="cstat-no" title="statement not covered" >  if (node.expressions) {</span>
@@ -65104,14 +65148,8 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >var skipChainExpression = (fn) =&gt; (node) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  if (node?.type === "ChainExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    node = node.expression;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return fn(node);</span>
-<span class="cstat-no" title="statement not covered" >};</span>
-<span class="cstat-no" title="statement not covered" >var isCallExpression = skipChainExpression(create_type_check_function_default(["CallExpression", "OptionalCallExpression"]));</span>
-<span class="cstat-no" title="statement not covered" >var isMemberExpression = skipChainExpression(create_type_check_function_default(["MemberExpression", "OptionalMemberExpression"]));</span>
+<span class="cstat-no" title="statement not covered" >var isCallExpression = create_type_check_function_default(["CallExpression", "OptionalCallExpression"]);</span>
+<span class="cstat-no" title="statement not covered" >var isMemberExpression = create_type_check_function_default(["MemberExpression", "OptionalMemberExpression"]);</span>
 <span class="cstat-no" title="statement not covered" >function isSimpleExpressionByNodeCount(node, maxInnerNodeCount = 5) {</span>
 <span class="cstat-no" title="statement not covered" >  const count = getExpressionInnerNodeCount(node, maxInnerNodeCount);</span>
 <span class="cstat-no" title="statement not covered" >  return count &lt;= maxInnerNodeCount;</span>
@@ -65193,16 +65231,19 @@
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let count = 0;</span>
-<span class="cstat-no" title="statement not covered" >  for (const arg of args) {</span>
+<span class="cstat-no" title="statement not covered" >  for (let arg of args) {</span>
 <span class="cstat-no" title="statement not covered" >    if (isFunctionOrArrowExpression(arg)) {</span>
 <span class="cstat-no" title="statement not covered" >      count += 1;</span>
 <span class="cstat-no" title="statement not covered" >      if (count &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    } else if (isCallExpression(arg)) {</span>
-<span class="cstat-no" title="statement not covered" >      for (const childArg of getCallArguments(arg)) {</span>
-<span class="cstat-no" title="statement not covered" >        if (isFunctionOrArrowExpression(childArg)) {</span>
-<span class="cstat-no" title="statement not covered" >          return true;</span>
+<span class="cstat-no" title="statement not covered" >    } else {</span>
+<span class="cstat-no" title="statement not covered" >      arg = stripChainElementWrappers(arg);</span>
+<span class="cstat-no" title="statement not covered" >      if (isCallExpression(arg)) {</span>
+<span class="cstat-no" title="statement not covered" >        for (const childArg of getCallArguments(arg)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (isFunctionOrArrowExpression(childArg)) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -65222,10 +65263,8 @@
 <span class="cstat-no" title="statement not covered" >  if (depth &lt;= 0) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "ChainExpression" || node.type === "TSNonNullExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    return isSimpleCallArgument(node.expression, depth);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const isChildSimple = (child) =&gt; isSimpleCallArgument(child, depth - 1);</span>
+<span class="cstat-no" title="statement not covered" >  node = stripChainElementWrappers(node);</span>
 <span class="cstat-no" title="statement not covered" >  if (isRegExpLiteral(node)) {</span>
 <span class="cstat-no" title="statement not covered" >    return get_string_width_default(node.pattern ?? node.regex.pattern) &lt;= 5;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -65294,9 +65333,9 @@
 <span class="cstat-no" title="statement not covered" >    case "SequenceExpression":</span>
 <span class="cstat-no" title="statement not covered" >      return startsWithNoLookaheadToken(node.expressions[0], predicate);</span>
 <span class="cstat-no" title="statement not covered" >    case "ChainExpression":</span>
+<span class="cstat-no" title="statement not covered" >    case "TSNonNullExpression":</span>
 <span class="cstat-no" title="statement not covered" >    case "TSSatisfiesExpression":</span>
 <span class="cstat-no" title="statement not covered" >    case "TSAsExpression":</span>
-<span class="cstat-no" title="statement not covered" >    case "TSNonNullExpression":</span>
 <span class="cstat-no" title="statement not covered" >    case "AsExpression":</span>
 <span class="cstat-no" title="statement not covered" >    case "AsConstExpression":</span>
 <span class="cstat-no" title="statement not covered" >    case "SatisfiesExpression":</span>
@@ -65396,9 +65435,6 @@
 <span class="cstat-no" title="statement not covered" >  if (callArgumentsCache.has(node)) {</span>
 <span class="cstat-no" title="statement not covered" >    return callArgumentsCache.get(node);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "ChainExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    return getCallArguments(node.expression);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let args;</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type === "ImportExpression" || node.type === "TSImportType") {</span>
 <span class="cstat-no" title="statement not covered" >    args = [node.source];</span>
@@ -65417,9 +65453,6 @@
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    node</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "ChainExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    return path.call(() =&gt; iterateCallArgumentsPath(path, iteratee), "expression");</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type === "ImportExpression" || node.type === "TSImportType") {</span>
 <span class="cstat-no" title="statement not covered" >    path.call(() =&gt; iteratee(path, 0), "source");</span>
 <span class="cstat-no" title="statement not covered" >    if (node.options) {</span>
@@ -65432,29 +65465,24 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function getCallArgumentSelector(node, index) {</span>
-<span class="cstat-no" title="statement not covered" >  const selectors = [];</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "ChainExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    node = node.expression;</span>
-<span class="cstat-no" title="statement not covered" >    selectors.push("expression");</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type === "ImportExpression" || node.type === "TSImportType") {</span>
 <span class="cstat-no" title="statement not covered" >    if (index === 0 || index === (node.options ? -2 : -1)) {</span>
-<span class="cstat-no" title="statement not covered" >      return [...selectors, "source"];</span>
+<span class="cstat-no" title="statement not covered" >      return ["source"];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (node.options &amp;&amp; (index === 1 || index === -1)) {</span>
-<span class="cstat-no" title="statement not covered" >      return [...selectors, "options"];</span>
+<span class="cstat-no" title="statement not covered" >      return ["options"];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    throw new RangeError("Invalid argument index");</span>
 <span class="cstat-no" title="statement not covered" >  } else if (node.type === "TSExternalModuleReference") {</span>
 <span class="cstat-no" title="statement not covered" >    if (index === 0 || index === -1) {</span>
-<span class="cstat-no" title="statement not covered" >      return [...selectors, "expression"];</span>
+<span class="cstat-no" title="statement not covered" >      return ["expression"];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  } else {</span>
 <span class="cstat-no" title="statement not covered" >    if (index &lt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >      index = node.arguments.length + index;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (index &gt;= 0 &amp;&amp; index &lt; node.arguments.length) {</span>
-<span class="cstat-no" title="statement not covered" >      return [...selectors, "arguments", index];</span>
+<span class="cstat-no" title="statement not covered" >      return ["arguments", index];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  throw new RangeError("Invalid argument index");</span>
@@ -65558,6 +65586,13 @@
 <span class="cstat-no" title="statement not covered" >    node</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
 <span class="cstat-no" title="statement not covered" >  return (node.type === "FunctionExpression" || node.type === "ArrowFunctionExpression") &amp;&amp; (path.key === "callee" &amp;&amp; isCallExpression(path.parent) || path.key === "tag" &amp;&amp; path.parent.type === "TaggedTemplateExpression");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >var isChainElementWrapper = create_type_check_function_default(["ChainExpression", "TSNonNullExpression"]);</span>
+<span class="cstat-no" title="statement not covered" >function stripChainElementWrappers(node) {</span>
+<span class="cstat-no" title="statement not covered" >  while (isChainElementWrapper(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    node = node.expression;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return node;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/clean.js</span>
@@ -68706,8 +68741,11 @@
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    case "ClassDeclaration":</span>
 <span class="cstat-no" title="statement not covered" >    case "ClassExpression":</span>
-<span class="cstat-no" title="statement not covered" >      if (key === "superClass" &amp;&amp; (node.type === "ArrowFunctionExpression" || node.type === "AssignmentExpression" || node.type === "AwaitExpression" || node.type === "BinaryExpression" || node.type === "ConditionalExpression" || node.type === "LogicalExpression" || node.type === "NewExpression" || node.type === "ObjectExpression" || node.type === "SequenceExpression" || node.type === "TaggedTemplateExpression" || node.type === "UnaryExpression" || node.type === "UpdateExpression" || node.type === "YieldExpression" || node.type === "TSNonNullExpression" || node.type === "ClassExpression" &amp;&amp; is_non_empty_array_default(node.decorators))) {</span>
-<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "superClass") {</span>
+<span class="cstat-no" title="statement not covered" >        const superClass = stripChainElementWrappers(node);</span>
+<span class="cstat-no" title="statement not covered" >        if (superClass.type === "ArrowFunctionExpression" || superClass.type === "AssignmentExpression" || superClass.type === "AwaitExpression" || superClass.type === "BinaryExpression" || superClass.type === "ConditionalExpression" || superClass.type === "LogicalExpression" || superClass.type === "NewExpression" || superClass.type === "ObjectExpression" || superClass.type === "SequenceExpression" || superClass.type === "TaggedTemplateExpression" || superClass.type === "UnaryExpression" || superClass.type === "UpdateExpression" || superClass.type === "YieldExpression" || superClass.type === "ClassExpression" &amp;&amp; is_non_empty_array_default(superClass.decorators)) {</span>
+<span class="cstat-no" title="statement not covered" >          return true;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >    case "ExportDefaultDeclaration":</span>
@@ -69386,7 +69424,8 @@
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (isMemberExpression(node)) {</span>
-<span class="cstat-no" title="statement not covered" >    return !node.computed &amp;&amp; !node.optional &amp;&amp; node.property.type === "Identifier" &amp;&amp; isDecoratorMemberExpression(node.object);</span>
+<span class="cstat-no" title="statement not covered" >    return !node.computed &amp;&amp; // @ts-expect-error -- doesn't exists on `MemberExpression`</span>
+<span class="cstat-no" title="statement not covered" >    !node.optional &amp;&amp; node.property.type === "Identifier" &amp;&amp; isDecoratorMemberExpression(node.object);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -69394,7 +69433,8 @@
 <span class="cstat-no" title="statement not covered" >  if (node.type === "ChainExpression") {</span>
 <span class="cstat-no" title="statement not covered" >    node = node.expression;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return isDecoratorMemberExpression(node) || isCallExpression(node) &amp;&amp; !node.optional &amp;&amp; isDecoratorMemberExpression(node.callee);</span>
+<span class="cstat-no" title="statement not covered" >  return isDecoratorMemberExpression(node) || isCallExpression(node) &amp;&amp; // @ts-expect-error -- doesn't exists on `CallExpression`</span>
+<span class="cstat-no" title="statement not covered" >  !node.optional &amp;&amp; isDecoratorMemberExpression(node.callee);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function willReturnOrThrowStatementBreak(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const { key, parent } = path;</span>
@@ -70201,7 +70241,38 @@
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function couldExpandArg(arg, arrowChainRecursion = false) {</span>
-<span class="cstat-no" title="statement not covered" >  return isObjectExpression(arg) &amp;&amp; (arg.properties.length &gt; 0 || hasComment(arg)) || isArrayExpression(arg) &amp;&amp; (arg.elements.length &gt; 0 || hasComment(arg)) || arg.type === "TSTypeAssertion" &amp;&amp; couldExpandArg(arg.expression) || isBinaryCastExpression(arg) &amp;&amp; couldExpandArg(arg.expression) || arg.type === "FunctionExpression" || arg.type === "ArrowFunctionExpression" &amp;&amp; (arg.body.type === "BlockStatement" || arg.body.type === "ArrowFunctionExpression" &amp;&amp; couldExpandArg(arg.body, true) || isObjectExpression(arg.body) || isArrayExpression(arg.body) || !arrowChainRecursion &amp;&amp; (isCallExpression(arg.body) || arg.body.type === "ConditionalExpression") || isJsxElement(arg.body)) || arg.type === "DoExpression" || arg.type === "ModuleExpression";</span>
+<span class="cstat-no" title="statement not covered" >  if (isObjectExpression(arg) &amp;&amp; (arg.properties.length &gt; 0 || hasComment(arg))) {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (isArrayExpression(arg) &amp;&amp; (arg.elements.length &gt; 0 || hasComment(arg))) {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if ((isBinaryCastExpression(arg) || arg.type === "TSTypeAssertion") &amp;&amp; couldExpandArg(arg.expression)) {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (arg.type === "FunctionExpression" || arg.type === "DoExpression" || arg.type === "ModuleExpression") {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (arg.type === "ArrowFunctionExpression") {</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      body</span>
+<span class="cstat-no" title="statement not covered" >    } = arg;</span>
+<span class="cstat-no" title="statement not covered" >    if (body.type === "BlockStatement" || isJsxElement(body) || isObjectExpression(body) || isArrayExpression(body)) {</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (body.type === "ArrowFunctionExpression" &amp;&amp; couldExpandArg(body, true)) {</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (!arrowChainRecursion) {</span>
+<span class="cstat-no" title="statement not covered" >      if (body.type === "ConditionalExpression") {</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (isCallExpression(stripChainElementWrappers(body))) {</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function shouldExpandLastArg(args, argDocs, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const lastArg = method_at_default(</span>
@@ -70321,12 +70392,7 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/print/member.js</span>
-<span class="cstat-no" title="statement not covered" >var isCallExpressionWithArguments = (node) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "ChainExpression" || node.type === "TSNonNullExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    node = node.expression;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return isCallExpression(node) &amp;&amp; getCallArguments(node).length &gt; 0;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" >var isCallExpressionWithArguments = (node) =&gt; isCallExpression(node) &amp;&amp; getCallArguments(node).length &gt; 0;</span>
 <span class="cstat-no" title="statement not covered" >function shouldInlineNewExpressionCallee(path) {</span>
 <span class="cstat-no" title="statement not covered" >  let { node: child, ancestors } = path;</span>
 <span class="cstat-no" title="statement not covered" >  for (const ancestor of ancestors) {</span>
@@ -70345,9 +70411,9 @@
 <span class="cstat-no" title="statement not covered" >    (node2) =&gt; !(isMemberExpression(node2) || node2.type === "TSNonNullExpression")</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  const firstNonChainElementWrapperParent = path.findAncestor(</span>
-<span class="cstat-no" title="statement not covered" >    (node2) =&gt; !(node2.type === "ChainExpression" || node2.type === "TSNonNullExpression")</span>
+<span class="cstat-no" title="statement not covered" >    (node2) =&gt; !isChainElementWrapper(node2)</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >  const shouldInline = firstNonMemberParent.type === "BindExpression" || firstNonMemberParent.type === "AssignmentExpression" &amp;&amp; firstNonMemberParent.left.type !== "Identifier" || shouldInlineNewExpressionCallee(path) || node.computed || node.object.type === "Identifier" &amp;&amp; node.property.type === "Identifier" &amp;&amp; !isMemberExpression(firstNonChainElementWrapperParent) || (firstNonChainElementWrapperParent.type === "AssignmentExpression" || firstNonChainElementWrapperParent.type === "VariableDeclarator") &amp;&amp; (isCallExpressionWithArguments(node.object) || objectDoc.label?.memberChain);</span>
+<span class="cstat-no" title="statement not covered" >  const shouldInline = firstNonMemberParent.type === "BindExpression" || firstNonMemberParent.type === "AssignmentExpression" &amp;&amp; firstNonMemberParent.left.type !== "Identifier" || shouldInlineNewExpressionCallee(path) || node.computed || node.object.type === "Identifier" &amp;&amp; node.property.type === "Identifier" &amp;&amp; !isMemberExpression(firstNonChainElementWrapperParent) || (firstNonChainElementWrapperParent.type === "AssignmentExpression" || firstNonChainElementWrapperParent.type === "VariableDeclarator") &amp;&amp; (isCallExpressionWithArguments(stripChainElementWrappers(node.object)) || objectDoc.label?.memberChain);</span>
 <span class="cstat-no" title="statement not covered" >  return label(objectDoc.label, [</span>
 <span class="cstat-no" title="statement not covered" >    objectDoc,</span>
 <span class="cstat-no" title="statement not covered" >    lineSuffixBoundary,</span>
@@ -70890,7 +70956,7 @@
 <span class="cstat-no" title="statement not covered" >function isPoorlyBreakableMemberOrCallChain(path, options2, print3, deep = false) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  const goDeeper = () =&gt; isPoorlyBreakableMemberOrCallChain(path, options2, print3, true);</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "ChainExpression" || node.type === "TSNonNullExpression") {</span>
+<span class="cstat-no" title="statement not covered" >  if (isChainElementWrapper(node)) {</span>
 <span class="cstat-no" title="statement not covered" >    return path.call(goDeeper, "expression");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (isCallExpression(node)) {</span>
@@ -71616,7 +71682,7 @@
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    node</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
-<span class="cstat-no" title="statement not covered" >  const shouldInline = (node2, parent) =&gt; node2.type === "JSXEmptyExpression" || !hasComment(node2) &amp;&amp; (isArrayExpression(node2) || isObjectExpression(node2) || node2.type === "ArrowFunctionExpression" || node2.type === "AwaitExpression" &amp;&amp; (shouldInline(node2.argument, node2) || node2.argument.type === "JSXElement") || isCallExpression(node2) || node2.type === "ChainExpression" &amp;&amp; isCallExpression(node2.expression) || node2.type === "FunctionExpression" || node2.type === "TemplateLiteral" || node2.type === "TaggedTemplateExpression" || node2.type === "DoExpression" || isJsxElement(parent) &amp;&amp; (node2.type === "ConditionalExpression" || isBinaryish(node2)));</span>
+<span class="cstat-no" title="statement not covered" >  const shouldInline = (node2, parent) =&gt; node2.type === "JSXEmptyExpression" || !hasComment(node2) &amp;&amp; (isArrayExpression(node2) || isObjectExpression(node2) || node2.type === "ArrowFunctionExpression" || node2.type === "AwaitExpression" &amp;&amp; (shouldInline(node2.argument, node2) || node2.argument.type === "JSXElement") || isCallExpression(stripChainElementWrappers(node2)) || node2.type === "FunctionExpression" || node2.type === "TemplateLiteral" || node2.type === "TaggedTemplateExpression" || node2.type === "DoExpression" || isJsxElement(parent) &amp;&amp; (node2.type === "ConditionalExpression" || isBinaryish(node2)));</span>
 <span class="cstat-no" title="statement not covered" >  if (shouldInline(node.expression, path.parent)) {</span>
 <span class="cstat-no" title="statement not covered" >    return group(["{", print3("expression"), lineSuffixBoundary, "}"]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -72574,7 +72640,7 @@
 <span class="cstat-no" title="statement not covered" >    if (path.parent.type === "AssignmentExpression") {</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return !node.superTypeArguments &amp;&amp; isMemberExpression(node.superClass);</span>
+<span class="cstat-no" title="statement not covered" >    return !node.superTypeArguments &amp;&amp; isMemberExpression(stripChainElementWrappers(node.superClass));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const heritage = node.extends?.[0] ?? node.mixins?.[0] ?? node.implements?.[0];</span>
 <span class="cstat-no" title="statement not covered" >  if (!heritage) {</span>
@@ -73370,7 +73436,7 @@
 <span class="cstat-no" title="statement not covered" >  let child = node;</span>
 <span class="cstat-no" title="statement not covered" >  for (let ancestorCount = 0; !parent; ancestorCount++) {</span>
 <span class="cstat-no" title="statement not covered" >    const node2 = path.getParentNode(ancestorCount);</span>
-<span class="cstat-no" title="statement not covered" >    if (node2.type === "ChainExpression" &amp;&amp; node2.expression === child || isCallExpression(node2) &amp;&amp; node2.callee === child || isMemberExpression(node2) &amp;&amp; node2.object === child || node2.type === "TSNonNullExpression" &amp;&amp; node2.expression === child) {</span>
+<span class="cstat-no" title="statement not covered" >    if (isChainElementWrapper(node2) &amp;&amp; node2.expression === child || isCallExpression(node2) &amp;&amp; node2.callee === child || isMemberExpression(node2) &amp;&amp; node2.object === child) {</span>
 <span class="cstat-no" title="statement not covered" >      child = node2;</span>
 <span class="cstat-no" title="statement not covered" >      continue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -73490,7 +73556,7 @@
 <span class="cstat-no" title="statement not covered" >  let child = node;</span>
 <span class="cstat-no" title="statement not covered" >  for (let ancestorCount = 0; !parent; ancestorCount++) {</span>
 <span class="cstat-no" title="statement not covered" >    const node2 = path.getParentNode(ancestorCount);</span>
-<span class="cstat-no" title="statement not covered" >    if (node2.type === "ChainExpression" &amp;&amp; node2.expression === child || isCallExpression(node2) &amp;&amp; node2.callee === child || isMemberExpression(node2) &amp;&amp; node2.object === child || node2.type === "TSNonNullExpression" &amp;&amp; node2.expression === child) {</span>
+<span class="cstat-no" title="statement not covered" >    if (isChainElementWrapper(node2) &amp;&amp; node2.expression === child || isCallExpression(node2) &amp;&amp; node2.callee === child || isMemberExpression(node2) &amp;&amp; node2.object === child) {</span>
 <span class="cstat-no" title="statement not covered" >      child = node2;</span>
 <span class="cstat-no" title="statement not covered" >      continue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -75655,7 +75721,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-16T00:38:29.163Z
+                at 2026-01-17T00:37:58.512Z
             </div>
         <script src="../prettify.js"></script>
         <script>
