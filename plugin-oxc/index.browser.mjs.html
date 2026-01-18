@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25217</span>
+                <span class='fraction'>0/25232</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25217</span>
+                <span class='fraction'>0/25232</span>
             </div>
         
             
@@ -25280,7 +25280,37 @@
 <a name='L25215'></a><a href='#L25215'>25215</a>
 <a name='L25216'></a><a href='#L25216'>25216</a>
 <a name='L25217'></a><a href='#L25217'>25217</a>
-<a name='L25218'></a><a href='#L25218'>25218</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25218'></a><a href='#L25218'>25218</a>
+<a name='L25219'></a><a href='#L25219'>25219</a>
+<a name='L25220'></a><a href='#L25220'>25220</a>
+<a name='L25221'></a><a href='#L25221'>25221</a>
+<a name='L25222'></a><a href='#L25222'>25222</a>
+<a name='L25223'></a><a href='#L25223'>25223</a>
+<a name='L25224'></a><a href='#L25224'>25224</a>
+<a name='L25225'></a><a href='#L25225'>25225</a>
+<a name='L25226'></a><a href='#L25226'>25226</a>
+<a name='L25227'></a><a href='#L25227'>25227</a>
+<a name='L25228'></a><a href='#L25228'>25228</a>
+<a name='L25229'></a><a href='#L25229'>25229</a>
+<a name='L25230'></a><a href='#L25230'>25230</a>
+<a name='L25231'></a><a href='#L25231'>25231</a>
+<a name='L25232'></a><a href='#L25232'>25232</a>
+<a name='L25233'></a><a href='#L25233'>25233</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -63487,6 +63517,10 @@
 <span class="cstat-no" title="statement not covered" >  return start;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function locEnd(node) {</span>
+<span class="cstat-no" title="statement not covered" >  if (node.type === "BreakStatement" || node.type === "ContinueStatement") {</span>
+<span class="cstat-no" title="statement not covered" >    const start = locStart(node);</span>
+<span class="cstat-no" title="statement not covered" >    return node.label ? locEnd(node.label) : start + (node.type === "BreakStatement" ? "break".length : "continue".length);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const end = node.range?.[1] ?? node.end;</span>
 <span class="cstat-no" title="statement not covered" >  if (false) {</span>
 <span class="cstat-no" title="statement not covered" >    throw new TypeError("Can't not locate node.");</span>
@@ -64186,7 +64220,7 @@
 <span class="cstat-no" title="statement not covered" >            node.declarations,</span>
 <span class="cstat-no" title="statement not covered" >            -1</span>
 <span class="cstat-no" title="statement not covered" >          );</span>
-<span class="cstat-no" title="statement not covered" >          if (lastDeclaration?.init &amp;&amp; text[locEnd(lastDeclaration)] !== ";") {</span>
+<span class="cstat-no" title="statement not covered" >          if (lastDeclaration.init &amp;&amp; text[locEnd(lastDeclaration)] !== ";") {</span>
 <span class="cstat-no" title="statement not covered" >            node.range = [locStart(node), locEnd(lastDeclaration)];</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
@@ -65009,6 +65043,29 @@
 <span class="cstat-no" title="statement not covered" >  "LogicalExpression",</span>
 <span class="cstat-no" title="statement not covered" >  "NGPipeExpression"</span>
 <span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isCallExpression = create_type_check_function_default([</span>
+<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isMemberExpression = create_type_check_function_default([</span>
+<span class="cstat-no" title="statement not covered" >  "MemberExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "OptionalMemberExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isCallOrNewExpression = create_type_check_function_default([</span>
+<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "NewExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isCallLikeExpression = create_type_check_function_default([</span>
+<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "NewExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "ImportExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isChainElementWrapper = create_type_check_function_default([</span>
+<span class="cstat-no" title="statement not covered" >  "ChainExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "TSNonNullExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/is-meaningful-empty-statement.js</span>
 <span class="cstat-no" title="statement not covered" >function isMeaningfulEmptyStatement({ node, parent }) {</span>
@@ -65148,8 +65205,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >var isCallExpression = create_type_check_function_default(["CallExpression", "OptionalCallExpression"]);</span>
-<span class="cstat-no" title="statement not covered" >var isMemberExpression = create_type_check_function_default(["MemberExpression", "OptionalMemberExpression"]);</span>
 <span class="cstat-no" title="statement not covered" >function isSimpleExpressionByNodeCount(node, maxInnerNodeCount = 5) {</span>
 <span class="cstat-no" title="statement not covered" >  const count = getExpressionInnerNodeCount(node, maxInnerNodeCount);</span>
 <span class="cstat-no" title="statement not covered" >  return count &lt;= maxInnerNodeCount;</span>
@@ -65537,9 +65592,6 @@
 <span class="cstat-no" title="statement not covered" >var isNextLineEmpty2 = (node, {</span>
 <span class="cstat-no" title="statement not covered" >  originalText</span>
 <span class="cstat-no" title="statement not covered" >}) =&gt; is_next_line_empty_default(originalText, locEnd(node));</span>
-<span class="cstat-no" title="statement not covered" >function isCallLikeExpression(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return isCallExpression(node) || node.type === "NewExpression" || node.type === "ImportExpression";</span>
-<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function isObjectProperty(node) {</span>
 <span class="cstat-no" title="statement not covered" >  return node &amp;&amp; (node.type === "ObjectProperty" || node.type === "Property" &amp;&amp; !isMethod(node));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -65587,7 +65639,6 @@
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
 <span class="cstat-no" title="statement not covered" >  return (node.type === "FunctionExpression" || node.type === "ArrowFunctionExpression") &amp;&amp; (path.key === "callee" &amp;&amp; isCallExpression(path.parent) || path.key === "tag" &amp;&amp; path.parent.type === "TaggedTemplateExpression");</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >var isChainElementWrapper = create_type_check_function_default(["ChainExpression", "TSNonNullExpression"]);</span>
 <span class="cstat-no" title="statement not covered" >function stripChainElementWrappers(node) {</span>
 <span class="cstat-no" title="statement not covered" >  while (isChainElementWrapper(node)) {</span>
 <span class="cstat-no" title="statement not covered" >    node = node.expression;</span>
@@ -65833,43 +65884,45 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var get_text_without_comments_default = getTextWithoutComments;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// src/language-js/utilities/call-expression-parentheses.js</span>
-<span class="cstat-no" title="statement not covered" >function getCallExpressionClosingParenthesisIndex(callExpression, options2) {</span>
-<span class="cstat-no" title="statement not covered" >  const closingParenthesisIndex = locEnd(callExpression) - 1;</span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/utilities/call-or-new-expression-parentheses.js</span>
+<span class="cstat-no" title="statement not covered" >function getCallOrNewExpressionClosingParenthesisIndex(callOrNewExpression, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  const closingParenthesisIndex = locEnd(callOrNewExpression) - 1;</span>
 <span class="cstat-no" title="statement not covered" >  if (options2.originalText[closingParenthesisIndex] !== ")") {</span>
 <span class="cstat-no" title="statement not covered" >    if (false) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error(</span>
-<span class="cstat-no" title="statement not covered" >        `Unable to get '${callExpression.type}' closing parenthesis.`</span>
+<span class="cstat-no" title="statement not covered" >        `Unable to get '${callOrNewExpression.type}' closing parenthesis.`</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return closingParenthesisIndex;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function getCallExpressionOpeningParenthesisIndex(callExpression, options2) {</span>
-<span class="cstat-no" title="statement not covered" >  const closingParenthesisIndex = getCallExpressionClosingParenthesisIndex(</span>
-<span class="cstat-no" title="statement not covered" >    callExpression,</span>
+<span class="cstat-no" title="statement not covered" >function getCallOrNewExpressionOpeningParenthesisIndex(callOrNewExpression, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  const closingParenthesisIndex = getCallOrNewExpressionClosingParenthesisIndex(</span>
+<span class="cstat-no" title="statement not covered" >    callOrNewExpression,</span>
 <span class="cstat-no" title="statement not covered" >    options2</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  if (closingParenthesisIndex === void 0) {</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const start = locEnd(callExpression.typeArguments ?? callExpression.callee);</span>
+<span class="cstat-no" title="statement not covered" >  const start = locEnd(</span>
+<span class="cstat-no" title="statement not covered" >    callOrNewExpression.typeArguments ?? callOrNewExpression.callee</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  const text = get_text_without_comments_default(options2, start, closingParenthesisIndex);</span>
 <span class="cstat-no" title="statement not covered" >  const openingParenthesisIndex = text.indexOf("(");</span>
 <span class="cstat-no" title="statement not covered" >  if (openingParenthesisIndex === -1) {</span>
 <span class="cstat-no" title="statement not covered" >    if (false) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error(</span>
-<span class="cstat-no" title="statement not covered" >        `Unable to get '${callExpression.type}' opening parenthesis.`</span>
+<span class="cstat-no" title="statement not covered" >        `Unable to get '${callOrNewExpression.type}' opening parenthesis.`</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return start + openingParenthesisIndex;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function isInsideCallExpressionParentheses(callExpression, nodeOrComment, options2) {</span>
-<span class="cstat-no" title="statement not covered" >  const closingParenthesisIndex = getCallExpressionClosingParenthesisIndex(</span>
-<span class="cstat-no" title="statement not covered" >    callExpression,</span>
+<span class="cstat-no" title="statement not covered" >function isInsideCallOrNewExpressionParentheses(callOrNewExpression, nodeOrComment, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  const closingParenthesisIndex = getCallOrNewExpressionClosingParenthesisIndex(</span>
+<span class="cstat-no" title="statement not covered" >    callOrNewExpression,</span>
 <span class="cstat-no" title="statement not covered" >    options2</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  if (closingParenthesisIndex === void 0) {</span>
@@ -65878,8 +65931,8 @@
 <span class="cstat-no" title="statement not covered" >  if (locEnd(nodeOrComment) &gt; closingParenthesisIndex) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const openingParenthesisIndex = getCallExpressionOpeningParenthesisIndex(</span>
-<span class="cstat-no" title="statement not covered" >    callExpression,</span>
+<span class="cstat-no" title="statement not covered" >  const openingParenthesisIndex = getCallOrNewExpressionOpeningParenthesisIndex(</span>
+<span class="cstat-no" title="statement not covered" >    callOrNewExpression,</span>
 <span class="cstat-no" title="statement not covered" >    options2</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  if (openingParenthesisIndex === void 0) {</span>
@@ -65891,13 +65944,13 @@
 <span class="cstat-no" title="statement not covered" >// src/language-js/comments/handle-comments.js</span>
 <span class="cstat-no" title="statement not covered" >var isSingleLineComment = (comment, text) =&gt; is_line_comment_default(comment) || !has_newline_in_range_default(text, locStart(comment), locEnd(comment));</span>
 <span class="cstat-no" title="statement not covered" >function handleOwnLineComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileComments, handleTryStatementComments, handleClassComments, handleForComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleBreakAndContinueStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileComments, handleTryStatementComments, handleClassComments, handleForComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function handleEndOfLineComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileComments, handleTryStatementComments, handleClassComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleVariableDeclaratorComments, handleBreakAndContinueStatementComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleCommentAfterArrowExpression, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileComments, handleTryStatementComments, handleClassComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleVariableDeclaratorComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleCommentAfterArrowExpression, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function handleRemainingComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileComments, handleMethodNameComments, handleOnlyComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleBreakAndContinueStatementComments, handleTSFunctionTrailingComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileComments, handleMethodNameComments, handleOnlyComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function addBlockStatementFirstComment(node, comment) {</span>
 <span class="cstat-no" title="statement not covered" >  const firstNonEmptyNode = (node.body || node.properties).find(({</span>
@@ -65947,6 +66000,11 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (precedingNode === enclosingNode.consequent &amp;&amp; followingNode === enclosingNode.alternate) {</span>
 <span class="cstat-no" title="statement not covered" >    const maybeElseTokenIndex = get_next_non_space_non_comment_character_index_default(text, locEnd(enclosingNode.consequent));</span>
+<span class="cstat-no" title="statement not covered" >    const isElseToken = maybeElseTokenIndex !== false &amp;&amp; text.slice(maybeElseTokenIndex, maybeElseTokenIndex + 4) === "else";</span>
+<span class="cstat-no" title="statement not covered" >    if (!isElseToken) {</span>
+<span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (followingNode.type === "BlockStatement" &amp;&amp; locStart(comment) &gt;= maybeElseTokenIndex &amp;&amp; locEnd(comment) &lt;= locStart(followingNode)) {</span>
 <span class="cstat-no" title="statement not covered" >      addLeadingComment(followingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
@@ -65967,10 +66025,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (followingNode.type === "BlockStatement") {</span>
 <span class="cstat-no" title="statement not covered" >    addBlockStatementFirstComment(followingNode, comment);</span>
-<span class="cstat-no" title="statement not covered" >    return true;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (followingNode.type === "IfStatement") {</span>
-<span class="cstat-no" title="statement not covered" >    addBlockOrNotComment(followingNode.consequent, comment);</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (enclosingNode.consequent === followingNode) {</span>
@@ -66129,6 +66183,7 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var isPropertyLikeNode = create_type_check_function_default(["ClassMethod", "ClassProperty", "PropertyDefinition", "TSAbstractPropertyDefinition", "TSAbstractMethodDefinition", "TSDeclareMethod", "MethodDefinition", "ClassAccessorProperty", "AccessorProperty", "TSAbstractAccessorProperty", "TSParameterProperty"]);</span>
 <span class="cstat-no" title="statement not covered" >function handleMethodNameComments({</span>
+<span class="cstat-no" title="statement not covered" >  placement,</span>
 <span class="cstat-no" title="statement not covered" >  comment,</span>
 <span class="cstat-no" title="statement not covered" >  precedingNode,</span>
 <span class="cstat-no" title="statement not covered" >  enclosingNode,</span>
@@ -66141,7 +66196,7 @@
 <span class="cstat-no" title="statement not covered" >    addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (precedingNode?.type === "Decorator" &amp;&amp; isPropertyLikeNode(enclosingNode) &amp;&amp; (is_line_comment_default(comment) || comment.placement === "ownLine")) {</span>
+<span class="cstat-no" title="statement not covered" >  if (precedingNode?.type === "Decorator" &amp;&amp; isPropertyLikeNode(enclosingNode) &amp;&amp; (is_line_comment_default(comment) || placement === "ownLine")) {</span>
 <span class="cstat-no" title="statement not covered" >    addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -66257,23 +66312,13 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function handleBreakAndContinueStatementComments({</span>
-<span class="cstat-no" title="statement not covered" >  comment,</span>
-<span class="cstat-no" title="statement not covered" >  enclosingNode</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  if ((enclosingNode?.type === "ContinueStatement" || enclosingNode?.type === "BreakStatement") &amp;&amp; !enclosingNode.label) {</span>
-<span class="cstat-no" title="statement not covered" >    addTrailingComment(enclosingNode, comment);</span>
-<span class="cstat-no" title="statement not covered" >    return true;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return false;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function handleCallExpressionComments({</span>
 <span class="cstat-no" title="statement not covered" >  comment,</span>
 <span class="cstat-no" title="statement not covered" >  precedingNode,</span>
 <span class="cstat-no" title="statement not covered" >  enclosingNode,</span>
 <span class="cstat-no" title="statement not covered" >  options: options2</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  if (isCallExpression(enclosingNode) &amp;&amp; enclosingNode.callee === precedingNode &amp;&amp; enclosingNode.arguments.length &gt; 0 &amp;&amp; isInsideCallExpressionParentheses(enclosingNode, comment, options2)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (isCallOrNewExpression(enclosingNode) &amp;&amp; enclosingNode.callee === precedingNode &amp;&amp; enclosingNode.arguments.length &gt; 0 &amp;&amp; isInsideCallOrNewExpressionParentheses(enclosingNode, comment, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >    addLeadingComment(enclosingNode.arguments[0], comment);</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -66364,7 +66409,7 @@
 <span class="cstat-no" title="statement not covered" >  enclosingNode,</span>
 <span class="cstat-no" title="statement not covered" >  followingNode</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  if ((enclosingNode?.type === "ForInStatement" || enclosingNode?.type === "ForOfStatement") &amp;&amp; followingNode !== enclosingNode.body) {</span>
+<span class="cstat-no" title="statement not covered" >  if ((enclosingNode?.type === "ForInStatement" || enclosingNode?.type === "ForOfStatement") &amp;&amp; followingNode &amp;&amp; followingNode !== enclosingNode.body) {</span>
 <span class="cstat-no" title="statement not covered" >    addLeadingComment(enclosingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -68042,7 +68087,7 @@
 <span class="cstat-no" title="statement not covered" >      expressionDoc = renderedExpression;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (interpolationHasNewline &amp;&amp; (hasComment(node) || node.type === "Identifier" || isMemberExpression(node) || node.type === "ConditionalExpression" || node.type === "SequenceExpression" || isBinaryCastExpression(node) || isBinaryish(node))) {</span>
+<span class="cstat-no" title="statement not covered" >  if (interpolationHasNewline &amp;&amp; (hasComment(node) || node.type === "Identifier" || isMemberExpression(stripChainElementWrappers(node)) || node.type === "ConditionalExpression" || node.type === "SequenceExpression" || isBinaryCastExpression(node) || isBinaryish(node))) {</span>
 <span class="cstat-no" title="statement not covered" >    expressionDoc = [indent([softline, expressionDoc]), softline];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let {</span>
@@ -69218,7 +69263,7 @@
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    case "JSXFragment":</span>
 <span class="cstat-no" title="statement not covered" >    case "JSXElement":</span>
-<span class="cstat-no" title="statement not covered" >      return key === "callee" || key === "left" &amp;&amp; parent.type === "BinaryExpression" &amp;&amp; parent.operator === "&lt;" || !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "NewExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) &amp;&amp; parent.type !== "TypeCastExpression" &amp;&amp; parent.type !== "VariableDeclarator" &amp;&amp; parent.type !== "YieldExpression" &amp;&amp; parent.type !== "MatchExpressionCase";</span>
+<span class="cstat-no" title="statement not covered" >      return key === "callee" || key === "left" &amp;&amp; parent.type === "BinaryExpression" &amp;&amp; parent.operator === "&lt;" || !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) &amp;&amp; parent.type !== "TypeCastExpression" &amp;&amp; parent.type !== "VariableDeclarator" &amp;&amp; parent.type !== "YieldExpression" &amp;&amp; parent.type !== "MatchExpressionCase";</span>
 <span class="cstat-no" title="statement not covered" >    case "TSInstantiationExpression":</span>
 <span class="cstat-no" title="statement not covered" >      return key === "object" &amp;&amp; isMemberExpression(parent);</span>
 <span class="cstat-no" title="statement not covered" >    case "MatchOrPattern":</span>
@@ -69547,7 +69592,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/print/function-parameters.js</span>
 <span class="cstat-no" title="statement not covered" >var functionParameterDanglingCommentFilter = (comment) =&gt; comment.mark !== "commentBeforeArrow";</span>
-<span class="cstat-no" title="statement not covered" >function printFunctionParameters(path, options2, print3, shouldExpandArgument, shouldPrintTypeParameters) {</span>
+<span class="cstat-no" title="statement not covered" >function printFunctionParameters(path, options2, print3, shouldExpandParameters, shouldPrintTypeParameters) {</span>
 <span class="cstat-no" title="statement not covered" >  const functionNode = path.node;</span>
 <span class="cstat-no" title="statement not covered" >  const parameters = getFunctionParameters(functionNode);</span>
 <span class="cstat-no" title="statement not covered" >  const typeParametersDoc = shouldPrintTypeParameters &amp;&amp; functionNode.typeParameters ? print3("typeParameters") : "";</span>
@@ -69585,7 +69630,7 @@
 <span class="cstat-no" title="statement not covered" >      printed.push(line);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >  if (shouldExpandArgument &amp;&amp; !isDecoratedFunction(path)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (shouldExpandParameters &amp;&amp; !isDecoratedFunction(path)) {</span>
 <span class="cstat-no" title="statement not covered" >    if (willBreak(typeParametersDoc) || willBreak(printed)) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new ArgExpansionBailout();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -69727,11 +69772,11 @@
 <span class="cstat-no" title="statement not covered" >  if (isHackPipeline) {</span>
 <span class="cstat-no" title="statement not covered" >    return group(parts);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (key === "callee" &amp;&amp; (isCallExpression(parent) || parent.type === "NewExpression") || // `UnaryExpression` adds parentheses and indention when argument has comment</span>
+<span class="cstat-no" title="statement not covered" >  if (key === "callee" &amp;&amp; isCallOrNewExpression(parent) || // `UnaryExpression` adds parentheses and indention when argument has comment</span>
 <span class="cstat-no" title="statement not covered" >  parent.type === "UnaryExpression" &amp;&amp; !hasComment(node) || isMemberExpression(parent) &amp;&amp; !parent.computed) {</span>
 <span class="cstat-no" title="statement not covered" >    return group([indent([softline, ...parts]), softline]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const shouldNotIndent = isReturnOrThrowStatement(parent) || parent.type === "JSXExpressionContainer" &amp;&amp; grandparent.type === "JSXAttribute" || node.operator !== "|" &amp;&amp; parent.type === "JsExpressionRoot" || node.type !== "NGPipeExpression" &amp;&amp; (parent.type === "NGRoot" &amp;&amp; options2.parser === "__ng_binding" || parent.type === "NGMicrosyntaxExpression" &amp;&amp; grandparent.type === "NGMicrosyntax" &amp;&amp; grandparent.body.length === 1) || node === parent.body &amp;&amp; parent.type === "ArrowFunctionExpression" || node !== parent.body &amp;&amp; parent.type === "ForStatement" || parent.type === "ConditionalExpression" &amp;&amp; !isReturnOrThrowStatement(grandparent) &amp;&amp; !isCallExpression(grandparent) &amp;&amp; grandparent.type !== "NewExpression" || parent.type === "TemplateLiteral" || key === "argument" &amp;&amp; parent.type === "UnaryExpression" || key === "arguments" &amp;&amp; isBooleanTypeCoercion(parent);</span>
+<span class="cstat-no" title="statement not covered" >  const shouldNotIndent = isReturnOrThrowStatement(parent) || parent.type === "JSXExpressionContainer" &amp;&amp; grandparent.type === "JSXAttribute" || node.operator !== "|" &amp;&amp; parent.type === "JsExpressionRoot" || node.type !== "NGPipeExpression" &amp;&amp; (parent.type === "NGRoot" &amp;&amp; options2.parser === "__ng_binding" || parent.type === "NGMicrosyntaxExpression" &amp;&amp; grandparent.type === "NGMicrosyntax" &amp;&amp; grandparent.body.length === 1) || node === parent.body &amp;&amp; parent.type === "ArrowFunctionExpression" || node !== parent.body &amp;&amp; parent.type === "ForStatement" || parent.type === "ConditionalExpression" &amp;&amp; !isReturnOrThrowStatement(grandparent) &amp;&amp; !isCallOrNewExpression(grandparent) || parent.type === "TemplateLiteral" || key === "argument" &amp;&amp; parent.type === "UnaryExpression" || key === "arguments" &amp;&amp; isBooleanTypeCoercion(parent);</span>
 <span class="cstat-no" title="statement not covered" >  const shouldIndentIfInlining = parent.type === "AssignmentExpression" || parent.type === "VariableDeclarator" || parent.type === "ClassProperty" || parent.type === "PropertyDefinition" || parent.type === "TSAbstractPropertyDefinition" || parent.type === "ClassPrivateProperty" || isObjectProperty(parent);</span>
 <span class="cstat-no" title="statement not covered" >  const samePrecedenceSubExpression = isBinaryish(node.left) &amp;&amp; shouldFlatten(node.operator, node.left.operator);</span>
 <span class="cstat-no" title="statement not covered" >  if (shouldNotIndent || shouldInlineLogicalExpression(node) &amp;&amp; !samePrecedenceSubExpression || !shouldInlineLogicalExpression(node) &amp;&amp; shouldIndentIfInlining) {</span>
@@ -70821,7 +70866,7 @@
 <span class="cstat-no" title="statement not covered" >    return "break-after-operator";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type === "ImportAttribute" || rightNode.type === "CallExpression" &amp;&amp; rightNode.callee.name === "require" || // do not put values on a separate line from the key in json</span>
-<span class="cstat-no" title="statement not covered" >  options2.parser === "json5" || options2.parser === "jsonc" || options2.parser === "json") {</span>
+<span class="cstat-no" title="statement not covered" >  path.root.type === "JsonRoot") {</span>
 <span class="cstat-no" title="statement not covered" >    return "never-break-after-operator";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const canBreakLeftDoc = canBreak(leftDoc);</span>
@@ -71103,20 +71148,20 @@
 <span class="cstat-no" title="statement not covered" >    return printMethodValue(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
-<span class="cstat-no" title="statement not covered" >  let shouldExpandArgument = false;</span>
-<span class="cstat-no" title="statement not covered" >  if ((node.type === "FunctionDeclaration" || node.type === "FunctionExpression") &amp;&amp; args?.expandLastArg) {</span>
+<span class="cstat-no" title="statement not covered" >  let shouldExpandParameters = false;</span>
+<span class="cstat-no" title="statement not covered" >  if (node.type === "FunctionExpression" &amp;&amp; args?.expandLastArg) {</span>
 <span class="cstat-no" title="statement not covered" >    const { parent } = path;</span>
 <span class="cstat-no" title="statement not covered" >    if (isCallExpression(parent) &amp;&amp; (getCallArguments(parent).length &gt; 1 || getFunctionParameters(node).every(</span>
 <span class="cstat-no" title="statement not covered" >      (param) =&gt; param.type === "Identifier" &amp;&amp; !param.typeAnnotation</span>
 <span class="cstat-no" title="statement not covered" >    ))) {</span>
-<span class="cstat-no" title="statement not covered" >      shouldExpandArgument = true;</span>
+<span class="cstat-no" title="statement not covered" >      shouldExpandParameters = true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const parametersDoc = printFunctionParameters(</span>
 <span class="cstat-no" title="statement not covered" >    path,</span>
 <span class="cstat-no" title="statement not covered" >    options2,</span>
 <span class="cstat-no" title="statement not covered" >    print3,</span>
-<span class="cstat-no" title="statement not covered" >    shouldExpandArgument</span>
+<span class="cstat-no" title="statement not covered" >    shouldExpandParameters</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  const returnTypeDoc = printReturnType(path, print3);</span>
 <span class="cstat-no" title="statement not covered" >  const shouldGroupParameters = shouldGroupFunctionParameters(</span>
@@ -72107,9 +72152,9 @@
 <span class="cstat-no" title="statement not covered" >  if (shouldPrintParamsWithoutParens(path, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(print3(["params", 0]));</span>
 <span class="cstat-no" title="statement not covered" >  } else {</span>
-<span class="cstat-no" title="statement not covered" >    const shouldExpandArgument = args.expandLastArg || args.expandFirstArg;</span>
+<span class="cstat-no" title="statement not covered" >    const shouldExpandParameters = args.expandLastArg || args.expandFirstArg;</span>
 <span class="cstat-no" title="statement not covered" >    let returnTypeDoc = printReturnType(path, print3);</span>
-<span class="cstat-no" title="statement not covered" >    if (shouldExpandArgument) {</span>
+<span class="cstat-no" title="statement not covered" >    if (shouldExpandParameters) {</span>
 <span class="cstat-no" title="statement not covered" >      if (willBreak(returnTypeDoc)) {</span>
 <span class="cstat-no" title="statement not covered" >        throw new ArgExpansionBailout();</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -72121,7 +72166,7 @@
 <span class="cstat-no" title="statement not covered" >          path,</span>
 <span class="cstat-no" title="statement not covered" >          options2,</span>
 <span class="cstat-no" title="statement not covered" >          print3,</span>
-<span class="cstat-no" title="statement not covered" >          shouldExpandArgument,</span>
+<span class="cstat-no" title="statement not covered" >          shouldExpandParameters,</span>
 <span class="cstat-no" title="statement not covered" >          /* shouldPrintTypeParameters */</span>
 <span class="cstat-no" title="statement not covered" >          true</span>
 <span class="cstat-no" title="statement not covered" >        ),</span>
@@ -74091,7 +74136,7 @@
 <span class="cstat-no" title="statement not covered" >    " ",</span>
 <span class="cstat-no" title="statement not covered" >    typeAnnotationDoc</span>
 <span class="cstat-no" title="statement not covered" >  ];</span>
-<span class="cstat-no" title="statement not covered" >  if (key === "callee" &amp;&amp; (isCallExpression(parent) || parent.type === "NewExpression") || key === "object" &amp;&amp; isMemberExpression(parent)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (key === "callee" &amp;&amp; isCallOrNewExpression(parent) || key === "object" &amp;&amp; isMemberExpression(parent)) {</span>
 <span class="cstat-no" title="statement not covered" >    return group([indent([softline, ...parts]), softline]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return parts;</span>
@@ -74196,7 +74241,7 @@
 <span class="cstat-no" title="statement not covered" >    path,</span>
 <span class="cstat-no" title="statement not covered" >    options2,</span>
 <span class="cstat-no" title="statement not covered" >    print3,</span>
-<span class="cstat-no" title="statement not covered" >    /* shouldExpandArgument */</span>
+<span class="cstat-no" title="statement not covered" >    /* shouldExpandParameters */</span>
 <span class="cstat-no" title="statement not covered" >    false,</span>
 <span class="cstat-no" title="statement not covered" >    /* shouldPrintTypeParameters */</span>
 <span class="cstat-no" title="statement not covered" >    true</span>
@@ -74246,7 +74291,7 @@
 <span class="cstat-no" title="statement not covered" >    path,</span>
 <span class="cstat-no" title="statement not covered" >    options2,</span>
 <span class="cstat-no" title="statement not covered" >    print3,</span>
-<span class="cstat-no" title="statement not covered" >    /* shouldExpandArgument */</span>
+<span class="cstat-no" title="statement not covered" >    /* shouldExpandParameters */</span>
 <span class="cstat-no" title="statement not covered" >    false,</span>
 <span class="cstat-no" title="statement not covered" >    /* shouldPrintTypeParameters */</span>
 <span class="cstat-no" title="statement not covered" >    true</span>
@@ -75067,7 +75112,7 @@
 <span class="cstat-no" title="statement not covered" >    path,</span>
 <span class="cstat-no" title="statement not covered" >    options2,</span>
 <span class="cstat-no" title="statement not covered" >    print3,</span>
-<span class="cstat-no" title="statement not covered" >    /* shouldExpandArgument */</span>
+<span class="cstat-no" title="statement not covered" >    /* shouldExpandParameters */</span>
 <span class="cstat-no" title="statement not covered" >    false,</span>
 <span class="cstat-no" title="statement not covered" >    /* shouldPrintTypeParameters */</span>
 <span class="cstat-no" title="statement not covered" >    true</span>
@@ -75721,7 +75766,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-17T00:37:58.512Z
+                at 2026-01-18T00:43:10.896Z
             </div>
         <script src="../prettify.js"></script>
         <script>

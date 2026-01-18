@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.81% </span>
+                <span class="strong">54.82% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3323/6062</span>
+                <span class='fraction'>3325/6065</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.81% </span>
+                <span class="strong">73.7% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>640/867</span>
+                <span class='fraction'>642/871</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.99% </span>
+                <span class="strong">49.11% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>195/398</span>
+                <span class='fraction'>195/397</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.81% </span>
+                <span class="strong">54.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3323/6062</span>
+                <span class='fraction'>3325/6065</span>
             </div>
         
             
@@ -6125,7 +6125,10 @@
 <a name='L6060'></a><a href='#L6060'>6060</a>
 <a name='L6061'></a><a href='#L6061'>6061</a>
 <a name='L6062'></a><a href='#L6062'>6062</a>
-<a name='L6063'></a><a href='#L6063'>6063</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L6063'></a><a href='#L6063'>6063</a>
+<a name='L6064'></a><a href='#L6064'>6064</a>
+<a name='L6065'></a><a href='#L6065'>6065</a>
+<a name='L6066'></a><a href='#L6066'>6066</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -8067,8 +8070,8 @@
 <span class="cline-any cline-yes">1914x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">82x</span>
+<span class="cline-any cline-yes">82x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -8551,6 +8554,14 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8561,7 +8572,6 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -8579,8 +8589,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8605,6 +8613,7 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -11402,9 +11411,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -14596,8 +14602,11 @@ function attachComments(ast, options) {
     text,
     options,
     ast,
-    isLastComment: comments.length - 1 === index
+    isLastComment: comments.length - 1 === index,
+    // TODO: Move placement here
+    placement: void 0
   }));
+  const attachPropertiesToComment = !avoidAstMutation;
   for (const [index, context] of decoratedComments.entries()) {
     const {
       comment,
@@ -14609,17 +14618,21 @@ function attachComments(ast, options) {
       ast: ast2,
       isLastComment
     } = context;
+    const placement = isOwnLineComment(text2, options2, decoratedComments, index) ? "ownLine" : isEndOfLineComment(text2, options2, decoratedComments, index) <span class="branch-0 cbranch-no" title="branch not covered" >? "endOfLine" </span>: "remaining";
     let args;
     if (avoidAstMutation) {
+      context.placement = placement;
       args = [context];
     }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
+<span class="cstat-no" title="statement not covered" >      args = [comment, text2, options2, ast2, isLastComment];</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    if (attachPropertiesToComment) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      comment.placement = placement;</span>
 <span class="cstat-no" title="statement not covered" >      comment.enclosingNode = enclosingNode;</span>
 <span class="cstat-no" title="statement not covered" >      comment.precedingNode = precedingNode;</span>
 <span class="cstat-no" title="statement not covered" >      comment.followingNode = followingNode;</span>
-<span class="cstat-no" title="statement not covered" >      args = [comment, text2, options2, ast2, isLastComment];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if (isOwnLineComment(text2, options2, decoratedComments, index)) {
-      comment.placement = "ownLine";
+    if (placement === "ownLine") {
       if (handleOwnLineComment(...args)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
       } else if (followingNode) {
         addLeadingComment(followingNode, comment);
@@ -14630,8 +14643,7 @@ function attachComments(ast, options) {
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        addDanglingComment(ast2, comment);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-    } else if (isEndOfLineComment(text2, options2, decoratedComments, index)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      comment.placement = "endOfLine";</span>
+    } else if (placement === "endOfLine") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      if (handleEndOfLineComment(...args)) {</span>
 <span class="cstat-no" title="statement not covered" >      } else if (precedingNode) {</span>
 <span class="cstat-no" title="statement not covered" >        addTrailingComment(precedingNode, comment);</span>
@@ -14643,7 +14655,6 @@ function attachComments(ast, options) {
 <span class="cstat-no" title="statement not covered" >        addDanglingComment(ast2, comment);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     } else {
-      comment.placement = "remaining";
       if (handleRemainingComment(...args)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
       } else if (precedingNode <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; followingNode)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        const tieCount = tiesToBreak.length;</span>
@@ -14666,11 +14677,12 @@ function attachComments(ast, options) {
     }
   }
   breakTies(tiesToBreak, options);
-  if (!avoidAstMutation) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (attachPropertiesToComment) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    for (const comment of comments) {</span>
 <span class="cstat-no" title="statement not covered" >      delete comment.precedingNode;</span>
 <span class="cstat-no" title="statement not covered" >      delete comment.enclosingNode;</span>
 <span class="cstat-no" title="statement not covered" >      delete comment.followingNode;</span>
+<span class="cstat-no" title="statement not covered" >      delete comment.placement;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 }
@@ -17465,9 +17477,6 @@ var findLastIndex = /* @__PURE__ */ createMethodShim(
 var method_find_last_index_default = findLastIndex;
 &nbsp;
 // src/main/range.js
-var isJsonParser = <span class="fstat-no" title="function not covered" >({</span>
-<span class="cstat-no" title="statement not covered" >  parser</span>
-}) =&gt; parser === "json" || parser === "json5" || parser === "jsonc" || parser === "json-stringify";
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function findCommonAncestor(startNodeAndAncestors, endNodeAndAncestors) {</span></span>
 <span class="cstat-no" title="statement not covered" >  endNodeAndAncestors = new Set(endNodeAndAncestors);</span>
 <span class="cstat-no" title="statement not covered" >  return startNodeAndAncestors.find((node) =&gt; jsonSourceElements.has(node.type) &amp;&amp; endNodeAndAncestors.has(node));</span>
@@ -17610,7 +17619,7 @@ var graphqlSourceElements = /* @__PURE__ */ new Set(["OperationDefinition", "Fra
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let startNode;</span>
 <span class="cstat-no" title="statement not covered" >  let endNode;</span>
-<span class="cstat-no" title="statement not covered" >  if (isJsonParser(opts)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (ast.type === "JsonRoot") {</span>
 <span class="cstat-no" title="statement not covered" >    const commonAncestor = findCommonAncestor(startNodeAndAncestors, endNodeAndAncestors);</span>
 <span class="cstat-no" title="statement not covered" >    startNode = commonAncestor;</span>
 <span class="cstat-no" title="statement not covered" >    endNode = commonAncestor;</span>
@@ -18256,7 +18265,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-17T00:37:55.817Z
+                at 2026-01-18T00:43:08.275Z
             </div>
         <script src="../prettify.js"></script>
         <script>

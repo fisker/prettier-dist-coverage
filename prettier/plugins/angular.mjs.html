@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.27% </span>
+                <span class="strong">79.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4284/5404</span>
+                <span class='fraction'>4285/5408</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.83% </span>
+                <span class="strong">88.72% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>859/967</span>
+                <span class='fraction'>858/967</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.27% </span>
+                <span class="strong">79.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4284/5404</span>
+                <span class='fraction'>4285/5408</span>
             </div>
         
             
@@ -5467,7 +5467,11 @@
 <a name='L5402'></a><a href='#L5402'>5402</a>
 <a name='L5403'></a><a href='#L5403'>5403</a>
 <a name='L5404'></a><a href='#L5404'>5404</a>
-<a name='L5405'></a><a href='#L5405'>5405</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L5405'></a><a href='#L5405'>5405</a>
+<a name='L5406'></a><a href='#L5406'>5406</a>
+<a name='L5407'></a><a href='#L5407'>5407</a>
+<a name='L5408'></a><a href='#L5408'>5408</a>
+<a name='L5409'></a><a href='#L5409'>5409</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -8638,7 +8642,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -9448,7 +9452,7 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -9692,7 +9696,7 @@
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
-<span class="cline-any cline-yes">390x</span>
+<span class="cline-any cline-yes">399x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">147x</span>
@@ -10610,7 +10614,7 @@
 <span class="cline-any cline-yes">806x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">793x</span>
+<span class="cline-any cline-yes">790x</span>
 <span class="cline-any cline-yes">307x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -10787,6 +10791,10 @@
 <span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">63x</span>
+<span class="cline-any cline-yes">63x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16191,6 +16199,10 @@ function locStart(node) {
   return start;
 }
 function locEnd(node) {
+  if (node.type === "BreakStatement" || node.type === "ContinueStatement") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    const start = locStart(node);</span>
+<span class="cstat-no" title="statement not covered" >    return node.label ? locEnd(node.label) : start + (node.type === "BreakStatement" ? "break".length : "continue".length);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   const end = node.range?.[1] <span class="branch-0 cbranch-no" title="branch not covered" >?? node.end;</span>
   if (false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    throw new TypeError("Can't not locate node.");</span>
@@ -16282,7 +16294,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-17T00:37:58.512Z
+                at 2026-01-18T00:43:10.896Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
