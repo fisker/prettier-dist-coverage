@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">48.54% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7442/15330</span>
+                <span class='fraction'>7441/15329</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">48.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7442/15330</span>
+                <span class='fraction'>7441/15329</span>
             </div>
         
             
@@ -15391,8 +15391,7 @@
 <a name='L15326'></a><a href='#L15326'>15326</a>
 <a name='L15327'></a><a href='#L15327'>15327</a>
 <a name='L15328'></a><a href='#L15328'>15328</a>
-<a name='L15329'></a><a href='#L15329'>15329</a>
-<a name='L15330'></a><a href='#L15330'>15330</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L15329'></a><a href='#L15329'>15329</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -29948,6 +29947,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">816x</span>
 <span class="cline-any cline-yes">292x</span>
 <span class="cline-any cline-yes">292x</span>
@@ -30498,8 +30498,6 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -44917,6 +44915,7 @@
     ["members"],
     ["objectType", "indexType"],
     ["id", "typeParameters", "params", "returnType", "body"],
+    ["key", "typeParameters", "params", "returnType"],
     ["typeParameters", "params", "returnType"],
     ["parameterName", "typeAnnotation"],
     ["checkType", "extendsType", "trueType", "falseType"],
@@ -45113,12 +45112,12 @@
     VoidPattern: [],
     TSParameterProperty: ["parameter", "decorators"],
     TSDeclareFunction: vk[41],
-    TSDeclareMethod: ["decorators", "key", "typeParameters", "params", "returnType"],
+    TSDeclareMethod: vk[42],
     TSQualifiedName: vk[1],
-    TSCallSignatureDeclaration: vk[42],
-    TSConstructSignatureDeclaration: vk[42],
+    TSCallSignatureDeclaration: vk[43],
+    TSConstructSignatureDeclaration: vk[43],
     TSPropertySignature: ["key", "typeAnnotation"],
-    TSMethodSignature: ["key", "typeParameters", "params", "returnType"],
+    TSMethodSignature: vk[42],
     TSIndexSignature: ["parameters", "typeAnnotation"],
     TSAnyKeyword: [],
     TSBooleanKeyword: [],
@@ -45134,10 +45133,10 @@
     TSUnknownKeyword: [],
     TSVoidKeyword: [],
     TSThisType: [],
-    TSFunctionType: vk[42],
-    TSConstructorType: vk[42],
+    TSFunctionType: vk[43],
+    TSConstructorType: vk[43],
     TSTypeReference: ["typeName", "typeArguments"],
-    TSTypePredicate: vk[43],
+    TSTypePredicate: vk[44],
     TSTypeQuery: ["exprName", "typeArguments"],
     TSTypeLiteral: vk[39],
     TSArrayType: vk[27],
@@ -45147,20 +45146,20 @@
     TSNamedTupleMember: ["label", "elementType"],
     TSUnionType: vk[34],
     TSIntersectionType: vk[34],
-    TSConditionalType: vk[44],
-    TSInferType: vk[45],
+    TSConditionalType: vk[45],
+    TSInferType: vk[46],
     TSParenthesizedType: vk[31],
     TSTypeOperator: vk[31],
     TSIndexedAccessType: vk[40],
     TSMappedType: ["key", "constraint", "nameType", "typeAnnotation"],
     TSTemplateLiteralType: ["quasis", "types"],
-    TSLiteralType: vk[46],
-    TSClassImplements: vk[47],
-    TSInterfaceHeritage: vk[47],
+    TSLiteralType: vk[47],
+    TSClassImplements: vk[48],
+    TSInterfaceHeritage: vk[48],
     TSInterfaceDeclaration: vk[29],
     TSInterfaceBody: vk[18],
     TSTypeAliasDeclaration: ["id", "typeParameters", "typeAnnotation"],
-    TSInstantiationExpression: vk[47],
+    TSInstantiationExpression: vk[48],
     TSAsExpression: vk[37],
     TSSatisfiesExpression: vk[37],
     TSTypeAssertion: vk[37],
@@ -45186,10 +45185,10 @@
     Property: vk[26],
     PropertyDefinition: vk[23],
     AccessorProperty: vk[24],
-    TSAbstractAccessorProperty: vk[48],
+    TSAbstractAccessorProperty: vk[49],
     TSAbstractKeyword: [],
     TSAbstractMethodDefinition: vk[26],
-    TSAbstractPropertyDefinition: vk[48],
+    TSAbstractPropertyDefinition: vk[49],
     TSAsyncKeyword: [],
     TSDeclareKeyword: [],
     TSEmptyBodyFunctionExpression: ["id", "typeParameters", "params", "returnType"],
@@ -45207,7 +45206,7 @@
     ComponentParameter: ["name", "local"],
     ComponentTypeAnnotation: ["params", "rest", "typeParameters", "rendersType"],
     ComponentTypeParameter: vk[33],
-    ConditionalTypeAnnotation: vk[44],
+    ConditionalTypeAnnotation: vk[45],
     DeclareComponent: ["id", "params", "rest", "typeParameters", "rendersType"],
     DeclareEnum: vk[30],
     DeclareHook: vk[25],
@@ -45216,24 +45215,24 @@
     EnumBigIntMember: vk[17],
     HookDeclaration: vk[41],
     HookTypeAnnotation: ["params", "returnType", "rest", "typeParameters"],
-    InferTypeAnnotation: vk[45],
+    InferTypeAnnotation: vk[46],
     KeyofTypeAnnotation: vk[15],
     MatchArrayPattern: ["elements", "rest"],
     MatchAsPattern: ["pattern", "target"],
     MatchBindingPattern: vk[25],
-    MatchExpression: vk[49],
-    MatchExpressionCase: vk[50],
+    MatchExpression: vk[50],
+    MatchExpressionCase: vk[51],
     MatchIdentifierPattern: vk[25],
-    MatchInstanceObjectPattern: vk[51],
+    MatchInstanceObjectPattern: vk[52],
     MatchInstancePattern: ["targetConstructor", "properties"],
-    MatchLiteralPattern: vk[46],
+    MatchLiteralPattern: vk[47],
     MatchMemberPattern: ["base", "property"],
-    MatchObjectPattern: vk[51],
+    MatchObjectPattern: vk[52],
     MatchObjectPatternProperty: ["key", "pattern"],
     MatchOrPattern: ["patterns"],
     MatchRestPattern: vk[15],
-    MatchStatement: vk[49],
-    MatchStatementCase: vk[50],
+    MatchStatement: vk[50],
+    MatchStatementCase: vk[51],
     MatchUnaryPattern: vk[15],
     MatchWildcardPattern: [],
     NeverTypeAnnotation: [],
@@ -45249,7 +45248,7 @@
     TupleTypeLabeledElement: ["label", "elementType", "variance"],
     TupleTypeSpreadElement: ["label", "typeAnnotation"],
     TypeOperator: vk[31],
-    TypePredicate: vk[43],
+    TypePredicate: vk[44],
     UndefinedTypeAnnotation: [],
     UnknownTypeAnnotation: [],
     NGChainedExpression: vk[16],
@@ -45261,9 +45260,9 @@
     NGMicrosyntaxKey: [],
     NGMicrosyntaxKeyedExpression: ["key", "expression"],
     NGMicrosyntaxLet: vk[26],
-    NGRoot: vk[52],
-    JsExpressionRoot: vk[52],
-    JsonRoot: vk[52],
+    NGRoot: vk[53],
+    JsExpressionRoot: vk[53],
+    JsonRoot: vk[53],
     TSJSDocAllType: [],
     TSJSDocUnknownType: [],
     TSJSDocNullableType: vk[31],
@@ -45836,7 +45835,6 @@
     "StrictEvalArgumentsBinding",
     "StrictFunction",
     "ForInOfLoopInitializer",
-    "ConstructorHasTypeParameters",
     "DecoratorExportClass",
     "ParamDupe",
     "InvalidDecimal",
@@ -45847,7 +45845,6 @@
     "ModuleAttributesWithDuplicateKeys",
     "InvalidEscapeSequenceTemplate",
     "NonAbstractClassHasAbstractMethod",
-    "OptionalTypeBeforeRequired",
     "PatternIsOptional",
     "DeclareClassFieldHasInitializer",
     "VarRedeclaration",
@@ -46057,7 +46054,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-20T00:36:47.819Z
+                at 2026-01-21T00:38:48.412Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
