@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25318</span>
+                <span class='fraction'>0/25310</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25318</span>
+                <span class='fraction'>0/25310</span>
             </div>
         
             
@@ -25373,23 +25373,7 @@
 <a name='L25308'></a><a href='#L25308'>25308</a>
 <a name='L25309'></a><a href='#L25309'>25309</a>
 <a name='L25310'></a><a href='#L25310'>25310</a>
-<a name='L25311'></a><a href='#L25311'>25311</a>
-<a name='L25312'></a><a href='#L25312'>25312</a>
-<a name='L25313'></a><a href='#L25313'>25313</a>
-<a name='L25314'></a><a href='#L25314'>25314</a>
-<a name='L25315'></a><a href='#L25315'>25315</a>
-<a name='L25316'></a><a href='#L25316'>25316</a>
-<a name='L25317'></a><a href='#L25317'>25317</a>
-<a name='L25318'></a><a href='#L25318'>25318</a>
-<a name='L25319'></a><a href='#L25319'>25319</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L25311'></a><a href='#L25311'>25311</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -65830,6 +65814,47 @@
 <span class="cstat-no" title="statement not covered" >  return node;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/clean/chain-expression.js</span>
+<span class="cstat-no" title="statement not covered" >function cleanChainExpression(cloned, original) {</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "ChainExpression") {</span>
+<span class="cstat-no" title="statement not covered" >    cleanEstreeChainExpression(cloned);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (original.type === "OptionalMemberExpression" || original.type === "OptionalCallExpression") {</span>
+<span class="cstat-no" title="statement not covered" >    cleanBabelChainExpression(cloned);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function getChainElementProperty(node) {</span>
+<span class="cstat-no" title="statement not covered" >  if (isMemberExpression(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    return "object";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (isCallExpression(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    return "callee";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (isChainElementWrapper(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    return "expression";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function getChainElement(node) {</span>
+<span class="cstat-no" title="statement not covered" >  const property = getChainElementProperty(node);</span>
+<span class="cstat-no" title="statement not covered" >  if (property) {</span>
+<span class="cstat-no" title="statement not covered" >    return node[property];</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function cleanEstreeChainExpression(node) {</span>
+<span class="cstat-no" title="statement not covered" >  for (node = getChainElement(node); node.type === "MemberExpression" || node.type === "CallExpression" || node.type === "TSNonNullExpression"; node = getChainElement(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    const property = getChainElementProperty(node);</span>
+<span class="cstat-no" title="statement not covered" >    const child = node[property];</span>
+<span class="cstat-no" title="statement not covered" >    if (child.type === "ChainExpression") {</span>
+<span class="cstat-no" title="statement not covered" >      node[property] = child.expression;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function cleanBabelChainExpression(node) {</span>
+<span class="cstat-no" title="statement not covered" >  for (node = getChainElement(node); node.type === "MemberExpression" || node.type === "CallExpression"; node = getChainElement(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    node.type = `Optional${node.type}`;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/clean.js</span>
 <span class="cstat-no" title="statement not covered" >var ignoredProperties = /* @__PURE__ */ new Set([</span>
 <span class="cstat-no" title="statement not covered" >  "range",</span>
@@ -65860,40 +65885,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (key.type === "Identifier") {</span>
 <span class="cstat-no" title="statement not covered" >    cloned[property] = key.name;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function cleanEstreeChainExpression(node) {</span>
-<span class="cstat-no" title="statement not covered" >  while (true) {</span>
-<span class="cstat-no" title="statement not covered" >    if (node.type === "MemberExpression") {</span>
-<span class="cstat-no" title="statement not covered" >      if (node.object.type === "ChainExpression") {</span>
-<span class="cstat-no" title="statement not covered" >        node.object = node.object.expression;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      node = node.object;</span>
-<span class="cstat-no" title="statement not covered" >      continue;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (node.type === "CallExpression") {</span>
-<span class="cstat-no" title="statement not covered" >      if (node.callee.type === "ChainExpression") {</span>
-<span class="cstat-no" title="statement not covered" >        node.callee = node.callee.expression;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      node = node.callee;</span>
-<span class="cstat-no" title="statement not covered" >      continue;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function cleanBabelChainExpression(node) {</span>
-<span class="cstat-no" title="statement not covered" >  while (true) {</span>
-<span class="cstat-no" title="statement not covered" >    if (node.type === "MemberExpression") {</span>
-<span class="cstat-no" title="statement not covered" >      node.type = "OptionalMemberExpression";</span>
-<span class="cstat-no" title="statement not covered" >      node = node.object;</span>
-<span class="cstat-no" title="statement not covered" >      continue;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (node.type === "CallExpression") {</span>
-<span class="cstat-no" title="statement not covered" >      node.type = "OptionalCallExpression";</span>
-<span class="cstat-no" title="statement not covered" >      node = node.callee;</span>
-<span class="cstat-no" title="statement not covered" >      continue;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function clean(original, cloned, parent) {</span>
@@ -65978,15 +65969,7 @@
 <span class="cstat-no" title="statement not covered" >  if (original.type === "TemplateLiteral") {</span>
 <span class="cstat-no" title="statement not covered" >    removeTemplateElementsValue(cloned);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (original.type === "ChainExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    cleanEstreeChainExpression(cloned.expression);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (original.type === "OptionalMemberExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    cleanBabelChainExpression(cloned.object);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (original.type === "OptionalCallExpression") {</span>
-<span class="cstat-no" title="statement not covered" >    cleanBabelChainExpression(cloned.callee);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  cleanChainExpression(cloned, original);</span>
 <span class="cstat-no" title="statement not covered" >  if ((original.type === "ClassDeclaration" || original.type === "ClassExpression") &amp;&amp; !original.superTypeArguments &amp;&amp; original.superClass?.type === "TSInstantiationExpression" &amp;&amp; original.superClass.typeArguments) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      superClass: {</span>
@@ -71625,7 +71608,7 @@
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >  const maybeTrailingComma = (</span>
 <span class="cstat-no" title="statement not covered" >    // Angular does not allow trailing comma</span>
-<span class="cstat-no" title="statement not covered" >    !options2.parser.startsWith("__ng_") &amp;&amp; // Dynamic imports cannot have trailing commas</span>
+<span class="cstat-no" title="statement not covered" >    path.root.type !== "NGRoot" &amp;&amp; // Dynamic imports cannot have trailing commas</span>
 <span class="cstat-no" title="statement not covered" >    node.type !== "ImportExpression" &amp;&amp; node.type !== "TSImportType" &amp;&amp; node.type !== "TSExternalModuleReference" &amp;&amp; shouldPrintComma(options2, "all") ? "," : ""</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  function allArgsBrokenOut() {</span>
@@ -71920,6 +71903,8 @@
 <span class="cstat-no" title="statement not covered" >        printed: printComments(path, isMemberExpression(node2) ? printMemberLookup(path, options2, print3) : printBindExpressionCallee(path, options2, print3), options2)</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >      path.call(rec, "object");</span>
+<span class="cstat-no" title="statement not covered" >    } else if (node2.type === "ChainExpression" &amp;&amp; !needs_parentheses_default(path, options2)) {</span>
+<span class="cstat-no" title="statement not covered" >      path.call(rec, "expression");</span>
 <span class="cstat-no" title="statement not covered" >    } else if (node2.type === "TSNonNullExpression" &amp;&amp; !needs_parentheses_default(path, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >      printedNodes.unshift({</span>
 <span class="cstat-no" title="statement not covered" >        node: node2,</span>
@@ -71947,7 +71932,7 @@
 <span class="cstat-no" title="statement not covered" >  let currentGroup = [printedNodes[0]];</span>
 <span class="cstat-no" title="statement not covered" >  let i = 1;</span>
 <span class="cstat-no" title="statement not covered" >  for (; i &lt; printedNodes.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >    if (printedNodes[i].node.type === "TSNonNullExpression" || isCallExpression(printedNodes[i].node) || isMemberExpression(printedNodes[i].node) &amp;&amp; printedNodes[i].node.computed &amp;&amp; isNumericLiteral(printedNodes[i].node.property)) {</span>
+<span class="cstat-no" title="statement not covered" >    if (printedNodes[i].node.type === "TSNonNullExpression" || printedNodes[i].node.type === "ChainExpression" || isCallExpression(printedNodes[i].node) || isMemberExpression(printedNodes[i].node) &amp;&amp; printedNodes[i].node.computed &amp;&amp; isNumericLiteral(printedNodes[i].node.property)) {</span>
 <span class="cstat-no" title="statement not covered" >      currentGroup.push(printedNodes[i]);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
@@ -72010,16 +71995,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const shouldMerge = groups.length &gt;= 2 &amp;&amp; !hasComment(groups[1][0].node) &amp;&amp; shouldNotWrap(groups);</span>
 <span class="cstat-no" title="statement not covered" >  function printGroup(printedGroup) {</span>
-<span class="cstat-no" title="statement not covered" >    const printed = printedGroup.map((tuple) =&gt; tuple.printed);</span>
-<span class="cstat-no" title="statement not covered" >    if (printedGroup.length &gt; 0 &amp;&amp; method_at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >      0,</span>
-<span class="cstat-no" title="statement not covered" >      printedGroup,</span>
-<span class="cstat-no" title="statement not covered" >      -1</span>
-<span class="cstat-no" title="statement not covered" >    ).needsParens) {</span>
-<span class="cstat-no" title="statement not covered" >      return ["(", ...printed, ")"];</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return printed;</span>
+<span class="cstat-no" title="statement not covered" >    return printedGroup.map((tuple) =&gt; tuple.printed);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function printIndentedGroup(groups2) {</span>
 <span class="cstat-no" title="statement not covered" >    if (groups2.length === 0) {</span>
@@ -76024,7 +76000,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-23T00:39:34.064Z
+                at 2026-01-24T00:38:15.177Z
             </div>
         <script src="../prettify.js"></script>
         <script>
