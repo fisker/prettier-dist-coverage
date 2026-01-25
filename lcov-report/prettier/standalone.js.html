@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.47% </span>
+                <span class="strong">56.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3440/6091</span>
+                <span class='fraction'>3440/6094</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.47% </span>
+                <span class="strong">56.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3440/6091</span>
+                <span class='fraction'>3440/6094</span>
             </div>
         
             
@@ -6153,7 +6153,10 @@
 <a name='L6088'></a><a href='#L6088'>6088</a>
 <a name='L6089'></a><a href='#L6089'>6089</a>
 <a name='L6090'></a><a href='#L6090'>6090</a>
-<a name='L6091'></a><a href='#L6091'>6091</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L6091'></a><a href='#L6091'>6091</a>
+<a name='L6092'></a><a href='#L6092'>6092</a>
+<a name='L6093'></a><a href='#L6093'>6093</a>
+<a name='L6094'></a><a href='#L6094'>6094</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11584,6 +11587,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -17608,11 +17614,11 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return [resultStartNode, resultEndNode];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="fstat-no" title="function not covered" >  function findNodeAtOffset(node, offset, options, predicate, ancestors = [], type) {</span>
+<span class="fstat-no" title="function not covered" >  function findNodeAtOffset(node, offset, options, predicate, ancestors = [], type, locFunctions) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      locStart,</span>
 <span class="cstat-no" title="statement not covered" >      locEnd</span>
-<span class="cstat-no" title="statement not covered" >    } = options;</span>
+<span class="cstat-no" title="statement not covered" >    } = locFunctions;</span>
 <span class="cstat-no" title="statement not covered" >    const start = locStart(node);</span>
 <span class="cstat-no" title="statement not covered" >    const end = locEnd(node);</span>
 <span class="cstat-no" title="statement not covered" >    if (offset &gt; end || offset &lt; start || type === "rangeEnd" &amp;&amp; offset === start || type === "rangeStart" &amp;&amp; offset === end) {</span>
@@ -17629,7 +17635,7 @@
 <span class="cstat-no" title="statement not covered" >      getChildren: options.printer.getCommentChildNodes</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    for (const child of childNodes) {</span>
-<span class="cstat-no" title="statement not covered" >      const childAndAncestors = findNodeAtOffset(child, offset, options, predicate, nodeAndAncestors, type);</span>
+<span class="cstat-no" title="statement not covered" >      const childAndAncestors = findNodeAtOffset(child, offset, options, predicate, nodeAndAncestors, type, locFunctions);</span>
 <span class="cstat-no" title="statement not covered" >      if (childAndAncestors) {</span>
 <span class="cstat-no" title="statement not covered" >        return childAndAncestors;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -17676,9 +17682,7 @@
 <span class="fstat-no" title="function not covered" >  function calculateRange(text, opts, ast) {</span>
 <span class="cstat-no" title="statement not covered" >    let {</span>
 <span class="cstat-no" title="statement not covered" >      rangeStart: start,</span>
-<span class="cstat-no" title="statement not covered" >      rangeEnd: end,</span>
-<span class="cstat-no" title="statement not covered" >      locStart,</span>
-<span class="cstat-no" title="statement not covered" >      locEnd</span>
+<span class="cstat-no" title="statement not covered" >      rangeEnd: end</span>
 <span class="cstat-no" title="statement not covered" >    } = opts;</span>
 <span class="cstat-no" title="statement not covered" >    noop_default(end &gt; start);</span>
 <span class="cstat-no" title="statement not covered" >    const firstNonWhitespaceCharacterIndex = text.slice(start, end).search(/\S/);</span>
@@ -17691,13 +17695,14 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const startNodeAndAncestors = findNodeAtOffset(ast, start, opts, (node, parentNode) =&gt; isSourceElement(opts, node, parentNode), [], "rangeStart");</span>
+<span class="cstat-no" title="statement not covered" >    const locFunctions = opts.printer.features?.experimental_locForRangeFormat ?? opts;</span>
+<span class="cstat-no" title="statement not covered" >    const startNodeAndAncestors = findNodeAtOffset(ast, start, opts, (node, parentNode) =&gt; isSourceElement(opts, node, parentNode), [], "rangeStart", locFunctions);</span>
 <span class="cstat-no" title="statement not covered" >    if (!startNodeAndAncestors) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const endNodeAndAncestors = (</span>
 <span class="cstat-no" title="statement not covered" >      // No need find Node at `end`, it will be the same as `startNodeAndAncestors`</span>
-<span class="cstat-no" title="statement not covered" >      isAllWhitespace ? startNodeAndAncestors : findNodeAtOffset(ast, end, opts, (node) =&gt; isSourceElement(opts, node), [], "rangeEnd")</span>
+<span class="cstat-no" title="statement not covered" >      isAllWhitespace ? startNodeAndAncestors : findNodeAtOffset(ast, end, opts, (node) =&gt; isSourceElement(opts, node), [], "rangeEnd", locFunctions)</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    if (!endNodeAndAncestors) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -17711,6 +17716,10 @@
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      [startNode, endNode] = findSiblingAncestors(startNodeAndAncestors, endNodeAndAncestors, opts);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      locStart,</span>
+<span class="cstat-no" title="statement not covered" >      locEnd</span>
+<span class="cstat-no" title="statement not covered" >    } = locFunctions;</span>
 <span class="cstat-no" title="statement not covered" >    return [Math.min(locStart(startNode), locStart(endNode)), Math.max(locEnd(startNode), locEnd(endNode))];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
@@ -18340,7 +18349,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-24T00:38:15.177Z
+                at 2026-01-25T00:41:57.585Z
             </div>
         <script src="../prettify.js"></script>
         <script>

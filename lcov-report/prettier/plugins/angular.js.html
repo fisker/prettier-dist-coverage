@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.25% </span>
+                <span class="strong">39.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2135/5439</span>
+                <span class='fraction'>2136/5458</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.21% </span>
+                <span class="strong">8.19% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>24/292</span>
+                <span class='fraction'>24/293</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.25% </span>
+                <span class="strong">39.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2135/5439</span>
+                <span class='fraction'>2136/5458</span>
             </div>
         
             
@@ -5501,7 +5501,26 @@
 <a name='L5436'></a><a href='#L5436'>5436</a>
 <a name='L5437'></a><a href='#L5437'>5437</a>
 <a name='L5438'></a><a href='#L5438'>5438</a>
-<a name='L5439'></a><a href='#L5439'>5439</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5439'></a><a href='#L5439'>5439</a>
+<a name='L5440'></a><a href='#L5440'>5440</a>
+<a name='L5441'></a><a href='#L5441'>5441</a>
+<a name='L5442'></a><a href='#L5442'>5442</a>
+<a name='L5443'></a><a href='#L5443'>5443</a>
+<a name='L5444'></a><a href='#L5444'>5444</a>
+<a name='L5445'></a><a href='#L5445'>5445</a>
+<a name='L5446'></a><a href='#L5446'>5446</a>
+<a name='L5447'></a><a href='#L5447'>5447</a>
+<a name='L5448'></a><a href='#L5448'>5448</a>
+<a name='L5449'></a><a href='#L5449'>5449</a>
+<a name='L5450'></a><a href='#L5450'>5450</a>
+<a name='L5451'></a><a href='#L5451'>5451</a>
+<a name='L5452'></a><a href='#L5452'>5452</a>
+<a name='L5453'></a><a href='#L5453'>5453</a>
+<a name='L5454'></a><a href='#L5454'>5454</a>
+<a name='L5455'></a><a href='#L5455'>5455</a>
+<a name='L5456'></a><a href='#L5456'>5456</a>
+<a name='L5457'></a><a href='#L5457'>5457</a>
+<a name='L5458'></a><a href='#L5458'>5458</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10858,6 +10877,25 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16296,6 +16334,25 @@
 <span class="cstat-no" title="statement not covered" >      const start = locStart(node);</span>
 <span class="cstat-no" title="statement not covered" >      return node.label ? locEnd(node.label) : start + (node.type === "BreakStatement" ? "break".length : "continue".length);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type === "VariableDeclaration") {</span>
+<span class="cstat-no" title="statement not covered" >      const lastDeclaration = method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
+<span class="cstat-no" title="statement not covered" >        node.declarations,</span>
+<span class="cstat-no" title="statement not covered" >        -1</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      return locEnd(lastDeclaration);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type === "IfStatement") {</span>
+<span class="cstat-no" title="statement not covered" >      return locEnd(node.alternate ?? node.consequent);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if ((node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration") &amp;&amp; // @ts-expect-error -- Added in postprocess.js</span>
+<span class="cstat-no" title="statement not covered" >    node.__end) {</span>
+<span class="cstat-no" title="statement not covered" >      return node.__end;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return locEndWithFullText(node);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="fstat-no" title="function not covered" >  function locEndWithFullText(node) {</span>
 <span class="cstat-no" title="statement not covered" >    const end = node.range?.[1] ?? node.end;</span>
 <span class="cstat-no" title="statement not covered" >    if (false) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new TypeError("Can't not locate node.");</span>
@@ -16384,7 +16441,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-24T00:38:15.177Z
+                at 2026-01-25T00:41:57.585Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
