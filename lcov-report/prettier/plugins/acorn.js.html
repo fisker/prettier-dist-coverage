@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.23% </span>
+                <span class="strong">55.2% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4290/7767</span>
+                <span class='fraction'>4285/7762</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.23% </span>
+                <span class="strong">55.2% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4290/7767</span>
+                <span class='fraction'>4285/7762</span>
             </div>
         
             
@@ -7824,12 +7824,7 @@
 <a name='L7759'></a><a href='#L7759'>7759</a>
 <a name='L7760'></a><a href='#L7760'>7760</a>
 <a name='L7761'></a><a href='#L7761'>7761</a>
-<a name='L7762'></a><a href='#L7762'>7762</a>
-<a name='L7763'></a><a href='#L7763'>7763</a>
-<a name='L7764'></a><a href='#L7764'>7764</a>
-<a name='L7765'></a><a href='#L7765'>7765</a>
-<a name='L7766'></a><a href='#L7766'>7766</a>
-<a name='L7767'></a><a href='#L7767'>7767</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7762'></a><a href='#L7762'>7762</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14055,7 +14050,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -14134,12 +14128,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14181,7 +14172,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21818,7 +21808,6 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
     return (node) =&gt; types2.has(node?.type);
   }
-  var create_type_check_function_default = createTypeCheckFunction;
 &nbsp;
   // scripts/build/shims/method-replace-all.js
   var stringReplaceAll = String.prototype.replaceAll <span class="branch-0 cbranch-no" title="branch not covered" >?? <span class="fstat-no" title="function not covered" >function(pattern, replacement) {</span></span>
@@ -21871,16 +21860,15 @@
   var get_text_without_comments_default = getTextWithoutComments;
 &nbsp;
   // src/language-js/utilities/is-block-comment.js
-  var isBlockComment = create_type_check_function_default([
+  var isBlockComment = createTypeCheckFunction([
     "Block",
     "CommentBlock",
     // `meriyah`
     "MultiLine"
   ]);
-  var is_block_comment_default = isBlockComment;
 &nbsp;
   // src/language-js/utilities/is-line-comment.js
-  var isLineComment = create_type_check_function_default([
+  var isLineComment = createTypeCheckFunction([
     "Line",
     "CommentLine",
     // `meriyah` has `SingleLine`, `HashbangComment`, `HTMLOpen`, and `HTMLClose`
@@ -21893,7 +21881,6 @@
     // `babel` and `flow` hashbang
     "InterpreterDirective"
   ]);
-  var is_line_comment_default = isLineComment;
 &nbsp;
   // src/language-js/utilities/is-type-cast-comment.js
   var cache = /* @__PURE__ */ new WeakMap();
@@ -21901,7 +21888,7 @@
     if (!cache.has(comment)) {
       cache.set(
         comment,
-        is_block_comment_default(comment) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; comment.value[0] === "*" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however</span>
+        isBlockComment(comment) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; comment.value[0] === "*" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however</span>
 <span class="cstat-no" title="statement not covered" >        // Closure Compiler accepts types in parens and even without any delimiters at all.</span>
 <span class="cstat-no" title="statement not covered" >        // That's why we just search for "@type" and "@satisfies".</span>
 <span class="cstat-no" title="statement not covered" >        /@(?:type|satisfies)\b/.test(comment.value)</span>
@@ -21909,11 +21896,10 @@
     }
     return cache.get(comment);
   }
-  var is_type_cast_comment_default = isTypeCastComment;
 &nbsp;
   // src/language-js/utilities/is-indentable-block-comment.js
 <span class="fstat-no" title="function not covered" >  function isIndentableBlockCommentInternal(comment) {</span>
-<span class="cstat-no" title="statement not covered" >    if (!is_block_comment_default(comment)) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!isBlockComment(comment)) {</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const lines = `*${comment.value}*`.split("\n");</span>
@@ -21941,13 +21927,12 @@
 <span class="cstat-no" title="statement not covered" >        comment.value += "*//*" + followingComment.value;</span>
 <span class="cstat-no" title="statement not covered" >        comment.range = [locStart(comment), locEnd(followingComment)];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (!is_line_comment_default(comment) &amp;&amp; !is_block_comment_default(comment)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!isLineComment(comment) &amp;&amp; !isBlockComment(comment)) {</span>
 <span class="cstat-no" title="statement not covered" >        throw new TypeError(`Unknown comment type: "${comment.type}".`);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      followingComment = comment;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   }
-  var merge_nestled_jsdoc_comments_default = mergeNestledJsdocComments;
 &nbsp;
   // src/utilities/is-object.js
   function isObject(object) {
@@ -22429,7 +22414,7 @@
   var visit_node_default = visitNode;
 &nbsp;
   // src/language-js/parse/postprocess/index.js
-  var isNodeWithRaw = create_type_check_function_default([
+  var isNodeWithRaw = createTypeCheckFunction([
     // Babel
     "RegExpLiteral",
     "BigIntLiteral",
@@ -22456,7 +22441,7 @@
     const {
       comments
     } = ast;
-    merge_nestled_jsdoc_comments_default(comments);
+    mergeNestledJsdocComments(comments);
     const program = ast.type === "File" <span class="branch-0 cbranch-no" title="branch not covered" >? ast.program </span>: ast;
     if (program.interpreter) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      comments.unshift(program.interpreter);</span>
@@ -22489,7 +22474,7 @@
               if (!typeCastCommentsEnds) {
                 typeCastCommentsEnds = [];
                 for (const comment of comments) {
-                  if (is_type_cast_comment_default(comment)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+                  if (isTypeCastComment(comment)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                    typeCastCommentsEnds.push(locEnd(comment));</span>
 <span class="cstat-no" title="statement not covered" >                  }</span>
                 }
@@ -23368,7 +23353,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-28T00:38:14.469Z
+                at 2026-01-29T00:42:48.001Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
