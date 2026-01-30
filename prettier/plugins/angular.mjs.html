@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">79.07% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4289/5424</span>
+                <span class='fraction'>4288/5423</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.42% </span>
+                <span class="strong">88.36% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>863/976</span>
+                <span class='fraction'>858/971</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">79.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4289/5424</span>
+                <span class='fraction'>4288/5423</span>
             </div>
         
             
@@ -5486,8 +5486,7 @@
 <a name='L5421'></a><a href='#L5421'>5421</a>
 <a name='L5422'></a><a href='#L5422'>5422</a>
 <a name='L5423'></a><a href='#L5423'>5423</a>
-<a name='L5424'></a><a href='#L5424'>5424</a>
-<a name='L5425'></a><a href='#L5425'>5425</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L5424'></a><a href='#L5424'>5424</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -8655,7 +8654,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8666,7 +8665,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -9462,10 +9461,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -9583,7 +9582,7 @@
 <span class="cline-any cline-yes">127x</span>
 <span class="cline-any cline-yes">127x</span>
 <span class="cline-any cline-yes">146x</span>
-<span class="cline-any cline-yes">263x</span>
+<span class="cline-any cline-yes">272x</span>
 <span class="cline-any cline-yes">273x</span>
 <span class="cline-any cline-yes">273x</span>
 <span class="cline-any cline-yes">146x</span>
@@ -9709,7 +9708,7 @@
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
-<span class="cline-any cline-yes">400x</span>
+<span class="cline-any cline-yes">402x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">147x</span>
@@ -10627,7 +10626,7 @@
 <span class="cline-any cline-yes">806x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">793x</span>
+<span class="cline-any cline-yes">806x</span>
 <span class="cline-any cline-yes">307x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -10820,7 +10819,6 @@
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16244,9 +16242,8 @@ function locEnd(node) {
   if (node.type === "IfStatement") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return locEnd(node.alternate ?? node.consequent);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if ((node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; // @ts-expect-error -- Added in postprocess.js</span>
-  node.__end) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    return node.__end;</span>
+  if ((node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.__contentEnd)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    return node.__contentEnd;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   return locEndWithFullText(node);
 }
@@ -16342,7 +16339,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-29T00:42:50.620Z
+                at 2026-01-30T00:43:51.944Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
