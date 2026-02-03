@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">20.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6292/31395</span>
+                <span class='fraction'>6294/31400</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.01% </span>
+                <span class="strong">44.98% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1017/2259</span>
+                <span class='fraction'>1017/2261</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">20.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6292/31395</span>
+                <span class='fraction'>6294/31400</span>
             </div>
         
             
@@ -31457,7 +31457,12 @@
 <a name='L31392'></a><a href='#L31392'>31392</a>
 <a name='L31393'></a><a href='#L31393'>31393</a>
 <a name='L31394'></a><a href='#L31394'>31394</a>
-<a name='L31395'></a><a href='#L31395'>31395</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31395'></a><a href='#L31395'>31395</a>
+<a name='L31396'></a><a href='#L31396'>31396</a>
+<a name='L31397'></a><a href='#L31397'>31397</a>
+<a name='L31398'></a><a href='#L31398'>31398</a>
+<a name='L31399'></a><a href='#L31399'>31399</a>
+<a name='L31400'></a><a href='#L31400'>31400</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -61844,6 +61849,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -62588,6 +62596,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
 <span class="cline-any cline-yes">68x</span>
 <span class="cline-any cline-yes">68x</span>
 <span class="cline-any cline-yes">68x</span>
@@ -93221,6 +93231,9 @@
 <span class="cstat-no" title="statement not covered" >      const start = locStart(node);</span>
 <span class="cstat-no" title="statement not covered" >      return node.label ? locEnd(node.label) : start + (node.type === "BreakStatement" ? "break".length : "continue".length);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type === "DebuggerStatement") {</span>
+<span class="cstat-no" title="statement not covered" >      return locStart(node) + "debugger".length;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (node.type === "VariableDeclaration") {</span>
 <span class="cstat-no" title="statement not covered" >      const lastDeclaration = method_at_default(</span>
 <span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
@@ -93233,7 +93246,7 @@
 <span class="cstat-no" title="statement not covered" >    if (node.type === "IfStatement") {</span>
 <span class="cstat-no" title="statement not covered" >      return locEnd(node.alternate ?? node.consequent);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if ((node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration") &amp;&amp; node.__contentEnd) {</span>
+<span class="cstat-no" title="statement not covered" >    if ((node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration" || node.type === "ReturnStatement" || node.type === "ThrowStatement") &amp;&amp; node.__contentEnd) {</span>
 <span class="cstat-no" title="statement not covered" >      return node.__contentEnd;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return locEndWithFullText(node);</span>
@@ -93988,6 +94001,8 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "ExportDefaultDeclaration":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "ExportNamedDeclaration":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "ExportAllDeclaration":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "ReturnStatement":</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >          case "ThrowStatement":</span>
 <span class="cstat-no" title="statement not covered" >            addNodeContentEnd(node, {</span>
 <span class="cstat-no" title="statement not covered" >              comments,</span>
 <span class="cstat-no" title="statement not covered" >              text</span>
@@ -94252,7 +94267,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-02T00:45:57.523Z
+                at 2026-02-03T00:45:44.117Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

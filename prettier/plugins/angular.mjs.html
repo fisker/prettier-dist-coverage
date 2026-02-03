@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.07% </span>
+                <span class="strong">79.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4288/5423</span>
+                <span class='fraction'>4289/5426</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.38% </span>
+                <span class="strong">88.28% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>860/973</span>
+                <span class='fraction'>859/973</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.07% </span>
+                <span class="strong">79.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4288/5423</span>
+                <span class='fraction'>4289/5426</span>
             </div>
         
             
@@ -5486,7 +5486,10 @@
 <a name='L5421'></a><a href='#L5421'>5421</a>
 <a name='L5422'></a><a href='#L5422'>5422</a>
 <a name='L5423'></a><a href='#L5423'>5423</a>
-<a name='L5424'></a><a href='#L5424'>5424</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L5424'></a><a href='#L5424'>5424</a>
+<a name='L5425'></a><a href='#L5425'>5425</a>
+<a name='L5426'></a><a href='#L5426'>5426</a>
+<a name='L5427'></a><a href='#L5427'>5427</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -9582,9 +9585,9 @@
 <span class="cline-any cline-yes">127x</span>
 <span class="cline-any cline-yes">127x</span>
 <span class="cline-any cline-yes">146x</span>
-<span class="cline-any cline-yes">270x</span>
 <span class="cline-any cline-yes">273x</span>
-<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">273x</span>
+<span class="cline-any cline-yes">273x</span>
 <span class="cline-any cline-yes">146x</span>
 <span class="cline-any cline-yes">273x</span>
 <span class="cline-any cline-yes">2224x</span>
@@ -9708,7 +9711,7 @@
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
 <span class="cline-any cline-yes">147x</span>
-<span class="cline-any cline-yes">395x</span>
+<span class="cline-any cline-yes">399x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">147x</span>
@@ -10626,7 +10629,7 @@
 <span class="cline-any cline-yes">806x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">789x</span>
+<span class="cline-any cline-yes">794x</span>
 <span class="cline-any cline-yes">307x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -10805,6 +10808,9 @@
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">63x</span>
@@ -16230,6 +16236,9 @@ function locEnd(node) {
 <span class="cstat-no" title="statement not covered" >    const start = locStart(node);</span>
 <span class="cstat-no" title="statement not covered" >    return node.label ? locEnd(node.label) : start + (node.type === "BreakStatement" ? "break".length : "continue".length);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+  if (node.type === "DebuggerStatement") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    return locStart(node) + "debugger".length;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   if (node.type === "VariableDeclaration") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    const lastDeclaration = method_at_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
@@ -16242,7 +16251,7 @@ function locEnd(node) {
   if (node.type === "IfStatement") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return locEnd(node.alternate ?? node.consequent);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if ((node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.__contentEnd)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if ((node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration" || node.type === "ReturnStatement" || node.type === "ThrowStatement") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.__contentEnd)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return node.__contentEnd;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   return locEndWithFullText(node);
@@ -16339,7 +16348,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-02T00:45:57.523Z
+                at 2026-02-03T00:45:44.117Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
