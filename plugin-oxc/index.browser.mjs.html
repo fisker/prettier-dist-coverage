@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25690</span>
+                <span class='fraction'>0/25707</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25690</span>
+                <span class='fraction'>0/25707</span>
             </div>
         
             
@@ -25753,7 +25753,41 @@
 <a name='L25688'></a><a href='#L25688'>25688</a>
 <a name='L25689'></a><a href='#L25689'>25689</a>
 <a name='L25690'></a><a href='#L25690'>25690</a>
-<a name='L25691'></a><a href='#L25691'>25691</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25691'></a><a href='#L25691'>25691</a>
+<a name='L25692'></a><a href='#L25692'>25692</a>
+<a name='L25693'></a><a href='#L25693'>25693</a>
+<a name='L25694'></a><a href='#L25694'>25694</a>
+<a name='L25695'></a><a href='#L25695'>25695</a>
+<a name='L25696'></a><a href='#L25696'>25696</a>
+<a name='L25697'></a><a href='#L25697'>25697</a>
+<a name='L25698'></a><a href='#L25698'>25698</a>
+<a name='L25699'></a><a href='#L25699'>25699</a>
+<a name='L25700'></a><a href='#L25700'>25700</a>
+<a name='L25701'></a><a href='#L25701'>25701</a>
+<a name='L25702'></a><a href='#L25702'>25702</a>
+<a name='L25703'></a><a href='#L25703'>25703</a>
+<a name='L25704'></a><a href='#L25704'>25704</a>
+<a name='L25705'></a><a href='#L25705'>25705</a>
+<a name='L25706'></a><a href='#L25706'>25706</a>
+<a name='L25707'></a><a href='#L25707'>25707</a>
+<a name='L25708'></a><a href='#L25708'>25708</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -64478,6 +64512,9 @@
 <span class="cstat-no" title="statement not covered" >// src/constants.js</span>
 <span class="cstat-no" title="statement not covered" >var commentsPropertyInOptions = /* @__PURE__ */ Symbol.for("comments");</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/location/is-index.js</span>
+<span class="cstat-no" title="statement not covered" >var isIndex = (value) =&gt; Number.isInteger(value) &amp;&amp; value &gt;= 0;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// scripts/build/shims/method-at.js</span>
 <span class="cstat-no" title="statement not covered" >function stringOrArrayAt(index) {</span>
 <span class="cstat-no" title="statement not covered" >  return this[index &lt; 0 ? this.length + index : index];</span>
@@ -64488,63 +64525,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >});</span>
 <span class="cstat-no" title="statement not covered" >var method_at_default = at;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// src/language-js/loc.js</span>
-<span class="cstat-no" title="statement not covered" >var isIndex = (value) =&gt; Number.isInteger(value) &amp;&amp; value &gt;= 0;</span>
-<span class="cstat-no" title="statement not covered" >function locStart(node) {</span>
-<span class="cstat-no" title="statement not covered" >  const start = node.range?.[0] ?? node.start;</span>
-<span class="cstat-no" title="statement not covered" >  if (false) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new TypeError("Can't not locate node.");</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const firstDecorator = (node.declaration?.decorators ?? node.decorators)?.[0];</span>
-<span class="cstat-no" title="statement not covered" >  if (firstDecorator) {</span>
-<span class="cstat-no" title="statement not covered" >    return Math.min(locStart(firstDecorator), start);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return start;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function locEnd(node) {</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "BreakStatement" || node.type === "ContinueStatement") {</span>
-<span class="cstat-no" title="statement not covered" >    const start = locStart(node);</span>
-<span class="cstat-no" title="statement not covered" >    return node.label ? locEnd(node.label) : start + (node.type === "BreakStatement" ? "break".length : "continue".length);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "DebuggerStatement") {</span>
-<span class="cstat-no" title="statement not covered" >    return locStart(node) + "debugger".length;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "VariableDeclaration") {</span>
-<span class="cstat-no" title="statement not covered" >    const lastDeclaration = method_at_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >      0,</span>
-<span class="cstat-no" title="statement not covered" >      node.declarations,</span>
-<span class="cstat-no" title="statement not covered" >      -1</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    return locEnd(lastDeclaration);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "IfStatement") {</span>
-<span class="cstat-no" title="statement not covered" >    return locEnd(node.alternate ?? node.consequent);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if ((node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration" || node.type === "ReturnStatement" || node.type === "ThrowStatement") &amp;&amp; node.__contentEnd) {</span>
-<span class="cstat-no" title="statement not covered" >    return node.__contentEnd;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return locEndWithFullText(node);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function locEndWithFullText(node) {</span>
-<span class="cstat-no" title="statement not covered" >  const end = node.range?.[1] ?? node.end;</span>
-<span class="cstat-no" title="statement not covered" >  if (false) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new TypeError("Can't not locate node.");</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return end;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function hasSameLocStart(nodeA, nodeB) {</span>
-<span class="cstat-no" title="statement not covered" >  const nodeAStart = locStart(nodeA);</span>
-<span class="cstat-no" title="statement not covered" >  return isIndex(nodeAStart) &amp;&amp; nodeAStart === locStart(nodeB);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function hasSameLocEnd(nodeA, nodeB) {</span>
-<span class="cstat-no" title="statement not covered" >  const nodeAEnd = locEnd(nodeA);</span>
-<span class="cstat-no" title="statement not covered" >  return isIndex(nodeAEnd) &amp;&amp; nodeAEnd === locEnd(nodeB);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function hasSameLoc(nodeA, nodeB) {</span>
-<span class="cstat-no" title="statement not covered" >  return hasSameLocStart(nodeA, nodeB) &amp;&amp; hasSameLocEnd(nodeA, nodeB);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/create-type-check-function.js</span>
 <span class="cstat-no" title="statement not covered" >function createTypeCheckFunction(typesArray) {</span>
@@ -64557,6 +64537,88 @@
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return (node) =&gt; types.has(node?.type);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/location/end-with-full-text.js</span>
+<span class="cstat-no" title="statement not covered" >function locEndWithFullText(node) {</span>
+<span class="cstat-no" title="statement not covered" >  const end = node.range?.[1] ?? node.end;</span>
+<span class="cstat-no" title="statement not covered" >  if (false) {</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError("Can't not locate node.");</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return end;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/location/start.js</span>
+<span class="cstat-no" title="statement not covered" >function locStart(node) {</span>
+<span class="cstat-no" title="statement not covered" >  const start = node.range?.[0] ?? node.start;</span>
+<span class="cstat-no" title="statement not covered" >  if (false) {</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError("Can't not locate node.");</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const firstDecorator = (node.declaration?.decorators ?? node.decorators)?.[0];</span>
+<span class="cstat-no" title="statement not covered" >  if (firstDecorator) {</span>
+<span class="cstat-no" title="statement not covered" >    return Math.min(locStart(firstDecorator), start);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return start;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/location/overrides.js</span>
+<span class="cstat-no" title="statement not covered" >var BREAK_KEYWORD_LENGTH = "break".length;</span>
+<span class="cstat-no" title="statement not covered" >var CONTINUE_KEYWORD_LENGTH = "continue".length;</span>
+<span class="cstat-no" title="statement not covered" >var DEBUGGER_KEYWORD_LENGTH = "debugger".length;</span>
+<span class="cstat-no" title="statement not covered" >var overrideBreakOrContinueEnd = (</span>
+<span class="cstat-no" title="statement not covered" >  /**</span>
+<span class="cstat-no" title="statement not covered" >  @param {BREAK_KEYWORD_LENGTH | CONTINUE_KEYWORD_LENGTH} keywordLength</span>
+<span class="cstat-no" title="statement not covered" >  @returns {LocEndOverride&lt;NodeMap["BreakStatement"] | NodeMap["ContinueStatement"]&gt;}</span>
+<span class="cstat-no" title="statement not covered" >  */</span>
+<span class="cstat-no" title="statement not covered" >  (keywordLength) =&gt; (node) =&gt; node.label ? locEnd(node.label) : locStart(node) + keywordLength</span>
+<span class="cstat-no" title="statement not covered" >);</span>
+<span class="cstat-no" title="statement not covered" >var getContentEnd = (node) =&gt; node.__contentEnd ?? locEndWithFullText(node);</span>
+<span class="cstat-no" title="statement not covered" >var nodeTypesWithContentEnd = (</span>
+<span class="cstat-no" title="statement not covered" >  /** @type {const} */</span>
+<span class="cstat-no" title="statement not covered" >  ["ExpressionStatement", "Directive", "ImportDeclaration", "ExportDefaultDeclaration", "ExportNamedDeclaration", "ExportAllDeclaration", "ReturnStatement", "ThrowStatement", "DoWhileStatement"]</span>
+<span class="cstat-no" title="statement not covered" >);</span>
+<span class="cstat-no" title="statement not covered" >var overrides = (</span>
+<span class="cstat-no" title="statement not covered" >  // @ts-expect-error -- Unknown</span>
+<span class="cstat-no" title="statement not covered" >  new Map([</span>
+<span class="cstat-no" title="statement not covered" >    ["BreakStatement", overrideBreakOrContinueEnd(BREAK_KEYWORD_LENGTH)],</span>
+<span class="cstat-no" title="statement not covered" >    ["ContinueStatement", overrideBreakOrContinueEnd(CONTINUE_KEYWORD_LENGTH)],</span>
+<span class="cstat-no" title="statement not covered" >    ["DebuggerStatement", (node) =&gt; locStart(node) + DEBUGGER_KEYWORD_LENGTH],</span>
+<span class="cstat-no" title="statement not covered" >    // @ts-expect-error -- ignore</span>
+<span class="cstat-no" title="statement not covered" >    ["VariableDeclaration", (node) =&gt; locEnd(method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >      0,</span>
+<span class="cstat-no" title="statement not covered" >      node.declarations,</span>
+<span class="cstat-no" title="statement not covered" >      -1</span>
+<span class="cstat-no" title="statement not covered" >    ))],</span>
+<span class="cstat-no" title="statement not covered" >    ...nodeTypesWithContentEnd.map((type) =&gt; [type, getContentEnd])</span>
+<span class="cstat-no" title="statement not covered" >  ])</span>
+<span class="cstat-no" title="statement not covered" >);</span>
+<span class="cstat-no" title="statement not covered" >var shouldAddContentEnd = createTypeCheckFunction(nodeTypesWithContentEnd);</span>
+<span class="cstat-no" title="statement not covered" >var shouldIgnoredNodePrintSemicolon = (node) =&gt; node.type === "BreakStatement" || node.type === "ContinueStatement" || node.type === "DebuggerStatement" || node.type === "VariableDeclaration" || shouldAddContentEnd(node) &amp;&amp; node.__contentEnd;</span>
+<span class="cstat-no" title="statement not covered" >function locEnd(node) {</span>
+<span class="cstat-no" title="statement not covered" >  const {</span>
+<span class="cstat-no" title="statement not covered" >    type</span>
+<span class="cstat-no" title="statement not covered" >  } = node;</span>
+<span class="cstat-no" title="statement not covered" >  if (type === "IfStatement") {</span>
+<span class="cstat-no" title="statement not covered" >    return locEnd(node.alternate ?? node.consequent);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return overrides.get(type)?.(</span>
+<span class="cstat-no" title="statement not covered" >    // @ts-expect-error -- Comment types</span>
+<span class="cstat-no" title="statement not covered" >    node</span>
+<span class="cstat-no" title="statement not covered" >  ) ?? locEndWithFullText(node);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/location/comparison.js</span>
+<span class="cstat-no" title="statement not covered" >function hasSameLocStart(nodeA, nodeB) {</span>
+<span class="cstat-no" title="statement not covered" >  const nodeAStart = locStart(nodeA);</span>
+<span class="cstat-no" title="statement not covered" >  return isIndex(nodeAStart) &amp;&amp; nodeAStart === locStart(nodeB);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function hasSameLocEnd(nodeA, nodeB) {</span>
+<span class="cstat-no" title="statement not covered" >  const nodeAEnd = locEnd(nodeA);</span>
+<span class="cstat-no" title="statement not covered" >  return isIndex(nodeAEnd) &amp;&amp; nodeAEnd === locEnd(nodeB);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function hasSameLoc(nodeA, nodeB) {</span>
+<span class="cstat-no" title="statement not covered" >  return hasSameLocStart(nodeA, nodeB) &amp;&amp; hasSameLocEnd(nodeA, nodeB);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/comment-types.js</span>
@@ -65207,6 +65269,7 @@
 <span class="cstat-no" title="statement not covered" >  let typeCastCommentsEnds;</span>
 <span class="cstat-no" title="statement not covered" >  ast = visit_node_default(ast, {</span>
 <span class="cstat-no" title="statement not covered" >    onEnter(node) {</span>
+<span class="cstat-no" title="statement not covered" >      setContentEnd(node, comments, text);</span>
 <span class="cstat-no" title="statement not covered" >      switch (node.type) {</span>
 <span class="cstat-no" title="statement not covered" >        case "ParenthesizedExpression": {</span>
 <span class="cstat-no" title="statement not covered" >          const {</span>
@@ -65287,18 +65350,6 @@
 <span class="cstat-no" title="statement not covered" >            node.attributes = node.assertions;</span>
 <span class="cstat-no" title="statement not covered" >            delete node.assertions;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        // fall through</span>
-<span class="cstat-no" title="statement not covered" >        case "Directive":</span>
-<span class="cstat-no" title="statement not covered" >        case "ExpressionStatement":</span>
-<span class="cstat-no" title="statement not covered" >        case "ExportDefaultDeclaration":</span>
-<span class="cstat-no" title="statement not covered" >        case "ExportNamedDeclaration":</span>
-<span class="cstat-no" title="statement not covered" >        case "ExportAllDeclaration":</span>
-<span class="cstat-no" title="statement not covered" >        case "ReturnStatement":</span>
-<span class="cstat-no" title="statement not covered" >        case "ThrowStatement":</span>
-<span class="cstat-no" title="statement not covered" >          addNodeContentEnd(node, {</span>
-<span class="cstat-no" title="statement not covered" >            comments,</span>
-<span class="cstat-no" title="statement not covered" >            text</span>
-<span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
@@ -65342,10 +65393,10 @@
 <span class="cstat-no" title="statement not covered" >    range: [locStart(node), locEnd(node)]</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function addNodeContentEnd(node, {</span>
-<span class="cstat-no" title="statement not covered" >  comments,</span>
-<span class="cstat-no" title="statement not covered" >  text: originalText</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >function setContentEnd(node, comments, originalText) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!shouldAddContentEnd(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let end = locEndWithFullText(node);</span>
 <span class="cstat-no" title="statement not covered" >  if (originalText[end - 1] !== ";") {</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
@@ -74782,7 +74833,7 @@
 <span class="cstat-no" title="statement not covered" >function printVariableDeclaration(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  const printed = path.map(print3, "declarations");</span>
-<span class="cstat-no" title="statement not covered" >  const isForXInitializer = path.key === "init" &amp;&amp; path.parent.type === "ForStatement" || path.key === "left" &amp;&amp; (path.parent.type === "ForInStatement" || path.parent.type === "ForOfStatement");</span>
+<span class="cstat-no" title="statement not covered" >  const isForXStatementInitializer = path.key === "init" &amp;&amp; path.parent.type === "ForStatement" || path.key === "left" &amp;&amp; (path.parent.type === "ForInStatement" || path.parent.type === "ForOfStatement");</span>
 <span class="cstat-no" title="statement not covered" >  const hasValue = node.declarations.some((declarator) =&gt; declarator.init);</span>
 <span class="cstat-no" title="statement not covered" >  let firstVariable;</span>
 <span class="cstat-no" title="statement not covered" >  if (printed.length === 1 &amp;&amp; !hasComment(node.declarations[0])) {</span>
@@ -74797,11 +74848,11 @@
 <span class="cstat-no" title="statement not covered" >    indent(</span>
 <span class="cstat-no" title="statement not covered" >      printed.slice(1).map((doc) =&gt; [</span>
 <span class="cstat-no" title="statement not covered" >        ",",</span>
-<span class="cstat-no" title="statement not covered" >        hasValue &amp;&amp; !isForXInitializer ? hardline : line,</span>
+<span class="cstat-no" title="statement not covered" >        hasValue &amp;&amp; !isForXStatementInitializer ? hardline : line,</span>
 <span class="cstat-no" title="statement not covered" >        doc</span>
 <span class="cstat-no" title="statement not covered" >      ])</span>
 <span class="cstat-no" title="statement not covered" >    ),</span>
-<span class="cstat-no" title="statement not covered" >    isForXInitializer ? "" : printSemicolon(options2)</span>
+<span class="cstat-no" title="statement not covered" >    isForXStatementInitializer ? "" : printSemicolon(options2)</span>
 <span class="cstat-no" title="statement not covered" >  ]);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -75975,7 +76026,7 @@
 <span class="cstat-no" title="statement not covered" >function printIgnored(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  let text = options2.originalText.slice(locStart(node), locEnd(node));</span>
-<span class="cstat-no" title="statement not covered" >  if (options2.semi &amp;&amp; (node.type === "BreakStatement" || node.type === "ContinueStatement" || node.type === "DebuggerStatement" || node.type === "ReturnStatement" || node.type === "ThrowStatement" || node.type === "VariableDeclaration" || (node.type === "ExpressionStatement" || node.type === "Directive" || node.type === "ImportDeclaration" || node.type === "ExportDefaultDeclaration" || node.type === "ExportNamedDeclaration" || node.type === "ExportAllDeclaration") &amp;&amp; node.__contentEnd)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (options2.semi &amp;&amp; shouldIgnoredNodePrintSemicolon(node)) {</span>
 <span class="cstat-no" title="statement not covered" >    text += ";";</span>
 <span class="cstat-no" title="statement not covered" >  } else if (shouldExpressionStatementPrintLeadingSemicolon(path, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >    text = `;${text}`;</span>
@@ -77140,7 +77191,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-03T00:45:44.117Z
+                at 2026-02-04T00:41:55.684Z
             </div>
         <script src="../prettify.js"></script>
         <script>
