@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25707</span>
+                <span class='fraction'>0/25733</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25707</span>
+                <span class='fraction'>0/25733</span>
             </div>
         
             
@@ -25770,7 +25770,59 @@
 <a name='L25705'></a><a href='#L25705'>25705</a>
 <a name='L25706'></a><a href='#L25706'>25706</a>
 <a name='L25707'></a><a href='#L25707'>25707</a>
-<a name='L25708'></a><a href='#L25708'>25708</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25708'></a><a href='#L25708'>25708</a>
+<a name='L25709'></a><a href='#L25709'>25709</a>
+<a name='L25710'></a><a href='#L25710'>25710</a>
+<a name='L25711'></a><a href='#L25711'>25711</a>
+<a name='L25712'></a><a href='#L25712'>25712</a>
+<a name='L25713'></a><a href='#L25713'>25713</a>
+<a name='L25714'></a><a href='#L25714'>25714</a>
+<a name='L25715'></a><a href='#L25715'>25715</a>
+<a name='L25716'></a><a href='#L25716'>25716</a>
+<a name='L25717'></a><a href='#L25717'>25717</a>
+<a name='L25718'></a><a href='#L25718'>25718</a>
+<a name='L25719'></a><a href='#L25719'>25719</a>
+<a name='L25720'></a><a href='#L25720'>25720</a>
+<a name='L25721'></a><a href='#L25721'>25721</a>
+<a name='L25722'></a><a href='#L25722'>25722</a>
+<a name='L25723'></a><a href='#L25723'>25723</a>
+<a name='L25724'></a><a href='#L25724'>25724</a>
+<a name='L25725'></a><a href='#L25725'>25725</a>
+<a name='L25726'></a><a href='#L25726'>25726</a>
+<a name='L25727'></a><a href='#L25727'>25727</a>
+<a name='L25728'></a><a href='#L25728'>25728</a>
+<a name='L25729'></a><a href='#L25729'>25729</a>
+<a name='L25730'></a><a href='#L25730'>25730</a>
+<a name='L25731'></a><a href='#L25731'>25731</a>
+<a name='L25732'></a><a href='#L25732'>25732</a>
+<a name='L25733'></a><a href='#L25733'>25733</a>
+<a name='L25734'></a><a href='#L25734'>25734</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -64594,13 +64646,33 @@
 <span class="cstat-no" title="statement not covered" >  ])</span>
 <span class="cstat-no" title="statement not covered" >);</span>
 <span class="cstat-no" title="statement not covered" >var shouldAddContentEnd = createTypeCheckFunction(nodeTypesWithContentEnd);</span>
-<span class="cstat-no" title="statement not covered" >var shouldIgnoredNodePrintSemicolon = (node) =&gt; node.type === "BreakStatement" || node.type === "ContinueStatement" || node.type === "DebuggerStatement" || node.type === "VariableDeclaration" || shouldAddContentEnd(node) &amp;&amp; node.__contentEnd;</span>
+<span class="cstat-no" title="statement not covered" >var shouldIgnoredNodePrintSemicolon = (node) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  if (shouldAddContentEnd(node) &amp;&amp; node.__contentEnd) {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const {</span>
+<span class="cstat-no" title="statement not covered" >    type</span>
+<span class="cstat-no" title="statement not covered" >  } = node;</span>
+<span class="cstat-no" title="statement not covered" >  if (type === "BreakStatement" || type === "ContinueStatement" || type === "DebuggerStatement" || type === "VariableDeclaration") {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (type === "IfStatement") {</span>
+<span class="cstat-no" title="statement not covered" >    return shouldIgnoredNodePrintSemicolon(node.alternate ?? node.consequent);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (type === "ForInStatement" || type === "ForOfStatement" || type === "ForStatement" || type === "LabeledStatement" || type === "WithStatement" || type === "WhileStatement") {</span>
+<span class="cstat-no" title="statement not covered" >    return shouldIgnoredNodePrintSemicolon(node.body);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return false;</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 <span class="cstat-no" title="statement not covered" >function locEnd(node) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    type</span>
 <span class="cstat-no" title="statement not covered" >  } = node;</span>
 <span class="cstat-no" title="statement not covered" >  if (type === "IfStatement") {</span>
 <span class="cstat-no" title="statement not covered" >    return locEnd(node.alternate ?? node.consequent);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (type === "ForInStatement" || type === "ForOfStatement" || type === "ForStatement" || type === "LabeledStatement" || type === "WithStatement" || type === "WhileStatement") {</span>
+<span class="cstat-no" title="statement not covered" >    return locEnd(node.body);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return overrides.get(type)?.(</span>
 <span class="cstat-no" title="statement not covered" >    // @ts-expect-error -- Comment types</span>
@@ -70409,9 +70481,11 @@
 <span class="cstat-no" title="statement not covered" >      shouldGroupParameters ? group(parametersDoc) : parametersDoc,</span>
 <span class="cstat-no" title="statement not covered" >      returnTypeDoc</span>
 <span class="cstat-no" title="statement not covered" >    ]),</span>
-<span class="cstat-no" title="statement not covered" >    node.body ? " " : "",</span>
-<span class="cstat-no" title="statement not covered" >    print3("body"),</span>
-<span class="cstat-no" title="statement not covered" >    node.declare || !node.body ? printSemicolon(options2) : ""</span>
+<span class="cstat-no" title="statement not covered" >    node.body ? [" ", print3("body")] : (</span>
+<span class="cstat-no" title="statement not covered" >      // The semicolon not always needed,</span>
+<span class="cstat-no" title="statement not covered" >      // but prevent block statement after been parsed as body</span>
+<span class="cstat-no" title="statement not covered" >      ";"</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >  ];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function printMethod(path, options2, print3) {</span>
@@ -76561,7 +76635,11 @@
 <span class="cstat-no" title="statement not covered" >    printDeclareToken(path),</span>
 <span class="cstat-no" title="statement not covered" >    node.kind === "global" ? "" : `${node.kind} `,</span>
 <span class="cstat-no" title="statement not covered" >    print3("id"),</span>
-<span class="cstat-no" title="statement not covered" >    node.body ? [" ", group(print3("body"))] : printSemicolon(options2)</span>
+<span class="cstat-no" title="statement not covered" >    node.body ? [" ", group(print3("body"))] : (</span>
+<span class="cstat-no" title="statement not covered" >      // The semicolon not always needed,</span>
+<span class="cstat-no" title="statement not covered" >      // but prevent block statement after been parsed as body</span>
+<span class="cstat-no" title="statement not covered" >      ";"</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >  ];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -77191,7 +77269,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-05T00:45:35.888Z
+                at 2026-02-06T00:42:37.490Z
             </div>
         <script src="../prettify.js"></script>
         <script>
