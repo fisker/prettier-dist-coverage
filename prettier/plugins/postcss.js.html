@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.91% </span>
+                <span class="strong">52.92% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6062/11456</span>
+                <span class='fraction'>6062/11455</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.91% </span>
+                <span class="strong">52.92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6062/11456</span>
+                <span class='fraction'>6062/11455</span>
             </div>
         
             
@@ -11517,8 +11517,7 @@
 <a name='L11452'></a><a href='#L11452'>11452</a>
 <a name='L11453'></a><a href='#L11453'>11453</a>
 <a name='L11454'></a><a href='#L11454'>11454</a>
-<a name='L11455'></a><a href='#L11455'>11455</a>
-<a name='L11456'></a><a href='#L11456'>11456</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11455'></a><a href='#L11455'>11455</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15141,7 +15140,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -25069,7 +25067,7 @@
 <span class="cstat-no" title="statement not covered" >          node.source.end = this.getPosition(token[3] || token[2]);</span>
 <span class="cstat-no" title="statement not covered" >          node.source.end.offset++;</span>
 <span class="cstat-no" title="statement not covered" >          let text = token[1].slice(2, -2);</span>
-<span class="cstat-no" title="statement not covered" >          if (/^\s*$/.test(text)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (!text.trim()) {</span>
 <span class="cstat-no" title="statement not covered" >            node.text = "";</span>
 <span class="cstat-no" title="statement not covered" >            node.raws.left = text;</span>
 <span class="cstat-no" title="statement not covered" >            node.raws.right = "";</span>
@@ -26602,9 +26600,8 @@
 <span class="cstat-no" title="statement not covered" >          this._css = css2;</span>
 <span class="cstat-no" title="statement not covered" >          this._opts = opts;</span>
 <span class="cstat-no" title="statement not covered" >          this._map = void 0;</span>
-<span class="cstat-no" title="statement not covered" >          let root;</span>
 <span class="cstat-no" title="statement not covered" >          let str = stringify;</span>
-<span class="cstat-no" title="statement not covered" >          this.result = new Result(this._processor, root, this._opts);</span>
+<span class="cstat-no" title="statement not covered" >          this.result = new Result(this._processor, void 0, this._opts);</span>
 <span class="cstat-no" title="statement not covered" >          this.result.css = css2;</span>
 <span class="cstat-no" title="statement not covered" >          let self = this;</span>
 <span class="cstat-no" title="statement not covered" >          Object.defineProperty(this.result, "root", {</span>
@@ -26612,7 +26609,7 @@
 <span class="cstat-no" title="statement not covered" >              return self.root;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
-<span class="cstat-no" title="statement not covered" >          let map = new MapGenerator(str, root, this._opts, css2);</span>
+<span class="cstat-no" title="statement not covered" >          let map = new MapGenerator(str, void 0, this._opts, css2);</span>
 <span class="cstat-no" title="statement not covered" >          if (map.isMap()) {</span>
 <span class="cstat-no" title="statement not covered" >            let [generatedCSS, generatedMap] = map.generate();</span>
 <span class="cstat-no" title="statement not covered" >            if (generatedCSS) {</span>
@@ -26672,7 +26669,7 @@
       var Root = require_root();
       var Processor = class {
 <span class="fstat-no" title="function not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.6";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.8";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        normalize(plugins) {</span>
@@ -34085,7 +34082,7 @@
 <span class="cstat-no" title="statement not covered" >        value</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    let result = null;
+    let result;
     try {
       result = new import_parser.default(value, {
         loose: true
@@ -34435,7 +34432,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-04T00:43:29.611Z
+                at 2026-03-05T00:45:29.281Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
