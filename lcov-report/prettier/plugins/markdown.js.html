@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.57% </span>
+                <span class="strong">65.54% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15084/23003</span>
+                <span class='fraction'>15086/23015</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73% </span>
+                <span class="strong">72.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1842/2523</span>
+                <span class='fraction'>1842/2524</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.54% </span>
+                <span class="strong">66.48% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>716/1076</span>
+                <span class='fraction'>716/1077</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.57% </span>
+                <span class="strong">65.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15084/23003</span>
+                <span class='fraction'>15086/23015</span>
             </div>
         
             
@@ -23065,7 +23065,19 @@
 <a name='L23000'></a><a href='#L23000'>23000</a>
 <a name='L23001'></a><a href='#L23001'>23001</a>
 <a name='L23002'></a><a href='#L23002'>23002</a>
-<a name='L23003'></a><a href='#L23003'>23003</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L23003'></a><a href='#L23003'>23003</a>
+<a name='L23004'></a><a href='#L23004'>23004</a>
+<a name='L23005'></a><a href='#L23005'>23005</a>
+<a name='L23006'></a><a href='#L23006'>23006</a>
+<a name='L23007'></a><a href='#L23007'>23007</a>
+<a name='L23008'></a><a href='#L23008'>23008</a>
+<a name='L23009'></a><a href='#L23009'>23009</a>
+<a name='L23010'></a><a href='#L23010'>23010</a>
+<a name='L23011'></a><a href='#L23011'>23011</a>
+<a name='L23012'></a><a href='#L23012'>23012</a>
+<a name='L23013'></a><a href='#L23013'>23013</a>
+<a name='L23014'></a><a href='#L23014'>23014</a>
+<a name='L23015'></a><a href='#L23015'>23015</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -45109,6 +45121,17 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">140x</span>
 <span class="cline-any cline-yes">140x</span>
 <span class="cline-any cline-yes">140x</span>
@@ -45142,6 +45165,7 @@
 <span class="cline-any cline-yes">140x</span>
 <span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-yes">140x</span>
+<span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-yes">31x</span>
@@ -68110,6 +68134,17 @@
     ).hasTrailingPunctuation || next?.type === "sentence" &amp;&amp; next.children[0]?.type === "word" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !next.children[0].hasLeadingPunctuation;</span>
     return hasPrevOrNextWord;
   }
+<span class="fstat-no" title="function not covered" >  function hasFakeWhitespaceAfterNextToken(path2) {</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      siblings,</span>
+<span class="cstat-no" title="statement not covered" >      index: index2</span>
+<span class="cstat-no" title="statement not covered" >    } = path2;</span>
+<span class="cstat-no" title="statement not covered" >    if (!siblings || typeof index2 !== "number") {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const afterNext = siblings[index2 + 2];</span>
+<span class="cstat-no" title="statement not covered" >    return afterNext?.type === "whitespace" &amp;&amp; afterNext.value === "";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   function printMdast(path2, options2, print) {
     const {
       node: node2
@@ -68149,7 +68184,8 @@
         } = path2;
         const proseWrap = (
           // leading char that may cause different syntax
-          next &amp;&amp; /^&gt;|^(?:[*+-]|#{1,6}|\d+[).])$/.test(next.value) <span class="branch-0 cbranch-no" title="branch not covered" >? "never" </span>: options2.proseWrap
+          next &amp;&amp; /^&gt;|^(?:[*+-]|#{1,6}|\d+[).])$/.test(next.value) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; // Avoid https://github.com/prettier/prettier/issues/18861</span>
+          !hasFakeWhitespaceAfterNextToken(path2) <span class="branch-0 cbranch-no" title="branch not covered" >? "never" </span>: options2.proseWrap
         );
         return printWhitespace(path2, node2.value, proseWrap, false, options2);
       }
@@ -69076,7 +69112,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-06T00:47:54.318Z
+                at 2026-03-07T00:42:45.270Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
