@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.63% </span>
+                <span class="strong">91.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1358/1482</span>
+                <span class='fraction'>1357/1481</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.02% </span>
+                <span class="strong">96.01% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>580/604</span>
+                <span class='fraction'>579/603</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.63% </span>
+                <span class="strong">91.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1358/1482</span>
+                <span class='fraction'>1357/1481</span>
             </div>
         
             
@@ -1544,8 +1544,7 @@
 <a name='L1479'></a><a href='#L1479'>1479</a>
 <a name='L1480'></a><a href='#L1480'>1480</a>
 <a name='L1481'></a><a href='#L1481'>1481</a>
-<a name='L1482'></a><a href='#L1482'>1482</a>
-<a name='L1483'></a><a href='#L1483'>1483</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">439x</span>
+<a name='L1482'></a><a href='#L1482'>1482</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">439x</span>
 <span class="cline-any cline-yes">439x</span>
 <span class="cline-any cline-yes">439x</span>
 <span class="cline-any cline-yes">439x</span>
@@ -1683,7 +1682,7 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">8519995x</span>
-<span class="cline-any cline-yes">16132319x</span>
+<span class="cline-any cline-yes">18651025x</span>
 <span class="cline-any cline-yes">8519941x</span>
 <span class="cline-any cline-yes">8519941x</span>
 <span class="cline-any cline-yes">33391203x</span>
@@ -1729,7 +1728,7 @@
 <span class="cline-any cline-yes">11733446x</span>
 <span class="cline-any cline-yes">11733446x</span>
 <span class="cline-any cline-yes">11733446x</span>
-<span class="cline-any cline-yes">16310706x</span>
+<span class="cline-any cline-yes">16376402x</span>
 <span class="cline-any cline-yes">11733512x</span>
 <span class="cline-any cline-yes">11733512x</span>
 <span class="cline-any cline-yes">11733571x</span>
@@ -2716,7 +2715,6 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">10848037x</span>
-<span class="cline-any cline-yes">761209x</span>
 <span class="cline-any cline-yes">761209x</span>
 <span class="cline-any cline-yes">761209x</span>
 <span class="cline-any cline-yes">335093x</span>
@@ -4197,63 +4195,62 @@ function printDocToString(doc, options) {
       case DOC_TYPE_TRIM:
         position -= result.trim();
         break;
-      case DOC_TYPE_GROUP:
-        {
-          const command = (function printGroup() {
-            if (mode === MODE_FLAT &amp;&amp; !shouldRemeasure) {
-              return {
-                indent: indent2,
-                mode: doc2.break ? MODE_BREAK : MODE_FLAT,
-                doc: doc2.contents
-              };
-            }
-            shouldRemeasure = false;
-            const remainingWidth = width - position;
-            const hasLineSuffix = lineSuffix2.length &gt; 0;
-            const flatCommand = {
+      case DOC_TYPE_GROUP: {
+        const command = (function printGroup() {
+          if (mode === MODE_FLAT &amp;&amp; !shouldRemeasure) {
+            return {
               indent: indent2,
-              mode: MODE_FLAT,
+              mode: doc2.break ? MODE_BREAK : MODE_FLAT,
               doc: doc2.contents
             };
-            if (!doc2.break &amp;&amp; fits(flatCommand, commands, remainingWidth, hasLineSuffix, groupModeMap)) {
-              return flatCommand;
-            }
-            if (!doc2.expandedStates) {
-              return {
-                indent: indent2,
-                mode: MODE_BREAK,
-                doc: doc2.contents
-              };
-            }
-            if (!doc2.break) {
-              for (let index = 1; index &lt; doc2.expandedStates.length - 1; index++) {
-                const flatCommand2 = {
-                  indent: indent2,
-                  mode: MODE_FLAT,
-                  doc: doc2.expandedStates[index]
-                };
-                if (fits(flatCommand2, commands, remainingWidth, hasLineSuffix, groupModeMap)) {
-                  return flatCommand2;
-                }
-              }
-            }
+          }
+          shouldRemeasure = false;
+          const remainingWidth = width - position;
+          const hasLineSuffix = lineSuffix2.length &gt; 0;
+          const flatCommand = {
+            indent: indent2,
+            mode: MODE_FLAT,
+            doc: doc2.contents
+          };
+          if (!doc2.break &amp;&amp; fits(flatCommand, commands, remainingWidth, hasLineSuffix, groupModeMap)) {
+            return flatCommand;
+          }
+          if (!doc2.expandedStates) {
             return {
               indent: indent2,
               mode: MODE_BREAK,
-              doc: method_at_default(
-                /* OPTIONAL_OBJECT: false */
-                0,
-                doc2.expandedStates,
-                -1
-              )
+              doc: doc2.contents
             };
-          })();
-          commands.push(command);
-          if (doc2.id) {
-            groupModeMap[doc2.id] = command.mode;
           }
+          if (!doc2.break) {
+            for (let index = 1; index &lt; doc2.expandedStates.length - 1; index++) {
+              const flatCommand2 = {
+                indent: indent2,
+                mode: MODE_FLAT,
+                doc: doc2.expandedStates[index]
+              };
+              if (fits(flatCommand2, commands, remainingWidth, hasLineSuffix, groupModeMap)) {
+                return flatCommand2;
+              }
+            }
+          }
+          return {
+            indent: indent2,
+            mode: MODE_BREAK,
+            doc: method_at_default(
+              /* OPTIONAL_OBJECT: false */
+              0,
+              doc2.expandedStates,
+              -1
+            )
+          };
+        })();
+        commands.push(command);
+        if (doc2.id) {
+          groupModeMap[doc2.id] = command.mode;
         }
         break;
+      }
       // Fills each line with as much code as possible before moving to a new
       // line with the same indentation.
       //
@@ -4516,7 +4513,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-09T00:43:36.399Z
+                at 2026-04-10T00:51:18.695Z
             </div>
         <script src="../prettify.js"></script>
         <script>

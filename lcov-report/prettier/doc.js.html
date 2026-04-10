@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.53% </span>
+                <span class="strong">22.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>341/1513</span>
+                <span class='fraction'>341/1512</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.53% </span>
+                <span class="strong">22.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>341/1513</span>
+                <span class='fraction'>341/1512</span>
             </div>
         
             
@@ -1574,8 +1574,7 @@
 <a name='L1509'></a><a href='#L1509'>1509</a>
 <a name='L1510'></a><a href='#L1510'>1510</a>
 <a name='L1511'></a><a href='#L1511'>1511</a>
-<a name='L1512'></a><a href='#L1512'>1512</a>
-<a name='L1513'></a><a href='#L1513'>1513</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1512'></a><a href='#L1512'>1512</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2715,7 +2714,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -4292,63 +4290,62 @@
 <span class="cstat-no" title="statement not covered" >        case DOC_TYPE_TRIM:</span>
 <span class="cstat-no" title="statement not covered" >          position -= result.trim();</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="cstat-no" title="statement not covered" >        case DOC_TYPE_GROUP:</span>
-<span class="cstat-no" title="statement not covered" >          {</span>
-<span class="cstat-no" title="statement not covered" >            const command = (function printGroup() {</span>
-<span class="cstat-no" title="statement not covered" >              if (mode === MODE_FLAT &amp;&amp; !shouldRemeasure) {</span>
-<span class="cstat-no" title="statement not covered" >                return {</span>
-<span class="cstat-no" title="statement not covered" >                  indent: indent2,</span>
-<span class="cstat-no" title="statement not covered" >                  mode: doc2.break ? MODE_BREAK : MODE_FLAT,</span>
-<span class="cstat-no" title="statement not covered" >                  doc: doc2.contents</span>
-<span class="cstat-no" title="statement not covered" >                };</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              shouldRemeasure = false;</span>
-<span class="cstat-no" title="statement not covered" >              const remainingWidth = width - position;</span>
-<span class="cstat-no" title="statement not covered" >              const hasLineSuffix = lineSuffix2.length &gt; 0;</span>
-<span class="cstat-no" title="statement not covered" >              const flatCommand = {</span>
+<span class="cstat-no" title="statement not covered" >        case DOC_TYPE_GROUP: {</span>
+<span class="cstat-no" title="statement not covered" >          const command = (function printGroup() {</span>
+<span class="cstat-no" title="statement not covered" >            if (mode === MODE_FLAT &amp;&amp; !shouldRemeasure) {</span>
+<span class="cstat-no" title="statement not covered" >              return {</span>
 <span class="cstat-no" title="statement not covered" >                indent: indent2,</span>
-<span class="cstat-no" title="statement not covered" >                mode: MODE_FLAT,</span>
+<span class="cstat-no" title="statement not covered" >                mode: doc2.break ? MODE_BREAK : MODE_FLAT,</span>
 <span class="cstat-no" title="statement not covered" >                doc: doc2.contents</span>
 <span class="cstat-no" title="statement not covered" >              };</span>
-<span class="cstat-no" title="statement not covered" >              if (!doc2.break &amp;&amp; fits(flatCommand, commands, remainingWidth, hasLineSuffix, groupModeMap)) {</span>
-<span class="cstat-no" title="statement not covered" >                return flatCommand;</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              if (!doc2.expandedStates) {</span>
-<span class="cstat-no" title="statement not covered" >                return {</span>
-<span class="cstat-no" title="statement not covered" >                  indent: indent2,</span>
-<span class="cstat-no" title="statement not covered" >                  mode: MODE_BREAK,</span>
-<span class="cstat-no" title="statement not covered" >                  doc: doc2.contents</span>
-<span class="cstat-no" title="statement not covered" >                };</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              if (!doc2.break) {</span>
-<span class="cstat-no" title="statement not covered" >                for (let index = 1; index &lt; doc2.expandedStates.length - 1; index++) {</span>
-<span class="cstat-no" title="statement not covered" >                  const flatCommand2 = {</span>
-<span class="cstat-no" title="statement not covered" >                    indent: indent2,</span>
-<span class="cstat-no" title="statement not covered" >                    mode: MODE_FLAT,</span>
-<span class="cstat-no" title="statement not covered" >                    doc: doc2.expandedStates[index]</span>
-<span class="cstat-no" title="statement not covered" >                  };</span>
-<span class="cstat-no" title="statement not covered" >                  if (fits(flatCommand2, commands, remainingWidth, hasLineSuffix, groupModeMap)) {</span>
-<span class="cstat-no" title="statement not covered" >                    return flatCommand2;</span>
-<span class="cstat-no" title="statement not covered" >                  }</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            shouldRemeasure = false;</span>
+<span class="cstat-no" title="statement not covered" >            const remainingWidth = width - position;</span>
+<span class="cstat-no" title="statement not covered" >            const hasLineSuffix = lineSuffix2.length &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >            const flatCommand = {</span>
+<span class="cstat-no" title="statement not covered" >              indent: indent2,</span>
+<span class="cstat-no" title="statement not covered" >              mode: MODE_FLAT,</span>
+<span class="cstat-no" title="statement not covered" >              doc: doc2.contents</span>
+<span class="cstat-no" title="statement not covered" >            };</span>
+<span class="cstat-no" title="statement not covered" >            if (!doc2.break &amp;&amp; fits(flatCommand, commands, remainingWidth, hasLineSuffix, groupModeMap)) {</span>
+<span class="cstat-no" title="statement not covered" >              return flatCommand;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            if (!doc2.expandedStates) {</span>
 <span class="cstat-no" title="statement not covered" >              return {</span>
 <span class="cstat-no" title="statement not covered" >                indent: indent2,</span>
 <span class="cstat-no" title="statement not covered" >                mode: MODE_BREAK,</span>
-<span class="cstat-no" title="statement not covered" >                doc: method_at_default(</span>
-<span class="cstat-no" title="statement not covered" >                  /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >                  0,</span>
-<span class="cstat-no" title="statement not covered" >                  doc2.expandedStates,</span>
-<span class="cstat-no" title="statement not covered" >                  -1</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                doc: doc2.contents</span>
 <span class="cstat-no" title="statement not covered" >              };</span>
-<span class="cstat-no" title="statement not covered" >            })();</span>
-<span class="cstat-no" title="statement not covered" >            commands.push(command);</span>
-<span class="cstat-no" title="statement not covered" >            if (doc2.id) {</span>
-<span class="cstat-no" title="statement not covered" >              groupModeMap[doc2.id] = command.mode;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            if (!doc2.break) {</span>
+<span class="cstat-no" title="statement not covered" >              for (let index = 1; index &lt; doc2.expandedStates.length - 1; index++) {</span>
+<span class="cstat-no" title="statement not covered" >                const flatCommand2 = {</span>
+<span class="cstat-no" title="statement not covered" >                  indent: indent2,</span>
+<span class="cstat-no" title="statement not covered" >                  mode: MODE_FLAT,</span>
+<span class="cstat-no" title="statement not covered" >                  doc: doc2.expandedStates[index]</span>
+<span class="cstat-no" title="statement not covered" >                };</span>
+<span class="cstat-no" title="statement not covered" >                if (fits(flatCommand2, commands, remainingWidth, hasLineSuffix, groupModeMap)) {</span>
+<span class="cstat-no" title="statement not covered" >                  return flatCommand2;</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            return {</span>
+<span class="cstat-no" title="statement not covered" >              indent: indent2,</span>
+<span class="cstat-no" title="statement not covered" >              mode: MODE_BREAK,</span>
+<span class="cstat-no" title="statement not covered" >              doc: method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >                /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >                0,</span>
+<span class="cstat-no" title="statement not covered" >                doc2.expandedStates,</span>
+<span class="cstat-no" title="statement not covered" >                -1</span>
+<span class="cstat-no" title="statement not covered" >              )</span>
+<span class="cstat-no" title="statement not covered" >            };</span>
+<span class="cstat-no" title="statement not covered" >          })();</span>
+<span class="cstat-no" title="statement not covered" >          commands.push(command);</span>
+<span class="cstat-no" title="statement not covered" >          if (doc2.id) {</span>
+<span class="cstat-no" title="statement not covered" >            groupModeMap[doc2.id] = command.mode;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        // Fills each line with as much code as possible before moving to a new</span>
 <span class="cstat-no" title="statement not covered" >        // line with the same indentation.</span>
 <span class="cstat-no" title="statement not covered" >        //</span>
@@ -4606,7 +4603,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-09T00:43:36.399Z
+                at 2026-04-10T00:51:18.695Z
             </div>
         <script src="../prettify.js"></script>
         <script>
