@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25735</span>
+                <span class='fraction'>0/25749</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25735</span>
+                <span class='fraction'>0/25749</span>
             </div>
         
             
@@ -25798,7 +25798,35 @@
 <a name='L25733'></a><a href='#L25733'>25733</a>
 <a name='L25734'></a><a href='#L25734'>25734</a>
 <a name='L25735'></a><a href='#L25735'>25735</a>
-<a name='L25736'></a><a href='#L25736'>25736</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25736'></a><a href='#L25736'>25736</a>
+<a name='L25737'></a><a href='#L25737'>25737</a>
+<a name='L25738'></a><a href='#L25738'>25738</a>
+<a name='L25739'></a><a href='#L25739'>25739</a>
+<a name='L25740'></a><a href='#L25740'>25740</a>
+<a name='L25741'></a><a href='#L25741'>25741</a>
+<a name='L25742'></a><a href='#L25742'>25742</a>
+<a name='L25743'></a><a href='#L25743'>25743</a>
+<a name='L25744'></a><a href='#L25744'>25744</a>
+<a name='L25745'></a><a href='#L25745'>25745</a>
+<a name='L25746'></a><a href='#L25746'>25746</a>
+<a name='L25747'></a><a href='#L25747'>25747</a>
+<a name='L25748'></a><a href='#L25748'>25748</a>
+<a name='L25749'></a><a href='#L25749'>25749</a>
+<a name='L25750'></a><a href='#L25750'>25750</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -65263,7 +65291,8 @@
 <span class="cstat-no" title="statement not covered" >  TSJSDocUnknownType: [],</span>
 <span class="cstat-no" title="statement not covered" >  TSJSDocNullableType: vk[30],</span>
 <span class="cstat-no" title="statement not covered" >  TSJSDocNonNullableType: vk[30],</span>
-<span class="cstat-no" title="statement not covered" >  SatisfiesExpression: vk[36]</span>
+<span class="cstat-no" title="statement not covered" >  SatisfiesExpression: vk[36],</span>
+<span class="cstat-no" title="statement not covered" >  EnumBody: vk[38]</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/traverse/get-visitor-keys.js</span>
@@ -70001,7 +70030,8 @@
 <span class="cstat-no" title="statement not covered" >    typeParametersDoc,</span>
 <span class="cstat-no" title="statement not covered" >    "(",</span>
 <span class="cstat-no" title="statement not covered" >    indent([softline, ...printed]),</span>
-<span class="cstat-no" title="statement not covered" >    !hasRestParameter(functionNode) ? printTrailingComma(options2, "all") : "",</span>
+<span class="cstat-no" title="statement not covered" >    !hasRestParameter(functionNode) &amp;&amp; // Angular does not allow trailing comma</span>
+<span class="cstat-no" title="statement not covered" >    path.root.type !== "NGRoot" ? printTrailingComma(options2, "all") : "",</span>
 <span class="cstat-no" title="statement not covered" >    softline,</span>
 <span class="cstat-no" title="statement not covered" >    ")"</span>
 <span class="cstat-no" title="statement not covered" >  ];</span>
@@ -74083,7 +74113,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/print/object.js</span>
 <span class="cstat-no" title="statement not covered" >var isPrintingImportAttributes = createTypeCheckFunction(["ImportDeclaration", "ExportDefaultDeclaration", "ExportNamedDeclaration", "ExportAllDeclaration", "DeclareExportDeclaration", "DeclareExportAllDeclaration"]);</span>
-<span class="cstat-no" title="statement not covered" >var isPrintingFlowEnumBody = createTypeCheckFunction(["EnumBooleanBody", "EnumNumberBody", "EnumBigIntBody", "EnumStringBody", "EnumSymbolBody"]);</span>
+<span class="cstat-no" title="statement not covered" >var isPrintingFlowEnumBody = createTypeCheckFunction(["EnumBody", "EnumBooleanBody", "EnumNumberBody", "EnumBigIntBody", "EnumStringBody", "EnumSymbolBody"]);</span>
 <span class="cstat-no" title="statement not covered" >function printObject(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    node,</span>
@@ -75247,6 +75277,13 @@
 <span class="cstat-no" title="statement not covered" >function printFlowEnumBody(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  return [</span>
+<span class="cstat-no" title="statement not covered" >    node.explicitType ? `of ${node.explicitType} ` : "",</span>
+<span class="cstat-no" title="statement not covered" >    printObject(path, options2, print3)</span>
+<span class="cstat-no" title="statement not covered" >  ];</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function printLegacyFlowEnumBody(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >  return [</span>
 <span class="cstat-no" title="statement not covered" >    node.type === "EnumSymbolBody" || node.explicitType ? `of ${node.type.slice(</span>
 <span class="cstat-no" title="statement not covered" >      // `Enum`</span>
 <span class="cstat-no" title="statement not covered" >      4,</span>
@@ -75919,12 +75956,14 @@
 <span class="cstat-no" title="statement not covered" >    case "DeclareEnum":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumDeclaration":</span>
 <span class="cstat-no" title="statement not covered" >      return printEnumDeclaration(path, print3);</span>
+<span class="cstat-no" title="statement not covered" >    case "EnumBody":</span>
+<span class="cstat-no" title="statement not covered" >      return printFlowEnumBody(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumBooleanBody":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumNumberBody":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumBigIntBody":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumStringBody":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumSymbolBody":</span>
-<span class="cstat-no" title="statement not covered" >      return printFlowEnumBody(path, options2, print3);</span>
+<span class="cstat-no" title="statement not covered" >      return printLegacyFlowEnumBody(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumBooleanMember":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumNumberMember":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumBigIntMember":</span>
@@ -77237,6 +77276,9 @@
 <span class="cstat-no" title="statement not covered" >      ".tsx"</span>
 <span class="cstat-no" title="statement not covered" >    ],</span>
 <span class="cstat-no" title="statement not covered" >    "tmScope": "source.tsx",</span>
+<span class="cstat-no" title="statement not covered" >    "aliases": [</span>
+<span class="cstat-no" title="statement not covered" >      "typescriptreact"</span>
+<span class="cstat-no" title="statement not covered" >    ],</span>
 <span class="cstat-no" title="statement not covered" >    "codemirrorMode": "jsx",</span>
 <span class="cstat-no" title="statement not covered" >    "codemirrorMimeType": "text/typescript-jsx",</span>
 <span class="cstat-no" title="statement not covered" >    "group": "TypeScript",</span>
@@ -77275,7 +77317,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-10T00:51:18.695Z
+                at 2026-04-11T00:49:08.186Z
             </div>
         <script src="../prettify.js"></script>
         <script>
