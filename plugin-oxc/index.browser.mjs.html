@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25749</span>
+                <span class='fraction'>0/25737</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25749</span>
+                <span class='fraction'>0/25737</span>
             </div>
         
             
@@ -25800,31 +25800,7 @@
 <a name='L25735'></a><a href='#L25735'>25735</a>
 <a name='L25736'></a><a href='#L25736'>25736</a>
 <a name='L25737'></a><a href='#L25737'>25737</a>
-<a name='L25738'></a><a href='#L25738'>25738</a>
-<a name='L25739'></a><a href='#L25739'>25739</a>
-<a name='L25740'></a><a href='#L25740'>25740</a>
-<a name='L25741'></a><a href='#L25741'>25741</a>
-<a name='L25742'></a><a href='#L25742'>25742</a>
-<a name='L25743'></a><a href='#L25743'>25743</a>
-<a name='L25744'></a><a href='#L25744'>25744</a>
-<a name='L25745'></a><a href='#L25745'>25745</a>
-<a name='L25746'></a><a href='#L25746'>25746</a>
-<a name='L25747'></a><a href='#L25747'>25747</a>
-<a name='L25748'></a><a href='#L25748'>25748</a>
-<a name='L25749'></a><a href='#L25749'>25749</a>
-<a name='L25750'></a><a href='#L25750'>25750</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L25738'></a><a href='#L25738'>25738</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -74813,22 +74789,11 @@
 <span class="cstat-no" title="statement not covered" >    isLoneShortArgument(consequentNode, options2) &amp;&amp; isSimpleExpressionByNodeCount(node.test, 3)</span>
 <span class="cstat-no" title="statement not covered" >  ));</span>
 <span class="cstat-no" title="statement not covered" >  const shouldGroupTestAndConsequent = isInChain || isInAlternate || isTSConditional &amp;&amp; !isParentTernary || isParentTernary &amp;&amp; isConditionalExpression &amp;&amp; isSimpleExpressionByNodeCount(node.test, 1) || tryToParenthesizeAlternate;</span>
-<span class="cstat-no" title="statement not covered" >  const consequentComments = [];</span>
-<span class="cstat-no" title="statement not covered" >  if (!isConsequentTernary &amp;&amp; hasComment(consequentNode, CommentCheckFlags.Dangling)) {</span>
-<span class="cstat-no" title="statement not covered" >    path.call(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      consequentComments.push(printDanglingComments(path, options2), hardline);</span>
-<span class="cstat-no" title="statement not covered" >    }, "consequent");</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const alternateComments = [];</span>
 <span class="cstat-no" title="statement not covered" >  if (hasComment(node.test, CommentCheckFlags.Dangling)) {</span>
 <span class="cstat-no" title="statement not covered" >    path.call(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      alternateComments.push(printDanglingComments(path, options2));</span>
 <span class="cstat-no" title="statement not covered" >    }, "test");</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (!isAlternateTernary &amp;&amp; hasComment(alternateNode, CommentCheckFlags.Dangling)) {</span>
-<span class="cstat-no" title="statement not covered" >    path.call(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      alternateComments.push(printDanglingComments(path, options2));</span>
-<span class="cstat-no" title="statement not covered" >    }, "alternate");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (hasComment(node, CommentCheckFlags.Dangling)) {</span>
 <span class="cstat-no" title="statement not covered" >    alternateComments.push(printDanglingComments(path, options2));</span>
@@ -74852,7 +74817,6 @@
 <span class="cstat-no" title="statement not covered" >  const printedConsequent = print3(consequentNodePropertyName);</span>
 <span class="cstat-no" title="statement not covered" >  const consequent = indent([</span>
 <span class="cstat-no" title="statement not covered" >    isConsequentTernary || isInJsx &amp;&amp; (isJsxElement(consequentNode) || isParentTernary || isInChain) ? hardline : line,</span>
-<span class="cstat-no" title="statement not covered" >    consequentComments,</span>
 <span class="cstat-no" title="statement not covered" >    printedConsequent</span>
 <span class="cstat-no" title="statement not covered" >  ]);</span>
 <span class="cstat-no" title="statement not covered" >  const printedTestAndConsequent = shouldGroupTestAndConsequent ? group(</span>
@@ -75999,8 +75963,8 @@
 <span class="cstat-no" title="statement not covered" >      return ["?", print3("typeAnnotation")];</span>
 <span class="cstat-no" title="statement not covered" >    case "Variance": {</span>
 <span class="cstat-no" title="statement not covered" >      const { kind } = node;</span>
-<span class="cstat-no" title="statement not covered" >      noop_default(kind === "plus" || kind === "minus");</span>
-<span class="cstat-no" title="statement not covered" >      return kind === "plus" ? "+" : "-";</span>
+<span class="cstat-no" title="statement not covered" >      noop_default(kind === "plus" || kind === "minus" || kind === "readonly");</span>
+<span class="cstat-no" title="statement not covered" >      return kind === "plus" ? "+" : kind === "minus" ? "-" : `${kind} `;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    case "KeyofTypeAnnotation":</span>
 <span class="cstat-no" title="statement not covered" >      return ["keyof ", print3("argument")];</span>
@@ -77317,7 +77281,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-11T00:49:10.561Z
+                at 2026-04-12T00:55:25.568Z
             </div>
         <script src="../prettify.js"></script>
         <script>
