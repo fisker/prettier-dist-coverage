@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40.65% </span>
+                <span class="strong">40.58% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2957/7273</span>
+                <span class='fraction'>2958/7289</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.64% </span>
+                <span class="strong">48.27% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>126/259</span>
+                <span class='fraction'>126/261</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40.65% </span>
+                <span class="strong">40.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2957/7273</span>
+                <span class='fraction'>2958/7289</span>
             </div>
         
             
@@ -7335,7 +7335,23 @@
 <a name='L7270'></a><a href='#L7270'>7270</a>
 <a name='L7271'></a><a href='#L7271'>7271</a>
 <a name='L7272'></a><a href='#L7272'>7272</a>
-<a name='L7273'></a><a href='#L7273'>7273</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7273'></a><a href='#L7273'>7273</a>
+<a name='L7274'></a><a href='#L7274'>7274</a>
+<a name='L7275'></a><a href='#L7275'>7275</a>
+<a name='L7276'></a><a href='#L7276'>7276</a>
+<a name='L7277'></a><a href='#L7277'>7277</a>
+<a name='L7278'></a><a href='#L7278'>7278</a>
+<a name='L7279'></a><a href='#L7279'>7279</a>
+<a name='L7280'></a><a href='#L7280'>7280</a>
+<a name='L7281'></a><a href='#L7281'>7281</a>
+<a name='L7282'></a><a href='#L7282'>7282</a>
+<a name='L7283'></a><a href='#L7283'>7283</a>
+<a name='L7284'></a><a href='#L7284'>7284</a>
+<a name='L7285'></a><a href='#L7285'>7285</a>
+<a name='L7286'></a><a href='#L7286'>7286</a>
+<a name='L7287'></a><a href='#L7287'>7287</a>
+<a name='L7288'></a><a href='#L7288'>7288</a>
+<a name='L7289'></a><a href='#L7289'>7289</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -13682,6 +13698,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13690,12 +13716,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20946,22 +20978,37 @@
     return cache2.get(comments);
   }
 &nbsp;
-  // src/language-js/utilities/is-indentable-block-comment.js
-<span class="fstat-no" title="function not covered" >  function isIndentableBlockCommentInternal(comment) {</span>
+  // src/language-js/utilities/indentable-block-comment.js
+<span class="fstat-no" title="function not covered" >  function getIndentableLinesBlockCommentInternal(comment) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!isBlockComment(comment)) {</span>
-<span class="cstat-no" title="statement not covered" >      return false;</span>
+<span class="cstat-no" title="statement not covered" >      return [];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const lines = `*${comment.value}*`.split("\n");</span>
-<span class="cstat-no" title="statement not covered" >    return lines.length &gt; 1 &amp;&amp; lines.every((line) =&gt; line.trimStart()[0] === "*");</span>
+<span class="cstat-no" title="statement not covered" >    if (!comment.value.includes("\n")) {</span>
+<span class="cstat-no" title="statement not covered" >      return [];</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const trimmedLines = [];</span>
+<span class="cstat-no" title="statement not covered" >    for (let line of `*${comment.value}*`.split("\n")) {</span>
+<span class="cstat-no" title="statement not covered" >      line = line.trimStart();</span>
+<span class="cstat-no" title="statement not covered" >      if (!line.startsWith("*")) {</span>
+<span class="cstat-no" title="statement not covered" >        return [];</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      trimmedLines.push(line);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return trimmedLines;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var cache3 = /* @__PURE__ */ new WeakMap();
-<span class="fstat-no" title="function not covered" >  function isIndentableBlockComment(comment) {</span>
+<span class="fstat-no" title="function not covered" >  function getIndentableBlockCommentLines(comment) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!cache3.has(comment)) {</span>
-<span class="cstat-no" title="statement not covered" >      cache3.set(comment, isIndentableBlockCommentInternal(comment));</span>
+<span class="cstat-no" title="statement not covered" >      cache3.set(comment, getIndentableLinesBlockCommentInternal(comment));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return cache3.get(comment);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var is_indentable_block_comment_default = isIndentableBlockComment;
+<span class="fstat-no" title="function not covered" >  function deleteIndentableBlockCommentLines(comment) {</span>
+<span class="cstat-no" title="statement not covered" >    cache3.delete(comment);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="fstat-no" title="function not covered" >  function isIndentableBlockComment(comment) {</span>
+<span class="cstat-no" title="statement not covered" >    return getIndentableBlockCommentLines(comment).length &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/language-js/parse/postprocess/merge-nestled-jsdoc-comments.js
   function mergeNestledJsdocComments(comments) {
@@ -20971,10 +21018,11 @@
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    let followingComment;</span></span>
 <span class="cstat-no" title="statement not covered" >    for (let i = comments.length - 1; i &gt;= 0; i--) {</span>
 <span class="cstat-no" title="statement not covered" >      const comment = comments[i];</span>
-<span class="cstat-no" title="statement not covered" >      if (followingComment &amp;&amp; locEnd(comment) === locStart(followingComment) &amp;&amp; is_indentable_block_comment_default(comment) &amp;&amp; is_indentable_block_comment_default(followingComment)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (followingComment &amp;&amp; locEnd(comment) === locStart(followingComment) &amp;&amp; isIndentableBlockComment(comment) &amp;&amp; isIndentableBlockComment(followingComment)) {</span>
 <span class="cstat-no" title="statement not covered" >        comments.splice(i + 1, 1);</span>
 <span class="cstat-no" title="statement not covered" >        comment.value += "*//*" + followingComment.value;</span>
 <span class="cstat-no" title="statement not covered" >        comment.range = [locStart(comment), locEnd(followingComment)];</span>
+<span class="cstat-no" title="statement not covered" >        deleteIndentableBlockCommentLines(comment);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (!isLineComment(comment) &amp;&amp; !isBlockComment(comment)) {</span>
 <span class="cstat-no" title="statement not covered" >        throw new TypeError(`Unknown comment type: "${comment.type}".`);</span>
@@ -21886,7 +21934,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-12T00:55:25.568Z
+                at 2026-04-13T00:56:27.304Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
