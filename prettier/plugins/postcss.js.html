@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.79% </span>
+                <span class="strong">52.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6067/11491</span>
+                <span class='fraction'>6076/11497</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.09% </span>
+                <span class="strong">61.1% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1090/1784</span>
+                <span class='fraction'>1092/1787</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.52% </span>
+                <span class="strong">51.58% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>405/786</span>
+                <span class='fraction'>406/787</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.79% </span>
+                <span class="strong">52.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6067/11491</span>
+                <span class='fraction'>6076/11497</span>
             </div>
         
             
@@ -11553,7 +11553,13 @@
 <a name='L11488'></a><a href='#L11488'>11488</a>
 <a name='L11489'></a><a href='#L11489'>11489</a>
 <a name='L11490'></a><a href='#L11490'>11490</a>
-<a name='L11491'></a><a href='#L11491'>11491</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11491'></a><a href='#L11491'>11491</a>
+<a name='L11492'></a><a href='#L11492'>11492</a>
+<a name='L11493'></a><a href='#L11493'>11493</a>
+<a name='L11494'></a><a href='#L11494'>11494</a>
+<a name='L11495'></a><a href='#L11495'>11495</a>
+<a name='L11496'></a><a href='#L11496'>11496</a>
+<a name='L11497'></a><a href='#L11497'>11497</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -13541,6 +13547,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -13703,9 +13714,11 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -13725,19 +13738,18 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -25030,6 +25042,11 @@
 <span class="cstat-no" title="statement not covered" >          if (pos) return pos;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+      function tokensToString(tokens, from, to) {
+        let result = "";
+        for (let i = from; i &lt; to; i++) result += tokens[i][1];
+        return result;
+      }
       var Parser = class {
         constructor(input) {
           this.input = input;
@@ -25192,44 +25209,45 @@
             last[3] || last[2] <span class="branch-0 cbranch-no" title="branch not covered" >|| findLastWithPosition(tokens)</span>
           );
           node.source.end.offset++;
-          while (tokens[0][0] !== "word") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            if (tokens.length === 1) this.unknownWord(tokens);</span>
-<span class="cstat-no" title="statement not covered" >            node.raws.before += tokens.shift()[1];</span>
+          let start = 0;
+          while (tokens[start][0] !== "word") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            if (start === tokens.length - 1) this.unknownWord([tokens[start]]);</span>
+<span class="cstat-no" title="statement not covered" >            start++;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          node.source.start = this.getPosition(tokens[0][2]);
-          node.prop = "";
-          while (tokens.length) {
-            let type = tokens[0][0];
+          node.raws.before += tokensToString(tokens, 0, start);
+          node.source.start = this.getPosition(tokens[start][2]);
+          let propStart = start;
+          while (start &lt; tokens.length) {
+            let type = tokens[start][0];
             if (type === ":" || type === "space" || type === "comment") {
               break;
             }
-            node.prop += tokens.shift()[1];
+            start++;
           }
-          node.raws.between = "";
+          node.prop = tokensToString(tokens, propStart, start);
+          let betweenStart = start;
           let token;
-          while (tokens.length) {
-            token = tokens.shift();
-            if (token[0] === ":") {
-              node.raws.between += token[1];
-              break;
-            }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
-<span class="cstat-no" title="statement not covered" >              if (token[0] === "word" &amp;&amp; /\w/.test(token[1])) {</span>
-<span class="cstat-no" title="statement not covered" >                this.unknownWord([token]);</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              node.raws.between += token[1];</span>
+          while (start &lt; tokens.length) {
+            token = tokens[start];
+            start++;
+            if (token[0] === ":") break;
+<span class="branch-0 cbranch-no" title="branch not covered" >            if (token[0] === "word" &amp;&amp; /\w/.test(token[1]))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >              this.unknownWord([token]);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
           }
+          node.raws.between = tokensToString(tokens, betweenStart, start);
           if (node.prop[0] === "_" || node.prop[0] === "*") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            node.raws.before += node.prop[0];</span>
 <span class="cstat-no" title="statement not covered" >            node.prop = node.prop.slice(1);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-          let firstSpaces = [];
-          let next;
-          while (tokens.length) {
-            next = tokens[0][0];
+          let firstSpacesStart = start;
+          while (start &lt; tokens.length) {
+            let next = tokens[start][0];
             if (next !== "space" &amp;&amp; next !== "comment") break;
-            firstSpaces.push(tokens.shift());
+            start++;
           }
+          let firstSpaces = tokens.slice(firstSpacesStart, start);
+          tokens = tokens.slice(start);
           this.precheckMissedSemicolon(tokens);
           for (let i = tokens.length - 1; i &gt;= 0; i--) {
             token = tokens[i];
@@ -26777,7 +26795,7 @@
       var Root = require_root();
       var Processor = class {
 <span class="fstat-no" title="function not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.14";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.15";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="fstat-no" title="function not covered" >        normalize(plugins) {</span>
@@ -34540,7 +34558,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-19T01:09:12.533Z
+                at 2026-05-20T01:10:43.090Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

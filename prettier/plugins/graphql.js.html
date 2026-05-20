@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">53.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1849/3448</span>
+                <span class='fraction'>1850/3450</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">56.81% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>172/301</span>
+                <span class='fraction'>171/301</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">53.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1849/3448</span>
+                <span class='fraction'>1850/3450</span>
             </div>
         
             
@@ -3510,7 +3510,9 @@
 <a name='L3445'></a><a href='#L3445'>3445</a>
 <a name='L3446'></a><a href='#L3446'>3446</a>
 <a name='L3447'></a><a href='#L3447'>3447</a>
-<a name='L3448'></a><a href='#L3448'>3448</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L3448'></a><a href='#L3448'>3448</a>
+<a name='L3449'></a><a href='#L3449'>3449</a>
+<a name='L3450'></a><a href='#L3450'>3450</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4105,10 +4107,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4270,6 +4268,8 @@
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">54x</span>
@@ -4301,6 +4301,9 @@
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -6924,6 +6927,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -7552,10 +7556,6 @@
   ]) {
     delete visitorKeys[kind];
   }
-  visitorKeys.DirectiveDefinition = visitorKeys.DirectiveDefinition.filter(
-    (key) =&gt; key !== "directives"
-  );
-  delete visitorKeys.DirectiveExtension;
   var visitor_keys_default = visitorKeys;
 &nbsp;
   // src/language-graphql/get-visitor-keys.js
@@ -7613,14 +7613,14 @@ ${text}`;
       case "OperationDefinition": {
         const hasOperation = options2.originalText[locStart(node)] !== "{";
         const hasName = Boolean(node.name);
-        return [description_default(path, options2, print2), hasOperation ? node.operation <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> hasOperation &amp;&amp; hasName ? [" ", print2("name")] <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> hasOperation &amp;&amp; !hasName <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; is_non_empty_array_default(node.variableDefinitions) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? " " </span>: "", printVariableDefinitions(path, print2), printDirectives(path, print2, node), !hasOperation <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !hasName <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: " ", print2("selectionSet")];
+        return [description_default(path, options2, print2), hasOperation ? node.operation <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> hasOperation &amp;&amp; hasName ? [" ", print2("name")] <span class="branch-0 cbranch-no" title="branch not covered" >: "",</span> hasOperation &amp;&amp; !hasName <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; is_non_empty_array_default(node.variableDefinitions) <span class="branch-0 cbranch-no" title="branch not covered" ></span>? " " </span>: "", printVariableDefinitions(path, print2), printDirectives(path, print2), !hasOperation <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !hasName <span class="branch-0 cbranch-no" title="branch not covered" ></span>? "" </span>: " ", print2("selectionSet")];
       }
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "FragmentDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "fragment ", print2("name"), printVariableDefinitions(path, print2), " on ", print2("typeCondition"), printDirectives(path, print2, node), " ", print2("selectionSet")];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "fragment ", print2("name"), printVariableDefinitions(path, print2), " on ", print2("typeCondition"), printDirectives(path, print2), " ", print2("selectionSet")];</span>
       case "SelectionSet":
         return ["{", indent([hardline, join(hardline, printSequence(path, options2, print2, "selections"))]), hardline, "}"];
       case "Field":
-        return group([node.alias <span class="branch-0 cbranch-no" title="branch not covered" >? [print2("alias"), ": "] </span>: "", print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", printDirectives(path, print2, node), node.selectionSet ? " " : "", print2("selectionSet")]);
+        return group([node.alias <span class="branch-0 cbranch-no" title="branch not covered" >? [print2("alias"), ": "] </span>: "", print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", printDirectives(path, print2), node.selectionSet ? " " : "", print2("selectionSet")]);
       case "Name":
         return node.value;
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "StringValue":</span>
@@ -7679,7 +7679,7 @@ ${text}`;
       case "NamedType":
         return print2("name");
       case "VariableDefinition":
-        return [description_default(path, options2, print2), print2("variable"), ": ", print2("type"), node.defaultValue <span class="branch-0 cbranch-no" title="branch not covered" >? [" = ", print2("defaultValue")] </span>: "", printDirectives(path, print2, node)];
+        return [description_default(path, options2, print2), print2("variable"), ": ", print2("type"), node.defaultValue <span class="branch-0 cbranch-no" title="branch not covered" >? [" = ", print2("defaultValue")] </span>: "", printDirectives(path, print2)];
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ObjectTypeExtension":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ObjectTypeDefinition":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "InputObjectTypeExtension":</span>
@@ -7706,39 +7706,41 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >        if (!kind.startsWith("InputObjectType") &amp;&amp; node.interfaces.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >          parts.push(" implements ", indent([group([join([" &amp;", line], path.map(print2, "interfaces"))])]));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        parts.push(printDirectives(path, print2, node));</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(printDirectives(path, print2));</span>
 <span class="cstat-no" title="statement not covered" >        if (node.fields.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >          parts.push([" {", indent([hardline, join(hardline, printSequence(path, options2, print2, "fields"))]), hardline, "}"]);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return parts;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "FieldDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", ": ", print2("type"), printDirectives(path, print2, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", ": ", print2("type"), printDirectives(path, print2)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "DirectiveDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "directive ", "@", print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", node.repeatable ? " repeatable" : "", " on ", ...join(" | ", path.map(print2, "locations"))];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "directive ", "@", print2("name"), node.arguments.length &gt; 0 ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", printDirectives(path, print2), node.repeatable ? " repeatable" : "", " on ", ...join(" | ", path.map(print2, "locations"))];</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case "DirectiveExtension":</span>
+<span class="cstat-no" title="statement not covered" >        return ["extend directive @", print2("name"), printDirectives(path, print2)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumTypeExtension":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumTypeDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), node.kind === "EnumTypeExtension" ? "extend " : "", "enum ", print2("name"), printDirectives(path, print2, node), node.values.length &gt; 0 ? [" {", indent([hardline, join(hardline, printSequence(path, options2, print2, "values"))]), hardline, "}"] : ""];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), node.kind === "EnumTypeExtension" ? "extend " : "", "enum ", print2("name"), printDirectives(path, print2), node.values.length &gt; 0 ? [" {", indent([hardline, join(hardline, printSequence(path, options2, print2, "values"))]), hardline, "}"] : ""];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "EnumValueDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), printDirectives(path, print2, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), printDirectives(path, print2)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "InputValueDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), ": ", print2("type"), node.defaultValue ? [" = ", print2("defaultValue")] : "", printDirectives(path, print2, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), print2("name"), ": ", print2("type"), node.defaultValue ? [" = ", print2("defaultValue")] : "", printDirectives(path, print2)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "SchemaExtension":</span>
-<span class="cstat-no" title="statement not covered" >        return ["extend schema", printDirectives(path, print2, node), ...node.operationTypes.length &gt; 0 ? [" {", indent([hardline, join(hardline, printSequence(path, options2, print2, "operationTypes"))]), hardline, "}"] : []];</span>
+<span class="cstat-no" title="statement not covered" >        return ["extend schema", printDirectives(path, print2), ...node.operationTypes.length &gt; 0 ? [" {", indent([hardline, join(hardline, printSequence(path, options2, print2, "operationTypes"))]), hardline, "}"] : []];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "SchemaDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "schema", printDirectives(path, print2, node), " {", node.operationTypes.length &gt; 0 ? indent([hardline, join(hardline, printSequence(path, options2, print2, "operationTypes"))]) : "", hardline, "}"];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), "schema", printDirectives(path, print2), " {", node.operationTypes.length &gt; 0 ? indent([hardline, join(hardline, printSequence(path, options2, print2, "operationTypes"))]) : "", hardline, "}"];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "OperationTypeDefinition":</span>
 <span class="cstat-no" title="statement not covered" >        return [node.operation, ": ", print2("type")];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "FragmentSpread":</span>
-<span class="cstat-no" title="statement not covered" >        return ["...", print2("name"), printDirectives(path, print2, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return ["...", print2("name"), printDirectives(path, print2)];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "InlineFragment":</span>
-<span class="cstat-no" title="statement not covered" >        return ["...", node.typeCondition ? [" on ", print2("typeCondition")] : "", printDirectives(path, print2, node), " ", print2("selectionSet")];</span>
+<span class="cstat-no" title="statement not covered" >        return ["...", node.typeCondition ? [" on ", print2("typeCondition")] : "", printDirectives(path, print2), " ", print2("selectionSet")];</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "UnionTypeExtension":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "UnionTypeDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return group([description_default(path, options2, print2), group([node.kind === "UnionTypeExtension" ? "extend " : "", "union ", print2("name"), printDirectives(path, print2, node), node.types.length &gt; 0 ? [" =", ifBreak("", " "), indent([ifBreak([line, "| "]), join([line, "| "], path.map(print2, "types"))])] : ""])]);</span>
+<span class="cstat-no" title="statement not covered" >        return group([description_default(path, options2, print2), group([node.kind === "UnionTypeExtension" ? "extend " : "", "union ", print2("name"), printDirectives(path, print2), node.types.length &gt; 0 ? [" =", ifBreak("", " "), indent([ifBreak([line, "| "]), join([line, "| "], path.map(print2, "types"))])] : ""])]);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ScalarTypeExtension":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ScalarTypeDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), node.kind === "ScalarTypeExtension" ? "extend " : "", "scalar ", print2("name"), printDirectives(path, print2, node)];</span>
+<span class="cstat-no" title="statement not covered" >        return [description_default(path, options2, print2), node.kind === "ScalarTypeExtension" ? "extend " : "", "scalar ", print2("name"), printDirectives(path, print2)];</span>
       case "NonNullType":
         return [print2("type"), "!"];
       case "ListType":
@@ -7747,7 +7749,10 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >        throw new unexpected_node_error_default(node, "Graphql", "kind");</span>
     }
   }
-  function printDirectives(path, print2, node) {
+  function printDirectives(path, print2) {
+    const {
+      node
+    } = path;
     if (node.directives.length === 0) {
       return "";
     }
@@ -10368,7 +10373,8 @@ ${text}`;
     return comments;
   }
   var parseOptions = {
-    allowLegacyFragmentVariables: true
+    allowLegacyFragmentVariables: true,
+    experimentalDirectivesOnDirectiveDefinitions: true
   };
 <span class="fstat-no" title="function not covered" >  function createParseError(error) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!(error instanceof GraphQLError)) {</span>
@@ -10411,7 +10417,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-19T01:09:12.533Z
+                at 2026-05-20T01:10:43.090Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

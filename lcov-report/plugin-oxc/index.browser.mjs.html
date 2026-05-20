@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22640</span>
+                <span class='fraction'>0/22649</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22640</span>
+                <span class='fraction'>0/22649</span>
             </div>
         
             
@@ -22703,7 +22703,25 @@
 <a name='L22638'></a><a href='#L22638'>22638</a>
 <a name='L22639'></a><a href='#L22639'>22639</a>
 <a name='L22640'></a><a href='#L22640'>22640</a>
-<a name='L22641'></a><a href='#L22641'>22641</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L22641'></a><a href='#L22641'>22641</a>
+<a name='L22642'></a><a href='#L22642'>22642</a>
+<a name='L22643'></a><a href='#L22643'>22643</a>
+<a name='L22644'></a><a href='#L22644'>22644</a>
+<a name='L22645'></a><a href='#L22645'>22645</a>
+<a name='L22646'></a><a href='#L22646'>22646</a>
+<a name='L22647'></a><a href='#L22647'>22647</a>
+<a name='L22648'></a><a href='#L22648'>22648</a>
+<a name='L22649'></a><a href='#L22649'>22649</a>
+<a name='L22650'></a><a href='#L22650'>22650</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -56082,6 +56100,13 @@
 <span class="cstat-no" title="statement not covered" >            delete node.assertions;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >        // Since flow@0.313.0, `TypeParameter.bound` is a bare type node without the `TypeAnnotation` wrapper</span>
+<span class="cstat-no" title="statement not covered" >        // https://github.com/facebook/flow/blob/HEAD/Changelog.md#03130</span>
+<span class="cstat-no" title="statement not covered" >        case "TypeParameter":</span>
+<span class="cstat-no" title="statement not covered" >          if (astType !== "flow" &amp;&amp; node.bound?.type === "TypeAnnotation") {</span>
+<span class="cstat-no" title="statement not covered" >            node.bound = node.bound.typeAnnotation;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    onLeave(node) {</span>
@@ -58461,7 +58486,7 @@
 <span class="cstat-no" title="statement not covered" >      if (key === "extendsType" &amp;&amp; isConditionalType(node) &amp;&amp; parent.type === node.type) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (key === "constraint" &amp;&amp; node.type === "TSConditionalType" &amp;&amp; parent.type === "TSTypeParameter" || key === "typeAnnotation" &amp;&amp; node.type === "ConditionalTypeAnnotation" &amp;&amp; parent.type === "TypeAnnotation" &amp;&amp; path.grandparent.type === "TypeParameter" &amp;&amp; path.grandparent.bound === parent &amp;&amp; path.grandparent.usesExtendsBound) {</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "constraint" &amp;&amp; node.type === "TSConditionalType" &amp;&amp; parent.type === "TSTypeParameter" || key === "bound" &amp;&amp; node.type === "ConditionalTypeAnnotation" &amp;&amp; parent.type === "TypeParameter" &amp;&amp; parent.usesExtendsBound) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (key === "checkType" &amp;&amp; isConditionalType(parent)) {</span>
@@ -66487,6 +66512,8 @@
 <span class="cstat-no" title="statement not covered" >  if (node.bound) {</span>
 <span class="cstat-no" title="statement not covered" >    if (node.usesExtendsBound) {</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(" extends ");</span>
+<span class="cstat-no" title="statement not covered" >    } else {</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(": ");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(printTypeAnnotationProperty(path, print3, "bound"));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -67990,7 +68017,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-19T01:09:09.361Z
+                at 2026-05-20T01:10:40.147Z
             </div>
         <script src="../prettify.js"></script>
         <script>
