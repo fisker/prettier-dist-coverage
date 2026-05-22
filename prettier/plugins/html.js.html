@@ -20790,7 +20790,7 @@
 <span class="cstat-no" title="statement not covered" >    return `Unexpected doc.type '${doc.type}'.</span>
 <span class="cstat-no" title="statement not covered" >Expected it to be ${EXPECTED_TYPE_VALUES}.`;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var InvalidDocError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
+  var InvalidDocError = class extends Error <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name = "InvalidDocError";</span>
 <span class="cstat-no" title="statement not covered" >    constructor(doc) {</span>
 <span class="cstat-no" title="statement not covered" >      super(getDocErrorMessage(doc));</span>
@@ -21170,7 +21170,7 @@
   var html_whitespace_default = htmlWhitespace;
 &nbsp;
   // src/utilities/unexpected-node-error.js
-  var UnexpectedNodeError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
+  var UnexpectedNodeError = class extends Error <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name = "UnexpectedNodeError";</span>
 <span class="cstat-no" title="statement not covered" >    constructor(node, language, typeProperty = "type") {</span>
 <span class="cstat-no" title="statement not covered" >      super(</span>
@@ -21246,7 +21246,7 @@
   function checkWindows() {
     const global = globalThis;
     const os = global.Deno<span class="branch-0 cbranch-no" title="branch not covered" >?.build?.os;</span>
-    return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: global.navigator<span class="branch-0 cbranch-no" title="branch not covered" >?.platform?.startsWith(</span>"Win") ?? global.process?.platform?.startsWith("win") <span class="branch-0 cbranch-no" title="branch not covered" >?? false;</span>
+    return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: global.navigator?.platform?.startsWith("Win") <span class="branch-0 cbranch-no" title="branch not covered" >?? global.process?.platform?.startsWith("win") <span class="branch-0 cbranch-no" title="branch not covered" ></span>?? false;</span>
   }
   var isWindows = checkWindows();
 <span class="fstat-no" title="function not covered" >  function assertArg(url) {</span>
@@ -24382,7 +24382,7 @@ ${text}`;
     ParseErrorLevel2[ParseErrorLevel2["ERROR"] = 1] = "ERROR";
     return ParseErrorLevel2;
   })({});
-  var ParseError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
+  var ParseError = class extends Error <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    span;</span>
 <span class="cstat-no" title="statement not covered" >    msg;</span>
 <span class="cstat-no" title="statement not covered" >    level;</span>
@@ -24427,7 +24427,7 @@ ${text}`;
     }
     kind = "text";
   };
-  var CDATA = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends NodeWithI18n {</span></span>
+  var CDATA = class extends NodeWithI18n <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    tokens;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(value, sourceSpan, tokens, i18n) {</span>
@@ -24440,7 +24440,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    kind = "cdata";</span>
   };
-  var Expansion = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends NodeWithI18n {</span></span>
+  var Expansion = class extends NodeWithI18n <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    switchValue;</span>
 <span class="cstat-no" title="statement not covered" >    type;</span>
 <span class="cstat-no" title="statement not covered" >    cases;</span>
@@ -24457,7 +24457,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    kind = "expansion";</span>
   };
-  var ExpansionCase = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var ExpansionCase = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
@@ -24524,7 +24524,7 @@ ${text}`;
     }
     kind = "element";
   };
-  var Comment = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var Comment = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(value, sourceSpan) {</span>
@@ -24548,7 +24548,7 @@ ${text}`;
     }
     kind = "docType";
   };
-  var Block = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends NodeWithI18n {</span></span>
+  var Block = class extends NodeWithI18n <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    parameters;</span>
 <span class="cstat-no" title="statement not covered" >    children;</span>
@@ -24569,7 +24569,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    kind = "block";</span>
   };
-  var Component = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends NodeWithI18n {</span></span>
+  var Component = class extends NodeWithI18n <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    componentName;</span>
 <span class="cstat-no" title="statement not covered" >    tagName;</span>
 <span class="cstat-no" title="statement not covered" >    fullName;</span>
@@ -24596,7 +24596,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    kind = "component";</span>
   };
-  var Directive = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var Directive = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    attrs;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
@@ -24614,7 +24614,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    kind = "directive";</span>
   };
-  var BlockParameter = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var BlockParameter = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(expression, sourceSpan) {</span>
@@ -24628,7 +24628,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >    startSourceSpan = null;</span>
 <span class="cstat-no" title="statement not covered" >    endSourceSpan = null;</span>
   };
-  var LetDeclaration = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var LetDeclaration = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
@@ -27907,7 +27907,7 @@ ${text}`;
       return new ParseLocation(cursor.file, cursor.state.offset, cursor.state.line, cursor.state.column);
     }
   };
-  var EscapedCharacterCursor = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class EscapedCharacterCursor2 extends PlainCharacterCursor {</span></span>
+  var EscapedCharacterCursor = class EscapedCharacterCursor2 extends PlainCharacterCursor <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    internalState;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(fileOrCursor, range) {</span>
 <span class="cstat-no" title="statement not covered" >      if (fileOrCursor instanceof EscapedCharacterCursor2) {</span>
@@ -28006,7 +28006,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var CursorError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
+  var CursorError = class extends Error <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    msg;</span>
 <span class="cstat-no" title="statement not covered" >    cursor;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(msg, cursor) {</span>
@@ -28018,7 +28018,7 @@ ${text}`;
   };
 &nbsp;
   // node_modules/angular-html-parser/dist/compiler/src/ml_parser/parser.mjs
-  var TreeError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class TreeError2 extends ParseError {</span></span>
+  var TreeError = class TreeError2 extends ParseError <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    elementName;</span>
 <span class="cstat-no" title="statement not covered" >    static create(elementName, span, msg) {</span>
 <span class="cstat-no" title="statement not covered" >      return new TreeError2(elementName, span, msg);</span>
@@ -30838,7 +30838,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-21T01:10:57.555Z
+                at 2026-05-22T01:09:02.005Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

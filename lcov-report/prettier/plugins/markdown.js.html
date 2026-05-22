@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.53% </span>
+                <span class="strong">65.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15117/23067</span>
+                <span class='fraction'>15115/23067</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73% </span>
+                <span class="strong">72.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1847/2530</span>
+                <span class='fraction'>1847/2531</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.53% </span>
+                <span class="strong">65.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15117/23067</span>
+                <span class='fraction'>15115/23067</span>
             </div>
         
             
@@ -44385,8 +44385,8 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -65938,7 +65938,7 @@
 <span class="cstat-no" title="statement not covered" >    return `Unexpected doc.type '${doc.type}'.</span>
 <span class="cstat-no" title="statement not covered" >Expected it to be ${EXPECTED_TYPE_VALUES}.`;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var InvalidDocError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
+  var InvalidDocError = class extends Error <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name = "InvalidDocError";</span>
 <span class="cstat-no" title="statement not covered" >    constructor(doc) {</span>
 <span class="cstat-no" title="statement not covered" >      super(getDocErrorMessage(doc));</span>
@@ -67019,7 +67019,7 @@
   function checkWindows() {
     const global = globalThis;
     const os = global.Deno<span class="branch-0 cbranch-no" title="branch not covered" >?.build?.os;</span>
-    return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: global.navigator<span class="branch-0 cbranch-no" title="branch not covered" >?.platform?.startsWith(</span>"Win") ?? global.process?.platform?.startsWith("win") <span class="branch-0 cbranch-no" title="branch not covered" >?? false;</span>
+    return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: global.navigator?.platform?.startsWith("Win") <span class="branch-0 cbranch-no" title="branch not covered" >?? global.process?.platform?.startsWith("win") <span class="branch-0 cbranch-no" title="branch not covered" ></span>?? false;</span>
   }
   var isWindows = checkWindows();
 <span class="fstat-no" title="function not covered" >  function assertArg(url) {</span>
@@ -67450,9 +67450,9 @@
     let results = text4.matchAll(
       new RegExp(`(?:${escapeStringRegexp(searchString)})+`, "g")
     );
-    if (!results.reduce) {
-      results = [...results];
-    }
+    if (!results.reduce) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      results = [...results];</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     return results.reduce(
       (maxCount, [result]) =&gt; Math.max(maxCount, result.length),
       0
@@ -67680,7 +67680,7 @@
   }
 &nbsp;
   // src/utilities/unexpected-node-error.js
-  var UnexpectedNodeError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
+  var UnexpectedNodeError = class extends Error <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name = "UnexpectedNodeError";</span>
 <span class="cstat-no" title="statement not covered" >    constructor(node2, language, typeProperty = "type") {</span>
 <span class="cstat-no" title="statement not covered" >      super(</span>
@@ -69268,7 +69268,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-21T01:10:54.581Z
+                at 2026-05-22T01:08:59.151Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -12546,7 +12546,7 @@
 <span class="fstat-no" title="function not covered" >  function areAllEquivalent(base, other) {</span>
 <span class="cstat-no" title="statement not covered" >    return areAllEquivalentPredicate(base, other, (baseElement, otherElement) =&gt; baseElement.isEquivalent(otherElement));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var Expression = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var Expression = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    type;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(type, sourceSpan) {</span>
@@ -12632,7 +12632,7 @@
 <span class="cstat-no" title="statement not covered" >      return new ExpressionStatement(this, null);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ReadVarExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ReadVarExpr extends Expression {</span></span>
+  var ReadVarExpr = class _ReadVarExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(name, type, sourceSpan) {</span>
 <span class="cstat-no" title="statement not covered" >      super(type, sourceSpan);</span>
@@ -12654,7 +12654,7 @@
 <span class="cstat-no" title="statement not covered" >      return new BinaryOperatorExpr(BinaryOperator.Assign, this, value, null, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var TypeofExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _TypeofExpr extends Expression {</span></span>
+  var TypeofExpr = class _TypeofExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expr;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(expr, type, sourceSpan) {</span>
 <span class="cstat-no" title="statement not covered" >      super(type, sourceSpan);</span>
@@ -12673,7 +12673,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _TypeofExpr(this.expr.clone());</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var InvokeFunctionExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _InvokeFunctionExpr extends Expression {</span></span>
+  var InvokeFunctionExpr = class _InvokeFunctionExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    fn;</span>
 <span class="cstat-no" title="statement not covered" >    args;</span>
 <span class="cstat-no" title="statement not covered" >    pure;</span>
@@ -12699,7 +12699,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _InvokeFunctionExpr(this.fn.clone(), this.args.map((arg) =&gt; arg.clone()), this.type, this.sourceSpan, this.pure);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var InstantiateExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _InstantiateExpr extends Expression {</span></span>
+  var InstantiateExpr = class _InstantiateExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    classExpr;</span>
 <span class="cstat-no" title="statement not covered" >    args;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(classExpr, args, type, sourceSpan) {</span>
@@ -12720,7 +12720,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _InstantiateExpr(this.classExpr.clone(), this.args.map((arg) =&gt; arg.clone()), this.type, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var RegularExpressionLiteralExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _RegularExpressionLiteralExpr extends Expression {</span></span>
+  var RegularExpressionLiteralExpr = class _RegularExpressionLiteralExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    body;</span>
 <span class="cstat-no" title="statement not covered" >    flags;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(body, flags, sourceSpan) {</span>
@@ -12741,7 +12741,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _RegularExpressionLiteralExpr(this.body, this.flags, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var LiteralExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _LiteralExpr extends Expression {</span></span>
+  var LiteralExpr = class _LiteralExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(value, type, sourceSpan) {</span>
 <span class="cstat-no" title="statement not covered" >      super(type, sourceSpan);</span>
@@ -12760,7 +12760,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _LiteralExpr(this.value, this.type, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ExternalExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ExternalExpr extends Expression {</span></span>
+  var ExternalExpr = class _ExternalExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    typeParams;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(value, type, typeParams = null, sourceSpan) {</span>
@@ -12781,7 +12781,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _ExternalExpr(this.value, this.type, this.typeParams, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ConditionalExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ConditionalExpr extends Expression {</span></span>
+  var ConditionalExpr = class _ConditionalExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    condition;</span>
 <span class="cstat-no" title="statement not covered" >    falseCase;</span>
 <span class="cstat-no" title="statement not covered" >    trueCase;</span>
@@ -12804,7 +12804,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _ConditionalExpr(this.condition.clone(), this.trueCase.clone(), this.falseCase?.clone(), this.type, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var BinaryOperatorExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _BinaryOperatorExpr extends Expression {</span></span>
+  var BinaryOperatorExpr = class _BinaryOperatorExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    operator;</span>
 <span class="cstat-no" title="statement not covered" >    rhs;</span>
 <span class="cstat-no" title="statement not covered" >    lhs;</span>
@@ -12831,7 +12831,7 @@
 <span class="cstat-no" title="statement not covered" >      return op === BinaryOperator.Assign || op === BinaryOperator.AdditionAssignment || op === BinaryOperator.SubtractionAssignment || op === BinaryOperator.MultiplicationAssignment || op === BinaryOperator.DivisionAssignment || op === BinaryOperator.RemainderAssignment || op === BinaryOperator.ExponentiationAssignment || op === BinaryOperator.AndAssignment || op === BinaryOperator.OrAssignment || op === BinaryOperator.NullishCoalesceAssignment;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ReadPropExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ReadPropExpr extends Expression {</span></span>
+  var ReadPropExpr = class _ReadPropExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    receiver;</span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(receiver, name, type, sourceSpan) {</span>
@@ -12858,7 +12858,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _ReadPropExpr(this.receiver.clone(), this.name, this.type, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ReadKeyExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ReadKeyExpr extends Expression {</span></span>
+  var ReadKeyExpr = class _ReadKeyExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    receiver;</span>
 <span class="cstat-no" title="statement not covered" >    index;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(receiver, index, type, sourceSpan) {</span>
@@ -12882,7 +12882,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _ReadKeyExpr(this.receiver.clone(), this.index.clone(), this.type, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var LiteralArrayExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _LiteralArrayExpr extends Expression {</span></span>
+  var LiteralArrayExpr = class _LiteralArrayExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    entries;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(entries, type, sourceSpan) {</span>
 <span class="cstat-no" title="statement not covered" >      super(type, sourceSpan);</span>
@@ -12901,7 +12901,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _LiteralArrayExpr(this.entries.map((e) =&gt; e.clone()), this.type, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var LiteralMapSpreadAssignment = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _LiteralMapSpreadAssignment {</span></span>
+  var LiteralMapSpreadAssignment = class _LiteralMapSpreadAssignment <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(expression) {</span>
 <span class="cstat-no" title="statement not covered" >      this.expression = expression;</span>
@@ -12916,7 +12916,7 @@
 <span class="cstat-no" title="statement not covered" >      return this.expression.isConstant();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var LiteralMapExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _LiteralMapExpr extends Expression {</span></span>
+  var LiteralMapExpr = class _LiteralMapExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    entries;</span>
 <span class="cstat-no" title="statement not covered" >    valueType = null;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(entries, type, sourceSpan) {</span>
@@ -12940,7 +12940,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _LiteralMapExpr(entriesClone, this.type, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var SpreadElementExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _SpreadElementExpr extends Expression {</span></span>
+  var SpreadElementExpr = class _SpreadElementExpr extends Expression <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(expression, sourceSpan) {</span>
 <span class="cstat-no" title="statement not covered" >      super(null, sourceSpan);</span>
@@ -12967,7 +12967,7 @@
     StmtModifier2[StmtModifier2["Exported"] = 4] = "Exported";
     StmtModifier2[StmtModifier2["Static"] = 8] = "Static";
   })(StmtModifier || (StmtModifier = {}));
-  var Statement = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var Statement = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    modifiers;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    leadingComments;</span>
@@ -12984,7 +12984,7 @@
 <span class="cstat-no" title="statement not covered" >      this.leadingComments.push(leadingComment);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var DeclareVarStmt = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _DeclareVarStmt extends Statement {</span></span>
+  var DeclareVarStmt = class _DeclareVarStmt extends Statement <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    type;</span>
@@ -13001,7 +13001,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitDeclareVarStmt(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ExpressionStatement = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ExpressionStatement extends Statement {</span></span>
+  var ExpressionStatement = class _ExpressionStatement extends Statement <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expr;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(expr, sourceSpan, leadingComments) {</span>
 <span class="cstat-no" title="statement not covered" >      super(StmtModifier.None, sourceSpan, leadingComments);</span>
@@ -13014,7 +13014,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitExpressionStmt(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ReturnStatement = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ReturnStatement extends Statement {</span></span>
+  var ReturnStatement = class _ReturnStatement extends Statement <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(value, sourceSpan = null, leadingComments) {</span>
 <span class="cstat-no" title="statement not covered" >      super(StmtModifier.None, sourceSpan, leadingComments);</span>
@@ -13027,7 +13027,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitReturnStmt(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var IfStmt = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _IfStmt extends Statement {</span></span>
+  var IfStmt = class _IfStmt extends Statement <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    condition;</span>
 <span class="cstat-no" title="statement not covered" >    trueCase;</span>
 <span class="cstat-no" title="statement not covered" >    falseCase;</span>
@@ -13948,7 +13948,7 @@
     R3FactoryDelegateType2[R3FactoryDelegateType2["Class"] = 0] = "Class";
     R3FactoryDelegateType2[R3FactoryDelegateType2["Function"] = 1] = "Function";
   })(R3FactoryDelegateType || (R3FactoryDelegateType = {}));
-  var ParseSpan = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var ParseSpan = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    start;</span>
 <span class="cstat-no" title="statement not covered" >    end;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(start, end) {</span>
@@ -13959,7 +13959,7 @@
 <span class="cstat-no" title="statement not covered" >      return new AbsoluteSourceSpan(absoluteOffset + this.start, absoluteOffset + this.end);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var AST = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var AST = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    span;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan) {</span>
@@ -13970,7 +13970,7 @@
 <span class="cstat-no" title="statement not covered" >      return "AST";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ASTWithName = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var ASTWithName = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    nameSpan;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, nameSpan) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -13992,7 +13992,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitThisReceiver?.(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var Chain = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var Chain = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expressions;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, expressions) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14002,7 +14002,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitChain(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var Conditional = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var Conditional = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    condition;</span>
 <span class="cstat-no" title="statement not covered" >    trueExp;</span>
 <span class="cstat-no" title="statement not covered" >    falseExp;</span>
@@ -14016,7 +14016,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitConditional(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var PropertyRead = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends ASTWithName {</span></span>
+  var PropertyRead = class extends ASTWithName <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    receiver;</span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, nameSpan, receiver, name) {</span>
@@ -14028,7 +14028,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitPropertyRead(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var SafePropertyRead = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends ASTWithName {</span></span>
+  var SafePropertyRead = class extends ASTWithName <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    receiver;</span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, nameSpan, receiver, name) {</span>
@@ -14040,7 +14040,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitSafePropertyRead(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var KeyedRead = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var KeyedRead = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    receiver;</span>
 <span class="cstat-no" title="statement not covered" >    key;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, receiver, key) {</span>
@@ -14052,7 +14052,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitKeyedRead(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var SafeKeyedRead = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var SafeKeyedRead = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    receiver;</span>
 <span class="cstat-no" title="statement not covered" >    key;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, receiver, key) {</span>
@@ -14069,7 +14069,7 @@
     BindingPipeType2[BindingPipeType2["ReferencedByName"] = 0] = "ReferencedByName";
     BindingPipeType2[BindingPipeType2["ReferencedDirectly"] = 1] = "ReferencedDirectly";
   })(BindingPipeType || (BindingPipeType = {}));
-  var BindingPipe = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends ASTWithName {</span></span>
+  var BindingPipe = class extends ASTWithName <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    exp;</span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    args;</span>
@@ -14085,7 +14085,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitPipe(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var LiteralPrimitive = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var LiteralPrimitive = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, value) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14095,7 +14095,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitLiteralPrimitive(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var LiteralArray = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var LiteralArray = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expressions;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, expressions) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14105,7 +14105,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitLiteralArray(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var SpreadElement = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var SpreadElement = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, expression) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14115,7 +14115,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitSpreadElement(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var LiteralMap = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var LiteralMap = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    keys;</span>
 <span class="cstat-no" title="statement not covered" >    values;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, keys, values) {</span>
@@ -14127,7 +14127,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitLiteralMap(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var Interpolation$1 = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class Interpolation extends AST {</span></span>
+  var Interpolation$1 = class Interpolation extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    strings;</span>
 <span class="cstat-no" title="statement not covered" >    expressions;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, strings, expressions) {</span>
@@ -14139,7 +14139,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitInterpolation(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var Binary = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var Binary = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    operation;</span>
 <span class="cstat-no" title="statement not covered" >    left;</span>
 <span class="cstat-no" title="statement not covered" >    right;</span>
@@ -14156,7 +14156,7 @@
 <span class="cstat-no" title="statement not covered" >      return op === "=" || op === "+=" || op === "-=" || op === "*=" || op === "/=" || op === "%=" || op === "**=" || op === "&amp;&amp;=" || op === "||=" || op === "??=";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var Unary = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _Unary extends Binary {</span></span>
+  var Unary = class _Unary extends Binary <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    operator;</span>
 <span class="cstat-no" title="statement not covered" >    expr;</span>
 <span class="cstat-no" title="statement not covered" >    left = null;</span>
@@ -14180,7 +14180,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitBinary(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var PrefixNot = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var PrefixNot = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, expression) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14190,7 +14190,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitPrefixNot(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var TypeofExpression = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var TypeofExpression = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, expression) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14200,7 +14200,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitTypeofExpression(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var VoidExpression = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var VoidExpression = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, expression) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14210,7 +14210,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitVoidExpression(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var NonNullAssert = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var NonNullAssert = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, expression) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14220,7 +14220,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitNonNullAssert(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var Call = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var Call = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    receiver;</span>
 <span class="cstat-no" title="statement not covered" >    args;</span>
 <span class="cstat-no" title="statement not covered" >    argumentSpan;</span>
@@ -14234,7 +14234,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitCall(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var SafeCall = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var SafeCall = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    receiver;</span>
 <span class="cstat-no" title="statement not covered" >    args;</span>
 <span class="cstat-no" title="statement not covered" >    argumentSpan;</span>
@@ -14248,7 +14248,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitSafeCall(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var TaggedTemplateLiteral = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var TaggedTemplateLiteral = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    tag;</span>
 <span class="cstat-no" title="statement not covered" >    template;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, tag, template) {</span>
@@ -14260,7 +14260,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitTaggedTemplateLiteral(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var TemplateLiteral = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var TemplateLiteral = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    elements;</span>
 <span class="cstat-no" title="statement not covered" >    expressions;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, elements, expressions) {</span>
@@ -14272,7 +14272,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitTemplateLiteral(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var TemplateLiteralElement = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var TemplateLiteralElement = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    text;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, text) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14282,7 +14282,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitTemplateLiteralElement(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ParenthesizedExpression = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var ParenthesizedExpression = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    expression;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, expression) {</span>
 <span class="cstat-no" title="statement not covered" >      super(span, sourceSpan);</span>
@@ -14292,7 +14292,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitParenthesizedExpression(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ArrowFunctionIdentifierParameter = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var ArrowFunctionIdentifierParameter = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
 <span class="cstat-no" title="statement not covered" >    span;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
@@ -14302,7 +14302,7 @@
 <span class="cstat-no" title="statement not covered" >      this.sourceSpan = sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ArrowFunction = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var ArrowFunction = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    parameters;</span>
 <span class="cstat-no" title="statement not covered" >    body;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, parameters, body) {</span>
@@ -14314,7 +14314,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitArrowFunction(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var RegularExpressionLiteral = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var RegularExpressionLiteral = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    body;</span>
 <span class="cstat-no" title="statement not covered" >    flags;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(span, sourceSpan, body, flags) {</span>
@@ -14326,7 +14326,7 @@
 <span class="cstat-no" title="statement not covered" >      return visitor.visitRegularExpressionLiteral(this, context);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var AbsoluteSourceSpan = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var AbsoluteSourceSpan = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    start;</span>
 <span class="cstat-no" title="statement not covered" >    end;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(start, end) {</span>
@@ -14334,7 +14334,7 @@
 <span class="cstat-no" title="statement not covered" >      this.end = end;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ASTWithSource = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends AST {</span></span>
+  var ASTWithSource = class extends AST <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    ast;</span>
 <span class="cstat-no" title="statement not covered" >    source;</span>
 <span class="cstat-no" title="statement not covered" >    location;</span>
@@ -14356,7 +14356,7 @@
 <span class="cstat-no" title="statement not covered" >      return `${this.source} in ${this.location}`;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var VariableBinding = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var VariableBinding = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    key;</span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
@@ -14366,7 +14366,7 @@
 <span class="cstat-no" title="statement not covered" >      this.value = value;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ExpressionBinding = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var ExpressionBinding = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    key;</span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
@@ -14578,7 +14578,7 @@
 <span class="fstat-no" title="function not covered" >  function isQuote(code) {</span>
 <span class="cstat-no" title="statement not covered" >    return code === $SQ || code === $DQ || code === $BT;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var ParseLocation = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ParseLocation {</span></span>
+  var ParseLocation = class _ParseLocation <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    file;</span>
 <span class="cstat-no" title="statement not covered" >    offset;</span>
 <span class="cstat-no" title="statement not covered" >    line;</span>
@@ -14661,7 +14661,7 @@
 <span class="cstat-no" title="statement not covered" >      return null;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ParseSourceFile = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var ParseSourceFile = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    content;</span>
 <span class="cstat-no" title="statement not covered" >    url;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(content, url) {</span>
@@ -14669,7 +14669,7 @@
 <span class="cstat-no" title="statement not covered" >      this.url = url;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ParseSourceSpan = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var ParseSourceSpan = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    start;</span>
 <span class="cstat-no" title="statement not covered" >    end;</span>
 <span class="cstat-no" title="statement not covered" >    fullStart;</span>
@@ -14689,7 +14689,7 @@
     ParseErrorLevel2[ParseErrorLevel2["WARNING"] = 0] = "WARNING";
     ParseErrorLevel2[ParseErrorLevel2["ERROR"] = 1] = "ERROR";
   })(ParseErrorLevel || (ParseErrorLevel = {}));
-  var ParseError = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Error {</span></span>
+  var ParseError = class extends Error <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    span;</span>
 <span class="cstat-no" title="statement not covered" >    msg;</span>
 <span class="cstat-no" title="statement not covered" >    level;</span>
@@ -14913,7 +14913,7 @@
     TemplateKind2[TemplateKind2["Structural"] = 1] = "Structural";
     TemplateKind2[TemplateKind2["Block"] = 2] = "Block";
   })(TemplateKind || (TemplateKind = {}));
-  var OpList = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _OpList {</span></span>
+  var OpList = class _OpList <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    static nextListId = 0;</span>
 <span class="cstat-no" title="statement not covered" >    debugListId = _OpList.nextListId++;</span>
 <span class="cstat-no" title="statement not covered" >    head = {</span>
@@ -15128,7 +15128,7 @@
   var TRAIT_CONSUMES_VARS = {
     [ConsumesVarsTrait]: true
   };
-  var Interpolation2 = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var Interpolation2 = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    strings;</span>
 <span class="cstat-no" title="statement not covered" >    expressions;</span>
 <span class="cstat-no" title="statement not covered" >    i18nPlaceholders;</span>
@@ -15146,7 +15146,7 @@
 <span class="cstat-no" title="statement not covered" >      super(null, sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var StoreLetExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _StoreLetExpr extends ExpressionBase {</span></span>
+  var StoreLetExpr = class _StoreLetExpr extends ExpressionBase <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    target;</span>
 <span class="cstat-no" title="statement not covered" >    value;</span>
 <span class="cstat-no" title="statement not covered" >    sourceSpan;</span>
@@ -15174,7 +15174,7 @@
 <span class="cstat-no" title="statement not covered" >      return new _StoreLetExpr(this.target, this.value, this.sourceSpan);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var PureFunctionExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _PureFunctionExpr extends ExpressionBase {</span></span>
+  var PureFunctionExpr = class _PureFunctionExpr extends ExpressionBase <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    kind = ExpressionKind.PureFunctionExpr;</span>
 <span class="cstat-no" title="statement not covered" >    [ConsumesVarsTrait] = true;</span>
 <span class="cstat-no" title="statement not covered" >    [UsesVarOffset] = true;</span>
@@ -15219,7 +15219,7 @@
 <span class="cstat-no" title="statement not covered" >      return expr;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var PipeBindingExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _PipeBindingExpr extends ExpressionBase {</span></span>
+  var PipeBindingExpr = class _PipeBindingExpr extends ExpressionBase <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    target;</span>
 <span class="cstat-no" title="statement not covered" >    targetSlot;</span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
@@ -15257,7 +15257,7 @@
 <span class="cstat-no" title="statement not covered" >      return r;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var PipeBindingVariadicExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _PipeBindingVariadicExpr extends ExpressionBase {</span></span>
+  var PipeBindingVariadicExpr = class _PipeBindingVariadicExpr extends ExpressionBase <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    target;</span>
 <span class="cstat-no" title="statement not covered" >    targetSlot;</span>
 <span class="cstat-no" title="statement not covered" >    name;</span>
@@ -15293,7 +15293,7 @@
 <span class="cstat-no" title="statement not covered" >      return r;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var ArrowFunctionExpr = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class _ArrowFunctionExpr extends ExpressionBase {</span></span>
+  var ArrowFunctionExpr = class _ArrowFunctionExpr extends ExpressionBase <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    parameters;</span>
 <span class="cstat-no" title="statement not covered" >    body;</span>
 <span class="cstat-no" title="statement not covered" >    kind = ExpressionKind.ArrowFunction;</span>
@@ -15678,7 +15678,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var StringToken = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends Token {</span></span>
+  var StringToken = class extends Token <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    kind;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(index, end, strValue, kind) {</span>
 <span class="cstat-no" title="statement not covered" >      super(index, end, TokenType.String, 0, strValue);</span>
@@ -15713,7 +15713,7 @@
 <span class="cstat-no" title="statement not covered" >    return new Token(index, end, TokenType.RegExpFlags, 0, text);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   var EOF = new Token(-1, -1, TokenType.Character, 0, "");
-  var _Scanner = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var _Scanner = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    input;</span>
 <span class="cstat-no" title="statement not covered" >    tokens = [];</span>
 <span class="cstat-no" title="statement not covered" >    length;</span>
@@ -16129,7 +16129,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return result;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var SplitInterpolation = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var SplitInterpolation = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    strings;</span>
 <span class="cstat-no" title="statement not covered" >    expressions;</span>
 <span class="cstat-no" title="statement not covered" >    offsets;</span>
@@ -16139,7 +16139,7 @@
 <span class="cstat-no" title="statement not covered" >      this.offsets = offsets;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
-  var TemplateBindingParseResult = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var TemplateBindingParseResult = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    templateBindings;</span>
 <span class="cstat-no" title="statement not covered" >    warnings;</span>
 <span class="cstat-no" title="statement not covered" >    errors;</span>
@@ -16389,7 +16389,7 @@
     ParseContextFlags2[ParseContextFlags2["Writable"] = 1] = "Writable";
   })(ParseContextFlags || (ParseContextFlags = {}));
   var SUPPORTED_REGEX_FLAGS = /* @__PURE__ */ new Set(["d", "g", "i", "m", "s", "u", "v", "y"]);
-  var _ParseAST = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var _ParseAST = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    input;</span>
 <span class="cstat-no" title="statement not covered" >    parseSourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    absoluteOffset;</span>
@@ -17276,7 +17276,7 @@
 <span class="cstat-no" title="statement not covered" >    const error = `Parser Error: ${message}${locationText}[${input}] in ${location}`;</span>
 <span class="cstat-no" title="statement not covered" >    return new ParseError(parseSourceSpan, error);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  var SimpleExpressionChecker = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class extends RecursiveAstVisitor {</span></span>
+  var SimpleExpressionChecker = class extends RecursiveAstVisitor <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    errors = [];</span>
 <span class="cstat-no" title="statement not covered" >    visitPipe() {</span>
 <span class="cstat-no" title="statement not covered" >      this.errors.push("pipes");</span>
@@ -17583,7 +17583,7 @@
   };
 &nbsp;
   // node_modules/angular-estree-parser/dist/source.js
-  var Source = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class {</span></span>
+  var Source = class <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    text;</span>
 <span class="cstat-no" title="statement not covered" >    constructor(text) {</span>
 <span class="cstat-no" title="statement not covered" >      this.text = text;</span>
@@ -17991,7 +17991,7 @@
   var transformVisitors = transforms_exports;
 &nbsp;
   // node_modules/angular-estree-parser/dist/ast-transform/node-transformer.js
-  var NodeTransformer = <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >class NodeTransformer2 extends Source {</span></span>
+  var NodeTransformer = class NodeTransformer2 extends Source <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    node;</span>
 <span class="cstat-no" title="statement not covered" >    ancestors;</span>
 <span class="cstat-no" title="statement not covered" >    constructor({ node, text, ancestors = [] }) {</span>
@@ -18436,7 +18436,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-21T01:10:57.555Z
+                at 2026-05-22T01:09:02.005Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
