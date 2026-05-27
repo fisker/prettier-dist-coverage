@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.84% </span>
+                <span class="strong">52.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6076/11497</span>
+                <span class='fraction'>6079/11500</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.1% </span>
+                <span class="strong">61.11% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1092/1787</span>
+                <span class='fraction'>1094/1790</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.84% </span>
+                <span class="strong">52.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6076/11497</span>
+                <span class='fraction'>6079/11500</span>
             </div>
         
             
@@ -11559,7 +11559,10 @@
 <a name='L11494'></a><a href='#L11494'>11494</a>
 <a name='L11495'></a><a href='#L11495'>11495</a>
 <a name='L11496'></a><a href='#L11496'>11496</a>
-<a name='L11497'></a><a href='#L11497'>11497</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L11497'></a><a href='#L11497'>11497</a>
+<a name='L11498'></a><a href='#L11498'>11498</a>
+<a name='L11499'></a><a href='#L11499'>11499</a>
+<a name='L11500'></a><a href='#L11500'>11500</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21190,27 +21193,30 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32699,8 +32705,11 @@
     if (node.groups.length === 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+    if (node.type === "value-paren_group" &amp;&amp; node.open &amp;&amp; node.close &amp;&amp; node.groups.length === 1 &amp;&amp; node.groups[0].type !== "value-comma_group") {
+      return false;
+    }
     const parentNode = path.parent;
-    if (parentNode &amp;&amp; parentNode.type === "value-func" &amp;&amp; parentNode.value === "if") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (parentNode &amp;&amp; parentNode.type === "value-func" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parentNode.value === "if")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const parentParentNode = path.grandparent;
@@ -34558,7 +34567,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-26T01:07:06.529Z
+                at 2026-05-27T01:11:15.961Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

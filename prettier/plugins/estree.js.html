@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.21% </span>
+                <span class="strong">59.16% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7591/12819</span>
+                <span class='fraction'>7588/12826</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.21% </span>
+                <span class="strong">59.16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7591/12819</span>
+                <span class='fraction'>7588/12826</span>
             </div>
         
             
@@ -12881,7 +12881,14 @@
 <a name='L12816'></a><a href='#L12816'>12816</a>
 <a name='L12817'></a><a href='#L12817'>12817</a>
 <a name='L12818'></a><a href='#L12818'>12818</a>
-<a name='L12819'></a><a href='#L12819'>12819</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12819'></a><a href='#L12819'>12819</a>
+<a name='L12820'></a><a href='#L12820'>12820</a>
+<a name='L12821'></a><a href='#L12821'>12821</a>
+<a name='L12822'></a><a href='#L12822'>12822</a>
+<a name='L12823'></a><a href='#L12823'>12823</a>
+<a name='L12824'></a><a href='#L12824'>12824</a>
+<a name='L12825'></a><a href='#L12825'>12825</a>
+<a name='L12826'></a><a href='#L12826'>12826</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16539,6 +16546,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -19397,9 +19411,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -21807,6 +21818,9 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -29352,11 +29366,18 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   function cleanDocFn(doc) {
     switch (get_doc_type_default(doc)) {
-<span class="branch-0 cbranch-no" title="branch not covered" >      case DOC_TYPE_FILL:</span>
-<span class="cstat-no" title="statement not covered" >        if (doc.parts.every((part) =&gt; part === "")) {</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >      case DOC_TYPE_FILL: {</span>
+<span class="cstat-no" title="statement not covered" >        const {</span>
+<span class="cstat-no" title="statement not covered" >          parts</span>
+<span class="cstat-no" title="statement not covered" >        } = doc;</span>
+<span class="cstat-no" title="statement not covered" >        if (parts.every((part) =&gt; part === "")) {</span>
 <span class="cstat-no" title="statement not covered" >          return "";</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (parts.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >          return parts[0];</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case DOC_TYPE_GROUP:</span>
 <span class="cstat-no" title="statement not covered" >        if (!doc.contents &amp;&amp; !doc.id &amp;&amp; !doc.break &amp;&amp; !doc.expandedStates) {</span>
 <span class="cstat-no" title="statement not covered" >          return "";</span>
@@ -32202,9 +32223,6 @@
     "range",
     "raw",
     "comments",
-    "leadingComments",
-    "trailingComments",
-    "innerComments",
     "extra",
     "start",
     "end",
@@ -34633,6 +34651,9 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    switch (nextNode.type) {</span>
 <span class="cstat-no" title="statement not covered" >      case "TSCallSignatureDeclaration":</span>
+<span class="cstat-no" title="statement not covered" >        if (node.type === "TSPropertySignature" &amp;&amp; node.typeAnnotation) {</span>
+<span class="cstat-no" title="statement not covered" >          return false;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return false;</span></span>
@@ -38524,7 +38545,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-26T01:07:06.529Z
+                at 2026-05-27T01:11:15.961Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
