@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.42% </span>
+                <span class="strong">48.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7573/15640</span>
+                <span class='fraction'>7577/15644</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.68% </span>
+                <span class="strong">56.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1305/2302</span>
+                <span class='fraction'>1305/2303</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.42% </span>
+                <span class="strong">48.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7573/15640</span>
+                <span class='fraction'>7577/15644</span>
             </div>
         
             
@@ -15702,7 +15702,11 @@
 <a name='L15637'></a><a href='#L15637'>15637</a>
 <a name='L15638'></a><a href='#L15638'>15638</a>
 <a name='L15639'></a><a href='#L15639'>15639</a>
-<a name='L15640'></a><a href='#L15640'>15640</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L15640'></a><a href='#L15640'>15640</a>
+<a name='L15641'></a><a href='#L15641'>15641</a>
+<a name='L15642'></a><a href='#L15642'>15642</a>
+<a name='L15643'></a><a href='#L15643'>15643</a>
+<a name='L15644'></a><a href='#L15644'>15644</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15786,6 +15790,10 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -31428,6 +31436,10 @@
   });
   var method_replace_all_default = replaceAll;
 &nbsp;
+  // scripts/build/shims/function-object-has-own.js
+  var hasOwn = Object.hasOwn <span class="branch-0 cbranch-no" title="branch not covered" >?? Function.prototype.call.bind(Object.prototype.hasOwnProperty);</span>
+  var function_object_has_own_default = hasOwn;
+&nbsp;
   // node_modules/@babel/parser/lib/index.js
   var Position = class {
     constructor(line, col, index) {
@@ -42248,7 +42260,7 @@
 <span class="cstat-no" title="statement not covered" >          modified[modifier] = true;</span>
 <span class="cstat-no" title="statement not covered" >          enforceOrder(startLoc, modifier, "in", "out");</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >          if (Object.prototype.hasOwnProperty.call(modified, modifier)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (function_object_has_own_default(modified, modifier)) {</span>
 <span class="cstat-no" title="statement not covered" >            this.raise(TSErrors.DuplicateModifier, startLoc, {</span>
 <span class="cstat-no" title="statement not covered" >              modifier</span>
 <span class="cstat-no" title="statement not covered" >            });</span>
@@ -46565,13 +46577,13 @@
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      pragmas</span>
 <span class="cstat-no" title="statement not covered" >    } = parseDocBlock(text);</span>
-<span class="cstat-no" title="statement not covered" >    return FORMAT_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
+<span class="cstat-no" title="statement not covered" >    return FORMAT_PRAGMAS.some((pragma) =&gt; function_object_has_own_default(pragmas, pragma));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function hasIgnorePragma(text) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      pragmas</span>
 <span class="cstat-no" title="statement not covered" >    } = parseDocBlock(text);</span>
-<span class="cstat-no" title="statement not covered" >    return FORMAT_IGNORE_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
+<span class="cstat-no" title="statement not covered" >    return FORMAT_IGNORE_PRAGMAS.some((pragma) =&gt; function_object_has_own_default(pragmas, pragma));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/language-js/parse/utilities/create-parser.js
@@ -46987,7 +46999,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-27T01:11:15.961Z
+                at 2026-05-28T01:03:49.661Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.69% </span>
+                <span class="strong">57.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3294/5709</span>
+                <span class='fraction'>3301/5716</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.69% </span>
+                <span class="strong">57.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3294/5709</span>
+                <span class='fraction'>3301/5716</span>
             </div>
         
             
@@ -5772,7 +5772,14 @@
 <a name='L5707'></a><a href='#L5707'>5707</a>
 <a name='L5708'></a><a href='#L5708'>5708</a>
 <a name='L5709'></a><a href='#L5709'>5709</a>
-<a name='L5710'></a><a href='#L5710'>5710</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5710'></a><a href='#L5710'>5710</a>
+<a name='L5711'></a><a href='#L5711'>5711</a>
+<a name='L5712'></a><a href='#L5712'>5712</a>
+<a name='L5713'></a><a href='#L5713'>5713</a>
+<a name='L5714'></a><a href='#L5714'>5714</a>
+<a name='L5715'></a><a href='#L5715'>5715</a>
+<a name='L5716'></a><a href='#L5716'>5716</a>
+<a name='L5717'></a><a href='#L5717'>5717</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -8815,6 +8822,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
@@ -8892,6 +8903,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14263,6 +14277,10 @@ var UndefinedParserError = class extends Error <span class="fstat-no" title="fun
 <span class="cstat-no" title="statement not covered" >  name = "UndefinedParserError";</span>
 };
 &nbsp;
+// scripts/build/shims/function-object-has-own.js
+var hasOwn = Object.hasOwn <span class="branch-0 cbranch-no" title="branch not covered" >?? Function.prototype.call.bind(Object.prototype.hasOwnProperty);</span>
+var function_object_has_own_default = hasOwn;
+&nbsp;
 // src/main/core-options.evaluate.js
 var core_options_evaluate_default = {
   "checkIgnorePragma": {
@@ -14559,7 +14577,7 @@ function* collectParsersFromLanguages(parserChoices, languages, plugins) {
       for (const parserName of language.parsers) {
         if (!existingParsers.has(parserName)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          existingParsers.add(parserName);</span>
-<span class="cstat-no" title="statement not covered" >          const plugin = plugins.find((plugin2) =&gt; plugin2.parsers &amp;&amp; Object.prototype.hasOwnProperty.call(plugin2.parsers, parserName));</span>
+<span class="cstat-no" title="statement not covered" >          const plugin = plugins.find((plugin2) =&gt; plugin2.parsers &amp;&amp; function_object_has_own_default(plugin2.parsers, parserName));</span>
 <span class="cstat-no" title="statement not covered" >          let description = language.name;</span>
 <span class="cstat-no" title="statement not covered" >          if (plugin?.name) {</span>
 <span class="cstat-no" title="statement not covered" >            description += ` (plugin: ${plugin.name})`;</span>
@@ -14607,8 +14625,11 @@ var method_to_reversed_default = toReversed;
 // node_modules/deno-path-from-file-url/index.js
 function checkWindows() {
   const global = globalThis;
-  const os = global.Deno<span class="branch-0 cbranch-no" title="branch not covered" >?.build?.os;</span>
-  return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: global.navigator?.platform?.startsWith("Win") <span class="branch-0 cbranch-no" title="branch not covered" >?? global.process?.platform?.startsWith("win") <span class="branch-0 cbranch-no" title="branch not covered" ></span>?? false;</span>
+  const platform = global.process?.platform;
+  if (typeof platform === "string") return platform.startsWith("win");
+<span class="branch-0 cbranch-no" title="branch not covered" >  const os = global.Deno?.build?.os;</span>
+  if (typeof os === "string") <span class="branch-0 cbranch-no" title="branch not covered" >return os === "windows";</span>
+  return global.navigator?.platform?.startsWith("Win") <span class="branch-0 cbranch-no" title="branch not covered" >?? false;</span>
 }
 var isWindows = checkWindows();
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function assertArg(url) {</span></span>
@@ -15724,7 +15745,7 @@ function getParserPluginByParserName(plugins, parserName) {
     /* OPTIONAL_OBJECT: false */
     0,
     plugins,
-    (plugin2) =&gt; plugin2.parsers &amp;&amp; Object.prototype.hasOwnProperty.call(plugin2.parsers, parserName)
+    (plugin2) =&gt; plugin2.parsers &amp;&amp; function_object_has_own_default(plugin2.parsers, parserName)
   );
   if (plugin) {
     return plugin;
@@ -15743,7 +15764,7 @@ function getPrinterPluginByAstFormat(plugins, astFormat) {
     /* OPTIONAL_OBJECT: false */
     0,
     plugins,
-    (plugin2) =&gt; plugin2.printers &amp;&amp; Object.prototype.hasOwnProperty.call(plugin2.printers, astFormat)
+    (plugin2) =&gt; plugin2.printers &amp;&amp; function_object_has_own_default(plugin2.printers, astFormat)
   );
   if (plugin) {
     return plugin;
@@ -16367,7 +16388,7 @@ var get_cursor_node_default = getCursorLocation;
 <span class="cstat-no" title="statement not covered" >    const cloned = {};</span>
 <span class="cstat-no" title="statement not covered" >    const childrenKeys = new Set(getVisitorKeys(original));</span>
 <span class="cstat-no" title="statement not covered" >    for (const key in original) {</span>
-<span class="cstat-no" title="statement not covered" >      if (!Object.prototype.hasOwnProperty.call(original, key) || ignoredProperties?.has(key)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!function_object_has_own_default(original, key) || ignoredProperties?.has(key)) {</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (childrenKeys.has(key)) {</span>
@@ -17197,7 +17218,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-27T01:11:15.961Z
+                at 2026-05-28T01:03:49.661Z
             </div>
         <script src="../prettify.js"></script>
         <script>

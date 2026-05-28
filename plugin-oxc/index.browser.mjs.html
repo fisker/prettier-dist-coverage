@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22656</span>
+                <span class='fraction'>0/22666</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22656</span>
+                <span class='fraction'>0/22666</span>
             </div>
         
             
@@ -22719,7 +22719,27 @@
 <a name='L22654'></a><a href='#L22654'>22654</a>
 <a name='L22655'></a><a href='#L22655'>22655</a>
 <a name='L22656'></a><a href='#L22656'>22656</a>
-<a name='L22657'></a><a href='#L22657'>22657</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L22657'></a><a href='#L22657'>22657</a>
+<a name='L22658'></a><a href='#L22658'>22658</a>
+<a name='L22659'></a><a href='#L22659'>22659</a>
+<a name='L22660'></a><a href='#L22660'>22660</a>
+<a name='L22661'></a><a href='#L22661'>22661</a>
+<a name='L22662'></a><a href='#L22662'>22662</a>
+<a name='L22663'></a><a href='#L22663'>22663</a>
+<a name='L22664'></a><a href='#L22664'>22664</a>
+<a name='L22665'></a><a href='#L22665'>22665</a>
+<a name='L22666'></a><a href='#L22666'>22666</a>
+<a name='L22667'></a><a href='#L22667'>22667</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -56182,6 +56202,10 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var postprocess_default = postprocess;</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// scripts/build/shims/function-object-has-own.js</span>
+<span class="cstat-no" title="statement not covered" >var hasOwn = Object.hasOwn ?? Function.prototype.call.bind(Object.prototype.hasOwnProperty);</span>
+<span class="cstat-no" title="statement not covered" >var function_object_has_own_default = hasOwn;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// node_modules/jest-docblock/build/index.js</span>
 <span class="cstat-no" title="statement not covered" >var commentEndRe = /\*\/$/;</span>
 <span class="cstat-no" title="statement not covered" >var commentStartRe = /^\/\*\*?/;</span>
@@ -56334,13 +56358,13 @@
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    pragmas</span>
 <span class="cstat-no" title="statement not covered" >  } = parseDocBlock(text);</span>
-<span class="cstat-no" title="statement not covered" >  return FORMAT_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
+<span class="cstat-no" title="statement not covered" >  return FORMAT_PRAGMAS.some((pragma) =&gt; function_object_has_own_default(pragmas, pragma));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function hasIgnorePragma(text) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    pragmas</span>
 <span class="cstat-no" title="statement not covered" >  } = parseDocBlock(text);</span>
-<span class="cstat-no" title="statement not covered" >  return FORMAT_IGNORE_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
+<span class="cstat-no" title="statement not covered" >  return FORMAT_IGNORE_PRAGMAS.some((pragma) =&gt; function_object_has_own_default(pragmas, pragma));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function insertPragma(originalText) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
@@ -57439,7 +57463,13 @@
 <span class="cstat-no" title="statement not covered" >    addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if ((precedingNode?.type === "Identifier" || precedingNode?.type === "AssignmentPattern" || precedingNode?.type === "ObjectPattern" || precedingNode?.type === "ArrayPattern" || precedingNode?.type === "RestElement" || precedingNode?.type === "TSParameterProperty") &amp;&amp; isRealFunctionLikeNode(enclosingNode) &amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")") {</span>
+<span class="cstat-no" title="statement not covered" >  if ((precedingNode?.type === "Identifier" || precedingNode?.type === "AssignmentPattern" || precedingNode?.type === "ObjectPattern" || precedingNode?.type === "ArrayPattern" || precedingNode?.type === "RestElement" || precedingNode?.type === "TSParameterProperty") &amp;&amp; (isRealFunctionLikeNode(enclosingNode) || // `TSEmptyBodyFunctionExpression` opts out of comment attachment, so</span>
+<span class="cstat-no" title="statement not covered" >  // the comment walker bubbles up to its wrapper. Three wrappers occur:</span>
+<span class="cstat-no" title="statement not covered" >  // `TSAbstractMethodDefinition` (always), and `MethodDefinition` in</span>
+<span class="cstat-no" title="statement not covered" >  // `declare class` or overload position. A plain `MethodDefinition` with</span>
+<span class="cstat-no" title="statement not covered" >  // a body is a normal method and must not match here, so the</span>
+<span class="cstat-no" title="statement not covered" >  // `MethodDefinition` branch checks `value.type` to skip it.</span>
+<span class="cstat-no" title="statement not covered" >  (enclosingNode?.type === "TSAbstractMethodDefinition" || enclosingNode?.type === "MethodDefinition") &amp;&amp; enclosingNode.value.type === "TSEmptyBodyFunctionExpression") &amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")") {</span>
 <span class="cstat-no" title="statement not covered" >    addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -64669,7 +64699,7 @@
 <span class="cstat-no" title="statement not covered" >          line,</span>
 <span class="cstat-no" title="statement not covered" >          print3("test"),</span>
 <span class="cstat-no" title="statement not covered" >          ";",</span>
-<span class="cstat-no" title="statement not covered" >          node.update ? [line, print3("update")] : ifBreak("", line)</span>
+<span class="cstat-no" title="statement not covered" >          node.update ? [line, print3("update")] : ""</span>
 <span class="cstat-no" title="statement not covered" >        ]),</span>
 <span class="cstat-no" title="statement not covered" >        softline</span>
 <span class="cstat-no" title="statement not covered" >      ]),</span>
@@ -68038,7 +68068,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-27T01:11:15.961Z
+                at 2026-05-28T01:03:49.661Z
             </div>
         <script src="../prettify.js"></script>
         <script>

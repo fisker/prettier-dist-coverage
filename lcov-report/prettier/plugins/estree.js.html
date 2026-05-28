@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.16% </span>
+                <span class="strong">59.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7588/12826</span>
+                <span class='fraction'>7589/12832</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.16% </span>
+                <span class="strong">59.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7588/12826</span>
+                <span class='fraction'>7589/12832</span>
             </div>
         
             
@@ -12888,7 +12888,13 @@
 <a name='L12823'></a><a href='#L12823'>12823</a>
 <a name='L12824'></a><a href='#L12824'>12824</a>
 <a name='L12825'></a><a href='#L12825'>12825</a>
-<a name='L12826'></a><a href='#L12826'>12826</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12826'></a><a href='#L12826'>12826</a>
+<a name='L12827'></a><a href='#L12827'>12827</a>
+<a name='L12828'></a><a href='#L12828'>12828</a>
+<a name='L12829'></a><a href='#L12829'>12829</a>
+<a name='L12830'></a><a href='#L12830'>12830</a>
+<a name='L12831'></a><a href='#L12831'>12831</a>
+<a name='L12832'></a><a href='#L12832'>12832</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14302,6 +14308,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27130,7 +27142,13 @@
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    if ((precedingNode?.type === "Identifier" || precedingNode?.type === "AssignmentPattern" || precedingNode?.type === "ObjectPattern" || precedingNode?.type === "ArrayPattern" || precedingNode?.type === "RestElement" || precedingNode?.type === "TSParameterProperty") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; isRealFunctionLikeNode(enclosingNode) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if ((precedingNode?.type === "Identifier" || precedingNode?.type === "AssignmentPattern" || precedingNode?.type === "ObjectPattern" || precedingNode?.type === "ArrayPattern" || precedingNode?.type === "RestElement" || precedingNode?.type === "TSParameterProperty") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (isRealFunctionLikeNode(enclosingNode) || // `TSEmptyBodyFunctionExpression` opts out of comment attachment, so</span>
+<span class="cstat-no" title="statement not covered" >    // the comment walker bubbles up to its wrapper. Three wrappers occur:</span>
+<span class="cstat-no" title="statement not covered" >    // `TSAbstractMethodDefinition` (always), and `MethodDefinition` in</span>
+<span class="cstat-no" title="statement not covered" >    // `declare class` or overload position. A plain `MethodDefinition` with</span>
+<span class="cstat-no" title="statement not covered" >    // a body is a normal method and must not match here, so the</span>
+<span class="cstat-no" title="statement not covered" >    // `MethodDefinition` branch checks `value.type` to skip it.</span>
+    (enclosingNode?.type === "TSAbstractMethodDefinition" || enclosingNode?.type === "MethodDefinition") &amp;&amp; enclosingNode.value.type === "TSEmptyBodyFunctionExpression") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -35015,7 +35033,7 @@
 <span class="cstat-no" title="statement not covered" >            line,</span>
 <span class="cstat-no" title="statement not covered" >            print3("test"),</span>
 <span class="cstat-no" title="statement not covered" >            ";",</span>
-<span class="cstat-no" title="statement not covered" >            node.update ? [line, print3("update")] : ifBreak("", line)</span>
+<span class="cstat-no" title="statement not covered" >            node.update ? [line, print3("update")] : ""</span>
 <span class="cstat-no" title="statement not covered" >          ]),</span>
 <span class="cstat-no" title="statement not covered" >          softline</span>
 <span class="cstat-no" title="statement not covered" >        ]),</span>
@@ -38545,7 +38563,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-27T01:11:13.365Z
+                at 2026-05-28T01:03:47.026Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

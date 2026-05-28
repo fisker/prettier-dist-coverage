@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.06% </span>
+                <span class="strong">72.08% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7392/10257</span>
+                <span class='fraction'>7399/10264</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.06% </span>
+                <span class="strong">72.08% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7392/10257</span>
+                <span class='fraction'>7399/10264</span>
             </div>
         
             
@@ -10319,7 +10319,14 @@
 <a name='L10254'></a><a href='#L10254'>10254</a>
 <a name='L10255'></a><a href='#L10255'>10255</a>
 <a name='L10256'></a><a href='#L10256'>10256</a>
-<a name='L10257'></a><a href='#L10257'>10257</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10257'></a><a href='#L10257'>10257</a>
+<a name='L10258'></a><a href='#L10258'>10258</a>
+<a name='L10259'></a><a href='#L10259'>10259</a>
+<a name='L10260'></a><a href='#L10260'>10260</a>
+<a name='L10261'></a><a href='#L10261'>10261</a>
+<a name='L10262'></a><a href='#L10262'>10262</a>
+<a name='L10263'></a><a href='#L10263'>10263</a>
+<a name='L10264'></a><a href='#L10264'>10264</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10977,12 +10984,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21231,6 +21245,10 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var angular_control_flow_block_parameters_default = printAngularControlFlowBlockParameters;
 &nbsp;
+  // scripts/build/shims/function-object-has-own.js
+  var hasOwn = Object.hasOwn <span class="branch-0 cbranch-no" title="branch not covered" >?? Function.prototype.call.bind(Object.prototype.hasOwnProperty);</span>
+  var function_object_has_own_default = hasOwn;
+&nbsp;
   // scripts/build/shims/method-to-reversed.js
   var arrayToReversed = Array.prototype.toReversed <span class="branch-0 cbranch-no" title="branch not covered" >?? <span class="fstat-no" title="function not covered" >function() {</span></span>
 <span class="cstat-no" title="statement not covered" >    return [...this].reverse();</span>
@@ -21245,8 +21263,11 @@
   // node_modules/deno-path-from-file-url/index.js
   function checkWindows() {
     const global = globalThis;
-    const os = global.Deno<span class="branch-0 cbranch-no" title="branch not covered" >?.build?.os;</span>
-    return typeof os === "string" <span class="branch-0 cbranch-no" title="branch not covered" >? os === "windows" </span>: global.navigator?.platform?.startsWith("Win") <span class="branch-0 cbranch-no" title="branch not covered" >?? global.process?.platform?.startsWith("win") <span class="branch-0 cbranch-no" title="branch not covered" ></span>?? false;</span>
+    const platform = global.process?.platform;
+    if (typeof platform === "string") return platform.startsWith("win");
+<span class="branch-0 cbranch-no" title="branch not covered" >    const os = global.Deno?.build?.os;</span>
+    if (typeof os === "string") <span class="branch-0 cbranch-no" title="branch not covered" >return os === "windows";</span>
+    return global.navigator?.platform?.startsWith("Win") <span class="branch-0 cbranch-no" title="branch not covered" >?? false;</span>
   }
   var isWindows = checkWindows();
 <span class="fstat-no" title="function not covered" >  function assertArg(url) {</span>
@@ -21745,7 +21766,7 @@
       name,
       attrMap
     } = node;
-    if (name !== "script" || Object.prototype.hasOwnProperty.call(attrMap, "src")) {
+    if (name !== "script" || function_object_has_own_default(attrMap, "src")) {
       return;
     }
     const {
@@ -21766,7 +21787,7 @@
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      attrMap</span>
 <span class="cstat-no" title="statement not covered" >    } = node;</span>
-<span class="cstat-no" title="statement not covered" >    if (Object.prototype.hasOwnProperty.call(attrMap, "src")) {</span>
+<span class="cstat-no" title="statement not covered" >    if (function_object_has_own_default(attrMap, "src")) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
@@ -21848,14 +21869,14 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ignore":</span>
 <span class="cstat-no" title="statement not covered" >        return "block";</span>
       default:
-        if (node.kind === "element" &amp;&amp; (!node.namespace <span class="branch-0 cbranch-no" title="branch not covered" >|| isInSvgForeignObject <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| is_unknown_namespace_default(node))</span> &amp;&amp; Object.prototype.hasOwnProperty.call(CSS_DISPLAY_TAGS, node.name)) {
+        if (node.kind === "element" &amp;&amp; (!node.namespace <span class="branch-0 cbranch-no" title="branch not covered" >|| isInSvgForeignObject <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| is_unknown_namespace_default(node))</span> &amp;&amp; function_object_has_own_default(CSS_DISPLAY_TAGS, node.name)) {
           return CSS_DISPLAY_TAGS[node.name];
         }
     }
     return CSS_DISPLAY_DEFAULT;
   }
   function getNodeCssStyleWhiteSpace(node) {
-    if (node.kind === "element" &amp;&amp; (!node.namespace <span class="branch-0 cbranch-no" title="branch not covered" >|| is_unknown_namespace_default(node))</span> &amp;&amp; Object.prototype.hasOwnProperty.call(CSS_WHITE_SPACE_TAGS, node.name)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (node.kind === "element" &amp;&amp; (!node.namespace <span class="branch-0 cbranch-no" title="branch not covered" >|| is_unknown_namespace_default(node))</span> &amp;&amp; function_object_has_own_default(CSS_WHITE_SPACE_TAGS, node.name)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return CSS_WHITE_SPACE_TAGS[node.name];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return CSS_WHITE_SPACE_DEFAULT;
@@ -22365,7 +22386,7 @@
 <span class="fstat-no" title="function not covered" >  function printSrcset(textToDoc, print, path) {</span>
 <span class="cstat-no" title="statement not covered" >    const value = getUnescapedAttributeValue(path.node);</span>
 <span class="cstat-no" title="statement not covered" >    const srcset = parse_srcset_default(value);</span>
-<span class="cstat-no" title="statement not covered" >    const types = SRCSET_TYPES.filter((type) =&gt; srcset.some((candidate) =&gt; Object.prototype.hasOwnProperty.call(candidate, type)));</span>
+<span class="cstat-no" title="statement not covered" >    const types = SRCSET_TYPES.filter((type) =&gt; srcset.some((candidate) =&gt; function_object_has_own_default(candidate, type)));</span>
 <span class="cstat-no" title="statement not covered" >    if (types.length &gt; 1) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error("Mixed descriptor in srcset is not supported");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -30838,7 +30859,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-27T01:11:13.365Z
+                at 2026-05-28T01:03:47.026Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

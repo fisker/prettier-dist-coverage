@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40.58% </span>
+                <span class="strong">40.61% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2961/7296</span>
+                <span class='fraction'>2965/7300</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.53% </span>
+                <span class="strong">46.47% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>356/765</span>
+                <span class='fraction'>356/766</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40.58% </span>
+                <span class="strong">40.61% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2961/7296</span>
+                <span class='fraction'>2965/7300</span>
             </div>
         
             
@@ -7358,7 +7358,11 @@
 <a name='L7293'></a><a href='#L7293'>7293</a>
 <a name='L7294'></a><a href='#L7294'>7294</a>
 <a name='L7295'></a><a href='#L7295'>7295</a>
-<a name='L7296'></a><a href='#L7296'>7296</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7296'></a><a href='#L7296'>7296</a>
+<a name='L7297'></a><a href='#L7297'>7297</a>
+<a name='L7298'></a><a href='#L7298'>7298</a>
+<a name='L7299'></a><a href='#L7299'>7299</a>
+<a name='L7300'></a><a href='#L7300'>7300</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7389,6 +7393,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14707,6 +14715,10 @@
     meriyah: () =&gt; meriyah
   });
 &nbsp;
+  // scripts/build/shims/function-object-has-own.js
+  var hasOwn = Object.hasOwn <span class="branch-0 cbranch-no" title="branch not covered" >?? Function.prototype.call.bind(Object.prototype.hasOwnProperty);</span>
+  var function_object_has_own_default = hasOwn;
+&nbsp;
   // scripts/build/shims/shared.js
   var OPTIONAL_OBJECT = 1;
   var createMethodShim = (methodName, getImplementation) =&gt; (flags, object, ...arguments_) =&gt; {
@@ -15163,7 +15175,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
   function getOwnProperty(object, key) {
-    return Object.prototype.hasOwnProperty.call(object, key) ? object[key] : void 0;
+    return function_object_has_own_default(object, key) ? object[key] : void 0;
   }
   var KeywordDescTable = ["end of source", "identifier", "number", "string", "regular expression", "false", "true", "null", "template continuation", "template tail", "=&gt;", "(", "{", ".", "...", "}", ")", ";", ",", "[", "]", ":", "?", "'", '"', "++", "--", "=", "&lt;&lt;=", "&gt;&gt;=", "&gt;&gt;&gt;=", "**=", "+=", "-=", "*=", "/=", "%=", "^=", "|=", "&amp;=", "||=", "&amp;&amp;=", "??=", "typeof", "delete", "void", "!", "~", "+", "-", "in", "instanceof", "*", "%", "/", "**", "&amp;&amp;", "||", "===", "!==", "==", "!=", "&lt;=", "&gt;=", "&lt;", "&gt;", "&lt;&lt;", "&gt;&gt;", "&gt;&gt;&gt;", "&amp;", "|", "^", "var", "let", "const", "break", "case", "catch", "class", "continue", "debugger", "default", "do", "else", "export", "extends", "finally", "for", "function", "if", "import", "new", "return", "super", "switch", "this", "throw", "try", "while", "with", "implements", "interface", "package", "private", "protected", "public", "static", "yield", "as", "async", "await", "constructor", "get", "set", "accessor", "from", "of", "enum", "eval", "arguments", "escaped keyword", "escaped future reserved keyword", "reserved if strict", "#", "BigIntLiteral", "??", "?.", "WhiteSpace", "Illegal", "LineTerminator", "PrivateField", "Template", "@", "target", "meta", "LineFeed", "Escaped", "JSXText"];
   var descKeywordTable = {
@@ -21828,13 +21840,13 @@
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      pragmas</span>
 <span class="cstat-no" title="statement not covered" >    } = parseDocBlock(text);</span>
-<span class="cstat-no" title="statement not covered" >    return FORMAT_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
+<span class="cstat-no" title="statement not covered" >    return FORMAT_PRAGMAS.some((pragma) =&gt; function_object_has_own_default(pragmas, pragma));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function hasIgnorePragma(text) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      pragmas</span>
 <span class="cstat-no" title="statement not covered" >    } = parseDocBlock(text);</span>
-<span class="cstat-no" title="statement not covered" >    return FORMAT_IGNORE_PRAGMAS.some((pragma) =&gt; Object.prototype.hasOwnProperty.call(pragmas, pragma));</span>
+<span class="cstat-no" title="statement not covered" >    return FORMAT_IGNORE_PRAGMAS.some((pragma) =&gt; function_object_has_own_default(pragmas, pragma));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // src/language-js/parse/utilities/create-parser.js
@@ -21955,7 +21967,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-27T01:11:13.365Z
+                at 2026-05-28T01:03:47.026Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
