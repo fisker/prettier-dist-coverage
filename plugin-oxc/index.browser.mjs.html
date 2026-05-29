@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22666</span>
+                <span class='fraction'>0/22662</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22666</span>
+                <span class='fraction'>0/22662</span>
             </div>
         
             
@@ -22725,15 +22725,7 @@
 <a name='L22660'></a><a href='#L22660'>22660</a>
 <a name='L22661'></a><a href='#L22661'>22661</a>
 <a name='L22662'></a><a href='#L22662'>22662</a>
-<a name='L22663'></a><a href='#L22663'>22663</a>
-<a name='L22664'></a><a href='#L22664'>22664</a>
-<a name='L22665'></a><a href='#L22665'>22665</a>
-<a name='L22666'></a><a href='#L22666'>22666</a>
-<a name='L22667'></a><a href='#L22667'>22667</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L22663'></a><a href='#L22663'>22663</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -55413,19 +55405,26 @@
 <span class="cstat-no" title="statement not covered" >  return node.extra?.raw ?? node.raw;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/utilities/get-or-insert.js</span>
+<span class="cstat-no" title="statement not covered" >function getOrInsertComputed(map, key, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!map.has(key)) {</span>
+<span class="cstat-no" title="statement not covered" >    const value = callback(key);</span>
+<span class="cstat-no" title="statement not covered" >    map.set(key, value);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return map.get(key);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/is-type-cast-comment.js</span>
 <span class="cstat-no" title="statement not covered" >var cache = /* @__PURE__ */ new WeakMap();</span>
 <span class="cstat-no" title="statement not covered" >function isTypeCastComment(comment) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!cache.has(comment)) {</span>
-<span class="cstat-no" title="statement not covered" >    cache.set(</span>
-<span class="cstat-no" title="statement not covered" >      comment,</span>
-<span class="cstat-no" title="statement not covered" >      isBlockComment(comment) &amp;&amp; comment.value[0] === "*" &amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however</span>
-<span class="cstat-no" title="statement not covered" >      // Closure Compiler accepts types in parens and even without any delimiters at all.</span>
-<span class="cstat-no" title="statement not covered" >      // That's why we just search for "@type" and "@satisfies".</span>
-<span class="cstat-no" title="statement not covered" >      /@(?:type|satisfies)\b/.test(comment.value)</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return cache.get(comment);</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >    cache,</span>
+<span class="cstat-no" title="statement not covered" >    comment,</span>
+<span class="cstat-no" title="statement not covered" >    (comment2) =&gt; isBlockComment(comment2) &amp;&amp; comment2.value[0] === "*" &amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however</span>
+<span class="cstat-no" title="statement not covered" >    // Closure Compiler accepts types in parens and even without any delimiters at all.</span>
+<span class="cstat-no" title="statement not covered" >    // That's why we just search for "@type" and "@satisfies".</span>
+<span class="cstat-no" title="statement not covered" >    /@(?:type|satisfies)\b/.test(comment2.value)</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// scripts/build/shims/method-replace-all.js</span>
@@ -55470,14 +55469,15 @@
 <span class="cstat-no" title="statement not covered" >var cache2 = /* @__PURE__ */ new WeakMap();</span>
 <span class="cstat-no" title="statement not covered" >function stripComments(options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const comments = options2[commentsPropertyInOptions];</span>
-<span class="cstat-no" title="statement not covered" >  if (!cache2.has(comments)) {</span>
-<span class="cstat-no" title="statement not covered" >    cache2.set(comments, stripCommentsFromText(options2.originalText, comments));</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return cache2.get(comments);</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >    cache2,</span>
+<span class="cstat-no" title="statement not covered" >    comments,</span>
+<span class="cstat-no" title="statement not covered" >    (comments2) =&gt; stripCommentsFromText(options2.originalText, comments2)</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/indentable-block-comment.js</span>
-<span class="cstat-no" title="statement not covered" >function getIndentableLinesBlockCommentInternal(comment) {</span>
+<span class="cstat-no" title="statement not covered" >function getIndentableBlockCommentLinesInternal(comment) {</span>
 <span class="cstat-no" title="statement not covered" >  if (!isBlockComment(comment)) {</span>
 <span class="cstat-no" title="statement not covered" >    return [];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -55496,10 +55496,11 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var cache3 = /* @__PURE__ */ new WeakMap();</span>
 <span class="cstat-no" title="statement not covered" >function getIndentableBlockCommentLines(comment) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!cache3.has(comment)) {</span>
-<span class="cstat-no" title="statement not covered" >    cache3.set(comment, getIndentableLinesBlockCommentInternal(comment));</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return cache3.get(comment);</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >    cache3,</span>
+<span class="cstat-no" title="statement not covered" >    comment,</span>
+<span class="cstat-no" title="statement not covered" >    getIndentableBlockCommentLinesInternal</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function deleteIndentableBlockCommentLines(comment) {</span>
 <span class="cstat-no" title="statement not covered" >  cache3.delete(comment);</span>
@@ -56536,11 +56537,7 @@
 <span class="cstat-no" title="statement not covered" >var is_non_empty_array_default = isNonEmptyArray;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/function-parameters.js</span>
-<span class="cstat-no" title="statement not covered" >var functionParametersCache = /* @__PURE__ */ new WeakMap();</span>
-<span class="cstat-no" title="statement not covered" >function getFunctionParameters(node) {</span>
-<span class="cstat-no" title="statement not covered" >  if (functionParametersCache.has(node)) {</span>
-<span class="cstat-no" title="statement not covered" >    return functionParametersCache.get(node);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >function getFunctionParametersWithoutCache(node) {</span>
 <span class="cstat-no" title="statement not covered" >  const parameters = [];</span>
 <span class="cstat-no" title="statement not covered" >  if (node.this) {</span>
 <span class="cstat-no" title="statement not covered" >    parameters.push(node.this);</span>
@@ -56549,8 +56546,11 @@
 <span class="cstat-no" title="statement not covered" >  if (node.rest) {</span>
 <span class="cstat-no" title="statement not covered" >    parameters.push(node.rest);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  functionParametersCache.set(node, parameters);</span>
 <span class="cstat-no" title="statement not covered" >  return parameters;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >var functionParametersCache = /* @__PURE__ */ new WeakMap();</span>
+<span class="cstat-no" title="statement not covered" >function getFunctionParameters(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(functionParametersCache, node, getFunctionParametersWithoutCache);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function iterateFunctionParametersPath(path, iteratee) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
@@ -56964,10 +56964,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/call-arguments.js</span>
 <span class="cstat-no" title="statement not covered" >var callArgumentsCache = /* @__PURE__ */ new WeakMap();</span>
-<span class="cstat-no" title="statement not covered" >function getCallArguments(node) {</span>
-<span class="cstat-no" title="statement not covered" >  if (callArgumentsCache.has(node)) {</span>
-<span class="cstat-no" title="statement not covered" >    return callArgumentsCache.get(node);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >function getCallArgumentsWithoutCache(node) {</span>
 <span class="cstat-no" title="statement not covered" >  let args;</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type === "ImportExpression" || node.type === "TSImportType") {</span>
 <span class="cstat-no" title="statement not covered" >    args = [node.source];</span>
@@ -56979,8 +56976,14 @@
 <span class="cstat-no" title="statement not covered" >  } else {</span>
 <span class="cstat-no" title="statement not covered" >    args = node.arguments;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  callArgumentsCache.set(node, args);</span>
 <span class="cstat-no" title="statement not covered" >  return args;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function getCallArguments(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >    callArgumentsCache,</span>
+<span class="cstat-no" title="statement not covered" >    node,</span>
+<span class="cstat-no" title="statement not covered" >    getCallArgumentsWithoutCache</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function iterateCallArgumentsPath(path, iteratee) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
@@ -58189,10 +58192,11 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var cache4 = /* @__PURE__ */ new WeakMap();</span>
 <span class="cstat-no" title="statement not covered" >function returnArgumentHasLeadingComment(node, options2) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!cache4.has(node)) {</span>
-<span class="cstat-no" title="statement not covered" >    cache4.set(node, returnArgumentHasLeadingCommentWithoutCache(node, options2));</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return cache4.get(node);</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >    cache4,</span>
+<span class="cstat-no" title="statement not covered" >    node,</span>
+<span class="cstat-no" title="statement not covered" >    (node2) =&gt; returnArgumentHasLeadingCommentWithoutCache(node2, options2)</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/strip-chain-element-wrappers.js</span>
@@ -59108,12 +59112,7 @@
 <span class="cstat-no" title="statement not covered" >  const mapped = /* @__PURE__ */ new Map();</span>
 <span class="cstat-no" title="statement not covered" >  return rec(doc);</span>
 <span class="cstat-no" title="statement not covered" >  function rec(doc2) {</span>
-<span class="cstat-no" title="statement not covered" >    if (mapped.has(doc2)) {</span>
-<span class="cstat-no" title="statement not covered" >      return mapped.get(doc2);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const result = process2(doc2);</span>
-<span class="cstat-no" title="statement not covered" >    mapped.set(doc2, result);</span>
-<span class="cstat-no" title="statement not covered" >    return result;</span>
+<span class="cstat-no" title="statement not covered" >    return getOrInsertComputed(mapped, doc2, process2);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function process2(doc2) {</span>
 <span class="cstat-no" title="statement not covered" >    switch (get_doc_type_default(doc2)) {</span>
@@ -61003,18 +61002,17 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var needQuoteKeysCache = /* @__PURE__ */ new WeakMap();</span>
 <span class="cstat-no" title="statement not covered" >function hasSiblingsRequireQuoted(path, options2) {</span>
-<span class="cstat-no" title="statement not covered" >  const { parent } = path;</span>
-<span class="cstat-no" title="statement not covered" >  if (!needQuoteKeysCache.has(parent)) {</span>
-<span class="cstat-no" title="statement not covered" >    const hasStringKey = path.siblings.some((sibling) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >    needQuoteKeysCache,</span>
+<span class="cstat-no" title="statement not covered" >    path.parent,</span>
+<span class="cstat-no" title="statement not covered" >    () =&gt; path.siblings.some((sibling) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (isComputedKey(sibling)) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const key = getKey(sibling);</span>
 <span class="cstat-no" title="statement not covered" >      return isStringLiteral(key) &amp;&amp; !isKeySafeToUnquote(sibling, options2);</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >    needQuoteKeysCache.set(parent, hasStringKey);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return needQuoteKeysCache.get(parent);</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function shouldQuoteKey(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  return (options2.parser === "json" || options2.parser === "jsonc" || options2.quoteProps === "consistent" &amp;&amp; hasSiblingsRequireQuoted(path, options2)) &amp;&amp; isKeySafeToQuote(path.node, options2);</span>
@@ -61599,12 +61597,12 @@
 <span class="cstat-no" title="statement not covered" >    parent: templateLiteral,</span>
 <span class="cstat-no" title="statement not covered" >    index</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
-<span class="cstat-no" title="statement not covered" >  if (!templateLiteralIndentCache.has(templateLiteral)) {</span>
+<span class="cstat-no" title="statement not covered" >  const sizes = getOrInsertComputed(templateLiteralIndentCache, templateLiteral, (templateLiteral2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      tabWidth</span>
 <span class="cstat-no" title="statement not covered" >    } = options2;</span>
 <span class="cstat-no" title="statement not covered" >    let previousQuasiIndentSize = 0;</span>
-<span class="cstat-no" title="statement not covered" >    const sizes = templateLiteral.quasis.map((quasi) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const sizes2 = templateLiteral2.quasis.map((quasi) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      const text = quasi.value.raw;</span>
 <span class="cstat-no" title="statement not covered" >      const indentSize = text.includes("\n") ? get_indent_size_default(text, tabWidth) : previousQuasiIndentSize;</span>
 <span class="cstat-no" title="statement not covered" >      previousQuasiIndentSize = indentSize;</span>
@@ -61613,9 +61611,9 @@
 <span class="cstat-no" title="statement not covered" >        previousQuasiText: text</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >    templateLiteralIndentCache.set(templateLiteral, sizes);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return templateLiteralIndentCache.get(templateLiteral)[index];</span>
+<span class="cstat-no" title="statement not covered" >    return sizes2;</span>
+<span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >  return sizes[index];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function printTemplateExpression(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
@@ -62797,16 +62795,14 @@
 <span class="cstat-no" title="statement not covered" >// src/language-js/print/arrow-function.js</span>
 <span class="cstat-no" title="statement not covered" >var shouldAddParensIfNotBreakCache = /* @__PURE__ */ new WeakMap();</span>
 <span class="cstat-no" title="statement not covered" >function shouldAddParensIfNotBreak(node) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!shouldAddParensIfNotBreakCache.has(node)) {</span>
-<span class="cstat-no" title="statement not covered" >    shouldAddParensIfNotBreakCache.set(</span>
-<span class="cstat-no" title="statement not covered" >      node,</span>
-<span class="cstat-no" title="statement not covered" >      node.type === "ConditionalExpression" &amp;&amp; !startsWithNoLookaheadToken(</span>
-<span class="cstat-no" title="statement not covered" >        node,</span>
-<span class="cstat-no" title="statement not covered" >        (node2) =&gt; node2.type === "ObjectExpression"</span>
-<span class="cstat-no" title="statement not covered" >      )</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return shouldAddParensIfNotBreakCache.get(node);</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >    shouldAddParensIfNotBreakCache,</span>
+<span class="cstat-no" title="statement not covered" >    node,</span>
+<span class="cstat-no" title="statement not covered" >    (node2) =&gt; node2.type === "ConditionalExpression" &amp;&amp; !startsWithNoLookaheadToken(</span>
+<span class="cstat-no" title="statement not covered" >      node2,</span>
+<span class="cstat-no" title="statement not covered" >      (node3) =&gt; node3.type === "ObjectExpression"</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var shouldAlwaysAddParens = (node) =&gt; node.type === "SequenceExpression";</span>
 <span class="cstat-no" title="statement not covered" >function printArrowFunction(path, options2, print3, args = {}) {</span>
@@ -64074,12 +64070,7 @@
 <span class="cstat-no" title="statement not covered" >// src/utilities/create-group-id-mapper.js</span>
 <span class="cstat-no" title="statement not covered" >function createGroupIdMapper(description) {</span>
 <span class="cstat-no" title="statement not covered" >  const groupIds = /* @__PURE__ */ new WeakMap();</span>
-<span class="cstat-no" title="statement not covered" >  return function(node) {</span>
-<span class="cstat-no" title="statement not covered" >    if (!groupIds.has(node)) {</span>
-<span class="cstat-no" title="statement not covered" >      groupIds.set(node, Symbol(description));</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return groupIds.get(node);</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" >  return (node) =&gt; getOrInsertComputed(groupIds, node, () =&gt; Symbol(description));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var create_group_id_mapper_default = createGroupIdMapper;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -64457,14 +64448,11 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var shouldPrintClassInGroupModeCache = /* @__PURE__ */ new WeakMap();</span>
 <span class="cstat-no" title="statement not covered" >function shouldPrintClassInGroupMode(path) {</span>
-<span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
-<span class="cstat-no" title="statement not covered" >  if (!shouldPrintClassInGroupModeCache.has(node)) {</span>
-<span class="cstat-no" title="statement not covered" >    shouldPrintClassInGroupModeCache.set(</span>
-<span class="cstat-no" title="statement not covered" >      node,</span>
-<span class="cstat-no" title="statement not covered" >      shouldPrintClassInGroupModeWithoutCache(path)</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return shouldPrintClassInGroupModeCache.get(node);</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >    shouldPrintClassInGroupModeCache,</span>
+<span class="cstat-no" title="statement not covered" >    path.node,</span>
+<span class="cstat-no" title="statement not covered" >    () =&gt; shouldPrintClassInGroupModeWithoutCache(path)</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function printHeritageClauses(path, options2, print3, listName) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
@@ -68068,7 +68056,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-28T01:03:49.661Z
+                at 2026-05-29T01:13:11.312Z
             </div>
         <script src="../prettify.js"></script>
         <script>

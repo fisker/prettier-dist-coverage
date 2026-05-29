@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.8% </span>
+                <span class="strong">51.87% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4325/8349</span>
+                <span class='fraction'>4332/8351</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.93% </span>
+                <span class="strong">61.96% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>680/1098</span>
+                <span class='fraction'>681/1099</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.76% </span>
+                <span class="strong">44.86% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>248/554</span>
+                <span class='fraction'>249/555</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.8% </span>
+                <span class="strong">51.87% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4325/8349</span>
+                <span class='fraction'>4332/8351</span>
             </div>
         
             
@@ -8411,7 +8411,9 @@
 <a name='L8346'></a><a href='#L8346'>8346</a>
 <a name='L8347'></a><a href='#L8347'>8347</a>
 <a name='L8348'></a><a href='#L8348'>8348</a>
-<a name='L8349'></a><a href='#L8349'>8349</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8349'></a><a href='#L8349'>8349</a>
+<a name='L8350'></a><a href='#L8350'>8350</a>
+<a name='L8351'></a><a href='#L8351'>8351</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14059,6 +14061,15 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -14107,11 +14118,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -14805,11 +14811,9 @@
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -22405,6 +22409,15 @@
     DOC_TYPE_BREAK_PARENT
   ]);
 &nbsp;
+  // src/utilities/get-or-insert.js
+  function getOrInsertComputed(map, key, callback) {
+    if (!map.has(key)) {
+      const value = callback(key);
+      map.set(key, value);
+    }
+    return map.get(key);
+  }
+&nbsp;
   // src/document/utilities/get-doc-type.js
 <span class="fstat-no" title="function not covered" >  function getDocType(doc) {</span>
 <span class="cstat-no" title="statement not covered" >    if (typeof doc === "string") {</span>
@@ -22461,12 +22474,7 @@
 <span class="cstat-no" title="statement not covered" >    const mapped = /* @__PURE__ */ new Map();</span>
 <span class="cstat-no" title="statement not covered" >    return rec(doc);</span>
 <span class="cstat-no" title="statement not covered" >    function rec(doc2) {</span>
-<span class="cstat-no" title="statement not covered" >      if (mapped.has(doc2)) {</span>
-<span class="cstat-no" title="statement not covered" >        return mapped.get(doc2);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const result = process2(doc2);</span>
-<span class="cstat-no" title="statement not covered" >      mapped.set(doc2, result);</span>
-<span class="cstat-no" title="statement not covered" >      return result;</span>
+<span class="cstat-no" title="statement not covered" >      return getOrInsertComputed(mapped, doc2, process2);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function process2(doc2) {</span>
 <span class="cstat-no" title="statement not covered" >      switch (get_doc_type_default(doc2)) {</span>
@@ -23151,13 +23159,11 @@ ${text}`;
   var printedEmptyLineCache = /* @__PURE__ */ new WeakMap();
   function printNextEmptyLine(path, originalText) {
     const { node, root } = path;
-    let isNextEmptyLinePrintedSet;
-    if (printedEmptyLineCache.has(root)) {
-      isNextEmptyLinePrintedSet = printedEmptyLineCache.get(root);
-    } else {
-      isNextEmptyLinePrintedSet = /* @__PURE__ */ new Set();
-      printedEmptyLineCache.set(root, isNextEmptyLinePrintedSet);
-    }
+    const isNextEmptyLinePrintedSet = getOrInsertComputed(
+      printedEmptyLineCache,
+      root,
+      () =&gt; /* @__PURE__ */ new Set()
+    );
     if (!isNextEmptyLinePrintedSet.has(node.position.end.line)) {
       isNextEmptyLinePrintedSet.add(node.position.end.line);
       if (isNextLineEmpty(node, originalText) &amp;&amp; !shouldPrintEndComments(path.parent)) {
@@ -25114,7 +25120,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-28T01:03:47.026Z
+                at 2026-05-29T01:13:08.605Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

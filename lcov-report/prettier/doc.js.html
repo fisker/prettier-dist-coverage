@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.66% </span>
+                <span class="strong">23.79% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>372/1572</span>
+                <span class='fraction'>375/1576</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.12% </span>
+                <span class="strong">11.94% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/66</span>
+                <span class='fraction'>8/67</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.66% </span>
+                <span class="strong">23.79% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>372/1572</span>
+                <span class='fraction'>375/1576</span>
             </div>
         
             
@@ -1634,7 +1634,11 @@
 <a name='L1569'></a><a href='#L1569'>1569</a>
 <a name='L1570'></a><a href='#L1570'>1570</a>
 <a name='L1571'></a><a href='#L1571'>1571</a>
-<a name='L1572'></a><a href='#L1572'>1572</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1572'></a><a href='#L1572'>1572</a>
+<a name='L1573'></a><a href='#L1573'>1573</a>
+<a name='L1574'></a><a href='#L1574'>1574</a>
+<a name='L1575'></a><a href='#L1575'>1575</a>
+<a name='L1576'></a><a href='#L1576'>1576</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1803,6 +1807,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1907,11 +1920,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3366,6 +3374,15 @@
 <span class="cstat-no" title="statement not covered" >    return end &lt; string.length ? string.slice(0, end) : string;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
+  // src/utilities/get-or-insert.js
+<span class="fstat-no" title="function not covered" >  function getOrInsertComputed(map, key, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!map.has(key)) {</span>
+<span class="cstat-no" title="statement not covered" >      const value = callback(key);</span>
+<span class="cstat-no" title="statement not covered" >      map.set(key, value);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return map.get(key);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+&nbsp;
   // src/document/utilities/get-doc-type.js
 <span class="fstat-no" title="function not covered" >  function getDocType(doc) {</span>
 <span class="cstat-no" title="statement not covered" >    if (typeof doc === "string") {</span>
@@ -3484,12 +3501,7 @@
 <span class="cstat-no" title="statement not covered" >    const mapped = /* @__PURE__ */ new Map();</span>
 <span class="cstat-no" title="statement not covered" >    return rec(doc);</span>
 <span class="cstat-no" title="statement not covered" >    function rec(doc2) {</span>
-<span class="cstat-no" title="statement not covered" >      if (mapped.has(doc2)) {</span>
-<span class="cstat-no" title="statement not covered" >        return mapped.get(doc2);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const result = process2(doc2);</span>
-<span class="cstat-no" title="statement not covered" >      mapped.set(doc2, result);</span>
-<span class="cstat-no" title="statement not covered" >      return result;</span>
+<span class="cstat-no" title="statement not covered" >      return getOrInsertComputed(mapped, doc2, process2);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function process2(doc2) {</span>
 <span class="cstat-no" title="statement not covered" >      switch (get_doc_type_default(doc2)) {</span>
@@ -4783,7 +4795,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-28T01:03:47.026Z
+                at 2026-05-29T01:13:08.605Z
             </div>
         <script src="../prettify.js"></script>
         <script>

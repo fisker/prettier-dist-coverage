@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.88% </span>
+                <span class="strong">91.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1416/1541</span>
+                <span class='fraction'>1420/1545</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.25% </span>
+                <span class="strong">81.48% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>65/80</span>
+                <span class='fraction'>66/81</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.88% </span>
+                <span class="strong">91.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1416/1541</span>
+                <span class='fraction'>1420/1545</span>
             </div>
         
             
@@ -1604,7 +1604,11 @@
 <a name='L1539'></a><a href='#L1539'>1539</a>
 <a name='L1540'></a><a href='#L1540'>1540</a>
 <a name='L1541'></a><a href='#L1541'>1541</a>
-<a name='L1542'></a><a href='#L1542'>1542</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">447x</span>
+<a name='L1542'></a><a href='#L1542'>1542</a>
+<a name='L1543'></a><a href='#L1543'>1543</a>
+<a name='L1544'></a><a href='#L1544'>1544</a>
+<a name='L1545'></a><a href='#L1545'>1545</a>
+<a name='L1546'></a><a href='#L1546'>1546</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">447x</span>
 <span class="cline-any cline-yes">447x</span>
 <span class="cline-any cline-yes">447x</span>
 <span class="cline-any cline-yes">447x</span>
@@ -1729,6 +1733,15 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">5552x</span>
 <span class="cline-any cline-yes">5552x</span>
+<span class="cline-any cline-yes">447x</span>
+<span class="cline-any cline-yes">447x</span>
+<span class="cline-any cline-yes">271082x</span>
+<span class="cline-any cline-yes">271082x</span>
+<span class="cline-any cline-yes">168812x</span>
+<span class="cline-any cline-yes">168812x</span>
+<span class="cline-any cline-yes">168812x</span>
+<span class="cline-any cline-yes">271082x</span>
+<span class="cline-any cline-yes">271082x</span>
 <span class="cline-any cline-yes">447x</span>
 <span class="cline-any cline-yes">447x</span>
 <span class="cline-any cline-yes">33441315x</span>
@@ -1742,7 +1755,7 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">8536914x</span>
-<span class="cline-any cline-yes">18503494x</span>
+<span class="cline-any cline-yes">18505816x</span>
 <span class="cline-any cline-yes">8536860x</span>
 <span class="cline-any cline-yes">8536860x</span>
 <span class="cline-any cline-yes">33441315x</span>
@@ -1788,7 +1801,7 @@
 <span class="cline-any cline-yes">11753337x</span>
 <span class="cline-any cline-yes">11753337x</span>
 <span class="cline-any cline-yes">11753337x</span>
-<span class="cline-any cline-yes">16466533x</span>
+<span class="cline-any cline-yes">16524217x</span>
 <span class="cline-any cline-yes">11753403x</span>
 <span class="cline-any cline-yes">11753403x</span>
 <span class="cline-any cline-yes">11753462x</span>
@@ -1849,11 +1862,6 @@
 <span class="cline-any cline-yes">5741x</span>
 <span class="cline-any cline-yes">5741x</span>
 <span class="cline-any cline-yes">271082x</span>
-<span class="cline-any cline-yes">102270x</span>
-<span class="cline-any cline-yes">102270x</span>
-<span class="cline-any cline-yes">168812x</span>
-<span class="cline-any cline-yes">168812x</span>
-<span class="cline-any cline-yes">168812x</span>
 <span class="cline-any cline-yes">271082x</span>
 <span class="cline-any cline-yes">5741x</span>
 <span class="cline-any cline-yes">168812x</span>
@@ -3271,6 +3279,15 @@ function trimNewlinesEnd(string) {
   return end &lt; string.length ? string.slice(0, end) : string;
 }
 &nbsp;
+// src/utilities/get-or-insert.js
+function getOrInsertComputed(map, key, callback) {
+  if (!map.has(key)) {
+    const value = callback(key);
+    map.set(key, value);
+  }
+  return map.get(key);
+}
+&nbsp;
 // src/document/utilities/get-doc-type.js
 function getDocType(doc) {
   if (typeof doc === "string") {
@@ -3389,12 +3406,7 @@ function mapDoc(doc, cb) {
   const mapped = /* @__PURE__ */ new Map();
   return rec(doc);
   function rec(doc2) {
-    if (mapped.has(doc2)) {
-      return mapped.get(doc2);
-    }
-    const result = process2(doc2);
-    mapped.set(doc2, result);
-    return result;
+    return getOrInsertComputed(mapped, doc2, process2);
   }
   function process2(doc2) {
     switch (get_doc_type_default(doc2)) {
@@ -4693,7 +4705,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-28T01:03:47.026Z
+                at 2026-05-29T01:13:08.605Z
             </div>
         <script src="../prettify.js"></script>
         <script>

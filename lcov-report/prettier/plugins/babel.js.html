@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.43% </span>
+                <span class="strong">48.45% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7577/15644</span>
+                <span class='fraction'>7585/15653</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.66% </span>
+                <span class="strong">56.72% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1305/2303</span>
+                <span class='fraction'>1308/2306</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.16% </span>
+                <span class="strong">55.2% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>609/1104</span>
+                <span class='fraction'>610/1105</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.43% </span>
+                <span class="strong">48.45% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7577/15644</span>
+                <span class='fraction'>7585/15653</span>
             </div>
         
             
@@ -15706,7 +15706,16 @@
 <a name='L15641'></a><a href='#L15641'>15641</a>
 <a name='L15642'></a><a href='#L15642'>15642</a>
 <a name='L15643'></a><a href='#L15643'>15643</a>
-<a name='L15644'></a><a href='#L15644'>15644</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L15644'></a><a href='#L15644'>15644</a>
+<a name='L15645'></a><a href='#L15645'>15645</a>
+<a name='L15646'></a><a href='#L15646'>15646</a>
+<a name='L15647'></a><a href='#L15647'>15647</a>
+<a name='L15648'></a><a href='#L15648'>15648</a>
+<a name='L15649'></a><a href='#L15649'>15649</a>
+<a name='L15650'></a><a href='#L15650'>15650</a>
+<a name='L15651'></a><a href='#L15651'>15651</a>
+<a name='L15652'></a><a href='#L15652'>15652</a>
+<a name='L15653'></a><a href='#L15653'>15653</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -30028,6 +30037,15 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -30036,8 +30054,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -30070,10 +30086,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -30095,6 +30112,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -45669,19 +45687,26 @@
     "InterpreterDirective"
   ]);
 &nbsp;
+  // src/utilities/get-or-insert.js
+  function getOrInsertComputed(map, key, callback) {
+    if (!map.has(key)) {
+      const value = callback(key);
+      map.set(key, value);
+    }
+    return map.get(key);
+  }
+&nbsp;
   // src/language-js/utilities/is-type-cast-comment.js
   var cache = /* @__PURE__ */ new WeakMap();
   function isTypeCastComment(comment) {
-    if (!cache.has(comment)) {
-      cache.set(
-        comment,
-        isBlockComment(comment) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; comment.value[0] === "*" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however</span>
-<span class="cstat-no" title="statement not covered" >        // Closure Compiler accepts types in parens and even without any delimiters at all.</span>
-<span class="cstat-no" title="statement not covered" >        // That's why we just search for "@type" and "@satisfies".</span>
-<span class="cstat-no" title="statement not covered" >        /@(?:type|satisfies)\b/.test(comment.value)</span>
-      );
-    }
-    return cache.get(comment);
+    return getOrInsertComputed(
+      cache,
+      comment,
+      (comment2) =&gt; isBlockComment(comment2) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; comment2.value[0] === "*" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; // TypeScript expects the type to be enclosed in curly brackets, however</span>
+<span class="cstat-no" title="statement not covered" >      // Closure Compiler accepts types in parens and even without any delimiters at all.</span>
+<span class="cstat-no" title="statement not covered" >      // That's why we just search for "@type" and "@satisfies".</span>
+<span class="cstat-no" title="statement not covered" >      /@(?:type|satisfies)\b/.test(comment2.value)</span>
+    );
   }
 &nbsp;
   // src/utilities/replace-non-line-breaks-with-space.js
@@ -45712,14 +45737,15 @@
   var cache2 = /* @__PURE__ */ new WeakMap();
   function stripComments(options) {
     const comments = options[commentsPropertyInOptions];
-    if (!cache2.has(comments)) {
-      cache2.set(comments, stripCommentsFromText(options.originalText, comments));
-    }
-    return cache2.get(comments);
+    return getOrInsertComputed(
+      cache2,
+      comments,
+      (comments2) =&gt; stripCommentsFromText(options.originalText, comments2)
+    );
   }
 &nbsp;
   // src/language-js/utilities/indentable-block-comment.js
-<span class="fstat-no" title="function not covered" >  function getIndentableLinesBlockCommentInternal(comment) {</span>
+<span class="fstat-no" title="function not covered" >  function getIndentableBlockCommentLinesInternal(comment) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!isBlockComment(comment)) {</span>
 <span class="cstat-no" title="statement not covered" >      return [];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -45738,10 +45764,11 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
   var cache3 = /* @__PURE__ */ new WeakMap();
 <span class="fstat-no" title="function not covered" >  function getIndentableBlockCommentLines(comment) {</span>
-<span class="cstat-no" title="statement not covered" >    if (!cache3.has(comment)) {</span>
-<span class="cstat-no" title="statement not covered" >      cache3.set(comment, getIndentableLinesBlockCommentInternal(comment));</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return cache3.get(comment);</span>
+<span class="cstat-no" title="statement not covered" >    return getOrInsertComputed(</span>
+<span class="cstat-no" title="statement not covered" >      cache3,</span>
+<span class="cstat-no" title="statement not covered" >      comment,</span>
+<span class="cstat-no" title="statement not covered" >      getIndentableBlockCommentLinesInternal</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function deleteIndentableBlockCommentLines(comment) {</span>
 <span class="cstat-no" title="statement not covered" >    cache3.delete(comment);</span>
@@ -46999,7 +47026,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-28T01:03:47.026Z
+                at 2026-05-29T01:13:08.605Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
