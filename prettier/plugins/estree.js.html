@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.17% </span>
+                <span class="strong">59.19% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7602/12846</span>
+                <span class='fraction'>7606/12850</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.94% </span>
+                <span class="strong">50.92% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1488/2921</span>
+                <span class='fraction'>1488/2922</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.17% </span>
+                <span class="strong">59.19% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7602/12846</span>
+                <span class='fraction'>7606/12850</span>
             </div>
         
             
@@ -12908,7 +12908,11 @@
 <a name='L12843'></a><a href='#L12843'>12843</a>
 <a name='L12844'></a><a href='#L12844'>12844</a>
 <a name='L12845'></a><a href='#L12845'>12845</a>
-<a name='L12846'></a><a href='#L12846'>12846</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L12846'></a><a href='#L12846'>12846</a>
+<a name='L12847'></a><a href='#L12847'>12847</a>
+<a name='L12848'></a><a href='#L12848'>12848</a>
+<a name='L12849'></a><a href='#L12849'>12849</a>
+<a name='L12850'></a><a href='#L12850'>12850</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -14666,6 +14670,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -14674,6 +14681,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -26936,10 +26944,10 @@
     return [handleCommentInEmptyParens, handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileLikeComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));
   }
 <span class="fstat-no" title="function not covered" >  function handleEndOfLineComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleVariableDeclaratorComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleArrowExpressionComments, handleArrowBodySequenceExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleVariableDeclaratorComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleArrowExpressionComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   function handleRemainingComment(context) {
-    return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileLikeComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleArrowBodySequenceExpressionTrailingComment, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));
+    return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileLikeComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleParenthesizedExpressionTrailingComment, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));
   }
 <span class="fstat-no" title="function not covered" >  function handleClosureTypeCastComments({</span>
 <span class="cstat-no" title="statement not covered" >    comment,</span>
@@ -27503,22 +27511,26 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  function handleArrowBodySequenceExpressionTrailingComment({
+  function handleParenthesizedExpressionTrailingComment({
     comment,
     enclosingNode,
     precedingNode,
     followingNode,
     text
   }) {
-    if (!followingNode &amp;&amp; enclosingNode?.type === "ArrowFunctionExpression" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; precedingNode?.type === "SequenceExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; enclosingNode.body === precedingNode <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      addTrailingComment(method_at_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >        0,</span>
-<span class="cstat-no" title="statement not covered" >        precedingNode.expressions,</span>
-<span class="cstat-no" title="statement not covered" >        -1</span>
-<span class="cstat-no" title="statement not covered" >      ), comment);</span>
-<span class="cstat-no" title="statement not covered" >      return true;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    if (!followingNode &amp;&amp; enclosingNode) {
+      const isSequence = precedingNode<span class="branch-0 cbranch-no" title="branch not covered" >?.type </span>=== "SequenceExpression";
+      const isAssignment2 = precedingNode<span class="branch-0 cbranch-no" title="branch not covered" >?.type </span>=== "AssignmentExpression";
+      if ((isSequence || isAssignment2) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (enclosingNode.type === "ArrowFunctionExpression" &amp;&amp; enclosingNode.body === precedingNode || enclosingNode.type === "VariableDeclarator" &amp;&amp; enclosingNode.init === precedingNode || enclosingNode.type === "ReturnStatement" &amp;&amp; enclosingNode.argument === precedingNode || isSequence &amp;&amp; enclosingNode.type === "ExpressionStatement" &amp;&amp; enclosingNode.expression === precedingNode || isSequence &amp;&amp; enclosingNode.type === "AssignmentExpression" &amp;&amp; enclosingNode.right === precedingNode) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        addTrailingComment(isSequence ? method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >          /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >          0,</span>
+<span class="cstat-no" title="statement not covered" >          precedingNode.expressions,</span>
+<span class="cstat-no" title="statement not covered" >          -1</span>
+<span class="cstat-no" title="statement not covered" >        ) : precedingNode.right, comment);</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+    }
     return false;
   }
   var isRealFunctionLikeNode = createTypeCheckFunction(["ArrowFunctionExpression", "FunctionExpression", "FunctionDeclaration", "ObjectMethod", "ClassMethod", "TSDeclareFunction", "TSCallSignatureDeclaration", "TSConstructSignatureDeclaration", "TSMethodSignature", "TSConstructorType", "TSFunctionType", "TSDeclareMethod", "HookDeclaration"]);
@@ -38605,7 +38617,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-02T01:16:39.912Z
+                at 2026-06-03T01:23:10.087Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
