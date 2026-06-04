@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22684</span>
+                <span class='fraction'>0/22690</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22684</span>
+                <span class='fraction'>0/22690</span>
             </div>
         
             
@@ -22747,7 +22747,19 @@
 <a name='L22682'></a><a href='#L22682'>22682</a>
 <a name='L22683'></a><a href='#L22683'>22683</a>
 <a name='L22684'></a><a href='#L22684'>22684</a>
-<a name='L22685'></a><a href='#L22685'>22685</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L22685'></a><a href='#L22685'>22685</a>
+<a name='L22686'></a><a href='#L22686'>22686</a>
+<a name='L22687'></a><a href='#L22687'>22687</a>
+<a name='L22688'></a><a href='#L22688'>22688</a>
+<a name='L22689'></a><a href='#L22689'>22689</a>
+<a name='L22690'></a><a href='#L22690'>22690</a>
+<a name='L22691'></a><a href='#L22691'>22691</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -57837,13 +57849,16 @@
 <span class="cstat-no" title="statement not covered" >  comment,</span>
 <span class="cstat-no" title="statement not covered" >  enclosingNode,</span>
 <span class="cstat-no" title="statement not covered" >  precedingNode,</span>
-<span class="cstat-no" title="statement not covered" >  followingNode,</span>
-<span class="cstat-no" title="statement not covered" >  text</span>
+<span class="cstat-no" title="statement not covered" >  followingNode</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!followingNode &amp;&amp; enclosingNode) {</span>
-<span class="cstat-no" title="statement not covered" >    const isSequence = precedingNode?.type === "SequenceExpression";</span>
-<span class="cstat-no" title="statement not covered" >    const isAssignment2 = precedingNode?.type === "AssignmentExpression";</span>
-<span class="cstat-no" title="statement not covered" >    if ((isSequence || isAssignment2) &amp;&amp; (enclosingNode.type === "ArrowFunctionExpression" &amp;&amp; enclosingNode.body === precedingNode || enclosingNode.type === "VariableDeclarator" &amp;&amp; enclosingNode.init === precedingNode || enclosingNode.type === "ReturnStatement" &amp;&amp; enclosingNode.argument === precedingNode || isSequence &amp;&amp; enclosingNode.type === "ExpressionStatement" &amp;&amp; enclosingNode.expression === precedingNode || isSequence &amp;&amp; enclosingNode.type === "AssignmentExpression" &amp;&amp; enclosingNode.right === precedingNode) &amp;&amp; get_next_non_space_non_comment_character_default(text, locEnd(comment)) === ")") {</span>
+<span class="cstat-no" title="statement not covered" >  if (!followingNode &amp;&amp; enclosingNode &amp;&amp; precedingNode) {</span>
+<span class="cstat-no" title="statement not covered" >    if (enclosingNode.type === "ExpressionStatement" &amp;&amp; enclosingNode.expression === precedingNode) {</span>
+<span class="cstat-no" title="statement not covered" >      addTrailingComment(enclosingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const isSequence = precedingNode.type === "SequenceExpression";</span>
+<span class="cstat-no" title="statement not covered" >    const isAssignment2 = precedingNode.type === "AssignmentExpression";</span>
+<span class="cstat-no" title="statement not covered" >    if ((isSequence || isAssignment2) &amp;&amp; (enclosingNode.type === "ArrowFunctionExpression" &amp;&amp; enclosingNode.body === precedingNode || enclosingNode.type === "VariableDeclarator" &amp;&amp; enclosingNode.init === precedingNode || enclosingNode.type === "ReturnStatement" &amp;&amp; enclosingNode.argument === precedingNode || enclosingNode.type === "AssignmentExpression" &amp;&amp; enclosingNode.right === precedingNode)) {</span>
 <span class="cstat-no" title="statement not covered" >      addTrailingComment(isSequence ? method_at_default(</span>
 <span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >        0,</span>
@@ -67265,7 +67280,10 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const shouldBreak = node.attributes?.some((attr) =&gt; isStringLiteral(attr.value) &amp;&amp; attr.value.value.includes("\n"));</span>
 <span class="cstat-no" title="statement not covered" >  const attributeLine = options2.singleAttributePerLine &amp;&amp; node.attributes.length &gt; 1 ? hardline : line;</span>
-<span class="cstat-no" title="statement not covered" >  return group(["&lt;", print3("name"), print3("typeArguments"), indent(path.map(() =&gt; [attributeLine, print3()], "attributes")), ...printEndOfOpeningTag(node, options2, nameHasComments)], {</span>
+<span class="cstat-no" title="statement not covered" >  return group(["&lt;", print3("name"), print3("typeArguments"), indent(path.map(({</span>
+<span class="cstat-no" title="statement not covered" >    isFirst,</span>
+<span class="cstat-no" title="statement not covered" >    previous</span>
+<span class="cstat-no" title="statement not covered" >  }) =&gt; [isFirst ? attributeLine : isNextLineEmpty2(previous, options2) ? [hardline, hardline] : attributeLine, print3()], "attributes")), ...printEndOfOpeningTag(node, options2, nameHasComments)], {</span>
 <span class="cstat-no" title="statement not covered" >    shouldBreak</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -68122,7 +68140,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-03T01:23:07.477Z
+                at 2026-06-04T01:23:07.658Z
             </div>
         <script src="../prettify.js"></script>
         <script>

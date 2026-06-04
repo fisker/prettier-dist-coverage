@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">65.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15128/23087</span>
+                <span class='fraction'>15122/23079</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.93% </span>
+                <span class="strong">72.92% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1846/2531</span>
+                <span class='fraction'>1842/2526</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.54% </span>
+                <span class="strong">66.51% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>718/1079</span>
+                <span class='fraction'>717/1078</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">65.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15128/23087</span>
+                <span class='fraction'>15122/23079</span>
             </div>
         
             
@@ -23141,15 +23141,7 @@
 <a name='L23076'></a><a href='#L23076'>23076</a>
 <a name='L23077'></a><a href='#L23077'>23077</a>
 <a name='L23078'></a><a href='#L23078'>23078</a>
-<a name='L23079'></a><a href='#L23079'>23079</a>
-<a name='L23080'></a><a href='#L23080'>23080</a>
-<a name='L23081'></a><a href='#L23081'>23081</a>
-<a name='L23082'></a><a href='#L23082'>23082</a>
-<a name='L23083'></a><a href='#L23083'>23083</a>
-<a name='L23084'></a><a href='#L23084'>23084</a>
-<a name='L23085'></a><a href='#L23085'>23085</a>
-<a name='L23086'></a><a href='#L23086'>23086</a>
-<a name='L23087'></a><a href='#L23087'>23087</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L23079'></a><a href='#L23079'>23079</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -44667,9 +44659,6 @@
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-yes">24x</span>
@@ -44709,11 +44698,6 @@
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -67749,12 +67733,9 @@
       if (result !== false) {
         if (parts.length &gt; 0 &amp;&amp; shouldPrePrintHardline(path2)) {
           parts.push(hardline);
-          if (shouldPrePrintDoubleHardline(path2, options2) || shouldPrePrintTripleHardline(path2)) {
+          if (shouldPrePrintDoubleHardline(path2, options2)) {
             parts.push(hardline);
           }
-          if (shouldPrePrintTripleHardline(path2)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            parts.push(hardline);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
         }
         parts.push(result);
       }
@@ -67794,11 +67775,6 @@
     const isBlockHtmlWithoutBlankLineBetweenPrevParagraph = options2.parser !== "mdx" &amp;&amp; node2.type === "html" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; previous4.type === "paragraph" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; previous4.position.end.line + 1 === node2.position.start.line;</span>
     const isHtmlDirectAfterListItem = node2.type === "html" &amp;&amp; parent.type === "listItem" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; previous4.type === "paragraph" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; previous4.position.end.line + 1 === node2.position.start.line;</span>
     return !(isSiblingNode || isInTightListItem || isPrevNodePrettierIgnore || isBlockHtmlWithoutBlankLineBetweenPrevHtml || isBlockHtmlWithoutBlankLineBetweenPrevParagraph || isHtmlDirectAfterListItem);
-  }
-  function shouldPrePrintTripleHardline({ node: node2, previous: previous4 }) {
-    const isPrevNodeList = previous4.type === "list";
-    const isIndentedCode = node2.type === "code" &amp;&amp; node2.isIndented;
-    return isPrevNodeList &amp;&amp; isIndentedCode;
   }
   function isLooseListItemLegacy(node2, options2) {
     return node2.type === "listItem" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (node2.spread || // Check if `listItem` ends with `\n`</span>
@@ -69328,7 +69304,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-03T01:23:07.477Z
+                at 2026-06-04T01:23:07.658Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
