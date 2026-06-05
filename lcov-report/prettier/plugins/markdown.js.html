@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">65.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15122/23079</span>
+                <span class='fraction'>15124/23081</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.92% </span>
+                <span class="strong">72.86% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1842/2526</span>
+                <span class='fraction'>1842/2528</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">65.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15122/23079</span>
+                <span class='fraction'>15124/23081</span>
             </div>
         
             
@@ -23141,7 +23141,9 @@
 <a name='L23076'></a><a href='#L23076'>23076</a>
 <a name='L23077'></a><a href='#L23077'>23077</a>
 <a name='L23078'></a><a href='#L23078'>23078</a>
-<a name='L23079'></a><a href='#L23079'>23079</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L23079'></a><a href='#L23079'>23079</a>
+<a name='L23080'></a><a href='#L23080'>23080</a>
+<a name='L23081'></a><a href='#L23081'>23081</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -44674,12 +44676,14 @@
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -67751,14 +67755,16 @@
   function shouldPrePrintDoubleHardline(path2, options2) {
     const { node: node2, previous: previous4, parent } = path2;
     if (options2.parser === "mdx") {
-      if (isLooseListItemLegacy(previous4, options2) || node2.type === "list" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type === "listItem" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; previous4.type === "code")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      if (isLooseListItemLegacy(previous4, options2) || node2.type === "list" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type === "listItem" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; (previous4.type === "code" || // Preserve blank line before nested list within listItem (issue #17746)</span>
+      previous4.type === "paragraph") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; previous4.position.end.line + 1 &lt; node2.position.start.line)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     } else {
       if (isSetextHeading(node2) &amp;&amp; node2.position.start.line &lt; previous4.position.end.line) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      if (isPreviousNodeLooseListItem(path2) || node2.type === "list" &amp;&amp; parent.type === "listItem" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; previous4.type === "code")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      if (isPreviousNodeLooseListItem(path2) || node2.type === "list" &amp;&amp; parent.type === "listItem" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; (previous4.type === "code" || // Preserve blank line before nested list within listItem (issue #17746)</span>
+      previous4.type === "paragraph") <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; previous4.position.end.line + 1 &lt; node2.position.start.line)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
@@ -69304,7 +69310,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-04T01:23:07.658Z
+                at 2026-06-05T01:13:48.566Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
