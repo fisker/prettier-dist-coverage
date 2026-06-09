@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.09% </span>
+                <span class="strong">72.1% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7404/10270</span>
+                <span class='fraction'>7413/10281</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.19% </span>
+                <span class="strong">71.05% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>949/1333</span>
+                <span class='fraction'>950/1337</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.09% </span>
+                <span class="strong">72.1% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7404/10270</span>
+                <span class='fraction'>7413/10281</span>
             </div>
         
             
@@ -10332,7 +10332,18 @@
 <a name='L10267'></a><a href='#L10267'>10267</a>
 <a name='L10268'></a><a href='#L10268'>10268</a>
 <a name='L10269'></a><a href='#L10269'>10269</a>
-<a name='L10270'></a><a href='#L10270'>10270</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10270'></a><a href='#L10270'>10270</a>
+<a name='L10271'></a><a href='#L10271'>10271</a>
+<a name='L10272'></a><a href='#L10272'>10272</a>
+<a name='L10273'></a><a href='#L10273'>10273</a>
+<a name='L10274'></a><a href='#L10274'>10274</a>
+<a name='L10275'></a><a href='#L10275'>10275</a>
+<a name='L10276'></a><a href='#L10276'>10276</a>
+<a name='L10277'></a><a href='#L10277'>10277</a>
+<a name='L10278'></a><a href='#L10278'>10278</a>
+<a name='L10279'></a><a href='#L10279'>10279</a>
+<a name='L10280'></a><a href='#L10280'>10280</a>
+<a name='L10281'></a><a href='#L10281'>10281</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10394,11 +10405,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">300x</span>
+<span class="cline-any cline-yes">301x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">300x</span>
-<span class="cline-any cline-yes">300x</span>
+<span class="cline-any cline-yes">301x</span>
+<span class="cline-any cline-yes">301x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -10409,9 +10420,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">48x</span>
-<span class="cline-any cline-yes">48x</span>
-<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">49x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11805,6 +11816,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -13023,6 +13042,9 @@
 <span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -22073,8 +22095,16 @@
   var angular_attributes_default = printers;
 &nbsp;
   // src/language-html/embed/class-names.js
-  var isClassNames = ({ node }, options2) =&gt; !options2.parentParser &amp;&amp; node.fullName === "class" &amp;&amp; !node.value.includes("{{");
-  var printClassNames = (textToDoc, print, path) =&gt; getUnescapedAttributeValue(path.node).trim().split(/\s+/).join(" ");
+  var isClassNames = ({
+    node
+  }, options2) =&gt; !options2.parentParser &amp;&amp; node.fullName === "class" &amp;&amp; !node.value.includes("{{");
+  var printClassNames = (textToDoc, print, path) =&gt; method_replace_all_default(
+    /* OPTIONAL_OBJECT: false */
+    0,
+    getUnescapedAttributeValue(path.node).trim(),
+    /\s+/g,
+    " "
+  );
 &nbsp;
   // node_modules/@prettier/html-event-attributes/index.json
   var html_event_attributes_default = [
@@ -23292,6 +23322,9 @@ ${text}`;
     prevNode.kind === "element" &amp;&amp; prevNode.isSelfClosing &amp;&amp; needsToBorrowPrevClosingTagEndMarker(nextNode)) {
       return "";
     }
+    if (nextNode.kind === "comment" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; nextNode.isLeadingSpaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !nextNode.hasLeadingSpaces)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return softline;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     if (!nextNode.isLeadingSpaceSensitive || preferHardlineAsLeadingSpaces(nextNode) || /**
      *       Want to write us a letter? Use our&lt;a
      *         &gt;&lt;b&gt;&lt;a&gt;mailing address&lt;/a&gt;&lt;/b&gt;&lt;/a
@@ -30606,7 +30639,7 @@ ${text}`;
     return fn(lowerCasedText) ? lowerCasedText : text;
   }
   function restoreName(node) {
-    const namespace = node.name.startsWith(":") <span class="branch-0 cbranch-no" title="branch not covered" >? node.name.slice(1).split(":")[0] </span>: null;
+    const namespace = node.name.startsWith(":") <span class="branch-0 cbranch-no" title="branch not covered" >? node.name.slice(1).split(":", 1)[0] </span>: null;
     const rawName = node.nameSpan.toString();
     const hasExplicitNamespace = namespace !== null <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; rawName.startsWith(`${namespace}:`);</span>
     const name = hasExplicitNamespace <span class="branch-0 cbranch-no" title="branch not covered" >? rawName.slice(namespace.length + 1) </span>: rawName;
@@ -30877,7 +30910,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-08T01:17:10.138Z
+                at 2026-06-09T01:08:36.184Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

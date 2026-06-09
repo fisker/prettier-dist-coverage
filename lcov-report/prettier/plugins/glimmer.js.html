@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.63% </span>
+                <span class="strong">62.65% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5434/8676</span>
+                <span class='fraction'>5440/8682</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.37% </span>
+                <span class="strong">57.42% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>459/800</span>
+                <span class='fraction'>460/801</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.63% </span>
+                <span class="strong">62.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5434/8676</span>
+                <span class='fraction'>5440/8682</span>
             </div>
         
             
@@ -8738,7 +8738,13 @@
 <a name='L8673'></a><a href='#L8673'>8673</a>
 <a name='L8674'></a><a href='#L8674'>8674</a>
 <a name='L8675'></a><a href='#L8675'>8675</a>
-<a name='L8676'></a><a href='#L8676'>8676</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L8676'></a><a href='#L8676'>8676</a>
+<a name='L8677'></a><a href='#L8677'>8677</a>
+<a name='L8678'></a><a href='#L8678'>8678</a>
+<a name='L8679'></a><a href='#L8679'>8679</a>
+<a name='L8680'></a><a href='#L8680'>8680</a>
+<a name='L8681'></a><a href='#L8681'>8681</a>
+<a name='L8682'></a><a href='#L8682'>8682</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8791,11 +8797,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -8806,9 +8812,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -16693,6 +16699,12 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -25369,7 +25381,13 @@
         const attrName = getCurrentAttributeName(path);
         if (attrName) {
           if (attrName === "class") {
-            const formattedClasses = text.trim().split(/\s+/).join(" ");
+            const formattedClasses = method_replace_all_default(
+              /* OPTIONAL_OBJECT: false */
+              0,
+              text.trim(),
+              /\s+/g,
+              " "
+            );
             let leadingSpace2 = false;
             let trailingSpace2 = false;
             if (path.parent.type === "ConcatStatement") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -25522,7 +25540,7 @@
         node: node2
       }) =&gt; {
         const index = attributes.indexOf(node2);
-        attributes.splice(index, 1, [line, print2()]);
+        attributes[index] = [line, print2()];
       }, attributeType);
     }
     if (is_non_empty_array_default(node.blockParams)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -25699,7 +25717,7 @@
   function generateHardlines(number = 0) {
     return Array.from({
       length: Math.min(number, NEWLINES_TO_PRESERVE_MAX)
-    }).fill(hardline);
+    }, () =&gt; hardline);
   }
 <span class="fstat-no" title="function not covered" >  function printStringLiteral(path, options) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
@@ -26095,7 +26113,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-08T01:17:07.427Z
+                at 2026-06-09T01:08:33.421Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
