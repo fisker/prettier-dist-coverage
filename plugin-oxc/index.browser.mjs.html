@@ -58380,7 +58380,7 @@
 <span class="cstat-no" title="statement not covered" >        void 0,</span>
 <span class="cstat-no" title="statement not covered" >        void 0,</span>
 <span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "returnType" &amp;&amp; node2.type === "ArrowFunctionExpression"</span>
-<span class="cstat-no" title="statement not covered" >      ) &amp;&amp; includesFunctionTypeInObjectType(node)) {</span>
+<span class="cstat-no" title="statement not covered" >      ) &amp;&amp; !(node.type === "NullableTypeAnnotation" &amp;&amp; path.call(() =&gt; needsParentheses2(path, options2), "typeAnnotation")) &amp;&amp; includesFunctionTypeInObjectType(node)) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
@@ -58724,13 +58724,6 @@
 <span class="cstat-no" title="statement not covered" >      if (parent.type === "ArrayTypeAnnotation" || key === "objectType" &amp;&amp; (parent.type === "IndexedAccessType" || parent.type === "OptionalIndexedAccessType")) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (node.type === "NullableTypeAnnotation" &amp;&amp; path.match(</span>
-<span class="cstat-no" title="statement not covered" >        void 0,</span>
-<span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "TypeAnnotation",</span>
-<span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "returnType" &amp;&amp; node2.type === "ArrowFunctionExpression"</span>
-<span class="cstat-no" title="statement not covered" >      )) {</span>
-<span class="cstat-no" title="statement not covered" >        return true;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >    case "ComponentTypeAnnotation":</span>
 <span class="cstat-no" title="statement not covered" >    case "FunctionTypeAnnotation": {</span>
@@ -58739,6 +58732,14 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (path.match(</span>
 <span class="cstat-no" title="statement not covered" >        void 0,</span>
+<span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "TypeAnnotation",</span>
+<span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "returnType" &amp;&amp; node2.type === "ArrowFunctionExpression"</span>
+<span class="cstat-no" title="statement not covered" >      )) {</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (path.match(</span>
+<span class="cstat-no" title="statement not covered" >        void 0,</span>
+<span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "NullableTypeAnnotation",</span>
 <span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "TypeAnnotation",</span>
 <span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "returnType" &amp;&amp; node2.type === "ArrowFunctionExpression"</span>
 <span class="cstat-no" title="statement not covered" >      )) {</span>
@@ -58814,7 +58815,6 @@
 <span class="cstat-no" title="statement not covered" >        case "BinaryExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "LogicalExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "NGPipeExpression":</span>
-<span class="cstat-no" title="statement not covered" >        case "ExportDefaultDeclaration":</span>
 <span class="cstat-no" title="statement not covered" >        case "AwaitExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "JSXSpreadAttribute":</span>
 <span class="cstat-no" title="statement not covered" >        case "TSTypeAssertion":</span>
@@ -58944,7 +58944,7 @@
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    case "JSXFragment":</span>
 <span class="cstat-no" title="statement not covered" >    case "JSXElement":</span>
-<span class="cstat-no" title="statement not covered" >      return key === "callee" || key === "left" &amp;&amp; parent.type === "BinaryExpression" &amp;&amp; parent.operator === "&lt;" || !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) &amp;&amp; parent.type !== "TypeCastExpression" &amp;&amp; parent.type !== "VariableDeclarator" &amp;&amp; parent.type !== "YieldExpression" &amp;&amp; parent.type !== "MatchExpressionCase";</span>
+<span class="cstat-no" title="statement not covered" >      return key === "callee" || key === "left" &amp;&amp; parent.type === "BinaryExpression" &amp;&amp; parent.operator === "&lt;" || !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) &amp;&amp; parent.type !== "TypeCastExpression" &amp;&amp; parent.type !== "VariableDeclarator" &amp;&amp; parent.type !== "YieldExpression" &amp;&amp; parent.type !== "MatchExpressionCase" &amp;&amp; !(key === "declaration" &amp;&amp; parent.type === "ExportDefaultDeclaration");</span>
 <span class="cstat-no" title="statement not covered" >    case "TSInstantiationExpression":</span>
 <span class="cstat-no" title="statement not covered" >      return key === "object" &amp;&amp; isMemberExpression(parent);</span>
 <span class="cstat-no" title="statement not covered" >    case "MatchOrPattern":</span>
@@ -68200,7 +68200,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-09T01:08:36.184Z
+                at 2026-06-10T01:14:08.122Z
             </div>
         <script src="../prettify.js"></script>
         <script>

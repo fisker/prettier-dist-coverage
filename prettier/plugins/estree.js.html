@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.15% </span>
+                <span class="strong">59.19% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7619/12879</span>
+                <span class='fraction'>7624/12879</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1493/2929</span>
+                <span class='fraction'>1495/2933</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.07% </span>
+                <span class="strong">63.13% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>410/650</span>
+                <span class='fraction'>411/651</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.15% </span>
+                <span class="strong">59.19% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7619/12879</span>
+                <span class='fraction'>7624/12879</span>
             </div>
         
             
@@ -15983,18 +15983,19 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1020x</span>
 <span class="cline-any cline-yes">1020x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -16065,7 +16066,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1020x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -28516,7 +28516,7 @@
           void 0,
           void 0,
           (node2, key2) =&gt; key2 === "returnType" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node2.type === "ArrowFunctionExpression"</span>
-        ) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; includesFunctionTypeInObjectType(node))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+        ) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !(node.type === "NullableTypeAnnotation" &amp;&amp; path.call(() =&gt; needsParentheses2(path, options2), "typeAnnotation")) <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; includesFunctionTypeInObjectType(node))</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         break;
@@ -28860,13 +28860,6 @@
 <span class="cstat-no" title="statement not covered" >        if (parent.type === "ArrayTypeAnnotation" || key === "objectType" &amp;&amp; (parent.type === "IndexedAccessType" || parent.type === "OptionalIndexedAccessType")) {</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (node.type === "NullableTypeAnnotation" &amp;&amp; path.match(</span>
-<span class="cstat-no" title="statement not covered" >          void 0,</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >          (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "TypeAnnotation",</span></span>
-<span class="cstat-no" title="statement not covered" >          (node2, key2) =&gt; key2 === "returnType" &amp;&amp; node2.type === "ArrowFunctionExpression"</span>
-<span class="cstat-no" title="statement not covered" >        )) {</span>
-<span class="cstat-no" title="statement not covered" >          return true;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "ComponentTypeAnnotation":</span>
       case "FunctionTypeAnnotation": {
@@ -28877,6 +28870,14 @@
           void 0,
           (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "TypeAnnotation",
           (node2, key2) =&gt; key2 === "returnType" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node2.type === "ArrowFunctionExpression"</span>
+        )) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          return true;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+        if (path.match(
+          void 0,
+          (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "NullableTypeAnnotation",
+<span class="fstat-no" title="function not covered" >          (node2, key2) =&gt; key2 === "typeAnnotation" &amp;&amp; node2.type === "TypeAnnotation",</span>
+          (node2, key2) =&gt; key2 === "returnType" &amp;&amp; node2.type === "ArrowFunctionExpression"
         )) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -28950,7 +28951,6 @@
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "BinaryExpression":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "LogicalExpression":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "NGPipeExpression":</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >          case "ExportDefaultDeclaration":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "AwaitExpression":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "JSXSpreadAttribute":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >          case "TSTypeAssertion":</span>
@@ -29080,7 +29080,7 @@
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "JSXFragment":</span>
       case "JSXElement":
-        return key === "callee" || key === "left" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type === "BinaryExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.operator === "&lt;" </span>|| !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type !== "TypeCastExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "VariableDeclarator" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "YieldExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "MatchExpressionCase";</span>
+        return key === "callee" || key === "left" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type === "BinaryExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.operator === "&lt;" </span>|| !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; parent.type !== "TypeCastExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "VariableDeclarator" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "YieldExpression" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; parent.type !== "MatchExpressionCase" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; !(key === "declaration" &amp;&amp; parent.type === "ExportDefaultDeclaration");</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "TSInstantiationExpression":</span>
 <span class="cstat-no" title="statement not covered" >        return key === "object" &amp;&amp; isMemberExpression(parent);</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >      case "MatchOrPattern":</span>
@@ -38704,7 +38704,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-09T01:08:36.184Z
+                at 2026-06-10T01:14:08.122Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
