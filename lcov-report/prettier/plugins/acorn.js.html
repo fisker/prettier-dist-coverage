@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">55.74% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4397/7887</span>
+                <span class='fraction'>4399/7891</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.66% </span>
+                <span class="strong">54.61% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>686/1255</span>
+                <span class='fraction'>686/1256</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">55.74% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4397/7887</span>
+                <span class='fraction'>4399/7891</span>
             </div>
         
             
@@ -7949,7 +7949,11 @@
 <a name='L7884'></a><a href='#L7884'>7884</a>
 <a name='L7885'></a><a href='#L7885'>7885</a>
 <a name='L7886'></a><a href='#L7886'>7886</a>
-<a name='L7887'></a><a href='#L7887'>7887</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7887'></a><a href='#L7887'>7887</a>
+<a name='L7888'></a><a href='#L7888'>7888</a>
+<a name='L7889'></a><a href='#L7889'>7889</a>
+<a name='L7890'></a><a href='#L7890'>7890</a>
+<a name='L7891'></a><a href='#L7891'>7891</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7981,6 +7985,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -15866,7 +15874,11 @@
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __commonJS = (cb, mod) =&gt; function __require() {
-    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+    try {
+      return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (e) {</span>
+<span class="cstat-no" title="statement not covered" >      throw mod = 0, e;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
   };
   var __export = (target, all) =&gt; {
     for (var name in all)
@@ -16355,12 +16367,12 @@
   var nonASCIIidentifier = new RegExp("[" + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "]");
 <span class="fstat-no" title="function not covered" >  function isInAstralSet(code, set) {</span>
 <span class="cstat-no" title="statement not covered" >    var pos = 65536;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; set.length; i += 2) {</span>
-<span class="cstat-no" title="statement not covered" >      pos += set[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; set.length; i2 += 2) {</span>
+<span class="cstat-no" title="statement not covered" >      pos += set[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (pos &gt; code) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      pos += set[i + 1];</span>
+<span class="cstat-no" title="statement not covered" >      pos += set[i2 + 1];</span>
 <span class="cstat-no" title="statement not covered" >      if (pos &gt;= code) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -16540,10 +16552,10 @@
   }
 <span class="fstat-no" title="function not covered" >  function nextLineBreak(code, from, end) {</span>
 <span class="cstat-no" title="statement not covered" >    if (end === void 0) end = code.length;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = from; i &lt; end; i++) {</span>
-<span class="cstat-no" title="statement not covered" >      var next = code.charCodeAt(i);</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = from; i2 &lt; end; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >      var next = code.charCodeAt(i2);</span>
 <span class="cstat-no" title="statement not covered" >      if (isNewLine(next)) {</span>
-<span class="cstat-no" title="statement not covered" >        return i &lt; end - 1 &amp;&amp; next === 13 &amp;&amp; code.charCodeAt(i + 1) === 10 ? i + 2 : i + 1;</span>
+<span class="cstat-no" title="statement not covered" >        return i2 &lt; end - 1 &amp;&amp; next === 13 &amp;&amp; code.charCodeAt(i2 + 1) === 10 ? i2 + 2 : i2 + 1;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return -1;</span>
@@ -16839,8 +16851,8 @@
     return (this.currentVarScope().flags &amp; SCOPE_ASYNC) &gt; 0;
   };
   prototypeAccessors.canAwait.get = <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = this.scopeStack.length - 1; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >      var ref2 = this.scopeStack[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = this.scopeStack.length - 1; i2 &gt;= 0; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >      var ref2 = this.scopeStack[i2];</span>
 <span class="cstat-no" title="statement not covered" >      var flags = ref2.flags;</span>
 <span class="cstat-no" title="statement not covered" >      if (flags &amp; (SCOPE_CLASS_STATIC_BLOCK | SCOPE_CLASS_FIELD_INIT)) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
@@ -16872,8 +16884,8 @@
     return this.treatFunctionsAsVarInScope(this.currentScope());
   };
   prototypeAccessors.allowNewDotTarget.get = <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = this.scopeStack.length - 1; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >      var ref2 = this.scopeStack[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = this.scopeStack.length - 1; i2 &gt;= 0; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >      var ref2 = this.scopeStack[i2];</span>
 <span class="cstat-no" title="statement not covered" >      var flags = ref2.flags;</span>
 <span class="cstat-no" title="statement not covered" >      if (flags &amp; (SCOPE_CLASS_STATIC_BLOCK | SCOPE_CLASS_FIELD_INIT) || flags &amp; SCOPE_FUNCTION &amp;&amp; !(flags &amp; SCOPE_ARROW)) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
@@ -16899,8 +16911,8 @@
     var plugins = [], len = arguments.length;
     while (len--) plugins[len] = arguments[len];
     var cls = this;
-    for (var i = 0; i &lt; plugins.length; i++) {
-      cls = plugins[i](cls);
+    for (var i2 = 0; i2 &lt; plugins.length; i2++) {
+      cls = plugins[i2](cls);
     }
     return cls;
   };
@@ -17066,8 +17078,8 @@
       node.body.push(stmt);
     }
     if (this.inModule) {
-      for (var i = 0, list = Object.keys(this.undefinedExports); i &lt; list.length; i += 1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        var name = list[i];</span>
+      for (var i2 = 0, list2 = Object.keys(this.undefinedExports); i2 &lt; list2.length; i2 += 1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        var name = list2[i2];</span>
 <span class="cstat-no" title="statement not covered" >        this.raiseRecoverable(this.undefinedExports[name].start, "Export '" + name + "' is not defined");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
     }
@@ -17293,9 +17305,9 @@
 <span class="cstat-no" title="statement not covered" >      node.label = this.parseIdent();</span>
 <span class="cstat-no" title="statement not covered" >      this.semicolon();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    var i = 0;</span>
-<span class="cstat-no" title="statement not covered" >    for (; i &lt; this.labels.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      var lab = this.labels[i];</span>
+<span class="cstat-no" title="statement not covered" >    var i2 = 0;</span>
+<span class="cstat-no" title="statement not covered" >    for (; i2 &lt; this.labels.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      var lab = this.labels[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (node.label == null || lab.name === node.label.name) {</span>
 <span class="cstat-no" title="statement not covered" >        if (lab.kind != null &amp;&amp; (isBreak || lab.kind === "loop")) {</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
@@ -17305,7 +17317,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (i === this.labels.length) {</span>
+<span class="cstat-no" title="statement not covered" >    if (i2 === this.labels.length) {</span>
 <span class="cstat-no" title="statement not covered" >      this.raise(node.start, "Unsyntactic " + keyword);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return this.finishNode(node, isBreak ? "BreakStatement" : "ContinueStatement");</span>
@@ -17552,15 +17564,15 @@
     return this.finishNode(node, "EmptyStatement");
   };
   pp$8.parseLabeledStatement = <span class="fstat-no" title="function not covered" >function(node, maybeName, expr, context) {</span>
-<span class="cstat-no" title="statement not covered" >    for (var i$1 = 0, list = this.labels; i$1 &lt; list.length; i$1 += 1) {</span>
-<span class="cstat-no" title="statement not covered" >      var label = list[i$1];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i$1 = 0, list2 = this.labels; i$1 &lt; list2.length; i$1 += 1) {</span>
+<span class="cstat-no" title="statement not covered" >      var label = list2[i$1];</span>
 <span class="cstat-no" title="statement not covered" >      if (label.name === maybeName) {</span>
 <span class="cstat-no" title="statement not covered" >        this.raise(expr.start, "Label '" + maybeName + "' is already declared");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    var kind = this.type.isLoop ? "loop" : this.type === types$1._switch ? "switch" : null;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = this.labels.length - 1; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >      var label$1 = this.labels[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = this.labels.length - 1; i2 &gt;= 0; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >      var label$1 = this.labels[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (label$1.statementStart === node.start) {</span>
 <span class="cstat-no" title="statement not covered" >        label$1.statementStart = this.start;</span>
 <span class="cstat-no" title="statement not covered" >        label$1.kind = kind;</span>
@@ -17732,7 +17744,7 @@
 <span class="cstat-no" title="statement not covered" >    if (this.eat(types$1.semi)) {</span>
 <span class="cstat-no" title="statement not covered" >      return null;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    var ecmaVersion = this.options.ecmaVersion;</span>
+<span class="cstat-no" title="statement not covered" >    var ecmaVersion2 = this.options.ecmaVersion;</span>
 <span class="cstat-no" title="statement not covered" >    var node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >    var keyName = "";</span>
 <span class="cstat-no" title="statement not covered" >    var isGenerator = false;</span>
@@ -17740,7 +17752,7 @@
 <span class="cstat-no" title="statement not covered" >    var kind = "method";</span>
 <span class="cstat-no" title="statement not covered" >    var isStatic = false;</span>
 <span class="cstat-no" title="statement not covered" >    if (this.eatContextual("static")) {</span>
-<span class="cstat-no" title="statement not covered" >      if (ecmaVersion &gt;= 13 &amp;&amp; this.eat(types$1.braceL)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (ecmaVersion2 &gt;= 13 &amp;&amp; this.eat(types$1.braceL)) {</span>
 <span class="cstat-no" title="statement not covered" >        this.parseClassStaticBlock(node);</span>
 <span class="cstat-no" title="statement not covered" >        return node;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -17751,14 +17763,14 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    node.static = isStatic;</span>
-<span class="cstat-no" title="statement not covered" >    if (!keyName &amp;&amp; ecmaVersion &gt;= 8 &amp;&amp; this.eatContextual("async")) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!keyName &amp;&amp; ecmaVersion2 &gt;= 8 &amp;&amp; this.eatContextual("async")) {</span>
 <span class="cstat-no" title="statement not covered" >      if ((this.isClassElementNameStart() || this.type === types$1.star) &amp;&amp; !this.canInsertSemicolon()) {</span>
 <span class="cstat-no" title="statement not covered" >        isAsync = true;</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        keyName = "async";</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (!keyName &amp;&amp; (ecmaVersion &gt;= 9 || !isAsync) &amp;&amp; this.eat(types$1.star)) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!keyName &amp;&amp; (ecmaVersion2 &gt;= 9 || !isAsync) &amp;&amp; this.eat(types$1.star)) {</span>
 <span class="cstat-no" title="statement not covered" >      isGenerator = true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (!keyName &amp;&amp; !isAsync &amp;&amp; !isGenerator) {</span>
@@ -17779,7 +17791,7 @@
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      this.parseClassElementName(node);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (ecmaVersion &lt; 13 || this.type === types$1.parenL || kind !== "method" || isGenerator || isAsync) {</span>
+<span class="cstat-no" title="statement not covered" >    if (ecmaVersion2 &lt; 13 || this.type === types$1.parenL || kind !== "method" || isGenerator || isAsync) {</span>
 <span class="cstat-no" title="statement not covered" >      var isConstructor = !node.static &amp;&amp; checkKeyName(node, "constructor");</span>
 <span class="cstat-no" title="statement not covered" >      var allowsDirectSuper = isConstructor &amp;&amp; constructorAllowsSuper;</span>
 <span class="cstat-no" title="statement not covered" >      if (isConstructor &amp;&amp; kind !== "method") {</span>
@@ -17890,8 +17902,8 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    var len = this.privateNameStack.length;</span>
 <span class="cstat-no" title="statement not covered" >    var parent = len === 0 ? null : this.privateNameStack[len - 1];</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; used.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      var id = used[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; used.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      var id = used[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (!hasOwn(declared, id.name)) {</span>
 <span class="cstat-no" title="statement not covered" >        if (parent) {</span>
 <span class="cstat-no" title="statement not covered" >          parent.used.push(id);</span>
@@ -17977,8 +17989,8 @@
 <span class="cstat-no" title="statement not covered" >          node.attributes = this.parseWithClause();</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0, list = node.specifiers; i &lt; list.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >          var spec = list[i];</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0, list2 = node.specifiers; i2 &lt; list2.length; i2 += 1) {</span>
+<span class="cstat-no" title="statement not covered" >          var spec = list2[i2];</span>
 <span class="cstat-no" title="statement not covered" >          this.checkUnreserved(spec.local);</span>
 <span class="cstat-no" title="statement not covered" >          this.checkLocalExport(spec.local);</span>
 <span class="cstat-no" title="statement not covered" >          if (spec.local.type === "Literal") {</span>
@@ -18032,8 +18044,8 @@
 <span class="cstat-no" title="statement not covered" >    if (type === "Identifier") {</span>
 <span class="cstat-no" title="statement not covered" >      this.checkExport(exports$1, pat, pat.start);</span>
 <span class="cstat-no" title="statement not covered" >    } else if (type === "ObjectPattern") {</span>
-<span class="cstat-no" title="statement not covered" >      for (var i = 0, list = pat.properties; i &lt; list.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >        var prop = list[i];</span>
+<span class="cstat-no" title="statement not covered" >      for (var i2 = 0, list2 = pat.properties; i2 &lt; list2.length; i2 += 1) {</span>
+<span class="cstat-no" title="statement not covered" >        var prop = list2[i2];</span>
 <span class="cstat-no" title="statement not covered" >        this.checkPatternExport(exports$1, prop);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    } else if (type === "ArrayPattern") {</span>
@@ -18055,8 +18067,8 @@
 <span class="cstat-no" title="statement not covered" >    if (!exports$1) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0, list = decls; i &lt; list.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >      var decl = list[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0, list2 = decls; i2 &lt; list2.length; i2 += 1) {</span>
+<span class="cstat-no" title="statement not covered" >      var decl = list2[i2];</span>
 <span class="cstat-no" title="statement not covered" >      this.checkPatternExport(exports$1, decl.id);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
@@ -18206,8 +18218,8 @@
 <span class="cstat-no" title="statement not covered" >    return this.parseIdent(true);</span>
   };
   pp$8.adaptDirectivePrologue = function(statements) {
-    for (var i = 0; i &lt; statements.length &amp;&amp; this.isDirectiveCandidate(statements[i]); ++i) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      statements[i].directive = statements[i].expression.raw.slice(1, -1);</span>
+    for (var i2 = 0; i2 &lt; statements.length &amp;&amp; this.isDirectiveCandidate(statements[i2]); ++i2) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      statements[i2].directive = statements[i2].expression.raw.slice(1, -1);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
   };
   pp$8.isDirectiveCandidate = function(statement) {
@@ -18233,8 +18245,8 @@
 <span class="cstat-no" title="statement not covered" >          if (refDestructuringErrors) {</span>
 <span class="cstat-no" title="statement not covered" >            this.checkPatternErrors(refDestructuringErrors, true);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          for (var i = 0, list = node.properties; i &lt; list.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >            var prop = list[i];</span>
+<span class="cstat-no" title="statement not covered" >          for (var i2 = 0, list2 = node.properties; i2 &lt; list2.length; i2 += 1) {</span>
+<span class="cstat-no" title="statement not covered" >            var prop = list2[i2];</span>
 <span class="cstat-no" title="statement not covered" >            this.toAssignable(prop, isBinding);</span>
 <span class="cstat-no" title="statement not covered" >            if (prop.type === "RestElement" &amp;&amp; (prop.argument.type === "ArrayPattern" || prop.argument.type === "ObjectPattern")) {</span>
 <span class="cstat-no" title="statement not covered" >              this.raise(prop.argument.start, "Unexpected token");</span>
@@ -18289,8 +18301,8 @@
   };
   pp$7.toAssignableList = <span class="fstat-no" title="function not covered" >function(exprList, isBinding) {</span>
 <span class="cstat-no" title="statement not covered" >    var end = exprList.length;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; end; i++) {</span>
-<span class="cstat-no" title="statement not covered" >      var elt = exprList[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; end; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >      var elt = exprList[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (elt) {</span>
 <span class="cstat-no" title="statement not covered" >        this.toAssignable(elt, isBinding);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -18421,8 +18433,8 @@
     if (bindingType === void 0) <span class="branch-0 cbranch-no" title="branch not covered" >bindingType = BIND_NONE;</span>
     switch (expr.type) {
       case "ObjectPattern":
-        for (var i = 0, list = expr.properties; i &lt; list.length; i += 1) {
-          var prop = list[i];
+        for (var i2 = 0, list2 = expr.properties; i2 &lt; list2.length; i2 += 1) {
+          var prop = list2[i2];
           this.checkLValInnerPattern(prop, bindingType, checkClashes);
         }
         break;
@@ -18505,8 +18517,8 @@
     return !this.exprAllowed;
   };
   pp$6.inGeneratorContext = <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = this.context.length - 1; i &gt;= 1; i--) {</span>
-<span class="cstat-no" title="statement not covered" >      var context = this.context[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = this.context.length - 1; i2 &gt;= 1; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >      var context = this.context[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (context.token === "function") {</span>
 <span class="cstat-no" title="statement not covered" >        return context.generator;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -19508,8 +19520,8 @@
     this.exitScope();
   };
   pp$5.isSimpleParamList = function(params) {
-    for (var i = 0, list = params; i &lt; list.length; i += 1) {
-      var param = list[i];
+    for (var i2 = 0, list2 = params; i2 &lt; list2.length; i2 += 1) {
+      var param = list2[i2];
       if (param.type !== "Identifier") {
         return false;
       }
@@ -19518,8 +19530,8 @@
   };
   pp$5.checkParams = function(node, allowDuplicates) {
     var nameHash = /* @__PURE__ */ Object.create(null);
-    for (var i = 0, list = node.params; i &lt; list.length; i += 1) {
-      var param = list[i];
+    for (var i2 = 0, list2 = node.params; i2 &lt; list2.length; i2 += 1) {
+      var param = list2[i2];
       this.checkLValInnerPattern(param, BIND_VAR, allowDuplicates <span class="branch-0 cbranch-no" title="branch not covered" >? null </span>: nameHash);
     }
   };
@@ -19704,8 +19716,8 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      scope$2.functions.push(name);</span>
     } else {
-      for (var i = this.scopeStack.length - 1; i &gt;= 0; --i) {
-        var scope$3 = this.scopeStack[i];
+      for (var i2 = this.scopeStack.length - 1; i2 &gt;= 0; --i2) {
+        var scope$3 = this.scopeStack[i2];
         if (scope$3.lexical.indexOf(name) &gt; -1 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !(scope$3.flags &amp; SCOPE_SIMPLE_CATCH &amp;&amp; scope$3.lexical[0] === name) </span>|| !this.treatFunctionsAsVarInScope(scope$3) <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; scope$3.functions.indexOf(name) &gt; -1)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          redeclared = true;</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
@@ -19732,16 +19744,16 @@
     return this.scopeStack[this.scopeStack.length - 1];
   };
   pp$3.currentVarScope = function() {
-    for (var i = this.scopeStack.length - 1; ; i--) {
-      var scope = this.scopeStack[i];
+    for (var i2 = this.scopeStack.length - 1; ; i2--) {
+      var scope = this.scopeStack[i2];
       if (scope.flags &amp; (SCOPE_VAR | SCOPE_CLASS_FIELD_INIT | SCOPE_CLASS_STATIC_BLOCK)) {
         return scope;
       }
     }
   };
   pp$3.currentThisScope = function() {
-    for (var i = this.scopeStack.length - 1; ; i--) {
-      var scope = this.scopeStack[i];
+    for (var i2 = this.scopeStack.length - 1; ; i2--) {
+      var scope = this.scopeStack[i2];
       if (scope.flags &amp; (SCOPE_VAR | SCOPE_CLASS_FIELD_INIT | SCOPE_CLASS_STATIC_BLOCK) &amp;&amp; !(scope.flags &amp; SCOPE_ARROW)) {
         return scope;
       }
@@ -19832,13 +19844,13 @@
     14: ecma14ScriptValues
   };
   var data = {};
-  function buildUnicodeData(ecmaVersion) {
-    var d = data[ecmaVersion] = {
-      binary: wordsRegexp(unicodeBinaryProperties[ecmaVersion] + " " + unicodeGeneralCategoryValues),
-      binaryOfStrings: wordsRegexp(unicodeBinaryPropertiesOfStrings[ecmaVersion]),
+  function buildUnicodeData(ecmaVersion2) {
+    var d = data[ecmaVersion2] = {
+      binary: wordsRegexp(unicodeBinaryProperties[ecmaVersion2] + " " + unicodeGeneralCategoryValues),
+      binaryOfStrings: wordsRegexp(unicodeBinaryPropertiesOfStrings[ecmaVersion2]),
       nonBinary: {
         General_Category: wordsRegexp(unicodeGeneralCategoryValues),
-        Script: wordsRegexp(unicodeScriptValues[ecmaVersion])
+        Script: wordsRegexp(unicodeScriptValues[ecmaVersion2])
       }
     };
     d.nonBinary.Script_Extensions = d.nonBinary.Script;
@@ -19910,32 +19922,32 @@
   RegExpValidationState.prototype.raise = <span class="fstat-no" title="function not covered" >function raise(message) {</span>
 <span class="cstat-no" title="statement not covered" >    this.parser.raiseRecoverable(this.start, "Invalid regular expression: /" + this.source + "/: " + message);</span>
   };
-  RegExpValidationState.prototype.at = function at(i, forceU) {
+  RegExpValidationState.prototype.at = function at(i2, forceU) {
     if (forceU === void 0) <span class="branch-0 cbranch-no" title="branch not covered" >forceU = false;</span>
     var s = this.source;
     var l = s.length;
-    if (i &gt;= l) {
+    if (i2 &gt;= l) {
       return -1;
     }
-    var c = s.charCodeAt(i);
-    if (!(forceU || this.switchU) <span class="branch-0 cbranch-no" title="branch not covered" >|| c &lt;= 55295 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| c &gt;= 57344 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| i + 1 &gt;= l)</span> {
+    var c = s.charCodeAt(i2);
+    if (!(forceU || this.switchU) <span class="branch-0 cbranch-no" title="branch not covered" >|| c &lt;= 55295 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| c &gt;= 57344 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| i2 + 1 &gt;= l)</span> {
       return c;
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    var next = s.charCodeAt(i + 1);</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    var next = s.charCodeAt(i2 + 1);</span></span>
     return next &gt;= 56320 &amp;&amp; next &lt;= 57343 <span class="branch-0 cbranch-no" title="branch not covered" >? (c &lt;&lt; 10) + next - 56613888 <span class="branch-0 cbranch-no" title="branch not covered" ></span>: c;</span>
   };
-  RegExpValidationState.prototype.nextIndex = function nextIndex(i, forceU) {
+  RegExpValidationState.prototype.nextIndex = function nextIndex(i2, forceU) {
     if (forceU === void 0) <span class="branch-0 cbranch-no" title="branch not covered" >forceU = false;</span>
     var s = this.source;
     var l = s.length;
-    if (i &gt;= l) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (i2 &gt;= l) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return l;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    var c = s.charCodeAt(i), next;
-    if (!(forceU || this.switchU) <span class="branch-0 cbranch-no" title="branch not covered" >|| c &lt;= 55295 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| c &gt;= 57344 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| i + 1 &gt;= l <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| (next = s.charCodeAt(i + 1)) &lt; 56320 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| next &gt; 57343)</span> {
-      return i + 1;
+    var c = s.charCodeAt(i2), next;
+    if (!(forceU || this.switchU) <span class="branch-0 cbranch-no" title="branch not covered" >|| c &lt;= 55295 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| c &gt;= 57344 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| i2 + 1 &gt;= l <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| (next = s.charCodeAt(i2 + 1)) &lt; 56320 <span class="branch-0 cbranch-no" title="branch not covered" ></span>|| next &gt; 57343)</span> {
+      return i2 + 1;
     }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return i + 2;</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return i2 + 2;</span></span>
   };
   RegExpValidationState.prototype.current = function current(forceU) {
     if (forceU === void 0) forceU = false;
@@ -19960,8 +19972,8 @@
   RegExpValidationState.prototype.eatChars = <span class="fstat-no" title="function not covered" >function eatChars(chs, forceU) {</span>
 <span class="cstat-no" title="statement not covered" >    if (forceU === void 0) forceU = false;</span>
 <span class="cstat-no" title="statement not covered" >    var pos = this.pos;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0, list = chs; i &lt; list.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >      var ch = list[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0, list2 = chs; i2 &lt; list2.length; i2 += 1) {</span>
+<span class="cstat-no" title="statement not covered" >      var ch = list2[i2];</span>
 <span class="cstat-no" title="statement not covered" >      var current2 = this.at(pos, forceU);</span>
 <span class="cstat-no" title="statement not covered" >      if (current2 === -1 || current2 !== ch) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
@@ -19976,12 +19988,12 @@
     var flags = state.flags;
     var u = false;
     var v = false;
-    for (var i = 0; i &lt; flags.length; i++) {
-      var flag = flags.charAt(i);
+    for (var i2 = 0; i2 &lt; flags.length; i2++) {
+      var flag = flags.charAt(i2);
       if (validFlags.indexOf(flag) === -1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        this.raise(state.start, "Invalid regular expression flag");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-      if (flags.indexOf(flag, i + 1) &gt; -1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+      if (flags.indexOf(flag, i2 + 1) &gt; -1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        this.raise(state.start, "Duplicate regular expression flag");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (flag === "u") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -20039,8 +20051,8 @@
     if (state.maxBackReference &gt; state.numCapturingParens) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      state.raise("Invalid escape");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    for (var i = 0, list = state.backReferenceNames; i &lt; list.length; i += 1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      var name = list[i];</span>
+    for (var i2 = 0, list2 = state.backReferenceNames; i2 &lt; list2.length; i2 += 1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      var name = list2[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (!state.groupNames[name]) {</span>
 <span class="cstat-no" title="statement not covered" >        state.raise("Invalid named capture referenced");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -20246,9 +20258,9 @@
 <span class="cstat-no" title="statement not covered" >            /* - */</span>
 <span class="cstat-no" title="statement not covered" >          );</span>
 <span class="cstat-no" title="statement not covered" >          if (addModifiers || hasHyphen) {</span>
-<span class="cstat-no" title="statement not covered" >            for (var i = 0; i &lt; addModifiers.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >              var modifier = addModifiers.charAt(i);</span>
-<span class="cstat-no" title="statement not covered" >              if (addModifiers.indexOf(modifier, i + 1) &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >            for (var i2 = 0; i2 &lt; addModifiers.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >              var modifier = addModifiers.charAt(i2);</span>
+<span class="cstat-no" title="statement not covered" >              if (addModifiers.indexOf(modifier, i2 + 1) &gt; -1) {</span>
 <span class="cstat-no" title="statement not covered" >                state.raise("Duplicate regular expression modifiers");</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -20370,8 +20382,8 @@
 <span class="cstat-no" title="statement not covered" >      var known = state.groupNames[state.lastStringValue];</span>
 <span class="cstat-no" title="statement not covered" >      if (known) {</span>
 <span class="cstat-no" title="statement not covered" >        if (trackDisjunction) {</span>
-<span class="cstat-no" title="statement not covered" >          for (var i = 0, list = known; i &lt; list.length; i += 1) {</span>
-<span class="cstat-no" title="statement not covered" >            var altID = list[i];</span>
+<span class="cstat-no" title="statement not covered" >          for (var i2 = 0, list2 = known; i2 &lt; list2.length; i2 += 1) {</span>
+<span class="cstat-no" title="statement not covered" >            var altID = list2[i2];</span>
 <span class="cstat-no" title="statement not covered" >            if (!altID.separatedFrom(state.branchID)) {</span>
 <span class="cstat-no" title="statement not covered" >              state.raise("Duplicate capture group name");</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -21134,7 +21146,7 @@
   pp$1.regexp_eatFixedHexDigits = <span class="fstat-no" title="function not covered" >function(state, length) {</span>
 <span class="cstat-no" title="statement not covered" >    var start = state.pos;</span>
 <span class="cstat-no" title="statement not covered" >    state.lastIntValue = 0;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; length; ++i2) {</span>
 <span class="cstat-no" title="statement not covered" >      var ch = state.current();</span>
 <span class="cstat-no" title="statement not covered" >      if (!isHexDigit(ch)) {</span>
 <span class="cstat-no" title="statement not covered" >        state.pos = start;</span>
@@ -21427,8 +21439,8 @@
     return this.finishOp(code === 61 ? types$1.eq : types$1.prefix, 1);
   };
   pp.readToken_question = function() {
-    var ecmaVersion = this.options.ecmaVersion;
-    if (ecmaVersion &gt;= 11) {
+    var ecmaVersion2 = this.options.ecmaVersion;
+    if (ecmaVersion2 &gt;= 11) {
       var next = this.input.charCodeAt(this.pos + 1);
       if (next === 46) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        var next2 = this.input.charCodeAt(this.pos + 2);</span>
@@ -21437,7 +21449,7 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       if (next === 63) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        if (ecmaVersion &gt;= 12) {</span>
+<span class="cstat-no" title="statement not covered" >        if (ecmaVersion2 &gt;= 12) {</span>
 <span class="cstat-no" title="statement not covered" >          var next2$1 = this.input.charCodeAt(this.pos + 2);</span>
 <span class="cstat-no" title="statement not covered" >          if (next2$1 === 61) {</span>
 <span class="cstat-no" title="statement not covered" >            return this.finishOp(types$1.assign, 3);</span>
@@ -21449,9 +21461,9 @@
     return this.finishOp(types$1.question, 1);
   };
   pp.readToken_numberSign = <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    var ecmaVersion = this.options.ecmaVersion;</span>
+<span class="cstat-no" title="statement not covered" >    var ecmaVersion2 = this.options.ecmaVersion;</span>
 <span class="cstat-no" title="statement not covered" >    var code = 35;</span>
-<span class="cstat-no" title="statement not covered" >    if (ecmaVersion &gt;= 13) {</span>
+<span class="cstat-no" title="statement not covered" >    if (ecmaVersion2 &gt;= 13) {</span>
 <span class="cstat-no" title="statement not covered" >      ++this.pos;</span>
 <span class="cstat-no" title="statement not covered" >      code = this.fullCharCodeAtPos();</span>
 <span class="cstat-no" title="statement not covered" >      if (isIdentifierStart(code, true) || code === 92) {</span>
@@ -21612,7 +21624,7 @@
     var allowSeparators = this.options.ecmaVersion &gt;= 12 &amp;&amp; len === void 0;
     var isLegacyOctalNumericLiteral = maybeLegacyOctalNumericLiteral &amp;&amp; this.input.charCodeAt(this.pos) === 48;
     var start = this.pos, total = 0, lastCode = 0;
-    for (var i = 0, e = len == null ? Infinity <span class="branch-0 cbranch-no" title="branch not covered" >: len;</span> i &lt; e; ++i, ++this.pos) {
+    for (var i2 = 0, e = len == null ? Infinity <span class="branch-0 cbranch-no" title="branch not covered" >: len;</span> i2 &lt; e; ++i2, ++this.pos) {
       var code = this.input.charCodeAt(this.pos), val = void 0;
       if (allowSeparators &amp;&amp; code === 95) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        if (isLegacyOctalNumericLiteral) {</span>
@@ -21621,7 +21633,7 @@
 <span class="cstat-no" title="statement not covered" >        if (lastCode === 95) {</span>
 <span class="cstat-no" title="statement not covered" >          this.raiseRecoverable(this.pos, "Numeric separator must be exactly one underscore");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (i === 0) {</span>
+<span class="cstat-no" title="statement not covered" >        if (i2 === 0) {</span>
 <span class="cstat-no" title="statement not covered" >          this.raiseRecoverable(this.pos, "Numeric separator is not allowed at the first of digits");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        lastCode = code;</span>
@@ -22296,10 +22308,10 @@
       return;
     }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    let followingComment;</span></span>
-<span class="cstat-no" title="statement not covered" >    for (let i = comments.length - 1; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >      const comment = comments[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (let i2 = comments.length - 1; i2 &gt;= 0; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >      const comment = comments[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (followingComment &amp;&amp; locEnd(comment) === locStart(followingComment) &amp;&amp; isIndentableBlockComment(comment) &amp;&amp; isIndentableBlockComment(followingComment)) {</span>
-<span class="cstat-no" title="statement not covered" >        comments.splice(i + 1, 1);</span>
+<span class="cstat-no" title="statement not covered" >        comments.splice(i2 + 1, 1);</span>
 <span class="cstat-no" title="statement not covered" >        comment.value += "*//*" + followingComment.value;</span>
 <span class="cstat-no" title="statement not covered" >        comment.range = [locStart(comment), locEnd(followingComment)];</span>
 <span class="cstat-no" title="statement not covered" >        deleteIndentableBlockCommentLines(comment);</span>
@@ -22765,8 +22777,8 @@
       return node;
     }
     if (Array.isArray(node)) {
-      for (let i = 0; i &lt; node.length; i++) {
-        node[i] = visitNode(node[i], options);
+      for (let i2 = 0; i2 &lt; node.length; i2++) {
+        node[i2] = visitNode(node[i2], options);
       }
       return node;
     }
@@ -22778,8 +22790,8 @@
       node = result;
     }
     const keys = get_visitor_keys_default(node);
-    for (let i = 0; i &lt; keys.length; i++) {
-      node[keys[i]] = visitNode(node[keys[i]], options);
+    for (let i2 = 0; i2 &lt; keys.length; i2++) {
+      node[keys[i2]] = visitNode(node[keys[i2]], options);
     }
     if (options.onLeave) {
       node = options.onLeave(node) || node;
@@ -23261,10 +23273,10 @@
   function getLatestEcmaVersion() {
     return LATEST_ECMA_VERSION;
   }
-  function normalizeEcmaVersion(ecmaVersion = 5) {
-    let version2 = ecmaVersion === "latest" ? getLatestEcmaVersion() <span class="branch-0 cbranch-no" title="branch not covered" >: ecmaVersion;</span>
+  function normalizeEcmaVersion(ecmaVersion2 = 5) {
+    let version2 = ecmaVersion2 === "latest" ? getLatestEcmaVersion() <span class="branch-0 cbranch-no" title="branch not covered" >: ecmaVersion2;</span>
     if (typeof version2 !== "number") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error(`ecmaVersion must be a number or "latest". Received value of type ${typeof ecmaVersion} instead.`);</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error(`ecmaVersion must be a number or "latest". Received value of type ${typeof ecmaVersion2} instead.`);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (version2 &gt;= 2015) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      version2 -= 2009;</span>
@@ -23287,24 +23299,24 @@
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    throw new Error("Invalid sourceType.");</span></span>
   }
   function normalizeOptions(options) {
-    const ecmaVersion = normalizeEcmaVersion(options.ecmaVersion);
+    const ecmaVersion2 = normalizeEcmaVersion(options.ecmaVersion);
     const sourceType = normalizeSourceType(options.sourceType);
     const ranges = options.range === true;
     const locations = options.loc === true;
-    if (ecmaVersion !== 3 &amp;&amp; options.allowReserved) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (ecmaVersion2 !== 3 &amp;&amp; options.allowReserved) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error("`allowReserved` is only supported when ecmaVersion is 3");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     if (typeof options.allowReserved !== "undefined" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; typeof options.allowReserved !== "boolean")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error("`allowReserved`, when present, must be `true` or `false`");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    const allowReserved = ecmaVersion === 3 <span class="branch-0 cbranch-no" title="branch not covered" >? options.allowReserved || "never" </span>: false;
+    const allowReserved = ecmaVersion2 === 3 <span class="branch-0 cbranch-no" title="branch not covered" >? options.allowReserved || "never" </span>: false;
     const ecmaFeatures = options.ecmaFeatures <span class="branch-0 cbranch-no" title="branch not covered" >|| {};</span>
     const allowReturnOutsideFunction = options.sourceType === "commonjs" || Boolean(ecmaFeatures.globalReturn);
-    if (sourceType === "module" &amp;&amp; ecmaVersion &lt; 6) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    if (sourceType === "module" &amp;&amp; ecmaVersion2 &lt; 6) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error("sourceType 'module' is not supported when ecmaVersion &lt; 2015. Consider adding `{ ecmaVersion: 2015 }` to the parser options.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     return Object.assign({}, options, {
-      ecmaVersion,
+      ecmaVersion: ecmaVersion2,
       sourceType,
       ranges,
       locations,
@@ -23728,7 +23740,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-12T01:19:13.369Z
+                at 2026-06-13T01:17:31.019Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

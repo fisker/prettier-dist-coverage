@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">51.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6579/12792</span>
+                <span class='fraction'>6582/12797</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.54% </span>
+                <span class="strong">68.46% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1081/1577</span>
+                <span class='fraction'>1081/1579</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">51.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6579/12792</span>
+                <span class='fraction'>6582/12797</span>
             </div>
         
             
@@ -12855,7 +12855,12 @@
 <a name='L12790'></a><a href='#L12790'>12790</a>
 <a name='L12791'></a><a href='#L12791'>12791</a>
 <a name='L12792'></a><a href='#L12792'>12792</a>
-<a name='L12793'></a><a href='#L12793'>12793</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L12793'></a><a href='#L12793'>12793</a>
+<a name='L12794'></a><a href='#L12794'>12794</a>
+<a name='L12795'></a><a href='#L12795'>12795</a>
+<a name='L12796'></a><a href='#L12796'>12796</a>
+<a name='L12797'></a><a href='#L12797'>12797</a>
+<a name='L12798'></a><a href='#L12798'>12798</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -12866,6 +12871,11 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1551x</span>
+<span class="cline-any cline-yes">1551x</span>
+<span class="cline-any cline-yes">1551x</span>
+<span class="cline-any cline-yes">1551x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">42x</span>
@@ -23855,7 +23865,7 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -23887,8 +23897,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -25656,8 +25666,13 @@ const __dirname = __prettierDirname(__filename);
 &nbsp;
 var __defProp = Object.defineProperty;
 var __getOwnPropNames = Object.getOwnPropertyNames;
-var __esm = (fn, res) =&gt; function __init() {
-  return fn &amp;&amp; (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+var __esm = (fn, res, err) =&gt; function __init() {
+  if (err) <span class="branch-0 cbranch-no" title="branch not covered" >throw err[0];</span>
+  try {
+    return fn &amp;&amp; (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+  } <span class="branch-0 cbranch-no" title="branch not covered" >catch (e) {</span>
+<span class="cstat-no" title="statement not covered" >    throw err = [e], e;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 };
 var __export = (target, all) =&gt; {
   for (var name in all)
@@ -26100,8 +26115,8 @@ var init_dist5 = __esm({
       const args = parseCharSeparator(parseImplicitSeparator(parseEqualsSeparator(parseProto(parse8))));
       let optionPrev = "";
       let optionEagerPrev = "";
-      for (let i = 0, l = args.length; i &lt; l; i++) {
-        const arg = args[i];
+      for (let i2 = 0, l = args.length; i2 &lt; l; i2++) {
+        const arg = args[i2];
         const option = parseOption(arg);
         if (option) {
           const [key2, positive] = parseOptionNegation(option);
@@ -26456,9 +26471,9 @@ var init_version = __esm({
 <span class="cstat-no" title="statement not covered" >      const [baseB, suffixB = ""] = versionB.split("+")[0].split("-");</span>
 <span class="cstat-no" title="statement not covered" >      const basePartsA = baseA.split(".");</span>
 <span class="cstat-no" title="statement not covered" >      const basePartsB = baseB.split(".");</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; 3; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        let a = Number(basePartsA[i]) || 0;</span>
-<span class="cstat-no" title="statement not covered" >        let b = Number(basePartsB[i]) || 0;</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 0; i2 &lt; 3; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        let a = Number(basePartsA[i2]) || 0;</span>
+<span class="cstat-no" title="statement not covered" >        let b = Number(basePartsB[i2]) || 0;</span>
 <span class="cstat-no" title="statement not covered" >        if (a &gt; b)</span>
 <span class="cstat-no" title="statement not covered" >          return 1;</span>
 <span class="cstat-no" title="statement not covered" >        if (b &gt; a)</span>
@@ -26470,9 +26485,9 @@ var init_version = __esm({
 <span class="cstat-no" title="statement not covered" >        return 1;</span>
 <span class="cstat-no" title="statement not covered" >      const suffixPartsA = suffixA.split(".");</span>
 <span class="cstat-no" title="statement not covered" >      const suffixPartsB = suffixB.split(".");</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 0, l = Math.max(suffixPartsA.length, suffixPartsB.length); i &lt; l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const a = Number(suffixPartsA[i]) || suffixPartsA[i] || "";</span>
-<span class="cstat-no" title="statement not covered" >        const b = Number(suffixPartsB[i]) || suffixPartsB[i] || "";</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 0, l = Math.max(suffixPartsA.length, suffixPartsB.length); i2 &lt; l; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        const a = Number(suffixPartsA[i2]) || suffixPartsA[i2] || "";</span>
+<span class="cstat-no" title="statement not covered" >        const b = Number(suffixPartsB[i2]) || suffixPartsB[i2] || "";</span>
 <span class="cstat-no" title="statement not covered" >        if (a &gt; b)</span>
 <span class="cstat-no" title="statement not covered" >          return 1;</span>
 <span class="cstat-no" title="statement not covered" >        if (b &gt; a)</span>
@@ -26639,8 +26654,8 @@ var init_dist8 = __esm({
         if (index &gt;= length) {
           break outer;
         }
-        for (let i = 0, l = PARSE_BLOCKS.length; i &lt; l; i++) {
-          const [BLOCK_RE, BLOCK_WIDTH] = PARSE_BLOCKS[i];
+        for (let i2 = 0, l = PARSE_BLOCKS.length; i2 &lt; l; i2++) {
+          const [BLOCK_RE, BLOCK_WIDTH] = PARSE_BLOCKS[i2];
           BLOCK_RE.lastIndex = index;
           if (BLOCK_RE.test(input)) {
             lengthExtra = BLOCK_RE === CJKT_WIDE_RE <span class="branch-0 cbranch-no" title="branch not covered" >? getCodePointsLength(input.slice(index, BLOCK_RE.lastIndex)) </span>: BLOCK_RE === EMOJI_RE <span class="branch-0 cbranch-no" title="branch not covered" >? 1 </span>: BLOCK_RE.lastIndex - index;
@@ -26781,20 +26796,20 @@ var init_dist11 = __esm({
 <span class="cstat-no" title="statement not covered" >      const maxDistance = Math.max(aLength, bLength);</span>
 <span class="cstat-no" title="statement not covered" >      const Buffer3 = maxDistance &lt; 255 ? Uint8Array : maxDistance &lt; 65535 ? Uint16Array : Uint32Array;</span>
 <span class="cstat-no" title="statement not covered" >      const matrix = new matrix_default(aLength + 1, bLength + 1, Buffer3);</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 1, l = aLength; i &lt;= l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        matrix.set(i, 0, i);</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 1, l = aLength; i2 &lt;= l; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        matrix.set(i2, 0, i2);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 1, l = bLength; i &lt;= l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        matrix.set(0, i, i);</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 1, l = bLength; i2 &lt;= l; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        matrix.set(0, i2, i2);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 1; i &lt;= aLength; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 1; i2 &lt;= aLength; i2++) {</span>
 <span class="cstat-no" title="statement not covered" >        for (let j = 1; j &lt;= bLength; j++) {</span>
-<span class="cstat-no" title="statement not covered" >          const cost = a[start + i - 1] === b[start + j - 1] ? 0 : 1;</span>
-<span class="cstat-no" title="statement not covered" >          const deletion = matrix.get(i - 1, j) + 1;</span>
-<span class="cstat-no" title="statement not covered" >          const insertion = matrix.get(i, j - 1) + 1;</span>
-<span class="cstat-no" title="statement not covered" >          const substitution = matrix.get(i - 1, j - 1) + cost;</span>
+<span class="cstat-no" title="statement not covered" >          const cost = a[start + i2 - 1] === b[start + j - 1] ? 0 : 1;</span>
+<span class="cstat-no" title="statement not covered" >          const deletion = matrix.get(i2 - 1, j) + 1;</span>
+<span class="cstat-no" title="statement not covered" >          const insertion = matrix.get(i2, j - 1) + 1;</span>
+<span class="cstat-no" title="statement not covered" >          const substitution = matrix.get(i2 - 1, j - 1) + cost;</span>
 <span class="cstat-no" title="statement not covered" >          const value = Math.min(deletion, insertion, substitution);</span>
-<span class="cstat-no" title="statement not covered" >          matrix.set(i, j, value);</span>
+<span class="cstat-no" title="statement not covered" >          matrix.set(i2, j, value);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const distance = matrix.get(aLength, bLength);</span>
@@ -26841,9 +26856,9 @@ var init_utils6 = __esm({
     };
     groupBy = <span class="fstat-no" title="function not covered" >(values, iterator) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      const groups = /* @__PURE__ */ new Map();</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 0, l = values.length; i &lt; l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const value = values[i];</span>
-<span class="cstat-no" title="statement not covered" >        const key2 = iterator(value, i, values);</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 0, l = values.length; i2 &lt; l; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        const value = values[i2];</span>
+<span class="cstat-no" title="statement not covered" >        const key2 = iterator(value, i2, values);</span>
 <span class="cstat-no" title="statement not covered" >        const group = groups.get(key2) || [];</span>
 <span class="cstat-no" title="statement not covered" >        group.push(value);</span>
 <span class="cstat-no" title="statement not covered" >        groups.set(key2, group);</span>
@@ -26910,22 +26925,22 @@ var init_logger = __esm({
       }
 <span class="fstat-no" title="function not covered" >      table(rows, mode = "line") {</span>
 <span class="cstat-no" title="statement not covered" >        const rowsLengths = rows.map((row) =&gt; row.map((cell) =&gt; dist_default9(cell)));</span>
-<span class="cstat-no" title="statement not covered" >        const maxLengths = rowsLengths[0].map((_, j) =&gt; Math.max(...rowsLengths.map((_2, i) =&gt; rowsLengths[i][j])));</span>
+<span class="cstat-no" title="statement not covered" >        const maxLengths = rowsLengths[0].map((_, j) =&gt; Math.max(...rowsLengths.map((_2, i2) =&gt; rowsLengths[i2][j])));</span>
 <span class="cstat-no" title="statement not covered" >        if (mode === "lines" &amp;&amp; maxLengths.length === 2) {</span>
 <span class="cstat-no" title="statement not covered" >          const COLUMN = 30;</span>
 <span class="cstat-no" title="statement not covered" >          const PADDING = 4;</span>
-<span class="cstat-no" title="statement not covered" >          rows.forEach(([left, right], i) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          rows.forEach(([left, right], i2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            const leftNedded = dist_default9(left) + PADDING;</span>
 <span class="cstat-no" title="statement not covered" >            const leftAvailable = COLUMN - leftNedded;</span>
 <span class="cstat-no" title="statement not covered" >            const leftShortEnough = leftAvailable &gt;= 2;</span>
 <span class="cstat-no" title="statement not covered" >            const rightLines = right.trim().split(/\r?\n|\r/g);</span>
-<span class="cstat-no" title="statement not covered" >            const line2 = [left, rightLines.map((line3, i2) =&gt; leftShortEnough &amp;&amp; !i2 ? `${" ".repeat(leftAvailable)}${line3}` : `${i2 ? "" : "\n"}${" ".repeat(COLUMN)}${line3}`).join("\n")].join("");</span>
+<span class="cstat-no" title="statement not covered" >            const line2 = [left, rightLines.map((line3, i3) =&gt; leftShortEnough &amp;&amp; !i3 ? `${" ".repeat(leftAvailable)}${line3}` : `${i3 ? "" : "\n"}${" ".repeat(COLUMN)}${line3}`).join("\n")].join("");</span>
 <span class="cstat-no" title="statement not covered" >            this.print(line2);</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        } else if (mode === "line") {</span>
-<span class="cstat-no" title="statement not covered" >          rows.forEach((row, i) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          rows.forEach((row, i2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            const line2 = row.map((value, j) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >              const paddingLength = j === row.length - 1 ? 0 : Math.max(0, 1 + maxLengths[j] - rowsLengths[i][j]);</span>
+<span class="cstat-no" title="statement not covered" >              const paddingLength = j === row.length - 1 ? 0 : Math.max(0, 1 + maxLengths[j] - rowsLengths[i2][j]);</span>
 <span class="cstat-no" title="statement not covered" >              const padding = " ".repeat(paddingLength);</span>
 <span class="cstat-no" title="statement not covered" >              return `${value}${padding}`;</span>
 <span class="cstat-no" title="statement not covered" >            }).join(" ");</span>
@@ -28468,9 +28483,9 @@ import { builtinModules } from "module";
 <span class="cstat-no" title="statement not covered" >      `./${packageConfig.main}/index.json`,</span>
 <span class="cstat-no" title="statement not covered" >      `./${packageConfig.main}/index.node`</span>
 <span class="cstat-no" title="statement not covered" >    ];</span>
-<span class="cstat-no" title="statement not covered" >    let i2 = -1;</span>
-<span class="cstat-no" title="statement not covered" >    while (++i2 &lt; tries2.length) {</span>
-<span class="cstat-no" title="statement not covered" >      guess = new URL(tries2[i2], packageJsonUrl);</span>
+<span class="cstat-no" title="statement not covered" >    let i3 = -1;</span>
+<span class="cstat-no" title="statement not covered" >    while (++i3 &lt; tries2.length) {</span>
+<span class="cstat-no" title="statement not covered" >      guess = new URL(tries2[i3], packageJsonUrl);</span>
 <span class="cstat-no" title="statement not covered" >      if (fileExists(guess)) break;</span>
 <span class="cstat-no" title="statement not covered" >      guess = void 0;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -28485,9 +28500,9 @@ import { builtinModules } from "module";
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const tries = ["./index.js", "./index.json", "./index.node"];</span>
-<span class="cstat-no" title="statement not covered" >  let i = -1;</span>
-<span class="cstat-no" title="statement not covered" >  while (++i &lt; tries.length) {</span>
-<span class="cstat-no" title="statement not covered" >    guess = new URL(tries[i], packageJsonUrl);</span>
+<span class="cstat-no" title="statement not covered" >  let i2 = -1;</span>
+<span class="cstat-no" title="statement not covered" >  while (++i2 &lt; tries.length) {</span>
+<span class="cstat-no" title="statement not covered" >    guess = new URL(tries[i2], packageJsonUrl);</span>
 <span class="cstat-no" title="statement not covered" >    if (fileExists(guess)) break;</span>
 <span class="cstat-no" title="statement not covered" >    guess = void 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -28686,9 +28701,9 @@ import { builtinModules } from "module";
 <span class="cstat-no" title="statement not covered" >    const targetList = target;</span>
 <span class="cstat-no" title="statement not covered" >    if (targetList.length === 0) return null;</span>
 <span class="cstat-no" title="statement not covered" >    let lastException;</span>
-<span class="cstat-no" title="statement not covered" >    let i = -1;</span>
-<span class="cstat-no" title="statement not covered" >    while (++i &lt; targetList.length) {</span>
-<span class="cstat-no" title="statement not covered" >      const targetItem = targetList[i];</span>
+<span class="cstat-no" title="statement not covered" >    let i2 = -1;</span>
+<span class="cstat-no" title="statement not covered" >    while (++i2 &lt; targetList.length) {</span>
+<span class="cstat-no" title="statement not covered" >      const targetItem = targetList[i2];</span>
 <span class="cstat-no" title="statement not covered" >      let resolveResult;</span>
 <span class="cstat-no" title="statement not covered" >      try {</span>
 <span class="cstat-no" title="statement not covered" >        resolveResult = resolvePackageTarget(</span>
@@ -28725,9 +28740,9 @@ import { builtinModules } from "module";
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (typeof target === "object" &amp;&amp; target !== null) {</span>
 <span class="cstat-no" title="statement not covered" >    const keys = Object.getOwnPropertyNames(target);</span>
-<span class="cstat-no" title="statement not covered" >    let i = -1;</span>
-<span class="cstat-no" title="statement not covered" >    while (++i &lt; keys.length) {</span>
-<span class="cstat-no" title="statement not covered" >      const key2 = keys[i];</span>
+<span class="cstat-no" title="statement not covered" >    let i2 = -1;</span>
+<span class="cstat-no" title="statement not covered" >    while (++i2 &lt; keys.length) {</span>
+<span class="cstat-no" title="statement not covered" >      const key2 = keys[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (isArrayIndex(key2)) {</span>
 <span class="cstat-no" title="statement not covered" >        throw new ERR_INVALID_PACKAGE_CONFIG2(</span>
 <span class="cstat-no" title="statement not covered" >          fileURLToPath3(packageJsonUrl),</span>
@@ -28736,9 +28751,9 @@ import { builtinModules } from "module";
 <span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    i = -1;</span>
-<span class="cstat-no" title="statement not covered" >    while (++i &lt; keys.length) {</span>
-<span class="cstat-no" title="statement not covered" >      const key2 = keys[i];</span>
+<span class="cstat-no" title="statement not covered" >    i2 = -1;</span>
+<span class="cstat-no" title="statement not covered" >    while (++i2 &lt; keys.length) {</span>
+<span class="cstat-no" title="statement not covered" >      const key2 = keys[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (key2 === "default" || conditions &amp;&amp; conditions.has(key2)) {</span>
 <span class="cstat-no" title="statement not covered" >        const conditionalTarget = (</span>
 <span class="cstat-no" title="statement not covered" >          /** @type {unknown} */</span>
@@ -28777,12 +28792,12 @@ import { builtinModules } from "module";
 <span class="cstat-no" title="statement not covered" >  if (typeof exports !== "object" || exports === null) return false;</span>
 <span class="cstat-no" title="statement not covered" >  const keys = Object.getOwnPropertyNames(exports);</span>
 <span class="cstat-no" title="statement not covered" >  let isConditionalSugar = false;</span>
-<span class="cstat-no" title="statement not covered" >  let i = 0;</span>
+<span class="cstat-no" title="statement not covered" >  let i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >  let keyIndex = -1;</span>
 <span class="cstat-no" title="statement not covered" >  while (++keyIndex &lt; keys.length) {</span>
 <span class="cstat-no" title="statement not covered" >    const key2 = keys[keyIndex];</span>
 <span class="cstat-no" title="statement not covered" >    const currentIsConditionalSugar = key2 === "" || key2[0] !== ".";</span>
-<span class="cstat-no" title="statement not covered" >    if (i++ === 0) {</span>
+<span class="cstat-no" title="statement not covered" >    if (i2++ === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      isConditionalSugar = currentIsConditionalSugar;</span>
 <span class="cstat-no" title="statement not covered" >    } else if (isConditionalSugar !== currentIsConditionalSugar) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new ERR_INVALID_PACKAGE_CONFIG2(</span>
@@ -28833,9 +28848,9 @@ import { builtinModules } from "module";
 <span class="cstat-no" title="statement not covered" >  let bestMatch = "";</span>
 <span class="cstat-no" title="statement not covered" >  let bestMatchSubpath = "";</span>
 <span class="cstat-no" title="statement not covered" >  const keys = Object.getOwnPropertyNames(exports);</span>
-<span class="cstat-no" title="statement not covered" >  let i = -1;</span>
-<span class="cstat-no" title="statement not covered" >  while (++i &lt; keys.length) {</span>
-<span class="cstat-no" title="statement not covered" >    const key2 = keys[i];</span>
+<span class="cstat-no" title="statement not covered" >  let i2 = -1;</span>
+<span class="cstat-no" title="statement not covered" >  while (++i2 &lt; keys.length) {</span>
+<span class="cstat-no" title="statement not covered" >    const key2 = keys[i2];</span>
 <span class="cstat-no" title="statement not covered" >    const patternIndex = key2.indexOf("*");</span>
 <span class="cstat-no" title="statement not covered" >    if (patternIndex !== -1 &amp;&amp; packageSubpath.startsWith(key2.slice(0, patternIndex))) {</span>
 <span class="cstat-no" title="statement not covered" >      if (packageSubpath.endsWith("/")) {</span>
@@ -28921,9 +28936,9 @@ import { builtinModules } from "module";
 <span class="cstat-no" title="statement not covered" >        let bestMatch = "";</span>
 <span class="cstat-no" title="statement not covered" >        let bestMatchSubpath = "";</span>
 <span class="cstat-no" title="statement not covered" >        const keys = Object.getOwnPropertyNames(imports);</span>
-<span class="cstat-no" title="statement not covered" >        let i = -1;</span>
-<span class="cstat-no" title="statement not covered" >        while (++i &lt; keys.length) {</span>
-<span class="cstat-no" title="statement not covered" >          const key2 = keys[i];</span>
+<span class="cstat-no" title="statement not covered" >        let i2 = -1;</span>
+<span class="cstat-no" title="statement not covered" >        while (++i2 &lt; keys.length) {</span>
+<span class="cstat-no" title="statement not covered" >          const key2 = keys[i2];</span>
 <span class="cstat-no" title="statement not covered" >          const patternIndex = key2.indexOf("*");</span>
 <span class="cstat-no" title="statement not covered" >          if (patternIndex !== -1 &amp;&amp; name.startsWith(key2.slice(0, -1))) {</span>
 <span class="cstat-no" title="statement not covered" >            const patternTrailer = key2.slice(patternIndex + 1);</span>
@@ -29379,8 +29394,8 @@ var init_dist18 = __esm({
 <span class="cstat-no" title="statement not covered" >        }</span>
       };
       const handleDirents = (dirmap, rootPath2, dirents, depth) =&gt; {
-        for (let i = 0, l = dirents.length; i &lt; l; i++) {
-          handleDirent(dirmap, rootPath2, dirents[i], depth);
+        for (let i2 = 0, l = dirents.length; i2 &lt; l; i2++) {
+          handleDirent(dirmap, rootPath2, dirents[i2], depth);
         }
       };
       const populateResultFromPath = (rootPath2, depth) =&gt; {
@@ -29447,8 +29462,8 @@ var init_utils10 = __esm({
     getNodes = (node) =&gt; {
       const nodes = /* @__PURE__ */ new Set();
       const queue = [node];
-      for (let i = 0; i &lt; queue.length; i++) {
-        const node2 = queue[i];
+      for (let i2 = 0; i2 &lt; queue.length; i2++) {
+        const node2 = queue[i2];
         if (nodes.has(node2))
           continue;
         nodes.add(node2);
@@ -29464,8 +29479,8 @@ var init_utils10 = __esm({
     getNodeFlags = (node) =&gt; {
       let flags = "";
       const nodes = getNodes(node);
-      for (let i = 0, l = nodes.length; i &lt; l; i++) {
-        const node2 = nodes[i];
+      for (let i2 = 0, l = nodes.length; i2 &lt; l; i2++) {
+        const node2 = nodes[i2];
         if (!node2.regex)
           continue;
         const nodeFlags = node2.regex.flags;
@@ -29505,9 +29520,9 @@ var init_utils10 = __esm({
     getNodeSource = (node, partial) =&gt; {
       const cache3 = /* @__PURE__ */ new Map();
       const nodes = getNodes(node);
-      for (let i = nodes.length - 1; i &gt;= 0; i--) {
-        const source2 = getNodeSourceWithCache(nodes[i], partial, cache3);
-        if (i &gt; 0)
+      for (let i2 = nodes.length - 1; i2 &gt;= 0; i2--) {
+        const source2 = getNodeSourceWithCache(nodes[i2], partial, cache3);
+        if (i2 &gt; 0)
           continue;
         return source2;
       }
@@ -29785,8 +29800,8 @@ var init_dist20 = __esm({
     and = (rules, handler) =&gt; {
       const erules = rules.map(resolve);
       return memoizable(handleable(backtrackable((state) =&gt; {
-        for (let i = 0, l = erules.length; i &lt; l; i++) {
-          if (!erules[i](state))
+        for (let i2 = 0, l = erules.length; i2 &lt; l; i2++) {
+          if (!erules[i2](state))
             return false;
         }
         return true;
@@ -29795,8 +29810,8 @@ var init_dist20 = __esm({
     or = (rules, handler) =&gt; {
       const erules = rules.map(resolve);
       return memoizable(handleable((state) =&gt; {
-        for (let i = 0, l = erules.length; i &lt; l; i++) {
-          if (erules[i](state))
+        for (let i2 = 0, l = erules.length; i2 &lt; l; i2++) {
+          if (erules[i2](state))
             return true;
         }
         return false;
@@ -29859,9 +29874,9 @@ var init_dist20 = __esm({
           if (isPotentiallyCached) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            const cacheStore = cache3.store || (cache3.store = /* @__PURE__ */ new Map());</span>
 <span class="cstat-no" title="statement not covered" >            if (cacheQueue.length) {</span>
-<span class="cstat-no" title="statement not covered" >              for (let i = 0, l = cacheQueue.length; i &lt; l; i += 2) {</span>
-<span class="cstat-no" title="statement not covered" >                const key2 = cacheQueue[i * 2];</span>
-<span class="cstat-no" title="statement not covered" >                const value = cacheQueue[i * 2 + 1];</span>
+<span class="cstat-no" title="statement not covered" >              for (let i2 = 0, l = cacheQueue.length; i2 &lt; l; i2 += 2) {</span>
+<span class="cstat-no" title="statement not covered" >                const key2 = cacheQueue[i2 * 2];</span>
+<span class="cstat-no" title="statement not covered" >                const value = cacheQueue[i2 * 2 + 1];</span>
 <span class="cstat-no" title="statement not covered" >                cacheStore.set(key2, value);</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              cacheQueue.length = 0;</span>
@@ -30008,8 +30023,8 @@ var init_range = __esm({
     };
     alpha2int = <span class="fstat-no" title="function not covered" >(str2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      let int2 = 0;</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 0, l = str2.length; i &lt; l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        int2 = int2 * 26 + ALPHABET.indexOf(str2[i]) + 1;</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 0, l = str2.length; i2 &lt; l; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        int2 = int2 * 26 + ALPHABET.indexOf(str2[i2]) + 1;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return int2;</span>
     };
@@ -30051,8 +30066,8 @@ var init_utils13 = __esm({
         if (!children.length) {
           children.push(child);
         } else {
-          for (let i = 0, l = children.length; i &lt; l; i++) {
-            pushToLeaves(children[i], child, handled);
+          for (let i2 = 0, l = children.length; i2 &lt; l; i2++) {
+            pushToLeaves(children[i2], child, handled);
           }
         }
       };
@@ -30060,10 +30075,10 @@ var init_utils13 = __esm({
         if (!nodes.length) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          return alternation([]);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-        for (let i = nodes.length - 1; i &gt;= 1; i--) {
+        for (let i2 = nodes.length - 1; i2 &gt;= 1; i2--) {
           const handled = /* @__PURE__ */ new Set();
-          const parent = nodes[i - 1];
-          const child = nodes[i];
+          const parent = nodes[i2 - 1];
+          const child = nodes[i2];
           pushToLeaves(parent, child, handled);
         }
         return nodes[0];
@@ -30320,8 +30335,8 @@ var init_utils14 = __esm({
 <span class="cstat-no" title="statement not covered" >      const { flexibleStart, flexibleEnd, statics, dynamic } = explode_end_default(glob);</span>
 <span class="cstat-no" title="statement not covered" >      if (dynamic === "**/*" &amp;&amp; statics.length &amp;&amp; !flexibleEnd) {</span>
 <span class="cstat-no" title="statement not covered" >        return (rootPath, targetPath) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          for (let i = 0, l = statics.length; i &lt; l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            const end = statics[i];</span>
+<span class="cstat-no" title="statement not covered" >          for (let i2 = 0, l = statics.length; i2 &lt; l; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >            const end = statics[i2];</span>
 <span class="cstat-no" title="statement not covered" >            if (!targetPath.endsWith(end))</span>
 <span class="cstat-no" title="statement not covered" >              continue;</span>
 <span class="cstat-no" title="statement not covered" >            if (flexibleStart)</span>
@@ -30379,8 +30394,8 @@ var init_utils14 = __esm({
       if (sets.length === 1)
 <span class="branch-0 cbranch-no" title="branch not covered" >        return sets[0];</span>
       const result = /* @__PURE__ */ new Set();
-      for (let i = 0, l = sets.length; i &lt; l; i++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        const set4 = sets[i];</span>
+      for (let i2 = 0, l = sets.length; i2 &lt; l; i2++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        const set4 = sets[i2];</span>
 <span class="cstat-no" title="statement not covered" >        for (const value of set4) {</span>
 <span class="cstat-no" title="statement not covered" >          result.add(value);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -30407,8 +30422,8 @@ var init_utils14 = __esm({
       if (values.length === 1)
 <span class="branch-0 cbranch-no" title="branch not covered" >        return values[0];</span>
       const merged = {};
-      for (let i = 0, l = values.length; i &lt; l; i++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        const value = values[i];</span>
+      for (let i2 = 0, l = values.length; i2 &lt; l; i2++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        const value = values[i2];</span>
 <span class="cstat-no" title="statement not covered" >        for (const key2 in value) {</span>
 <span class="cstat-no" title="statement not covered" >          const prev = merged[key2];</span>
 <span class="cstat-no" title="statement not covered" >          const next = Array.isArray(prev) ? prev.concat(value[key2]) : value[key2];</span>
@@ -30537,8 +30552,8 @@ function fastRelativeChildPath(fromPath, toPath) {
   }
 }
 function findLastIndex(array, predicate) {
-  for (let i = array.length - 1; i &gt;= 0; i--) {
-    if (predicate(array[i], i, array)) return i;
+  for (let i2 = array.length - 1; i2 &gt;= 0; i2--) {
+    if (predicate(array[i2], i2, array)) return i2;
   }
   return -1;
 }
@@ -30562,8 +30577,8 @@ function getExpandedFoldersPaths(foldersPaths, untilPath = "/") {
   const knownPaths = new Set(foldersPaths);
   const expandedPaths = /* @__PURE__ */ new Set();
   const extraPaths = /* @__PURE__ */ new Set();
-  for (let i = 0, l = foldersPaths.length; i &lt; l; i++) {
-    let folderPath = foldersPaths[i];
+  for (let i2 = 0, l = foldersPaths.length; i2 &lt; l; i2++) {
+    let folderPath = foldersPaths[i2];
     while (true) {
       if (expandedPaths.has(folderPath)) <span class="branch-0 cbranch-no" title="branch not covered" >break;</span>
       if (folderPath === untilPath) break;
@@ -30993,8 +31008,8 @@ function normalizeFormatOptions(options) {
 function normalizePluginOptions(options, names) {
   if (!isObject3(options)) <span class="branch-0 cbranch-no" title="branch not covered" >exit_default("Invalid options object");</span>
   const config = {};
-  for (let i = 0, l = names.length; i &lt; l; i++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    const name = names[i];</span>
+  for (let i2 = 0, l = names.length; i2 &lt; l; i2++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    const name = names[i2];</span>
 <span class="cstat-no" title="statement not covered" >    const value = options[name];</span>
 <span class="cstat-no" title="statement not covered" >    if (isUndefined4(value)) continue;</span>
 <span class="cstat-no" title="statement not covered" >    config[name] = value;</span>
@@ -31006,8 +31021,8 @@ function normalizePrettierOptions(options, folderPath) {
   const config = normalizeFormatOptions(options);
   if ("overrides" in options &amp;&amp; isArray3(options.overrides)) {
     const overridesRaw = options.overrides;
-    for (let i = 0, l = overridesRaw.length; i &lt; l; i++) {
-      const overrideRaw = overridesRaw[i];
+    for (let i2 = 0, l = overridesRaw.length; i2 &lt; l; i2++) {
+      const overrideRaw = overridesRaw[i2];
       if (!isObject3(overrideRaw)) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
       if (!("files" in overrideRaw)) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
       if (!isString5(overrideRaw.files) &amp;&amp; (!isArray3(overrideRaw.files) || !overrideRaw.files.every(isString5))) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
@@ -31033,8 +31048,8 @@ function omit(object, keys) {
   const clone = {
     ...object
   };
-  for (let i = 0, l = keys.length; i &lt; l; i++) {
-    delete clone[keys[i]];
+  for (let i2 = 0, l = keys.length; i2 &lt; l; i2++) {
+    delete clone[keys[i2]];
   }
   return clone;
 }
@@ -31080,10 +31095,10 @@ function without2(values, exclude) {
 }
 function zipObjectUnless(keys, values, unless) {
   const map2 = {};
-  for (let i = 0, l = keys.length; i &lt; l; i++) {
-    const value = values[i];
+  for (let i2 = 0, l = keys.length; i2 &lt; l; i2++) {
+    const value = values[i2];
     if (!unless(value)) {
-      map2[keys[i]] = value;
+      map2[keys[i2]] = value;
     }
   }
   return map2;
@@ -31435,8 +31450,8 @@ var init_dist27 = __esm({
         if (typeof value2 === "object" &amp;&amp; value2 !== null &amp;&amp; !Array.isArray(value2)) {
           const keys = Object.keys(value2).sort();
           const clone = {};
-          for (let i = 0, l = keys.length; i &lt; l; i++) {
-            const key2 = keys[i];
+          for (let i2 = 0, l = keys.length; i2 &lt; l; i2++) {
+            const key2 = keys[i2];
             clone[key2] = value2[key2];
           }
           return clone;
@@ -31629,8 +31644,8 @@ var init_dist28 = __esm({
       const results = {};
       const lines = input.split(/\r?\n|\r/g);
       let section = results;
-      for (let i = 0, l = lines.length; i &lt; l; i++) {
-        const line2 = lines[i].trim();
+      for (let i2 = 0, l = lines.length; i2 &lt; l; i2++) {
+        const line2 = lines[i2].trim();
         if (!line2.length)
           continue;
         const firstChar = line2.charCodeAt(0);
@@ -31643,7 +31658,7 @@ var init_dist28 = __esm({
             section = results[key2] = {};
             continue;
           }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
-<span class="cstat-no" title="statement not covered" >            throw new Error(`Unexpected unclosed section at line ${i + 1}`);</span>
+<span class="cstat-no" title="statement not covered" >            throw new Error(`Unexpected unclosed section at line ${i2 + 1}`);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
         }
         const delimiterIndex = line2.indexOf("=");
@@ -31669,7 +31684,7 @@ var init_dist28 = __esm({
           section[`${key2}`] = value;
           continue;
         }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        throw new Error(`Unexpected characters at line ${i + 1}`);</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        throw new Error(`Unexpected characters at line ${i2 + 1}`);</span></span>
 <span class="cstat-no" title="statement not covered" >      }</span>
       return results;
     };
@@ -31826,8 +31841,8 @@ var init_resolve2 = __esm({
     GLOBS_MATCH_ALL = /* @__PURE__ */ new Set(["*", "**", "**/*"]);
     resolve3 = (configs, filePath) =&gt; {
       const resolved = {};
-      for (let i = 0, l = configs.length; i &lt; l; i++) {
-        const config = configs[i];
+      for (let i2 = 0, l = configs.length; i2 &lt; l; i2++) {
+        const config = configs[i2];
         extend_default(resolved, config);
         const overrides = config.overrides;
         for (const override in overrides) {
@@ -31906,8 +31921,8 @@ var init_config_editorconfig = __esm({
     init_known();
     init_utils15();
     getEditorConfig = dist_default13((folderPath, filesNames) =&gt; {
-      for (let i = 0, l = filesNames.length; i &lt; l; i++) {
-        const fileName = filesNames[i];
+      for (let i2 = 0, l = filesNames.length; i2 &lt; l; i2++) {
+        const fileName = filesNames[i2];
         const filePath = fastJoinedPath(folderPath, fileName);
         if (!known_default.hasFilePath(filePath))
           continue;
@@ -32107,8 +32122,8 @@ var init_parse4 = __esm({
     parse4 = (ignore) =&gt; {
       const lines = ignore.split(/\r?\n|\r/g);
       const globs = [];
-      for (let i = 0, l = lines.length; i &lt; l; i++) {
-        let content = lines[i];
+      for (let i2 = 0, l = lines.length; i2 &lt; l; i2++) {
+        let content = lines[i2];
         if (!content.trim()) continue;
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        if (content.startsWith("#")) continue;</span></span>
 <span class="cstat-no" title="statement not covered" >        const negative = content.startsWith("!");</span>
@@ -32316,8 +32331,8 @@ __export(dist_exports2, {
 <span class="cstat-no" title="statement not covered" >  const value = holder[name];</span>
 <span class="cstat-no" title="statement not covered" >  if (value != null &amp;&amp; typeof value === "object") {</span>
 <span class="cstat-no" title="statement not covered" >    if (Array.isArray(value)) {</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; value.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const key2 = String(i);</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 0; i2 &lt; value.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        const key2 = String(i2);</span>
 <span class="cstat-no" title="statement not covered" >        const replacement = internalize(value, key2, reviver);</span>
 <span class="cstat-no" title="statement not covered" >        if (replacement === void 0) {</span>
 <span class="cstat-no" title="statement not covered" >          delete value[key2];</span>
@@ -33179,15 +33194,15 @@ var init_dist32 = __esm({
 <span class="cstat-no" title="statement not covered" >  let lines = string2.split(/\r\n|\n|\r/g);</span>
 <span class="cstat-no" title="statement not covered" >  let codeblock = "";</span>
 <span class="cstat-no" title="statement not covered" >  let numberLen = (Math.log10(line2 + 1) | 0) + 1;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = line2 - 1; i &lt;= line2 + 1; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    let l = lines[i - 1];</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = line2 - 1; i2 &lt;= line2 + 1; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    let l = lines[i2 - 1];</span>
 <span class="cstat-no" title="statement not covered" >    if (!l)</span>
 <span class="cstat-no" title="statement not covered" >      continue;</span>
-<span class="cstat-no" title="statement not covered" >    codeblock += i.toString().padEnd(numberLen, " ");</span>
+<span class="cstat-no" title="statement not covered" >    codeblock += i2.toString().padEnd(numberLen, " ");</span>
 <span class="cstat-no" title="statement not covered" >    codeblock += ":  ";</span>
 <span class="cstat-no" title="statement not covered" >    codeblock += l;</span>
 <span class="cstat-no" title="statement not covered" >    codeblock += "\n";</span>
-<span class="cstat-no" title="statement not covered" >    if (i === line2) {</span>
+<span class="cstat-no" title="statement not covered" >    if (i2 === line2) {</span>
 <span class="cstat-no" title="statement not covered" >      codeblock += " ".repeat(numberLen + column2 + 2);</span>
 <span class="cstat-no" title="statement not covered" >      codeblock += "^\n";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -33217,10 +33232,10 @@ var init_error = __esm({
 &nbsp;
 // node_modules/smol-toml/dist/util.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isEscaped(str2, ptr) {</span></span>
-<span class="cstat-no" title="statement not covered" >  let i = 0;</span>
-<span class="cstat-no" title="statement not covered" >  while (str2[ptr - ++i] === "\\")</span>
+<span class="cstat-no" title="statement not covered" >  let i2 = 0;</span>
+<span class="cstat-no" title="statement not covered" >  while (str2[ptr - ++i2] === "\\")</span>
 <span class="cstat-no" title="statement not covered" >    ;</span>
-<span class="cstat-no" title="statement not covered" >  return --i &amp;&amp; i % 2;</span>
+<span class="cstat-no" title="statement not covered" >  return --i2 &amp;&amp; i2 % 2;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function indexOfNewline(str2, start = 0, end = str2.length) {</span></span>
 <span class="cstat-no" title="statement not covered" >  let idx = str2.indexOf("\n", start);</span>
@@ -33229,12 +33244,12 @@ var init_error = __esm({
 <span class="cstat-no" title="statement not covered" >  return idx &lt;= end ? idx : -1;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function skipComment(str2, ptr) {</span></span>
-<span class="cstat-no" title="statement not covered" >  for (let i = ptr; i &lt; str2.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    let c2 = str2[i];</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = ptr; i2 &lt; str2.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    let c2 = str2[i2];</span>
 <span class="cstat-no" title="statement not covered" >    if (c2 === "\n")</span>
-<span class="cstat-no" title="statement not covered" >      return i;</span>
-<span class="cstat-no" title="statement not covered" >    if (c2 === "\r" &amp;&amp; str2[i + 1] === "\n")</span>
-<span class="cstat-no" title="statement not covered" >      return i + 1;</span>
+<span class="cstat-no" title="statement not covered" >      return i2;</span>
+<span class="cstat-no" title="statement not covered" >    if (c2 === "\r" &amp;&amp; str2[i2 + 1] === "\n")</span>
+<span class="cstat-no" title="statement not covered" >      return i2 + 1;</span>
 <span class="cstat-no" title="statement not covered" >    if (c2 &lt; " " &amp;&amp; c2 !== "	" || c2 === "\x7F") {</span>
 <span class="cstat-no" title="statement not covered" >      throw new TomlError("control characters are not allowed in comments", {</span>
 <span class="cstat-no" title="statement not covered" >        toml: str2,</span>
@@ -33260,14 +33275,14 @@ var init_error = __esm({
 <span class="cstat-no" title="statement not covered" >    ptr = indexOfNewline(str2, ptr);</span>
 <span class="cstat-no" title="statement not covered" >    return ptr &lt; 0 ? str2.length : ptr;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = ptr; i &lt; str2.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    let c2 = str2[i];</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = ptr; i2 &lt; str2.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    let c2 = str2[i2];</span>
 <span class="cstat-no" title="statement not covered" >    if (c2 === "#") {</span>
-<span class="cstat-no" title="statement not covered" >      i = indexOfNewline(str2, i);</span>
+<span class="cstat-no" title="statement not covered" >      i2 = indexOfNewline(str2, i2);</span>
 <span class="cstat-no" title="statement not covered" >    } else if (c2 === sep) {</span>
-<span class="cstat-no" title="statement not covered" >      return i + 1;</span>
-<span class="cstat-no" title="statement not covered" >    } else if (c2 === end || banNewLines &amp;&amp; (c2 === "\n" || c2 === "\r" &amp;&amp; str2[i + 1] === "\n")) {</span>
-<span class="cstat-no" title="statement not covered" >      return i;</span>
+<span class="cstat-no" title="statement not covered" >      return i2 + 1;</span>
+<span class="cstat-no" title="statement not covered" >    } else if (c2 === end || banNewLines &amp;&amp; (c2 === "\n" || c2 === "\r" &amp;&amp; str2[i2 + 1] === "\n")) {</span>
+<span class="cstat-no" title="statement not covered" >      return i2;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  throw new TomlError("cannot find end of structure", {</span>
@@ -33704,10 +33719,10 @@ var init_extract = __esm({
 <span class="cstat-no" title="statement not covered" >      let t = res;</span>
 <span class="cstat-no" title="statement not covered" >      let hasOwn = false;</span>
 <span class="cstat-no" title="statement not covered" >      let [key2, keyEndPtr] = parseKey(str2, ptr - 1);</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; key2.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        if (i)</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 0; i2 &lt; key2.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        if (i2)</span>
 <span class="cstat-no" title="statement not covered" >          t = hasOwn ? t[k] : t[k] = {};</span>
-<span class="cstat-no" title="statement not covered" >        k = key2[i];</span>
+<span class="cstat-no" title="statement not covered" >        k = key2[i2];</span>
 <span class="cstat-no" title="statement not covered" >        if ((hasOwn = Object.hasOwn(t, k)) &amp;&amp; (typeof t[k] !== "object" || seen.has(t[k]))) {</span>
 <span class="cstat-no" title="statement not covered" >          throw new TomlError("trying to redefine an already defined value", {</span>
 <span class="cstat-no" title="statement not covered" >            toml: str2,</span>
@@ -33782,8 +33797,8 @@ var init_struct = __esm({
 <span class="cstat-no" title="statement not covered" >  let k;</span>
 <span class="cstat-no" title="statement not covered" >  let hasOwn = false;</span>
 <span class="cstat-no" title="statement not covered" >  let state;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; key2.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    if (i) {</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; key2.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (i2) {</span>
 <span class="cstat-no" title="statement not covered" >      t = hasOwn ? t[k] : t[k] = {};</span>
 <span class="cstat-no" title="statement not covered" >      m = (state = m[k]).c;</span>
 <span class="cstat-no" title="statement not covered" >      if (type2 === 0 &amp;&amp; (state.t === 1 || state.t === 2)) {</span>
@@ -33795,7 +33810,7 @@ var init_struct = __esm({
 <span class="cstat-no" title="statement not covered" >        m = m[l].c;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    k = key2[i];</span>
+<span class="cstat-no" title="statement not covered" >    k = key2[i2];</span>
 <span class="cstat-no" title="statement not covered" >    if ((hasOwn = Object.hasOwn(t, k)) &amp;&amp; m[k]?.t === 0 &amp;&amp; m[k]?.d) {</span>
 <span class="cstat-no" title="statement not covered" >      return null;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -33805,7 +33820,7 @@ var init_struct = __esm({
 <span class="cstat-no" title="statement not covered" >        Object.defineProperty(m, k, { enumerable: true, configurable: true, writable: true });</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      m[k] = {</span>
-<span class="cstat-no" title="statement not covered" >        t: i &lt; key2.length - 1 &amp;&amp; type2 === 2 ? 3 : type2,</span>
+<span class="cstat-no" title="statement not covered" >        t: i2 &lt; key2.length - 1 &amp;&amp; type2 === 2 ? 3 : type2,</span>
 <span class="cstat-no" title="statement not covered" >        d: false,</span>
 <span class="cstat-no" title="statement not covered" >        i: 0,</span>
 <span class="cstat-no" title="statement not covered" >        c: {}</span>
@@ -33920,8 +33935,8 @@ var init_parse5 = __esm({
 <span class="cstat-no" title="statement not covered" >  return type2;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isArrayOfTables(obj) {</span></span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; obj.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    if (extendedTypeOf(obj[i]) !== "object")</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; obj.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (extendedTypeOf(obj[i2]) !== "object")</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return obj.length != 0;</span>
@@ -33968,9 +33983,9 @@ var init_parse5 = __esm({
 <span class="cstat-no" title="statement not covered" >  if (keys.length === 0)</span>
 <span class="cstat-no" title="statement not covered" >    return "{}";</span>
 <span class="cstat-no" title="statement not covered" >  let res = "{ ";</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; keys.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    let k = keys[i];</span>
-<span class="cstat-no" title="statement not covered" >    if (i)</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; keys.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    let k = keys[i2];</span>
+<span class="cstat-no" title="statement not covered" >    if (i2)</span>
 <span class="cstat-no" title="statement not covered" >      res += ", ";</span>
 <span class="cstat-no" title="statement not covered" >    res += BARE_KEY.test(k) ? k : formatString(k);</span>
 <span class="cstat-no" title="statement not covered" >    res += " = ";</span>
@@ -33982,13 +33997,13 @@ var init_parse5 = __esm({
 <span class="cstat-no" title="statement not covered" >  if (array.length === 0)</span>
 <span class="cstat-no" title="statement not covered" >    return "[]";</span>
 <span class="cstat-no" title="statement not covered" >  let res = "[ ";</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; array.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    if (i)</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; array.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (i2)</span>
 <span class="cstat-no" title="statement not covered" >      res += ", ";</span>
-<span class="cstat-no" title="statement not covered" >    if (array[i] === null || array[i] === void 0) {</span>
+<span class="cstat-no" title="statement not covered" >    if (array[i2] === null || array[i2] === void 0) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new TypeError("arrays cannot contain null or undefined values");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    res += stringifyValue(array[i], extendedTypeOf(array[i]), depth - 1, numberAsFloat);</span>
+<span class="cstat-no" title="statement not covered" >    res += stringifyValue(array[i2], extendedTypeOf(array[i2]), depth - 1, numberAsFloat);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return res + " ]";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -33997,10 +34012,10 @@ var init_parse5 = __esm({
 <span class="cstat-no" title="statement not covered" >    throw new Error("Could not stringify the object: maximum object depth exceeded");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let res = "";</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; array.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; array.length; i2++) {</span>
 <span class="cstat-no" title="statement not covered" >    res += `${res &amp;&amp; "\n"}[[${key2}]]</span>
 <span class="cstat-no" title="statement not covered" >`;</span>
-<span class="cstat-no" title="statement not covered" >    res += stringifyTable(0, array[i], key2, depth, numberAsFloat);</span>
+<span class="cstat-no" title="statement not covered" >    res += stringifyTable(0, array[i2], key2, depth, numberAsFloat);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return res;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -34011,8 +34026,8 @@ var init_parse5 = __esm({
 <span class="cstat-no" title="statement not covered" >  let preamble = "";</span>
 <span class="cstat-no" title="statement not covered" >  let tables = "";</span>
 <span class="cstat-no" title="statement not covered" >  let keys = Object.keys(obj);</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; keys.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    let k = keys[i];</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; keys.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    let k = keys[i2];</span>
 <span class="cstat-no" title="statement not covered" >    if (obj[k] !== null &amp;&amp; obj[k] !== void 0) {</span>
 <span class="cstat-no" title="statement not covered" >      let type2 = extendedTypeOf(obj[k]);</span>
 <span class="cstat-no" title="statement not covered" >      if (type2 === "symbol" || type2 === "function") {</span>
@@ -34190,33 +34205,33 @@ __export(js_yaml_exports, {
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (foundLineNo &lt; 0) foundLineNo = lineStarts.length - 1;</span>
-<span class="cstat-no" title="statement not covered" >  var result = "", i, line2;</span>
+<span class="cstat-no" title="statement not covered" >  var result = "", i2, line2;</span>
 <span class="cstat-no" title="statement not covered" >  var lineNoLength = Math.min(mark.line + options.linesAfter, lineEnds.length).toString().length;</span>
 <span class="cstat-no" title="statement not covered" >  var maxLineLength = options.maxLength - (options.indent + lineNoLength + 3);</span>
-<span class="cstat-no" title="statement not covered" >  for (i = 1; i &lt;= options.linesBefore; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    if (foundLineNo - i &lt; 0) break;</span>
+<span class="cstat-no" title="statement not covered" >  for (i2 = 1; i2 &lt;= options.linesBefore; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (foundLineNo - i2 &lt; 0) break;</span>
 <span class="cstat-no" title="statement not covered" >    line2 = getLine(</span>
 <span class="cstat-no" title="statement not covered" >      mark.buffer,</span>
-<span class="cstat-no" title="statement not covered" >      lineStarts[foundLineNo - i],</span>
-<span class="cstat-no" title="statement not covered" >      lineEnds[foundLineNo - i],</span>
-<span class="cstat-no" title="statement not covered" >      mark.position - (lineStarts[foundLineNo] - lineStarts[foundLineNo - i]),</span>
+<span class="cstat-no" title="statement not covered" >      lineStarts[foundLineNo - i2],</span>
+<span class="cstat-no" title="statement not covered" >      lineEnds[foundLineNo - i2],</span>
+<span class="cstat-no" title="statement not covered" >      mark.position - (lineStarts[foundLineNo] - lineStarts[foundLineNo - i2]),</span>
 <span class="cstat-no" title="statement not covered" >      maxLineLength</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    result = common.repeat(" ", options.indent) + padStart((mark.line - i + 1).toString(), lineNoLength) + " | " + line2.str + "\n" + result;</span>
+<span class="cstat-no" title="statement not covered" >    result = common.repeat(" ", options.indent) + padStart((mark.line - i2 + 1).toString(), lineNoLength) + " | " + line2.str + "\n" + result;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  line2 = getLine(mark.buffer, lineStarts[foundLineNo], lineEnds[foundLineNo], mark.position, maxLineLength);</span>
 <span class="cstat-no" title="statement not covered" >  result += common.repeat(" ", options.indent) + padStart((mark.line + 1).toString(), lineNoLength) + " | " + line2.str + "\n";</span>
 <span class="cstat-no" title="statement not covered" >  result += common.repeat("-", options.indent + lineNoLength + 3 + line2.pos) + "^\n";</span>
-<span class="cstat-no" title="statement not covered" >  for (i = 1; i &lt;= options.linesAfter; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    if (foundLineNo + i &gt;= lineEnds.length) break;</span>
+<span class="cstat-no" title="statement not covered" >  for (i2 = 1; i2 &lt;= options.linesAfter; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (foundLineNo + i2 &gt;= lineEnds.length) break;</span>
 <span class="cstat-no" title="statement not covered" >    line2 = getLine(</span>
 <span class="cstat-no" title="statement not covered" >      mark.buffer,</span>
-<span class="cstat-no" title="statement not covered" >      lineStarts[foundLineNo + i],</span>
-<span class="cstat-no" title="statement not covered" >      lineEnds[foundLineNo + i],</span>
-<span class="cstat-no" title="statement not covered" >      mark.position - (lineStarts[foundLineNo] - lineStarts[foundLineNo + i]),</span>
+<span class="cstat-no" title="statement not covered" >      lineStarts[foundLineNo + i2],</span>
+<span class="cstat-no" title="statement not covered" >      lineEnds[foundLineNo + i2],</span>
+<span class="cstat-no" title="statement not covered" >      mark.position - (lineStarts[foundLineNo] - lineStarts[foundLineNo + i2]),</span>
 <span class="cstat-no" title="statement not covered" >      maxLineLength</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    result += common.repeat(" ", options.indent) + padStart((mark.line + i + 1).toString(), lineNoLength) + " | " + line2.str + "\n";</span>
+<span class="cstat-no" title="statement not covered" >    result += common.repeat(" ", options.indent) + padStart((mark.line + i2 + 1).toString(), lineNoLength) + " | " + line2.str + "\n";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return result.replace(/\n$/, "");</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -36436,8 +36451,8 @@ var init_dist35 = __esm({
           this.infos = [];
         if (debugs)
 <span class="branch-0 cbranch-no" title="branch not covered" >          this.debugs = [];</span>
-        for (let i = 0, l = this.transports.length; i &lt; l; i++) {
-          const transport = this.transports[i];
+        for (let i2 = 0, l = this.transports.length; i2 &lt; l; i2++) {
+          const transport = this.transports[i2];
           if (isTransportMultiple(transport)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            if (errors)</span>
 <span class="cstat-no" title="statement not covered" >              transport.error(errors);</span>
@@ -37755,12 +37770,12 @@ ${ready}
           this.size = size;
           if (this.autoInstantiate) {
             const missingNr = Math.max(0, this.size - this.workersBusy.size - this.workersIdle.size);
-            for (let i = 0, l = missingNr; i &lt; l; i++) {
+            for (let i2 = 0, l = missingNr; i2 &lt; l; i2++) {
               this.getWorkerIdleNew();
             }
           }
           const excessNr = Math.max(0, this.workersIdle.size - this.size);
-          for (let i = 0, l = excessNr; i &lt; l; i++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+          for (let i2 = 0, l = excessNr; i2 &lt; l; i2++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            for (const worker of this.workersIdle) {</span>
 <span class="cstat-no" title="statement not covered" >              this.workersIdle.delete(worker);</span>
 <span class="cstat-no" title="statement not covered" >              worker.terminate();</span>
@@ -38092,8 +38107,8 @@ async function runGlobs(options, pluginsDefaultOptions, pluginsCustomOptions) {
   let pathsUnknown = [];
   let totalErrored = 0;
   let pathsErrored = [];
-  for (let i = 0, l = filesResults.length; i &lt; l; i++) {
-    const fileResult = filesResults[i];
+  for (let i2 = 0, l = filesResults.length; i2 &lt; l; i2++) {
+    const fileResult = filesResults[i2];
     if (fileResult.status === "fulfilled") {
       if (isUndefined4(fileResult.value)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        totalMatched -= 1;</span>
@@ -38105,7 +38120,7 @@ async function runGlobs(options, pluginsDefaultOptions, pluginsCustomOptions) {
           totalFormatted += 1;
         } else {
           totalUnformatted += 1;
-          const filePath = filesPathsTargets[i];
+          const filePath = filesPathsTargets[i2];
           const fileNameToDisplay = normalizePathSeparatorsToPosix(fastRelativePath(rootPath, filePath));
           if (options.check) {
             stderr.prefixed.warn(fileNameToDisplay);
@@ -38118,12 +38133,12 @@ async function runGlobs(options, pluginsDefaultOptions, pluginsCustomOptions) {
 <span class="cstat-no" title="statement not covered" >      const error = fileResult.reason;</span>
 <span class="cstat-no" title="statement not covered" >      if (error.name === "UndefinedParserError") {</span>
 <span class="cstat-no" title="statement not covered" >        totalUnknown += 1;</span>
-<span class="cstat-no" title="statement not covered" >        pathsUnknown.push(filesPathsTargets[i]);</span>
+<span class="cstat-no" title="statement not covered" >        pathsUnknown.push(filesPathsTargets[i2]);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (error.name !== "UndefinedParserError" || !options.ignoreUnknown) {</span>
 <span class="cstat-no" title="statement not covered" >        totalErrored += 1;</span>
-<span class="cstat-no" title="statement not covered" >        pathsErrored.push(filesPathsTargets[i]);</span>
-<span class="cstat-no" title="statement not covered" >        const filePath = filesPathsTargets[i];</span>
+<span class="cstat-no" title="statement not covered" >        pathsErrored.push(filesPathsTargets[i2]);</span>
+<span class="cstat-no" title="statement not covered" >        const filePath = filesPathsTargets[i2];</span>
 <span class="cstat-no" title="statement not covered" >        const fileNameToDisplay = normalizePathSeparatorsToPosix(fastRelativePath(rootPath, filePath));</span>
 <span class="cstat-no" title="statement not covered" >        if (options.check || options.write || options.dump) {</span>
 <span class="cstat-no" title="statement not covered" >          stderr.prefixed.error(`${fileNameToDisplay}: ${error}`);</span>
@@ -38338,8 +38353,8 @@ var makePluggableBin = async () =&gt; {
   const pluginsNames = formatOptions.plugins || [];
   const pluginsParsers = /* @__PURE__ */ new Set();
   const optionsNames = [];
-  for (let i = 0, l = pluginsNames.length; i &lt; l; i++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    const pluginName = pluginsNames[i];</span>
+  for (let i2 = 0, l = pluginsNames.length; i2 &lt; l; i2++) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    const pluginName = pluginsNames[i2];</span>
 <span class="cstat-no" title="statement not covered" >    const plugin = await getPluginOrExit(pluginName);</span>
 <span class="cstat-no" title="statement not covered" >    for (const option in plugin.options) {</span>
 <span class="cstat-no" title="statement not covered" >      optionsNames.push(option);</span>
@@ -38446,7 +38461,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-12T01:19:13.369Z
+                at 2026-06-13T01:17:31.019Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

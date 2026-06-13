@@ -45712,10 +45712,10 @@
 <span class="cstat-no" title="statement not covered" >  ThreadManager2.prototype.loadWasmModuleToAllWorkers = function() {</span>
 <span class="cstat-no" title="statement not covered" >    var _this_1 = this;</span>
 <span class="cstat-no" title="statement not covered" >    var promises = Array(this.unusedWorkers.length);</span>
-<span class="cstat-no" title="statement not covered" >    var _loop_1 = function(i2) {</span>
-<span class="cstat-no" title="statement not covered" >      var worker = this_1.unusedWorkers[i2];</span>
+<span class="cstat-no" title="statement not covered" >    var _loop_1 = function(i3) {</span>
+<span class="cstat-no" title="statement not covered" >      var worker = this_1.unusedWorkers[i3];</span>
 <span class="cstat-no" title="statement not covered" >      if (ENVIRONMENT_IS_NODE) worker.ref();</span>
-<span class="cstat-no" title="statement not covered" >      promises[i2] = this_1.loadWasmModuleToWorker(worker).then(function(w) {</span>
+<span class="cstat-no" title="statement not covered" >      promises[i3] = this_1.loadWasmModuleToWorker(worker).then(function(w) {</span>
 <span class="cstat-no" title="statement not covered" >        if (ENVIRONMENT_IS_NODE) worker.unref();</span>
 <span class="cstat-no" title="statement not covered" >        return w;</span>
 <span class="cstat-no" title="statement not covered" >      }, function(e) {</span>
@@ -45724,7 +45724,7 @@
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >    var this_1 = this;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; this.unusedWorkers.length; ++i) _loop_1(i);</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; this.unusedWorkers.length; ++i2) _loop_1(i2);</span>
 <span class="cstat-no" title="statement not covered" >    return Promise.all(promises).catch(function(err) {</span>
 <span class="cstat-no" title="statement not covered" >      _this_1.terminateAllThreads();</span>
 <span class="cstat-no" title="statement not covered" >      throw err;</span>
@@ -45873,8 +45873,8 @@
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  ThreadManager2.prototype.terminateAllThreads = function() {</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; this.runningWorkers.length; ++i) this.terminateWorker(this.runningWorkers[i]);</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; this.unusedWorkers.length; ++i) this.terminateWorker(this.unusedWorkers[i]);</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; this.runningWorkers.length; ++i2) this.terminateWorker(this.runningWorkers[i2]);</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; this.unusedWorkers.length; ++i2) this.terminateWorker(this.unusedWorkers[i2]);</span>
 <span class="cstat-no" title="statement not covered" >    this.unusedWorkers = [];</span>
 <span class="cstat-no" title="statement not covered" >    this.runningWorkers = [];</span>
 <span class="cstat-no" title="statement not covered" >    this.pthreads = /* @__PURE__ */ Object.create(null);</span>
@@ -45926,15 +45926,15 @@
 <span class="cstat-no" title="statement not covered" >      "setPrototypeOf"</span>
 <span class="cstat-no" title="statement not covered" >    ];</span>
 <span class="cstat-no" title="statement not covered" >    var handler2 = {};</span>
-<span class="cstat-no" title="statement not covered" >    var _loop_1 = function(i2) {</span>
-<span class="cstat-no" title="statement not covered" >      var name_1 = handlers[i2];</span>
+<span class="cstat-no" title="statement not covered" >    var _loop_1 = function(i3) {</span>
+<span class="cstat-no" title="statement not covered" >      var name_1 = handlers[i3];</span>
 <span class="cstat-no" title="statement not covered" >      handler2[name_1] = function() {</span>
 <span class="cstat-no" title="statement not covered" >        var args = Array.prototype.slice.call(arguments, 1);</span>
 <span class="cstat-no" title="statement not covered" >        args.unshift(target);</span>
 <span class="cstat-no" title="statement not covered" >        return Reflect[name_1].apply(Reflect, args);</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; handlers.length; i++) _loop_1(i);</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; handlers.length; i2++) _loop_1(i2);</span>
 <span class="cstat-no" title="statement not covered" >    return handler2;</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  var handler = createHandler(originalExports);</span>
@@ -46559,8 +46559,8 @@
 <span class="cstat-no" title="statement not covered" >    function _emnapi_tell_js_uvthreadpool(threads, size) {</span>
 <span class="cstat-no" title="statement not covered" >      var p = [];</span>
 <span class="cstat-no" title="statement not covered" >      var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
-<span class="cstat-no" title="statement not covered" >      var _loop_1 = function(i2) {</span>
-<span class="cstat-no" title="statement not covered" >        var worker = emnapiGetWorkerByPthreadPtr(HEAP_DATA_VIEW.getUint32(threads + i2 * 4, true));</span>
+<span class="cstat-no" title="statement not covered" >      var _loop_1 = function(i3) {</span>
+<span class="cstat-no" title="statement not covered" >        var worker = emnapiGetWorkerByPthreadPtr(HEAP_DATA_VIEW.getUint32(threads + i3 * 4, true));</span>
 <span class="cstat-no" title="statement not covered" >        p.push(new Promise(function(resolve2) {</span>
 <span class="cstat-no" title="statement not covered" >          var handler = function(e) {</span>
 <span class="cstat-no" title="statement not covered" >            var __emnapi__ = (ENVIRONMENT_IS_NODE2 ? e : e.data).__emnapi__;</span>
@@ -46575,7 +46575,7 @@
 <span class="cstat-no" title="statement not covered" >          else worker.addEventListener("message", handler);</span>
 <span class="cstat-no" title="statement not covered" >        }));</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
-<span class="cstat-no" title="statement not covered" >      for (var i = 0; i &lt; size; i++) _loop_1(i);</span>
+<span class="cstat-no" title="statement not covered" >      for (var i2 = 0; i2 &lt; size; i2++) _loop_1(i2);</span>
 <span class="cstat-no" title="statement not covered" >      Promise.all(p).then(uvThreadpoolReadyResolve);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function _emnapi_emit_async_thread_ready() {</span>
@@ -46757,7 +46757,7 @@
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function _emnapi_node_make_callback(env, async_resource, cb, argv, size, async_id, trigger_async_id, result) {</span>
-<span class="cstat-no" title="statement not covered" >      var i = 0;</span>
+<span class="cstat-no" title="statement not covered" >      var i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >      var v;</span>
 <span class="cstat-no" title="statement not covered" >      if (!emnapiNodeBinding) return;</span>
 <span class="cstat-no" title="statement not covered" >      var resource = emnapiCtx.handleStore.get(async_resource).value;</span>
@@ -46767,9 +46767,9 @@
 <span class="cstat-no" title="statement not covered" >      size = size &gt;&gt;&gt; 0;</span>
 <span class="cstat-no" title="statement not covered" >      var arr = Array(size);</span>
 <span class="cstat-no" title="statement not covered" >      var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
-<span class="cstat-no" title="statement not covered" >      for (; i &lt; size; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        var argVal = HEAP_DATA_VIEW.getUint32(argv + i * 4, true);</span>
-<span class="cstat-no" title="statement not covered" >        arr[i] = emnapiCtx.handleStore.get(argVal).value;</span>
+<span class="cstat-no" title="statement not covered" >      for (; i2 &lt; size; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        var argVal = HEAP_DATA_VIEW.getUint32(argv + i2 * 4, true);</span>
+<span class="cstat-no" title="statement not covered" >        arr[i2] = emnapiCtx.handleStore.get(argVal).value;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      var ret = emnapiNodeBinding.node.makeCallback(resource, callback, arr, {</span>
 <span class="cstat-no" title="statement not covered" >        asyncId: async_id,</span>
@@ -46819,7 +46819,7 @@
 <span class="cstat-no" title="statement not covered" >      throw new Error("napi_close_callback_scope has not been implemented yet");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function napi_make_callback(env, async_context, recv, func, argc, argv, result) {</span>
-<span class="cstat-no" title="statement not covered" >      var i = 0;</span>
+<span class="cstat-no" title="statement not covered" >      var i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >      var v;</span>
 <span class="cstat-no" title="statement not covered" >      if (!env) return 1;</span>
 <span class="cstat-no" title="statement not covered" >      var envObject = emnapiCtx.envStore.get(env);</span>
@@ -46845,9 +46845,9 @@
 <span class="cstat-no" title="statement not covered" >        argc &gt;&gt;&gt;= 0;</span>
 <span class="cstat-no" title="statement not covered" >        argc = argc &gt;&gt;&gt; 0;</span>
 <span class="cstat-no" title="statement not covered" >        var arr = Array(argc);</span>
-<span class="cstat-no" title="statement not covered" >        for (; i &lt; argc; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          var argVal = HEAP_DATA_VIEW.getUint32(argv + i * 4, true);</span>
-<span class="cstat-no" title="statement not covered" >          arr[i] = emnapiCtx.handleStore.get(argVal).value;</span>
+<span class="cstat-no" title="statement not covered" >        for (; i2 &lt; argc; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          var argVal = HEAP_DATA_VIEW.getUint32(argv + i2 * 4, true);</span>
+<span class="cstat-no" title="statement not covered" >          arr[i2] = emnapiCtx.handleStore.get(argVal).value;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        var ret = emnapiNodeBinding.napi.makeCallback(ctx, v8recv, v8func, arr);</span>
 <span class="cstat-no" title="statement not covered" >        if (ret.error) throw ret.error;</span>
@@ -47230,8 +47230,8 @@
 <span class="cstat-no" title="statement not covered" >        var callJsCb = emnapiTSFN.getCallJSCb(func);</span>
 <span class="cstat-no" title="statement not covered" >        var context2 = emnapiTSFN.getContext(func);</span>
 <span class="cstat-no" title="statement not covered" >        var data;</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; drainQueue.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          data = drainQueue[i];</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; drainQueue.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          data = drainQueue[i2];</span>
 <span class="cstat-no" title="statement not covered" >          if (callJsCb) wasmTable.get(callJsCb)(0, 0, context2, data);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      },</span>
@@ -47651,7 +47651,7 @@
 <span class="cstat-no" title="statement not covered" >        var emnapi_async_worker_create = wasmInstance.exports.emnapi_async_worker_create;</span>
 <span class="cstat-no" title="statement not covered" >        var args = [];</span>
 <span class="cstat-no" title="statement not covered" >        emnapiAWMT.initGlobal();</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; n; ++i) args.push(emnapi_async_worker_create(1, emnapiAWMT.globalAddress));</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; n; ++i2) args.push(emnapi_async_worker_create(1, emnapiAWMT.globalAddress));</span>
 <span class="cstat-no" title="statement not covered" >        var promises = args.map(function(index) {</span>
 <span class="cstat-no" title="statement not covered" >          if (index === 0) return Promise.reject(/* @__PURE__ */ new Error("Failed to create async worker"));</span>
 <span class="cstat-no" title="statement not covered" >          var worker;</span>
@@ -48177,11 +48177,11 @@
 <span class="cstat-no" title="statement not covered" >          var bytes = new Uint16Array(input.buffer, input.byteOffset, input.byteLength / 2);</span>
 <span class="cstat-no" title="statement not covered" >          if (bytes.length &lt;= 4096) return String.fromCharCode.apply(null, bytes);</span>
 <span class="cstat-no" title="statement not covered" >          var chunks = [];</span>
-<span class="cstat-no" title="statement not covered" >          var i = 0;</span>
+<span class="cstat-no" title="statement not covered" >          var i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >          var len = 0;</span>
-<span class="cstat-no" title="statement not covered" >          for (; i &lt; bytes.length; i += len) {</span>
-<span class="cstat-no" title="statement not covered" >            len = Math.min(4096, bytes.length - i);</span>
-<span class="cstat-no" title="statement not covered" >            chunks.push(String.fromCharCode.apply(null, bytes.subarray(i, i + len)));</span>
+<span class="cstat-no" title="statement not covered" >          for (; i2 &lt; bytes.length; i2 += len) {</span>
+<span class="cstat-no" title="statement not covered" >            len = Math.min(4096, bytes.length - i2);</span>
+<span class="cstat-no" title="statement not covered" >            chunks.push(String.fromCharCode.apply(null, bytes.subarray(i2, i2 + len)));</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return chunks.join("");</span>
 <span class="cstat-no" title="statement not covered" >        } };</span>
@@ -48189,13 +48189,13 @@
 <span class="cstat-no" title="statement not covered" >      lengthBytesUTF8: function(str) {</span>
 <span class="cstat-no" title="statement not covered" >        var c;</span>
 <span class="cstat-no" title="statement not covered" >        var len = 0;</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; str.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >          c = str.charCodeAt(i);</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; str.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >          c = str.charCodeAt(i2);</span>
 <span class="cstat-no" title="statement not covered" >          if (c &lt;= 127) len++;</span>
 <span class="cstat-no" title="statement not covered" >          else if (c &lt;= 2047) len += 2;</span>
 <span class="cstat-no" title="statement not covered" >          else if (c &gt;= 55296 &amp;&amp; c &lt;= 57343) {</span>
 <span class="cstat-no" title="statement not covered" >            len += 4;</span>
-<span class="cstat-no" title="statement not covered" >            ++i;</span>
+<span class="cstat-no" title="statement not covered" >            ++i2;</span>
 <span class="cstat-no" title="statement not covered" >          } else len += 3;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return len;</span>
@@ -48242,10 +48242,10 @@
 <span class="cstat-no" title="statement not covered" >        if (!(maxBytesToWrite &gt; 0)) return 0;</span>
 <span class="cstat-no" title="statement not covered" >        var startIdx = outIdx;</span>
 <span class="cstat-no" title="statement not covered" >        var endIdx = outIdx + maxBytesToWrite - 1;</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; str.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >          var u = str.charCodeAt(i);</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; str.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >          var u = str.charCodeAt(i2);</span>
 <span class="cstat-no" title="statement not covered" >          if (u &gt;= 55296 &amp;&amp; u &lt;= 57343) {</span>
-<span class="cstat-no" title="statement not covered" >            var u1 = str.charCodeAt(++i);</span>
+<span class="cstat-no" title="statement not covered" >            var u1 = str.charCodeAt(++i2);</span>
 <span class="cstat-no" title="statement not covered" >            u = 65536 + ((u &amp; 1023) &lt;&lt; 10) | u1 &amp; 1023;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (u &lt;= 127) {</span>
@@ -48293,8 +48293,8 @@
 <span class="cstat-no" title="statement not covered" >        var startPtr = outPtr;</span>
 <span class="cstat-no" title="statement not covered" >        var numCharsToWrite = maxBytesToWrite &lt; str.length * 2 ? maxBytesToWrite / 2 : str.length;</span>
 <span class="cstat-no" title="statement not covered" >        var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; numCharsToWrite; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >          var codeUnit = str.charCodeAt(i);</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; numCharsToWrite; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >          var codeUnit = str.charCodeAt(i2);</span>
 <span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setInt16(outPtr, codeUnit, true);</span>
 <span class="cstat-no" title="statement not covered" >          outPtr += 2;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -48657,11 +48657,11 @@
 <span class="cstat-no" title="statement not covered" >          bigintValue = bigintValue &gt;&gt; BigInt(64);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        var len = Math.min(word_count_int, wordsArr.length);</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; len; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          var low = Number(wordsArr[i] &amp; BigInt(4294967295));</span>
-<span class="cstat-no" title="statement not covered" >          var high = Number(wordsArr[i] &gt;&gt; BigInt(32));</span>
-<span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setUint32(words + i * 8, low, true);</span>
-<span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setUint32(words + (i * 8 + 4), high, true);</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; len; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          var low = Number(wordsArr[i2] &amp; BigInt(4294967295));</span>
+<span class="cstat-no" title="statement not covered" >          var high = Number(wordsArr[i2] &gt;&gt; BigInt(32));</span>
+<span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setUint32(words + i2 * 8, low, true);</span>
+<span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setUint32(words + (i2 * 8 + 4), high, true);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        HEAP_DATA_VIEW.setInt32(sign_bit, isMinus ? 1 : 0, true);</span>
 <span class="cstat-no" title="statement not covered" >        HEAP_DATA_VIEW.setUint32(word_count, len, true);</span>
@@ -48735,9 +48735,9 @@
 <span class="cstat-no" title="statement not covered" >      } else if (buf_size !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >        var copied = 0;</span>
 <span class="cstat-no" title="statement not covered" >        var v = void 0;</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; buf_size - 1; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >          v = handle.value.charCodeAt(i) &amp; 255;</span>
-<span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setUint8(buf + i, v, true);</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; buf_size - 1; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >          v = handle.value.charCodeAt(i2) &amp; 255;</span>
+<span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setUint8(buf + i2, v, true);</span>
 <span class="cstat-no" title="statement not covered" >          copied++;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        HEAP_DATA_VIEW.setUint8(buf + copied, 0, true);</span>
@@ -48939,7 +48939,7 @@
 <span class="cstat-no" title="statement not covered" >      return envObject.clearLastError();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function napi_create_bigint_words(env, sign_bit, word_count, words, result) {</span>
-<span class="cstat-no" title="statement not covered" >      var v, i;</span>
+<span class="cstat-no" title="statement not covered" >      var v, i2;</span>
 <span class="cstat-no" title="statement not covered" >      if (!env) return 1;</span>
 <span class="cstat-no" title="statement not covered" >      var envObject = emnapiCtx.envStore.get(env);</span>
 <span class="cstat-no" title="statement not covered" >      envObject.checkGCAccess();</span>
@@ -48956,11 +48956,11 @@
 <span class="cstat-no" title="statement not covered" >        if (word_count &gt; 1024 * 1024 / 32 / 2) throw new RangeError("Maximum BigInt size exceeded");</span>
 <span class="cstat-no" title="statement not covered" >        var value = BigInt(0);</span>
 <span class="cstat-no" title="statement not covered" >        var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
-<span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; word_count; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          var low = HEAP_DATA_VIEW.getUint32(words + i * 8, true);</span>
-<span class="cstat-no" title="statement not covered" >          var high = HEAP_DATA_VIEW.getUint32(words + (i * 8 + 4), true);</span>
+<span class="cstat-no" title="statement not covered" >        for (i2 = 0; i2 &lt; word_count; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          var low = HEAP_DATA_VIEW.getUint32(words + i2 * 8, true);</span>
+<span class="cstat-no" title="statement not covered" >          var high = HEAP_DATA_VIEW.getUint32(words + (i2 * 8 + 4), true);</span>
 <span class="cstat-no" title="statement not covered" >          var wordi = BigInt(low) | BigInt(high) &lt;&lt; BigInt(32);</span>
-<span class="cstat-no" title="statement not covered" >          value += wordi &lt;&lt; BigInt(64 * i);</span>
+<span class="cstat-no" title="statement not covered" >          value += wordi &lt;&lt; BigInt(64 * i2);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        value *= BigInt(sign_bit) % BigInt(2) === BigInt(0) ? BigInt(1) : BigInt(-1);</span>
 <span class="cstat-no" title="statement not covered" >        result &gt;&gt;&gt;= 0;</span>
@@ -49182,8 +49182,8 @@
 <span class="cstat-no" title="statement not covered" >        var F = fresult.f;</span>
 <span class="cstat-no" title="statement not covered" >        var propertyName = void 0;</span>
 <span class="cstat-no" title="statement not covered" >        var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; property_count; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          propPtr = properties + i * 32;</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; property_count; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          propPtr = properties + i2 * 32;</span>
 <span class="cstat-no" title="statement not covered" >          var utf8Name = HEAP_DATA_VIEW.getUint32(propPtr, true);</span>
 <span class="cstat-no" title="statement not covered" >          var name_1 = HEAP_DATA_VIEW.getUint32(propPtr + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >          var method = HEAP_DATA_VIEW.getUint32(propPtr + 8, true);</span>
@@ -49824,11 +49824,11 @@
 <span class="cstat-no" title="statement not covered" >      property_names &gt;&gt;&gt;= 0;</span>
 <span class="cstat-no" title="statement not covered" >      property_values &gt;&gt;&gt;= 0;</span>
 <span class="cstat-no" title="statement not covered" >      var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
-<span class="cstat-no" title="statement not covered" >      for (var i = 0; i &lt; property_count; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        var name_value = emnapiCtx.handleStore.get(HEAP_DATA_VIEW.getUint32(property_names + i * 4, true)).value;</span>
+<span class="cstat-no" title="statement not covered" >      for (var i2 = 0; i2 &lt; property_count; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        var name_value = emnapiCtx.handleStore.get(HEAP_DATA_VIEW.getUint32(property_names + i2 * 4, true)).value;</span>
 <span class="cstat-no" title="statement not covered" >        if (!(typeof name_value === "string" || typeof name_value === "symbol")) return envObject.setLastError(4);</span>
 <span class="cstat-no" title="statement not covered" >        properties[name_value] = {</span>
-<span class="cstat-no" title="statement not covered" >          value: emnapiCtx.handleStore.get(HEAP_DATA_VIEW.getUint32(property_values + i * 4, true)).value,</span>
+<span class="cstat-no" title="statement not covered" >          value: emnapiCtx.handleStore.get(HEAP_DATA_VIEW.getUint32(property_values + i2 * 4, true)).value,</span>
 <span class="cstat-no" title="statement not covered" >          writable: true,</span>
 <span class="cstat-no" title="statement not covered" >          enumerable: true,</span>
 <span class="cstat-no" title="statement not covered" >          configurable: true</span>
@@ -50520,12 +50520,12 @@
 <span class="cstat-no" title="statement not covered" >        argcValue &gt;&gt;&gt;= 0;</span>
 <span class="cstat-no" title="statement not covered" >        var len = cbinfoValue.args.length;</span>
 <span class="cstat-no" title="statement not covered" >        var arrlen = argcValue &lt; len ? argcValue : len;</span>
-<span class="cstat-no" title="statement not covered" >        var i = 0;</span>
-<span class="cstat-no" title="statement not covered" >        for (; i &lt; arrlen; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          var argVal = envObject.ensureHandleId(cbinfoValue.args[i]);</span>
-<span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setUint32(argv + i * 4, argVal, true);</span>
+<span class="cstat-no" title="statement not covered" >        var i2 = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (; i2 &lt; arrlen; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          var argVal = envObject.ensureHandleId(cbinfoValue.args[i2]);</span>
+<span class="cstat-no" title="statement not covered" >          HEAP_DATA_VIEW.setUint32(argv + i2 * 4, argVal, true);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (i &lt; argcValue) for (; i &lt; argcValue; i++) HEAP_DATA_VIEW.setUint32(argv + i * 4, 1, true);</span>
+<span class="cstat-no" title="statement not covered" >        if (i2 &lt; argcValue) for (; i2 &lt; argcValue; i2++) HEAP_DATA_VIEW.setUint32(argv + i2 * 4, 1, true);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (argc) HEAP_DATA_VIEW.setUint32(argc, cbinfoValue.args.length, true);</span>
 <span class="cstat-no" title="statement not covered" >      if (this_arg) {</span>
@@ -50540,7 +50540,7 @@
 <span class="cstat-no" title="statement not covered" >      return envObject.clearLastError();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function napi_call_function(env, recv, func, argc, argv, result) {</span>
-<span class="cstat-no" title="statement not covered" >      var i = 0;</span>
+<span class="cstat-no" title="statement not covered" >      var i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >      var v;</span>
 <span class="cstat-no" title="statement not covered" >      if (!env) return 1;</span>
 <span class="cstat-no" title="statement not covered" >      var envObject = emnapiCtx.envStore.get(env);</span>
@@ -50563,8 +50563,8 @@
 <span class="cstat-no" title="statement not covered" >        if (typeof v8func !== "function") return envObject.setLastError(1);</span>
 <span class="cstat-no" title="statement not covered" >        var args = [];</span>
 <span class="cstat-no" title="statement not covered" >        var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
-<span class="cstat-no" title="statement not covered" >        for (; i &lt; argc; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          var argVal = HEAP_DATA_VIEW.getUint32(argv + i * 4, true);</span>
+<span class="cstat-no" title="statement not covered" >        for (; i2 &lt; argc; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          var argVal = HEAP_DATA_VIEW.getUint32(argv + i2 * 4, true);</span>
 <span class="cstat-no" title="statement not covered" >          args.push(emnapiCtx.handleStore.get(argVal).value);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        var ret = v8func.apply(v8recv, args);</span>
@@ -50579,7 +50579,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function napi_new_instance(env, constructor, argc, argv, result) {</span>
-<span class="cstat-no" title="statement not covered" >      var i;</span>
+<span class="cstat-no" title="statement not covered" >      var i2;</span>
 <span class="cstat-no" title="statement not covered" >      var v;</span>
 <span class="cstat-no" title="statement not covered" >      if (!env) return 1;</span>
 <span class="cstat-no" title="statement not covered" >      var envObject = emnapiCtx.envStore.get(env);</span>
@@ -50603,17 +50603,17 @@
 <span class="cstat-no" title="statement not covered" >        var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
 <span class="cstat-no" title="statement not covered" >        if (emnapiCtx.feature.supportReflect) {</span>
 <span class="cstat-no" title="statement not covered" >          var argList = Array(argc);</span>
-<span class="cstat-no" title="statement not covered" >          for (i = 0; i &lt; argc; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            var argVal = HEAP_DATA_VIEW.getUint32(argv + i * 4, true);</span>
-<span class="cstat-no" title="statement not covered" >            argList[i] = emnapiCtx.handleStore.get(argVal).value;</span>
+<span class="cstat-no" title="statement not covered" >          for (i2 = 0; i2 &lt; argc; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >            var argVal = HEAP_DATA_VIEW.getUint32(argv + i2 * 4, true);</span>
+<span class="cstat-no" title="statement not covered" >            argList[i2] = emnapiCtx.handleStore.get(argVal).value;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          ret = Reflect.construct(Ctor, argList, Ctor);</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          var args = Array(argc + 1);</span>
 <span class="cstat-no" title="statement not covered" >          args[0] = void 0;</span>
-<span class="cstat-no" title="statement not covered" >          for (i = 0; i &lt; argc; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            var argVal = HEAP_DATA_VIEW.getUint32(argv + i * 4, true);</span>
-<span class="cstat-no" title="statement not covered" >            args[i + 1] = emnapiCtx.handleStore.get(argVal).value;</span>
+<span class="cstat-no" title="statement not covered" >          for (i2 = 0; i2 &lt; argc; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >            var argVal = HEAP_DATA_VIEW.getUint32(argv + i2 * 4, true);</span>
+<span class="cstat-no" title="statement not covered" >            args[i2 + 1] = emnapiCtx.handleStore.get(argVal).value;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          ret = new (Ctor.bind.apply(Ctor, args))();</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -50920,20 +50920,20 @@
 <span class="cstat-no" title="statement not covered" >        var props = [];</span>
 <span class="cstat-no" title="statement not covered" >        var names = void 0;</span>
 <span class="cstat-no" title="statement not covered" >        var symbols = void 0;</span>
-<span class="cstat-no" title="statement not covered" >        var i = void 0;</span>
+<span class="cstat-no" title="statement not covered" >        var i2 = void 0;</span>
 <span class="cstat-no" title="statement not covered" >        var own = true;</span>
 <span class="cstat-no" title="statement not covered" >        var integerIndiceRegex = /^(0|[1-9][0-9]*)$/;</span>
 <span class="cstat-no" title="statement not covered" >        do {</span>
 <span class="cstat-no" title="statement not covered" >          names = Object.getOwnPropertyNames(obj);</span>
 <span class="cstat-no" title="statement not covered" >          symbols = Object.getOwnPropertySymbols(obj);</span>
-<span class="cstat-no" title="statement not covered" >          for (i = 0; i &lt; names.length; i++) props.push({</span>
-<span class="cstat-no" title="statement not covered" >            name: integerIndiceRegex.test(names[i]) ? Number(names[i]) : names[i],</span>
-<span class="cstat-no" title="statement not covered" >            desc: Object.getOwnPropertyDescriptor(obj, names[i]),</span>
+<span class="cstat-no" title="statement not covered" >          for (i2 = 0; i2 &lt; names.length; i2++) props.push({</span>
+<span class="cstat-no" title="statement not covered" >            name: integerIndiceRegex.test(names[i2]) ? Number(names[i2]) : names[i2],</span>
+<span class="cstat-no" title="statement not covered" >            desc: Object.getOwnPropertyDescriptor(obj, names[i2]),</span>
 <span class="cstat-no" title="statement not covered" >            own</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
-<span class="cstat-no" title="statement not covered" >          for (i = 0; i &lt; symbols.length; i++) props.push({</span>
-<span class="cstat-no" title="statement not covered" >            name: symbols[i],</span>
-<span class="cstat-no" title="statement not covered" >            desc: Object.getOwnPropertyDescriptor(obj, symbols[i]),</span>
+<span class="cstat-no" title="statement not covered" >          for (i2 = 0; i2 &lt; symbols.length; i2++) props.push({</span>
+<span class="cstat-no" title="statement not covered" >            name: symbols[i2],</span>
+<span class="cstat-no" title="statement not covered" >            desc: Object.getOwnPropertyDescriptor(obj, symbols[i2]),</span>
 <span class="cstat-no" title="statement not covered" >            own</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >          if (key_mode === 1) break;</span>
@@ -50951,8 +50951,8 @@
 <span class="cstat-no" title="statement not covered" >            } else ret2.push(realName);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        };</span>
-<span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; props.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          var prop = props[i];</span>
+<span class="cstat-no" title="statement not covered" >        for (i2 = 0; i2 &lt; props.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          var prop = props[i2];</span>
 <span class="cstat-no" title="statement not covered" >          var name_1 = prop.name;</span>
 <span class="cstat-no" title="statement not covered" >          var desc = prop.desc;</span>
 <span class="cstat-no" title="statement not covered" >          if (key_filter === 0) addName(ret, name_1, key_filter, key_conversion);</span>
@@ -51342,8 +51342,8 @@
 <span class="cstat-no" title="statement not covered" >        if (!(h.isObject() || h.isFunction())) return envObject.setLastError(2);</span>
 <span class="cstat-no" title="statement not covered" >        var propertyName = void 0;</span>
 <span class="cstat-no" title="statement not covered" >        var HEAP_DATA_VIEW = new DataView(wasmMemory.buffer);</span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; property_count; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          propPtr = properties + i * 32;</span>
+<span class="cstat-no" title="statement not covered" >        for (var i2 = 0; i2 &lt; property_count; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          propPtr = properties + i2 * 32;</span>
 <span class="cstat-no" title="statement not covered" >          var utf8Name = HEAP_DATA_VIEW.getUint32(propPtr, true);</span>
 <span class="cstat-no" title="statement not covered" >          var name_2 = HEAP_DATA_VIEW.getUint32(propPtr + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >          var method = HEAP_DATA_VIEW.getUint32(propPtr + 8, true);</span>
@@ -51792,8 +51792,8 @@
 <span class="cstat-no" title="statement not covered" >    napiModule.emnapi.getMemoryAddress = $emnapiGetMemoryAddress;</span>
 <span class="cstat-no" title="statement not covered" >    function addImports(mod) {</span>
 <span class="cstat-no" title="statement not covered" >      var keys = Object.keys(mod);</span>
-<span class="cstat-no" title="statement not covered" >      for (var i = 0; i &lt; keys.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >        var k = keys[i];</span>
+<span class="cstat-no" title="statement not covered" >      for (var i2 = 0; i2 &lt; keys.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >        var k = keys[i2];</span>
 <span class="cstat-no" title="statement not covered" >        if (k.indexOf("$") === 0) continue;</span>
 <span class="cstat-no" title="statement not covered" >        if (k.indexOf("emnapi_") === 0) napiModule.imports.emnapi[k] = mod[k];</span>
 <span class="cstat-no" title="statement not covered" >        else if (k.indexOf("_emnapi_") === 0 || k === "napi_set_last_error" || k === "napi_clear_last_error") napiModule.imports.env[k] = mod[k];</span>
@@ -52167,7 +52167,7 @@
 <span class="cstat-no" title="statement not covered" >  HandleStore2.prototype.erase = function(start, end) {</span>
 <span class="cstat-no" title="statement not covered" >    this._next = start;</span>
 <span class="cstat-no" title="statement not covered" >    var values = this._values;</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = start; i &lt; end; ++i) values[i].dispose();</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = start; i2 &lt; end; ++i2) values[i2].dispose();</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  HandleStore2.prototype.get = function(id) {</span>
 <span class="cstat-no" title="statement not covered" >    return this._values[id];</span>
@@ -52920,8 +52920,8 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  Store2.prototype.dispose = function() {</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 1; i &lt; this._size; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      var value = this._values[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 1; i2 &lt; this._size; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      var value = this._values[i2];</span>
 <span class="cstat-no" title="statement not covered" >      value === null || value === void 0 || value.dispose();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    this._values = [void 0];</span>
@@ -52973,10 +52973,10 @@
 <span class="cstat-no" title="statement not covered" >    this._cleanupHooks.push(new CleanupHookCallback(envObject, fn, arg, this._cleanupHookCounter++));</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  CleanupQueue2.prototype.remove = function(envObject, fn, arg) {</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; this._cleanupHooks.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      var hook = this._cleanupHooks[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; this._cleanupHooks.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      var hook = this._cleanupHooks[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (hook.envObject === envObject &amp;&amp; hook.fn === fn &amp;&amp; hook.arg === arg) {</span>
-<span class="cstat-no" title="statement not covered" >        this._cleanupHooks.splice(i, 1);</span>
+<span class="cstat-no" title="statement not covered" >        this._cleanupHooks.splice(i2, 1);</span>
 <span class="cstat-no" title="statement not covered" >        return;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -52986,8 +52986,8 @@
 <span class="cstat-no" title="statement not covered" >    hooks.sort(function(a, b) {</span>
 <span class="cstat-no" title="statement not covered" >      return b.order - a.order;</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; hooks.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      var cb = hooks[i];</span>
+<span class="cstat-no" title="statement not covered" >    for (var i2 = 0; i2 &lt; hooks.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      var cb = hooks[i2];</span>
 <span class="cstat-no" title="statement not covered" >      if (typeof cb.fn === "number") cb.envObject.makeDynCall_vp(cb.fn)(cb.arg);</span>
 <span class="cstat-no" title="statement not covered" >      else cb.fn(cb.arg);</span>
 <span class="cstat-no" title="statement not covered" >      this._cleanupHooks.splice(this._cleanupHooks.indexOf(cb), 1);</span>
@@ -53189,12 +53189,12 @@
 <span class="cstat-no" title="statement not covered" >  let lastSlash = -1;</span>
 <span class="cstat-no" title="statement not covered" >  let dots = 0;</span>
 <span class="cstat-no" title="statement not covered" >  let code = 0;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt;= path.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >    if (i &lt; path.length) code = path.charCodeAt(i);</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt;= path.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >    if (i2 &lt; path.length) code = path.charCodeAt(i2);</span>
 <span class="cstat-no" title="statement not covered" >    else if (isPathSeparator(code)) break;</span>
 <span class="cstat-no" title="statement not covered" >    else code = CHAR_FORWARD_SLASH;</span>
 <span class="cstat-no" title="statement not covered" >    if (isPathSeparator(code)) {</span>
-<span class="cstat-no" title="statement not covered" >      if (lastSlash === i - 1 || dots === 1) ;</span>
+<span class="cstat-no" title="statement not covered" >      if (lastSlash === i2 - 1 || dots === 1) ;</span>
 <span class="cstat-no" title="statement not covered" >      else if (dots === 2) {</span>
 <span class="cstat-no" title="statement not covered" >        if (res.length &lt; 2 || lastSegmentLength !== 2 || res.charCodeAt(res.length - 1) !== CHAR_DOT || res.charCodeAt(res.length - 2) !== CHAR_DOT) {</span>
 <span class="cstat-no" title="statement not covered" >          if (res.length &gt; 2) {</span>
@@ -53206,13 +53206,13 @@
 <span class="cstat-no" title="statement not covered" >              res = res.slice(0, lastSlashIndex);</span>
 <span class="cstat-no" title="statement not covered" >              lastSegmentLength = res.length - 1 - res.indexOf(separator);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            lastSlash = i;</span>
+<span class="cstat-no" title="statement not covered" >            lastSlash = i2;</span>
 <span class="cstat-no" title="statement not covered" >            dots = 0;</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          } else if (res.length !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >            res = "";</span>
 <span class="cstat-no" title="statement not covered" >            lastSegmentLength = 0;</span>
-<span class="cstat-no" title="statement not covered" >            lastSlash = i;</span>
+<span class="cstat-no" title="statement not covered" >            lastSlash = i2;</span>
 <span class="cstat-no" title="statement not covered" >            dots = 0;</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -53222,11 +53222,11 @@
 <span class="cstat-no" title="statement not covered" >          lastSegmentLength = 2;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        if (res.length &gt; 0) res += `${separator}${path.slice(lastSlash + 1, i)}`;</span>
-<span class="cstat-no" title="statement not covered" >        else res = path.slice(lastSlash + 1, i);</span>
-<span class="cstat-no" title="statement not covered" >        lastSegmentLength = i - lastSlash - 1;</span>
+<span class="cstat-no" title="statement not covered" >        if (res.length &gt; 0) res += `${separator}${path.slice(lastSlash + 1, i2)}`;</span>
+<span class="cstat-no" title="statement not covered" >        else res = path.slice(lastSlash + 1, i2);</span>
+<span class="cstat-no" title="statement not covered" >        lastSegmentLength = i2 - lastSlash - 1;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      lastSlash = i;</span>
+<span class="cstat-no" title="statement not covered" >      lastSlash = i2;</span>
 <span class="cstat-no" title="statement not covered" >      dots = 0;</span>
 <span class="cstat-no" title="statement not covered" >    } else if (code === CHAR_DOT &amp;&amp; dots !== -1) ++dots;</span>
 <span class="cstat-no" title="statement not covered" >    else dots = -1;</span>
@@ -53236,8 +53236,8 @@
 <span class="cstat-no" title="statement not covered" >function resolve(...args) {</span>
 <span class="cstat-no" title="statement not covered" >  let resolvedPath = "";</span>
 <span class="cstat-no" title="statement not covered" >  let resolvedAbsolute = false;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = args.length - 1; i &gt;= -1 &amp;&amp; !resolvedAbsolute; i--) {</span>
-<span class="cstat-no" title="statement not covered" >    const path = i &gt;= 0 ? args[i] : "/";</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = args.length - 1; i2 &gt;= -1 &amp;&amp; !resolvedAbsolute; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >    const path = i2 &gt;= 0 ? args[i2] : "/";</span>
 <span class="cstat-no" title="statement not covered" >    validateString(path, "path");</span>
 <span class="cstat-no" title="statement not covered" >    if (path.length === 0) continue;</span>
 <span class="cstat-no" title="statement not covered" >    resolvedPath = `${path}/${resolvedPath}`;</span>
@@ -53511,14 +53511,14 @@
 <span class="cstat-no" title="statement not covered" >function concatBuffer(buffers, size) {</span>
 <span class="cstat-no" title="statement not covered" >  let total = 0;</span>
 <span class="cstat-no" title="statement not covered" >  if (typeof size === "number" &amp;&amp; size &gt;= 0) total = size;</span>
-<span class="cstat-no" title="statement not covered" >  else for (let i = 0; i &lt; buffers.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    const buffer = buffers[i];</span>
+<span class="cstat-no" title="statement not covered" >  else for (let i2 = 0; i2 &lt; buffers.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    const buffer = buffers[i2];</span>
 <span class="cstat-no" title="statement not covered" >    total += buffer.length;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let pos = 0;</span>
 <span class="cstat-no" title="statement not covered" >  const ret = new Uint8Array(total);</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; buffers.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    const buffer = buffers[i];</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; buffers.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    const buffer = buffers[i2];</span>
 <span class="cstat-no" title="statement not covered" >    ret.set(buffer, pos);</span>
 <span class="cstat-no" title="statement not covered" >    pos += buffer.length;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -53624,8 +53624,8 @@
 <span class="cstat-no" title="statement not covered" >      this.fds.length = newSize;</span>
 <span class="cstat-no" title="statement not covered" >      index = this.size;</span>
 <span class="cstat-no" title="statement not covered" >      this.size = newSize;</span>
-<span class="cstat-no" title="statement not covered" >    } else for (let i = 0; i &lt; this.size; ++i) if (this.fds[i] == null) {</span>
-<span class="cstat-no" title="statement not covered" >      index = i;</span>
+<span class="cstat-no" title="statement not covered" >    } else for (let i2 = 0; i2 &lt; this.size; ++i2) if (this.fds[i2] == null) {</span>
+<span class="cstat-no" title="statement not covered" >      index = i2;</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    let entry;</span>
@@ -53768,8 +53768,8 @@
 <span class="cstat-no" title="statement not covered" >  if (targets.length === 0 || src.length === 0) return 0;</span>
 <span class="cstat-no" title="statement not covered" >  let copied = 0;</span>
 <span class="cstat-no" title="statement not covered" >  let left = src.length - copied;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; targets.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >    const target = targets[i];</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; targets.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >    const target = targets[i2];</span>
 <span class="cstat-no" title="statement not covered" >    if (left &lt; target.length) {</span>
 <span class="cstat-no" title="statement not covered" >      target.set(src.subarray(copied, copied + left), 0);</span>
 <span class="cstat-no" title="statement not covered" >      copied += left;</span>
@@ -53897,8 +53897,8 @@
 <span class="cstat-no" title="statement not covered" >      if (argv === 0 || argv_buf === 0) return 28;</span>
 <span class="cstat-no" title="statement not covered" >      const { HEAPU8, view } = getMemory(this);</span>
 <span class="cstat-no" title="statement not covered" >      const args2 = _wasi.get(this).args;</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; args2.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >        const arg = args2[i];</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 0; i2 &lt; args2.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >        const arg = args2[i2];</span>
 <span class="cstat-no" title="statement not covered" >        view.setInt32(argv, argv_buf, true);</span>
 <span class="cstat-no" title="statement not covered" >        argv += 4;</span>
 <span class="cstat-no" title="statement not covered" >        const data = encoder.encode(arg + "\0");</span>
@@ -53923,8 +53923,8 @@
 <span class="cstat-no" title="statement not covered" >      if (environ === 0 || environ_buf === 0) return 28;</span>
 <span class="cstat-no" title="statement not covered" >      const { HEAPU8, view } = getMemory(this);</span>
 <span class="cstat-no" title="statement not covered" >      const env2 = _wasi.get(this).env;</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; env2.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >        const pair = env2[i];</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = 0; i2 &lt; env2.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >        const pair = env2[i2];</span>
 <span class="cstat-no" title="statement not covered" >        view.setInt32(environ, environ_buf, true);</span>
 <span class="cstat-no" title="statement not covered" >        environ += 4;</span>
 <span class="cstat-no" title="statement not covered" >        const data = encoder.encode(pair + "\0");</span>
@@ -54061,19 +54061,19 @@
 <span class="cstat-no" title="statement not covered" >      if (in_ptr === 0 || out_ptr === 0 || nsubscriptions === 0 || nevents === 0) return 28;</span>
 <span class="cstat-no" title="statement not covered" >      const { view } = getMemory(this);</span>
 <span class="cstat-no" title="statement not covered" >      view.setUint32(nevents, 0, true);</span>
-<span class="cstat-no" title="statement not covered" >      let i = 0;</span>
+<span class="cstat-no" title="statement not covered" >      let i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >      let timer_userdata = BigInt(0);</span>
 <span class="cstat-no" title="statement not covered" >      let cur_timeout = BigInt(0);</span>
 <span class="cstat-no" title="statement not covered" >      let has_timeout = 0;</span>
 <span class="cstat-no" title="statement not covered" >      let min_timeout = BigInt(0);</span>
 <span class="cstat-no" title="statement not covered" >      let sub;</span>
 <span class="cstat-no" title="statement not covered" >      const subscriptions = Array(nsubscriptions);</span>
-<span class="cstat-no" title="statement not covered" >      for (i = 0; i &lt; nsubscriptions; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        sub = in_ptr + i * 48;</span>
+<span class="cstat-no" title="statement not covered" >      for (i2 = 0; i2 &lt; nsubscriptions; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        sub = in_ptr + i2 * 48;</span>
 <span class="cstat-no" title="statement not covered" >        const userdata = view.getBigUint64(sub, true);</span>
 <span class="cstat-no" title="statement not covered" >        const type = view.getUint8(sub + 8);</span>
 <span class="cstat-no" title="statement not covered" >        const clockIdOrFd = view.getUint32(sub + 16, true);</span>
-<span class="cstat-no" title="statement not covered" >        subscriptions[i] = {</span>
+<span class="cstat-no" title="statement not covered" >        subscriptions[i2] = {</span>
 <span class="cstat-no" title="statement not covered" >          userdata,</span>
 <span class="cstat-no" title="statement not covered" >          type,</span>
 <span class="cstat-no" title="statement not covered" >          u: {</span>
@@ -54088,8 +54088,8 @@
 <span class="cstat-no" title="statement not covered" >        };</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const fdevents = [];</span>
-<span class="cstat-no" title="statement not covered" >      for (i = 0; i &lt; nsubscriptions; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        sub = subscriptions[i];</span>
+<span class="cstat-no" title="statement not covered" >      for (i2 = 0; i2 &lt; nsubscriptions; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        sub = subscriptions[i2];</span>
 <span class="cstat-no" title="statement not covered" >        switch (sub.type) {</span>
 <span class="cstat-no" title="statement not covered" >          case 0:</span>
 <span class="cstat-no" title="statement not covered" >            if (sub.u.clock.flags === 1) {</span>
@@ -54111,9 +54111,9 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (fdevents.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; fdevents.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          const fdevent = fdevents[i];</span>
-<span class="cstat-no" title="statement not covered" >          const event = out_ptr + 32 * i;</span>
+<span class="cstat-no" title="statement not covered" >        for (i2 = 0; i2 &lt; fdevents.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >          const fdevent = fdevents[i2];</span>
+<span class="cstat-no" title="statement not covered" >          const event = out_ptr + 32 * i2;</span>
 <span class="cstat-no" title="statement not covered" >          view.setBigUint64(event, fdevent.userdata, true);</span>
 <span class="cstat-no" title="statement not covered" >          view.setUint32(event + 8, 52, true);</span>
 <span class="cstat-no" title="statement not covered" >          view.setUint32(event + 12, fdevent.type, true);</span>
@@ -54150,7 +54150,7 @@
 <span class="cstat-no" title="statement not covered" >      buf_len = Number(buf_len);</span>
 <span class="cstat-no" title="statement not covered" >      const { HEAPU8, view } = getMemory(this);</span>
 <span class="cstat-no" title="statement not covered" >      if (typeof SharedArrayBuffer === "function" &amp;&amp; HEAPU8.buffer instanceof SharedArrayBuffer || Object.prototype.toString.call(HEAPU8.buffer) === "[object SharedArrayBuffer]") {</span>
-<span class="cstat-no" title="statement not covered" >        for (let i = buf; i &lt; buf + buf_len; ++i) view.setUint8(i, Math.floor(Math.random() * 256));</span>
+<span class="cstat-no" title="statement not covered" >        for (let i2 = buf; i2 &lt; buf + buf_len; ++i2) view.setUint8(i2, Math.floor(Math.random() * 256));</span>
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let pos;</span>
@@ -54163,7 +54163,7 @@
 <span class="cstat-no" title="statement not covered" >      if (buf === 0) return 28;</span>
 <span class="cstat-no" title="statement not covered" >      buf_len = Number(buf_len);</span>
 <span class="cstat-no" title="statement not covered" >      const { view } = getMemory(this);</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = buf; i &lt; buf + buf_len; ++i) view.setUint8(i, Math.floor(Math.random() * 256));</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = buf; i2 &lt; buf + buf_len; ++i2) view.setUint8(i2, Math.floor(Math.random() * 256));</span>
 <span class="cstat-no" title="statement not covered" >      return 0;</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    this.sock_recv = syscallWrap(this, "sock_recv", function() {</span>
@@ -54286,8 +54286,8 @@
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let totalSize = 0;</span>
-<span class="cstat-no" title="statement not covered" >      const ioVecs = Array.from({ length: Number(iovslen) }, (_, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const offset2 = iovs + i * 8;</span>
+<span class="cstat-no" title="statement not covered" >      const ioVecs = Array.from({ length: Number(iovslen) }, (_, i2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const offset2 = iovs + i2 * 8;</span>
 <span class="cstat-no" title="statement not covered" >        const buf = view.getInt32(offset2, true);</span>
 <span class="cstat-no" title="statement not covered" >        const bufLen = view.getUint32(offset2 + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >        totalSize += bufLen;</span>
@@ -54317,8 +54317,8 @@
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let totalSize = 0;</span>
-<span class="cstat-no" title="statement not covered" >      const ioVecs = Array.from({ length: Number(iovslen) }, (_, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const offset2 = iovs + i * 8;</span>
+<span class="cstat-no" title="statement not covered" >      const ioVecs = Array.from({ length: Number(iovslen) }, (_, i2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const offset2 = iovs + i2 * 8;</span>
 <span class="cstat-no" title="statement not covered" >        const buf = view.getInt32(offset2, true);</span>
 <span class="cstat-no" title="statement not covered" >        const bufLen = view.getUint32(offset2 + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >        totalSize += bufLen;</span>
@@ -54348,8 +54348,8 @@
 <span class="cstat-no" title="statement not covered" >        view.setUint32(size, 0, true);</span>
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const buffer = concatBuffer(Array.from({ length: Number(iovslen) }, (_, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const offset2 = iovs + i * 8;</span>
+<span class="cstat-no" title="statement not covered" >      const buffer = concatBuffer(Array.from({ length: Number(iovslen) }, (_, i2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const offset2 = iovs + i2 * 8;</span>
 <span class="cstat-no" title="statement not covered" >        const buf = view.getInt32(offset2, true);</span>
 <span class="cstat-no" title="statement not covered" >        const bufLen = view.getUint32(offset2 + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >        return HEAPU8.subarray(buf, buf + bufLen);</span>
@@ -54367,8 +54367,8 @@
 <span class="cstat-no" title="statement not covered" >        view.setUint32(size, 0, true);</span>
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const buffer = concatBuffer(Array.from({ length: Number(iovslen) }, (_, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const offset2 = iovs + i * 8;</span>
+<span class="cstat-no" title="statement not covered" >      const buffer = concatBuffer(Array.from({ length: Number(iovslen) }, (_, i2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const offset2 = iovs + i2 * 8;</span>
 <span class="cstat-no" title="statement not covered" >        const buf = view.getInt32(offset2, true);</span>
 <span class="cstat-no" title="statement not covered" >        const bufLen = view.getUint32(offset2 + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >        return HEAPU8.subarray(buf, buf + bufLen);</span>
@@ -54394,8 +54394,8 @@
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let totalSize = 0;</span>
-<span class="cstat-no" title="statement not covered" >      const ioVecs = Array.from({ length: Number(iovslen) }, (_, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const offset = iovs + i * 8;</span>
+<span class="cstat-no" title="statement not covered" >      const ioVecs = Array.from({ length: Number(iovslen) }, (_, i2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const offset = iovs + i2 * 8;</span>
 <span class="cstat-no" title="statement not covered" >        const buf = view.getInt32(offset, true);</span>
 <span class="cstat-no" title="statement not covered" >        const bufLen = view.getUint32(offset + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >        totalSize += bufLen;</span>
@@ -54433,8 +54433,8 @@
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let totalSize = 0;</span>
-<span class="cstat-no" title="statement not covered" >      const ioVecs = Array.from({ length: Number(iovslen) }, (_, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const offset = iovs + i * 8;</span>
+<span class="cstat-no" title="statement not covered" >      const ioVecs = Array.from({ length: Number(iovslen) }, (_, i2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const offset = iovs + i2 * 8;</span>
 <span class="cstat-no" title="statement not covered" >        const buf = view.getInt32(offset, true);</span>
 <span class="cstat-no" title="statement not covered" >        const bufLen = view.getUint32(offset + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >        totalSize += bufLen;</span>
@@ -54471,21 +54471,21 @@
 <span class="cstat-no" title="statement not covered" >      const entries = fs2.readdirSync(fileDescriptor.realPath, { withFileTypes: true });</span>
 <span class="cstat-no" title="statement not covered" >      const { HEAPU8, view } = getMemory(this);</span>
 <span class="cstat-no" title="statement not covered" >      let bufferUsed = 0;</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = Number(cookie); i &lt; entries.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const nameData = encoder.encode(entries[i].name);</span>
-<span class="cstat-no" title="statement not covered" >        const entryInfo = fs2.statSync(resolve(fileDescriptor.realPath, entries[i].name), { bigint: true });</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = Number(cookie); i2 &lt; entries.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        const nameData = encoder.encode(entries[i2].name);</span>
+<span class="cstat-no" title="statement not covered" >        const entryInfo = fs2.statSync(resolve(fileDescriptor.realPath, entries[i2].name), { bigint: true });</span>
 <span class="cstat-no" title="statement not covered" >        const entryData = new Uint8Array(24 + nameData.byteLength);</span>
 <span class="cstat-no" title="statement not covered" >        const entryView = new DataView(entryData.buffer);</span>
-<span class="cstat-no" title="statement not covered" >        entryView.setBigUint64(0, BigInt(i + 1), true);</span>
+<span class="cstat-no" title="statement not covered" >        entryView.setBigUint64(0, BigInt(i2 + 1), true);</span>
 <span class="cstat-no" title="statement not covered" >        entryView.setBigUint64(8, BigInt(entryInfo.ino ? entryInfo.ino : 0), true);</span>
 <span class="cstat-no" title="statement not covered" >        entryView.setUint32(16, nameData.byteLength, true);</span>
 <span class="cstat-no" title="statement not covered" >        let type;</span>
-<span class="cstat-no" title="statement not covered" >        if (entries[i].isFile()) type = 4;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isDirectory()) type = 3;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isSymbolicLink()) type = 7;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isCharacterDevice()) type = 2;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isBlockDevice()) type = 1;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isSocket()) type = 6;</span>
+<span class="cstat-no" title="statement not covered" >        if (entries[i2].isFile()) type = 4;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isDirectory()) type = 3;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isSymbolicLink()) type = 7;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isCharacterDevice()) type = 2;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isBlockDevice()) type = 1;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isSocket()) type = 6;</span>
 <span class="cstat-no" title="statement not covered" >        else type = 0;</span>
 <span class="cstat-no" title="statement not covered" >        entryView.setUint8(20, type);</span>
 <span class="cstat-no" title="statement not covered" >        entryData.set(nameData, 24);</span>
@@ -54505,21 +54505,21 @@
 <span class="cstat-no" title="statement not covered" >      const entries = await fs2.promises.readdir(fileDescriptor.realPath, { withFileTypes: true });</span>
 <span class="cstat-no" title="statement not covered" >      const { HEAPU8, view } = getMemory(this);</span>
 <span class="cstat-no" title="statement not covered" >      let bufferUsed = 0;</span>
-<span class="cstat-no" title="statement not covered" >      for (let i = Number(cookie); i &lt; entries.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        const nameData = encoder.encode(entries[i].name);</span>
-<span class="cstat-no" title="statement not covered" >        const entryInfo = await fs2.promises.stat(resolve(fileDescriptor.realPath, entries[i].name), { bigint: true });</span>
+<span class="cstat-no" title="statement not covered" >      for (let i2 = Number(cookie); i2 &lt; entries.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >        const nameData = encoder.encode(entries[i2].name);</span>
+<span class="cstat-no" title="statement not covered" >        const entryInfo = await fs2.promises.stat(resolve(fileDescriptor.realPath, entries[i2].name), { bigint: true });</span>
 <span class="cstat-no" title="statement not covered" >        const entryData = new Uint8Array(24 + nameData.byteLength);</span>
 <span class="cstat-no" title="statement not covered" >        const entryView = new DataView(entryData.buffer);</span>
-<span class="cstat-no" title="statement not covered" >        entryView.setBigUint64(0, BigInt(i + 1), true);</span>
+<span class="cstat-no" title="statement not covered" >        entryView.setBigUint64(0, BigInt(i2 + 1), true);</span>
 <span class="cstat-no" title="statement not covered" >        entryView.setBigUint64(8, BigInt(entryInfo.ino ? entryInfo.ino : 0), true);</span>
 <span class="cstat-no" title="statement not covered" >        entryView.setUint32(16, nameData.byteLength, true);</span>
 <span class="cstat-no" title="statement not covered" >        let type;</span>
-<span class="cstat-no" title="statement not covered" >        if (entries[i].isFile()) type = 4;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isDirectory()) type = 3;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isSymbolicLink()) type = 7;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isCharacterDevice()) type = 2;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isBlockDevice()) type = 1;</span>
-<span class="cstat-no" title="statement not covered" >        else if (entries[i].isSocket()) type = 6;</span>
+<span class="cstat-no" title="statement not covered" >        if (entries[i2].isFile()) type = 4;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isDirectory()) type = 3;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isSymbolicLink()) type = 7;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isCharacterDevice()) type = 2;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isBlockDevice()) type = 1;</span>
+<span class="cstat-no" title="statement not covered" >        else if (entries[i2].isSocket()) type = 6;</span>
 <span class="cstat-no" title="statement not covered" >        else type = 0;</span>
 <span class="cstat-no" title="statement not covered" >        entryView.setUint8(20, type);</span>
 <span class="cstat-no" title="statement not covered" >        entryData.set(nameData, 24);</span>
@@ -54561,8 +54561,8 @@
 <span class="cstat-no" title="statement not covered" >        view.setUint32(size, 0, true);</span>
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const buffer = concatBuffer(Array.from({ length: Number(iovslen) }, (_, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const offset = iovs + i * 8;</span>
+<span class="cstat-no" title="statement not covered" >      const buffer = concatBuffer(Array.from({ length: Number(iovslen) }, (_, i2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const offset = iovs + i2 * 8;</span>
 <span class="cstat-no" title="statement not covered" >        const buf = view.getInt32(offset, true);</span>
 <span class="cstat-no" title="statement not covered" >        const bufLen = view.getUint32(offset + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >        return HEAPU8.subarray(buf, buf + bufLen);</span>
@@ -54585,8 +54585,8 @@
 <span class="cstat-no" title="statement not covered" >        view.setUint32(size, 0, true);</span>
 <span class="cstat-no" title="statement not covered" >        return 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const buffer = concatBuffer(Array.from({ length: Number(iovslen) }, (_, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const offset = iovs + i * 8;</span>
+<span class="cstat-no" title="statement not covered" >      const buffer = concatBuffer(Array.from({ length: Number(iovslen) }, (_, i2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const offset = iovs + i2 * 8;</span>
 <span class="cstat-no" title="statement not covered" >        const buf = view.getInt32(offset, true);</span>
 <span class="cstat-no" title="statement not covered" >        const bufLen = view.getUint32(offset + 4, true);</span>
 <span class="cstat-no" title="statement not covered" >        return HEAPU8.subarray(buf, buf + bufLen);</span>
@@ -55042,10 +55042,10 @@
 <span class="cstat-no" title="statement not covered" >      printErr</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    const _this = new WASI$12(args, env, fds, false, fs);</span>
-<span class="cstat-no" title="statement not covered" >    if (preopens.length &gt; 0) for (let i = 0; i &lt; preopens.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      const realPath = fs.realpathSync(preopens[i].realPath, "utf8");</span>
+<span class="cstat-no" title="statement not covered" >    if (preopens.length &gt; 0) for (let i2 = 0; i2 &lt; preopens.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      const realPath = fs.realpathSync(preopens[i2].realPath, "utf8");</span>
 <span class="cstat-no" title="statement not covered" >      const fd = fs.openSync(realPath, "r", 438);</span>
-<span class="cstat-no" title="statement not covered" >      fds.insertPreopen(fd, preopens[i].mappedPath, realPath);</span>
+<span class="cstat-no" title="statement not covered" >      fds.insertPreopen(fd, preopens[i2].mappedPath, realPath);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return _this;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -55059,8 +55059,8 @@
 <span class="cstat-no" title="statement not covered" >      printErr</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    const _this = new WASI$12(args, env, fds, true, fs, asyncify);</span>
-<span class="cstat-no" title="statement not covered" >    if (preopens.length &gt; 0) for (let i = 0; i &lt; preopens.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      const entry = preopens[i];</span>
+<span class="cstat-no" title="statement not covered" >    if (preopens.length &gt; 0) for (let i2 = 0; i2 &lt; preopens.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      const entry = preopens[i2];</span>
 <span class="cstat-no" title="statement not covered" >      const realPath = await fs.promises.realpath(entry.realPath);</span>
 <span class="cstat-no" title="statement not covered" >      const fd = await fs.promises.open(realPath, "r", 438);</span>
 <span class="cstat-no" title="statement not covered" >      await fds.insertPreopen(fd, entry.mappedPath, realPath);</span>
@@ -55599,10 +55599,10 @@
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let followingComment;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = comments.length - 1; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >    const comment = comments[i];</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = comments.length - 1; i2 &gt;= 0; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >    const comment = comments[i2];</span>
 <span class="cstat-no" title="statement not covered" >    if (followingComment &amp;&amp; locEnd(comment) === locStart(followingComment) &amp;&amp; isIndentableBlockComment(comment) &amp;&amp; isIndentableBlockComment(followingComment)) {</span>
-<span class="cstat-no" title="statement not covered" >      comments.splice(i + 1, 1);</span>
+<span class="cstat-no" title="statement not covered" >      comments.splice(i2 + 1, 1);</span>
 <span class="cstat-no" title="statement not covered" >      comment.value += "*//*" + followingComment.value;</span>
 <span class="cstat-no" title="statement not covered" >      comment.range = [locStart(comment), locEnd(followingComment)];</span>
 <span class="cstat-no" title="statement not covered" >      deleteIndentableBlockCommentLines(comment);</span>
@@ -56068,8 +56068,8 @@
 <span class="cstat-no" title="statement not covered" >    return node;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (Array.isArray(node)) {</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; node.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >      node[i] = visitNode(node[i], options2);</span>
+<span class="cstat-no" title="statement not covered" >    for (let i2 = 0; i2 &lt; node.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >      node[i2] = visitNode(node[i2], options2);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return node;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -56081,8 +56081,8 @@
 <span class="cstat-no" title="statement not covered" >    node = result;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const keys = get_visitor_keys_default(node);</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; keys.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    node[keys[i]] = visitNode(node[keys[i]], options2);</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; keys.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    node[keys[i2]] = visitNode(node[keys[i2]], options2);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (options2.onLeave) {</span>
 <span class="cstat-no" title="statement not covered" >    node = options2.onLeave(node) || node;</span>
@@ -56952,9 +56952,9 @@
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (text.charAt(startIndex) === "/" &amp;&amp; text.charAt(startIndex + 1) === "*") {</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = startIndex + 2; i &lt; text.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      if (text.charAt(i) === "*" &amp;&amp; text.charAt(i + 1) === "/") {</span>
-<span class="cstat-no" title="statement not covered" >        return i + 2;</span>
+<span class="cstat-no" title="statement not covered" >    for (let i2 = startIndex + 2; i2 &lt; text.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      if (text.charAt(i2) === "*" &amp;&amp; text.charAt(i2 + 1) === "/") {</span>
+<span class="cstat-no" title="statement not covered" >        return i2 + 2;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -57037,8 +57037,8 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/utilities/has-newline-in-range.js</span>
 <span class="cstat-no" title="statement not covered" >function hasNewlineInRange(text, startIndex, endIndex) {</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = startIndex; i &lt; endIndex; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >    if (text.charAt(i) === "\n") {</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = startIndex; i2 &lt; endIndex; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >    if (text.charAt(i2) === "\n") {</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -58996,10 +58996,10 @@
 <span class="cstat-no" title="statement not covered" >  "WithStatement"</span>
 <span class="cstat-no" title="statement not covered" >]);</span>
 <span class="cstat-no" title="statement not covered" >function isPathInForStatementInitializer(path) {</span>
-<span class="cstat-no" title="statement not covered" >  let i = 0;</span>
+<span class="cstat-no" title="statement not covered" >  let i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >  let { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  while (node) {</span>
-<span class="cstat-no" title="statement not covered" >    const parent = path.getParentNode(i++);</span>
+<span class="cstat-no" title="statement not covered" >    const parent = path.getParentNode(i2++);</span>
 <span class="cstat-no" title="statement not covered" >    if (parent?.type === "ForStatement" &amp;&amp; parent.init === node) {</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -59193,8 +59193,8 @@
 <span class="cstat-no" title="statement not covered" >      case DOC_TYPE_ARRAY:</span>
 <span class="cstat-no" title="statement not covered" >      case DOC_TYPE_FILL: {</span>
 <span class="cstat-no" title="statement not covered" >        const parts = docType === DOC_TYPE_ARRAY ? doc2 : doc2.parts;</span>
-<span class="cstat-no" title="statement not covered" >        for (let ic = parts.length, i = ic - 1; i &gt;= 0; --i) {</span>
-<span class="cstat-no" title="statement not covered" >          docsStack.push(parts[i]);</span>
+<span class="cstat-no" title="statement not covered" >        for (let ic = parts.length, i2 = ic - 1; i2 &gt;= 0; --i2) {</span>
+<span class="cstat-no" title="statement not covered" >          docsStack.push(parts[i2]);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -59203,8 +59203,8 @@
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      case DOC_TYPE_GROUP:</span>
 <span class="cstat-no" title="statement not covered" >        if (shouldTraverseConditionalGroups &amp;&amp; doc2.expandedStates) {</span>
-<span class="cstat-no" title="statement not covered" >          for (let ic = doc2.expandedStates.length, i = ic - 1; i &gt;= 0; --i) {</span>
-<span class="cstat-no" title="statement not covered" >            docsStack.push(doc2.expandedStates[i]);</span>
+<span class="cstat-no" title="statement not covered" >          for (let ic = doc2.expandedStates.length, i2 = ic - 1; i2 &gt;= 0; --i2) {</span>
+<span class="cstat-no" title="statement not covered" >            docsStack.push(doc2.expandedStates[i2]);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          docsStack.push(doc2.contents);</span>
@@ -59541,10 +59541,10 @@
 <span class="cstat-no" title="statement not covered" >    ))) {</span>
 <span class="cstat-no" title="statement not covered" >      parts = parts.slice(0, -1);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    for (const [i, doc] of parts.entries()) {</span>
-<span class="cstat-no" title="statement not covered" >      if (i % 2 === 1 &amp;&amp; !isValidSeparator(doc)) {</span>
+<span class="cstat-no" title="statement not covered" >    for (const [i2, doc] of parts.entries()) {</span>
+<span class="cstat-no" title="statement not covered" >      if (i2 % 2 === 1 &amp;&amp; !isValidSeparator(doc)) {</span>
 <span class="cstat-no" title="statement not covered" >        const type = get_doc_type_default(doc);</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Unexpected non-line-break doc at ${i}. Doc type is ${type}.`);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Unexpected non-line-break doc at ${i2}. Doc type is ${type}.`);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -59651,11 +59651,11 @@
 <span class="cstat-no" title="statement not covered" >  assertDoc(separator);</span>
 <span class="cstat-no" title="statement not covered" >  assertDocArray(docs);</span>
 <span class="cstat-no" title="statement not covered" >  const parts = [];</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; docs.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    if (i !== 0) {</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; docs.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    if (i2 !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(separator);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parts.push(docs[i]);</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(docs[i2]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return parts;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -59706,10 +59706,10 @@
 <span class="cstat-no" title="statement not covered" >  let high = Math.floor(ranges.length / 2) - 1;</span>
 <span class="cstat-no" title="statement not covered" >  while (low &lt;= high) {</span>
 <span class="cstat-no" title="statement not covered" >    const mid = Math.floor((low + high) / 2);</span>
-<span class="cstat-no" title="statement not covered" >    const i = mid * 2;</span>
-<span class="cstat-no" title="statement not covered" >    if (codePoint &lt; ranges[i]) {</span>
+<span class="cstat-no" title="statement not covered" >    const i2 = mid * 2;</span>
+<span class="cstat-no" title="statement not covered" >    if (codePoint &lt; ranges[i2]) {</span>
 <span class="cstat-no" title="statement not covered" >      high = mid - 1;</span>
-<span class="cstat-no" title="statement not covered" >    } else if (codePoint &gt; ranges[i + 1]) {</span>
+<span class="cstat-no" title="statement not covered" >    } else if (codePoint &gt; ranges[i2 + 1]) {</span>
 <span class="cstat-no" title="statement not covered" >      low = mid + 1;</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
@@ -61603,8 +61603,8 @@
 <span class="cstat-no" title="statement not covered" >// src/utilities/get-alignment-size.js</span>
 <span class="cstat-no" title="statement not covered" >function getAlignmentSize(text, tabWidth, startIndex = 0) {</span>
 <span class="cstat-no" title="statement not covered" >  let size = 0;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = startIndex; i &lt; text.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >    if (text[i] === "	") {</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = startIndex; i2 &lt; text.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >    if (text[i2] === "	") {</span>
 <span class="cstat-no" title="statement not covered" >      size = size + tabWidth - size % tabWidth;</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      size++;</span>
@@ -61680,19 +61680,19 @@
 <span class="cstat-no" title="statement not covered" >      hasLineBreak: false,</span>
 <span class="cstat-no" title="statement not covered" >      cells: []</span>
 <span class="cstat-no" title="statement not covered" >    }];</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 1; i &lt; node.quasis.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    for (let i2 = 1; i2 &lt; node.quasis.length; i2++) {</span>
 <span class="cstat-no" title="statement not covered" >      const row = method_at_default(</span>
 <span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >        0,</span>
 <span class="cstat-no" title="statement not covered" >        tableBody,</span>
 <span class="cstat-no" title="statement not covered" >        -1</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >      const correspondingExpression = stringifiedExpressions[i - 1];</span>
+<span class="cstat-no" title="statement not covered" >      const correspondingExpression = stringifiedExpressions[i2 - 1];</span>
 <span class="cstat-no" title="statement not covered" >      row.cells.push(correspondingExpression);</span>
 <span class="cstat-no" title="statement not covered" >      if (correspondingExpression.includes("\n")) {</span>
 <span class="cstat-no" title="statement not covered" >        row.hasLineBreak = true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (node.quasis[i].value.raw.includes("\n")) {</span>
+<span class="cstat-no" title="statement not covered" >      if (node.quasis[i2].value.raw.includes("\n")) {</span>
 <span class="cstat-no" title="statement not covered" >        tableBody.push({</span>
 <span class="cstat-no" title="statement not covered" >          hasLineBreak: false,</span>
 <span class="cstat-no" title="statement not covered" >          cells: []</span>
@@ -61945,10 +61945,10 @@
 <span class="cstat-no" title="statement not covered" >  const numQuasis = node.quasis.length;</span>
 <span class="cstat-no" title="statement not covered" >  const expressionDocs = printTemplateExpressions(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >  const parts = [];</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; numQuasis; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    const templateElement = node.quasis[i];</span>
-<span class="cstat-no" title="statement not covered" >    const isFirst = i === 0;</span>
-<span class="cstat-no" title="statement not covered" >    const isLast = i === numQuasis - 1;</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = 0; i2 &lt; numQuasis; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >    const templateElement = node.quasis[i2];</span>
+<span class="cstat-no" title="statement not covered" >    const isFirst = i2 === 0;</span>
+<span class="cstat-no" title="statement not covered" >    const isLast = i2 === numQuasis - 1;</span>
 <span class="cstat-no" title="statement not covered" >    const text = templateElement.value.cooked;</span>
 <span class="cstat-no" title="statement not covered" >    const lines = text.split("\n");</span>
 <span class="cstat-no" title="statement not covered" >    const numLines = lines.length;</span>
@@ -61979,7 +61979,7 @@
 <span class="cstat-no" title="statement not covered" >      parts.push("");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (!isLast) {</span>
-<span class="cstat-no" title="statement not covered" >      parts.push(expressionDocs[i]);</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(expressionDocs[i2]);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return ["`", indent([hardline, join(hardline, parts)]), hardline, "`"];</span>
@@ -61988,11 +61988,11 @@
 <span class="cstat-no" title="statement not covered" >  const parts = [];</span>
 <span class="cstat-no" title="statement not covered" >  let seenComment = false;</span>
 <span class="cstat-no" title="statement not covered" >  const array = lines.map((textLine) =&gt; textLine.trim());</span>
-<span class="cstat-no" title="statement not covered" >  for (const [i, textLine] of array.entries()) {</span>
+<span class="cstat-no" title="statement not covered" >  for (const [i2, textLine] of array.entries()) {</span>
 <span class="cstat-no" title="statement not covered" >    if (textLine === "") {</span>
 <span class="cstat-no" title="statement not covered" >      continue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (array[i - 1] === "" &amp;&amp; seenComment) {</span>
+<span class="cstat-no" title="statement not covered" >    if (array[i2 - 1] === "" &amp;&amp; seenComment) {</span>
 <span class="cstat-no" title="statement not covered" >      parts.push([hardline, textLine]);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(textLine);</span>
@@ -62030,9 +62030,9 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const parts = [];</span>
 <span class="cstat-no" title="statement not covered" >    const components = doc2.split(placeholderRegex);</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; components.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >      let component = components[i];</span>
-<span class="cstat-no" title="statement not covered" >      if (i % 2 === 0) {</span>
+<span class="cstat-no" title="statement not covered" >    for (let i2 = 0; i2 &lt; components.length; i2++) {</span>
+<span class="cstat-no" title="statement not covered" >      let component = components[i2];</span>
+<span class="cstat-no" title="statement not covered" >      if (i2 % 2 === 0) {</span>
 <span class="cstat-no" title="statement not covered" >        if (component) {</span>
 <span class="cstat-no" title="statement not covered" >          component = uncookTemplateElementValue(component);</span>
 <span class="cstat-no" title="statement not covered" >          if (options2.__embeddedInHtml) {</span>
@@ -62477,8 +62477,8 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const { index, siblings } = path;</span>
 <span class="cstat-no" title="statement not covered" >  let prevSibling;</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = index; i &gt; 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >    const candidate = siblings[i - 1];</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = index; i2 &gt; 0; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >    const candidate = siblings[i2 - 1];</span>
 <span class="cstat-no" title="statement not covered" >    if (candidate.type === "JSXText" &amp;&amp; !isMeaningfulJsxText(candidate)) {</span>
 <span class="cstat-no" title="statement not covered" >      continue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -62827,12 +62827,12 @@
 <span class="cstat-no" title="statement not covered" >    const canHaveTrailingComma = lastElem?.type !== "RestElement" &amp;&amp; !node.inexact;</span>
 <span class="cstat-no" title="statement not covered" >    const needsForcedTrailingComma = lastElem === null;</span>
 <span class="cstat-no" title="statement not covered" >    const groupId = /* @__PURE__ */ Symbol("array");</span>
-<span class="cstat-no" title="statement not covered" >    const shouldBreak = !options2.__inJestEach &amp;&amp; elements.length &gt; 1 &amp;&amp; elements.every((element, i, elements2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const shouldBreak = !options2.__inJestEach &amp;&amp; elements.length &gt; 1 &amp;&amp; elements.every((element, i2, elements2) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      const elementType = element?.type;</span>
 <span class="cstat-no" title="statement not covered" >      if (!isArrayExpression(element) &amp;&amp; !isObjectExpression(element)) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const nextElement = elements2[i + 1];</span>
+<span class="cstat-no" title="statement not covered" >      const nextElement = elements2[i2 + 1];</span>
 <span class="cstat-no" title="statement not covered" >      if (nextElement &amp;&amp; elementType !== nextElement.type) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -63566,18 +63566,18 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const groups = [];</span>
 <span class="cstat-no" title="statement not covered" >  let currentGroup = [printedNodes[0]];</span>
-<span class="cstat-no" title="statement not covered" >  let i = 1;</span>
-<span class="cstat-no" title="statement not covered" >  for (; i &lt; printedNodes.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >    if (printedNodes[i].node.type === "TSNonNullExpression" || printedNodes[i].node.type === "ChainExpression" || isCallExpression(printedNodes[i].node) || isMemberExpression(printedNodes[i].node) &amp;&amp; printedNodes[i].node.computed &amp;&amp; isNumericLiteral(printedNodes[i].node.property)) {</span>
-<span class="cstat-no" title="statement not covered" >      currentGroup.push(printedNodes[i]);</span>
+<span class="cstat-no" title="statement not covered" >  let i2 = 1;</span>
+<span class="cstat-no" title="statement not covered" >  for (; i2 &lt; printedNodes.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >    if (printedNodes[i2].node.type === "TSNonNullExpression" || printedNodes[i2].node.type === "ChainExpression" || isCallExpression(printedNodes[i2].node) || isMemberExpression(printedNodes[i2].node) &amp;&amp; printedNodes[i2].node.computed &amp;&amp; isNumericLiteral(printedNodes[i2].node.property)) {</span>
+<span class="cstat-no" title="statement not covered" >      currentGroup.push(printedNodes[i2]);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (!isCallExpression(printedNodes[0].node)) {</span>
-<span class="cstat-no" title="statement not covered" >    for (; i + 1 &lt; printedNodes.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >      if (isMemberish(printedNodes[i].node) &amp;&amp; isMemberish(printedNodes[i + 1].node)) {</span>
-<span class="cstat-no" title="statement not covered" >        currentGroup.push(printedNodes[i]);</span>
+<span class="cstat-no" title="statement not covered" >    for (; i2 + 1 &lt; printedNodes.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isMemberish(printedNodes[i2].node) &amp;&amp; isMemberish(printedNodes[i2 + 1].node)) {</span>
+<span class="cstat-no" title="statement not covered" >        currentGroup.push(printedNodes[i2]);</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -63586,21 +63586,21 @@
 <span class="cstat-no" title="statement not covered" >  groups.push(currentGroup);</span>
 <span class="cstat-no" title="statement not covered" >  currentGroup = [];</span>
 <span class="cstat-no" title="statement not covered" >  let hasSeenCallExpression = false;</span>
-<span class="cstat-no" title="statement not covered" >  for (; i &lt; printedNodes.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >    if (hasSeenCallExpression &amp;&amp; isMemberish(printedNodes[i].node)) {</span>
-<span class="cstat-no" title="statement not covered" >      if (printedNodes[i].node.computed &amp;&amp; isNumericLiteral(printedNodes[i].node.property)) {</span>
-<span class="cstat-no" title="statement not covered" >        currentGroup.push(printedNodes[i]);</span>
+<span class="cstat-no" title="statement not covered" >  for (; i2 &lt; printedNodes.length; ++i2) {</span>
+<span class="cstat-no" title="statement not covered" >    if (hasSeenCallExpression &amp;&amp; isMemberish(printedNodes[i2].node)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (printedNodes[i2].node.computed &amp;&amp; isNumericLiteral(printedNodes[i2].node.property)) {</span>
+<span class="cstat-no" title="statement not covered" >        currentGroup.push(printedNodes[i2]);</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      groups.push(currentGroup);</span>
 <span class="cstat-no" title="statement not covered" >      currentGroup = [];</span>
 <span class="cstat-no" title="statement not covered" >      hasSeenCallExpression = false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (isCallExpression(printedNodes[i].node) || printedNodes[i].node.type === "ImportExpression") {</span>
+<span class="cstat-no" title="statement not covered" >    if (isCallExpression(printedNodes[i2].node) || printedNodes[i2].node.type === "ImportExpression") {</span>
 <span class="cstat-no" title="statement not covered" >      hasSeenCallExpression = true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    currentGroup.push(printedNodes[i]);</span>
-<span class="cstat-no" title="statement not covered" >    if (hasComment(printedNodes[i].node, CommentCheckFlags.Trailing)) {</span>
+<span class="cstat-no" title="statement not covered" >    currentGroup.push(printedNodes[i2]);</span>
+<span class="cstat-no" title="statement not covered" >    if (hasComment(printedNodes[i2].node, CommentCheckFlags.Trailing)) {</span>
 <span class="cstat-no" title="statement not covered" >      groups.push(currentGroup);</span>
 <span class="cstat-no" title="statement not covered" >      currentGroup = [];</span>
 <span class="cstat-no" title="statement not covered" >      hasSeenCallExpression = false;</span>
@@ -65508,11 +65508,11 @@
 <span class="cstat-no" title="statement not covered" >  let forceNoIndent = parent.type === node.type &amp;&amp; !isParentTest;</span>
 <span class="cstat-no" title="statement not covered" >  let currentParent;</span>
 <span class="cstat-no" title="statement not covered" >  let previousParent;</span>
-<span class="cstat-no" title="statement not covered" >  let i = 0;</span>
+<span class="cstat-no" title="statement not covered" >  let i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >  do {</span>
 <span class="cstat-no" title="statement not covered" >    previousParent = currentParent || node;</span>
-<span class="cstat-no" title="statement not covered" >    currentParent = path.getParentNode(i);</span>
-<span class="cstat-no" title="statement not covered" >    i++;</span>
+<span class="cstat-no" title="statement not covered" >    currentParent = path.getParentNode(i2);</span>
+<span class="cstat-no" title="statement not covered" >    i2++;</span>
 <span class="cstat-no" title="statement not covered" >  } while (currentParent &amp;&amp; currentParent.type === node.type &amp;&amp; testNodePropertyNames.every(</span>
 <span class="cstat-no" title="statement not covered" >    (prop) =&gt; currentParent[prop] !== previousParent</span>
 <span class="cstat-no" title="statement not covered" >  ));</span>
@@ -65642,11 +65642,11 @@
 <span class="cstat-no" title="statement not covered" >  const isBigTabs = options2.tabWidth &gt; 2 || options2.useTabs;</span>
 <span class="cstat-no" title="statement not covered" >  let currentParent;</span>
 <span class="cstat-no" title="statement not covered" >  let previousParent;</span>
-<span class="cstat-no" title="statement not covered" >  let i = 0;</span>
+<span class="cstat-no" title="statement not covered" >  let i2 = 0;</span>
 <span class="cstat-no" title="statement not covered" >  do {</span>
 <span class="cstat-no" title="statement not covered" >    previousParent = currentParent || node;</span>
-<span class="cstat-no" title="statement not covered" >    currentParent = path.getParentNode(i);</span>
-<span class="cstat-no" title="statement not covered" >    i++;</span>
+<span class="cstat-no" title="statement not covered" >    currentParent = path.getParentNode(i2);</span>
+<span class="cstat-no" title="statement not covered" >    i2++;</span>
 <span class="cstat-no" title="statement not covered" >  } while (currentParent &amp;&amp; currentParent.type === node.type &amp;&amp; testNodePropertyNames.every(</span>
 <span class="cstat-no" title="statement not covered" >    (prop) =&gt; currentParent[prop] !== previousParent</span>
 <span class="cstat-no" title="statement not covered" >  ));</span>
@@ -67054,17 +67054,17 @@
 <span class="cstat-no" title="statement not covered" >  const isFacebookTranslationTag = node.openingElement?.name?.name === "fbt";</span>
 <span class="cstat-no" title="statement not covered" >  const children = printJsxChildren(path, options2, print3, whitespace, isFacebookTranslationTag);</span>
 <span class="cstat-no" title="statement not covered" >  const containsText = node.children.some((child) =&gt; isMeaningfulJsxText(child));</span>
-<span class="cstat-no" title="statement not covered" >  for (let i = children.length - 2; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >    const isPairOfEmptyStrings = children[i] === "" &amp;&amp; children[i + 1] === "";</span>
-<span class="cstat-no" title="statement not covered" >    const isPairOfHardlines = children[i] === hardline &amp;&amp; children[i + 1] === "" &amp;&amp; children[i + 2] === hardline;</span>
-<span class="cstat-no" title="statement not covered" >    const isLineFollowedByJsxWhitespace = (children[i] === softline || children[i] === hardline) &amp;&amp; children[i + 1] === "" &amp;&amp; children[i + 2] === whitespace;</span>
-<span class="cstat-no" title="statement not covered" >    const isJsxWhitespaceFollowedByLine = children[i] === whitespace &amp;&amp; children[i + 1] === "" &amp;&amp; (children[i + 2] === softline || children[i + 2] === hardline);</span>
-<span class="cstat-no" title="statement not covered" >    const isDoubleJsxWhitespace = children[i] === whitespace &amp;&amp; children[i + 1] === "" &amp;&amp; children[i + 2] === whitespace;</span>
-<span class="cstat-no" title="statement not covered" >    const isPairOfHardOrSoftLines = children[i] === softline &amp;&amp; children[i + 1] === "" &amp;&amp; children[i + 2] === hardline || children[i] === hardline &amp;&amp; children[i + 1] === "" &amp;&amp; children[i + 2] === softline;</span>
+<span class="cstat-no" title="statement not covered" >  for (let i2 = children.length - 2; i2 &gt;= 0; i2--) {</span>
+<span class="cstat-no" title="statement not covered" >    const isPairOfEmptyStrings = children[i2] === "" &amp;&amp; children[i2 + 1] === "";</span>
+<span class="cstat-no" title="statement not covered" >    const isPairOfHardlines = children[i2] === hardline &amp;&amp; children[i2 + 1] === "" &amp;&amp; children[i2 + 2] === hardline;</span>
+<span class="cstat-no" title="statement not covered" >    const isLineFollowedByJsxWhitespace = (children[i2] === softline || children[i2] === hardline) &amp;&amp; children[i2 + 1] === "" &amp;&amp; children[i2 + 2] === whitespace;</span>
+<span class="cstat-no" title="statement not covered" >    const isJsxWhitespaceFollowedByLine = children[i2] === whitespace &amp;&amp; children[i2 + 1] === "" &amp;&amp; (children[i2 + 2] === softline || children[i2 + 2] === hardline);</span>
+<span class="cstat-no" title="statement not covered" >    const isDoubleJsxWhitespace = children[i2] === whitespace &amp;&amp; children[i2 + 1] === "" &amp;&amp; children[i2 + 2] === whitespace;</span>
+<span class="cstat-no" title="statement not covered" >    const isPairOfHardOrSoftLines = children[i2] === softline &amp;&amp; children[i2 + 1] === "" &amp;&amp; children[i2 + 2] === hardline || children[i2] === hardline &amp;&amp; children[i2 + 1] === "" &amp;&amp; children[i2 + 2] === softline;</span>
 <span class="cstat-no" title="statement not covered" >    if (isPairOfHardlines &amp;&amp; containsText || isPairOfEmptyStrings || isLineFollowedByJsxWhitespace || isDoubleJsxWhitespace || isPairOfHardOrSoftLines) {</span>
-<span class="cstat-no" title="statement not covered" >      children.splice(i, 2);</span>
+<span class="cstat-no" title="statement not covered" >      children.splice(i2, 2);</span>
 <span class="cstat-no" title="statement not covered" >    } else if (isJsxWhitespaceFollowedByLine) {</span>
-<span class="cstat-no" title="statement not covered" >      children.splice(i + 1, 2);</span>
+<span class="cstat-no" title="statement not covered" >      children.splice(i2 + 1, 2);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  while (children.length &gt; 0 &amp;&amp; isEmptyStringOrAnyLine(method_at_default(</span>
@@ -67080,24 +67080,24 @@
 <span class="cstat-no" title="statement not covered" >    children.shift();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const multilineChildren = [""];</span>
-<span class="cstat-no" title="statement not covered" >  for (const [i, child] of children.entries()) {</span>
+<span class="cstat-no" title="statement not covered" >  for (const [i2, child] of children.entries()) {</span>
 <span class="cstat-no" title="statement not covered" >    if (child === whitespace) {</span>
-<span class="cstat-no" title="statement not covered" >      if (i === 1 &amp;&amp; isEmptyDoc(children[i - 1])) {</span>
+<span class="cstat-no" title="statement not covered" >      if (i2 === 1 &amp;&amp; isEmptyDoc(children[i2 - 1])) {</span>
 <span class="cstat-no" title="statement not covered" >        if (children.length === 2) {</span>
 <span class="cstat-no" title="statement not covered" >          multilineChildren.push([multilineChildren.pop(), rawJsxWhitespace]);</span>
 <span class="cstat-no" title="statement not covered" >          continue;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        multilineChildren.push([rawJsxWhitespace, hardline], "");</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
-<span class="cstat-no" title="statement not covered" >      } else if (i === children.length - 1) {</span>
+<span class="cstat-no" title="statement not covered" >      } else if (i2 === children.length - 1) {</span>
 <span class="cstat-no" title="statement not covered" >        multilineChildren.push([multilineChildren.pop(), rawJsxWhitespace]);</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
-<span class="cstat-no" title="statement not covered" >      } else if (children[i - 1] === "" &amp;&amp; children[i - 2] === hardline) {</span>
+<span class="cstat-no" title="statement not covered" >      } else if (children[i2 - 1] === "" &amp;&amp; children[i2 - 2] === hardline) {</span>
 <span class="cstat-no" title="statement not covered" >        multilineChildren.push([multilineChildren.pop(), rawJsxWhitespace]);</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (i % 2 === 0) {</span>
+<span class="cstat-no" title="statement not covered" >    if (i2 % 2 === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      multilineChildren.push([multilineChildren.pop(), child]);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      multilineChildren.push(child, "");</span>
@@ -67173,8 +67173,8 @@
 <span class="cstat-no" title="statement not covered" >        if (words.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >          return;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        for (const [i, word] of words.entries()) {</span>
-<span class="cstat-no" title="statement not covered" >          if (i % 2 === 1) {</span>
+<span class="cstat-no" title="statement not covered" >        for (const [i2, word] of words.entries()) {</span>
+<span class="cstat-no" title="statement not covered" >          if (i2 % 2 === 1) {</span>
 <span class="cstat-no" title="statement not covered" >            pushLine(line);</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            push(word);</span>
@@ -68182,7 +68182,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-12T01:19:16.078Z
+                at 2026-06-13T01:17:33.775Z
             </div>
         <script src="../prettify.js"></script>
         <script>
