@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.5% </span>
+                <span class="strong">59.51% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3420/5747</span>
+                <span class='fraction'>3419/5745</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.5% </span>
+                <span class="strong">59.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3420/5747</span>
+                <span class='fraction'>3419/5745</span>
             </div>
         
             
@@ -5807,9 +5807,7 @@
 <a name='L5742'></a><a href='#L5742'>5742</a>
 <a name='L5743'></a><a href='#L5743'>5743</a>
 <a name='L5744'></a><a href='#L5744'>5744</a>
-<a name='L5745'></a><a href='#L5745'>5745</a>
-<a name='L5746'></a><a href='#L5746'>5746</a>
-<a name='L5747'></a><a href='#L5747'>5747</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L5745'></a><a href='#L5745'>5745</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -7680,8 +7678,7 @@
 <span class="cline-any cline-yes">197x</span>
 <span class="cline-any cline-yes">197x</span>
 <span class="cline-any cline-yes">328x</span>
-<span class="cline-any cline-yes">335x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">328x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">853x</span>
 <span class="cline-any cline-yes">853x</span>
@@ -8077,9 +8074,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
@@ -8108,9 +8105,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -10249,7 +10246,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13426,9 +13422,8 @@
                   position += 1;
                 }
                 break;
-              } else {
-                shouldRemeasure = true;
               }
+              shouldRemeasure = true;
             // fallthrough
             case MODE_BREAK:
               if (lineSuffix2.length &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -13822,10 +13817,10 @@
   // src/utilities/skip.js
   function skip(characters) {
     return (text, startIndex, options) =&gt; {
-      const backwards = Boolean(options?.backwards);
       if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+      const backwards = Boolean(options?.backwards);
       const { length } = text;
       let cursor2 = startIndex;
       while (cursor2 &gt;= 0 &amp;&amp; cursor2 &lt; length) {
@@ -13853,10 +13848,10 @@
   // src/utilities/skip-newline.js
   var isNewlineCharacter = (character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";
   function skipNewline(text, startIndex, options) {
-    const backwards = Boolean(options?.backwards);
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+    const backwards = Boolean(options?.backwards);
     const character = text.charAt(startIndex);
     if (backwards) {
       if (text.charAt(startIndex - 1) === "\r" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; character === "\n")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -15999,15 +15994,14 @@
 <span class="cstat-no" title="statement not covered" >        throw new UndefinedParserError(</span>
 <span class="cstat-no" title="statement not covered" >          "No parser and no file path given, couldn't infer a parser."</span>
 <span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        rawOptions.parser = infer_parser_default(rawOptions, {</span>
-<span class="cstat-no" title="statement not covered" >          physicalFile: rawOptions.filepath</span>
-<span class="cstat-no" title="statement not covered" >        });</span>
-<span class="cstat-no" title="statement not covered" >        if (!rawOptions.parser) {</span>
-<span class="cstat-no" title="statement not covered" >          throw new UndefinedParserError(</span>
-<span class="cstat-no" title="statement not covered" >            `No parser could be inferred for file "${rawOptions.filepath}".`</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      rawOptions.parser = infer_parser_default(rawOptions, {</span>
+<span class="cstat-no" title="statement not covered" >        physicalFile: rawOptions.filepath</span>
+<span class="cstat-no" title="statement not covered" >      });</span>
+<span class="cstat-no" title="statement not covered" >      if (!rawOptions.parser) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new UndefinedParserError(</span>
+<span class="cstat-no" title="statement not covered" >          `No parser could be inferred for file "${rawOptions.filepath}".`</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     const supportOptions = getSupportInfo({
@@ -17308,7 +17302,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-15T01:21:47.003Z
+                at 2026-06-16T01:23:42.443Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.35% </span>
+                <span class="strong">85.34% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2122/2486</span>
+                <span class='fraction'>2120/2484</span>
             </div>
         
             
@@ -9805,9 +9805,9 @@
 <span class="cline-any cline-yes">172x</span>
 <span class="cline-any cline-yes">172x</span>
 <span class="cline-any cline-yes">118x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">118x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">118x</span>
 <span class="cline-any cline-yes">118x</span>
 <span class="cline-any cline-yes">118x</span>
@@ -9836,9 +9836,9 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">118x</span>
 <span class="cline-any cline-yes">118x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">118x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">118x</span>
 <span class="cline-any cline-yes">118x</span>
 <span class="cline-any cline-yes">118x</span>
@@ -10148,7 +10148,7 @@
 <span class="cline-any cline-yes">4198x</span>
 <span class="cline-any cline-yes">4198x</span>
 <span class="cline-any cline-yes">913x</span>
-<span class="cline-any cline-yes">4651x</span>
+<span class="cline-any cline-yes">3431x</span>
 <span class="cline-any cline-yes">1084x</span>
 <span class="cline-any cline-yes">1084x</span>
 <span class="cline-any cline-yes">79x</span>
@@ -10195,7 +10195,7 @@
 <span class="cline-any cline-yes">663x</span>
 <span class="cline-any cline-yes">663x</span>
 <span class="cline-any cline-yes">43x</span>
-<span class="cline-any cline-yes">605x</span>
+<span class="cline-any cline-yes">165x</span>
 <span class="cline-any cline-yes">246x</span>
 <span class="cline-any cline-yes">246x</span>
 <span class="cline-any cline-yes">88x</span>
@@ -10232,7 +10232,7 @@
 <span class="cline-any cline-yes">239x</span>
 <span class="cline-any cline-yes">162x</span>
 <span class="cline-any cline-yes">43x</span>
-<span class="cline-any cline-yes">605x</span>
+<span class="cline-any cline-yes">165x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">43x</span>
@@ -15286,7 +15286,7 @@
 <span class="cline-any cline-yes">2452x</span>
 <span class="cline-any cline-yes">2452x</span>
 <span class="cline-any cline-yes">48x</span>
-<span class="cline-any cline-yes">214x</span>
+<span class="cline-any cline-yes">504x</span>
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -15573,7 +15573,7 @@
 <span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-yes">108x</span>
-<span class="cline-any cline-yes">4336x</span>
+<span class="cline-any cline-yes">4811x</span>
 <span class="cline-any cline-yes">162x</span>
 <span class="cline-any cline-yes">70x</span>
 <span class="cline-any cline-yes">70x</span>
@@ -18094,8 +18094,8 @@
 <span class="cline-any cline-yes">464x</span>
 <span class="cline-any cline-yes">964x</span>
 <span class="cline-any cline-yes">964x</span>
-<span class="cline-any cline-yes">934x</span>
-<span class="cline-any cline-yes">934x</span>
+<span class="cline-any cline-yes">789x</span>
+<span class="cline-any cline-yes">789x</span>
 <span class="cline-any cline-yes">136x</span>
 <span class="cline-any cline-yes">964x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -19135,10 +19135,10 @@ function lineSuffix(contents) {
 // src/utilities/skip.js
 function skip(characters) {
   return (text, startIndex, options2) =&gt; {
-    const backwards = Boolean(options2?.backwards);
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+    const backwards = Boolean(options2?.backwards);
     const { length } = text;
     let cursor = startIndex;
     while (cursor &gt;= 0 &amp;&amp; cursor &lt; length) {
@@ -19166,10 +19166,10 @@ var skipEverythingButNewLine = skip(/[^\n\r]/);
 // src/utilities/skip-newline.js
 var isNewlineCharacter = (character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";
 function skipNewline(text, startIndex, options2) {
-  const backwards = Boolean(options2?.backwards);
   if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+  const backwards = Boolean(options2?.backwards);
   const character = text.charAt(startIndex);
   if (backwards) {
     if (text.charAt(startIndex - 1) === "\r" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; character === "\n")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -28063,7 +28063,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-15T01:21:47.003Z
+                at 2026-06-16T01:23:42.443Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

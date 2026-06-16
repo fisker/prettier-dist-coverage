@@ -13231,6 +13231,9 @@
 <span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13240,8 +13243,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">39x</span>
-<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13254,8 +13257,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">39x</span>
-<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13278,10 +13281,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">39x</span>
-<span class="cline-any cline-yes">39x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -21245,7 +21245,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  async function formatAttributeValue(code, textToDoc, options2, shouldHugJsExpression2) {</span>
 <span class="cstat-no" title="statement not covered" >    options2 = {</span>
-<span class="cstat-no" title="statement not covered" >      // strictly prefer single quote to avoid unnecessary html entity escape</span>
+<span class="cstat-no" title="statement not covered" >      // strictly prefer single quote to avoid unnecessary HTML entity escape</span>
 <span class="cstat-no" title="statement not covered" >      __isInHtmlAttribute: true,</span>
 <span class="cstat-no" title="statement not covered" >      __embeddedInHtml: true,</span>
 <span class="cstat-no" title="statement not covered" >      ...options2</span>
@@ -22523,8 +22523,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="fstat-no" title="function not covered" >  function parseVueVForDirective(value) {</span>
 <span class="cstat-no" title="statement not covered" >    const forAliasRE = /(.*?)\s+(in|of)\s+(.*)/s;</span>
-<span class="cstat-no" title="statement not covered" >    const forIteratorRE = /,([^,\]}]*)(?:,([^,\]}]*))?$/;</span>
-<span class="cstat-no" title="statement not covered" >    const stripParensRE = /^\(|\)$/g;</span>
 <span class="cstat-no" title="statement not covered" >    const inMatch = value.match(forAliasRE);</span>
 <span class="cstat-no" title="statement not covered" >    if (!inMatch) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -22535,6 +22533,8 @@
 <span class="cstat-no" title="statement not covered" >    if (!res.for) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const forIteratorRE = /,([^,\]}]*)(?:,([^,\]}]*))?$/;</span>
+<span class="cstat-no" title="statement not covered" >    const stripParensRE = /^\(|\)$/g;</span>
 <span class="cstat-no" title="statement not covered" >    const alias = method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >      0,</span>
@@ -23148,7 +23148,7 @@
 <span class="cstat-no" title="statement not covered" >      } = original;</span>
 <span class="cstat-no" title="statement not covered" >      if (</span>
 <span class="cstat-no" title="statement not covered" >        // HTML attributes</span>
-<span class="cstat-no" title="statement not covered" >        name === "style" || name === "class" || name === "srcset" &amp;&amp; (parent.fullName === "img" || parent.fullName === "source") || name === "allow" &amp;&amp; parent.fullName === "iframe" || name.startsWith("on") || // Vue attributes</span>
+<span class="cstat-no" title="statement not covered" >        name === "style" || name === "class" || name === "srcset" &amp;&amp; (parent.fullName === "img" || parent.fullName === "source") || name === "allow" &amp;&amp; parent.fullName === "iframe" || name.startsWith("on") || // Vue.js attributes</span>
 <span class="cstat-no" title="statement not covered" >        name.startsWith("@") || name.startsWith(":") || name.startsWith(".") || name.startsWith("#") || name.startsWith("v-") || name === "vars" &amp;&amp; parent.fullName === "style" || (name === "setup" || name === "generic") &amp;&amp; parent.fullName === "script" || name === "slot-scope" || // Angular attributes</span>
 <span class="cstat-no" title="statement not covered" >        name.startsWith("(") || name.startsWith("[") || name.startsWith("*") || name.startsWith("bind") || name.startsWith("i18n") || name.startsWith("on-") || name.startsWith("ng-") || value?.includes("{{")</span>
 <span class="cstat-no" title="statement not covered" >      ) {</span>
@@ -23510,6 +23510,9 @@ ${text}`;
     const printTag = (doc) =&gt; group([group(printOpeningTag(path, options2, print), {
       id: attrGroupId
     }), doc, printClosingTag(node, options2)]);
+    if (node.children.length === 0) {
+      return printTag(node.hasDanglingSpaces <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.isDanglingSpaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" ></span>? line </span>: "");
+    }
     const printChildrenDoc = (childrenDoc) =&gt; {
       if (shouldHugContent) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return indentIfBreak(childrenDoc, {</span>
@@ -23559,9 +23562,6 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >      }</span>
       return softline;
     };
-    if (node.children.length === 0) {
-      return printTag(node.hasDanglingSpaces <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; node.isDanglingSpaceSensitive <span class="branch-0 cbranch-no" title="branch not covered" ></span>? line </span>: "");
-    }
     return printTag([forceBreakContent(node) ? breakParent : "", printChildrenDoc([printLineBeforeChildren(), printChildren(path, options2, print)]), printLineAfterChildren()]);
   }
 &nbsp;
@@ -30910,7 +30910,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-15T01:21:47.003Z
+                at 2026-06-16T01:23:42.443Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.31% </span>
+                <span class="strong">50.35% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1364/2711</span>
+                <span class='fraction'>1363/2707</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.31% </span>
+                <span class="strong">50.35% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1364/2711</span>
+                <span class='fraction'>1363/2707</span>
             </div>
         
             
@@ -2769,11 +2769,7 @@
 <a name='L2704'></a><a href='#L2704'>2704</a>
 <a name='L2705'></a><a href='#L2705'>2705</a>
 <a name='L2706'></a><a href='#L2706'>2706</a>
-<a name='L2707'></a><a href='#L2707'>2707</a>
-<a name='L2708'></a><a href='#L2708'>2708</a>
-<a name='L2709'></a><a href='#L2709'>2709</a>
-<a name='L2710'></a><a href='#L2710'>2710</a>
-<a name='L2711'></a><a href='#L2711'>2711</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L2707'></a><a href='#L2707'>2707</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2971,9 +2967,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">23x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">23x</span>
@@ -3002,9 +2998,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -5109,9 +5105,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -5449,7 +5442,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -5680,10 +5672,10 @@
   // src/utilities/skip.js
   function skip(characters) {
     return (text, startIndex, options2) =&gt; {
-      const backwards = Boolean(options2?.backwards);
       if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+      const backwards = Boolean(options2?.backwards);
       const { length } = text;
       let cursor = startIndex;
       while (cursor &gt;= 0 &amp;&amp; cursor &lt; length) {
@@ -5711,10 +5703,10 @@
   // src/utilities/skip-newline.js
   var isNewlineCharacter = (character) =&gt; character === "\n" || character === "\r" || character === "\u2028" || character === "\u2029";
   function skipNewline(text, startIndex, options2) {
-    const backwards = Boolean(options2?.backwards);
     if (startIndex === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+    const backwards = Boolean(options2?.backwards);
     const character = text.charAt(startIndex);
     if (backwards) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      if (text.charAt(startIndex - 1) === "\r" &amp;&amp; character === "\n") {</span>
@@ -7814,10 +7806,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >          case "input":</span>
 <span class="cstat-no" title="statement not covered" >            return this.parseInputObjectTypeExtension();</span>
 <span class="cstat-no" title="statement not covered" >          case "directive":</span>
-<span class="cstat-no" title="statement not covered" >            if (this._options.experimentalDirectivesOnDirectiveDefinitions) {</span>
-<span class="cstat-no" title="statement not covered" >              return this.parseDirectiveDefinitionExtension();</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered" >            return this.parseDirectiveExtension();</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      throw this.unexpected(keywordToken);</span>
@@ -7941,7 +7930,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >        fields</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="fstat-no" title="function not covered" >    parseDirectiveDefinitionExtension() {</span>
+<span class="fstat-no" title="function not covered" >    parseDirectiveExtension() {</span>
 <span class="cstat-no" title="statement not covered" >      const start = this._lexer.token;</span>
 <span class="cstat-no" title="statement not covered" >      this.expectKeyword("extend");</span>
 <span class="cstat-no" title="statement not covered" >      this.expectKeyword("directive");</span>
@@ -7964,7 +7953,7 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >      this.expectToken(TokenKind.AT);</span>
 <span class="cstat-no" title="statement not covered" >      const name = this.parseName();</span>
 <span class="cstat-no" title="statement not covered" >      const args = this.parseArgumentDefs();</span>
-<span class="cstat-no" title="statement not covered" >      const directives = this._options.experimentalDirectivesOnDirectiveDefinitions ? this.parseConstDirectives() : void 0;</span>
+<span class="cstat-no" title="statement not covered" >      const directives = this.parseConstDirectives();</span>
 <span class="cstat-no" title="statement not covered" >      const repeatable = this.expectOptionalKeyword("repeatable");</span>
 <span class="cstat-no" title="statement not covered" >      this.expectKeyword("on");</span>
 <span class="cstat-no" title="statement not covered" >      const locations = this.parseDirectiveLocations();</span>
@@ -8156,8 +8145,7 @@ ${text}`;
     return comments;
   }
   var parseOptions = {
-    experimentalFragmentArguments: true,
-    experimentalDirectivesOnDirectiveDefinitions: true
+    experimentalFragmentArguments: true
   };
 <span class="fstat-no" title="function not covered" >  function createParseError(error) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!(error instanceof GraphQLError)) {</span>
@@ -8200,7 +8188,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-15T01:21:47.003Z
+                at 2026-06-16T01:23:42.443Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
