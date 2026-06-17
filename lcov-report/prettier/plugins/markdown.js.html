@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.52% </span>
+                <span class="strong">65.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15126/23084</span>
+                <span class='fraction'>15125/23080</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.83% </span>
+                <span class="strong">72.8% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1842/2529</span>
+                <span class='fraction'>1842/2530</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.52% </span>
+                <span class="strong">65.53% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15126/23084</span>
+                <span class='fraction'>15125/23080</span>
             </div>
         
             
@@ -23142,11 +23142,7 @@
 <a name='L23077'></a><a href='#L23077'>23077</a>
 <a name='L23078'></a><a href='#L23078'>23078</a>
 <a name='L23079'></a><a href='#L23079'>23079</a>
-<a name='L23080'></a><a href='#L23080'>23080</a>
-<a name='L23081'></a><a href='#L23081'>23081</a>
-<a name='L23082'></a><a href='#L23082'>23082</a>
-<a name='L23083'></a><a href='#L23083'>23083</a>
-<a name='L23084'></a><a href='#L23084'>23084</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L23080'></a><a href='#L23080'>23080</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -40858,9 +40854,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -44244,8 +44238,6 @@
 <span class="cline-any cline-yes">517x</span>
 <span class="cline-any cline-yes">517x</span>
 <span class="cline-any cline-yes">517x</span>
-<span class="cline-any cline-yes">246x</span>
-<span class="cline-any cline-yes">246x</span>
 <span class="cline-any cline-yes">517x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -63941,10 +63933,8 @@
 <span class="cstat-no" title="statement not covered" >    let endDelimiterIndex = text4.indexOf(`</span>
 <span class="cstat-no" title="statement not covered" >${startDelimiter}`, firstLineBreakIndex);</span>
 <span class="cstat-no" title="statement not covered" >    let language = explicitLanguage;</span>
-<span class="cstat-no" title="statement not covered" >    if (!language) {</span>
-<span class="cstat-no" title="statement not covered" >      language = startDelimiter === "+++" ? "toml" : "yaml";</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-    if (endDelimiterIndex === -1 &amp;&amp; startDelimiter === "---" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; language === "yaml")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    language || (language = startDelimiter === "+++" ? "toml" : "yaml");
+    if (endDelimiterIndex === -1 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; startDelimiter === "---" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; language === "yaml")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      endDelimiterIndex = text4.indexOf("\n...", firstLineBreakIndex);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (endDelimiterIndex === -1) {</span>
@@ -67326,9 +67316,7 @@
       const newNode = {
         ...handler(node2, index2, parentStack)
       };
-      if (newNode.children) {
-        newNode.children = newNode.children.map((child, index3) =&gt; preorder(child, index3, [newNode, ...parentStack]));
-      }
+      newNode.children &amp;&amp; (newNode.children = newNode.children.map((child, index3) =&gt; preorder(child, index3, [newNode, ...parentStack])));
       return newNode;
     })(ast, null, []);
   }
@@ -69319,7 +69307,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T01:23:39.799Z
+                at 2026-06-17T01:19:06.291Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

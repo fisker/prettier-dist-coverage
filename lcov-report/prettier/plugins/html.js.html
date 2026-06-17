@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.1% </span>
+                <span class="strong">72.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7413/10281</span>
+                <span class='fraction'>7414/10277</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.05% </span>
+                <span class="strong">71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>950/1337</span>
+                <span class='fraction'>950/1338</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.1% </span>
+                <span class="strong">72.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7413/10281</span>
+                <span class='fraction'>7414/10277</span>
             </div>
         
             
@@ -10339,11 +10339,7 @@
 <a name='L10274'></a><a href='#L10274'>10274</a>
 <a name='L10275'></a><a href='#L10275'>10275</a>
 <a name='L10276'></a><a href='#L10276'>10276</a>
-<a name='L10277'></a><a href='#L10277'>10277</a>
-<a name='L10278'></a><a href='#L10278'>10278</a>
-<a name='L10279'></a><a href='#L10279'>10279</a>
-<a name='L10280'></a><a href='#L10280'>10280</a>
-<a name='L10281'></a><a href='#L10281'>10281</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L10277'></a><a href='#L10277'>10277</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -11160,9 +11156,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -20068,8 +20062,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1177x</span>
 <span class="cline-any cline-yes">4708x</span>
@@ -21440,10 +21432,8 @@
 <span class="cstat-no" title="statement not covered" >    let endDelimiterIndex = text.indexOf(`</span>
 <span class="cstat-no" title="statement not covered" >${startDelimiter}`, firstLineBreakIndex);</span>
 <span class="cstat-no" title="statement not covered" >    let language = explicitLanguage;</span>
-<span class="cstat-no" title="statement not covered" >    if (!language) {</span>
-<span class="cstat-no" title="statement not covered" >      language = startDelimiter === "+++" ? "toml" : "yaml";</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-    if (endDelimiterIndex === -1 &amp;&amp; startDelimiter === "---" <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; language === "yaml")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+    language || (language = startDelimiter === "+++" ? "toml" : "yaml");
+    if (endDelimiterIndex === -1 <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; startDelimiter === "---" <span class="branch-0 cbranch-no" title="branch not covered" ></span>&amp;&amp; language === "yaml")</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >      endDelimiterIndex = text.indexOf("\n...", firstLineBreakIndex);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (endDelimiterIndex === -1) {</span>
@@ -30332,11 +30322,9 @@ ${text}`;
 <span class="cstat-no" title="statement not covered" >        if (nodes) {</span>
 <span class="cstat-no" title="statement not covered" >          const mappedNodes = mapNodesIfChanged(nodes, (node) =&gt; node.map(fn));</span>
 <span class="cstat-no" title="statement not covered" >          if (newNode !== nodes) {</span>
-<span class="cstat-no" title="statement not covered" >            if (!newNode) {</span>
-<span class="cstat-no" title="statement not covered" >              newNode = new _Node({</span>
-<span class="cstat-no" title="statement not covered" >                parent: this.parent</span>
-<span class="cstat-no" title="statement not covered" >              });</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            newNode ?? (newNode = new _Node({</span>
+<span class="cstat-no" title="statement not covered" >              parent: this.parent</span>
+<span class="cstat-no" title="statement not covered" >            }));</span>
 <span class="cstat-no" title="statement not covered" >            newNode.setProperty(NODES_KEY, mappedNodes);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -30910,7 +30898,7 @@ ${text}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T01:23:39.799Z
+                at 2026-06-17T01:19:06.291Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
