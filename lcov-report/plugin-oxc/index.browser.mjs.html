@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22982</span>
+                <span class='fraction'>0/22985</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22982</span>
+                <span class='fraction'>0/22985</span>
             </div>
         
             
@@ -23045,7 +23045,13 @@
 <a name='L22980'></a><a href='#L22980'>22980</a>
 <a name='L22981'></a><a href='#L22981'>22981</a>
 <a name='L22982'></a><a href='#L22982'>22982</a>
-<a name='L22983'></a><a href='#L22983'>22983</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L22983'></a><a href='#L22983'>22983</a>
+<a name='L22984'></a><a href='#L22984'>22984</a>
+<a name='L22985'></a><a href='#L22985'>22985</a>
+<a name='L22986'></a><a href='#L22986'>22986</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -62013,6 +62019,9 @@
 <span class="cstat-no" title="statement not covered" >  "GenericTypeAnnotation",</span>
 <span class="cstat-no" title="statement not covered" >  "TSTypeReference"</span>
 <span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >function isMultipleTupleTypeElement(path) {</span>
+<span class="cstat-no" title="statement not covered" >  return path.key === "elementTypes" &amp;&amp; isTupleType(path.parent) &amp;&amp; path.parent.elementTypes.length &gt; 1;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function shouldHugUnionType(node) {</span>
 <span class="cstat-no" title="statement not covered" >  const { types } = node;</span>
 <span class="cstat-no" title="statement not covered" >  if (types.some((node2) =&gt; hasComment(node2))) {</span>
@@ -62024,10 +62033,11 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return types.every((node2) =&gt; node2 === objectType || isVoidType(node2));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function shouldUnionTypePrintOwnComments({ key, node, parent }) {</span>
+<span class="cstat-no" title="statement not covered" >function shouldUnionTypePrintOwnComments(path) {</span>
+<span class="cstat-no" title="statement not covered" >  const { key, node, parent } = path;</span>
 <span class="cstat-no" title="statement not covered" >  if (shouldHugUnionType(node) || // If it's `types` of union type, parent will print comment for it</span>
 <span class="cstat-no" title="statement not covered" >  key === "types" &amp;&amp; isUnionType(parent) || // Inside intersection type let the comment print outside of parentheses</span>
-<span class="cstat-no" title="statement not covered" >  key === "types" &amp;&amp; isIntersectionType(parent)) {</span>
+<span class="cstat-no" title="statement not covered" >  key === "types" &amp;&amp; isIntersectionType(parent) || isMultipleTupleTypeElement(path)) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return true;</span>
@@ -62055,8 +62065,7 @@
 <span class="cstat-no" title="statement not covered" >  if (needs_parentheses_default(path, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >    return group([indent([softline, printed]), softline]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const { key, parent } = path;</span>
-<span class="cstat-no" title="statement not covered" >  if (key === "elementTypes" &amp;&amp; isTupleType(parent) &amp;&amp; parent.elementTypes.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >  if (isMultipleTupleTypeElement(path)) {</span>
 <span class="cstat-no" title="statement not covered" >    return group([</span>
 <span class="cstat-no" title="statement not covered" >      indent([ifBreak(["(", softline]), printed]),</span>
 <span class="cstat-no" title="statement not covered" >      softline,</span>
@@ -62070,7 +62079,7 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function shouldIndentUnionType(path) {</span>
 <span class="cstat-no" title="statement not covered" >  const { key, parent } = path;</span>
-<span class="cstat-no" title="statement not covered" >  if (key === "typeAnnotation" &amp;&amp; parent.type === "TSTypeAssertion" || key === "elementTypes" &amp;&amp; isTupleType(parent) || (key === "trueType" || key === "falseType") &amp;&amp; isConditionalType(parent) || key === "params" &amp;&amp; isTypeParameterInstantiation(parent)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (key === "typeAnnotation" &amp;&amp; parent.type === "TSTypeAssertion" || key === "elementTypes" &amp;&amp; isTupleType(parent) || (key === "trueType" || key === "falseType") &amp;&amp; isConditionalType(parent) || key === "params" &amp;&amp; isTypeParameterInstantiation(parent) || key === "typeAnnotation" &amp;&amp; parent.type === "FunctionTypeParam" &amp;&amp; !parent.name &amp;&amp; path.grandparent.this !== parent) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (path.match(</span>
@@ -69016,7 +69025,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-17T01:19:06.291Z
+                at 2026-06-18T01:17:35.593Z
             </div>
         <script src="../prettify.js"></script>
         <script>
