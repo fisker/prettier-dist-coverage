@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22985</span>
+                <span class='fraction'>0/22976</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22985</span>
+                <span class='fraction'>0/22976</span>
             </div>
         
             
@@ -23039,25 +23039,7 @@
 <a name='L22974'></a><a href='#L22974'>22974</a>
 <a name='L22975'></a><a href='#L22975'>22975</a>
 <a name='L22976'></a><a href='#L22976'>22976</a>
-<a name='L22977'></a><a href='#L22977'>22977</a>
-<a name='L22978'></a><a href='#L22978'>22978</a>
-<a name='L22979'></a><a href='#L22979'>22979</a>
-<a name='L22980'></a><a href='#L22980'>22980</a>
-<a name='L22981'></a><a href='#L22981'>22981</a>
-<a name='L22982'></a><a href='#L22982'>22982</a>
-<a name='L22983'></a><a href='#L22983'>22983</a>
-<a name='L22984'></a><a href='#L22984'>22984</a>
-<a name='L22985'></a><a href='#L22985'>22985</a>
-<a name='L22986'></a><a href='#L22986'>22986</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L22977'></a><a href='#L22977'>22977</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -56836,6 +56818,7 @@
 <span class="cstat-no" title="statement not covered" >  DeclareNamespace: vk[29],</span>
 <span class="cstat-no" title="statement not covered" >  EnumBigIntBody: vk[38],</span>
 <span class="cstat-no" title="statement not covered" >  EnumBigIntMember: vk[17],</span>
+<span class="cstat-no" title="statement not covered" >  EnumBody: vk[38],</span>
 <span class="cstat-no" title="statement not covered" >  HookDeclaration: vk[41],</span>
 <span class="cstat-no" title="statement not covered" >  HookTypeAnnotation: ["params", "returnType", "rest", "typeParameters"],</span>
 <span class="cstat-no" title="statement not covered" >  InferTypeAnnotation: vk[46],</span>
@@ -56868,6 +56851,7 @@
 <span class="cstat-no" title="statement not covered" >  RecordDeclarationStaticProperty: ["key", "typeAnnotation", "value"],</span>
 <span class="cstat-no" title="statement not covered" >  RecordExpression: ["recordConstructor", "typeArguments", "properties"],</span>
 <span class="cstat-no" title="statement not covered" >  RecordExpressionProperties: vk[12],</span>
+<span class="cstat-no" title="statement not covered" >  SatisfiesExpression: vk[36],</span>
 <span class="cstat-no" title="statement not covered" >  TupleTypeLabeledElement: ["label", "elementType", "variance"],</span>
 <span class="cstat-no" title="statement not covered" >  TupleTypeSpreadElement: ["label", "typeAnnotation"],</span>
 <span class="cstat-no" title="statement not covered" >  TypeOperator: vk[30],</span>
@@ -56889,9 +56873,7 @@
 <span class="cstat-no" title="statement not covered" >  TSJSDocAllType: [],</span>
 <span class="cstat-no" title="statement not covered" >  TSJSDocUnknownType: [],</span>
 <span class="cstat-no" title="statement not covered" >  TSJSDocNullableType: vk[30],</span>
-<span class="cstat-no" title="statement not covered" >  TSJSDocNonNullableType: vk[30],</span>
-<span class="cstat-no" title="statement not covered" >  SatisfiesExpression: vk[36],</span>
-<span class="cstat-no" title="statement not covered" >  EnumBody: vk[38]</span>
+<span class="cstat-no" title="statement not covered" >  TSJSDocNonNullableType: vk[30]</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/traverse/get-visitor-keys.js</span>
@@ -57053,13 +57035,6 @@
 <span class="cstat-no" title="statement not covered" >          if (astType === "hermes" &amp;&amp; node.assertions &amp;&amp; !node.attributes) {</span>
 <span class="cstat-no" title="statement not covered" >            node.attributes = node.assertions;</span>
 <span class="cstat-no" title="statement not covered" >            delete node.assertions;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="cstat-no" title="statement not covered" >        // Since flow@0.313.0, `TypeParameter.bound` is a bare type node without the `TypeAnnotation` wrapper</span>
-<span class="cstat-no" title="statement not covered" >        // https://github.com/facebook/flow/blob/HEAD/Changelog.md#03130</span>
-<span class="cstat-no" title="statement not covered" >        case "TypeParameter":</span>
-<span class="cstat-no" title="statement not covered" >          if (astType !== "flow" &amp;&amp; node.bound?.type === "TypeAnnotation") {</span>
-<span class="cstat-no" title="statement not covered" >            node.bound = node.bound.typeAnnotation;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -59496,7 +59471,7 @@
 <span class="cstat-no" title="statement not covered" >      if (key === "extendsType" &amp;&amp; isConditionalType(node) &amp;&amp; parent.type === node.type) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (key === "constraint" &amp;&amp; node.type === "TSConditionalType" &amp;&amp; parent.type === "TSTypeParameter" || key === "bound" &amp;&amp; node.type === "ConditionalTypeAnnotation" &amp;&amp; parent.type === "TypeParameter" &amp;&amp; parent.usesExtendsBound) {</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "constraint" &amp;&amp; node.type === "TSConditionalType" &amp;&amp; parent.type === "TSTypeParameter" || key === "typeAnnotation" &amp;&amp; node.type === "ConditionalTypeAnnotation" &amp;&amp; parent.type === "TypeAnnotation" &amp;&amp; path.grandparent.type === "TypeParameter" &amp;&amp; path.grandparent.bound === parent &amp;&amp; path.grandparent.usesExtendsBound) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (key === "checkType" &amp;&amp; isConditionalType(parent)) {</span>
@@ -67517,8 +67492,6 @@
 <span class="cstat-no" title="statement not covered" >  if (node.bound) {</span>
 <span class="cstat-no" title="statement not covered" >    if (node.usesExtendsBound) {</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(" extends ");</span>
-<span class="cstat-no" title="statement not covered" >    } else {</span>
-<span class="cstat-no" title="statement not covered" >      parts.push(": ");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(printTypeAnnotationProperty(path, print3, "bound"));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -69025,7 +68998,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-22T01:21:27.155Z
+                at 2026-06-23T01:07:50.830Z
             </div>
         <script src="../prettify.js"></script>
         <script>

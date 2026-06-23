@@ -7686,7 +7686,7 @@ var isFunctionStrictlyNullaryOrUnary = (() =&gt; {
 var isNumber2 = <span class="fstat-no" title="function not covered" >(value) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return typeof value === "number";</span>
 };
-var isObject2 = <span class="fstat-no" title="function not covered" >(value) =&gt; {</span>
+var isObject3 = <span class="fstat-no" title="function not covered" >(value) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return typeof value === "object" &amp;&amp; value !== null;</span>
 };
 var isRegExp = <span class="fstat-no" title="function not covered" >(value) =&gt; {</span>
@@ -7707,7 +7707,7 @@ var isRegExpStatic = /* @__PURE__ */ (() =&gt; {
 var isString3 = (value) =&gt; {
   return typeof value === "string";
 };
-var isUndefined3 = <span class="fstat-no" title="function not covered" >(value) =&gt; {</span>
+var isUndefined4 = <span class="fstat-no" title="function not covered" >(value) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return value === void 0;</span>
 };
 var memoize2 = (fn) =&gt; {
@@ -7761,10 +7761,10 @@ var chars = <span class="fstat-no" title="function not covered" >(target, handle
 <span class="cstat-no" title="statement not covered" >      indexEnd += 1;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (indexEnd &gt; indexStart) {</span>
-<span class="cstat-no" title="statement not covered" >      if (!isUndefined3(handler) &amp;&amp; !state.options.silent) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!isUndefined4(handler) &amp;&amp; !state.options.silent) {</span>
 <span class="cstat-no" title="statement not covered" >        const target2 = input.slice(indexStart, indexEnd);</span>
 <span class="cstat-no" title="statement not covered" >        const output = isFunction3(handler) ? handler(target2, input, `${indexStart}`) : handler;</span>
-<span class="cstat-no" title="statement not covered" >        if (!isUndefined3(output)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!isUndefined4(output)) {</span>
 <span class="cstat-no" title="statement not covered" >          state.output.push(output);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -7797,7 +7797,7 @@ var regexCapturing = (re, handler) =&gt; {
 <span class="cstat-no" title="statement not covered" >      const indexEnd = re.lastIndex;</span>
 <span class="cstat-no" title="statement not covered" >      if (!state.options.silent) {</span>
 <span class="cstat-no" title="statement not covered" >        const output = handler(...match2, input, `${indexStart}`);</span>
-<span class="cstat-no" title="statement not covered" >        if (!isUndefined3(output)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!isUndefined4(output)) {</span>
 <span class="cstat-no" title="statement not covered" >          state.output.push(output);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -7816,9 +7816,9 @@ var regexNonCapturing = (re, handler) =&gt; {
 <span class="cstat-no" title="statement not covered" >    const matched = re.test(input);</span>
 <span class="cstat-no" title="statement not covered" >    if (matched) {</span>
 <span class="cstat-no" title="statement not covered" >      const indexEnd = re.lastIndex;</span>
-<span class="cstat-no" title="statement not covered" >      if (!isUndefined3(handler) &amp;&amp; !state.options.silent) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!isUndefined4(handler) &amp;&amp; !state.options.silent) {</span>
 <span class="cstat-no" title="statement not covered" >        const output = isFunction3(handler) ? handler(input.slice(indexStart, indexEnd), input, `${indexStart}`) : handler;</span>
-<span class="cstat-no" title="statement not covered" >        if (!isUndefined3(output)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!isUndefined4(output)) {</span>
 <span class="cstat-no" title="statement not covered" >          state.output.push(output);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -7835,9 +7835,9 @@ var string = (target, handler) =&gt; {
 <span class="cstat-no" title="statement not covered" >    const input = state.input;</span>
 <span class="cstat-no" title="statement not covered" >    const matched = input.startsWith(target, indexStart);</span>
 <span class="cstat-no" title="statement not covered" >    if (matched) {</span>
-<span class="cstat-no" title="statement not covered" >      if (!isUndefined3(handler) &amp;&amp; !state.options.silent) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!isUndefined4(handler) &amp;&amp; !state.options.silent) {</span>
 <span class="cstat-no" title="statement not covered" >        const output = isFunction3(handler) ? handler(target, input, `${indexStart}`) : handler;</span>
-<span class="cstat-no" title="statement not covered" >        if (!isUndefined3(output)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!isUndefined4(output)) {</span>
 <span class="cstat-no" title="statement not covered" >          state.output.push(output);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -7926,7 +7926,7 @@ var handleable = (rule, handler) =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (matched) {</span>
 <span class="cstat-no" title="statement not covered" >      const outputs = state.output.splice(length, Infinity);</span>
 <span class="cstat-no" title="statement not covered" >      const output = handler(outputs);</span>
-<span class="cstat-no" title="statement not covered" >      if (!isUndefined3(output)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!isUndefined4(output)) {</span>
 <span class="cstat-no" title="statement not covered" >        state.output.push(output);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
@@ -8013,7 +8013,7 @@ var resolve = memoize2((rule) =&gt; {
 <span class="cstat-no" title="statement not covered" >  if (isArray2(rule)) {</span>
 <span class="cstat-no" title="statement not covered" >    return and(rule);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (isObject2(rule)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (isObject3(rule)) {</span>
 <span class="cstat-no" title="statement not covered" >    return or(Object.values(rule));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  throw new Error("Invalid rule");</span>
@@ -8338,7 +8338,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-22T01:21:24.420Z
+                at 2026-06-23T01:07:48.575Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

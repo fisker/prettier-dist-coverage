@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.74% </span>
+                <span class="strong">55.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4399/7891</span>
+                <span class='fraction'>4396/7884</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.61% </span>
+                <span class="strong">54.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>686/1256</span>
+                <span class='fraction'>686/1255</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.74% </span>
+                <span class="strong">55.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4399/7891</span>
+                <span class='fraction'>4396/7884</span>
             </div>
         
             
@@ -7946,14 +7946,7 @@
 <a name='L7881'></a><a href='#L7881'>7881</a>
 <a name='L7882'></a><a href='#L7882'>7882</a>
 <a name='L7883'></a><a href='#L7883'>7883</a>
-<a name='L7884'></a><a href='#L7884'>7884</a>
-<a name='L7885'></a><a href='#L7885'>7885</a>
-<a name='L7886'></a><a href='#L7886'>7886</a>
-<a name='L7887'></a><a href='#L7887'>7887</a>
-<a name='L7888'></a><a href='#L7888'>7888</a>
-<a name='L7889'></a><a href='#L7889'>7889</a>
-<a name='L7890'></a><a href='#L7890'>7890</a>
-<a name='L7891'></a><a href='#L7891'>7891</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L7884'></a><a href='#L7884'>7884</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -15034,13 +15027,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">271x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">271x</span>
-<span class="cline-any cline-yes">271x</span>
-<span class="cline-any cline-yes">271x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22709,6 +22695,7 @@
     DeclareNamespace: vk[29],
     EnumBigIntBody: vk[38],
     EnumBigIntMember: vk[17],
+    EnumBody: vk[38],
     HookDeclaration: vk[41],
     HookTypeAnnotation: ["params", "returnType", "rest", "typeParameters"],
     InferTypeAnnotation: vk[46],
@@ -22741,6 +22728,7 @@
     RecordDeclarationStaticProperty: ["key", "typeAnnotation", "value"],
     RecordExpression: ["recordConstructor", "typeArguments", "properties"],
     RecordExpressionProperties: vk[12],
+    SatisfiesExpression: vk[36],
     TupleTypeLabeledElement: ["label", "elementType", "variance"],
     TupleTypeSpreadElement: ["label", "typeAnnotation"],
     TypeOperator: vk[30],
@@ -22762,9 +22750,7 @@
     TSJSDocAllType: [],
     TSJSDocUnknownType: [],
     TSJSDocNullableType: vk[30],
-    TSJSDocNonNullableType: vk[30],
-    SatisfiesExpression: vk[36],
-    EnumBody: vk[38]
+    TSJSDocNonNullableType: vk[30]
   };
 &nbsp;
   // src/language-js/traverse/get-visitor-keys.js
@@ -22926,13 +22912,6 @@
 <span class="cstat-no" title="statement not covered" >            if (astType === "hermes" &amp;&amp; node.assertions &amp;&amp; !node.attributes) {</span>
 <span class="cstat-no" title="statement not covered" >              node.attributes = node.assertions;</span>
 <span class="cstat-no" title="statement not covered" >              delete node.assertions;</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
-          // Since flow@0.313.0, `TypeParameter.bound` is a bare type node without the `TypeAnnotation` wrapper
-          // https://github.com/facebook/flow/blob/HEAD/Changelog.md#03130
-<span class="branch-0 cbranch-no" title="branch not covered" >          case "TypeParameter":</span>
-<span class="cstat-no" title="statement not covered" >            if (astType !== "flow" &amp;&amp; node.bound?.type === "TypeAnnotation") {</span>
-<span class="cstat-no" title="statement not covered" >              node.bound = node.bound.typeAnnotation;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
         }
@@ -23740,7 +23719,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-22T01:21:27.155Z
+                at 2026-06-23T01:07:50.830Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
