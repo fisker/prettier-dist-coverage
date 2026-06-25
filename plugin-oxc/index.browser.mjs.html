@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22976</span>
+                <span class='fraction'>0/23002</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22976</span>
+                <span class='fraction'>0/23002</span>
             </div>
         
             
@@ -23039,7 +23039,59 @@
 <a name='L22974'></a><a href='#L22974'>22974</a>
 <a name='L22975'></a><a href='#L22975'>22975</a>
 <a name='L22976'></a><a href='#L22976'>22976</a>
-<a name='L22977'></a><a href='#L22977'>22977</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L22977'></a><a href='#L22977'>22977</a>
+<a name='L22978'></a><a href='#L22978'>22978</a>
+<a name='L22979'></a><a href='#L22979'>22979</a>
+<a name='L22980'></a><a href='#L22980'>22980</a>
+<a name='L22981'></a><a href='#L22981'>22981</a>
+<a name='L22982'></a><a href='#L22982'>22982</a>
+<a name='L22983'></a><a href='#L22983'>22983</a>
+<a name='L22984'></a><a href='#L22984'>22984</a>
+<a name='L22985'></a><a href='#L22985'>22985</a>
+<a name='L22986'></a><a href='#L22986'>22986</a>
+<a name='L22987'></a><a href='#L22987'>22987</a>
+<a name='L22988'></a><a href='#L22988'>22988</a>
+<a name='L22989'></a><a href='#L22989'>22989</a>
+<a name='L22990'></a><a href='#L22990'>22990</a>
+<a name='L22991'></a><a href='#L22991'>22991</a>
+<a name='L22992'></a><a href='#L22992'>22992</a>
+<a name='L22993'></a><a href='#L22993'>22993</a>
+<a name='L22994'></a><a href='#L22994'>22994</a>
+<a name='L22995'></a><a href='#L22995'>22995</a>
+<a name='L22996'></a><a href='#L22996'>22996</a>
+<a name='L22997'></a><a href='#L22997'>22997</a>
+<a name='L22998'></a><a href='#L22998'>22998</a>
+<a name='L22999'></a><a href='#L22999'>22999</a>
+<a name='L23000'></a><a href='#L23000'>23000</a>
+<a name='L23001'></a><a href='#L23001'>23001</a>
+<a name='L23002'></a><a href='#L23002'>23002</a>
+<a name='L23003'></a><a href='#L23003'>23003</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -58113,15 +58165,32 @@
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/comments/attach/union-type.js</span>
+<span class="cstat-no" title="statement not covered" >function shouldAttachToUnionTypeFirstElement(node, { comment, text, options: options2 }) {</span>
+<span class="cstat-no" title="statement not covered" >  if (isUnionType(node) &amp;&amp; isBlockComment(comment) &amp;&amp; isSingleLineComment(comment, text) &amp;&amp; !isPrettierIgnoreComment(comment)) {</span>
+<span class="cstat-no" title="statement not covered" >    const text2 = stripComments(options2);</span>
+<span class="cstat-no" title="statement not covered" >    const textBetween = text2.slice(locEnd(comment), locStart(node));</span>
+<span class="cstat-no" title="statement not covered" >    return /^[ \t]*$/.test(textBetween);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return false;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function addLeadingCommentToPossibleUnionType(node, context) {</span>
+<span class="cstat-no" title="statement not covered" >  addLeadingComment(</span>
+<span class="cstat-no" title="statement not covered" >    shouldAttachToUnionTypeFirstElement(node, context) ? node.types[0] : node,</span>
+<span class="cstat-no" title="statement not covered" >    context.comment</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >  return true;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/comments/handle-comments.js</span>
 <span class="cstat-no" title="statement not covered" >function handleOwnLineComment(context) {</span>
 <span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileLikeComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function handleEndOfLineComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleVariableDeclaratorComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleArrowExpressionComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleAssignmentLikeComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleArrowExpressionComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function handleRemainingComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileLikeComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleParenthesizedExpressionTrailingComment, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >  return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileLikeComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleAssignmentLikeComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleParenthesizedExpressionTrailingComment, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function handleClosureTypeCastComments({</span>
 <span class="cstat-no" title="statement not covered" >  comment,</span>
@@ -58520,14 +58589,23 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var isAssignmentLikeNode = createTypeCheckFunction(["VariableDeclarator", "AssignmentExpression", "TypeAlias", "TSTypeAliasDeclaration"]);</span>
 <span class="cstat-no" title="statement not covered" >var isComplexExprNode = createTypeCheckFunction(["ObjectExpression", "ArrayExpression", "TemplateLiteral", "TaggedTemplateExpression", "ObjectTypeAnnotation", "TSTypeLiteral"]);</span>
-<span class="cstat-no" title="statement not covered" >function handleVariableDeclaratorComments({</span>
-<span class="cstat-no" title="statement not covered" >  comment,</span>
-<span class="cstat-no" title="statement not covered" >  enclosingNode,</span>
-<span class="cstat-no" title="statement not covered" >  followingNode</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  if (isAssignmentLikeNode(enclosingNode) &amp;&amp; followingNode &amp;&amp; (isComplexExprNode(followingNode) || isBlockComment(comment))) {</span>
-<span class="cstat-no" title="statement not covered" >    addLeadingComment(followingNode, comment);</span>
-<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >function handleAssignmentLikeComments(context) {</span>
+<span class="cstat-no" title="statement not covered" >  const {</span>
+<span class="cstat-no" title="statement not covered" >    comment,</span>
+<span class="cstat-no" title="statement not covered" >    enclosingNode,</span>
+<span class="cstat-no" title="statement not covered" >    followingNode,</span>
+<span class="cstat-no" title="statement not covered" >    options: options2,</span>
+<span class="cstat-no" title="statement not covered" >    placement</span>
+<span class="cstat-no" title="statement not covered" >  } = context;</span>
+<span class="cstat-no" title="statement not covered" >  if (isAssignmentLikeNode(enclosingNode) &amp;&amp; followingNode) {</span>
+<span class="cstat-no" title="statement not covered" >    if (placement === "endOfLine" &amp;&amp; (isComplexExprNode(followingNode) || isBlockComment(comment))) {</span>
+<span class="cstat-no" title="statement not covered" >      return addLeadingCommentToPossibleUnionType(followingNode, context);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const leftSide = enclosingNode.id ?? enclosingNode.left;</span>
+<span class="cstat-no" title="statement not covered" >    const equalsTokenIndex = stripComments(options2).indexOf("=", locEnd(leftSide));</span>
+<span class="cstat-no" title="statement not covered" >    if (locStart(comment) &gt;= equalsTokenIndex) {</span>
+<span class="cstat-no" title="statement not covered" >      return addLeadingCommentToPossibleUnionType(followingNode, context);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -58710,19 +58788,14 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function handleUnionTypeLeadingComments({</span>
-<span class="cstat-no" title="statement not covered" >  followingNode,</span>
-<span class="cstat-no" title="statement not covered" >  comment,</span>
-<span class="cstat-no" title="statement not covered" >  text,</span>
-<span class="cstat-no" title="statement not covered" >  options: options2</span>
-<span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  if (isUnionType(followingNode) &amp;&amp; isBlockComment(comment) &amp;&amp; isSingleLineComment(comment, text) &amp;&amp; !isPrettierIgnoreComment(comment)) {</span>
-<span class="cstat-no" title="statement not covered" >    const text2 = stripComments(options2);</span>
-<span class="cstat-no" title="statement not covered" >    const textBetween = text2.slice(locEnd(comment), locStart(followingNode));</span>
-<span class="cstat-no" title="statement not covered" >    if (/^[ \t]*$/.test(textBetween)) {</span>
-<span class="cstat-no" title="statement not covered" >      addLeadingComment(followingNode.types[0], comment);</span>
-<span class="cstat-no" title="statement not covered" >      return true;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >function handleUnionTypeLeadingComments(context) {</span>
+<span class="cstat-no" title="statement not covered" >  const {</span>
+<span class="cstat-no" title="statement not covered" >    followingNode,</span>
+<span class="cstat-no" title="statement not covered" >    comment</span>
+<span class="cstat-no" title="statement not covered" >  } = context;</span>
+<span class="cstat-no" title="statement not covered" >  if (shouldAttachToUnionTypeFirstElement(followingNode, context)) {</span>
+<span class="cstat-no" title="statement not covered" >    addLeadingComment(followingNode.types[0], comment);</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -59191,6 +59264,11 @@
 <span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "declarations" &amp;&amp; node2.type === "VariableDeclaration",</span>
 <span class="cstat-no" title="statement not covered" >        (node2, key2) =&gt; key2 === "left" &amp;&amp; node2.type === "ForInStatement"</span>
 <span class="cstat-no" title="statement not covered" >      )) {</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+<span class="cstat-no" title="statement not covered" >    case "TSInstantiationExpression":</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "expression" &amp;&amp; (node.type === "AwaitExpression" || node.type === "YieldExpression")) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
@@ -68998,7 +69076,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-24T01:05:35.012Z
+                at 2026-06-25T01:10:11.275Z
             </div>
         <script src="../prettify.js"></script>
         <script>
