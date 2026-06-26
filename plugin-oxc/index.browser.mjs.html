@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/23002</span>
+                <span class='fraction'>0/23003</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/23002</span>
+                <span class='fraction'>0/23003</span>
             </div>
         
             
@@ -23065,7 +23065,9 @@
 <a name='L23000'></a><a href='#L23000'>23000</a>
 <a name='L23001'></a><a href='#L23001'>23001</a>
 <a name='L23002'></a><a href='#L23002'>23002</a>
-<a name='L23003'></a><a href='#L23003'>23003</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L23003'></a><a href='#L23003'>23003</a>
+<a name='L23004'></a><a href='#L23004'>23004</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -58058,7 +58060,8 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/comments/attach/utilities.js</span>
-<span class="cstat-no" title="statement not covered" >var isSingleLineComment = (comment, text) =&gt; isLineComment(comment) || !has_newline_in_range_default(text, locStart(comment), locEnd(comment));</span>
+<span class="cstat-no" title="statement not covered" >var isSingleLineBlockComment = (comment, text) =&gt; isBlockComment(comment) &amp;&amp; !has_newline_in_range_default(text, locStart(comment), locEnd(comment));</span>
+<span class="cstat-no" title="statement not covered" >var isSingleLineComment = (comment, text) =&gt; isLineComment(comment) || isSingleLineBlockComment(comment, text);</span>
 <span class="cstat-no" title="statement not covered" >function addBlockOrNotComment(node, comment) {</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type === "BlockStatement") {</span>
 <span class="cstat-no" title="statement not covered" >    addBlockStatementFirstComment(node, comment);</span>
@@ -58130,7 +58133,7 @@
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const isConsequentBlockStatement = precedingNode.type === "BlockStatement";</span>
-<span class="cstat-no" title="statement not covered" >  if (!isConsequentBlockStatement &amp;&amp; isSingleLineComment &amp;&amp; // Comment and `precedingNode` are on same line</span>
+<span class="cstat-no" title="statement not covered" >  if (!isConsequentBlockStatement &amp;&amp; isSingleLineComment(comment, text) &amp;&amp; // Comment and `precedingNode` are on same line</span>
 <span class="cstat-no" title="statement not covered" >  !has_newline_in_range_default(text, locEnd(precedingNode), locStart(comment))) {</span>
 <span class="cstat-no" title="statement not covered" >    addTrailingComment(precedingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
@@ -58167,7 +58170,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/comments/attach/union-type.js</span>
 <span class="cstat-no" title="statement not covered" >function shouldAttachToUnionTypeFirstElement(node, { comment, text, options: options2 }) {</span>
-<span class="cstat-no" title="statement not covered" >  if (isUnionType(node) &amp;&amp; isBlockComment(comment) &amp;&amp; isSingleLineComment(comment, text) &amp;&amp; !isPrettierIgnoreComment(comment)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (isUnionType(node) &amp;&amp; isSingleLineBlockComment(comment, text) &amp;&amp; !isPrettierIgnoreComment(comment)) {</span>
 <span class="cstat-no" title="statement not covered" >    const text2 = stripComments(options2);</span>
 <span class="cstat-no" title="statement not covered" >    const textBetween = text2.slice(locEnd(comment), locStart(node));</span>
 <span class="cstat-no" title="statement not covered" >    return /^[ \t]*$/.test(textBetween);</span>
@@ -58597,11 +58600,11 @@
 <span class="cstat-no" title="statement not covered" >    options: options2,</span>
 <span class="cstat-no" title="statement not covered" >    placement</span>
 <span class="cstat-no" title="statement not covered" >  } = context;</span>
-<span class="cstat-no" title="statement not covered" >  if (isAssignmentLikeNode(enclosingNode) &amp;&amp; followingNode) {</span>
-<span class="cstat-no" title="statement not covered" >    if (placement === "endOfLine" &amp;&amp; (isComplexExprNode(followingNode) || isBlockComment(comment))) {</span>
-<span class="cstat-no" title="statement not covered" >      return addLeadingCommentToPossibleUnionType(followingNode, context);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const leftSide = enclosingNode.id ?? enclosingNode.left;</span>
+<span class="cstat-no" title="statement not covered" >  if (isAssignmentLikeNode(enclosingNode) &amp;&amp; followingNode &amp;&amp; placement === "endOfLine" &amp;&amp; (isComplexExprNode(followingNode) || isBlockComment(comment))) {</span>
+<span class="cstat-no" title="statement not covered" >    return addLeadingCommentToPossibleUnionType(followingNode, context);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (isTypeAlias(enclosingNode) &amp;&amp; followingNode) {</span>
+<span class="cstat-no" title="statement not covered" >    const leftSide = enclosingNode.id;</span>
 <span class="cstat-no" title="statement not covered" >    const equalsTokenIndex = stripComments(options2).indexOf("=", locEnd(leftSide));</span>
 <span class="cstat-no" title="statement not covered" >    if (locStart(comment) &gt;= equalsTokenIndex) {</span>
 <span class="cstat-no" title="statement not covered" >      return addLeadingCommentToPossibleUnionType(followingNode, context);</span>
@@ -69076,7 +69079,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-25T01:10:11.275Z
+                at 2026-06-26T01:12:38.028Z
             </div>
         <script src="../prettify.js"></script>
         <script>
