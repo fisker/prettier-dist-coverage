@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/975</span>
+                <span class='fraction'>0/959</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/975</span>
+                <span class='fraction'>0/959</span>
             </div>
         
             
@@ -1022,39 +1022,7 @@
 <a name='L957'></a><a href='#L957'>957</a>
 <a name='L958'></a><a href='#L958'>958</a>
 <a name='L959'></a><a href='#L959'>959</a>
-<a name='L960'></a><a href='#L960'>960</a>
-<a name='L961'></a><a href='#L961'>961</a>
-<a name='L962'></a><a href='#L962'>962</a>
-<a name='L963'></a><a href='#L963'>963</a>
-<a name='L964'></a><a href='#L964'>964</a>
-<a name='L965'></a><a href='#L965'>965</a>
-<a name='L966'></a><a href='#L966'>966</a>
-<a name='L967'></a><a href='#L967'>967</a>
-<a name='L968'></a><a href='#L968'>968</a>
-<a name='L969'></a><a href='#L969'>969</a>
-<a name='L970'></a><a href='#L970'>970</a>
-<a name='L971'></a><a href='#L971'>971</a>
-<a name='L972'></a><a href='#L972'>972</a>
-<a name='L973'></a><a href='#L973'>973</a>
-<a name='L974'></a><a href='#L974'>974</a>
-<a name='L975'></a><a href='#L975'>975</a>
-<a name='L976'></a><a href='#L976'>976</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L960'></a><a href='#L960'>960</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -2037,8 +2005,7 @@
 <span class="cstat-no" title="statement not covered" >// It comes from this issue: microsoft/TypeScript#29729:</span>
 <span class="cstat-no" title="statement not covered" >//   https://github.com/microsoft/TypeScript/issues/29729#issuecomment-700527227</span>
 <span class="cstat-no" title="statement not covered" >export type LiteralUnion&lt;T extends U, U = string&gt; =</span>
-<span class="cstat-no" title="statement not covered" >  | T</span>
-<span class="cstat-no" title="statement not covered" >  | (Pick&lt;U, never&gt; &amp; { _?: never | undefined });</span>
+<span class="cstat-no" title="statement not covered" >  T | (Pick&lt;U, never&gt; &amp; { _?: never | undefined });</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export type AST = any;</span>
 <span class="cstat-no" title="statement not covered" >export type Doc = doc.builders.Doc;</span>
@@ -2536,8 +2503,7 @@
 <span class="cstat-no" title="statement not covered" >        | null)</span>
 <span class="cstat-no" title="statement not covered" >    | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  preprocess?:</span>
-<span class="cstat-no" title="statement not covered" >    | ((ast: T, options: ParserOptions&lt;T&gt;) =&gt; T | Promise&lt;T&gt;)</span>
-<span class="cstat-no" title="statement not covered" >    | undefined;</span>
+<span class="cstat-no" title="statement not covered" >    ((ast: T, options: ParserOptions&lt;T&gt;) =&gt; T | Promise&lt;T&gt;) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  insertPragma?: (text: string) =&gt; string;</span>
 <span class="cstat-no" title="statement not covered" >  /**</span>
 <span class="cstat-no" title="statement not covered" >   * @returns `null` if you want to remove this node</span>
@@ -2545,15 +2511,13 @@
 <span class="cstat-no" title="statement not covered" >   * @returns anything if you want to replace the node with it</span>
 <span class="cstat-no" title="statement not covered" >   */</span>
 <span class="cstat-no" title="statement not covered" >  massageAstNode?:</span>
-<span class="cstat-no" title="statement not covered" >    | ((original: any, cloned: any, parent: any) =&gt; any)</span>
-<span class="cstat-no" title="statement not covered" >    | undefined;</span>
+<span class="cstat-no" title="statement not covered" >    ((original: any, cloned: any, parent: any) =&gt; any) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  hasPrettierIgnore?: ((path: AstPath&lt;T&gt;) =&gt; boolean) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  canAttachComment?: ((node: T, ancestors: T[]) =&gt; boolean) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  isBlockComment?: ((node: T) =&gt; boolean) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  willPrintOwnComments?: ((path: AstPath&lt;T&gt;) =&gt; boolean) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  printComment?:</span>
-<span class="cstat-no" title="statement not covered" >    | ((commentPath: AstPath&lt;T&gt;, options: ParserOptions&lt;T&gt;) =&gt; Doc)</span>
-<span class="cstat-no" title="statement not covered" >    | undefined;</span>
+<span class="cstat-no" title="statement not covered" >    ((commentPath: AstPath&lt;T&gt;, options: ParserOptions&lt;T&gt;) =&gt; Doc) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  /**</span>
 <span class="cstat-no" title="statement not covered" >   * By default, Prettier searches all object properties (except for a few predefined ones) of each node recursively.</span>
 <span class="cstat-no" title="statement not covered" >   * This function can be provided to override that behavior.</span>
@@ -2562,8 +2526,7 @@
 <span class="cstat-no" title="statement not covered" >   * @returns `[]` if the node has no children or `undefined` to fall back on the default behavior.</span>
 <span class="cstat-no" title="statement not covered" >   */</span>
 <span class="cstat-no" title="statement not covered" >  getCommentChildNodes?:</span>
-<span class="cstat-no" title="statement not covered" >    | ((node: T, options: ParserOptions&lt;T&gt;) =&gt; T[] | undefined)</span>
-<span class="cstat-no" title="statement not covered" >    | undefined;</span>
+<span class="cstat-no" title="statement not covered" >    ((node: T, options: ParserOptions&lt;T&gt;) =&gt; T[] | undefined) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  handleComments?:</span>
 <span class="cstat-no" title="statement not covered" >    | {</span>
 <span class="cstat-no" title="statement not covered" >        ownLine?:</span>
@@ -2596,8 +2559,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    | undefined;</span>
 <span class="cstat-no" title="statement not covered" >  getVisitorKeys?:</span>
-<span class="cstat-no" title="statement not covered" >    | ((node: T, nonTraversableKeys: Set&lt;string&gt;) =&gt; string[])</span>
-<span class="cstat-no" title="statement not covered" >    | undefined;</span>
+<span class="cstat-no" title="statement not covered" >    ((node: T, nonTraversableKeys: Set&lt;string&gt;) =&gt; string[]) | undefined;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export interface CursorOptions extends Options {</span>
@@ -2717,20 +2679,10 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export type SupportOptionType =</span>
-<span class="cstat-no" title="statement not covered" >  | "int"</span>
-<span class="cstat-no" title="statement not covered" >  | "string"</span>
-<span class="cstat-no" title="statement not covered" >  | "boolean"</span>
-<span class="cstat-no" title="statement not covered" >  | "choice"</span>
-<span class="cstat-no" title="statement not covered" >  | "path";</span>
+<span class="cstat-no" title="statement not covered" >  "int" | "string" | "boolean" | "choice" | "path";</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export type CoreCategoryType =</span>
-<span class="cstat-no" title="statement not covered" >  | "Config"</span>
-<span class="cstat-no" title="statement not covered" >  | "Editor"</span>
-<span class="cstat-no" title="statement not covered" >  | "Format"</span>
-<span class="cstat-no" title="statement not covered" >  | "Other"</span>
-<span class="cstat-no" title="statement not covered" >  | "Output"</span>
-<span class="cstat-no" title="statement not covered" >  | "Global"</span>
-<span class="cstat-no" title="statement not covered" >  | "Special";</span>
+<span class="cstat-no" title="statement not covered" >  "Config" | "Editor" | "Format" | "Other" | "Output" | "Global" | "Special";</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export interface BaseSupportOption&lt;Type extends SupportOptionType&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  readonly name?: string | undefined;</span>
@@ -2995,7 +2947,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-27T01:08:26.076Z
+                at 2026-06-28T01:14:09.626Z
             </div>
         <script src="../prettify.js"></script>
         <script>
