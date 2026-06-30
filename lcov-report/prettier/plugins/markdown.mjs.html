@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.05% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/23076</span>
+                <span class='fraction'>12/23056</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.05% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/23076</span>
+                <span class='fraction'>12/23056</span>
             </div>
         
             
@@ -23119,27 +23119,7 @@
 <a name='L23054'></a><a href='#L23054'>23054</a>
 <a name='L23055'></a><a href='#L23055'>23055</a>
 <a name='L23056'></a><a href='#L23056'>23056</a>
-<a name='L23057'></a><a href='#L23057'>23057</a>
-<a name='L23058'></a><a href='#L23058'>23058</a>
-<a name='L23059'></a><a href='#L23059'>23059</a>
-<a name='L23060'></a><a href='#L23060'>23060</a>
-<a name='L23061'></a><a href='#L23061'>23061</a>
-<a name='L23062'></a><a href='#L23062'>23062</a>
-<a name='L23063'></a><a href='#L23063'>23063</a>
-<a name='L23064'></a><a href='#L23064'>23064</a>
-<a name='L23065'></a><a href='#L23065'>23065</a>
-<a name='L23066'></a><a href='#L23066'>23066</a>
-<a name='L23067'></a><a href='#L23067'>23067</a>
-<a name='L23068'></a><a href='#L23068'>23068</a>
-<a name='L23069'></a><a href='#L23069'>23069</a>
-<a name='L23070'></a><a href='#L23070'>23070</a>
-<a name='L23071'></a><a href='#L23071'>23071</a>
-<a name='L23072'></a><a href='#L23072'>23072</a>
-<a name='L23073'></a><a href='#L23073'>23073</a>
-<a name='L23074'></a><a href='#L23074'>23074</a>
-<a name='L23075'></a><a href='#L23075'>23075</a>
-<a name='L23076'></a><a href='#L23076'>23076</a>
-<a name='L23077'></a><a href='#L23077'>23077</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L23057'></a><a href='#L23057'>23057</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -37853,26 +37833,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -65645,14 +65605,14 @@
 <span class="cstat-no" title="statement not covered" >    this.buffer();</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function exit3(token) {</span>
-<span class="cstat-no" title="statement not covered" >    const d = this.resume();</span>
+<span class="cstat-no" title="statement not covered" >    this.resume();</span>
 <span class="cstat-no" title="statement not covered" >    const node2 = method_at_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >      0,</span>
 <span class="cstat-no" title="statement not covered" >      this.stack,</span>
 <span class="cstat-no" title="statement not covered" >      -1</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    node2.value = d;</span>
+<span class="cstat-no" title="statement not covered" >    node2.value = this.sliceSerialize(token);</span>
 <span class="cstat-no" title="statement not covered" >    this.exit(token);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -65666,6 +65626,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  function tokenize(effects, ok3, nok) {</span>
+<span class="cstat-no" title="statement not covered" >    let closingCode;</span>
 <span class="cstat-no" title="statement not covered" >    return start;</span>
 <span class="cstat-no" title="statement not covered" >    function start(code2) {</span>
 <span class="cstat-no" title="statement not covered" >      effects.enter("liquidNode");</span>
@@ -65675,6 +65636,7 @@
 <span class="cstat-no" title="statement not covered" >        switch (code3) {</span>
 <span class="cstat-no" title="statement not covered" >          case codes2.percentSign:</span>
 <span class="cstat-no" title="statement not covered" >          case codes2.leftCurlyBrace:</span>
+<span class="cstat-no" title="statement not covered" >            closingCode = code3 === codes2.percentSign ? codes2.percentSign : codes2.rightCurlyBrace;</span>
 <span class="cstat-no" title="statement not covered" >            effects.consume(code3);</span>
 <span class="cstat-no" title="statement not covered" >            return inside;</span>
 <span class="cstat-no" title="statement not covered" >          default:</span>
@@ -65684,11 +65646,9 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    function inside(code2) {</span>
 <span class="cstat-no" title="statement not covered" >      switch (code2) {</span>
-<span class="cstat-no" title="statement not covered" >        case codes2.percentSign:</span>
-<span class="cstat-no" title="statement not covered" >        case codes2.rightCurlyBrace:</span>
-<span class="cstat-no" title="statement not covered" >          return effects.check({</span>
-<span class="cstat-no" title="statement not covered" >            tokenize: tokenizeClose</span>
-<span class="cstat-no" title="statement not covered" >          }, close, data)(code2);</span>
+<span class="cstat-no" title="statement not covered" >        case closingCode:</span>
+<span class="cstat-no" title="statement not covered" >          effects.consume(code2);</span>
+<span class="cstat-no" title="statement not covered" >          return mayClose;</span>
 <span class="cstat-no" title="statement not covered" >        case codes2.eof:</span>
 <span class="cstat-no" title="statement not covered" >          return nok(code2);</span>
 <span class="cstat-no" title="statement not covered" >        default:</span>
@@ -65700,42 +65660,18 @@
 <span class="cstat-no" title="statement not covered" >            effects.enter(types.data);</span>
 <span class="cstat-no" title="statement not covered" >            return inside;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          return data(code2);</span>
+<span class="cstat-no" title="statement not covered" >          effects.consume(code2);</span>
+<span class="cstat-no" title="statement not covered" >          return inside;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    function data(code2) {</span>
-<span class="cstat-no" title="statement not covered" >      effects.consume(code2);</span>
+<span class="cstat-no" title="statement not covered" >    function mayClose(code2) {</span>
+<span class="cstat-no" title="statement not covered" >      if (code2 === codes2.rightCurlyBrace) {</span>
+<span class="cstat-no" title="statement not covered" >        effects.consume(code2);</span>
+<span class="cstat-no" title="statement not covered" >        effects.exit(types.data);</span>
+<span class="cstat-no" title="statement not covered" >        effects.exit(nodeType);</span>
+<span class="cstat-no" title="statement not covered" >        return ok3;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return inside;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    function tokenizeClose(effects2, ok4, nok2) {</span>
-<span class="cstat-no" title="statement not covered" >      return startClose;</span>
-<span class="cstat-no" title="statement not covered" >      function startClose(code2) {</span>
-<span class="cstat-no" title="statement not covered" >        switch (code2) {</span>
-<span class="cstat-no" title="statement not covered" >          case codes2.percentSign:</span>
-<span class="cstat-no" title="statement not covered" >          case codes2.rightCurlyBrace:</span>
-<span class="cstat-no" title="statement not covered" >            effects2.consume(code2);</span>
-<span class="cstat-no" title="statement not covered" >            return endClose;</span>
-<span class="cstat-no" title="statement not covered" >          default:</span>
-<span class="cstat-no" title="statement not covered" >            return nok2(code2);</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      function endClose(code2) {</span>
-<span class="cstat-no" title="statement not covered" >        if (code2 !== codes2.rightCurlyBrace) {</span>
-<span class="cstat-no" title="statement not covered" >          return nok2(code2);</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        effects2.consume(code2);</span>
-<span class="cstat-no" title="statement not covered" >        return ok4;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    function close(code2) {</span>
-<span class="cstat-no" title="statement not covered" >      effects.consume(code2);</span>
-<span class="cstat-no" title="statement not covered" >      return closeEnd;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    function closeEnd(code2) {</span>
-<span class="cstat-no" title="statement not covered" >      effects.consume(code2);</span>
-<span class="cstat-no" title="statement not covered" >      effects.exit(types.data);</span>
-<span class="cstat-no" title="statement not covered" >      effects.exit(nodeType);</span>
-<span class="cstat-no" title="statement not covered" >      return ok3;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -67808,6 +67744,7 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-markdown/print/list.js</span>
+<span class="cstat-no" title="statement not covered" >var MAXIMUM_ORDERED_LIST_MARKER = 999999999;</span>
 <span class="cstat-no" title="statement not covered" >function printList(path2, options2, print) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node: node2 } = path2;</span>
 <span class="cstat-no" title="statement not covered" >  const nthSiblingIndex = getNthListSiblingIndex(node2, path2.parent);</span>
@@ -67831,7 +67768,10 @@
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >      ];</span>
 <span class="cstat-no" title="statement not covered" >      function getPrefix() {</span>
-<span class="cstat-no" title="statement not covered" >        const rawPrefix = node2.ordered ? (path2.isFirst ? node2.start : isGitDiffFriendlyOrderedList ? 1 : node2.start + path2.index) + (nthSiblingIndex % 2 === 0 ? ". " : ") ") : nthSiblingIndex % 2 === 0 ? "- " : "* ";</span>
+<span class="cstat-no" title="statement not covered" >        const rawPrefix = node2.ordered ? (path2.isFirst ? node2.start : isGitDiffFriendlyOrderedList ? 1 : Math.min(</span>
+<span class="cstat-no" title="statement not covered" >          node2.start + path2.index,</span>
+<span class="cstat-no" title="statement not covered" >          MAXIMUM_ORDERED_LIST_MARKER</span>
+<span class="cstat-no" title="statement not covered" >        )) + (nthSiblingIndex % 2 === 0 ? ". " : ") ") : nthSiblingIndex % 2 === 0 ? "- " : "* ";</span>
 <span class="cstat-no" title="statement not covered" >        let prefix2 = node2.isAligned &amp;&amp; node2.ordered ? alignListPrefix(rawPrefix, options2) : rawPrefix;</span>
 <span class="cstat-no" title="statement not covered" >        if (prefix2.length &gt;= minIndent) {</span>
 <span class="cstat-no" title="statement not covered" >          return prefix2;</span>
@@ -69298,7 +69238,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-29T01:14:24.750Z
+                at 2026-06-30T01:09:32.759Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
