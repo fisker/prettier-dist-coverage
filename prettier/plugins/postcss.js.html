@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/11710</span>
+                <span class='fraction'>5/11727</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11710</span>
+                <span class='fraction'>5/11727</span>
             </div>
         
             
@@ -11772,7 +11772,24 @@
 <a name='L11707'></a><a href='#L11707'>11707</a>
 <a name='L11708'></a><a href='#L11708'>11708</a>
 <a name='L11709'></a><a href='#L11709'>11709</a>
-<a name='L11710'></a><a href='#L11710'>11710</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L11710'></a><a href='#L11710'>11710</a>
+<a name='L11711'></a><a href='#L11711'>11711</a>
+<a name='L11712'></a><a href='#L11712'>11712</a>
+<a name='L11713'></a><a href='#L11713'>11713</a>
+<a name='L11714'></a><a href='#L11714'>11714</a>
+<a name='L11715'></a><a href='#L11715'>11715</a>
+<a name='L11716'></a><a href='#L11716'>11716</a>
+<a name='L11717'></a><a href='#L11717'>11717</a>
+<a name='L11718'></a><a href='#L11718'>11718</a>
+<a name='L11719'></a><a href='#L11719'>11719</a>
+<a name='L11720'></a><a href='#L11720'>11720</a>
+<a name='L11721'></a><a href='#L11721'>11721</a>
+<a name='L11722'></a><a href='#L11722'>11722</a>
+<a name='L11723'></a><a href='#L11723'>11723</a>
+<a name='L11724'></a><a href='#L11724'>11724</a>
+<a name='L11725'></a><a href='#L11725'>11725</a>
+<a name='L11726'></a><a href='#L11726'>11726</a>
+<a name='L11727'></a><a href='#L11727'>11727</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12447,6 +12464,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24060,7 +24094,7 @@
 <span class="cstat-no" title="statement not covered" >            if (name === "nodes") {</span>
 <span class="cstat-no" title="statement not covered" >              this.nodes = [];</span>
 <span class="cstat-no" title="statement not covered" >              for (let node of defaults[name]) {</span>
-<span class="cstat-no" title="statement not covered" >                if (typeof node.clone === "function") {</span>
+<span class="cstat-no" title="statement not covered" >                if (typeof node.clone === "function" &amp;&amp; node.parent) {</span>
 <span class="cstat-no" title="statement not covered" >                  this.append(node.clone());</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
 <span class="cstat-no" title="statement not covered" >                  this.append(node);</span>
@@ -24171,11 +24205,15 @@
 <span class="cstat-no" title="statement not covered" >          return this.parent.nodes[index + 1];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        positionBy(opts = {}) {</span>
-<span class="cstat-no" title="statement not covered" >          let pos = this.source.start;</span>
+<span class="cstat-no" title="statement not covered" >          let inputString = "document" in this.source.input ? this.source.input.document : this.source.input.css;</span>
+<span class="cstat-no" title="statement not covered" >          let pos = {</span>
+<span class="cstat-no" title="statement not covered" >            column: this.source.start.column,</span>
+<span class="cstat-no" title="statement not covered" >            line: this.source.start.line,</span>
+<span class="cstat-no" title="statement not covered" >            offset: sourceOffset(inputString, this.source.start)</span>
+<span class="cstat-no" title="statement not covered" >          };</span>
 <span class="cstat-no" title="statement not covered" >          if (opts.index) {</span>
 <span class="cstat-no" title="statement not covered" >            pos = this.positionInside(opts.index);</span>
 <span class="cstat-no" title="statement not covered" >          } else if (opts.word) {</span>
-<span class="cstat-no" title="statement not covered" >            let inputString = "document" in this.source.input ? this.source.input.document : this.source.input.css;</span>
 <span class="cstat-no" title="statement not covered" >            let stringRepresentation = inputString.slice(</span>
 <span class="cstat-no" title="statement not covered" >              sourceOffset(inputString, this.source.start),</span>
 <span class="cstat-no" title="statement not covered" >              sourceOffset(inputString, this.source.end)</span>
@@ -24247,7 +24285,7 @@
 <span class="cstat-no" title="statement not covered" >                line: opts.start.line,</span>
 <span class="cstat-no" title="statement not covered" >                offset: sourceOffset(inputString, opts.start)</span>
 <span class="cstat-no" title="statement not covered" >              };</span>
-<span class="cstat-no" title="statement not covered" >            } else if (opts.index) {</span>
+<span class="cstat-no" title="statement not covered" >            } else if (typeof opts.index === "number") {</span>
 <span class="cstat-no" title="statement not covered" >              start = this.positionInside(opts.index);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            if (opts.end) {</span>
@@ -24258,7 +24296,7 @@
 <span class="cstat-no" title="statement not covered" >              };</span>
 <span class="cstat-no" title="statement not covered" >            } else if (typeof opts.endIndex === "number") {</span>
 <span class="cstat-no" title="statement not covered" >              end = this.positionInside(opts.endIndex);</span>
-<span class="cstat-no" title="statement not covered" >            } else if (opts.index) {</span>
+<span class="cstat-no" title="statement not covered" >            } else if (typeof opts.index === "number") {</span>
 <span class="cstat-no" title="statement not covered" >              end = this.positionInside(opts.index + 1);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -25013,11 +25051,14 @@
 <span class="cstat-no" title="statement not covered" >        origin(line2, column, endLine, endColumn) {</span>
 <span class="cstat-no" title="statement not covered" >          if (!this.map) return false;</span>
 <span class="cstat-no" title="statement not covered" >          let consumer = this.map.consumer();</span>
-<span class="cstat-no" title="statement not covered" >          let from = consumer.originalPositionFor({ column, line: line2 });</span>
+<span class="cstat-no" title="statement not covered" >          let from = consumer.originalPositionFor({ column: column - 1, line: line2 });</span>
 <span class="cstat-no" title="statement not covered" >          if (!from.source) return false;</span>
 <span class="cstat-no" title="statement not covered" >          let to;</span>
 <span class="cstat-no" title="statement not covered" >          if (typeof endLine === "number") {</span>
-<span class="cstat-no" title="statement not covered" >            to = consumer.originalPositionFor({ column: endColumn, line: endLine });</span>
+<span class="cstat-no" title="statement not covered" >            to = consumer.originalPositionFor({</span>
+<span class="cstat-no" title="statement not covered" >              column: endColumn - 1,</span>
+<span class="cstat-no" title="statement not covered" >              line: endLine</span>
+<span class="cstat-no" title="statement not covered" >            });</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          let fromUrl;</span>
 <span class="cstat-no" title="statement not covered" >          if (isAbsolute(from.source)) {</span>
@@ -25029,8 +25070,8 @@
 <span class="cstat-no" title="statement not covered" >            );</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          let result = {</span>
-<span class="cstat-no" title="statement not covered" >            column: from.column,</span>
-<span class="cstat-no" title="statement not covered" >            endColumn: to &amp;&amp; to.column,</span>
+<span class="cstat-no" title="statement not covered" >            column: from.column + 1,</span>
+<span class="cstat-no" title="statement not covered" >            endColumn: to &amp;&amp; to.column + 1,</span>
 <span class="cstat-no" title="statement not covered" >            endLine: to &amp;&amp; to.line,</span>
 <span class="cstat-no" title="statement not covered" >            line: from.line,</span>
 <span class="cstat-no" title="statement not covered" >            url: fromUrl.toString()</span>
@@ -26488,8 +26529,10 @@
 <span class="cstat-no" title="statement not covered" >            inputs.push(inputHydrated);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        let nodes;</span>
 <span class="cstat-no" title="statement not covered" >        if (defaults.nodes) {</span>
-<span class="cstat-no" title="statement not covered" >          defaults.nodes = json.nodes.map((n) =&gt; fromJSON(n, inputs));</span>
+<span class="cstat-no" title="statement not covered" >          nodes = json.nodes.map((n) =&gt; fromJSON(n, inputs));</span>
+<span class="cstat-no" title="statement not covered" >          delete defaults.nodes;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (defaults.source) {</span>
 <span class="cstat-no" title="statement not covered" >          let { inputId, ...source } = defaults.source;</span>
@@ -26498,19 +26541,25 @@
 <span class="cstat-no" title="statement not covered" >            defaults.source.input = inputs[inputId];</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        let node;</span>
 <span class="cstat-no" title="statement not covered" >        if (defaults.type === "root") {</span>
-<span class="cstat-no" title="statement not covered" >          return new Root(defaults);</span>
+<span class="cstat-no" title="statement not covered" >          node = new Root(defaults);</span>
 <span class="cstat-no" title="statement not covered" >        } else if (defaults.type === "decl") {</span>
-<span class="cstat-no" title="statement not covered" >          return new Declaration(defaults);</span>
+<span class="cstat-no" title="statement not covered" >          node = new Declaration(defaults);</span>
 <span class="cstat-no" title="statement not covered" >        } else if (defaults.type === "rule") {</span>
-<span class="cstat-no" title="statement not covered" >          return new Rule(defaults);</span>
+<span class="cstat-no" title="statement not covered" >          node = new Rule(defaults);</span>
 <span class="cstat-no" title="statement not covered" >        } else if (defaults.type === "comment") {</span>
-<span class="cstat-no" title="statement not covered" >          return new Comment(defaults);</span>
+<span class="cstat-no" title="statement not covered" >          node = new Comment(defaults);</span>
 <span class="cstat-no" title="statement not covered" >        } else if (defaults.type === "atrule") {</span>
-<span class="cstat-no" title="statement not covered" >          return new AtRule(defaults);</span>
+<span class="cstat-no" title="statement not covered" >          node = new AtRule(defaults);</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          throw new Error("Unknown node type: " + json.type);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (nodes) {</span>
+<span class="cstat-no" title="statement not covered" >          node.nodes = nodes;</span>
+<span class="cstat-no" title="statement not covered" >          for (let child of nodes) child.parent = node;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        return node;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      module.exports = fromJSON;</span>
 <span class="cstat-no" title="statement not covered" >      fromJSON.default = fromJSON;</span>
@@ -27225,7 +27274,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.15";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.16";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -33495,10 +33544,12 @@
 <span class="cstat-no" title="statement not covered" >        if (iNextNode?.type === "value-word" &amp;&amp; iNextNode.value === "[") {</span>
 <span class="cstat-no" title="statement not covered" >          continue;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (iNode.type === "value-word" &amp;&amp; iNode.value === "[" &amp;&amp; (iNextNode?.type === "value-atword" || iNextNode?.type === "value-word")) {</span>
-<span class="cstat-no" title="statement not covered" >          continue;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (iNode.type === "value-word" &amp;&amp; iNode.value === "][" &amp;&amp; iNextNode?.type === "value-word") {</span>
+<span class="cstat-no" title="statement not covered" >        if (iNode.type === "value-word" &amp;&amp; iNode.value.endsWith("[") &amp;&amp; (iNextNode?.type === "value-atword" || iNextNode?.type === "value-word")) {</span>
+<span class="cstat-no" title="statement not covered" >          noop_default(</span>
+<span class="cstat-no" title="statement not covered" >            node.groups.some(</span>
+<span class="cstat-no" title="statement not covered" >              (node2, index) =&gt; index &gt; i &amp;&amp; (node2.value?.startsWith("]") || node2.value?.endsWith("]"))</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >          );</span>
 <span class="cstat-no" title="statement not covered" >          continue;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -35197,7 +35248,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-30T01:09:34.614Z
+                at 2026-07-01T01:15:15.837Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
