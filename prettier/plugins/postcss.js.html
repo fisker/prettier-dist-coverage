@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/11727</span>
+                <span class='fraction'>5/11737</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11727</span>
+                <span class='fraction'>5/11737</span>
             </div>
         
             
@@ -11789,7 +11789,17 @@
 <a name='L11724'></a><a href='#L11724'>11724</a>
 <a name='L11725'></a><a href='#L11725'>11725</a>
 <a name='L11726'></a><a href='#L11726'>11726</a>
-<a name='L11727'></a><a href='#L11727'>11727</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L11727'></a><a href='#L11727'>11727</a>
+<a name='L11728'></a><a href='#L11728'>11728</a>
+<a name='L11729'></a><a href='#L11729'>11729</a>
+<a name='L11730'></a><a href='#L11730'>11730</a>
+<a name='L11731'></a><a href='#L11731'>11731</a>
+<a name='L11732'></a><a href='#L11732'>11732</a>
+<a name='L11733'></a><a href='#L11733'>11733</a>
+<a name='L11734'></a><a href='#L11734'>11734</a>
+<a name='L11735'></a><a href='#L11735'>11735</a>
+<a name='L11736'></a><a href='#L11736'>11736</a>
+<a name='L11737'></a><a href='#L11737'>11737</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12464,6 +12474,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32885,6 +32905,9 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (original.type === "css-rule") {</span>
 <span class="cstat-no" title="statement not covered" >      delete cloned.params;</span>
+<span class="cstat-no" title="statement not covered" >      if (original.extend &amp;&amp; hasLessExtendSelector(original.selector)) {</span>
+<span class="cstat-no" title="statement not covered" >        delete cloned.extend;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if ((original.type === "media-feature" || original.type === "media-keyword" || original.type === "media-type" || original.type === "media-unknown" || original.type === "media-url" || original.type === "media-value" || original.type === "selector-attribute" || original.type === "selector-string" || original.type === "selector-class" || original.type === "selector-combinator" || original.type === "value-string") &amp;&amp; original.value) {</span>
 <span class="cstat-no" title="statement not covered" >      cloned.value = cleanCSSStrings(original.value);</span>
@@ -33031,6 +33054,9 @@
 <span class="cstat-no" title="statement not covered" >      /\\([^\da-f])/gi,</span>
 <span class="cstat-no" title="statement not covered" >      "$1"</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function hasLessExtendSelector(selector) {</span>
+<span class="cstat-no" title="statement not covered" >    return selector?.nodes?.some((selectorNode) =&gt; selectorNode.nodes?.some((node) =&gt; node.type === "selector-pseudo" &amp;&amp; node.value === ":extend"));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // scripts/build/shims/function-object-has-own.js</span>
@@ -34247,7 +34273,7 @@
 <span class="cstat-no" title="statement not covered" >          trimmedBetween.startsWith("//") ? " " : "",</span>
 <span class="cstat-no" title="statement not covered" >          trimmedBetween,</span>
 <span class="cstat-no" title="statement not covered" >          node.extend || isValueAllSpace || !hasSpaceAfterColon &amp;&amp; node.isNested &amp;&amp; (isAtWordPlaceholderNode(node.value.group.group) || isAtWordPlaceholderNode(node.value.group.group.groups?.[0])) ? "" : " ",</span>
-<span class="cstat-no" title="statement not covered" >          options2.parser === "less" &amp;&amp; node.extend &amp;&amp; node.selector ? ["extend(", print2("selector"), ")"] : "",</span>
+<span class="cstat-no" title="statement not covered" >          options2.parser === "less" &amp;&amp; node.extend &amp;&amp; node.selector ? node.selector.nodes.length &gt; 1 ? group(["extend(", indent([softline, print2("selector")]), softline, ")"]) : ["extend(", print2("selector"), ")"] : "",</span>
 <span class="cstat-no" title="statement not covered" >          value,</span>
 <span class="cstat-no" title="statement not covered" >          node.raws.important ? node.raws.important.replace(/\s*!\s*important/i, " !important") : node.important ? " !important" : "",</span>
 <span class="cstat-no" title="statement not covered" >          node.raws.scssDefault ? node.raws.scssDefault.replace(/\s*!default/i, " !default") : node.scssDefault ? " !default" : "",</span>
@@ -34371,7 +34397,7 @@
 <span class="cstat-no" title="statement not covered" >        return node.value;</span>
 <span class="cstat-no" title="statement not covered" >      case "selector-unknown": {</span>
 <span class="cstat-no" title="statement not covered" >        const ruleAncestorNode = path.findAncestor((node2) =&gt; node2.type === "css-rule");</span>
-<span class="cstat-no" title="statement not covered" >        if (ruleAncestorNode?.isSCSSNesterProperty) {</span>
+<span class="cstat-no" title="statement not covered" >        if (ruleAncestorNode?.isScssNestedProperty) {</span>
 <span class="cstat-no" title="statement not covered" >          return adjustNumbers(adjustStrings(maybeToLowerCase(node.value), options2));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const parentNode = path.parent;</span>
@@ -34923,7 +34949,7 @@
 <span class="cstat-no" title="statement not covered" >  var is_module_rule_name_default = isModuleRuleName;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-css/utilities/is-scss-nested-property-node.js</span>
-<span class="cstat-no" title="statement not covered" >  function isSCSSNestedPropertyNode(node, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  function isScssNestedPropertyNode(node, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    if (options2.parser !== "scss") {</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -34932,7 +34958,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return node.selector.replace(/\/\*.*?\*\//, "").replace(/\/\/.*\n/, "").trim().endsWith(":");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  var is_scss_nested_property_node_default = isSCSSNestedPropertyNode;</span>
+<span class="cstat-no" title="statement not covered" >  var is_scss_nested_property_node_default = isScssNestedPropertyNode;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-css/parser-postcss.js</span>
 <span class="cstat-no" title="statement not covered" >  var DEFAULT_SCSS_DIRECTIVE = /(\s*)(!default).*$/;</span>
@@ -35023,7 +35049,7 @@
 <span class="cstat-no" title="statement not covered" >          return node;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (is_scss_nested_property_node_default(node, options2)) {</span>
-<span class="cstat-no" title="statement not covered" >          node.isSCSSNesterProperty = true;</span>
+<span class="cstat-no" title="statement not covered" >          node.isScssNestedProperty = true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        node.selector = parse_selector_default(selector);</span>
 <span class="cstat-no" title="statement not covered" >        return node;</span>
@@ -35052,6 +35078,10 @@
 <span class="cstat-no" title="statement not covered" >          };</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        node.value = parse_value_default(value, options2);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (options2.parser === "less" &amp;&amp; node.type === "css-decl" &amp;&amp; typeof node.prop === "string" &amp;&amp; /^\s*\+\s*:/.test(node.raws.between)) {</span>
+<span class="cstat-no" title="statement not covered" >        node.prop += "+";</span>
+<span class="cstat-no" title="statement not covered" >        node.raws.between = node.raws.between.replace("+", "");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (options2.parser === "less" &amp;&amp; node.type === "css-decl" &amp;&amp; value.startsWith("extend(")) {</span>
 <span class="cstat-no" title="statement not covered" >        node.extend || (node.extend = node.raws.between === ":");</span>
@@ -35248,7 +35278,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-06T04:10:36.204Z
+                at 2026-07-07T04:01:31.159Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
