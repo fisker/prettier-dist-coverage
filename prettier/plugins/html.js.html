@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10357</span>
+                <span class='fraction'>0/10366</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10357</span>
+                <span class='fraction'>0/10366</span>
             </div>
         
             
@@ -10419,7 +10419,25 @@
 <a name='L10354'></a><a href='#L10354'>10354</a>
 <a name='L10355'></a><a href='#L10355'>10355</a>
 <a name='L10356'></a><a href='#L10356'>10356</a>
-<a name='L10357'></a><a href='#L10357'>10357</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L10357'></a><a href='#L10357'>10357</a>
+<a name='L10358'></a><a href='#L10358'>10358</a>
+<a name='L10359'></a><a href='#L10359'>10359</a>
+<a name='L10360'></a><a href='#L10360'>10360</a>
+<a name='L10361'></a><a href='#L10361'>10361</a>
+<a name='L10362'></a><a href='#L10362'>10362</a>
+<a name='L10363'></a><a href='#L10363'>10363</a>
+<a name='L10364'></a><a href='#L10364'>10364</a>
+<a name='L10365'></a><a href='#L10365'>10365</a>
+<a name='L10366'></a><a href='#L10366'>10366</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23582,12 +23600,16 @@
 <span class="cstat-no" title="statement not covered" >      docs.push("} ");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    docs.push("@", node.name);</span>
-<span class="cstat-no" title="statement not covered" >    if (isSwitchExhaustiveCheck(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    const isDefaultNever = isSwitchExhaustiveCheck(node);</span>
+<span class="cstat-no" title="statement not covered" >    if (node.parameters) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!isDefaultNever) {</span>
+<span class="cstat-no" title="statement not covered" >        docs.push(" ");</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      docs.push("(", group(print("parameters")), ")");</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (isDefaultNever) {</span>
 <span class="cstat-no" title="statement not covered" >      docs.push(";");</span>
 <span class="cstat-no" title="statement not covered" >      return docs;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (node.parameters) {</span>
-<span class="cstat-no" title="statement not covered" >      docs.push(" ", "(", group(print("parameters")), ")");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (!isSwitchFallthroughCase(node)) {</span>
 <span class="cstat-no" title="statement not covered" >      docs.push(" {");</span>
@@ -24747,7 +24769,7 @@
 <span class="cstat-no" title="statement not covered" >      this.sourceSpan = sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    visit(visitor, context) {</span>
-<span class="cstat-no" title="statement not covered" >      return visitor.visitAttributeComment ? visitor.visitAttributeComment(this, context) : void 0;</span>
+<span class="cstat-no" title="statement not covered" >      return visitor.visitStartTagComment ? visitor.visitStartTagComment(this, context) : void 0;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    kind = "startTagComment";</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
@@ -24928,7 +24950,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    visitAttribute(ast, context) {</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    visitAttributeComment(ast, context) {</span>
+<span class="cstat-no" title="statement not covered" >    visitStartTagComment(ast, context) {</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    visitText(ast, context) {</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -27175,6 +27197,8 @@
 <span class="cstat-no" title="statement not covered" >    start: "{{",</span>
 <span class="cstat-no" title="statement not covered" >    end: "}}"</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" >  var DEFAULT_NEVER_PATTERN = /^default[^\S\r\n]+never/;</span>
+<span class="cstat-no" title="statement not covered" >  var ELSE_IF_PATTERN = /^else[^\S\r\n]+if/;</span>
 <span class="cstat-no" title="statement not covered" >  var _Tokenizer = class {</span>
 <span class="cstat-no" title="statement not covered" >    _getTagContentType;</span>
 <span class="cstat-no" title="statement not covered" >    _cursor;</span>
@@ -27270,7 +27294,10 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
-<span class="cstat-no" title="statement not covered" >      return this._cursor.getChars(nameCursor).trim();</span>
+<span class="cstat-no" title="statement not covered" >      let result = this._cursor.getChars(nameCursor).trim();</span>
+<span class="cstat-no" title="statement not covered" >      if (ELSE_IF_PATTERN.test(result)) result = "else if";</span>
+<span class="cstat-no" title="statement not covered" >      else if (DEFAULT_NEVER_PATTERN.test(result)) result = "default never";</span>
+<span class="cstat-no" title="statement not covered" >      return result;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    _consumeBlockStart(start) {</span>
 <span class="cstat-no" title="statement not covered" >      this._requireCharCode(64);</span>
@@ -31138,7 +31165,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-08T03:27:33.239Z
+                at 2026-07-09T03:55:04.370Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

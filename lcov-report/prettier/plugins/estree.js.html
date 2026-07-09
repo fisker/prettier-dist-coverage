@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12905</span>
+                <span class='fraction'>0/12918</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12905</span>
+                <span class='fraction'>0/12918</span>
             </div>
         
             
@@ -12967,7 +12967,33 @@
 <a name='L12902'></a><a href='#L12902'>12902</a>
 <a name='L12903'></a><a href='#L12903'>12903</a>
 <a name='L12904'></a><a href='#L12904'>12904</a>
-<a name='L12905'></a><a href='#L12905'>12905</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L12905'></a><a href='#L12905'>12905</a>
+<a name='L12906'></a><a href='#L12906'>12906</a>
+<a name='L12907'></a><a href='#L12907'>12907</a>
+<a name='L12908'></a><a href='#L12908'>12908</a>
+<a name='L12909'></a><a href='#L12909'>12909</a>
+<a name='L12910'></a><a href='#L12910'>12910</a>
+<a name='L12911'></a><a href='#L12911'>12911</a>
+<a name='L12912'></a><a href='#L12912'>12912</a>
+<a name='L12913'></a><a href='#L12913'>12913</a>
+<a name='L12914'></a><a href='#L12914'>12914</a>
+<a name='L12915'></a><a href='#L12915'>12915</a>
+<a name='L12916'></a><a href='#L12916'>12916</a>
+<a name='L12917'></a><a href='#L12917'>12917</a>
+<a name='L12918'></a><a href='#L12918'>12918</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27029,6 +27055,28 @@
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/language-js/comments/attach/handle-switch-statement-comments.js</span>
+<span class="cstat-no" title="statement not covered" >  function handleSwitchStatementComments({</span>
+<span class="cstat-no" title="statement not covered" >    comment,</span>
+<span class="cstat-no" title="statement not covered" >    precedingNode,</span>
+<span class="cstat-no" title="statement not covered" >    enclosingNode,</span>
+<span class="cstat-no" title="statement not covered" >    followingNode,</span>
+<span class="cstat-no" title="statement not covered" >    text</span>
+<span class="cstat-no" title="statement not covered" >  }) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!(enclosingNode?.type === "SwitchStatement" &amp;&amp; enclosingNode.cases.length === 0 &amp;&amp; !followingNode &amp;&amp; precedingNode === enclosingNode.discriminant)) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const nextCharacter = get_next_non_space_non_comment_character_default(</span>
+<span class="cstat-no" title="statement not covered" >      text,</span>
+<span class="cstat-no" title="statement not covered" >      locEnd(comment)</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    if (nextCharacter === "}") {</span>
+<span class="cstat-no" title="statement not covered" >      addDanglingComment(enclosingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/comments/attach/handle-while-like-comments.js</span>
 <span class="cstat-no" title="statement not covered" >  function handleWhileLikeComments({</span>
 <span class="cstat-no" title="statement not covered" >    comment,</span>
@@ -27074,13 +27122,13 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/comments/handle-comments.js</span>
 <span class="cstat-no" title="statement not covered" >  function handleOwnLineComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileLikeComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function handleEndOfLineComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleAssignmentLikeComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleArrowExpressionComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleAssignmentLikeComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleArrowExpressionComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function handleRemainingComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileLikeComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleAssignmentLikeComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleParenthesizedExpressionTrailingComment, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleAssignmentLikeComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleParenthesizedExpressionTrailingComment, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function handleClosureTypeCastComments({</span>
 <span class="cstat-no" title="statement not covered" >    comment,</span>
@@ -35823,7 +35871,7 @@
 <span class="cstat-no" title="statement not covered" >            "cases"</span>
 <span class="cstat-no" title="statement not covered" >          )</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >      ]) : "",</span>
+<span class="cstat-no" title="statement not covered" >      ]) : printDanglingComments(path, options2, { indent: true }),</span>
 <span class="cstat-no" title="statement not covered" >      hardline,</span>
 <span class="cstat-no" title="statement not covered" >      "}"</span>
 <span class="cstat-no" title="statement not covered" >    ];</span>
@@ -37039,11 +37087,15 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/print/type-parameters.js</span>
 <span class="cstat-no" title="statement not covered" >  function shouldForceTrailingComma(path, options2, paramsKey) {</span>
-<span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      node</span>
+<span class="cstat-no" title="statement not covered" >    } = path;</span>
 <span class="cstat-no" title="statement not covered" >    return getFunctionParameters(node).length === 1 &amp;&amp; node.type.startsWith("TS") &amp;&amp; !node[paramsKey][0].constraint &amp;&amp; path.parent.type === "ArrowFunctionExpression" &amp;&amp; !(options2.filepath &amp;&amp; /\.ts$/.test(options2.filepath));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function printTypeParameters(path, options2, print3, paramsKey) {</span>
-<span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      node</span>
+<span class="cstat-no" title="statement not covered" >    } = path;</span>
 <span class="cstat-no" title="statement not covered" >    const parameters = node[paramsKey];</span>
 <span class="cstat-no" title="statement not covered" >    if (!parameters) {</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
@@ -37052,41 +37104,28 @@
 <span class="cstat-no" title="statement not covered" >      return print3(paramsKey);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const isParameterInTestCall = isTestCall(path.grandparent);</span>
-<span class="cstat-no" title="statement not covered" >    const isArrowFunctionVariable = path.match(</span>
-<span class="cstat-no" title="statement not covered" >      (node2) =&gt; !(node2[paramsKey].length === 1 &amp;&amp; isObjectType(node2[paramsKey][0])),</span>
-<span class="cstat-no" title="statement not covered" >      void 0,</span>
-<span class="cstat-no" title="statement not covered" >      (node2, name) =&gt; name === "typeAnnotation",</span>
-<span class="cstat-no" title="statement not covered" >      (node2) =&gt; node2.type === "Identifier",</span>
-<span class="cstat-no" title="statement not covered" >      isArrowFunctionVariableDeclarator</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    const shouldInline = parameters.length === 0 || !isArrowFunctionVariable &amp;&amp; (isParameterInTestCall || parameters.length === 1 &amp;&amp; (parameters[0].type === "NullableTypeAnnotation" || shouldHugType(parameters[0]))) &amp;&amp; !parameters.some(</span>
-<span class="cstat-no" title="statement not covered" >      (node2) =&gt; hasComment(node2, CommentCheckFlags.Line) || // This condition base on existing one in class-body.js</span>
+<span class="cstat-no" title="statement not covered" >    const isArrowFunctionVariable = path.match((node2) =&gt; !(node2[paramsKey].length === 1 &amp;&amp; isObjectType(node2[paramsKey][0])), void 0, (node2, name) =&gt; name === "typeAnnotation", (node2) =&gt; node2.type === "Identifier", isArrowFunctionVariableDeclarator);</span>
+<span class="cstat-no" title="statement not covered" >    const shouldInline = parameters.length === 0 || !isArrowFunctionVariable &amp;&amp; (isParameterInTestCall || parameters.length === 1 &amp;&amp; (parameters[0].type === "NullableTypeAnnotation" || shouldHugType(parameters[0]))) &amp;&amp; !parameters.some((node2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const comments = getComments(node2, (comment) =&gt; comment.leading || comment.trailing);</span>
+<span class="cstat-no" title="statement not covered" >      return comments.length &gt; 0 &amp;&amp; (comments.some((comment) =&gt; isLineComment(comment)) || // This condition base on existing one in class-body.js</span>
 <span class="cstat-no" title="statement not covered" >      // It is not really correct, but we don't have a way to check how comments are printed</span>
-<span class="cstat-no" title="statement not covered" >      hasComment(</span>
-<span class="cstat-no" title="statement not covered" >        node2,</span>
-<span class="cstat-no" title="statement not covered" >        CommentCheckFlags.Last,</span>
-<span class="cstat-no" title="statement not covered" >        (comment) =&gt; has_newline_default(options2.originalText, locEnd(comment))</span>
-<span class="cstat-no" title="statement not covered" >      )</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >      has_newline_default(options2.originalText, locEnd(method_at_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
+<span class="cstat-no" title="statement not covered" >        comments,</span>
+<span class="cstat-no" title="statement not covered" >        -1</span>
+<span class="cstat-no" title="statement not covered" >      ))));</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    if (shouldInline) {</span>
-<span class="cstat-no" title="statement not covered" >      return [</span>
-<span class="cstat-no" title="statement not covered" >        "&lt;",</span>
-<span class="cstat-no" title="statement not covered" >        join(", ", path.map(print3, paramsKey)),</span>
-<span class="cstat-no" title="statement not covered" >        printDanglingCommentsForInline(path, options2),</span>
-<span class="cstat-no" title="statement not covered" >        "&gt;"</span>
-<span class="cstat-no" title="statement not covered" >      ];</span>
+<span class="cstat-no" title="statement not covered" >      return ["&lt;", join(", ", path.map(print3, paramsKey)), printDanglingCommentsForInline(path, options2), "&gt;"];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const trailingComma = node.type === "TSTypeParameterInstantiation" ? "" : shouldForceTrailingComma(path, options2, paramsKey) ? "," : printTrailingComma(options2);</span>
-<span class="cstat-no" title="statement not covered" >    return group([</span>
-<span class="cstat-no" title="statement not covered" >      "&lt;",</span>
-<span class="cstat-no" title="statement not covered" >      indent([softline, join([",", line], path.map(print3, paramsKey))]),</span>
-<span class="cstat-no" title="statement not covered" >      trailingComma,</span>
-<span class="cstat-no" title="statement not covered" >      softline,</span>
-<span class="cstat-no" title="statement not covered" >      "&gt;"</span>
-<span class="cstat-no" title="statement not covered" >    ]);</span>
+<span class="cstat-no" title="statement not covered" >    return group(["&lt;", indent([softline, join([",", line], path.map(print3, paramsKey))]), trailingComma, softline, "&gt;"]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function printDanglingCommentsForInline(path, options2) {</span>
-<span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      node</span>
+<span class="cstat-no" title="statement not covered" >    } = path;</span>
 <span class="cstat-no" title="statement not covered" >    if (!hasComment(node, CommentCheckFlags.Dangling)) {</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -37100,7 +37139,9 @@
 <span class="cstat-no" title="statement not covered" >    return [printed, hardline];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function printTypeParameter(path, options2, print3) {</span>
-<span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      node</span>
+<span class="cstat-no" title="statement not covered" >    } = path;</span>
 <span class="cstat-no" title="statement not covered" >    const parts = [node.const ? "const " : ""];</span>
 <span class="cstat-no" title="statement not covered" >    const name = node.type === "TSTypeParameter" ? print3("name") : node.name;</span>
 <span class="cstat-no" title="statement not covered" >    if (node.variance) {</span>
@@ -37121,21 +37162,19 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (node.constraint) {</span>
 <span class="cstat-no" title="statement not covered" >      const groupId = /* @__PURE__ */ Symbol("constraint");</span>
-<span class="cstat-no" title="statement not covered" >      parts.push(</span>
-<span class="cstat-no" title="statement not covered" >        " extends",</span>
-<span class="cstat-no" title="statement not covered" >        group(indent(line), { id: groupId }),</span>
-<span class="cstat-no" title="statement not covered" >        lineSuffixBoundary,</span>
-<span class="cstat-no" title="statement not covered" >        indentIfBreak(print3("constraint"), { groupId })</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(" extends", group(indent(line), {</span>
+<span class="cstat-no" title="statement not covered" >        id: groupId</span>
+<span class="cstat-no" title="statement not covered" >      }), lineSuffixBoundary, indentIfBreak(print3("constraint"), {</span>
+<span class="cstat-no" title="statement not covered" >        groupId</span>
+<span class="cstat-no" title="statement not covered" >      }));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (node.default) {</span>
 <span class="cstat-no" title="statement not covered" >      const groupId = /* @__PURE__ */ Symbol("default");</span>
-<span class="cstat-no" title="statement not covered" >      parts.push(</span>
-<span class="cstat-no" title="statement not covered" >        " =",</span>
-<span class="cstat-no" title="statement not covered" >        group(indent(line), { id: groupId }),</span>
-<span class="cstat-no" title="statement not covered" >        lineSuffixBoundary,</span>
-<span class="cstat-no" title="statement not covered" >        indentIfBreak(print3("default"), { groupId })</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(" =", group(indent(line), {</span>
+<span class="cstat-no" title="statement not covered" >        id: groupId</span>
+<span class="cstat-no" title="statement not covered" >      }), lineSuffixBoundary, indentIfBreak(print3("default"), {</span>
+<span class="cstat-no" title="statement not covered" >        groupId</span>
+<span class="cstat-no" title="statement not covered" >      }));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return group(parts);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -38782,7 +38821,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-08T03:27:31.356Z
+                at 2026-07-09T03:55:02.820Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
