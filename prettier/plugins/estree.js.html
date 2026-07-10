@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12918</span>
+                <span class='fraction'>0/12921</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12918</span>
+                <span class='fraction'>0/12921</span>
             </div>
         
             
@@ -12980,7 +12980,13 @@
 <a name='L12915'></a><a href='#L12915'>12915</a>
 <a name='L12916'></a><a href='#L12916'>12916</a>
 <a name='L12917'></a><a href='#L12917'>12917</a>
-<a name='L12918'></a><a href='#L12918'>12918</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L12918'></a><a href='#L12918'>12918</a>
+<a name='L12919'></a><a href='#L12919'>12919</a>
+<a name='L12920'></a><a href='#L12920'>12920</a>
+<a name='L12921'></a><a href='#L12921'>12921</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -34639,7 +34645,7 @@
 <span class="cstat-no" title="statement not covered" >      parts.push(indent([hardline, bodyDoc]), hardline);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      const parentParent = path.grandparent;</span>
-<span class="cstat-no" title="statement not covered" >      if (!(parent.type === "ArrowFunctionExpression" || parent.type === "FunctionExpression" || parent.type === "FunctionDeclaration" || parent.type === "ComponentDeclaration" || parent.type === "HookDeclaration" || parent.type === "ObjectMethod" || parent.type === "ClassMethod" || parent.type === "ClassPrivateMethod" || parent.type === "ForStatement" || parent.type === "WhileStatement" || parent.type === "DoWhileStatement" || parent.type === "DoExpression" || parent.type === "ModuleExpression" || parent.type === "CatchClause" &amp;&amp; !parentParent.finalizer || parent.type === "TSModuleDeclaration" || parent.type === "MatchStatementCase" || node.type === "StaticBlock")) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!(parent.type === "ArrowFunctionExpression" || parent.type === "FunctionExpression" || parent.type === "FunctionDeclaration" || parent.type === "ComponentDeclaration" || parent.type === "HookDeclaration" || parent.type === "ObjectMethod" || parent.type === "ClassMethod" || parent.type === "ClassPrivateMethod" || parent.type === "ForStatement" || parent.type === "WhileStatement" || parent.type === "DoWhileStatement" || parent.type === "DoExpression" || parent.type === "ModuleExpression" || parent.type === "CatchClause" &amp;&amp; !parentParent.finalizer || parent.type === "TSModuleDeclaration" || parent.type === "DeclareModule" || parent.type === "MatchStatementCase" || node.type === "StaticBlock")) {</span>
 <span class="cstat-no" title="statement not covered" >        parts.push(hardline);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -34753,6 +34759,7 @@
 <span class="cstat-no" title="statement not covered" >    const separator = isObjectType2 ? line : hardline;</span>
 <span class="cstat-no" title="statement not covered" >    const hasDanglingComments = hasComment(node, CommentCheckFlags.Dangling);</span>
 <span class="cstat-no" title="statement not covered" >    const [openingBrace, closingBrace] = isFlowTypeAnnotation &amp;&amp; node.exact ? ["{|", "|}"] : "{}";</span>
+<span class="cstat-no" title="statement not covered" >    let isEmpty = true;</span>
 <span class="cstat-no" title="statement not covered" >    let firstMember;</span>
 <span class="cstat-no" title="statement not covered" >    iterateClassMembersPath(path, ({</span>
 <span class="cstat-no" title="statement not covered" >      node: node2,</span>
@@ -34760,6 +34767,7 @@
 <span class="cstat-no" title="statement not covered" >      isLast</span>
 <span class="cstat-no" title="statement not covered" >    }) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      firstMember ?? (firstMember = node2);</span>
+<span class="cstat-no" title="statement not covered" >      isEmpty &amp;&amp; (isEmpty = false);</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(print3());</span>
 <span class="cstat-no" title="statement not covered" >      if (!isFlowRecordDeclaration &amp;&amp; isObjectType2 &amp;&amp; isFlowTypeAnnotation) {</span>
 <span class="cstat-no" title="statement not covered" >        const {</span>
@@ -34794,6 +34802,7 @@
 <span class="cstat-no" title="statement not covered" >      parts.push(printDanglingComments(path, options2));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (node.type === "ObjectTypeAnnotation" &amp;&amp; node.inexact) {</span>
+<span class="cstat-no" title="statement not covered" >      isEmpty &amp;&amp; (isEmpty = false);</span>
 <span class="cstat-no" title="statement not covered" >      let printed;</span>
 <span class="cstat-no" title="statement not covered" >      if (hasComment(node, CommentCheckFlags.Dangling)) {</span>
 <span class="cstat-no" title="statement not covered" >        const hasLineComments = hasComment(node, CommentCheckFlags.Line);</span>
@@ -34814,7 +34823,7 @@
 <span class="cstat-no" title="statement not covered" >      if (parts.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >        content = openingBrace + closingBrace;</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        const spacing = options2.bracketSpacing ? line : softline;</span>
+<span class="cstat-no" title="statement not covered" >        const spacing = !options2.bracketSpacing || isEmpty &amp;&amp; !shouldBreak ? softline : line;</span>
 <span class="cstat-no" title="statement not covered" >        content = [openingBrace, indent([spacing, ...parts]), spacing, closingBrace];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (path.match(void 0, (node2, name) =&gt; name === "typeAnnotation", (node2, name) =&gt; name === "typeAnnotation", shouldHugTheOnlyParameter) || path.match(void 0, (node2, name) =&gt; node2.type === "FunctionTypeParam" &amp;&amp; name === "typeAnnotation", shouldHugTheOnlyParameter)) {</span>
@@ -38821,7 +38830,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-09T03:55:04.370Z
+                at 2026-07-10T03:56:13.532Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
