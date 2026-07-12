@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7350</span>
+                <span class='fraction'>0/7361</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7350</span>
+                <span class='fraction'>0/7361</span>
             </div>
         
             
@@ -7412,7 +7412,29 @@
 <a name='L7347'></a><a href='#L7347'>7347</a>
 <a name='L7348'></a><a href='#L7348'>7348</a>
 <a name='L7349'></a><a href='#L7349'>7349</a>
-<a name='L7350'></a><a href='#L7350'>7350</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L7350'></a><a href='#L7350'>7350</a>
+<a name='L7351'></a><a href='#L7351'>7351</a>
+<a name='L7352'></a><a href='#L7352'>7352</a>
+<a name='L7353'></a><a href='#L7353'>7353</a>
+<a name='L7354'></a><a href='#L7354'>7354</a>
+<a name='L7355'></a><a href='#L7355'>7355</a>
+<a name='L7356'></a><a href='#L7356'>7356</a>
+<a name='L7357'></a><a href='#L7357'>7357</a>
+<a name='L7358'></a><a href='#L7358'>7358</a>
+<a name='L7359'></a><a href='#L7359'>7359</a>
+<a name='L7360'></a><a href='#L7360'>7360</a>
+<a name='L7361'></a><a href='#L7361'>7361</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -14875,6 +14897,10 @@
 <span class="cstat-no" title="statement not covered" >  var method_is_well_formed_default = isWellFormed;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/meriyah/dist/meriyah.mjs</span>
+<span class="cstat-no" title="statement not covered" >  var version$1 = "7.1.2";</span>
+<span class="cstat-no" title="statement not covered" >  var packageJson = {</span>
+<span class="cstat-no" title="statement not covered" >    version: version$1</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  var unicodeLookup = ((compressed, lookup) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const result = new Uint32Array(69632);</span>
 <span class="cstat-no" title="statement not covered" >    let index = 0;</span>
@@ -15928,11 +15954,13 @@
 <span class="cstat-no" title="statement not covered" >        const ch = advanceChar(parser);</span>
 <span class="cstat-no" title="statement not covered" >        if (parser.currentChar === 123) {</span>
 <span class="cstat-no" title="statement not covered" >          let code = 0;</span>
+<span class="cstat-no" title="statement not covered" >          let digits = 0;</span>
 <span class="cstat-no" title="statement not covered" >          while ((CharTypes[advanceChar(parser)] &amp; 64) !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >            code = code &lt;&lt; 4 | toHex(parser.currentChar);</span>
 <span class="cstat-no" title="statement not covered" >            if (code &gt; 1114111) return -5;</span>
+<span class="cstat-no" title="statement not covered" >            digits++;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (parser.currentChar &lt; 1 || parser.currentChar !== 125) {</span>
+<span class="cstat-no" title="statement not covered" >          if (digits === 0 || parser.currentChar &lt; 1 || parser.currentChar !== 125) {</span>
 <span class="cstat-no" title="statement not covered" >            return -4;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return code;</span>
@@ -17013,7 +17041,7 @@
 <span class="cstat-no" title="statement not covered" >    if (parser.options.impliedStrict) context |= 1;</span>
 <span class="cstat-no" title="statement not covered" >    skipHashBang(parser);</span>
 <span class="cstat-no" title="statement not covered" >    const scope = parser.createScopeIfLexical();</span>
-<span class="cstat-no" title="statement not covered" >    let body = [];</span>
+<span class="cstat-no" title="statement not covered" >    let body;</span>
 <span class="cstat-no" title="statement not covered" >    let sourceType = "script";</span>
 <span class="cstat-no" title="statement not covered" >    if (context &amp; 2) {</span>
 <span class="cstat-no" title="statement not covered" >      sourceType = "module";</span>
@@ -17509,7 +17537,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function parseCatchBlock(parser, context, scope, privateScope, labels, start) {</span>
 <span class="cstat-no" title="statement not covered" >    let param = null;</span>
-<span class="cstat-no" title="statement not covered" >    let additionalScope = scope;</span>
 <span class="cstat-no" title="statement not covered" >    if (consumeOpt(parser, context, 67174411)) {</span>
 <span class="cstat-no" title="statement not covered" >      scope = scope?.createChildScope(4);</span>
 <span class="cstat-no" title="statement not covered" >      param = parseBindingPattern(parser, context, scope, privateScope, (parser.getToken() &amp; 2097152) === 2097152 ? 256 : 512, 0);</span>
@@ -17520,7 +17547,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      consume(parser, context | 32, 16);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    additionalScope = scope?.createChildScope(32);</span>
+<span class="cstat-no" title="statement not covered" >    const additionalScope = scope?.createChildScope(32);</span>
 <span class="cstat-no" title="statement not covered" >    const body = parseBlock(parser, context, additionalScope, privateScope, {</span>
 <span class="cstat-no" title="statement not covered" >      $: labels</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
@@ -17558,7 +17585,7 @@
 <span class="cstat-no" title="statement not covered" >    } = parser;</span>
 <span class="cstat-no" title="statement not covered" >    const token = parser.getToken();</span>
 <span class="cstat-no" title="statement not covered" >    let expr = parseIdentifier(parser, context);</span>
-<span class="cstat-no" title="statement not covered" >    if (parser.getToken() &amp; (143360 | 2097152)) {</span>
+<span class="cstat-no" title="statement not covered" >    if (parser.getToken() &amp; (143360 | 2097152) &amp;&amp; (parser.getToken() &amp; 20480) !== 20480) {</span>
 <span class="cstat-no" title="statement not covered" >      const declarations = parseVariableDeclarationList(parser, context, scope, privateScope, 8, 0);</span>
 <span class="cstat-no" title="statement not covered" >      matchOrInsertSemicolon(parser, context | 32);</span>
 <span class="cstat-no" title="statement not covered" >      return parser.finishNode({</span>
@@ -17663,16 +17690,12 @@
 <span class="cstat-no" title="statement not covered" >    if (isVarDecl) {</span>
 <span class="cstat-no" title="statement not covered" >      if (token === 241737) {</span>
 <span class="cstat-no" title="statement not covered" >        init = parseIdentifier(parser, context);</span>
-<span class="cstat-no" title="statement not covered" >        if (parser.getToken() &amp; (143360 | 2097152)) {</span>
-<span class="cstat-no" title="statement not covered" >          if (parser.getToken() === 8673330) {</span>
-<span class="cstat-no" title="statement not covered" >            if (context &amp; 1) parser.report(67);</span>
-<span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            init = parser.finishNode({</span>
-<span class="cstat-no" title="statement not covered" >              type: "VariableDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >              kind: "let",</span>
-<span class="cstat-no" title="statement not covered" >              declarations: parseVariableDeclarationList(parser, context | 131072, scope, privateScope, 8, 32)</span>
-<span class="cstat-no" title="statement not covered" >            }, tokenStart);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >        if (parser.getToken() &amp; (143360 | 2097152) &amp;&amp; (parser.getToken() &amp; 20480) !== 20480) {</span>
+<span class="cstat-no" title="statement not covered" >          init = parser.finishNode({</span>
+<span class="cstat-no" title="statement not covered" >            type: "VariableDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >            kind: "let",</span>
+<span class="cstat-no" title="statement not covered" >            declarations: parseVariableDeclarationList(parser, context | 131072, scope, privateScope, 8, 32)</span>
+<span class="cstat-no" title="statement not covered" >          }, tokenStart);</span>
 <span class="cstat-no" title="statement not covered" >          parser.assignable = 1;</span>
 <span class="cstat-no" title="statement not covered" >        } else if (context &amp; 1) {</span>
 <span class="cstat-no" title="statement not covered" >          parser.report(67);</span>
@@ -17770,7 +17793,7 @@
 <span class="cstat-no" title="statement not covered" >  function parseImportDeclaration(parser, context, scope) {</span>
 <span class="cstat-no" title="statement not covered" >    const start = parser.tokenStart;</span>
 <span class="cstat-no" title="statement not covered" >    nextToken(parser, context);</span>
-<span class="cstat-no" title="statement not covered" >    let source = null;</span>
+<span class="cstat-no" title="statement not covered" >    let source;</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      tokenStart</span>
 <span class="cstat-no" title="statement not covered" >    } = parser;</span>
@@ -18850,6 +18873,7 @@
 <span class="cstat-no" title="statement not covered" >      consume(parser, context, 67174409);</span>
 <span class="cstat-no" title="statement not covered" >      quasis.push(parseTemplateElement(parser, tokenValue2, tokenRaw2, tokenStart2, true));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    parser.assignable = 2;</span>
 <span class="cstat-no" title="statement not covered" >    return parser.finishNode({</span>
 <span class="cstat-no" title="statement not covered" >      type: "TemplateLiteral",</span>
 <span class="cstat-no" title="statement not covered" >      expressions,</span>
@@ -20185,7 +20209,7 @@
 <span class="cstat-no" title="statement not covered" >      }, start);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    let destructible = 0;</span>
-<span class="cstat-no" title="statement not covered" >    let expr = null;</span>
+<span class="cstat-no" title="statement not covered" >    let expr;</span>
 <span class="cstat-no" title="statement not covered" >    let isNonSimpleParameterList = 0;</span>
 <span class="cstat-no" title="statement not covered" >    parser.destructible = (parser.destructible | 256 | 128) ^ (256 | 128);</span>
 <span class="cstat-no" title="statement not covered" >    const params = [];</span>
@@ -20473,6 +20497,9 @@
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        case 209008:</span>
 <span class="cstat-no" title="statement not covered" >          if (parser.getToken() !== 67174411) {</span>
+<span class="cstat-no" title="statement not covered" >            if (parser.getToken() === 8391476 &amp;&amp; parser.flags &amp; 1) {</span>
+<span class="cstat-no" title="statement not covered" >              return parsePropertyDefinition(parser, context, privateScope, key, kind, decorators, start);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            if ((parser.getToken() &amp; 1073741824) === 1073741824) {</span>
 <span class="cstat-no" title="statement not covered" >              return parsePropertyDefinition(parser, context, privateScope, key, kind, decorators, start);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -20481,6 +20508,9 @@
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        case 209009:</span>
 <span class="cstat-no" title="statement not covered" >          if (parser.getToken() !== 67174411) {</span>
+<span class="cstat-no" title="statement not covered" >            if (parser.getToken() === 8391476 &amp;&amp; parser.flags &amp; 1) {</span>
+<span class="cstat-no" title="statement not covered" >              return parsePropertyDefinition(parser, context, privateScope, key, kind, decorators, start);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            if ((parser.getToken() &amp; 1073741824) === 1073741824) {</span>
 <span class="cstat-no" title="statement not covered" >              return parsePropertyDefinition(parser, context, privateScope, key, kind, decorators, start);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -20890,7 +20920,7 @@
 <span class="cstat-no" title="statement not covered" >      tokenStart</span>
 <span class="cstat-no" title="statement not covered" >    } = parser;</span>
 <span class="cstat-no" title="statement not covered" >    if (parser.getToken() === 14) return parseJSXSpreadChild(parser, context, privateScope, start);</span>
-<span class="cstat-no" title="statement not covered" >    let expression = null;</span>
+<span class="cstat-no" title="statement not covered" >    let expression;</span>
 <span class="cstat-no" title="statement not covered" >    if (parser.getToken() === 1074790415) {</span>
 <span class="cstat-no" title="statement not covered" >      if (isAttr) parser.report(157);</span>
 <span class="cstat-no" title="statement not covered" >      expression = parseJSXEmptyExpression(parser, {</span>
@@ -20942,6 +20972,9 @@
 <span class="cstat-no" title="statement not covered" >      name: tokenValue</span>
 <span class="cstat-no" title="statement not covered" >    }, start);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var {</span>
+<span class="cstat-no" title="statement not covered" >    version</span>
+<span class="cstat-no" title="statement not covered" >  } = packageJson;</span>
 <span class="cstat-no" title="statement not covered" >  function parse(source, options) {</span>
 <span class="cstat-no" title="statement not covered" >    return parseSource(source, options);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -22117,7 +22150,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-11T03:21:58.128Z
+                at 2026-07-12T03:34:31.132Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

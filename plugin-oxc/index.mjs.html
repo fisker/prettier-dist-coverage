@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12998</span>
+                <span class='fraction'>0/12994</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12998</span>
+                <span class='fraction'>0/12994</span>
             </div>
         
             
@@ -13057,15 +13057,7 @@
 <a name='L12992'></a><a href='#L12992'>12992</a>
 <a name='L12993'></a><a href='#L12993'>12993</a>
 <a name='L12994'></a><a href='#L12994'>12994</a>
-<a name='L12995'></a><a href='#L12995'>12995</a>
-<a name='L12996'></a><a href='#L12996'>12996</a>
-<a name='L12997'></a><a href='#L12997'>12997</a>
-<a name='L12998'></a><a href='#L12998'>12998</a>
-<a name='L12999'></a><a href='#L12999'>12999</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L12995'></a><a href='#L12995'>12995</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -29017,6 +29009,17 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/parentheses/identifier.js</span>
+<span class="cstat-no" title="statement not covered" >var namesNeedParenthesesAsExpressionOfBinaryCastExpression = /* @__PURE__ */ new Set([</span>
+<span class="cstat-no" title="statement not covered" >  "await",</span>
+<span class="cstat-no" title="statement not covered" >  "interface",</span>
+<span class="cstat-no" title="statement not covered" >  "module",</span>
+<span class="cstat-no" title="statement not covered" >  "using",</span>
+<span class="cstat-no" title="statement not covered" >  "yield",</span>
+<span class="cstat-no" title="statement not covered" >  "let",</span>
+<span class="cstat-no" title="statement not covered" >  "component",</span>
+<span class="cstat-no" title="statement not covered" >  "hook",</span>
+<span class="cstat-no" title="statement not covered" >  "type"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
 <span class="cstat-no" title="statement not covered" >function shouldAddParenthesesToIdentifier(path) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type !== "Identifier") {</span>
@@ -29030,11 +29033,11 @@
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (node.name === "let") {</span>
-<span class="cstat-no" title="statement not covered" >    const expression = path.findAncestor(</span>
+<span class="cstat-no" title="statement not covered" >    const statement = path.findAncestor(</span>
 <span class="cstat-no" title="statement not covered" >      (node2) =&gt; node2.type === "ForOfStatement" || node2.type === "ForInStatement"</span>
-<span class="cstat-no" title="statement not covered" >    )?.left;</span>
-<span class="cstat-no" title="statement not covered" >    if (expression &amp;&amp; startsWithNoLookaheadToken(</span>
-<span class="cstat-no" title="statement not covered" >      expression,</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    if (statement &amp;&amp; startsWithNoLookaheadToken(</span>
+<span class="cstat-no" title="statement not covered" >      statement.left,</span>
 <span class="cstat-no" title="statement not covered" >      (leftmostNode) =&gt; leftmostNode === node</span>
 <span class="cstat-no" title="statement not covered" >    )) {</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
@@ -29044,33 +29047,18 @@
 <span class="cstat-no" title="statement not covered" >    const statement = path.findAncestor(</span>
 <span class="cstat-no" title="statement not covered" >      (node2) =&gt; node2.type === "ExpressionStatement" || node2.type === "ForStatement" || node2.type === "ForInStatement"</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    const expression = !statement ? void 0 : statement.type === "ExpressionStatement" ? statement.expression : statement.type === "ForStatement" ? statement.init : statement.left;</span>
-<span class="cstat-no" title="statement not covered" >    if (expression &amp;&amp; startsWithNoLookaheadToken(</span>
-<span class="cstat-no" title="statement not covered" >      expression,</span>
-<span class="cstat-no" title="statement not covered" >      (leftmostNode) =&gt; leftmostNode === node</span>
-<span class="cstat-no" title="statement not covered" >    )) {</span>
-<span class="cstat-no" title="statement not covered" >      return true;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (key === "expression") {</span>
-<span class="cstat-no" title="statement not covered" >    switch (node.name) {</span>
-<span class="cstat-no" title="statement not covered" >      case "await":</span>
-<span class="cstat-no" title="statement not covered" >      case "interface":</span>
-<span class="cstat-no" title="statement not covered" >      case "module":</span>
-<span class="cstat-no" title="statement not covered" >      case "using":</span>
-<span class="cstat-no" title="statement not covered" >      case "yield":</span>
-<span class="cstat-no" title="statement not covered" >      case "let":</span>
-<span class="cstat-no" title="statement not covered" >      case "component":</span>
-<span class="cstat-no" title="statement not covered" >      case "hook":</span>
-<span class="cstat-no" title="statement not covered" >      case "type": {</span>
-<span class="cstat-no" title="statement not covered" >        const ancestorNeitherAsNorSatisfies = path.findAncestor(</span>
-<span class="cstat-no" title="statement not covered" >          (node2) =&gt; !isBinaryCastExpression(node2)</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >        if (ancestorNeitherAsNorSatisfies !== parent &amp;&amp; ancestorNeitherAsNorSatisfies.type === "ExpressionStatement") {</span>
-<span class="cstat-no" title="statement not covered" >          return true;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    if (statement) {</span>
+<span class="cstat-no" title="statement not covered" >      const expression = statement.type === "ExpressionStatement" ? statement.expression : statement.type === "ForStatement" ? statement.init : statement.left;</span>
+<span class="cstat-no" title="statement not covered" >      if (startsWithNoLookaheadToken(</span>
+<span class="cstat-no" title="statement not covered" >        expression,</span>
+<span class="cstat-no" title="statement not covered" >        (leftmostNode) =&gt; leftmostNode === node</span>
+<span class="cstat-no" title="statement not covered" >      )) {</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (key === "expression" &amp;&amp; isBinaryCastExpression(parent) &amp;&amp; namesNeedParenthesesAsExpressionOfBinaryCastExpression.has(node.name) &amp;&amp; path.findAncestor((node2) =&gt; !isBinaryCastExpression(node2)).type === "ExpressionStatement") {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -39064,7 +39052,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-11T03:21:58.128Z
+                at 2026-07-12T03:34:31.132Z
             </div>
         <script src="../prettify.js"></script>
         <script>
