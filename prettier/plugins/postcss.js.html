@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/11926</span>
+                <span class='fraction'>5/11934</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11926</span>
+                <span class='fraction'>5/11934</span>
             </div>
         
             
@@ -11988,7 +11988,15 @@
 <a name='L11923'></a><a href='#L11923'>11923</a>
 <a name='L11924'></a><a href='#L11924'>11924</a>
 <a name='L11925'></a><a href='#L11925'>11925</a>
-<a name='L11926'></a><a href='#L11926'>11926</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L11926'></a><a href='#L11926'>11926</a>
+<a name='L11927'></a><a href='#L11927'>11927</a>
+<a name='L11928'></a><a href='#L11928'>11928</a>
+<a name='L11929'></a><a href='#L11929'>11929</a>
+<a name='L11930'></a><a href='#L11930'>11930</a>
+<a name='L11931'></a><a href='#L11931'>11931</a>
+<a name='L11932'></a><a href='#L11932'>11932</a>
+<a name='L11933'></a><a href='#L11933'>11933</a>
+<a name='L11934'></a><a href='#L11934'>11934</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12728,6 +12736,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -25667,6 +25683,12 @@
 <span class="cstat-no" title="statement not covered" >          if (!this.nodes) this.nodes = [];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(child, sample, type) {</span>
+<span class="cstat-no" title="statement not covered" >          let keepBefore = /* @__PURE__ */ new Set();</span>
+<span class="cstat-no" title="statement not covered" >          for (let node of Array.isArray(child) ? child : [child]) {</span>
+<span class="cstat-no" title="statement not covered" >            if (node &amp;&amp; typeof node === "object" &amp;&amp; !node.parent &amp;&amp; node.raws &amp;&amp; typeof node.raws.before !== "undefined") {</span>
+<span class="cstat-no" title="statement not covered" >              keepBefore.add(node.raws);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          let nodes = super.normalize(child);</span>
 <span class="cstat-no" title="statement not covered" >          if (sample) {</span>
 <span class="cstat-no" title="statement not covered" >            if (type === "prepend") {</span>
@@ -25677,7 +25699,9 @@
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            } else if (this.first !== sample) {</span>
 <span class="cstat-no" title="statement not covered" >              for (let node of nodes) {</span>
-<span class="cstat-no" title="statement not covered" >                node.raws.before = sample.raws.before;</span>
+<span class="cstat-no" title="statement not covered" >                if (!keepBefore.has(node.raws)) {</span>
+<span class="cstat-no" title="statement not covered" >                  node.raws.before = sample.raws.before;</span>
+<span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -27855,7 +27879,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.17";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.19";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -35845,7 +35869,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-13T03:36:44.769Z
+                at 2026-07-14T02:57:43.122Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
