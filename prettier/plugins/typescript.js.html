@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/31971</span>
+                <span class='fraction'>0/31992</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/31971</span>
+                <span class='fraction'>0/31992</span>
             </div>
         
             
@@ -32033,7 +32033,49 @@
 <a name='L31968'></a><a href='#L31968'>31968</a>
 <a name='L31969'></a><a href='#L31969'>31969</a>
 <a name='L31970'></a><a href='#L31970'>31970</a>
-<a name='L31971'></a><a href='#L31971'>31971</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L31971'></a><a href='#L31971'>31971</a>
+<a name='L31972'></a><a href='#L31972'>31972</a>
+<a name='L31973'></a><a href='#L31973'>31973</a>
+<a name='L31974'></a><a href='#L31974'>31974</a>
+<a name='L31975'></a><a href='#L31975'>31975</a>
+<a name='L31976'></a><a href='#L31976'>31976</a>
+<a name='L31977'></a><a href='#L31977'>31977</a>
+<a name='L31978'></a><a href='#L31978'>31978</a>
+<a name='L31979'></a><a href='#L31979'>31979</a>
+<a name='L31980'></a><a href='#L31980'>31980</a>
+<a name='L31981'></a><a href='#L31981'>31981</a>
+<a name='L31982'></a><a href='#L31982'>31982</a>
+<a name='L31983'></a><a href='#L31983'>31983</a>
+<a name='L31984'></a><a href='#L31984'>31984</a>
+<a name='L31985'></a><a href='#L31985'>31985</a>
+<a name='L31986'></a><a href='#L31986'>31986</a>
+<a name='L31987'></a><a href='#L31987'>31987</a>
+<a name='L31988'></a><a href='#L31988'>31988</a>
+<a name='L31989'></a><a href='#L31989'>31989</a>
+<a name='L31990'></a><a href='#L31990'>31990</a>
+<a name='L31991'></a><a href='#L31991'>31991</a>
+<a name='L31992'></a><a href='#L31992'>31992</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -91905,6 +91947,21 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // node_modules/@typescript-eslint/typescript-estree/dist/getImportClausePhaseModifier.js</span>
+<span class="cstat-no" title="statement not covered" >  var isAtLeast59 = typescriptVersionIsAtLeast["5.9"];</span>
+<span class="cstat-no" title="statement not covered" >  function getImportClausePhaseModifier(node) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!node) {</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (isAtLeast59) {</span>
+<span class="cstat-no" title="statement not covered" >      return node.phaseModifier === SyntaxKind.TypeKeyword ? "type" : (</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line @typescript-eslint/no-deprecated -- guarded by TS version check</span>
+<span class="cstat-no" title="statement not covered" >        node.phaseModifier === SyntaxKind.DeferKeyword ? "defer" : null</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return node.isTypeOnly ? "type" : null;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/@typescript-eslint/typescript-estree/dist/check-syntax-errors.js</span>
 <span class="cstat-no" title="statement not covered" >  var SyntaxKind4 = SyntaxKind;</span>
 <span class="cstat-no" title="statement not covered" >  function checkSyntaxError(tsNode, parent, allowPattern) {</span>
@@ -92016,6 +92073,16 @@
 <span class="cstat-no" title="statement not covered" >        if (isAbstract &amp;&amp; node.initializer) {</span>
 <span class="cstat-no" title="statement not covered" >          throw (0, createError)(node.initializer, `Abstract property cannot have an initializer.`);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        const isDefinite = !!node.exclamationToken;</span>
+<span class="cstat-no" title="statement not covered" >        if (isDefinite &amp;&amp; isAbstract) {</span>
+<span class="cstat-no" title="statement not covered" >          throw (0, createError)(node.exclamationToken, `A definite assignment assertion '!' is not permitted in this context.`);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (isDefinite &amp;&amp; !node.type) {</span>
+<span class="cstat-no" title="statement not covered" >          throw (0, createError)(node, `Declarations with definite assignment assertions must also have type annotations.`);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (isDefinite &amp;&amp; node.initializer) {</span>
+<span class="cstat-no" title="statement not covered" >          throw (0, createError)(node, `Declarations with initializers cannot also have definite assignment assertions.`);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (node.name.kind === SyntaxKind4.StringLiteral &amp;&amp; node.name.text === "constructor") {</span>
 <span class="cstat-no" title="statement not covered" >          throw (0, createError)(node.name, "Classes may not have a field named 'constructor'.");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -92077,12 +92144,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      case SyntaxKind4.ImportDeclaration: {</span>
 <span class="cstat-no" title="statement not covered" >        const { importClause } = node;</span>
-<span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" >          // TODO swap to `phaseModifier` once we add support for `import defer`</span>
-<span class="cstat-no" title="statement not covered" >          // https://github.com/estree/estree/issues/328</span>
-<span class="cstat-no" title="statement not covered" >          // eslint-disable-next-line @typescript-eslint/no-deprecated</span>
-<span class="cstat-no" title="statement not covered" >          importClause?.isTypeOnly &amp;&amp; importClause.name &amp;&amp; importClause.namedBindings</span>
-<span class="cstat-no" title="statement not covered" >        ) {</span>
+<span class="cstat-no" title="statement not covered" >        if ((0, getImportClausePhaseModifier)(importClause) === "type" &amp;&amp; importClause?.name &amp;&amp; importClause.namedBindings) {</span>
 <span class="cstat-no" title="statement not covered" >          throw (0, createError)(importClause, "A type-only import can specify a default import or named bindings, but not both.");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        assertModuleSpecifier(node, false);</span>
@@ -93384,11 +93446,12 @@
 <span class="cstat-no" title="statement not covered" >            type: AST_NODE_TYPES2.ImportDeclaration,</span>
 <span class="cstat-no" title="statement not covered" >            attributes: this.convertImportAttributes(node),</span>
 <span class="cstat-no" title="statement not covered" >            importKind: "value",</span>
+<span class="cstat-no" title="statement not covered" >            phase: (0, getImportClausePhaseModifier)(node.importClause) === "defer" ? "defer" : null,</span>
 <span class="cstat-no" title="statement not covered" >            source: this.convertChild(node.moduleSpecifier),</span>
 <span class="cstat-no" title="statement not covered" >            specifiers: []</span>
 <span class="cstat-no" title="statement not covered" >          }, "assertions", "attributes", true));</span>
 <span class="cstat-no" title="statement not covered" >          if (node.importClause) {</span>
-<span class="cstat-no" title="statement not covered" >            if (node.importClause.isTypeOnly) {</span>
+<span class="cstat-no" title="statement not covered" >            if ((0, getImportClausePhaseModifier)(node.importClause) === "type") {</span>
 <span class="cstat-no" title="statement not covered" >              result.importKind = "type";</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            if (node.importClause.name) {</span>
@@ -95566,7 +95629,7 @@
 <span class="cstat-no" title="statement not covered" >      delete program.interpreter;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (ast.hashbang) {</span>
-<span class="cstat-no" title="statement not covered" >      if (isOxcTs) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isOxcTs || astType === "yuku-js") {</span>
 <span class="cstat-no" title="statement not covered" >        comments.unshift(ast.hashbang);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      delete ast.hashbang;</span>
@@ -95980,7 +96043,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-14T02:57:43.122Z
+                at 2026-07-15T02:56:59.548Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

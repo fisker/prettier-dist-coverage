@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12994</span>
+                <span class='fraction'>0/12997</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12994</span>
+                <span class='fraction'>0/12997</span>
             </div>
         
             
@@ -13057,7 +13057,13 @@
 <a name='L12992'></a><a href='#L12992'>12992</a>
 <a name='L12993'></a><a href='#L12993'>12993</a>
 <a name='L12994'></a><a href='#L12994'>12994</a>
-<a name='L12995'></a><a href='#L12995'>12995</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L12995'></a><a href='#L12995'>12995</a>
+<a name='L12996'></a><a href='#L12996'>12996</a>
+<a name='L12997'></a><a href='#L12997'>12997</a>
+<a name='L12998'></a><a href='#L12998'>12998</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -26956,7 +26962,7 @@
 <span class="cstat-no" title="statement not covered" >    delete program.interpreter;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (ast.hashbang) {</span>
-<span class="cstat-no" title="statement not covered" >    if (isOxcTs) {</span>
+<span class="cstat-no" title="statement not covered" >    if (isOxcTs || astType === "yuku-js") {</span>
 <span class="cstat-no" title="statement not covered" >      comments.unshift(ast.hashbang);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    delete ast.hashbang;</span>
@@ -27378,7 +27384,7 @@
 <span class="cstat-no" title="statement not covered" >  let filepath = options2?.filepath;</span>
 <span class="cstat-no" title="statement not covered" >  const sourceType = getSourceType(filepath);</span>
 <span class="cstat-no" title="statement not covered" >  if (typeof filepath !== "string") {</span>
-<span class="cstat-no" title="statement not covered" >    filepath = "prettier.tsx";</span>
+<span class="cstat-no" title="statement not covered" >    filepath = "prettier.jsx";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const combinations = (sourceType ? [sourceType] : SOURCE_TYPE_COMBINATIONS).map(</span>
 <span class="cstat-no" title="statement not covered" >    (sourceType2) =&gt; () =&gt; parseWithOptions(filepath, text, { sourceType: sourceType2, lang: "jsx" })</span>
@@ -31986,6 +31992,9 @@
 <span class="cstat-no" title="statement not covered" >  if (print_string_default(getRaw(key), options2).slice(1, -1) !== value) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (node.type === "TSMethodSignature" &amp;&amp; value === "new") {</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (</span>
 <span class="cstat-no" title="statement not covered" >    // With `--strictPropertyInitialization`, TS treats properties with quoted names differently than unquoted ones.</span>
 <span class="cstat-no" title="statement not covered" >    // See https://github.com/microsoft/TypeScript/pull/20075</span>
@@ -31993,7 +32002,7 @@
 <span class="cstat-no" title="statement not covered" >  ) {</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if ((parser === "babel" || parser === "acorn" || parser === "oxc" || parser === "espree" || parser === "meriyah" || parser === "__babel_estree") &amp;&amp; node.type !== "ImportAttribute" &amp;&amp; isSimpleNumber(value) &amp;&amp; String(Number(value)) === value) {</span>
+<span class="cstat-no" title="statement not covered" >  if ((parser === "babel" || parser === "acorn" || parser === "oxc" || parser === "yuku" || parser === "espree" || parser === "meriyah" || parser === "__babel_estree") &amp;&amp; node.type !== "ImportAttribute" &amp;&amp; isSimpleNumber(value) &amp;&amp; String(Number(value)) === value) {</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
@@ -39052,7 +39061,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-14T02:57:41.298Z
+                at 2026-07-15T02:56:56.837Z
             </div>
         <script src="../prettify.js"></script>
         <script>
