@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/23029</span>
+                <span class='fraction'>0/23028</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/23029</span>
+                <span class='fraction'>0/23028</span>
             </div>
         
             
@@ -23091,9 +23091,7 @@
 <a name='L23026'></a><a href='#L23026'>23026</a>
 <a name='L23027'></a><a href='#L23027'>23027</a>
 <a name='L23028'></a><a href='#L23028'>23028</a>
-<a name='L23029'></a><a href='#L23029'>23029</a>
-<a name='L23030'></a><a href='#L23030'>23030</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L23029'></a><a href='#L23029'>23029</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -57052,7 +57050,6 @@
 <span class="cstat-no" title="statement not covered" >    text,</span>
 <span class="cstat-no" title="statement not covered" >    astType</span>
 <span class="cstat-no" title="statement not covered" >  } = options2;</span>
-<span class="cstat-no" title="statement not covered" >  const isOxcTs = astType === "oxc-ts";</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    comments</span>
 <span class="cstat-no" title="statement not covered" >  } = ast;</span>
@@ -57063,7 +57060,7 @@
 <span class="cstat-no" title="statement not covered" >    delete program.interpreter;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (ast.hashbang) {</span>
-<span class="cstat-no" title="statement not covered" >    if (isOxcTs || astType === "yuku-js") {</span>
+<span class="cstat-no" title="statement not covered" >    if (astType === "oxc-ts" || astType === "yuku-js" || astType === "yuku-ts") {</span>
 <span class="cstat-no" title="statement not covered" >      comments.unshift(ast.hashbang);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    delete ast.hashbang;</span>
@@ -57086,7 +57083,7 @@
 <span class="cstat-no" title="statement not covered" >            return expression;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          let shouldKeepParenthesizedExpression = false;</span>
-<span class="cstat-no" title="statement not covered" >          if (!isOxcTs) {</span>
+<span class="cstat-no" title="statement not covered" >          if (astType !== "oxc-ts") {</span>
 <span class="cstat-no" title="statement not covered" >            if (!typeCastCommentsEnds) {</span>
 <span class="cstat-no" title="statement not covered" >              typeCastCommentsEnds = [];</span>
 <span class="cstat-no" title="statement not covered" >              for (const comment of comments) {</span>
@@ -57121,7 +57118,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        case "TemplateElement":</span>
-<span class="cstat-no" title="statement not covered" >          if (astType === "flow" || astType === "hermes" || astType === "espree" || astType === "typescript" || isOxcTs) {</span>
+<span class="cstat-no" title="statement not covered" >          if (astType === "flow" || astType === "hermes" || astType === "espree" || astType === "typescript" || astType === "oxc-ts" || astType === "yuku-ts") {</span>
 <span class="cstat-no" title="statement not covered" >            const start = locStart(node) + 1;</span>
 <span class="cstat-no" title="statement not covered" >            const end = locEnd(node) - (node.tail ? 1 : 2);</span>
 <span class="cstat-no" title="statement not covered" >            node.range = [start, end];</span>
@@ -62057,7 +62054,7 @@
 <span class="cstat-no" title="statement not covered" >function isSimpleNumber(numberString) {</span>
 <span class="cstat-no" title="statement not covered" >  return /^(?:\d+|\d+\.\d+)$/.test(numberString);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >var isTypeScript = ({ parser }) =&gt; parser === "typescript" || parser === "babel-ts" || parser === "oxc-ts";</span>
+<span class="cstat-no" title="statement not covered" >var isTypeScript = ({ parser }) =&gt; parser === "typescript" || parser === "babel-ts" || parser === "oxc-ts" || parser === "yuku-ts";</span>
 <span class="cstat-no" title="statement not covered" >function isKeySafeToQuote(node, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const key = getKey(node);</span>
 <span class="cstat-no" title="statement not covered" >  if (key.type === "Identifier") {</span>
@@ -62094,7 +62091,7 @@
 <span class="cstat-no" title="statement not covered" >  if (</span>
 <span class="cstat-no" title="statement not covered" >    // With `--strictPropertyInitialization`, TS treats properties with quoted names differently than unquoted ones.</span>
 <span class="cstat-no" title="statement not covered" >    // See https://github.com/microsoft/TypeScript/pull/20075</span>
-<span class="cstat-no" title="statement not covered" >    !(parser === "babel-ts" &amp;&amp; node.type === "ClassProperty" || (parser === "typescript" || parser === "oxc-ts") &amp;&amp; node.type === "PropertyDefinition") &amp;&amp; is_es5_identifier_name_default(value)</span>
+<span class="cstat-no" title="statement not covered" >    !(parser === "babel-ts" &amp;&amp; node.type === "ClassProperty" || (parser === "typescript" || parser === "oxc-ts" || parser === "yuku-ts") &amp;&amp; node.type === "PropertyDefinition") &amp;&amp; is_es5_identifier_name_default(value)</span>
 <span class="cstat-no" title="statement not covered" >  ) {</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -69157,7 +69154,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-15T02:56:59.548Z
+                at 2026-07-16T03:18:10.571Z
             </div>
         <script src="../prettify.js"></script>
         <script>
