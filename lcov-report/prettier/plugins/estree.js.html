@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12918</span>
+                <span class='fraction'>0/12924</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12918</span>
+                <span class='fraction'>0/12924</span>
             </div>
         
             
@@ -12980,7 +12980,19 @@
 <a name='L12915'></a><a href='#L12915'>12915</a>
 <a name='L12916'></a><a href='#L12916'>12916</a>
 <a name='L12917'></a><a href='#L12917'>12917</a>
-<a name='L12918'></a><a href='#L12918'>12918</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L12918'></a><a href='#L12918'>12918</a>
+<a name='L12919'></a><a href='#L12919'>12919</a>
+<a name='L12920'></a><a href='#L12920'>12920</a>
+<a name='L12921'></a><a href='#L12921'>12921</a>
+<a name='L12922'></a><a href='#L12922'>12922</a>
+<a name='L12923'></a><a href='#L12923'>12923</a>
+<a name='L12924'></a><a href='#L12924'>12924</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -26929,6 +26941,11 @@
 <span class="cstat-no" title="statement not covered" >    "InterpreterDirective"</span>
 <span class="cstat-no" title="statement not covered" >  ]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/language-js/utilities/is-nullish-coalescing.js</span>
+<span class="cstat-no" title="statement not covered" >  function isNullishCoalescing(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return node.type === "LogicalExpression" &amp;&amp; node.operator === "??";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/utilities/is-object-property.js</span>
 <span class="cstat-no" title="statement not covered" >  function isObjectProperty(node) {</span>
 <span class="cstat-no" title="statement not covered" >    return node?.type === "ObjectProperty" || node?.type === "Property" &amp;&amp; !isMethod(node);</span>
@@ -27122,20 +27139,26 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/comments/handle-comments.js</span>
 <span class="cstat-no" title="statement not covered" >  function handleOwnLineComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleClosureTypeCastComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function handleEndOfLineComment(context) {</span>
 <span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleAssignmentLikeComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleArrowExpressionComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function handleRemainingComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleAssignmentLikeComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleParenthesizedExpressionTrailingComment, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleClosureTypeCastComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleAssignmentLikeComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleParenthesizedExpressionTrailingComment, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function handleClosureTypeCastComments({</span>
 <span class="cstat-no" title="statement not covered" >    comment,</span>
-<span class="cstat-no" title="statement not covered" >    followingNode</span>
+<span class="cstat-no" title="statement not covered" >    followingNode,</span>
+<span class="cstat-no" title="statement not covered" >    enclosingNode</span>
 <span class="cstat-no" title="statement not covered" >  }) {</span>
 <span class="cstat-no" title="statement not covered" >    if (followingNode &amp;&amp; isTypeCastComment(comment)) {</span>
-<span class="cstat-no" title="statement not covered" >      addLeadingComment(followingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >      addLeadingComment(</span>
+<span class="cstat-no" title="statement not covered" >        // We'll add parentheses to the nullish coalescing expression,</span>
+<span class="cstat-no" title="statement not covered" >        // The comment need attach to the left side, so the comments can print inside it</span>
+<span class="cstat-no" title="statement not covered" >        enclosingNode?.type === "ConditionalExpression" &amp;&amp; isNullishCoalescing(followingNode) ? followingNode.left : followingNode,</span>
+<span class="cstat-no" title="statement not covered" >        comment</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
@@ -27882,11 +27905,6 @@
 <span class="cstat-no" title="statement not covered" >  // src/language-js/utilities/is-bitwise-operator.js</span>
 <span class="cstat-no" title="statement not covered" >  function isBitwiseOperator(operator) {</span>
 <span class="cstat-no" title="statement not covered" >    return Boolean(bitshiftOperators[operator]) || operator === "|" || operator === "^" || operator === "&amp;";</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // src/language-js/utilities/is-nullish-coalescing.js</span>
-<span class="cstat-no" title="statement not covered" >  function isNullishCoalescing(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return node.type === "LogicalExpression" &amp;&amp; node.operator === "??";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/utilities/starts-with-no-lookahead-token.js</span>
@@ -38821,7 +38839,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-17T03:21:12.778Z
+                at 2026-07-18T02:58:14.018Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
