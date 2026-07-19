@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.65% </span>
+                <span class="strong">46.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4353/9330</span>
+                <span class='fraction'>4349/9327</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.7% </span>
+                <span class="strong">55.81% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>728/1307</span>
+                <span class='fraction'>729/1306</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.65% </span>
+                <span class="strong">46.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4353/9330</span>
+                <span class='fraction'>4349/9327</span>
             </div>
         
             
@@ -9390,10 +9390,7 @@
 <a name='L9325'></a><a href='#L9325'>9325</a>
 <a name='L9326'></a><a href='#L9326'>9326</a>
 <a name='L9327'></a><a href='#L9327'>9327</a>
-<a name='L9328'></a><a href='#L9328'>9328</a>
-<a name='L9329'></a><a href='#L9329'>9329</a>
-<a name='L9330'></a><a href='#L9330'>9330</a>
-<a name='L9331'></a><a href='#L9331'>9331</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L9328'></a><a href='#L9328'>9328</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-yes">160x</span>
@@ -10550,15 +10547,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
@@ -19878,24 +19872,21 @@ function genericPrint(path, options2, print) {
   if (node.type !== "mappingValue" &amp;&amp; hasLeadingComments(node)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    parts.push([join(hardline, path.map(print, "leadingComments")), hardline]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  const {
-    tag,
-    anchor
-  } = node;
-  if (tag) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    parts.push(print("tag"));</span>
+  const tagAndAnchor = ["tag", "anchor"].filter((property) =&gt; node[property]);
+  if (tagAndAnchor.length &gt; 1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    tagAndAnchor.sort((propertyA, propertyB) =&gt; locStart(node[propertyA]) - locStart(node[propertyB]));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if (tag <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; anchor)</span> <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    parts.push(" ");</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-  if (anchor) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    parts.push(print("anchor"));</span>
+  for (const [index, property] of tagAndAnchor.entries()) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    if (index &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(" ");</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(print(property));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   let nextEmptyLine = "";
   if (isNode(node, ["mapping", "sequence", "comment", "directive", "mappingItem", "sequenceItem"]) &amp;&amp; !isLastDescendantNode(path)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    nextEmptyLine = printNextEmptyLine(path, options2.originalText);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-  if (tag || anchor) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (tagAndAnchor.length &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    if (isNode(node, ["sequence", "mapping"]) &amp;&amp; !hasMiddleComments(node)) {</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(hardline);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
@@ -28060,7 +28051,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-18T02:58:14.018Z
+                at 2026-07-19T03:30:47.930Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
