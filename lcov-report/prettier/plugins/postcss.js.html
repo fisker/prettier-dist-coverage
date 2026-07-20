@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/11934</span>
+                <span class='fraction'>5/11941</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11934</span>
+                <span class='fraction'>5/11941</span>
             </div>
         
             
@@ -11996,7 +11996,16 @@
 <a name='L11931'></a><a href='#L11931'>11931</a>
 <a name='L11932'></a><a href='#L11932'>11932</a>
 <a name='L11933'></a><a href='#L11933'>11933</a>
-<a name='L11934'></a><a href='#L11934'>11934</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L11934'></a><a href='#L11934'>11934</a>
+<a name='L11935'></a><a href='#L11935'>11935</a>
+<a name='L11936'></a><a href='#L11936'>11936</a>
+<a name='L11937'></a><a href='#L11937'>11937</a>
+<a name='L11938'></a><a href='#L11938'>11938</a>
+<a name='L11939'></a><a href='#L11939'>11939</a>
+<a name='L11940'></a><a href='#L11940'>11940</a>
+<a name='L11941'></a><a href='#L11941'>11941</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12736,6 +12745,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24109,6 +24123,7 @@
 <span class="cstat-no" title="statement not covered" >      "use strict";</span>
 <span class="cstat-no" title="statement not covered" >      var STYLE_TAG = /(&lt;)(\/?style\b)/gi;</span>
 <span class="cstat-no" title="statement not covered" >      var COMMENT_OPEN = /(&lt;)(!--)/g;</span>
+<span class="cstat-no" title="statement not covered" >      var AT_NAME_END = /[\t\n\f\r "#'()/;[\\\]{}]/;</span>
 <span class="cstat-no" title="statement not covered" >      function escapeHTMLInCSS(str) {</span>
 <span class="cstat-no" title="statement not covered" >        if (typeof str !== "string") return str;</span>
 <span class="cstat-no" title="statement not covered" >        if (!str.includes("&lt;")) return str;</span>
@@ -24134,12 +24149,13 @@
 <span class="cstat-no" title="statement not covered" >      function atruleStart(str, node) {</span>
 <span class="cstat-no" title="statement not covered" >        let name = "@" + node.name;</span>
 <span class="cstat-no" title="statement not covered" >        let params = node.params ? str.rawValue(node, "params") : "";</span>
-<span class="cstat-no" title="statement not covered" >        if (typeof node.raws.afterName !== "undefined") {</span>
-<span class="cstat-no" title="statement not covered" >          name += node.raws.afterName;</span>
-<span class="cstat-no" title="statement not covered" >        } else if (params) {</span>
-<span class="cstat-no" title="statement not covered" >          name += " ";</span>
+<span class="cstat-no" title="statement not covered" >        let afterName = node.raws.afterName;</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof afterName === "undefined") {</span>
+<span class="cstat-no" title="statement not covered" >          afterName = params ? " " : "";</span>
+<span class="cstat-no" title="statement not covered" >        } else if (afterName === "" &amp;&amp; params &amp;&amp; !AT_NAME_END.test(params[0])) {</span>
+<span class="cstat-no" title="statement not covered" >          afterName = " ";</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return name + params;</span>
+<span class="cstat-no" title="statement not covered" >        return name + afterName + params;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      function pushBody(str, stack, node) {</span>
 <span class="cstat-no" title="statement not covered" >        let nodes = node.nodes;</span>
@@ -25378,7 +25394,7 @@
 <span class="cstat-no" title="statement not covered" >        return (size = defaultSize) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >          let id = "";</span>
 <span class="cstat-no" title="statement not covered" >          let i = size | 0;</span>
-<span class="cstat-no" title="statement not covered" >          while (i--) {</span>
+<span class="cstat-no" title="statement not covered" >          while (i-- &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >            id += alphabet[Math.random() * alphabet.length | 0];</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return id;</span>
@@ -25387,7 +25403,7 @@
 <span class="cstat-no" title="statement not covered" >      var nanoid = (size = 21) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        let id = "";</span>
 <span class="cstat-no" title="statement not covered" >        let i = size | 0;</span>
-<span class="cstat-no" title="statement not covered" >        while (i--) {</span>
+<span class="cstat-no" title="statement not covered" >        while (i-- &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >          id += urlAlphabet[Math.random() * 64 | 0];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return id;</span>
@@ -27151,11 +27167,16 @@
 <span class="cstat-no" title="statement not covered" >  var require_warning = __commonJS({</span>
 <span class="cstat-no" title="statement not covered" >    "node_modules/postcss/lib/warning.js"(exports, module) {</span>
 <span class="cstat-no" title="statement not covered" >      "use strict";</span>
+<span class="cstat-no" title="statement not covered" >      var Container = require_container();</span>
+<span class="cstat-no" title="statement not covered" >      var { my } = require_symbols();</span>
 <span class="cstat-no" title="statement not covered" >      var Warning = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(text, opts = {}) {</span>
 <span class="cstat-no" title="statement not covered" >          this.type = "warning";</span>
 <span class="cstat-no" title="statement not covered" >          this.text = text;</span>
 <span class="cstat-no" title="statement not covered" >          if (opts.node &amp;&amp; opts.node.source) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!opts.node[my]) {</span>
+<span class="cstat-no" title="statement not covered" >              Container.rebuild(opts.node);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            let range = opts.node.rangeBy(opts);</span>
 <span class="cstat-no" title="statement not covered" >            this.line = range.start.line;</span>
 <span class="cstat-no" title="statement not covered" >            this.column = range.start.column;</span>
@@ -27879,7 +27900,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.19";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.20";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -35869,7 +35890,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-19T03:30:47.930Z
+                at 2026-07-20T03:55:26.450Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
