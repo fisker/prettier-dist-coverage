@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/31991</span>
+                <span class='fraction'>0/32001</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/31991</span>
+                <span class='fraction'>0/32001</span>
             </div>
         
             
@@ -32053,7 +32053,27 @@
 <a name='L31988'></a><a href='#L31988'>31988</a>
 <a name='L31989'></a><a href='#L31989'>31989</a>
 <a name='L31990'></a><a href='#L31990'>31990</a>
-<a name='L31991'></a><a href='#L31991'>31991</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L31991'></a><a href='#L31991'>31991</a>
+<a name='L31992'></a><a href='#L31992'>31992</a>
+<a name='L31993'></a><a href='#L31993'>31993</a>
+<a name='L31994'></a><a href='#L31994'>31994</a>
+<a name='L31995'></a><a href='#L31995'>31995</a>
+<a name='L31996'></a><a href='#L31996'>31996</a>
+<a name='L31997'></a><a href='#L31997'>31997</a>
+<a name='L31998'></a><a href='#L31998'>31998</a>
+<a name='L31999'></a><a href='#L31999'>31999</a>
+<a name='L32000'></a><a href='#L32000'>32000</a>
+<a name='L32001'></a><a href='#L32001'>32001</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -92142,8 +92162,17 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      case SyntaxKind4.ImportDeclaration: {</span>
 <span class="cstat-no" title="statement not covered" >        const { importClause } = node;</span>
-<span class="cstat-no" title="statement not covered" >        if ((0, getImportClausePhaseModifier)(importClause) === "type" &amp;&amp; importClause?.name &amp;&amp; importClause.namedBindings) {</span>
+<span class="cstat-no" title="statement not covered" >        const importPhase = (0, getImportClausePhaseModifier)(importClause);</span>
+<span class="cstat-no" title="statement not covered" >        if (importPhase === "type" &amp;&amp; importClause?.name &amp;&amp; importClause.namedBindings) {</span>
 <span class="cstat-no" title="statement not covered" >          throw (0, createError)(importClause, "A type-only import can specify a default import or named bindings, but not both.");</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        const isNamedImport = importClause?.namedBindings?.kind === SyntaxKind4.NamedImports;</span>
+<span class="cstat-no" title="statement not covered" >        const isDefaultImport = !!importClause?.name;</span>
+<span class="cstat-no" title="statement not covered" >        if (importPhase === "defer" &amp;&amp; isNamedImport) {</span>
+<span class="cstat-no" title="statement not covered" >          throw (0, createError)(importClause, "Named imports are not allowed in a deferred import.");</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (importPhase === "defer" &amp;&amp; isDefaultImport) {</span>
+<span class="cstat-no" title="statement not covered" >          throw (0, createError)(importClause, "Default imports are not allowed in a deferred import.");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        assertModuleSpecifier(node, false);</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
@@ -94703,7 +94732,7 @@
 <span class="cstat-no" title="statement not covered" >  var inferSingleRun = () =&gt; false;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/@typescript-eslint/typescript-estree/dist/parseSettings/warnAboutTSVersion.js</span>
-<span class="cstat-no" title="statement not covered" >  var warnAboutTSVersion = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  var handleUnsupportedTSVersion = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/@typescript-eslint/typescript-estree/dist/parseSettings/createParseSettings.js</span>
@@ -94807,7 +94836,7 @@
 <span class="cstat-no" title="statement not covered" >    if (tsestreeOptions.jsDocParsingMode == null &amp;&amp; parseSettings.projects.size === 0 &amp;&amp; parseSettings.programs == null &amp;&amp; parseSettings.projectService == null) {</span>
 <span class="cstat-no" title="statement not covered" >      parseSettings.jsDocParsingMode = JSDocParsingMode2.ParseNone;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    (0, warnAboutTSVersion)(parseSettings, passedLoggerFn);</span>
+<span class="cstat-no" title="statement not covered" >    (0, handleUnsupportedTSVersion)(parseSettings, tsestreeOptions.onUnsupportedTypeScriptVersion ?? "warn", passedLoggerFn);</span>
 <span class="cstat-no" title="statement not covered" >    return parseSettings;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function enforceCodeString(code) {</span>
@@ -95968,7 +95997,8 @@
 <span class="cstat-no" title="statement not covered" >    loggerFn: false,</span>
 <span class="cstat-no" title="statement not covered" >    project: false,</span>
 <span class="cstat-no" title="statement not covered" >    jsDocParsingMode: "none",</span>
-<span class="cstat-no" title="statement not covered" >    suppressDeprecatedPropertyWarnings: true</span>
+<span class="cstat-no" title="statement not covered" >    suppressDeprecatedPropertyWarnings: true,</span>
+<span class="cstat-no" title="statement not covered" >    onUnsupportedTypeScriptVersion: "ignore"</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  function createParseError(error) {</span>
 <span class="cstat-no" title="statement not covered" >    const { message, location } = error;</span>
@@ -96040,7 +96070,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-21T03:24:01.453Z
+                at 2026-07-22T03:22:55.646Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

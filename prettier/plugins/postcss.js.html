@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/11941</span>
+                <span class='fraction'>5/11947</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11941</span>
+                <span class='fraction'>5/11947</span>
             </div>
         
             
@@ -12003,7 +12003,18 @@
 <a name='L11938'></a><a href='#L11938'>11938</a>
 <a name='L11939'></a><a href='#L11939'>11939</a>
 <a name='L11940'></a><a href='#L11940'>11940</a>
-<a name='L11941'></a><a href='#L11941'>11941</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L11941'></a><a href='#L11941'>11941</a>
+<a name='L11942'></a><a href='#L11942'>11942</a>
+<a name='L11943'></a><a href='#L11943'>11943</a>
+<a name='L11944'></a><a href='#L11944'>11944</a>
+<a name='L11945'></a><a href='#L11945'>11945</a>
+<a name='L11946'></a><a href='#L11946'>11946</a>
+<a name='L11947'></a><a href='#L11947'>11947</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12745,6 +12756,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24167,10 +24179,15 @@
 <span class="cstat-no" title="statement not covered" >        let semicolon = str.raw(node, "semicolon");</span>
 <span class="cstat-no" title="statement not covered" >        let isDocument = node.type === "document";</span>
 <span class="cstat-no" title="statement not covered" >        for (let i = nodes.length - 1; i &gt;= 0; i--) {</span>
+<span class="cstat-no" title="statement not covered" >          let child = nodes[i];</span>
+<span class="cstat-no" title="statement not covered" >          let childSemicolon = last !== i || semicolon;</span>
+<span class="cstat-no" title="statement not covered" >          if (!childSemicolon &amp;&amp; i &lt; nodes.length - 1 &amp;&amp; child.type === "atrule" &amp;&amp; !child.nodes) {</span>
+<span class="cstat-no" title="statement not covered" >            childSemicolon = true;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          stack.push({</span>
 <span class="cstat-no" title="statement not covered" >            document: isDocument,</span>
-<span class="cstat-no" title="statement not covered" >            node: nodes[i],</span>
-<span class="cstat-no" title="statement not covered" >            semicolon: last !== i || semicolon</span>
+<span class="cstat-no" title="statement not covered" >            node: child,</span>
+<span class="cstat-no" title="statement not covered" >            semicolon: childSemicolon</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -27900,7 +27917,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.20";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.21";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -34103,6 +34120,7 @@
 <span class="cstat-no" title="statement not covered" >      (node2) =&gt; node2.type === "css-atrule"</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    const isControlDirective = atRuleAncestorNode &amp;&amp; isSCSSControlDirectiveNode(atRuleAncestorNode, options2);</span>
+<span class="cstat-no" title="statement not covered" >    const hasLogicalOperator = isControlDirective &amp;&amp; node.groups.some(isIfElseKeywordNode);</span>
 <span class="cstat-no" title="statement not covered" >    const hasInlineComment = node.groups.some(</span>
 <span class="cstat-no" title="statement not covered" >      (node2) =&gt; isInlineValueCommentNode(node2)</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
@@ -34242,7 +34260,7 @@
 <span class="cstat-no" title="statement not covered" >        parts.push(hardline, "");</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (isControlDirective &amp;&amp; (isEqualityOperatorNode(iNextNode) || isRelationalOperatorNode(iNextNode) || isIfElseKeywordNode(iNextNode) || isEachKeywordNode(iNode) || isForKeywordNode(iNode))) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isControlDirective &amp;&amp; (isEqualityOperatorNode(iNextNode) || isRelationalOperatorNode(iNextNode) || hasLogicalOperator &amp;&amp; (isEqualityOperatorNode(iNode) || isRelationalOperatorNode(iNode)) || isIfElseKeywordNode(iNextNode) || isEachKeywordNode(iNode) || isForKeywordNode(iNode))) {</span>
 <span class="cstat-no" title="statement not covered" >        parts.push([parts.pop(), " "]);</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -35890,7 +35908,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-21T03:24:03.922Z
+                at 2026-07-22T03:22:58.034Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
