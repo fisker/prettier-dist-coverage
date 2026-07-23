@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/24988</span>
+                <span class='fraction'>0/24994</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/24988</span>
+                <span class='fraction'>0/24994</span>
             </div>
         
             
@@ -25051,7 +25051,19 @@
 <a name='L24986'></a><a href='#L24986'>24986</a>
 <a name='L24987'></a><a href='#L24987'>24987</a>
 <a name='L24988'></a><a href='#L24988'>24988</a>
-<a name='L24989'></a><a href='#L24989'>24989</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L24989'></a><a href='#L24989'>24989</a>
+<a name='L24990'></a><a href='#L24990'>24990</a>
+<a name='L24991'></a><a href='#L24991'>24991</a>
+<a name='L24992'></a><a href='#L24992'>24992</a>
+<a name='L24993'></a><a href='#L24993'>24993</a>
+<a name='L24994'></a><a href='#L24994'>24994</a>
+<a name='L24995'></a><a href='#L24995'>24995</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -73764,13 +73776,15 @@
 <span class="cstat-no" title="statement not covered" >        modifier = "static ";</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return [</span>
-<span class="cstat-no" title="statement not covered" >        modifier,</span>
-<span class="cstat-no" title="statement not covered" >        node.kind !== "init" ? node.kind + " " : "",</span>
-<span class="cstat-no" title="statement not covered" >        node.variance ? print3("variance") : "",</span>
-<span class="cstat-no" title="statement not covered" >        printKey(path, options2, print3),</span>
-<span class="cstat-no" title="statement not covered" >        printOptionalToken(path),</span>
-<span class="cstat-no" title="statement not covered" >        isMethod(node) ? "" : ": ",</span>
-<span class="cstat-no" title="statement not covered" >        print3("value"),</span>
+<span class="cstat-no" title="statement not covered" >        group([</span>
+<span class="cstat-no" title="statement not covered" >          modifier,</span>
+<span class="cstat-no" title="statement not covered" >          node.kind !== "init" ? node.kind + " " : "",</span>
+<span class="cstat-no" title="statement not covered" >          node.variance ? print3("variance") : "",</span>
+<span class="cstat-no" title="statement not covered" >          printKey(path, options2, print3),</span>
+<span class="cstat-no" title="statement not covered" >          printOptionalToken(path),</span>
+<span class="cstat-no" title="statement not covered" >          isMethod(node) ? "" : ": ",</span>
+<span class="cstat-no" title="statement not covered" >          print3("value")</span>
+<span class="cstat-no" title="statement not covered" >        ]),</span>
 <span class="cstat-no" title="statement not covered" >        printClassMemberSemicolon(path, options2)</span>
 <span class="cstat-no" title="statement not covered" >      ];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -74358,13 +74372,15 @@
 <span class="cstat-no" title="statement not covered" >  ]);</span>
 <span class="cstat-no" title="statement not covered" >  const isClassMember = path.key === "body" &amp;&amp; path.parent.type === "ClassBody";</span>
 <span class="cstat-no" title="statement not covered" >  return [</span>
-<span class="cstat-no" title="statement not covered" >    // `static` only allowed in class member</span>
-<span class="cstat-no" title="statement not covered" >    isClassMember &amp;&amp; node.static ? "static " : "",</span>
-<span class="cstat-no" title="statement not covered" >    node.readonly ? "readonly " : "",</span>
-<span class="cstat-no" title="statement not covered" >    "[",</span>
-<span class="cstat-no" title="statement not covered" >    node.parameters ? parametersGroup : "",</span>
-<span class="cstat-no" title="statement not covered" >    "]",</span>
-<span class="cstat-no" title="statement not covered" >    printTypeAnnotationProperty(path, print3),</span>
+<span class="cstat-no" title="statement not covered" >    group([</span>
+<span class="cstat-no" title="statement not covered" >      // `static` only allowed in class member</span>
+<span class="cstat-no" title="statement not covered" >      isClassMember &amp;&amp; node.static ? "static " : "",</span>
+<span class="cstat-no" title="statement not covered" >      node.readonly ? "readonly " : "",</span>
+<span class="cstat-no" title="statement not covered" >      "[",</span>
+<span class="cstat-no" title="statement not covered" >      node.parameters ? parametersGroup : "",</span>
+<span class="cstat-no" title="statement not covered" >      "]",</span>
+<span class="cstat-no" title="statement not covered" >      printTypeAnnotationProperty(path, print3)</span>
+<span class="cstat-no" title="statement not covered" >    ]),</span>
 <span class="cstat-no" title="statement not covered" >    printClassMemberSemicolon(path, options2)</span>
 <span class="cstat-no" title="statement not covered" >  ];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -74507,10 +74523,12 @@
 <span class="cstat-no" title="statement not covered" >      return printArrayType(print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "TSPropertySignature":</span>
 <span class="cstat-no" title="statement not covered" >      return [</span>
-<span class="cstat-no" title="statement not covered" >        node.readonly ? "readonly " : "",</span>
-<span class="cstat-no" title="statement not covered" >        printKey(path, options2, print3),</span>
-<span class="cstat-no" title="statement not covered" >        printOptionalToken(path),</span>
-<span class="cstat-no" title="statement not covered" >        printTypeAnnotationProperty(path, print3),</span>
+<span class="cstat-no" title="statement not covered" >        group([</span>
+<span class="cstat-no" title="statement not covered" >          node.readonly ? "readonly " : "",</span>
+<span class="cstat-no" title="statement not covered" >          printKey(path, options2, print3),</span>
+<span class="cstat-no" title="statement not covered" >          printOptionalToken(path),</span>
+<span class="cstat-no" title="statement not covered" >          printTypeAnnotationProperty(path, print3)</span>
+<span class="cstat-no" title="statement not covered" >        ]),</span>
 <span class="cstat-no" title="statement not covered" >        printClassMemberSemicolon(path, options2)</span>
 <span class="cstat-no" title="statement not covered" >      ];</span>
 <span class="cstat-no" title="statement not covered" >    case "TSParameterProperty":</span>
@@ -75034,7 +75052,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-22T03:22:55.646Z
+                at 2026-07-23T03:29:37.400Z
             </div>
         <script src="../prettify.js"></script>
         <script>
