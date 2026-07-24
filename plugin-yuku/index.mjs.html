@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13028</span>
+                <span class='fraction'>0/13021</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13028</span>
+                <span class='fraction'>0/13021</span>
             </div>
         
             
@@ -13084,21 +13084,7 @@
 <a name='L13019'></a><a href='#L13019'>13019</a>
 <a name='L13020'></a><a href='#L13020'>13020</a>
 <a name='L13021'></a><a href='#L13021'>13021</a>
-<a name='L13022'></a><a href='#L13022'>13022</a>
-<a name='L13023'></a><a href='#L13023'>13023</a>
-<a name='L13024'></a><a href='#L13024'>13024</a>
-<a name='L13025'></a><a href='#L13025'>13025</a>
-<a name='L13026'></a><a href='#L13026'>13026</a>
-<a name='L13027'></a><a href='#L13027'>13027</a>
-<a name='L13028'></a><a href='#L13028'>13028</a>
-<a name='L13029'></a><a href='#L13029'>13029</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L13022'></a><a href='#L13022'>13022</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27426,7 +27412,6 @@
 <span class="cstat-no" title="statement not covered" >function parseWithOptions(text, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const result = yukuParse(text, {</span>
 <span class="cstat-no" title="statement not covered" >    preserveParens: true,</span>
-<span class="cstat-no" title="statement not covered" >    allowReturnOutsideFunction: true,</span>
 <span class="cstat-no" title="statement not covered" >    semanticErrors: false,</span>
 <span class="cstat-no" title="statement not covered" >    attachComments: false,</span>
 <span class="cstat-no" title="statement not covered" >    ...options2</span>
@@ -27441,10 +27426,7 @@
 <span class="cstat-no" title="statement not covered" >  const filepath = options2?.filepath;</span>
 <span class="cstat-no" title="statement not covered" >  const sourceType = getSourceType(filepath);</span>
 <span class="cstat-no" title="statement not covered" >  const combinations = (sourceType ? [sourceType] : SOURCE_TYPE_COMBINATIONS).map(</span>
-<span class="cstat-no" title="statement not covered" >    (sourceType2) =&gt; () =&gt; parseWithOptions(text, {</span>
-<span class="cstat-no" title="statement not covered" >      sourceType: sourceType2 === "commonjs" ? "script" : sourceType2,</span>
-<span class="cstat-no" title="statement not covered" >      lang: "jsx"</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >    (sourceType2) =&gt; () =&gt; parseWithOptions(text, { sourceType: sourceType2, lang: "jsx" })</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  let result;</span>
 <span class="cstat-no" title="statement not covered" >  try {</span>
@@ -27478,10 +27460,7 @@
 <span class="cstat-no" title="statement not covered" >  const languageCombinations = getLanguageCombinations(text, options2);</span>
 <span class="cstat-no" title="statement not covered" >  const combinations = (sourceType ? [sourceType] : SOURCE_TYPE_COMBINATIONS).flatMap(</span>
 <span class="cstat-no" title="statement not covered" >    (sourceType2) =&gt; languageCombinations.map(</span>
-<span class="cstat-no" title="statement not covered" >      (lang) =&gt; () =&gt; parseWithOptions(text, {</span>
-<span class="cstat-no" title="statement not covered" >        sourceType: sourceType2 === "commonjs" ? "script" : sourceType2,</span>
-<span class="cstat-no" title="statement not covered" >        lang</span>
-<span class="cstat-no" title="statement not covered" >      })</span>
+<span class="cstat-no" title="statement not covered" >      (lang) =&gt; () =&gt; parseWithOptions(text, { sourceType: sourceType2, lang })</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  let result;</span>
@@ -39154,7 +39133,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-23T03:29:39.470Z
+                at 2026-07-24T03:24:06.953Z
             </div>
         <script src="../prettify.js"></script>
         <script>
