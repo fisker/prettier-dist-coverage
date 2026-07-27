@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12954</span>
+                <span class='fraction'>0/12966</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12954</span>
+                <span class='fraction'>0/12966</span>
             </div>
         
             
@@ -13016,7 +13016,31 @@
 <a name='L12951'></a><a href='#L12951'>12951</a>
 <a name='L12952'></a><a href='#L12952'>12952</a>
 <a name='L12953'></a><a href='#L12953'>12953</a>
-<a name='L12954'></a><a href='#L12954'>12954</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L12954'></a><a href='#L12954'>12954</a>
+<a name='L12955'></a><a href='#L12955'>12955</a>
+<a name='L12956'></a><a href='#L12956'>12956</a>
+<a name='L12957'></a><a href='#L12957'>12957</a>
+<a name='L12958'></a><a href='#L12958'>12958</a>
+<a name='L12959'></a><a href='#L12959'>12959</a>
+<a name='L12960'></a><a href='#L12960'>12960</a>
+<a name='L12961'></a><a href='#L12961'>12961</a>
+<a name='L12962'></a><a href='#L12962'>12962</a>
+<a name='L12963'></a><a href='#L12963'>12963</a>
+<a name='L12964'></a><a href='#L12964'>12964</a>
+<a name='L12965'></a><a href='#L12965'>12965</a>
+<a name='L12966'></a><a href='#L12966'>12966</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32129,7 +32153,7 @@
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >    return sizes[index];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function printTemplateExpression(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >  function printTemplateExpression(path, options2, print3, shouldPreserveIndentation = true) {</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      node,</span>
 <span class="cstat-no" title="statement not covered" >      index</span>
@@ -32156,6 +32180,9 @@
 <span class="cstat-no" title="statement not covered" >    if (interpolationHasNewline &amp;&amp; (hasComment(node) || node.type === "Identifier" || isMemberExpression(stripChainElementWrappers(node)) || node.type === "ConditionalExpression" || node.type === "SequenceExpression" || isBinaryCastExpression(node) || isBinaryish(node))) {</span>
 <span class="cstat-no" title="statement not covered" >      expressionDoc = [indent([softline, expressionDoc]), softline];</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (!shouldPreserveIndentation) {</span>
+<span class="cstat-no" title="statement not covered" >      return group(["${", expressionDoc, lineSuffixBoundary, "}"]);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    let {</span>
 <span class="cstat-no" title="statement not covered" >      indentSize,</span>
 <span class="cstat-no" title="statement not covered" >      previousQuasiText</span>
@@ -32168,6 +32195,15 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function printTemplateExpressions(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >    return path.map(() =&gt; printTemplateExpression(path, options2, print3), path.node.type === "TSTemplateLiteralType" ? "types" : "expressions");</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function printEmbeddedTemplateExpressions(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >    return path.map(() =&gt; printTemplateExpression(</span>
+<span class="cstat-no" title="statement not covered" >      path,</span>
+<span class="cstat-no" title="statement not covered" >      options2,</span>
+<span class="cstat-no" title="statement not covered" >      print3,</span>
+<span class="cstat-no" title="statement not covered" >      /* shouldPreserveIndentation */</span>
+<span class="cstat-no" title="statement not covered" >      false</span>
+<span class="cstat-no" title="statement not covered" >    ), "expressions");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function escapeTemplateCharacters(doc, raw) {</span>
 <span class="cstat-no" title="statement not covered" >    return mapDoc(doc, (currentDoc) =&gt; {</span>
@@ -32253,7 +32289,7 @@
 <span class="cstat-no" title="statement not covered" >      text += raw;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const quasisDoc = await textToDoc(text, { parser: "scss" });</span>
-<span class="cstat-no" title="statement not covered" >    const expressionDocs = printTemplateExpressions(path, options2, print3);</span>
+<span class="cstat-no" title="statement not covered" >    const expressionDocs = printEmbeddedTemplateExpressions(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    const newDoc = replacePlaceholders(quasisDoc, expressionDocs);</span>
 <span class="cstat-no" title="statement not covered" >    if (!newDoc) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error("Couldn't insert all the expressions");</span>
@@ -32332,7 +32368,7 @@
 <span class="cstat-no" title="statement not covered" >  async function printEmbedGraphQL(textToDoc, print3, path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >    const numQuasis = node.quasis.length;</span>
-<span class="cstat-no" title="statement not covered" >    const expressionDocs = printTemplateExpressions(path, options2, print3);</span>
+<span class="cstat-no" title="statement not covered" >    const expressionDocs = printEmbeddedTemplateExpressions(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    const parts = [];</span>
 <span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; numQuasis; i++) {</span>
 <span class="cstat-no" title="statement not covered" >      const templateElement = node.quasis[i];</span>
@@ -32404,7 +32440,7 @@
 <span class="cstat-no" title="statement not covered" >    htmlTemplateLiteralCounter = htmlTemplateLiteralCounter + 1 &gt;&gt;&gt; 0;</span>
 <span class="cstat-no" title="statement not covered" >    const composePlaceholder = (index) =&gt; `PRETTIER_HTML_PLACEHOLDER_${index}_${counter}_IN_JS`;</span>
 <span class="cstat-no" title="statement not covered" >    const text = node.quasis.map((quasi, index, quasis) =&gt; index === quasis.length - 1 ? quasi.value.cooked : quasi.value.cooked + composePlaceholder(index)).join("");</span>
-<span class="cstat-no" title="statement not covered" >    const expressionDocs = printTemplateExpressions(path, options2, print3);</span>
+<span class="cstat-no" title="statement not covered" >    const expressionDocs = printEmbeddedTemplateExpressions(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    const placeholderRegex = new RegExp(composePlaceholder("(\\d+)"), "g");</span>
 <span class="cstat-no" title="statement not covered" >    let topLevelCount = 0;</span>
 <span class="cstat-no" title="statement not covered" >    const doc = await textToDoc(text, {</span>
@@ -38929,7 +38965,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-26T03:35:57.782Z
+                at 2026-07-27T03:43:59.120Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

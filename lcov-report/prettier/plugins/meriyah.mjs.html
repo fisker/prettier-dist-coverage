@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.33% </span>
+                <span class="strong">22.32% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1686/7550</span>
+                <span class='fraction'>1684/7542</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.33% </span>
+                <span class="strong">22.32% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1686/7550</span>
+                <span class='fraction'>1684/7542</span>
             </div>
         
             
@@ -7605,15 +7605,7 @@
 <a name='L7540'></a><a href='#L7540'>7540</a>
 <a name='L7541'></a><a href='#L7541'>7541</a>
 <a name='L7542'></a><a href='#L7542'>7542</a>
-<a name='L7543'></a><a href='#L7543'>7543</a>
-<a name='L7544'></a><a href='#L7544'>7544</a>
-<a name='L7545'></a><a href='#L7545'>7545</a>
-<a name='L7546'></a><a href='#L7546'>7546</a>
-<a name='L7547'></a><a href='#L7547'>7547</a>
-<a name='L7548'></a><a href='#L7548'>7548</a>
-<a name='L7549'></a><a href='#L7549'>7549</a>
-<a name='L7550'></a><a href='#L7550'>7550</a>
-<a name='L7551'></a><a href='#L7551'>7551</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<a name='L7543'></a><a href='#L7543'>7543</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
@@ -7662,14 +7654,6 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15210,25 +15194,17 @@ var hasOwn = Object.hasOwn <span class="branch-0 cbranch-no" title="branch not c
 var function_object_has_own_default = hasOwn;
 &nbsp;
 // scripts/build/shims/method-is-well-formed.js
-var LeadSurrogateMin = 55296;
-var LeadSurrogateMax = 56319;
-var TrailSurrogateMin = 56320;
+var loneSurrogate = /[\uD800-\uDFFF]/u;
 var stringIsWellFormed = String.prototype.isWellFormed <span class="branch-0 cbranch-no" title="branch not covered" >?? /*</span>
-<span class="cstat-no" title="statement not covered" >This implementation is not verified, should only apply to meriyah package</span>
-<span class="cstat-no" title="statement not covered" >https://github.com/meriyah/meriyah/pull/527</span>
-<span class="cstat-no" title="statement not covered" >*/</span>
+<span class="cstat-no" title="statement not covered" >  This implementation is not verified, should only apply to meriyah package</span>
+<span class="cstat-no" title="statement not covered" >  https://github.com/meriyah/meriyah/pull/527</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  Update: acorn and babel just use `/[\uD800-\uDFFF]/u.test()`, aligned with them</span>
+<span class="cstat-no" title="statement not covered" >  https://github.com/acornjs/acorn/blob/c8d515c7f9c8baa62bf5ccffba98507b7be46218/acorn/src/statement.js#L1228</span>
+<span class="cstat-no" title="statement not covered" >  https://github.com/babel/babel/blob/e74e391f324d1e63533e75c118a02689cb8aeeb4/packages/babel-parser/src/parser/statement.ts#L2679</span>
+<span class="cstat-no" title="statement not covered" >  */</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >  const { length } = this;</span>
-<span class="cstat-no" title="statement not covered" >  for (let index = 0; index &lt; length; index++) {</span>
-<span class="cstat-no" title="statement not covered" >    const code = this.charCodeAt(index);</span>
-<span class="cstat-no" title="statement not covered" >    if ((code &amp; 64512) !== LeadSurrogateMin) {</span>
-<span class="cstat-no" title="statement not covered" >      continue;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (code &gt; LeadSurrogateMax || ++index &gt;= length || (this.charCodeAt(index) &amp; 64512) !== TrailSurrogateMin) {</span>
-<span class="cstat-no" title="statement not covered" >      return false;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return true;</span>
+<span class="cstat-no" title="statement not covered" >  return !loneSurrogate.test(this);</span>
 };
 var isWellFormed = /* @__PURE__ */ createMethodShim(
   "isWellFormed",
@@ -22720,7 +22696,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-26T03:35:57.782Z
+                at 2026-07-27T03:43:59.120Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
