@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7860</span>
+                <span class='fraction'>0/7870</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7860</span>
+                <span class='fraction'>0/7870</span>
             </div>
         
             
@@ -7923,7 +7923,27 @@
 <a name='L7858'></a><a href='#L7858'>7858</a>
 <a name='L7859'></a><a href='#L7859'>7859</a>
 <a name='L7860'></a><a href='#L7860'>7860</a>
-<a name='L7861'></a><a href='#L7861'>7861</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L7861'></a><a href='#L7861'>7861</a>
+<a name='L7862'></a><a href='#L7862'>7862</a>
+<a name='L7863'></a><a href='#L7863'>7863</a>
+<a name='L7864'></a><a href='#L7864'>7864</a>
+<a name='L7865'></a><a href='#L7865'>7865</a>
+<a name='L7866'></a><a href='#L7866'>7866</a>
+<a name='L7867'></a><a href='#L7867'>7867</a>
+<a name='L7868'></a><a href='#L7868'>7868</a>
+<a name='L7869'></a><a href='#L7869'>7869</a>
+<a name='L7870'></a><a href='#L7870'>7870</a>
+<a name='L7871'></a><a href='#L7871'>7871</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16578,6 +16598,11 @@
 <span class="cstat-no" title="statement not covered" >  // line being 1-based and column 0-based) will be attached to the</span>
 <span class="cstat-no" title="statement not covered" >  // nodes.</span>
 <span class="cstat-no" title="statement not covered" >  locations: false,</span>
+<span class="cstat-no" title="statement not covered" >  // Pass an optional `{line, column}` object to use for the start of</span>
+<span class="cstat-no" title="statement not covered" >  // the parse. This is mostly useful when using `parseExpressionAt`</span>
+<span class="cstat-no" title="statement not covered" >  // with `locations: true`, to prevent the parser from having to</span>
+<span class="cstat-no" title="statement not covered" >  // determine the line position at the start position.</span>
+<span class="cstat-no" title="statement not covered" >  startLocation: null,</span>
 <span class="cstat-no" title="statement not covered" >  // A function can be passed as `onToken` option, which will</span>
 <span class="cstat-no" title="statement not covered" >  // cause Acorn to call that function with object in the same</span>
 <span class="cstat-no" title="statement not covered" >  // format as tokens returned from `tokenizer().getToken()`. Note</span>
@@ -16714,13 +16739,18 @@
 <span class="cstat-no" title="statement not covered" >  this.reservedWordsStrictBind = wordsRegexp(reservedStrict + " " + reservedWords.strictBind);</span>
 <span class="cstat-no" title="statement not covered" >  this.input = String(input);</span>
 <span class="cstat-no" title="statement not covered" >  this.containsEsc = false;</span>
-<span class="cstat-no" title="statement not covered" >  if (startPos) {</span>
-<span class="cstat-no" title="statement not covered" >    this.pos = startPos;</span>
+<span class="cstat-no" title="statement not covered" >  this.pos = startPos || 0;</span>
+<span class="cstat-no" title="statement not covered" >  this.curLine = 1;</span>
+<span class="cstat-no" title="statement not covered" >  if (options.startLocation) {</span>
+<span class="cstat-no" title="statement not covered" >    this.lineStart = this.pos - options.startLocation.column;</span>
+<span class="cstat-no" title="statement not covered" >    this.curLine = options.startLocation.line;</span>
+<span class="cstat-no" title="statement not covered" >  } else if (startPos) {</span>
 <span class="cstat-no" title="statement not covered" >    this.lineStart = this.input.lastIndexOf("\n", startPos - 1) + 1;</span>
-<span class="cstat-no" title="statement not covered" >    this.curLine = this.input.slice(0, this.lineStart).split(lineBreak).length;</span>
+<span class="cstat-no" title="statement not covered" >    if (this.options.locations) {</span>
+<span class="cstat-no" title="statement not covered" >      this.curLine = this.input.slice(0, this.lineStart).split(lineBreak).length;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  } else {</span>
-<span class="cstat-no" title="statement not covered" >    this.pos = this.lineStart = 0;</span>
-<span class="cstat-no" title="statement not covered" >    this.curLine = 1;</span>
+<span class="cstat-no" title="statement not covered" >    this.lineStart = 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  this.type = types$1.eof;</span>
 <span class="cstat-no" title="statement not covered" >  this.value = null;</span>
@@ -18761,7 +18791,7 @@
 <span class="cstat-no" title="statement not covered" >      expr = this.finishNode(node$1, "UpdateExpression");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (!incDec &amp;&amp; this.eat(types$1.starstar)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!incDec &amp;&amp; !(expr.type === "ArrowFunctionExpression" &amp;&amp; expr.start === startPos) &amp;&amp; this.eat(types$1.starstar)) {</span>
 <span class="cstat-no" title="statement not covered" >    if (sawUnary) {</span>
 <span class="cstat-no" title="statement not covered" >      this.unexpected(this.lastTokStart);</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
@@ -21920,7 +21950,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return this.finishToken(type, word);</span>
 <span class="cstat-no" title="statement not covered" >};</span>
-<span class="cstat-no" title="statement not covered" >var version = "8.17.0";</span>
+<span class="cstat-no" title="statement not covered" >var version = "8.18.0";</span>
 <span class="cstat-no" title="statement not covered" >Parser.acorn = {</span>
 <span class="cstat-no" title="statement not covered" >  Parser,</span>
 <span class="cstat-no" title="statement not covered" >  version,</span>
@@ -23650,7 +23680,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-28T03:15:42.875Z
+                at 2026-07-29T03:19:01.004Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/11980</span>
+                <span class='fraction'>5/11991</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11980</span>
+                <span class='fraction'>5/11991</span>
             </div>
         
             
@@ -12042,7 +12042,21 @@
 <a name='L11977'></a><a href='#L11977'>11977</a>
 <a name='L11978'></a><a href='#L11978'>11978</a>
 <a name='L11979'></a><a href='#L11979'>11979</a>
-<a name='L11980'></a><a href='#L11980'>11980</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L11980'></a><a href='#L11980'>11980</a>
+<a name='L11981'></a><a href='#L11981'>11981</a>
+<a name='L11982'></a><a href='#L11982'>11982</a>
+<a name='L11983'></a><a href='#L11983'>11983</a>
+<a name='L11984'></a><a href='#L11984'>11984</a>
+<a name='L11985'></a><a href='#L11985'>11985</a>
+<a name='L11986'></a><a href='#L11986'>11986</a>
+<a name='L11987'></a><a href='#L11987'>11987</a>
+<a name='L11988'></a><a href='#L11988'>11988</a>
+<a name='L11989'></a><a href='#L11989'>11989</a>
+<a name='L11990'></a><a href='#L11990'>11990</a>
+<a name='L11991'></a><a href='#L11991'>11991</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12789,6 +12803,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24544,6 +24566,9 @@
 <span class="cstat-no" title="statement not covered" >          return value;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        root(node) {</span>
+<span class="cstat-no" title="statement not covered" >          if (node.source &amp;&amp; node.source.input.hasBOM) {</span>
+<span class="cstat-no" title="statement not covered" >            this.builder("\uFEFF", node, "start");</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          this.body(node);</span>
 <span class="cstat-no" title="statement not covered" >          if (node.raws.after) {</span>
 <span class="cstat-no" title="statement not covered" >            let after = node.raws.after;</span>
@@ -27983,7 +28008,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.23";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.24";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -33969,6 +33994,15 @@
 <span class="cstat-no" title="statement not covered" >  function isWideKeywords(value) {</span>
 <span class="cstat-no" title="statement not covered" >    return wideKeywords.has(value.toLowerCase());</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var nthPseudoClasses = /* @__PURE__ */ new Set([</span>
+<span class="cstat-no" title="statement not covered" >    ":nth-child",</span>
+<span class="cstat-no" title="statement not covered" >    ":nth-last-child",</span>
+<span class="cstat-no" title="statement not covered" >    ":nth-of-type",</span>
+<span class="cstat-no" title="statement not covered" >    ":nth-last-of-type"</span>
+<span class="cstat-no" title="statement not covered" >  ]);</span>
+<span class="cstat-no" title="statement not covered" >  function isNthPseudoClassNode(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return node?.type === "selector-pseudo" &amp;&amp; nthPseudoClasses.has(node.value.toLowerCase());</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function isKeyframeAtRuleKeywords(path, value) {</span>
 <span class="cstat-no" title="statement not covered" >    const atRuleAncestorNode = path.findAncestor(</span>
 <span class="cstat-no" title="statement not covered" >      (node) =&gt; node.type === "css-atrule"</span>
@@ -35110,8 +35144,7 @@
 <span class="cstat-no" title="statement not covered" >          const parentNode = path.parent;</span>
 <span class="cstat-no" title="statement not covered" >          const isFirstNode = parentNode.type === "selector-selector" &amp;&amp; parentNode.nodes[0] === node;</span>
 <span class="cstat-no" title="statement not covered" >          const leading2 = isFirstNode ? "" : line;</span>
-<span class="cstat-no" title="statement not covered" >          const grandparentNode = path.grandparent;</span>
-<span class="cstat-no" title="statement not covered" >          const isNthLeadingSign = isFirstNode &amp;&amp; node.value === "+" &amp;&amp; grandparentNode?.type === "selector-pseudo" &amp;&amp; [":nth-child", ":nth-last-child", ":nth-of-type", ":nth-last-of-type"].includes(grandparentNode.value.toLowerCase());</span>
+<span class="cstat-no" title="statement not covered" >          const isNthLeadingSign = isFirstNode &amp;&amp; node.value === "+" &amp;&amp; isNthPseudoClassNode(path.grandparent);</span>
 <span class="cstat-no" title="statement not covered" >          return [leading2, node.value, path.isLast || isNthLeadingSign ? "" : " "];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const leading = node.value.trimStart().startsWith("(") ? line : "";</span>
@@ -36007,7 +36040,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-28T03:15:42.875Z
+                at 2026-07-29T03:19:01.004Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
