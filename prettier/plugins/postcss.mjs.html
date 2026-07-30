@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40.49% </span>
+                <span class="strong">40.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4848/11971</span>
+                <span class='fraction'>4848/11982</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40.49% </span>
+                <span class="strong">40.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4848/11971</span>
+                <span class='fraction'>4848/11982</span>
             </div>
         
             
@@ -12034,7 +12034,18 @@
 <a name='L11969'></a><a href='#L11969'>11969</a>
 <a name='L11970'></a><a href='#L11970'>11970</a>
 <a name='L11971'></a><a href='#L11971'>11971</a>
-<a name='L11972'></a><a href='#L11972'>11972</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">15x</span>
+<a name='L11972'></a><a href='#L11972'>11972</a>
+<a name='L11973'></a><a href='#L11973'>11973</a>
+<a name='L11974'></a><a href='#L11974'>11974</a>
+<a name='L11975'></a><a href='#L11975'>11975</a>
+<a name='L11976'></a><a href='#L11976'>11976</a>
+<a name='L11977'></a><a href='#L11977'>11977</a>
+<a name='L11978'></a><a href='#L11978'>11978</a>
+<a name='L11979'></a><a href='#L11979'>11979</a>
+<a name='L11980'></a><a href='#L11980'>11980</a>
+<a name='L11981'></a><a href='#L11981'>11981</a>
+<a name='L11982'></a><a href='#L11982'>11982</a>
+<a name='L11983'></a><a href='#L11983'>11983</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
@@ -13834,6 +13845,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15789,7 +15801,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -25805,6 +25827,7 @@ var require_list = __commonJS({
 <span class="cstat-no" title="statement not covered" >        return list.split(string, spaces);</span>
       },
 <span class="fstat-no" title="function not covered" >      split(string, separators, last) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!string) return [];</span>
 <span class="cstat-no" title="statement not covered" >        let array = [];</span>
 <span class="cstat-no" title="statement not covered" >        let current = "";</span>
 <span class="cstat-no" title="statement not covered" >        let split = false;</span>
@@ -27731,14 +27754,19 @@ var require_lazy_result = __commonJS({
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (visit.iterator !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >          let iterator = visit.iterator;</span>
+<span class="cstat-no" title="statement not covered" >          if (visit.descending) {</span>
+<span class="cstat-no" title="statement not covered" >            visit.descending = false;</span>
+<span class="cstat-no" title="statement not covered" >            node.indexes[iterator] += 1;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          let child;</span>
 <span class="cstat-no" title="statement not covered" >          while (child = node.nodes[node.indexes[iterator]]) {</span>
-<span class="cstat-no" title="statement not covered" >            node.indexes[iterator] += 1;</span>
 <span class="cstat-no" title="statement not covered" >            if (!child[isClean]) {</span>
 <span class="cstat-no" title="statement not covered" >              child[isClean] = true;</span>
+<span class="cstat-no" title="statement not covered" >              visit.descending = true;</span>
 <span class="cstat-no" title="statement not covered" >              stack.push(toStack(child));</span>
 <span class="cstat-no" title="statement not covered" >              return;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            node.indexes[iterator] += 1;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          visit.iterator = 0;</span>
 <span class="cstat-no" title="statement not covered" >          delete node.indexes[iterator];</span>
@@ -27768,12 +27796,16 @@ var require_lazy_result = __commonJS({
 <span class="cstat-no" title="statement not covered" >          let visitNode = visit.node;</span>
 <span class="cstat-no" title="statement not covered" >          if (visit.iterator !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >            let iterator = visit.iterator;</span>
+<span class="cstat-no" title="statement not covered" >            if (visit.descending) {</span>
+<span class="cstat-no" title="statement not covered" >              visit.descending = false;</span>
+<span class="cstat-no" title="statement not covered" >              visitNode.indexes[iterator] += 1;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            let child;</span>
 <span class="cstat-no" title="statement not covered" >            let descended = false;</span>
 <span class="cstat-no" title="statement not covered" >            while (child = visitNode.nodes[visitNode.indexes[iterator]]) {</span>
-<span class="cstat-no" title="statement not covered" >              visitNode.indexes[iterator] += 1;</span>
 <span class="cstat-no" title="statement not covered" >              if (!child[isClean]) {</span>
 <span class="cstat-no" title="statement not covered" >                child[isClean] = true;</span>
+<span class="cstat-no" title="statement not covered" >                visit.descending = true;</span>
 <span class="cstat-no" title="statement not covered" >                stack.push({</span>
 <span class="cstat-no" title="statement not covered" >                  eventIndex: 0,</span>
 <span class="cstat-no" title="statement not covered" >                  events: getEvents(child),</span>
@@ -27783,6 +27815,7 @@ var require_lazy_result = __commonJS({
 <span class="cstat-no" title="statement not covered" >                descended = true;</span>
 <span class="cstat-no" title="statement not covered" >                break;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >              visitNode.indexes[iterator] += 1;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            if (descended) continue;</span>
 <span class="cstat-no" title="statement not covered" >            visit.iterator = 0;</span>
@@ -27945,7 +27978,7 @@ var require_processor = __commonJS({
     var Root = require_root();
     var Processor = class {
 <span class="fstat-no" title="function not covered" >      constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >        this.version = "8.5.24";</span>
+<span class="cstat-no" title="statement not covered" >        this.version = "8.5.25";</span>
 <span class="cstat-no" title="statement not covered" >        this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="fstat-no" title="function not covered" >      normalize(plugins) {</span>
@@ -35983,7 +36016,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-29T03:19:01.004Z
+                at 2026-07-30T02:51:32.895Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

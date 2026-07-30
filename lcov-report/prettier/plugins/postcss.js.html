@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/11991</span>
+                <span class='fraction'>5/12002</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11991</span>
+                <span class='fraction'>5/12002</span>
             </div>
         
             
@@ -12053,7 +12053,18 @@
 <a name='L11988'></a><a href='#L11988'>11988</a>
 <a name='L11989'></a><a href='#L11989'>11989</a>
 <a name='L11990'></a><a href='#L11990'>11990</a>
-<a name='L11991'></a><a href='#L11991'>11991</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L11991'></a><a href='#L11991'>11991</a>
+<a name='L11992'></a><a href='#L11992'>11992</a>
+<a name='L11993'></a><a href='#L11993'>11993</a>
+<a name='L11994'></a><a href='#L11994'>11994</a>
+<a name='L11995'></a><a href='#L11995'>11995</a>
+<a name='L11996'></a><a href='#L11996'>11996</a>
+<a name='L11997'></a><a href='#L11997'>11997</a>
+<a name='L11998'></a><a href='#L11998'>11998</a>
+<a name='L11999'></a><a href='#L11999'>11999</a>
+<a name='L12000'></a><a href='#L12000'>12000</a>
+<a name='L12001'></a><a href='#L12001'>12001</a>
+<a name='L12002'></a><a href='#L12002'>12002</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12803,6 +12814,17 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -25868,6 +25890,7 @@
 <span class="cstat-no" title="statement not covered" >          return list.split(string, spaces);</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        split(string, separators, last) {</span>
+<span class="cstat-no" title="statement not covered" >          if (!string) return [];</span>
 <span class="cstat-no" title="statement not covered" >          let array = [];</span>
 <span class="cstat-no" title="statement not covered" >          let current = "";</span>
 <span class="cstat-no" title="statement not covered" >          let split = false;</span>
@@ -27794,14 +27817,19 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (visit.iterator !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >            let iterator = visit.iterator;</span>
+<span class="cstat-no" title="statement not covered" >            if (visit.descending) {</span>
+<span class="cstat-no" title="statement not covered" >              visit.descending = false;</span>
+<span class="cstat-no" title="statement not covered" >              node.indexes[iterator] += 1;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            let child;</span>
 <span class="cstat-no" title="statement not covered" >            while (child = node.nodes[node.indexes[iterator]]) {</span>
-<span class="cstat-no" title="statement not covered" >              node.indexes[iterator] += 1;</span>
 <span class="cstat-no" title="statement not covered" >              if (!child[isClean]) {</span>
 <span class="cstat-no" title="statement not covered" >                child[isClean] = true;</span>
+<span class="cstat-no" title="statement not covered" >                visit.descending = true;</span>
 <span class="cstat-no" title="statement not covered" >                stack.push(toStack(child));</span>
 <span class="cstat-no" title="statement not covered" >                return;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >              node.indexes[iterator] += 1;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            visit.iterator = 0;</span>
 <span class="cstat-no" title="statement not covered" >            delete node.indexes[iterator];</span>
@@ -27831,12 +27859,16 @@
 <span class="cstat-no" title="statement not covered" >            let visitNode = visit.node;</span>
 <span class="cstat-no" title="statement not covered" >            if (visit.iterator !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >              let iterator = visit.iterator;</span>
+<span class="cstat-no" title="statement not covered" >              if (visit.descending) {</span>
+<span class="cstat-no" title="statement not covered" >                visit.descending = false;</span>
+<span class="cstat-no" title="statement not covered" >                visitNode.indexes[iterator] += 1;</span>
+<span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              let child;</span>
 <span class="cstat-no" title="statement not covered" >              let descended = false;</span>
 <span class="cstat-no" title="statement not covered" >              while (child = visitNode.nodes[visitNode.indexes[iterator]]) {</span>
-<span class="cstat-no" title="statement not covered" >                visitNode.indexes[iterator] += 1;</span>
 <span class="cstat-no" title="statement not covered" >                if (!child[isClean]) {</span>
 <span class="cstat-no" title="statement not covered" >                  child[isClean] = true;</span>
+<span class="cstat-no" title="statement not covered" >                  visit.descending = true;</span>
 <span class="cstat-no" title="statement not covered" >                  stack.push({</span>
 <span class="cstat-no" title="statement not covered" >                    eventIndex: 0,</span>
 <span class="cstat-no" title="statement not covered" >                    events: getEvents(child),</span>
@@ -27846,6 +27878,7 @@
 <span class="cstat-no" title="statement not covered" >                  descended = true;</span>
 <span class="cstat-no" title="statement not covered" >                  break;</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >                visitNode.indexes[iterator] += 1;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              if (descended) continue;</span>
 <span class="cstat-no" title="statement not covered" >              visit.iterator = 0;</span>
@@ -28008,7 +28041,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.24";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.25";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -36040,7 +36073,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-29T03:18:58.598Z
+                at 2026-07-30T02:51:30.412Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
