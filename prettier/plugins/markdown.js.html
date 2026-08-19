@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.05% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/23173</span>
+                <span class='fraction'>12/23179</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.05% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/23173</span>
+                <span class='fraction'>12/23179</span>
             </div>
         
             
@@ -23235,7 +23235,13 @@
 <a name='L23170'></a><a href='#L23170'>23170</a>
 <a name='L23171'></a><a href='#L23171'>23171</a>
 <a name='L23172'></a><a href='#L23172'>23172</a>
-<a name='L23173'></a><a href='#L23173'>23173</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L23173'></a><a href='#L23173'>23173</a>
+<a name='L23174'></a><a href='#L23174'>23174</a>
+<a name='L23175'></a><a href='#L23175'>23175</a>
+<a name='L23176'></a><a href='#L23176'>23176</a>
+<a name='L23177'></a><a href='#L23177'>23177</a>
+<a name='L23178'></a><a href='#L23178'>23178</a>
+<a name='L23179'></a><a href='#L23179'>23179</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -45566,6 +45572,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -68846,6 +68858,14 @@
 <span class="cstat-no" title="statement not covered" >    const node2 = path2.findAncestor((node3) =&gt; node3.type === "linkReference" || node3.type === "imageReference");</span>
 <span class="cstat-no" title="statement not covered" >    return node2 &amp;&amp; (node2.type !== "linkReference" || node2.referenceType !== "full");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var characterReferenceRegex = /&amp;(?=(?:#x[\da-f]+|#\d+|[\da-z]+);)/gi;</span>
+<span class="cstat-no" title="statement not covered" >  var escapeCharacterReferences = (value) =&gt; method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >    /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >    0,</span>
+<span class="cstat-no" title="statement not covered" >    value,</span>
+<span class="cstat-no" title="statement not covered" >    characterReferenceRegex,</span>
+<span class="cstat-no" title="statement not covered" >    "\\&amp;"</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  function printUrl(url, unwrapBalancedParens) {</span>
 <span class="cstat-no" title="statement not covered" >    url = method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
@@ -68854,6 +68874,7 @@
 <span class="cstat-no" title="statement not covered" >      /\\(?![^!"#$%&amp;'()*+,\-./:;&lt;=&gt;?@[\\\]^_`{|}~])/g,</span>
 <span class="cstat-no" title="statement not covered" >      "\\\\"</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    url = escapeCharacterReferences(url);</span>
 <span class="cstat-no" title="statement not covered" >    if (</span>
 <span class="cstat-no" title="statement not covered" >      // eslint-disable-next-line no-control-regex</span>
 <span class="cstat-no" title="statement not covered" >      /[\x00-\x1f\x7f ]|^&lt;/.test(url) || (unwrapBalancedParens ? !/^(?:[^()]|\((?:[^()]|\((?:[^()]|\([^()]*\))*\))*\))*$/.test(url) : /[()]/.test(url))</span>
@@ -68884,17 +68905,10 @@
 <span class="cstat-no" title="statement not covered" >        ""</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (title.includes('"') &amp;&amp; title.includes("'") &amp;&amp; !title.includes("(") &amp;&amp; !title.includes(")")) {</span>
-<span class="cstat-no" title="statement not covered" >      title = method_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >        0,</span>
-<span class="cstat-no" title="statement not covered" >        title,</span>
-<span class="cstat-no" title="statement not covered" >        "\\",</span>
-<span class="cstat-no" title="statement not covered" >        "\\\\"</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >      return `(${title})`;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const quote = getPreferredQuote(title, options2.singleQuote);</span>
+<span class="cstat-no" title="statement not covered" >    const quote = (</span>
+<span class="cstat-no" title="statement not covered" >      // avoid escaped quotes</span>
+<span class="cstat-no" title="statement not covered" >      title.includes('"') &amp;&amp; title.includes("'") &amp;&amp; !title.includes("(") &amp;&amp; !title.includes(")") ? void 0 : getPreferredQuote(title, options2.singleQuote)</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    title = method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >      0,</span>
@@ -68902,14 +68916,18 @@
 <span class="cstat-no" title="statement not covered" >      "\\",</span>
 <span class="cstat-no" title="statement not covered" >      "\\\\"</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    title = method_replace_all_default(</span>
-<span class="cstat-no" title="statement not covered" >      /* OPTIONAL_OBJECT: false */</span>
-<span class="cstat-no" title="statement not covered" >      0,</span>
-<span class="cstat-no" title="statement not covered" >      title,</span>
-<span class="cstat-no" title="statement not covered" >      quote,</span>
-<span class="cstat-no" title="statement not covered" >      `\\${quote}`</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    return `${quote}${title}${quote}`;</span>
+<span class="cstat-no" title="statement not covered" >    if (quote) {</span>
+<span class="cstat-no" title="statement not covered" >      title = method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >        0,</span>
+<span class="cstat-no" title="statement not covered" >        title,</span>
+<span class="cstat-no" title="statement not covered" >        quote,</span>
+<span class="cstat-no" title="statement not covered" >        `\\${quote}`</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    title = escapeCharacterReferences(title);</span>
+<span class="cstat-no" title="statement not covered" >    title = quote ? `${quote}${title}${quote}` : `(${title})`;</span>
+<span class="cstat-no" title="statement not covered" >    return title;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function printLinkReference(node2, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    const label = (0, import_collapse_white_space2.default)(node2.label);</span>
@@ -69238,7 +69256,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let text4 = node2.raw;</span>
 <span class="cstat-no" title="statement not covered" >      const paragraphIndex = parentStack.findIndex(</span>
-<span class="cstat-no" title="statement not covered" >        (ancestor) =&gt; ancestor?.type === "paragraph"</span>
+<span class="cstat-no" title="statement not covered" >        (ancestor) =&gt; ancestor?.type === "paragraph" || ancestor?.type === "heading"</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >      const paragraphNode = paragraphIndex === -1 ? void 0 : parentStack[paragraphIndex];</span>
 <span class="cstat-no" title="statement not covered" >      if (paragraphNode) {</span>
@@ -69586,7 +69604,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-08-18T01:39:02.376Z
+                at 2026-08-19T01:41:41.886Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
