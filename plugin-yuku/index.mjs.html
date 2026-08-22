@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13103</span>
+                <span class='fraction'>0/13118</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13103</span>
+                <span class='fraction'>0/13118</span>
             </div>
         
             
@@ -13166,7 +13166,37 @@
 <a name='L13101'></a><a href='#L13101'>13101</a>
 <a name='L13102'></a><a href='#L13102'>13102</a>
 <a name='L13103'></a><a href='#L13103'>13103</a>
-<a name='L13104'></a><a href='#L13104'>13104</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13104'></a><a href='#L13104'>13104</a>
+<a name='L13105'></a><a href='#L13105'>13105</a>
+<a name='L13106'></a><a href='#L13106'>13106</a>
+<a name='L13107'></a><a href='#L13107'>13107</a>
+<a name='L13108'></a><a href='#L13108'>13108</a>
+<a name='L13109'></a><a href='#L13109'>13109</a>
+<a name='L13110'></a><a href='#L13110'>13110</a>
+<a name='L13111'></a><a href='#L13111'>13111</a>
+<a name='L13112'></a><a href='#L13112'>13112</a>
+<a name='L13113'></a><a href='#L13113'>13113</a>
+<a name='L13114'></a><a href='#L13114'>13114</a>
+<a name='L13115'></a><a href='#L13115'>13115</a>
+<a name='L13116'></a><a href='#L13116'>13116</a>
+<a name='L13117'></a><a href='#L13117'>13117</a>
+<a name='L13118'></a><a href='#L13118'>13118</a>
+<a name='L13119'></a><a href='#L13119'>13119</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27530,6 +27560,20 @@
 <span class="cstat-no" title="statement not covered" >// src/language-js/parse/utilities/jsx-regexp.evaluate.js</span>
 <span class="cstat-no" title="statement not covered" >var jsx_regexp_evaluate_default = /^[^"'`]*&lt;\/|^[^/]{2}.*\/&gt;/m;</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/parse/utilities/jsx-support.js</span>
+<span class="cstat-no" title="statement not covered" >function shouldEnableJsx(filepath) {</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof filepath !== "string") {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  filepath = filepath.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >  if (/\.(?:js|mjs|cjs|jsx|tsx)$/.test(filepath)) {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (/\.(?:ts|mts|cts)$/.test(filepath)) {</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/parse/utilities/source-types.js</span>
 <span class="cstat-no" title="statement not covered" >var SOURCE_TYPE_MODULE = (</span>
 <span class="cstat-no" title="statement not covered" >  /** @type {const} */</span>
@@ -27607,16 +27651,17 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function getLanguageCombinations(text, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const filepath = options2?.filepath;</span>
-<span class="cstat-no" title="statement not covered" >  if (typeof filepath === "string") {</span>
-<span class="cstat-no" title="statement not covered" >    if (/\.(?:jsx|tsx)$/i.test(filepath)) {</span>
-<span class="cstat-no" title="statement not covered" >      return ["tsx"];</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (filepath.toLowerCase().endsWith(".d.ts")) {</span>
-<span class="cstat-no" title="statement not covered" >      return ["dts"];</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof filepath === "string" &amp;&amp; filepath.toLowerCase().endsWith(".d.ts")) {</span>
+<span class="cstat-no" title="statement not covered" >    return ["dts"];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const shouldEnableJsx = jsx_regexp_evaluate_default.test(text);</span>
-<span class="cstat-no" title="statement not covered" >  return shouldEnableJsx ? ["tsx", "ts", "dts"] : ["ts", "tsx", "dts"];</span>
+<span class="cstat-no" title="statement not covered" >  const isTsx = shouldEnableJsx(filepath);</span>
+<span class="cstat-no" title="statement not covered" >  if (isTsx === true) {</span>
+<span class="cstat-no" title="statement not covered" >    return ["tsx"];</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (isTsx === false) {</span>
+<span class="cstat-no" title="statement not covered" >    return ["ts"];</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return jsx_regexp_evaluate_default.test(text) ? ["tsx", "ts", "dts"] : ["ts", "tsx", "dts"];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function parseTs(text, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const filepath = options2?.filepath;</span>
@@ -39379,7 +39424,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-08-21T01:44:40.037Z
+                at 2026-08-22T01:37:59.669Z
             </div>
         <script src="../prettify.js"></script>
         <script>
