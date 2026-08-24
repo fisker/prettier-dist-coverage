@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13036</span>
+                <span class='fraction'>0/13041</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13036</span>
+                <span class='fraction'>0/13041</span>
             </div>
         
             
@@ -13098,7 +13098,17 @@
 <a name='L13033'></a><a href='#L13033'>13033</a>
 <a name='L13034'></a><a href='#L13034'>13034</a>
 <a name='L13035'></a><a href='#L13035'>13035</a>
-<a name='L13036'></a><a href='#L13036'>13036</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13036'></a><a href='#L13036'>13036</a>
+<a name='L13037'></a><a href='#L13037'>13037</a>
+<a name='L13038'></a><a href='#L13038'>13038</a>
+<a name='L13039'></a><a href='#L13039'>13039</a>
+<a name='L13040'></a><a href='#L13040'>13040</a>
+<a name='L13041'></a><a href='#L13041'>13041</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27366,7 +27376,7 @@
 <span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleClosureTypeCastComments, handleConditionalExpressionComments, handleLastFunctionParameterComments, handleMemberExpressionComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleUnionTypeComments, handleMatchOrPatternComments, handleOnlyComments, handleModuleSpecifiersComments, handleAssignmentPatternComments, handleMethodNameComments, handleLabeledStatementComments, handleNestedConditionalExpressionComments, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments, handleSequenceExpressionLeadingComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function handleEndOfLineComment(context) {</span>
-<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleAssignmentLikeComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleTSMappedTypeComments, handleArrowExpressionComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment, handleTaggedTemplateExpressionComments, handleSequenceExpressionLeadingComment].some((fn) =&gt; fn(context));</span>
+<span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleClosureTypeCastComments, handleLastFunctionParameterComments, handleConditionalExpressionComments, handleModuleSpecifiersComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleTryStatementComments, handleClassComments, handleForXStatementComments, handleLabeledStatementComments, handleCallExpressionComments, handlePropertyComments, handleOnlyComments, handleAssignmentLikeComments, handleSwitchDefaultCaseComments, handleLastUnionElementInExpression, handleLastBinaryOperatorOperand, handleCommentsInDestructuringPattern, handleTSMappedTypeComments, handleArrowExpressionComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment, handleTaggedTemplateExpressionComments, handleSequenceExpressionLeadingComment].some((fn) =&gt; fn(context));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function handleRemainingComment(context) {</span>
 <span class="cstat-no" title="statement not covered" >    return [handleCommentInEmptyParens, handleIgnoreComments, handleClosureTypeCastComments, handleIfStatementComments, handleWhileLikeComments, handleSwitchStatementComments, handleForXStatementComments, handleMethodNameComments, handleOnlyComments, handleAssignmentLikeComments, handleTSMappedTypeComments, handleCommentAfterArrowParams, handleFunctionNameComments, handleTSFunctionTrailingComments, handleParenthesizedExpressionTrailingComment, handlePropertySignatureComments, handleBinaryCastExpressionComment, handleUnionTypeLeadingComments, handleSequenceExpressionLeadingComment].some((fn) =&gt; fn(context));</span>
@@ -27887,14 +27897,19 @@
 <span class="cstat-no" title="statement not covered" >    comment,</span>
 <span class="cstat-no" title="statement not covered" >    enclosingNode,</span>
 <span class="cstat-no" title="statement not covered" >    precedingNode,</span>
-<span class="cstat-no" title="statement not covered" >    followingNode</span>
+<span class="cstat-no" title="statement not covered" >    followingNode,</span>
+<span class="cstat-no" title="statement not covered" >    text</span>
 <span class="cstat-no" title="statement not covered" >  }) {</span>
-<span class="cstat-no" title="statement not covered" >    if ((enclosingNode?.type === "ObjectPattern" || enclosingNode?.type === "ArrayPattern") &amp;&amp; (followingNode?.type === "TSTypeAnnotation" || followingNode?.type === "TypeAnnotation")) {</span>
-<span class="cstat-no" title="statement not covered" >      if (precedingNode) {</span>
-<span class="cstat-no" title="statement not covered" >        addTrailingComment(precedingNode, comment);</span>
-<span class="cstat-no" title="statement not covered" >      } else {</span>
+<span class="cstat-no" title="statement not covered" >    if (enclosingNode &amp;&amp; followingNode &amp;&amp; (enclosingNode.type === "ObjectPattern" || enclosingNode.type === "ArrayPattern") &amp;&amp; enclosingNode.typeAnnotation === followingNode &amp;&amp; (followingNode.type === "TSTypeAnnotation" || followingNode.type === "TypeAnnotation")) {</span>
+<span class="cstat-no" title="statement not covered" >      if (get_next_non_space_non_comment_character_default(text, locEnd(comment)) === (enclosingNode.type === "ObjectPattern" ? "}" : "]")) {</span>
+<span class="cstat-no" title="statement not covered" >        if (precedingNode) {</span>
+<span class="cstat-no" title="statement not covered" >          addTrailingComment(precedingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >          return true;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        addDanglingComment(enclosingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      addLeadingComment(followingNode, comment);</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -39175,7 +39190,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-08-23T01:47:40.526Z
+                at 2026-08-24T01:45:26.037Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
