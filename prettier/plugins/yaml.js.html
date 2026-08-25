@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8938</span>
+                <span class='fraction'>0/8950</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8938</span>
+                <span class='fraction'>0/8950</span>
             </div>
         
             
@@ -9000,7 +9000,31 @@
 <a name='L8935'></a><a href='#L8935'>8935</a>
 <a name='L8936'></a><a href='#L8936'>8936</a>
 <a name='L8937'></a><a href='#L8937'>8937</a>
-<a name='L8938'></a><a href='#L8938'>8938</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L8938'></a><a href='#L8938'>8938</a>
+<a name='L8939'></a><a href='#L8939'>8939</a>
+<a name='L8940'></a><a href='#L8940'>8940</a>
+<a name='L8941'></a><a href='#L8941'>8941</a>
+<a name='L8942'></a><a href='#L8942'>8942</a>
+<a name='L8943'></a><a href='#L8943'>8943</a>
+<a name='L8944'></a><a href='#L8944'>8944</a>
+<a name='L8945'></a><a href='#L8945'>8945</a>
+<a name='L8946'></a><a href='#L8946'>8946</a>
+<a name='L8947'></a><a href='#L8947'>8947</a>
+<a name='L8948'></a><a href='#L8948'>8948</a>
+<a name='L8949'></a><a href='#L8949'>8949</a>
+<a name='L8950'></a><a href='#L8950'>8950</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18593,14 +18617,6 @@
 <span class="cstat-no" title="statement not covered" >          delete cloned.documentEndMarker;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="cstat-no" title="statement not covered" >      case "blockLiteral":</span>
-<span class="cstat-no" title="statement not covered" >      case "blockFolded":</span>
-<span class="cstat-no" title="statement not covered" >        if (original.chomping === "keep") {</span>
-<span class="cstat-no" title="statement not covered" >          cloned.value = original.value.split("\n").map((line2) =&gt; line2.replace(/[ \t]+$/, "")).join("\n");</span>
-<span class="cstat-no" title="statement not covered" >        } else if (original.chomping === "clip" || original.chomping === "strip") {</span>
-<span class="cstat-no" title="statement not covered" >          cloned.value = original.value.trimEnd();</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  massageAstNode.ignoredProperties = /* @__PURE__ */ new Set(["position"]);</span>
@@ -18824,7 +18840,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let trailingNewlineCount = 0;</span>
 <span class="cstat-no" title="statement not covered" >      for (let i = lineContents.length - 1; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >        if (lineContents[i].every((line2) =&gt; line2.replace(/[ \t]+$/, "") === "")) {</span>
+<span class="cstat-no" title="statement not covered" >        if (lineContents[i].length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >          trailingNewlineCount++;</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
@@ -18835,6 +18851,9 @@
 <span class="cstat-no" title="statement not covered" >        lineContents.slice(0, -(trailingNewlineCount - 1))</span>
 <span class="cstat-no" title="statement not covered" >      ) : lineContents.slice(0, -trailingNewlineCount);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function hasTrailingContentWhitespace(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return /[ \t]+\n*$/.test(node.value);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function isInlineNode(node) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!node) {</span>
@@ -18914,9 +18933,9 @@
 <span class="cstat-no" title="statement not covered" >        contentsParts.push(</span>
 <span class="cstat-no" title="statement not covered" >          lineWords.length === 0 ? hardline : markAsRoot(literalline)</span>
 <span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >      } else if (node.chomping === "keep" &amp;&amp; isLastDescendant) {</span>
+<span class="cstat-no" title="statement not covered" >      } else if (isLastDescendant &amp;&amp; node.chomping === "keep" || hasTrailingContentWhitespace(node)) {</span>
 <span class="cstat-no" title="statement not covered" >        contentsParts.push(</span>
-<span class="cstat-no" title="statement not covered" >          dedentToRoot(lineWords.length === 0 ? hardline : literalline)</span>
+<span class="cstat-no" title="statement not covered" >          isLastDescendant ? dedentToRoot(lineWords.length === 0 ? hardline : literalline) : dedent(lineWords.length === 0 ? hardline : literalline)</span>
 <span class="cstat-no" title="statement not covered" >        );</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -19174,18 +19193,27 @@
 <span class="cstat-no" title="statement not covered" >    switch (node.type) {</span>
 <span class="cstat-no" title="statement not covered" >      case "root": {</span>
 <span class="cstat-no" title="statement not covered" >        const lastDescendantNode = getLastDescendantNode(node);</span>
-<span class="cstat-no" title="statement not covered" >        const shouldPrintHardline = !(isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; lastDescendantNode.chomping === "keep");</span>
+<span class="cstat-no" title="statement not covered" >        const lastBlockUsesKeepChomping = isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; lastDescendantNode.chomping === "keep";</span>
+<span class="cstat-no" title="statement not covered" >        const lastBlockPrintsTrailingLine = lastBlockUsesKeepChomping || isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; hasTrailingContentWhitespace(lastDescendantNode);</span>
+<span class="cstat-no" title="statement not covered" >        const shouldPrintHardline = !lastBlockPrintsTrailingLine;</span>
 <span class="cstat-no" title="statement not covered" >        const parts = [];</span>
+<span class="cstat-no" title="statement not covered" >        let lastDocumentEndMarkerPrinted = false;</span>
+<span class="cstat-no" title="statement not covered" >        let previousDocumentPrintsTrailingLine = false;</span>
 <span class="cstat-no" title="statement not covered" >        path.each(({</span>
 <span class="cstat-no" title="statement not covered" >          node: document,</span>
-<span class="cstat-no" title="statement not covered" >          isFirst</span>
+<span class="cstat-no" title="statement not covered" >          isFirst,</span>
+<span class="cstat-no" title="statement not covered" >          isLast</span>
 <span class="cstat-no" title="statement not covered" >        }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          if (!isFirst) {</span>
+<span class="cstat-no" title="statement not covered" >          if (!isFirst &amp;&amp; !previousDocumentPrintsTrailingLine) {</span>
 <span class="cstat-no" title="statement not covered" >            parts.push(hardline);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          parts.push(print());</span>
-<span class="cstat-no" title="statement not covered" >          if (shouldPrintDocumentEndMarker(path)) {</span>
-<span class="cstat-no" title="statement not covered" >            if (shouldPrintHardline) {</span>
+<span class="cstat-no" title="statement not covered" >          const documentLastDescendantNode = getLastDescendantNode(document);</span>
+<span class="cstat-no" title="statement not covered" >          const documentBlockPrintsTrailingLine = isNode(documentLastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; (hasTrailingContentWhitespace(documentLastDescendantNode) || isLast &amp;&amp; documentLastDescendantNode.chomping === "keep");</span>
+<span class="cstat-no" title="statement not covered" >          const documentEndMarkerPrinted = shouldPrintDocumentEndMarker(path);</span>
+<span class="cstat-no" title="statement not covered" >          lastDocumentEndMarkerPrinted = documentEndMarkerPrinted;</span>
+<span class="cstat-no" title="statement not covered" >          if (documentEndMarkerPrinted) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!documentBlockPrintsTrailingLine) {</span>
 <span class="cstat-no" title="statement not covered" >              parts.push(hardline);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            parts.push("...");</span>
@@ -19193,8 +19221,9 @@
 <span class="cstat-no" title="statement not covered" >              parts.push(" ", print("trailingComment"));</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          previousDocumentPrintsTrailingLine = documentBlockPrintsTrailingLine &amp;&amp; !documentEndMarkerPrinted;</span>
 <span class="cstat-no" title="statement not covered" >        }, "children");</span>
-<span class="cstat-no" title="statement not covered" >        if (shouldPrintHardline) {</span>
+<span class="cstat-no" title="statement not covered" >        if (shouldPrintHardline || lastDocumentEndMarkerPrinted &amp;&amp; !lastBlockUsesKeepChomping) {</span>
 <span class="cstat-no" title="statement not covered" >          parts.push(hardline);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return parts;</span>
@@ -19299,7 +19328,14 @@
 <span class="cstat-no" title="statement not covered" >        return block_default(path, options2, print);</span>
 <span class="cstat-no" title="statement not covered" >      case "mapping":</span>
 <span class="cstat-no" title="statement not covered" >      case "sequence":</span>
-<span class="cstat-no" title="statement not covered" >        return join(hardline, path.map(print, "children"));</span>
+<span class="cstat-no" title="statement not covered" >        return path.map(({</span>
+<span class="cstat-no" title="statement not covered" >          node: node2,</span>
+<span class="cstat-no" title="statement not covered" >          isLast</span>
+<span class="cstat-no" title="statement not covered" >        }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          const lastDescendantNode = getLastDescendantNode(node2);</span>
+<span class="cstat-no" title="statement not covered" >          const childPrintsTrailingLine = isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; hasTrailingContentWhitespace(lastDescendantNode);</span>
+<span class="cstat-no" title="statement not covered" >          return [print(), !isLast &amp;&amp; !childPrintsTrailingLine ? hardline : ""];</span>
+<span class="cstat-no" title="statement not covered" >        }, "children");</span>
 <span class="cstat-no" title="statement not covered" >      case "sequenceItem":</span>
 <span class="cstat-no" title="statement not covered" >        return ["- ", alignWithSpaces(2, node.content ? print("content") : "")];</span>
 <span class="cstat-no" title="statement not covered" >      case "mappingKey":</span>
@@ -26881,7 +26917,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-08-24T01:45:28.579Z
+                at 2026-08-25T01:40:13.657Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
