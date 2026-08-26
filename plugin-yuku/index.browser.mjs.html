@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14330</span>
+                <span class='fraction'>0/14334</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14330</span>
+                <span class='fraction'>0/14334</span>
             </div>
         
             
@@ -14393,7 +14393,15 @@
 <a name='L14328'></a><a href='#L14328'>14328</a>
 <a name='L14329'></a><a href='#L14329'>14329</a>
 <a name='L14330'></a><a href='#L14330'>14330</a>
-<a name='L14331'></a><a href='#L14331'>14331</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L14331'></a><a href='#L14331'>14331</a>
+<a name='L14332'></a><a href='#L14332'>14332</a>
+<a name='L14333'></a><a href='#L14333'>14333</a>
+<a name='L14334'></a><a href='#L14334'>14334</a>
+<a name='L14335'></a><a href='#L14335'>14335</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -31521,6 +31529,10 @@
 <span class="cstat-no" title="statement not covered" >  "TSTypeParameterInstantiation",</span>
 <span class="cstat-no" title="statement not covered" >  "TypeParameterInstantiation"</span>
 <span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isTypeAnnotation = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSTypeAnnotation",</span>
+<span class="cstat-no" title="statement not covered" >  "TypeAnnotation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/is-shorthand-specifier.js</span>
 <span class="cstat-no" title="statement not covered" >function isShorthandSpecifier(specifier) {</span>
@@ -32586,7 +32598,7 @@
 <span class="cstat-no" title="statement not covered" >  followingNode,</span>
 <span class="cstat-no" title="statement not covered" >  text</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
-<span class="cstat-no" title="statement not covered" >  if (enclosingNode &amp;&amp; followingNode &amp;&amp; (enclosingNode.type === "ObjectPattern" || enclosingNode.type === "ArrayPattern") &amp;&amp; enclosingNode.typeAnnotation === followingNode &amp;&amp; (followingNode.type === "TSTypeAnnotation" || followingNode.type === "TypeAnnotation")) {</span>
+<span class="cstat-no" title="statement not covered" >  if (enclosingNode &amp;&amp; followingNode &amp;&amp; (enclosingNode.type === "ObjectPattern" || enclosingNode.type === "ArrayPattern") &amp;&amp; enclosingNode.typeAnnotation === followingNode &amp;&amp; isTypeAnnotation(followingNode)) {</span>
 <span class="cstat-no" title="statement not covered" >    if (get_next_non_space_non_comment_character_default(text, locEnd(comment)) === (enclosingNode.type === "ObjectPattern" ? "}" : "]")) {</span>
 <span class="cstat-no" title="statement not covered" >      if (precedingNode) {</span>
 <span class="cstat-no" title="statement not covered" >        addTrailingComment(precedingNode, comment);</span>
@@ -35353,7 +35365,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/is-type-annotation-a-function.js</span>
 <span class="cstat-no" title="statement not covered" >function isTypeAnnotationAFunction(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return (node.type === "TypeAnnotation" || node.type === "TSTypeAnnotation") &amp;&amp; node.typeAnnotation.type === "FunctionTypeAnnotation" &amp;&amp; !node.static &amp;&amp; !hasSameLocStart(node, node.typeAnnotation);</span>
+<span class="cstat-no" title="statement not covered" >  return node.type === "TypeAnnotation" &amp;&amp; node.typeAnnotation.type === "FunctionTypeAnnotation" &amp;&amp; !node.static &amp;&amp; !hasSameLocStart(node, node.typeAnnotation);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/is-node-matches.js</span>
@@ -35780,7 +35792,7 @@
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const [parameter] = parameters;</span>
-<span class="cstat-no" title="statement not covered" >  return !hasComment(parameter) &amp;&amp; (parameter.type === "ObjectPattern" || parameter.type === "ArrayPattern" || parameter.type === "Identifier" &amp;&amp; parameter.typeAnnotation &amp;&amp; (parameter.typeAnnotation.type === "TypeAnnotation" || parameter.typeAnnotation.type === "TSTypeAnnotation") &amp;&amp; isObjectType(parameter.typeAnnotation.typeAnnotation) || parameter.type === "FunctionTypeParam" &amp;&amp; isObjectType(parameter.typeAnnotation) &amp;&amp; parameter !== node.rest || parameter.type === "AssignmentPattern" &amp;&amp; (parameter.left.type === "ObjectPattern" || parameter.left.type === "ArrayPattern") &amp;&amp; (parameter.right.type === "Identifier" || isObjectExpression(parameter.right) &amp;&amp; parameter.right.properties.length === 0 || isArrayExpression(parameter.right) &amp;&amp; parameter.right.elements.length === 0));</span>
+<span class="cstat-no" title="statement not covered" >  return !hasComment(parameter) &amp;&amp; (parameter.type === "ObjectPattern" || parameter.type === "ArrayPattern" || parameter.type === "Identifier" &amp;&amp; isTypeAnnotation(parameter.typeAnnotation) &amp;&amp; isObjectType(parameter.typeAnnotation.typeAnnotation) || parameter.type === "FunctionTypeParam" &amp;&amp; isObjectType(parameter.typeAnnotation) &amp;&amp; parameter !== node.rest || parameter.type === "AssignmentPattern" &amp;&amp; (parameter.left.type === "ObjectPattern" || parameter.left.type === "ArrayPattern") &amp;&amp; (parameter.right.type === "Identifier" || isObjectExpression(parameter.right) &amp;&amp; parameter.right.properties.length === 0 || isArrayExpression(parameter.right) &amp;&amp; parameter.right.elements.length === 0));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function getReturnTypeNode(functionNode) {</span>
 <span class="cstat-no" title="statement not covered" >  let returnTypeNode;</span>
@@ -36133,7 +36145,7 @@
 <span class="cstat-no" title="statement not covered" >    return "";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let shouldPrintLeadingSpace = false;</span>
-<span class="cstat-no" title="statement not covered" >  if (typeAnnotation.type === "TSTypeAnnotation" || typeAnnotation.type === "TypeAnnotation") {</span>
+<span class="cstat-no" title="statement not covered" >  if (isTypeAnnotation(typeAnnotation)) {</span>
 <span class="cstat-no" title="statement not covered" >    const firstToken = path.call(getTypeAnnotationFirstToken, propertyName);</span>
 <span class="cstat-no" title="statement not covered" >    if (firstToken === "=&gt;" || firstToken === ":" &amp;&amp; hasComment(typeAnnotation, CommentCheckFlags.Leading)) {</span>
 <span class="cstat-no" title="statement not covered" >      shouldPrintLeadingSpace = true;</span>
@@ -43060,7 +43072,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-08-25T01:40:13.657Z
+                at 2026-08-26T01:45:10.462Z
             </div>
         <script src="../prettify.js"></script>
         <script>
