@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/24781</span>
+                <span class='fraction'>0/24794</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/24781</span>
+                <span class='fraction'>0/24794</span>
             </div>
         
             
@@ -24844,7 +24844,33 @@
 <a name='L24779'></a><a href='#L24779'>24779</a>
 <a name='L24780'></a><a href='#L24780'>24780</a>
 <a name='L24781'></a><a href='#L24781'>24781</a>
-<a name='L24782'></a><a href='#L24782'>24782</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L24782'></a><a href='#L24782'>24782</a>
+<a name='L24783'></a><a href='#L24783'>24783</a>
+<a name='L24784'></a><a href='#L24784'>24784</a>
+<a name='L24785'></a><a href='#L24785'>24785</a>
+<a name='L24786'></a><a href='#L24786'>24786</a>
+<a name='L24787'></a><a href='#L24787'>24787</a>
+<a name='L24788'></a><a href='#L24788'>24788</a>
+<a name='L24789'></a><a href='#L24789'>24789</a>
+<a name='L24790'></a><a href='#L24790'>24790</a>
+<a name='L24791'></a><a href='#L24791'>24791</a>
+<a name='L24792'></a><a href='#L24792'>24792</a>
+<a name='L24793'></a><a href='#L24793'>24793</a>
+<a name='L24794'></a><a href='#L24794'>24794</a>
+<a name='L24795'></a><a href='#L24795'>24795</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -64065,7 +64091,7 @@
 <span class="cstat-no" title="statement not covered" >function getEnclosingAssignmentChainExpressionStatement(node, ancestors) {</span>
 <span class="cstat-no" title="statement not covered" >  let child = node;</span>
 <span class="cstat-no" title="statement not covered" >  for (const ancestor of ancestors) {</span>
-<span class="cstat-no" title="statement not covered" >    if (ancestor.type === "AssignmentExpression" &amp;&amp; ancestor.right === child) {</span>
+<span class="cstat-no" title="statement not covered" >    if (ancestor.type === "AssignmentExpression" &amp;&amp; ancestor.right === child || ancestor.type === "ArrowFunctionExpression" &amp;&amp; ancestor.body === child) {</span>
 <span class="cstat-no" title="statement not covered" >      child = ancestor;</span>
 <span class="cstat-no" title="statement not covered" >      continue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -64097,7 +64123,13 @@
 <span class="cstat-no" title="statement not covered" >      return true;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const isAssignment2 = precedingNode.type === "AssignmentExpression";</span>
-<span class="cstat-no" title="statement not covered" >    if (isAssignment2 &amp;&amp; enclosingNode.type === "AssignmentExpression" &amp;&amp; enclosingNode.right === precedingNode) {</span>
+<span class="cstat-no" title="statement not covered" >    if (</span>
+<span class="cstat-no" title="statement not covered" >      // `a = (b = c /* comment */);` and `a = () =&gt; () =&gt; c /* comment */;` drop</span>
+<span class="cstat-no" title="statement not covered" >      // the parentheses, so the comment ends up trailing the whole statement</span>
+<span class="cstat-no" title="statement not covered" >      // anyway. Attach it there right away instead of leaving it on `c` for the</span>
+<span class="cstat-no" title="statement not covered" >      // next format to move.</span>
+<span class="cstat-no" title="statement not covered" >      isAssignment2 &amp;&amp; enclosingNode.type === "AssignmentExpression" &amp;&amp; enclosingNode.right === precedingNode || precedingNode.type === "ArrowFunctionExpression" &amp;&amp; enclosingNode.type === "ArrowFunctionExpression" &amp;&amp; enclosingNode.body === precedingNode</span>
+<span class="cstat-no" title="statement not covered" >    ) {</span>
 <span class="cstat-no" title="statement not covered" >      const expressionStatement = getEnclosingAssignmentChainExpressionStatement(enclosingNode, ancestors.slice(1));</span>
 <span class="cstat-no" title="statement not covered" >      if (expressionStatement) {</span>
 <span class="cstat-no" title="statement not covered" >        addTrailingComment(expressionStatement, comment);</span>
@@ -72310,10 +72342,16 @@
 <span class="cstat-no" title="statement not covered" >  const parts = [</span>
 <span class="cstat-no" title="statement not covered" >    print3("expression"),</span>
 <span class="cstat-no" title="statement not covered" >    " ",</span>
-<span class="cstat-no" title="statement not covered" >    isSatisfiesExpression(node) ? "satisfies" : "as",</span>
-<span class="cstat-no" title="statement not covered" >    " ",</span>
-<span class="cstat-no" title="statement not covered" >    typeAnnotationDoc</span>
+<span class="cstat-no" title="statement not covered" >    isSatisfiesExpression(node) ? "satisfies" : "as"</span>
 <span class="cstat-no" title="statement not covered" >  ];</span>
+<span class="cstat-no" title="statement not covered" >  if (</span>
+<span class="cstat-no" title="statement not covered" >    // Union type already indented</span>
+<span class="cstat-no" title="statement not covered" >    !isUnionType(node.typeAnnotation) &amp;&amp; hasLeadingOwnLineComment(options2.originalText, node.typeAnnotation)</span>
+<span class="cstat-no" title="statement not covered" >  ) {</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(indent([hardline, typeAnnotationDoc]));</span>
+<span class="cstat-no" title="statement not covered" >  } else {</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(" ", typeAnnotationDoc);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (key === "callee" &amp;&amp; isCallOrNewExpression(parent) || key === "object" &amp;&amp; isMemberExpression(parent)) {</span>
 <span class="cstat-no" title="statement not covered" >    return group([indent([softline, ...parts]), softline]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -74354,7 +74392,8 @@
 <span class="cstat-no" title="statement not covered" >      "bun",</span>
 <span class="cstat-no" title="statement not covered" >      "deno",</span>
 <span class="cstat-no" title="statement not covered" >      "ts-node",</span>
-<span class="cstat-no" title="statement not covered" >      "tsx"</span>
+<span class="cstat-no" title="statement not covered" >      "tsx",</span>
+<span class="cstat-no" title="statement not covered" >      "node"</span>
 <span class="cstat-no" title="statement not covered" >    ],</span>
 <span class="cstat-no" title="statement not covered" >    "parsers": [</span>
 <span class="cstat-no" title="statement not covered" >      "oxc-ts"</span>
@@ -74413,7 +74452,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-08-30T04:56:40.068Z
+                at 2026-08-31T05:00:56.933Z
             </div>
         <script src="../prettify.js"></script>
         <script>
