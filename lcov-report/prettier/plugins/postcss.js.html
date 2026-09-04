@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/12063</span>
+                <span class='fraction'>5/12070</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/12063</span>
+                <span class='fraction'>5/12070</span>
             </div>
         
             
@@ -12125,7 +12125,19 @@
 <a name='L12060'></a><a href='#L12060'>12060</a>
 <a name='L12061'></a><a href='#L12061'>12061</a>
 <a name='L12062'></a><a href='#L12062'>12062</a>
-<a name='L12063'></a><a href='#L12063'>12063</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L12063'></a><a href='#L12063'>12063</a>
+<a name='L12064'></a><a href='#L12064'>12064</a>
+<a name='L12065'></a><a href='#L12065'>12065</a>
+<a name='L12066'></a><a href='#L12066'>12066</a>
+<a name='L12067'></a><a href='#L12067'>12067</a>
+<a name='L12068'></a><a href='#L12068'>12068</a>
+<a name='L12069'></a><a href='#L12069'>12069</a>
+<a name='L12070'></a><a href='#L12070'>12070</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -12875,6 +12887,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24401,6 +24415,11 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return name + afterName + params;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      function isCustomProperty(node) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!node.prop.startsWith("--")) return false;</span>
+<span class="cstat-no" title="statement not covered" >        let before = node.raws.before;</span>
+<span class="cstat-no" title="statement not covered" >        return typeof before === "undefined" || !/\S$/.test(before);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      function pushBody(str, stack, node) {</span>
 <span class="cstat-no" title="statement not covered" >        let nodes = node.nodes;</span>
 <span class="cstat-no" title="statement not covered" >        let last = nodes.length - 1;</span>
@@ -24413,7 +24432,7 @@
 <span class="cstat-no" title="statement not covered" >        for (let i = nodes.length - 1; i &gt;= 0; i--) {</span>
 <span class="cstat-no" title="statement not covered" >          let child = nodes[i];</span>
 <span class="cstat-no" title="statement not covered" >          let childSemicolon = last !== i || semicolon;</span>
-<span class="cstat-no" title="statement not covered" >          if (!childSemicolon &amp;&amp; i &lt; nodes.length - 1 &amp;&amp; (child.type === "atrule" &amp;&amp; !child.nodes || child.type === "decl" &amp;&amp; child.prop.startsWith("--"))) {</span>
+<span class="cstat-no" title="statement not covered" >          if (!childSemicolon &amp;&amp; i &lt; nodes.length - 1 &amp;&amp; (child.type === "atrule" &amp;&amp; !child.nodes || child.type === "decl" &amp;&amp; isCustomProperty(child))) {</span>
 <span class="cstat-no" title="statement not covered" >            childSemicolon = true;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          stack.push({</span>
@@ -26040,14 +26059,16 @@
 <span class="cstat-no" title="statement not covered" >              if (separators.includes(letter)) split = true;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            if (split) {</span>
-<span class="cstat-no" title="statement not covered" >              if (current !== "") array.push(current.trim());</span>
+<span class="cstat-no" title="statement not covered" >              let value2 = current.trim();</span>
+<span class="cstat-no" title="statement not covered" >              if (last || value2 !== "") array.push(value2);</span>
 <span class="cstat-no" title="statement not covered" >              current = "";</span>
 <span class="cstat-no" title="statement not covered" >              split = false;</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
 <span class="cstat-no" title="statement not covered" >              current += letter;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (last || current !== "") array.push(current.trim());</span>
+<span class="cstat-no" title="statement not covered" >          let value = current.trim();</span>
+<span class="cstat-no" title="statement not covered" >          if (last || value !== "") array.push(value);</span>
 <span class="cstat-no" title="statement not covered" >          return array;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
@@ -26613,7 +26634,7 @@
 <span class="cstat-no" title="statement not covered" >              prev.raws.ownSemicolon = this.spaces;</span>
 <span class="cstat-no" title="statement not covered" >              this.spaces = "";</span>
 <span class="cstat-no" title="statement not covered" >              prev.source.end = this.getPosition(token[2]);</span>
-<span class="cstat-no" title="statement not covered" >              prev.source.end.offset += prev.raws.ownSemicolon.length;</span>
+<span class="cstat-no" title="statement not covered" >              prev.source.end.offset++;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -28163,7 +28184,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.26";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.28";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -36256,7 +36277,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-03T04:01:14.925Z
+                at 2026-09-04T04:03:19.377Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
