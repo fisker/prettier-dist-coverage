@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10351</span>
+                <span class='fraction'>0/10364</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10351</span>
+                <span class='fraction'>0/10364</span>
             </div>
         
             
@@ -10414,7 +10414,33 @@
 <a name='L10349'></a><a href='#L10349'>10349</a>
 <a name='L10350'></a><a href='#L10350'>10350</a>
 <a name='L10351'></a><a href='#L10351'>10351</a>
-<a name='L10352'></a><a href='#L10352'>10352</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L10352'></a><a href='#L10352'>10352</a>
+<a name='L10353'></a><a href='#L10353'>10353</a>
+<a name='L10354'></a><a href='#L10354'>10354</a>
+<a name='L10355'></a><a href='#L10355'>10355</a>
+<a name='L10356'></a><a href='#L10356'>10356</a>
+<a name='L10357'></a><a href='#L10357'>10357</a>
+<a name='L10358'></a><a href='#L10358'>10358</a>
+<a name='L10359'></a><a href='#L10359'>10359</a>
+<a name='L10360'></a><a href='#L10360'>10360</a>
+<a name='L10361'></a><a href='#L10361'>10361</a>
+<a name='L10362'></a><a href='#L10362'>10362</a>
+<a name='L10363'></a><a href='#L10363'>10363</a>
+<a name='L10364'></a><a href='#L10364'>10364</a>
+<a name='L10365'></a><a href='#L10365'>10365</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -29137,10 +29163,23 @@
 <span class="cstat-no" title="statement not covered" >      return [printOpeningTagStart(node, options2), ...path.map(print, "children"), printClosingTagEnd(node, options2)];</span>
 <span class="cstat-no" title="statement not covered" >    case "text": {</span>
 <span class="cstat-no" title="statement not covered" >      if (node.parent.kind === "interpolation") {</span>
+<span class="cstat-no" title="statement not covered" >        let {</span>
+<span class="cstat-no" title="statement not covered" >          value</span>
+<span class="cstat-no" title="statement not covered" >        } = node;</span>
 <span class="cstat-no" title="statement not covered" >        const trailingNewlineRegex = /\n[^\S\n]*$/;</span>
-<span class="cstat-no" title="statement not covered" >        const hasTrailingNewline = trailingNewlineRegex.test(node.value);</span>
-<span class="cstat-no" title="statement not covered" >        const value = hasTrailingNewline ? node.value.replace(trailingNewlineRegex, "") : node.value;</span>
-<span class="cstat-no" title="statement not covered" >        return [replaceEndOfLine(value), hasTrailingNewline ? hardline : ""];</span>
+<span class="cstat-no" title="statement not covered" >        const hasTrailingNewline = trailingNewlineRegex.test(value);</span>
+<span class="cstat-no" title="statement not covered" >        if (hasTrailingNewline) {</span>
+<span class="cstat-no" title="statement not covered" >          value = value.replace(trailingNewlineRegex, "");</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        const parts = [replaceEndOfLine(value)];</span>
+<span class="cstat-no" title="statement not covered" >        if (hasTrailingNewline) {</span>
+<span class="cstat-no" title="statement not covered" >          if (node.parent.next &amp;&amp; needsToBorrowPrevClosingTagEndMarker(node.parent.next)) {</span>
+<span class="cstat-no" title="statement not covered" >            parts.push(breakParent);</span>
+<span class="cstat-no" title="statement not covered" >          } else {</span>
+<span class="cstat-no" title="statement not covered" >            parts.push(hardline);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        return parts;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const prefix = printOpeningTagPrefix(node, options2);</span>
 <span class="cstat-no" title="statement not covered" >      const printed = getTextValueParts(node);</span>
@@ -31123,7 +31162,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-09T04:14:06.324Z
+                at 2026-09-10T04:10:41.509Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
