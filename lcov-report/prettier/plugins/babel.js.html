@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15672</span>
+                <span class='fraction'>0/15666</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15672</span>
+                <span class='fraction'>0/15666</span>
             </div>
         
             
@@ -15728,19 +15728,7 @@
 <a name='L15663'></a><a href='#L15663'>15663</a>
 <a name='L15664'></a><a href='#L15664'>15664</a>
 <a name='L15665'></a><a href='#L15665'>15665</a>
-<a name='L15666'></a><a href='#L15666'>15666</a>
-<a name='L15667'></a><a href='#L15667'>15667</a>
-<a name='L15668'></a><a href='#L15668'>15668</a>
-<a name='L15669'></a><a href='#L15669'>15669</a>
-<a name='L15670'></a><a href='#L15670'>15670</a>
-<a name='L15671'></a><a href='#L15671'>15671</a>
-<a name='L15672'></a><a href='#L15672'>15672</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L15666'></a><a href='#L15666'>15666</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32000,7 +31988,7 @@
 <span class="cstat-no" title="statement not covered" >        bigInt = null;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const node = this.estreeParseLiteral(bigInt);</span>
-<span class="cstat-no" title="statement not covered" >      node.bigint = String(node.value || value);</span>
+<span class="cstat-no" title="statement not covered" >      node.bigint = node.value !== null ? String(node.value) : value;</span>
 <span class="cstat-no" title="statement not covered" >      return node;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    estreeParseLiteral(value) {</span>
@@ -34341,7 +34329,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return stmt;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseExpressionStatement(node, expr, decorators) {</span>
+<span class="cstat-no" title="statement not covered" >    parseExpressionStatement(node, expr) {</span>
 <span class="cstat-no" title="statement not covered" >      if (expr.type === "Identifier") {</span>
 <span class="cstat-no" title="statement not covered" >        if (expr.name === "declare") {</span>
 <span class="cstat-no" title="statement not covered" >          if (this.match(76) || tokenIsIdentifier(this.state.type) || this.match(64) || this.match(70) || this.match(78)) {</span>
@@ -34357,7 +34345,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return super.parseExpressionStatement(node, expr, decorators);</span>
+<span class="cstat-no" title="statement not covered" >      return super.parseExpressionStatement(node, expr);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    shouldParseExportDeclaration() {</span>
 <span class="cstat-no" title="statement not covered" >      const {</span>
@@ -34436,7 +34424,7 @@
 <span class="cstat-no" title="statement not covered" >      this.expect(10);</span>
 <span class="cstat-no" title="statement not covered" >      node.test = expr;</span>
 <span class="cstat-no" title="statement not covered" >      node.consequent = consequent;</span>
-<span class="cstat-no" title="statement not covered" >      node.alternate = this.forwardNoArrowParamsConversionAt(node, () =&gt; this.parseMaybeAssign(void 0, void 0));</span>
+<span class="cstat-no" title="statement not covered" >      node.alternate = this.forwardNoArrowParamsConversionAt(node, () =&gt; this.parseMaybeAssign());</span>
 <span class="cstat-no" title="statement not covered" >      return this.finishNode(node, "ConditionalExpression");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    tryParseConditionalConsequent() {</span>
@@ -34906,12 +34894,12 @@
 <span class="cstat-no" title="statement not covered" >    shouldParseAsyncArrow() {</span>
 <span class="cstat-no" title="statement not covered" >      return this.match(10) || super.shouldParseAsyncArrow();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseMaybeAssign(refExpressionErrors, afterLeftParse) {</span>
+<span class="cstat-no" title="statement not covered" >    parseMaybeAssign(refExpressionErrors, isParenItem) {</span>
 <span class="cstat-no" title="statement not covered" >      let state = null;</span>
 <span class="cstat-no" title="statement not covered" >      let jsx2;</span>
 <span class="cstat-no" title="statement not covered" >      if (this.hasPlugin("jsx") &amp;&amp; (this.match(138) || this.match(43))) {</span>
 <span class="cstat-no" title="statement not covered" >        state = this.state.clone();</span>
-<span class="cstat-no" title="statement not covered" >        jsx2 = this.tryParse(() =&gt; super.parseMaybeAssign(refExpressionErrors, afterLeftParse), state);</span>
+<span class="cstat-no" title="statement not covered" >        jsx2 = this.tryParse(() =&gt; super.parseMaybeAssign(refExpressionErrors, isParenItem), state);</span>
 <span class="cstat-no" title="statement not covered" >        if (!jsx2.error) return jsx2.node;</span>
 <span class="cstat-no" title="statement not covered" >        const {</span>
 <span class="cstat-no" title="statement not covered" >          context</span>
@@ -34927,7 +34915,7 @@
 <span class="cstat-no" title="statement not covered" >        const arrow = this.tryParse((abort) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >          typeParameters = this.flowParseTypeParameterDeclaration();</span>
 <span class="cstat-no" title="statement not covered" >          const arrowExpression2 = this.forwardNoArrowParamsConversionAt(typeParameters, () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const result = super.parseMaybeAssign(refExpressionErrors, afterLeftParse);</span>
+<span class="cstat-no" title="statement not covered" >            const result = super.parseMaybeAssign(refExpressionErrors, isParenItem);</span>
 <span class="cstat-no" title="statement not covered" >            this.resetStartLocationFromNode(result, typeParameters);</span>
 <span class="cstat-no" title="statement not covered" >            return result;</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
@@ -34960,7 +34948,7 @@
 <span class="cstat-no" title="statement not covered" >        if (arrow.thrown) throw arrow.error;</span>
 <span class="cstat-no" title="statement not covered" >        throw this.raise(FlowErrors.UnexpectedTokenAfterTypeParameter, typeParameters);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return super.parseMaybeAssign(refExpressionErrors, afterLeftParse);</span>
+<span class="cstat-no" title="statement not covered" >      return super.parseMaybeAssign(refExpressionErrors, isParenItem);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseArrow(node) {</span>
 <span class="cstat-no" title="statement not covered" >      if (this.match(10)) {</span>
@@ -35666,7 +35654,7 @@
 <span class="cstat-no" title="statement not covered" >          ++this.state.pos;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const codePoint = this.readInt(radix, void 0, false, "bail");</span>
-<span class="cstat-no" title="statement not covered" >        if (codePoint !== null &amp;&amp; this.codePointAtPos(this.state.pos) === 59) {</span>
+<span class="cstat-no" title="statement not covered" >        if (codePoint !== null &amp;&amp; codePoint &lt;= 1114111 &amp;&amp; this.codePointAtPos(this.state.pos) === 59) {</span>
 <span class="cstat-no" title="statement not covered" >          ++this.state.pos;</span>
 <span class="cstat-no" title="statement not covered" >          return String.fromCodePoint(codePoint);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -36924,7 +36912,8 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    skipSpace() {</span>
 <span class="cstat-no" title="statement not covered" >      const spaceStart = this.state.pos;</span>
-<span class="cstat-no" title="statement not covered" >      const comments = this.optionFlags &amp; 8192 ? [] : null;</span>
+<span class="cstat-no" title="statement not covered" >      const attachComment = (this.optionFlags &amp; 8192) &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >      let comments;</span>
 <span class="cstat-no" title="statement not covered" >      loop: while (this.state.pos &lt; this.length) {</span>
 <span class="cstat-no" title="statement not covered" >        const ch = this.input.charCodeAt(this.state.pos);</span>
 <span class="cstat-no" title="statement not covered" >        switch (ch) {</span>
@@ -36950,7 +36939,9 @@
 <span class="cstat-no" title="statement not covered" >                const comment = this.skipBlockComment("*/");</span>
 <span class="cstat-no" title="statement not covered" >                if (comment !== void 0) {</span>
 <span class="cstat-no" title="statement not covered" >                  this.addComment(comment);</span>
-<span class="cstat-no" title="statement not covered" >                  comments?.push(comment);</span>
+<span class="cstat-no" title="statement not covered" >                  if (attachComment) {</span>
+<span class="cstat-no" title="statement not covered" >                    (comments ?? (comments = [])).push(comment);</span>
+<span class="cstat-no" title="statement not covered" >                  }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                break;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
@@ -36958,7 +36949,9 @@
 <span class="cstat-no" title="statement not covered" >                const comment = this.skipLineComment(2);</span>
 <span class="cstat-no" title="statement not covered" >                if (comment !== void 0) {</span>
 <span class="cstat-no" title="statement not covered" >                  this.addComment(comment);</span>
-<span class="cstat-no" title="statement not covered" >                  comments?.push(comment);</span>
+<span class="cstat-no" title="statement not covered" >                  if (attachComment) {</span>
+<span class="cstat-no" title="statement not covered" >                    (comments ?? (comments = [])).push(comment);</span>
+<span class="cstat-no" title="statement not covered" >                  }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                break;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
@@ -36975,7 +36968,9 @@
 <span class="cstat-no" title="statement not covered" >                const comment = this.skipLineComment(3);</span>
 <span class="cstat-no" title="statement not covered" >                if (comment !== void 0) {</span>
 <span class="cstat-no" title="statement not covered" >                  this.addComment(comment);</span>
-<span class="cstat-no" title="statement not covered" >                  comments?.push(comment);</span>
+<span class="cstat-no" title="statement not covered" >                  if (attachComment) {</span>
+<span class="cstat-no" title="statement not covered" >                    (comments ?? (comments = [])).push(comment);</span>
+<span class="cstat-no" title="statement not covered" >                  }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >              } else {</span>
 <span class="cstat-no" title="statement not covered" >                break loop;</span>
@@ -36986,7 +36981,9 @@
 <span class="cstat-no" title="statement not covered" >                const comment = this.skipLineComment(4);</span>
 <span class="cstat-no" title="statement not covered" >                if (comment !== void 0) {</span>
 <span class="cstat-no" title="statement not covered" >                  this.addComment(comment);</span>
-<span class="cstat-no" title="statement not covered" >                  comments?.push(comment);</span>
+<span class="cstat-no" title="statement not covered" >                  if (attachComment) {</span>
+<span class="cstat-no" title="statement not covered" >                    (comments ?? (comments = [])).push(comment);</span>
+<span class="cstat-no" title="statement not covered" >                  }</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >              } else {</span>
 <span class="cstat-no" title="statement not covered" >                break loop;</span>
@@ -36996,7 +36993,7 @@
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (comments?.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      if (comments?.length) {</span>
 <span class="cstat-no" title="statement not covered" >        const end = this.state.pos;</span>
 <span class="cstat-no" title="statement not covered" >        const commentWhitespace = {</span>
 <span class="cstat-no" title="statement not covered" >          start: this.sourceToOffsetPos(spaceStart),</span>
@@ -38464,7 +38461,7 @@
 <span class="cstat-no" title="statement not covered" >    parseSpread(refExpressionErrors) {</span>
 <span class="cstat-no" title="statement not covered" >      const node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >      this.next();</span>
-<span class="cstat-no" title="statement not covered" >      node.argument = this.parseMaybeAssignAllowIn(refExpressionErrors, void 0);</span>
+<span class="cstat-no" title="statement not covered" >      node.argument = this.parseMaybeAssignAllowIn(refExpressionErrors);</span>
 <span class="cstat-no" title="statement not covered" >      return this.finishNode(node, "SpreadElement");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseRestBinding() {</span>
@@ -38792,24 +38789,24 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return expr;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseMaybeAssignDisallowIn(refExpressionErrors, afterLeftParse) {</span>
-<span class="cstat-no" title="statement not covered" >      return this.disallowInAnd(() =&gt; this.parseMaybeAssign(refExpressionErrors, afterLeftParse));</span>
+<span class="cstat-no" title="statement not covered" >    parseMaybeAssignDisallowIn(refExpressionErrors) {</span>
+<span class="cstat-no" title="statement not covered" >      return this.disallowInAnd(() =&gt; this.parseMaybeAssign(refExpressionErrors));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseMaybeAssignAllowIn(refExpressionErrors, afterLeftParse) {</span>
-<span class="cstat-no" title="statement not covered" >      return this.allowInAnd(() =&gt; this.parseMaybeAssign(refExpressionErrors, afterLeftParse));</span>
+<span class="cstat-no" title="statement not covered" >    parseMaybeAssignAllowIn(refExpressionErrors, isParenItem) {</span>
+<span class="cstat-no" title="statement not covered" >      return this.allowInAnd(() =&gt; this.parseMaybeAssign(refExpressionErrors, isParenItem));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    setOptionalParametersError(refExpressionErrors) {</span>
 <span class="cstat-no" title="statement not covered" >      refExpressionErrors.optionalParametersLoc = this.state.startLoc;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseMaybeAssign(refExpressionErrors, afterLeftParse) {</span>
+<span class="cstat-no" title="statement not covered" >    parseMaybeAssign(refExpressionErrors, isParenItem) {</span>
 <span class="cstat-no" title="statement not covered" >      const startLoc = this.state.startLoc;</span>
 <span class="cstat-no" title="statement not covered" >      const isYield = this.isContextual(104);</span>
 <span class="cstat-no" title="statement not covered" >      if (isYield) {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.prodParam.hasYield) {</span>
 <span class="cstat-no" title="statement not covered" >          this.next();</span>
 <span class="cstat-no" title="statement not covered" >          let left2 = this.parseYield(startLoc);</span>
-<span class="cstat-no" title="statement not covered" >          if (afterLeftParse) {</span>
-<span class="cstat-no" title="statement not covered" >            left2 = afterLeftParse.call(this, left2, startLoc);</span>
+<span class="cstat-no" title="statement not covered" >          if (isParenItem) {</span>
+<span class="cstat-no" title="statement not covered" >            left2 = this.parseParenItem(left2, startLoc);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return left2;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -38823,8 +38820,8 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      this.state.canStartArrow = true;</span>
 <span class="cstat-no" title="statement not covered" >      let left = this.parseMaybeConditional(refExpressionErrors);</span>
-<span class="cstat-no" title="statement not covered" >      if (afterLeftParse) {</span>
-<span class="cstat-no" title="statement not covered" >        left = afterLeftParse.call(this, left, startLoc);</span>
+<span class="cstat-no" title="statement not covered" >      if (isParenItem) {</span>
+<span class="cstat-no" title="statement not covered" >        left = this.parseParenItem(left, startLoc);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (tokenIsAssignment(this.state.type)) {</span>
 <span class="cstat-no" title="statement not covered" >        const node = this.startNodeAt(startLoc);</span>
@@ -39132,9 +39129,10 @@
 <span class="cstat-no" title="statement not covered" >      const node = this.startNodeAt(startLoc);</span>
 <span class="cstat-no" title="statement not covered" >      node.object = base;</span>
 <span class="cstat-no" title="statement not covered" >      this.next();</span>
-<span class="cstat-no" title="statement not covered" >      const isImport = this.match(79);</span>
-<span class="cstat-no" title="statement not covered" >      const callee = this.parseNoCallExpr();</span>
-<span class="cstat-no" title="statement not covered" >      if (callee.type === "Super" || isImport &amp;&amp; callee.type === "ImportExpression" || callee.type === "Import") {</span>
+<span class="cstat-no" title="statement not covered" >      const callee = this.parseNoCallExpr((base2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        throw this.raise(Errors.UnsupportedBindRHS, base2);</span>
+<span class="cstat-no" title="statement not covered" >      });</span>
+<span class="cstat-no" title="statement not covered" >      if (callee.type === "Super" || callee.type === "Import") {</span>
 <span class="cstat-no" title="statement not covered" >        throw this.raise(Errors.UnsupportedBindRHS, callee);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      node.callee = callee;</span>
@@ -39239,9 +39237,14 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return node;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseNoCallExpr() {</span>
+<span class="cstat-no" title="statement not covered" >    parseNoCallExpr(onUnparenthesizedImportExpression) {</span>
 <span class="cstat-no" title="statement not covered" >      const startLoc = this.state.startLoc;</span>
-<span class="cstat-no" title="statement not covered" >      return this.parseSubscripts(this.parseExprAtom(), startLoc, true);</span>
+<span class="cstat-no" title="statement not covered" >      const isImport = this.match(79);</span>
+<span class="cstat-no" title="statement not covered" >      const base = this.parseExprAtom();</span>
+<span class="cstat-no" title="statement not covered" >      if (isImport &amp;&amp; base.type === "ImportExpression") {</span>
+<span class="cstat-no" title="statement not covered" >        onUnparenthesizedImportExpression(base);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      return this.parseSubscripts(base, startLoc, true);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseExprAtom(refExpressionErrors) {</span>
 <span class="cstat-no" title="statement not covered" >      let node;</span>
@@ -39316,7 +39319,9 @@
 <span class="cstat-no" title="statement not covered" >          node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >          this.next();</span>
 <span class="cstat-no" title="statement not covered" >          node.object = null;</span>
-<span class="cstat-no" title="statement not covered" >          const callee = node.callee = this.parseNoCallExpr();</span>
+<span class="cstat-no" title="statement not covered" >          const callee = node.callee = this.parseNoCallExpr((base) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            throw this.raise(Errors.UnsupportedBind, base);</span>
+<span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >          if (callee.type === "MemberExpression") {</span>
 <span class="cstat-no" title="statement not covered" >            return this.finishNode(node, "BindExpression");</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
@@ -39608,7 +39613,7 @@
 <span class="cstat-no" title="statement not covered" >            break;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >          exprList.push(this.parseMaybeAssignAllowInOrVoidPattern(7, refExpressionErrors, this.parseParenItem));</span>
+<span class="cstat-no" title="statement not covered" >          exprList.push(this.parseMaybeAssignAllowInOrVoidPattern(7, refExpressionErrors, true));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const innerEndLoc = this.state.lastTokEndLoc;</span>
@@ -39687,12 +39692,10 @@
 <span class="cstat-no" title="statement not covered" >      return this.finishNode(node, "NewExpression");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseNewCallee(node) {</span>
-<span class="cstat-no" title="statement not covered" >      const isImport = this.match(79);</span>
-<span class="cstat-no" title="statement not covered" >      const callee = this.parseNoCallExpr();</span>
+<span class="cstat-no" title="statement not covered" >      const callee = this.parseNoCallExpr((base) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.raise(Errors.ImportCallNotNewExpression, base, base);</span>
+<span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >      node.callee = callee;</span>
-<span class="cstat-no" title="statement not covered" >      if (isImport &amp;&amp; callee.type === "ImportExpression") {</span>
-<span class="cstat-no" title="statement not covered" >        this.raise(Errors.ImportCallNotNewExpression, callee, callee);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (callee.type === "Import") {</span>
 <span class="cstat-no" title="statement not covered" >        this.raise(Errors.ImportCallNotNewExpression, callee);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -39937,7 +39940,7 @@
 <span class="cstat-no" title="statement not covered" >              break;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            default:</span>
-<span class="cstat-no" title="statement not covered" >              this.unexpected();</span>
+<span class="cstat-no" title="statement not covered" >              throw this.unexpected();</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        prop.key = key;</span>
@@ -40078,7 +40081,7 @@
 <span class="cstat-no" title="statement not covered" >        this.next();</span>
 <span class="cstat-no" title="statement not covered" >        elt = this.finishNode(node, "ArgumentPlaceholder");</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        elt = this.parseMaybeAssignAllowInOrVoidPattern(close, refExpressionErrors, this.parseParenItem);</span>
+<span class="cstat-no" title="statement not covered" >        elt = this.parseMaybeAssignAllowInOrVoidPattern(close, refExpressionErrors, true);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return elt;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -40333,14 +40336,14 @@
 <span class="cstat-no" title="statement not covered" >      this.next();</span>
 <span class="cstat-no" title="statement not covered" >      return this.finishNode(node, "VoidPattern");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseMaybeAssignAllowInOrVoidPattern(close, refExpressionErrors, afterLeftParse) {</span>
+<span class="cstat-no" title="statement not covered" >    parseMaybeAssignAllowInOrVoidPattern(close, refExpressionErrors, isParenItem) {</span>
 <span class="cstat-no" title="statement not covered" >      if (refExpressionErrors != null &amp;&amp; this.match(84)) {</span>
 <span class="cstat-no" title="statement not covered" >        const nextCode = this.lookaheadCharCode();</span>
 <span class="cstat-no" title="statement not covered" >        if (nextCode === 44 || nextCode === (close === 1 ? 93 : close === 4 ? 125 : 41) || nextCode === 61) {</span>
 <span class="cstat-no" title="statement not covered" >          return this.parseMaybeDefault(this.state.startLoc, this.parseVoidPattern(refExpressionErrors));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return this.parseMaybeAssignAllowIn(refExpressionErrors, afterLeftParse);</span>
+<span class="cstat-no" title="statement not covered" >      return this.parseMaybeAssignAllowIn(refExpressionErrors, isParenItem);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parsePropertyNamePrefixOperator(prop) {</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -40648,7 +40651,7 @@
 <span class="cstat-no" title="statement not covered" >      if (tokenIsIdentifier(startType) &amp;&amp; expr.type === "Identifier" &amp;&amp; this.eat(10)) {</span>
 <span class="cstat-no" title="statement not covered" >        return this.parseLabeledStatement(node, maybeName, expr, flags);</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        return this.parseExpressionStatement(node, expr, decorators);</span>
+<span class="cstat-no" title="statement not covered" >        return this.parseExpressionStatement(node, expr);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    assertModuleNodeAllowed(node) {</span>
@@ -40827,7 +40830,7 @@
 <span class="cstat-no" title="statement not covered" >            this.raise(Errors.ForInUsing, init2);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if ((isForIn || this.isContextual(98)) &amp;&amp; init2.declarations.length === 1) {</span>
-<span class="cstat-no" title="statement not covered" >            return this.parseForIn(node, init2, awaitAt);</span>
+<span class="cstat-no" title="statement not covered" >            return this.parseForX(node, init2, awaitAt);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          if (awaitAt !== null) {</span>
 <span class="cstat-no" title="statement not covered" >            this.unexpected(awaitAt);</span>
@@ -40854,7 +40857,7 @@
 <span class="cstat-no" title="statement not covered" >        this.checkLVal(init, {</span>
 <span class="cstat-no" title="statement not covered" >          type</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
-<span class="cstat-no" title="statement not covered" >        return this.parseForIn(node, init, awaitAt);</span>
+<span class="cstat-no" title="statement not covered" >        return this.parseForX(node, init, awaitAt);</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        this.checkExpressionErrors(refExpressionErrors, true);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -41023,7 +41026,7 @@
 <span class="cstat-no" title="statement not covered" >      node.label = expr;</span>
 <span class="cstat-no" title="statement not covered" >      return this.finishNode(node, "LabeledStatement");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseExpressionStatement(node, expr, decorators) {</span>
+<span class="cstat-no" title="statement not covered" >    parseExpressionStatement(node, expr) {</span>
 <span class="cstat-no" title="statement not covered" >      node.expression = expr;</span>
 <span class="cstat-no" title="statement not covered" >      this.semicolon();</span>
 <span class="cstat-no" title="statement not covered" >      return this.finishNode(node, "ExpressionStatement");</span>
@@ -41090,7 +41093,7 @@
 <span class="cstat-no" title="statement not covered" >      this.state.labels.pop();</span>
 <span class="cstat-no" title="statement not covered" >      return this.finishNode(node, "ForStatement");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseForIn(node, init, awaitAt) {</span>
+<span class="cstat-no" title="statement not covered" >    parseForX(node, init, awaitAt) {</span>
 <span class="cstat-no" title="statement not covered" >      const isForIn = this.match(54);</span>
 <span class="cstat-no" title="statement not covered" >      this.next();</span>
 <span class="cstat-no" title="statement not covered" >      if (isForIn) {</span>
@@ -41554,7 +41557,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (isFromRequired || hasSpecifiers || hasDeclaration) {</span>
 <span class="cstat-no" title="statement not covered" >        const node2 = node;</span>
-<span class="cstat-no" title="statement not covered" >        this.checkExport(node2, true, false, !!node2.source);</span>
+<span class="cstat-no" title="statement not covered" >        this.checkNamedExport(node2, !!node2.source);</span>
 <span class="cstat-no" title="statement not covered" >        if (node2.declaration?.type === "ClassDeclaration") {</span>
 <span class="cstat-no" title="statement not covered" >          this.maybeTakeDecorators(decorators, node2.declaration, node2);</span>
 <span class="cstat-no" title="statement not covered" >        } else if (decorators) {</span>
@@ -41572,7 +41575,12 @@
 <span class="cstat-no" title="statement not covered" >        } else if (decorators) {</span>
 <span class="cstat-no" title="statement not covered" >          throw this.raise(Errors.UnsupportedDecoratorExport, node);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        this.checkExport(node2, true, true);</span>
+<span class="cstat-no" title="statement not covered" >        this.checkDuplicateExports(node, "default");</span>
+<span class="cstat-no" title="statement not covered" >        if (this.hasPlugin("exportDefaultFrom")) {</span>
+<span class="cstat-no" title="statement not covered" >          if (decl.type === "Identifier" &amp;&amp; decl.name === "from" &amp;&amp; decl.end - decl.start === 4 &amp;&amp; !decl.extra?.parenthesized) {</span>
+<span class="cstat-no" title="statement not covered" >            this.raise(Errors.ExportDefaultFromAsIdentifier, decl);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        this.sawUnambiguousESM = true;</span>
 <span class="cstat-no" title="statement not covered" >        return this.finishNode(node2, "ExportDefaultDeclaration");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -41694,7 +41702,6 @@
 <span class="cstat-no" title="statement not covered" >    parseExportFrom(node, expect) {</span>
 <span class="cstat-no" title="statement not covered" >      if (this.eatContextual(94)) {</span>
 <span class="cstat-no" title="statement not covered" >        node.source = this.parseImportSource();</span>
-<span class="cstat-no" title="statement not covered" >        this.checkExport(node);</span>
 <span class="cstat-no" title="statement not covered" >        this.maybeParseImportAttributes(node);</span>
 <span class="cstat-no" title="statement not covered" >      } else if (expect) {</span>
 <span class="cstat-no" title="statement not covered" >        this.unexpected();</span>
@@ -41721,50 +41728,40 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return type === 70 || type === 71 || type === 64 || type === 76 || this.isLet() || this.isAsyncFunction();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    checkExport(node, checkNames, isDefault, isFrom) {</span>
-<span class="cstat-no" title="statement not covered" >      if (checkNames) {</span>
-<span class="cstat-no" title="statement not covered" >        if (isDefault) {</span>
-<span class="cstat-no" title="statement not covered" >          this.checkDuplicateExports(node, "default");</span>
-<span class="cstat-no" title="statement not covered" >          if (this.hasPlugin("exportDefaultFrom")) {</span>
-<span class="cstat-no" title="statement not covered" >            const declaration = node.declaration;</span>
-<span class="cstat-no" title="statement not covered" >            if (declaration.type === "Identifier" &amp;&amp; declaration.name === "from" &amp;&amp; declaration.end - declaration.start === 4 &amp;&amp; !declaration.extra?.parenthesized) {</span>
-<span class="cstat-no" title="statement not covered" >              this.raise(Errors.ExportDefaultFromAsIdentifier, declaration);</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        } else if (node.specifiers?.length) {</span>
-<span class="cstat-no" title="statement not covered" >          for (const specifier of node.specifiers) {</span>
+<span class="cstat-no" title="statement not covered" >    checkNamedExport(node, isFrom) {</span>
+<span class="cstat-no" title="statement not covered" >      if (node.specifiers?.length) {</span>
+<span class="cstat-no" title="statement not covered" >        for (const specifier of node.specifiers) {</span>
+<span class="cstat-no" title="statement not covered" >          const {</span>
+<span class="cstat-no" title="statement not covered" >            exported</span>
+<span class="cstat-no" title="statement not covered" >          } = specifier;</span>
+<span class="cstat-no" title="statement not covered" >          const exportName = exported.type === "Identifier" ? exported.name : exported.value;</span>
+<span class="cstat-no" title="statement not covered" >          this.checkDuplicateExports(specifier, exportName);</span>
+<span class="cstat-no" title="statement not covered" >          if (!isFrom &amp;&amp; specifier.type === "ExportSpecifier") {</span>
 <span class="cstat-no" title="statement not covered" >            const {</span>
-<span class="cstat-no" title="statement not covered" >              exported</span>
+<span class="cstat-no" title="statement not covered" >              local</span>
 <span class="cstat-no" title="statement not covered" >            } = specifier;</span>
-<span class="cstat-no" title="statement not covered" >            const exportName = exported.type === "Identifier" ? exported.name : exported.value;</span>
-<span class="cstat-no" title="statement not covered" >            this.checkDuplicateExports(specifier, exportName);</span>
-<span class="cstat-no" title="statement not covered" >            if (!isFrom &amp;&amp; specifier.local) {</span>
-<span class="cstat-no" title="statement not covered" >              const {</span>
-<span class="cstat-no" title="statement not covered" >                local</span>
-<span class="cstat-no" title="statement not covered" >              } = specifier;</span>
-<span class="cstat-no" title="statement not covered" >              if (local.type !== "Identifier") {</span>
-<span class="cstat-no" title="statement not covered" >                this.raise(Errors.ExportBindingIsString, specifier, {</span>
-<span class="cstat-no" title="statement not covered" >                  localName: local.value,</span>
-<span class="cstat-no" title="statement not covered" >                  exportName</span>
-<span class="cstat-no" title="statement not covered" >                });</span>
-<span class="cstat-no" title="statement not covered" >              } else {</span>
-<span class="cstat-no" title="statement not covered" >                this.checkReservedWord(local.name, local.start, true, false);</span>
-<span class="cstat-no" title="statement not covered" >                this.scope.checkLocalExport(local);</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >            if (local.type !== "Identifier") {</span>
+<span class="cstat-no" title="statement not covered" >              this.raise(Errors.ExportBindingIsString, specifier, {</span>
+<span class="cstat-no" title="statement not covered" >                localName: local.value,</span>
+<span class="cstat-no" title="statement not covered" >                exportName</span>
+<span class="cstat-no" title="statement not covered" >              });</span>
+<span class="cstat-no" title="statement not covered" >            } else {</span>
+<span class="cstat-no" title="statement not covered" >              this.checkReservedWord(local.name, local.start, true, false);</span>
+<span class="cstat-no" title="statement not covered" >              this.scope.checkLocalExport(local);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        } else if (node.declaration) {</span>
-<span class="cstat-no" title="statement not covered" >          const decl = node.declaration;</span>
-<span class="cstat-no" title="statement not covered" >          if (decl.type === "FunctionDeclaration" || decl.type === "ClassDeclaration") {</span>
-<span class="cstat-no" title="statement not covered" >            const {</span>
-<span class="cstat-no" title="statement not covered" >              id</span>
-<span class="cstat-no" title="statement not covered" >            } = decl;</span>
-<span class="cstat-no" title="statement not covered" >            if (!id) throw new Error("Assertion failure");</span>
-<span class="cstat-no" title="statement not covered" >            this.checkDuplicateExports(node, id.name);</span>
-<span class="cstat-no" title="statement not covered" >          } else if (decl.type === "VariableDeclaration") {</span>
-<span class="cstat-no" title="statement not covered" >            for (const declaration of decl.declarations) {</span>
-<span class="cstat-no" title="statement not covered" >              this.checkDeclaration(declaration.id);</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      } else if (node.declaration) {</span>
+<span class="cstat-no" title="statement not covered" >        const decl = node.declaration;</span>
+<span class="cstat-no" title="statement not covered" >        if (decl.type === "FunctionDeclaration" || decl.type === "ClassDeclaration") {</span>
+<span class="cstat-no" title="statement not covered" >          const {</span>
+<span class="cstat-no" title="statement not covered" >            id</span>
+<span class="cstat-no" title="statement not covered" >          } = decl;</span>
+<span class="cstat-no" title="statement not covered" >          if (!id) throw new Error("Assertion failure");</span>
+<span class="cstat-no" title="statement not covered" >          this.checkDuplicateExports(node, id.name);</span>
+<span class="cstat-no" title="statement not covered" >        } else if (decl.type === "VariableDeclaration") {</span>
+<span class="cstat-no" title="statement not covered" >          for (const declaration of decl.declarations) {</span>
+<span class="cstat-no" title="statement not covered" >            this.checkDeclaration(declaration.id);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -42222,6 +42219,10 @@
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var ClassMemberModifiers = buildModifiersMap(["declare", "private", "public", "protected", "override", "abstract", "readonly", "static"], ["in", "out"]);</span>
+<span class="cstat-no" title="statement not covered" >  var IndexSignatureModifiers = buildModifiersMap(["readonly"], ["declare", "abstract", "private", "protected", "public", "static", "override"]);</span>
+<span class="cstat-no" title="statement not covered" >  var BindingElementModifiers = buildModifiersMap(["public", "private", "protected", "override", "readonly"]);</span>
+<span class="cstat-no" title="statement not covered" >  var AccessModifiers = buildModifiersMap(["private", "public", "protected"]);</span>
 <span class="cstat-no" title="statement not covered" >  var typescript = (superClass) =&gt; class TypeScriptParserMixin extends superClass {</span>
 <span class="cstat-no" title="statement not covered" >    getScopeHandler() {</span>
 <span class="cstat-no" title="statement not covered" >      return TypeScriptScopeHandler;</span>
@@ -42246,12 +42247,12 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return this.tsNextTokenOnSameLineAndCanFollowModifier();</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    tsParseModifier(allowedModifiers, stopOnStartOfClassStaticBlock, hasSeenStaticModifier) {</span>
+<span class="cstat-no" title="statement not covered" >    tsParseModifier(modifiers, stopOnStartOfClassStaticBlock, hasSeenStaticModifier) {</span>
 <span class="cstat-no" title="statement not covered" >      if (!tokenIsIdentifier(this.state.type) &amp;&amp; this.state.type !== 54 &amp;&amp; this.state.type !== 71) {</span>
 <span class="cstat-no" title="statement not covered" >        return void 0;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const modifier = this.state.value;</span>
-<span class="cstat-no" title="statement not covered" >      if (allowedModifiers.includes(modifier)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (modifiers.has(modifier)) {</span>
 <span class="cstat-no" title="statement not covered" >        if (hasSeenStaticModifier &amp;&amp; this.match(102)) {</span>
 <span class="cstat-no" title="statement not covered" >          return void 0;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -42264,12 +42265,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return void 0;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    tsParseModifiers({</span>
-<span class="cstat-no" title="statement not covered" >      allowedModifiers,</span>
-<span class="cstat-no" title="statement not covered" >      disallowedModifiers,</span>
-<span class="cstat-no" title="statement not covered" >      stopOnStartOfClassStaticBlock,</span>
-<span class="cstat-no" title="statement not covered" >      errorTemplate = TSErrors.InvalidModifierOnTypeMember</span>
-<span class="cstat-no" title="statement not covered" >    }, modified) {</span>
+<span class="cstat-no" title="statement not covered" >    tsParseModifiers(modifiers, errorTemplate = TSErrors.InvalidModifierOnTypeMember, modified, stopOnStartOfClassStaticBlock = false) {</span>
 <span class="cstat-no" title="statement not covered" >      const enforceOrder = (loc, modifier, before, after) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (modifier === before &amp;&amp; modified[after]) {</span>
 <span class="cstat-no" title="statement not covered" >          this.raise(TSErrors.InvalidModifiersOrder, loc, {</span>
@@ -42288,7 +42284,7 @@
 <span class="cstat-no" title="statement not covered" >        const {</span>
 <span class="cstat-no" title="statement not covered" >          startLoc</span>
 <span class="cstat-no" title="statement not covered" >        } = this.state;</span>
-<span class="cstat-no" title="statement not covered" >        const modifier = this.tsParseModifier(allowedModifiers.concat(disallowedModifiers ?? []), stopOnStartOfClassStaticBlock, modified.static);</span>
+<span class="cstat-no" title="statement not covered" >        const modifier = this.tsParseModifier(modifiers, stopOnStartOfClassStaticBlock, modified.static);</span>
 <span class="cstat-no" title="statement not covered" >        if (!modifier) break;</span>
 <span class="cstat-no" title="statement not covered" >        if (tsIsAccessModifier(modifier)) {</span>
 <span class="cstat-no" title="statement not covered" >          if (modified.accessibility) {</span>
@@ -42324,7 +42320,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          modified[modifier] = true;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (disallowedModifiers?.includes(modifier)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!modifiers.get(modifier)) {</span>
 <span class="cstat-no" title="statement not covered" >          this.raise(errorTemplate, startLoc, {</span>
 <span class="cstat-no" title="statement not covered" >            modifier</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
@@ -42515,21 +42511,9 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return this.finishNode(node, "TSTypeQuery");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    tsParseInOutModifiers = this.tsParseModifiers.bind(this, {</span>
-<span class="cstat-no" title="statement not covered" >      allowedModifiers: ["in", "out"],</span>
-<span class="cstat-no" title="statement not covered" >      disallowedModifiers: ["const", "public", "private", "protected", "readonly", "declare", "abstract", "override"],</span>
-<span class="cstat-no" title="statement not covered" >      errorTemplate: TSErrors.InvalidModifierOnTypeParameter</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >    tsParseConstModifier = this.tsParseModifiers.bind(this, {</span>
-<span class="cstat-no" title="statement not covered" >      allowedModifiers: ["const"],</span>
-<span class="cstat-no" title="statement not covered" >      disallowedModifiers: ["in", "out"],</span>
-<span class="cstat-no" title="statement not covered" >      errorTemplate: TSErrors.InvalidModifierOnTypeParameterPositions</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >    tsParseInOutConstModifiers = this.tsParseModifiers.bind(this, {</span>
-<span class="cstat-no" title="statement not covered" >      allowedModifiers: ["in", "out", "const"],</span>
-<span class="cstat-no" title="statement not covered" >      disallowedModifiers: ["public", "private", "protected", "readonly", "declare", "abstract", "override"],</span>
-<span class="cstat-no" title="statement not covered" >      errorTemplate: TSErrors.InvalidModifierOnTypeParameter</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" >    tsParseInOutModifiers = this.tsParseModifiers.bind(this, buildModifiersMap(["in", "out"], ["const", "public", "private", "protected", "readonly", "declare", "abstract", "override"]), TSErrors.InvalidModifierOnTypeParameter);</span>
+<span class="cstat-no" title="statement not covered" >    tsParseConstModifier = this.tsParseModifiers.bind(this, buildModifiersMap(["const"], ["in", "out"]), TSErrors.InvalidModifierOnTypeParameterPositions);</span>
+<span class="cstat-no" title="statement not covered" >    tsParseInOutConstModifiers = this.tsParseModifiers.bind(this, buildModifiersMap(["in", "out", "const"], ["public", "private", "protected", "readonly", "declare", "abstract", "override"]), TSErrors.InvalidModifierOnTypeParameter);</span>
 <span class="cstat-no" title="statement not covered" >    tsParseTypeParameter(parseModifiers) {</span>
 <span class="cstat-no" title="statement not covered" >      const node = this.startNode();</span>
 <span class="cstat-no" title="statement not covered" >      parseModifiers(node);</span>
@@ -42687,10 +42671,7 @@
 <span class="cstat-no" title="statement not covered" >          return this.tsParsePropertyOrMethodSignature(node, false);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      this.tsParseModifiers({</span>
-<span class="cstat-no" title="statement not covered" >        allowedModifiers: ["readonly"],</span>
-<span class="cstat-no" title="statement not covered" >        disallowedModifiers: ["declare", "abstract", "private", "protected", "public", "static", "override"]</span>
-<span class="cstat-no" title="statement not covered" >      }, node);</span>
+<span class="cstat-no" title="statement not covered" >      this.tsParseModifiers(IndexSignatureModifiers, void 0, node);</span>
 <span class="cstat-no" title="statement not covered" >      const idx = this.tsTryParseIndexSignature(node);</span>
 <span class="cstat-no" title="statement not covered" >      if (idx) {</span>
 <span class="cstat-no" title="statement not covered" >        return idx;</span>
@@ -43630,9 +43611,7 @@
 <span class="cstat-no" title="statement not covered" >    parseBindingElement(flags, decorators) {</span>
 <span class="cstat-no" title="statement not covered" >      const startLoc = decorators.length ? null : this.state.startLoc;</span>
 <span class="cstat-no" title="statement not covered" >      const modified = {};</span>
-<span class="cstat-no" title="statement not covered" >      this.tsParseModifiers({</span>
-<span class="cstat-no" title="statement not covered" >        allowedModifiers: ["public", "private", "protected", "override", "readonly"]</span>
-<span class="cstat-no" title="statement not covered" >      }, modified);</span>
+<span class="cstat-no" title="statement not covered" >      this.tsParseModifiers(BindingElementModifiers, void 0, modified);</span>
 <span class="cstat-no" title="statement not covered" >      const accessibility = modified.accessibility;</span>
 <span class="cstat-no" title="statement not covered" >      const override = modified.override;</span>
 <span class="cstat-no" title="statement not covered" >      const readonly = modified.readonly;</span>
@@ -44087,7 +44066,7 @@
 <span class="cstat-no" title="statement not covered" >      return super.parseStatementContent(flags, decorators);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseAccessModifier() {</span>
-<span class="cstat-no" title="statement not covered" >      return this.tsParseModifier(["public", "protected", "private"]);</span>
+<span class="cstat-no" title="statement not covered" >      return this.tsParseModifier(AccessModifiers);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    tsHasSomeModifiers(member, modifiers) {</span>
 <span class="cstat-no" title="statement not covered" >      return modifiers.some((modifier) =&gt; {</span>
@@ -44101,18 +44080,12 @@
 <span class="cstat-no" title="statement not covered" >      return this.isContextual(102) &amp;&amp; this.lookaheadCharCode() === 123;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseClassMember(classBody, member, state) {</span>
-<span class="cstat-no" title="statement not covered" >      const modifiers = ["declare", "private", "public", "protected", "override", "abstract", "readonly", "static"];</span>
-<span class="cstat-no" title="statement not covered" >      this.tsParseModifiers({</span>
-<span class="cstat-no" title="statement not covered" >        allowedModifiers: modifiers,</span>
-<span class="cstat-no" title="statement not covered" >        disallowedModifiers: ["in", "out"],</span>
-<span class="cstat-no" title="statement not covered" >        stopOnStartOfClassStaticBlock: true,</span>
-<span class="cstat-no" title="statement not covered" >        errorTemplate: TSErrors.InvalidModifierOnTypeParameterPositions</span>
-<span class="cstat-no" title="statement not covered" >      }, member);</span>
+<span class="cstat-no" title="statement not covered" >      this.tsParseModifiers(ClassMemberModifiers, TSErrors.InvalidModifierOnTypeParameterPositions, member, true);</span>
 <span class="cstat-no" title="statement not covered" >      const callParseClassMemberWithIsStatic = () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.tsIsStartOfStaticBlocks()) {</span>
 <span class="cstat-no" title="statement not covered" >          this.next();</span>
 <span class="cstat-no" title="statement not covered" >          this.next();</span>
-<span class="cstat-no" title="statement not covered" >          if (this.tsHasSomeModifiers(member, modifiers)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (this.tsHasSomeModifiers(member, ["declare", "private", "public", "protected", "override", "abstract", "readonly", "static"])) {</span>
 <span class="cstat-no" title="statement not covered" >            this.raise(TSErrors.StaticBlockCannotHaveModifier, this.state.curPosition());</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          super.parseClassStaticBlock(classBody, member);</span>
@@ -44372,13 +44345,13 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return super.parseAsyncArrowFromCallExpression(node, call);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseMaybeAssign(refExpressionErrors, afterLeftParse) {</span>
+<span class="cstat-no" title="statement not covered" >    parseMaybeAssign(refExpressionErrors, isParenItem) {</span>
 <span class="cstat-no" title="statement not covered" >      let state;</span>
 <span class="cstat-no" title="statement not covered" >      let jsx2;</span>
 <span class="cstat-no" title="statement not covered" >      let typeCast;</span>
 <span class="cstat-no" title="statement not covered" >      if (this.hasPlugin("jsx") &amp;&amp; (this.match(138) || this.match(43))) {</span>
 <span class="cstat-no" title="statement not covered" >        state = this.state.clone();</span>
-<span class="cstat-no" title="statement not covered" >        jsx2 = this.tryParse(() =&gt; super.parseMaybeAssign(refExpressionErrors, afterLeftParse), state);</span>
+<span class="cstat-no" title="statement not covered" >        jsx2 = this.tryParse(() =&gt; super.parseMaybeAssign(refExpressionErrors, isParenItem), state);</span>
 <span class="cstat-no" title="statement not covered" >        if (!jsx2.error) return jsx2.node;</span>
 <span class="cstat-no" title="statement not covered" >        const {</span>
 <span class="cstat-no" title="statement not covered" >          context</span>
@@ -44389,13 +44362,13 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (!jsx2?.error &amp;&amp; !this.match(43)) {</span>
-<span class="cstat-no" title="statement not covered" >        return super.parseMaybeAssign(refExpressionErrors, afterLeftParse);</span>
+<span class="cstat-no" title="statement not covered" >        return super.parseMaybeAssign(refExpressionErrors, isParenItem);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (!state || state === this.state) state = this.state.clone();</span>
 <span class="cstat-no" title="statement not covered" >      let typeParameters;</span>
 <span class="cstat-no" title="statement not covered" >      const arrow = this.tryParse((abort) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        typeParameters = this.tsParseTypeParameters(this.tsParseConstModifier);</span>
-<span class="cstat-no" title="statement not covered" >        const expr = super.parseMaybeAssign(refExpressionErrors, afterLeftParse);</span>
+<span class="cstat-no" title="statement not covered" >        const expr = super.parseMaybeAssign(refExpressionErrors, isParenItem);</span>
 <span class="cstat-no" title="statement not covered" >        if (expr.type !== "ArrowFunctionExpression" || expr.extra?.parenthesized) {</span>
 <span class="cstat-no" title="statement not covered" >          abort();</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -44419,7 +44392,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (!jsx2) {</span>
 <span class="cstat-no" title="statement not covered" >        assert(!this.hasPlugin("jsx"));</span>
-<span class="cstat-no" title="statement not covered" >        typeCast = this.tryParse(() =&gt; super.parseMaybeAssign(refExpressionErrors, afterLeftParse), state);</span>
+<span class="cstat-no" title="statement not covered" >        typeCast = this.tryParse(() =&gt; super.parseMaybeAssign(refExpressionErrors, isParenItem), state);</span>
 <span class="cstat-no" title="statement not covered" >        if (!typeCast.error) return typeCast.node;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (jsx2?.node) {</span>
@@ -44755,7 +44728,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseExportSpecifier(node, isString, isInTypeExport, isMaybeTypeOnly) {</span>
 <span class="cstat-no" title="statement not covered" >      if (!isString &amp;&amp; isMaybeTypeOnly) {</span>
-<span class="cstat-no" title="statement not covered" >        this.parseTypeOnlyImportExportSpecifier(node, false, isInTypeExport);</span>
+<span class="cstat-no" title="statement not covered" >        this.parseTypeOnlyExportSpecifier(node, isInTypeExport);</span>
 <span class="cstat-no" title="statement not covered" >        return this.finishNode(node, "ExportSpecifier");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      node.exportKind = "value";</span>
@@ -44763,20 +44736,15 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseImportSpecifier(specifier, importedIsString, isInTypeOnlyImport, isMaybeTypeOnly, bindingType) {</span>
 <span class="cstat-no" title="statement not covered" >      if (!importedIsString &amp;&amp; isMaybeTypeOnly) {</span>
-<span class="cstat-no" title="statement not covered" >        this.parseTypeOnlyImportExportSpecifier(specifier, true, isInTypeOnlyImport);</span>
+<span class="cstat-no" title="statement not covered" >        this.parseTypeOnlyImportSpecifier(specifier, isInTypeOnlyImport);</span>
 <span class="cstat-no" title="statement not covered" >        return this.finishNode(specifier, "ImportSpecifier");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      specifier.importKind = "value";</span>
 <span class="cstat-no" title="statement not covered" >      return super.parseImportSpecifier(specifier, importedIsString, isInTypeOnlyImport, isMaybeTypeOnly, isInTypeOnlyImport ? 4098 : 4096);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    parseTypeOnlyImportExportSpecifier(node, isImport, isInTypeOnlyImportExport) {</span>
-<span class="cstat-no" title="statement not covered" >      const leftOfAsKey = isImport ? "imported" : "local";</span>
-<span class="cstat-no" title="statement not covered" >      const rightOfAsKey = isImport ? "local" : "exported";</span>
-<span class="cstat-no" title="statement not covered" >      let leftOfAs = node[leftOfAsKey];</span>
-<span class="cstat-no" title="statement not covered" >      let rightOfAs;</span>
+<span class="cstat-no" title="statement not covered" >    parseTypeOnlyImportSpecifier(node, isInTypeOnly) {</span>
+<span class="cstat-no" title="statement not covered" >      let leftOfAs = node.imported;</span>
 <span class="cstat-no" title="statement not covered" >      let hasTypeSpecifier = false;</span>
-<span class="cstat-no" title="statement not covered" >      let canParseAsKeyword = true;</span>
-<span class="cstat-no" title="statement not covered" >      const loc = leftOfAs.start;</span>
 <span class="cstat-no" title="statement not covered" >      if (this.isContextual(89)) {</span>
 <span class="cstat-no" title="statement not covered" >        const firstAs = this.parseIdentifier();</span>
 <span class="cstat-no" title="statement not covered" >        if (this.isContextual(89)) {</span>
@@ -44784,46 +44752,59 @@
 <span class="cstat-no" title="statement not covered" >          if (tokenIsKeywordOrIdentifier(this.state.type)) {</span>
 <span class="cstat-no" title="statement not covered" >            hasTypeSpecifier = true;</span>
 <span class="cstat-no" title="statement not covered" >            leftOfAs = firstAs;</span>
-<span class="cstat-no" title="statement not covered" >            rightOfAs = isImport ? this.parseIdentifier() : this.parseModuleExportName();</span>
-<span class="cstat-no" title="statement not covered" >            canParseAsKeyword = false;</span>
+<span class="cstat-no" title="statement not covered" >            node.local = this.parseIdentifier();</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            rightOfAs = secondAs;</span>
-<span class="cstat-no" title="statement not covered" >            canParseAsKeyword = false;</span>
+<span class="cstat-no" title="statement not covered" >            node.local = secondAs;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        } else if (tokenIsKeywordOrIdentifier(this.state.type)) {</span>
-<span class="cstat-no" title="statement not covered" >          canParseAsKeyword = false;</span>
-<span class="cstat-no" title="statement not covered" >          rightOfAs = isImport ? this.parseIdentifier() : this.parseModuleExportName();</span>
+<span class="cstat-no" title="statement not covered" >          node.local = this.parseIdentifier();</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          hasTypeSpecifier = true;</span>
 <span class="cstat-no" title="statement not covered" >          leftOfAs = firstAs;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      } else if (tokenIsKeywordOrIdentifier(this.state.type)) {</span>
 <span class="cstat-no" title="statement not covered" >        hasTypeSpecifier = true;</span>
-<span class="cstat-no" title="statement not covered" >        if (isImport) {</span>
-<span class="cstat-no" title="statement not covered" >          leftOfAs = this.parseIdentifier(true);</span>
-<span class="cstat-no" title="statement not covered" >          if (!this.isContextual(89)) {</span>
-<span class="cstat-no" title="statement not covered" >            this.checkReservedWord(leftOfAs.name, leftOfAs.start, true, true);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >          leftOfAs = this.parseModuleExportName();</span>
+<span class="cstat-no" title="statement not covered" >        leftOfAs = this.parseIdentifier(true);</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.isContextual(89)) {</span>
+<span class="cstat-no" title="statement not covered" >          this.checkReservedWord(leftOfAs.name, leftOfAs.start, true, true);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (hasTypeSpecifier &amp;&amp; isInTypeOnlyImportExport) {</span>
-<span class="cstat-no" title="statement not covered" >        this.raise(isImport ? TSErrors.TypeModifierIsUsedInTypeImports : TSErrors.TypeModifierIsUsedInTypeExports, loc);</span>
+<span class="cstat-no" title="statement not covered" >      if (hasTypeSpecifier &amp;&amp; isInTypeOnly) {</span>
+<span class="cstat-no" title="statement not covered" >        this.raise(TSErrors.TypeModifierIsUsedInTypeImports, node.imported);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      node[leftOfAsKey] = leftOfAs;</span>
-<span class="cstat-no" title="statement not covered" >      node[rightOfAsKey] = rightOfAs;</span>
-<span class="cstat-no" title="statement not covered" >      const kindKey = isImport ? "importKind" : "exportKind";</span>
-<span class="cstat-no" title="statement not covered" >      node[kindKey] = hasTypeSpecifier ? "type" : "value";</span>
-<span class="cstat-no" title="statement not covered" >      if (canParseAsKeyword &amp;&amp; this.eatContextual(89)) {</span>
-<span class="cstat-no" title="statement not covered" >        node[rightOfAsKey] = isImport ? this.parseIdentifier() : this.parseModuleExportName();</span>
+<span class="cstat-no" title="statement not covered" >      node.imported = leftOfAs;</span>
+<span class="cstat-no" title="statement not covered" >      node.importKind = hasTypeSpecifier ? "type" : "value";</span>
+<span class="cstat-no" title="statement not covered" >      this.checkIdentifier(node.local ?? (node.local = this.eatContextual(89) ? this.parseIdentifier() : this.cloneIdentifier(node.imported)), hasTypeSpecifier ? 4098 : 4096);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    parseTypeOnlyExportSpecifier(node, isInTypeOnly) {</span>
+<span class="cstat-no" title="statement not covered" >      const local = node.local;</span>
+<span class="cstat-no" title="statement not covered" >      let hasTypeSpecifier = false;</span>
+<span class="cstat-no" title="statement not covered" >      if (this.isContextual(89)) {</span>
+<span class="cstat-no" title="statement not covered" >        const firstAs = this.parseIdentifier();</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isContextual(89)) {</span>
+<span class="cstat-no" title="statement not covered" >          const secondAs = this.parseIdentifier();</span>
+<span class="cstat-no" title="statement not covered" >          if (tokenIsKeywordOrIdentifier(this.state.type)) {</span>
+<span class="cstat-no" title="statement not covered" >            hasTypeSpecifier = true;</span>
+<span class="cstat-no" title="statement not covered" >            node.local = firstAs;</span>
+<span class="cstat-no" title="statement not covered" >            node.exported = this.parseModuleExportName();</span>
+<span class="cstat-no" title="statement not covered" >          } else {</span>
+<span class="cstat-no" title="statement not covered" >            node.exported = secondAs;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >        } else if (tokenIsKeywordOrIdentifier(this.state.type)) {</span>
+<span class="cstat-no" title="statement not covered" >          node.exported = this.parseModuleExportName();</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >          hasTypeSpecifier = true;</span>
+<span class="cstat-no" title="statement not covered" >          node.local = firstAs;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      } else if (tokenIsKeywordOrIdentifier(this.state.type)) {</span>
+<span class="cstat-no" title="statement not covered" >        hasTypeSpecifier = true;</span>
+<span class="cstat-no" title="statement not covered" >        node.local = this.parseModuleExportName();</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (!node[rightOfAsKey]) {</span>
-<span class="cstat-no" title="statement not covered" >        node[rightOfAsKey] = this.cloneIdentifier(node[leftOfAsKey]);</span>
+<span class="cstat-no" title="statement not covered" >      if (hasTypeSpecifier &amp;&amp; isInTypeOnly) {</span>
+<span class="cstat-no" title="statement not covered" >        this.raise(TSErrors.TypeModifierIsUsedInTypeExports, local);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (isImport) {</span>
-<span class="cstat-no" title="statement not covered" >        this.checkIdentifier(node[rightOfAsKey], hasTypeSpecifier ? 4098 : 4096);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      node.exportKind = hasTypeSpecifier ? "type" : "value";</span>
+<span class="cstat-no" title="statement not covered" >      node.exported ?? (node.exported = this.eatContextual(89) ? this.parseModuleExportName() : this.cloneIdentifier(node.local));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    fillOptionalPropertiesForTSESLint(node) {</span>
 <span class="cstat-no" title="statement not covered" >      switch (node.type) {</span>
@@ -45027,6 +45008,16 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return isUncomputedMemberExpressionChain(expression.object);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function buildModifiersMap(allowed, disallow = []) {</span>
+<span class="cstat-no" title="statement not covered" >    const map = /* @__PURE__ */ new Map();</span>
+<span class="cstat-no" title="statement not covered" >    for (const modifier of allowed) {</span>
+<span class="cstat-no" title="statement not covered" >      map.set(modifier, true);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    for (const modifier of disallow) {</span>
+<span class="cstat-no" title="statement not covered" >      map.set(modifier, false);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return map;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  var PlaceholderErrorTemplates = {</span>
 <span class="cstat-no" title="statement not covered" >    ClassNameIsRequired: "A class name is required.",</span>
 <span class="cstat-no" title="statement not covered" >    UnexpectedSpace: "Unexpected space in placeholder."</span>
@@ -45187,15 +45178,7 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return super.maybeParseExportDefaultSpecifier(node, maybeDefaultIdentifier);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    checkExport(node) {</span>
-<span class="cstat-no" title="statement not covered" >      const {</span>
-<span class="cstat-no" title="statement not covered" >        specifiers</span>
-<span class="cstat-no" title="statement not covered" >      } = node;</span>
-<span class="cstat-no" title="statement not covered" >      if (specifiers?.length) {</span>
-<span class="cstat-no" title="statement not covered" >        node.specifiers = specifiers.filter((node2) =&gt; node2.exported.type === "Placeholder");</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      super.checkExport(node);</span>
-<span class="cstat-no" title="statement not covered" >      node.specifiers = specifiers;</span>
+<span class="cstat-no" title="statement not covered" >    checkNamedExport() {</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parseImport(node) {</span>
 <span class="cstat-no" title="statement not covered" >      const placeholder = this.parsePlaceholder("Identifier");</span>
@@ -46691,7 +46674,6 @@
 <span class="cstat-no" title="statement not covered" >    if (typeof filepath !== "string") {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    filepath = filepath.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >    if (/\.(?:mjs|mts)$/i.test(filepath)) {</span>
 <span class="cstat-no" title="statement not covered" >      return SOURCE_TYPE_MODULE;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -47083,7 +47065,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-10T04:10:41.509Z
+                at 2026-09-11T04:10:41.181Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

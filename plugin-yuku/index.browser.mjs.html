@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14348</span>
+                <span class='fraction'>0/14366</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14348</span>
+                <span class='fraction'>0/14366</span>
             </div>
         
             
@@ -14411,7 +14411,43 @@
 <a name='L14346'></a><a href='#L14346'>14346</a>
 <a name='L14347'></a><a href='#L14347'>14347</a>
 <a name='L14348'></a><a href='#L14348'>14348</a>
-<a name='L14349'></a><a href='#L14349'>14349</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L14349'></a><a href='#L14349'>14349</a>
+<a name='L14350'></a><a href='#L14350'>14350</a>
+<a name='L14351'></a><a href='#L14351'>14351</a>
+<a name='L14352'></a><a href='#L14352'>14352</a>
+<a name='L14353'></a><a href='#L14353'>14353</a>
+<a name='L14354'></a><a href='#L14354'>14354</a>
+<a name='L14355'></a><a href='#L14355'>14355</a>
+<a name='L14356'></a><a href='#L14356'>14356</a>
+<a name='L14357'></a><a href='#L14357'>14357</a>
+<a name='L14358'></a><a href='#L14358'>14358</a>
+<a name='L14359'></a><a href='#L14359'>14359</a>
+<a name='L14360'></a><a href='#L14360'>14360</a>
+<a name='L14361'></a><a href='#L14361'>14361</a>
+<a name='L14362'></a><a href='#L14362'>14362</a>
+<a name='L14363'></a><a href='#L14363'>14363</a>
+<a name='L14364'></a><a href='#L14364'>14364</a>
+<a name='L14365'></a><a href='#L14365'>14365</a>
+<a name='L14366'></a><a href='#L14366'>14366</a>
+<a name='L14367'></a><a href='#L14367'>14367</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -31229,6 +31265,11 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var create_parser_default = createParser;</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/parse/utilities/is-dts-file.js</span>
+<span class="cstat-no" title="statement not covered" >function isDtsFile(filepath) {</span>
+<span class="cstat-no" title="statement not covered" >  return typeof filepath === "string" &amp;&amp; /\.d\.(?:ts|mts|cts)$/i.test(filepath);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/parse/utilities/jsx-regexp.evaluate.js</span>
 <span class="cstat-no" title="statement not covered" >var jsx_regexp_evaluate_default = /^[^"'`]*&lt;\/|^[^/]{2}.*\/&gt;/m;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -31263,7 +31304,6 @@
 <span class="cstat-no" title="statement not covered" >  if (typeof filepath !== "string") {</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  filepath = filepath.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >  if (/\.(?:mjs|mts)$/i.test(filepath)) {</span>
 <span class="cstat-no" title="statement not covered" >    return SOURCE_TYPE_MODULE;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -31323,7 +31363,7 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function getLanguageCombinations(text, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const filepath = options2?.filepath;</span>
-<span class="cstat-no" title="statement not covered" >  if (typeof filepath === "string" &amp;&amp; filepath.toLowerCase().endsWith(".d.ts")) {</span>
+<span class="cstat-no" title="statement not covered" >  if (isDtsFile(filepath)) {</span>
 <span class="cstat-no" title="statement not covered" >    return ["dts"];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const isTsx = shouldEnableJsx(filepath);</span>
@@ -33236,7 +33276,8 @@
 <span class="cstat-no" title="statement not covered" >  switch (parent.type) {</span>
 <span class="cstat-no" title="statement not covered" >    case "ReturnStatement":</span>
 <span class="cstat-no" title="statement not covered" >    case "ThrowStatement":</span>
-<span class="cstat-no" title="statement not covered" >      if (willReturnOrThrowStatementBreak(path, options2)) {</span>
+<span class="cstat-no" title="statement not covered" >    case "YieldExpression":</span>
+<span class="cstat-no" title="statement not covered" >      if (willArgumentBreakAndAddParentheses(path, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
@@ -33287,9 +33328,9 @@
 <span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function willReturnOrThrowStatementBreak(path, options2) {</span>
+<span class="cstat-no" title="statement not covered" >function willArgumentBreakAndAddParentheses(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const { key, parent } = path;</span>
-<span class="cstat-no" title="statement not covered" >  if (!(key === "argument" &amp;&amp; isReturnOrThrowStatement(parent))) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!(key === "argument" &amp;&amp; (isReturnOrThrowStatement(parent) || parent.type === "YieldExpression"))) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
@@ -40223,7 +40264,7 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/print/return-statement.js</span>
-<span class="cstat-no" title="statement not covered" >function printReturnOrThrowArgument(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >function printArgumentNode(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  const argumentDoc = print3();</span>
 <span class="cstat-no" title="statement not covered" >  if (returnArgumentHasLeadingComment(node, options2)) {</span>
@@ -40239,18 +40280,34 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return argumentDoc;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function printReturnOrThrowStatement(path, options2, print3) {</span>
-<span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >function printArgument(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!path.node.argument) {</span>
+<span class="cstat-no" title="statement not covered" >    return "";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return [</span>
-<span class="cstat-no" title="statement not covered" >    node.type === "ThrowStatement" ? "throw" : "return",</span>
-<span class="cstat-no" title="statement not covered" >    node.argument ? [</span>
-<span class="cstat-no" title="statement not covered" >      " ",</span>
-<span class="cstat-no" title="statement not covered" >      path.call(</span>
-<span class="cstat-no" title="statement not covered" >        () =&gt; printReturnOrThrowArgument(path, options2, print3),</span>
-<span class="cstat-no" title="statement not covered" >        "argument"</span>
-<span class="cstat-no" title="statement not covered" >      )</span>
-<span class="cstat-no" title="statement not covered" >    ] : "",</span>
+<span class="cstat-no" title="statement not covered" >    " ",</span>
+<span class="cstat-no" title="statement not covered" >    path.call(() =&gt; printArgumentNode(path, options2, print3), "argument")</span>
+<span class="cstat-no" title="statement not covered" >  ];</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function printReturnStatement(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >  return [</span>
+<span class="cstat-no" title="statement not covered" >    "return",</span>
+<span class="cstat-no" title="statement not covered" >    printArgument(path, options2, print3),</span>
 <span class="cstat-no" title="statement not covered" >    printSemicolon(options2)</span>
+<span class="cstat-no" title="statement not covered" >  ];</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function printThrowStatement(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >  return [</span>
+<span class="cstat-no" title="statement not covered" >    "throw",</span>
+<span class="cstat-no" title="statement not covered" >    printArgument(path, options2, print3),</span>
+<span class="cstat-no" title="statement not covered" >    printSemicolon(options2)</span>
+<span class="cstat-no" title="statement not covered" >  ];</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function printYieldExpression(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >  return [</span>
+<span class="cstat-no" title="statement not covered" >    "yield",</span>
+<span class="cstat-no" title="statement not covered" >    path.node.delegate ? "*" : "",</span>
+<span class="cstat-no" title="statement not covered" >    printArgument(path, options2, print3)</span>
 <span class="cstat-no" title="statement not covered" >  ];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -40822,10 +40879,7 @@
 <span class="cstat-no" title="statement not covered" >    case "ArrowFunctionExpression":</span>
 <span class="cstat-no" title="statement not covered" >      return printArrowFunction(path, options2, print3, args);</span>
 <span class="cstat-no" title="statement not covered" >    case "YieldExpression":</span>
-<span class="cstat-no" title="statement not covered" >      return [</span>
-<span class="cstat-no" title="statement not covered" >        `yield${node.delegate ? "*" : ""}`,</span>
-<span class="cstat-no" title="statement not covered" >        node.argument ? [" ", print3("argument")] : ""</span>
-<span class="cstat-no" title="statement not covered" >      ];</span>
+<span class="cstat-no" title="statement not covered" >      return printYieldExpression(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "AwaitExpression":</span>
 <span class="cstat-no" title="statement not covered" >      return printAwaitExpression(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "ExportDefaultDeclaration":</span>
@@ -40850,9 +40904,9 @@
 <span class="cstat-no" title="statement not covered" >    case "ClassBody":</span>
 <span class="cstat-no" title="statement not covered" >      return printClassBody(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "ThrowStatement":</span>
-<span class="cstat-no" title="statement not covered" >      return printReturnOrThrowStatement(path, options2, print3);</span>
+<span class="cstat-no" title="statement not covered" >      return printThrowStatement(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "ReturnStatement":</span>
-<span class="cstat-no" title="statement not covered" >      return printReturnOrThrowStatement(path, options2, print3);</span>
+<span class="cstat-no" title="statement not covered" >      return printReturnStatement(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "NewExpression":</span>
 <span class="cstat-no" title="statement not covered" >    case "ImportExpression":</span>
 <span class="cstat-no" title="statement not covered" >    case "OptionalCallExpression":</span>
@@ -43114,7 +43168,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-10T04:10:43.602Z
+                at 2026-09-11T04:10:44.082Z
             </div>
         <script src="../prettify.js"></script>
         <script>
