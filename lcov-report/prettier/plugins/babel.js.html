@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15666</span>
+                <span class='fraction'>0/15669</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15666</span>
+                <span class='fraction'>0/15669</span>
             </div>
         
             
@@ -15728,7 +15728,13 @@
 <a name='L15663'></a><a href='#L15663'>15663</a>
 <a name='L15664'></a><a href='#L15664'>15664</a>
 <a name='L15665'></a><a href='#L15665'>15665</a>
-<a name='L15666'></a><a href='#L15666'>15666</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L15666'></a><a href='#L15666'>15666</a>
+<a name='L15667'></a><a href='#L15667'>15667</a>
+<a name='L15668'></a><a href='#L15668'>15668</a>
+<a name='L15669'></a><a href='#L15669'>15669</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -46670,6 +46676,10 @@
 <span class="cstat-no" title="statement not covered" >    /** @type {const} */</span>
 <span class="cstat-no" title="statement not covered" >    "commonjs"</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >  var SOURCE_TYPE_COMBINATIONS = [</span>
+<span class="cstat-no" title="statement not covered" >    SOURCE_TYPE_MODULE,</span>
+<span class="cstat-no" title="statement not covered" >    SOURCE_TYPE_COMMONJS</span>
+<span class="cstat-no" title="statement not covered" >  ];</span>
 <span class="cstat-no" title="statement not covered" >  function getSourceType(filepath) {</span>
 <span class="cstat-no" title="statement not covered" >    if (typeof filepath !== "string") {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -46708,7 +46718,6 @@
 <span class="cstat-no" title="statement not covered" >  // src/language-js/parse/babel.js</span>
 <span class="cstat-no" title="statement not covered" >  var createBabelParser = (options) =&gt; create_parser_default(createParse(options));</span>
 <span class="cstat-no" title="statement not covered" >  var parseOptions = {</span>
-<span class="cstat-no" title="statement not covered" >    sourceType: SOURCE_TYPE_MODULE,</span>
 <span class="cstat-no" title="statement not covered" >    allowImportExportEverywhere: true,</span>
 <span class="cstat-no" title="statement not covered" >    allowReturnOutsideFunction: true,</span>
 <span class="cstat-no" title="statement not covered" >    allowNewTargetOutsideFunction: true,</span>
@@ -46787,17 +46796,17 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      let combinations = optionsCombinations;</span>
 <span class="cstat-no" title="statement not covered" >      const sourceType = options.__babelSourceType ?? getSourceType(filepath);</span>
-<span class="cstat-no" title="statement not covered" >      if (sourceType &amp;&amp; sourceType !== SOURCE_TYPE_MODULE) {</span>
-<span class="cstat-no" title="statement not covered" >        combinations = combinations.map((options2) =&gt; ({</span>
+<span class="cstat-no" title="statement not covered" >      combinations = (sourceType ? [sourceType] : SOURCE_TYPE_COMBINATIONS).flatMap(</span>
+<span class="cstat-no" title="statement not covered" >        (sourceType2) =&gt; combinations.map((options2) =&gt; ({</span>
 <span class="cstat-no" title="statement not covered" >          ...options2,</span>
-<span class="cstat-no" title="statement not covered" >          sourceType,</span>
+<span class="cstat-no" title="statement not covered" >          sourceType: sourceType2,</span>
 <span class="cstat-no" title="statement not covered" >          // `sourceType: "commonjs"` does not allow these two properties</span>
-<span class="cstat-no" title="statement not covered" >          ...sourceType === SOURCE_TYPE_COMMONJS ? {</span>
+<span class="cstat-no" title="statement not covered" >          ...sourceType2 === SOURCE_TYPE_COMMONJS ? {</span>
 <span class="cstat-no" title="statement not covered" >            allowReturnOutsideFunction: void 0,</span>
 <span class="cstat-no" title="statement not covered" >            allowNewTargetOutsideFunction: void 0</span>
 <span class="cstat-no" title="statement not covered" >          } : void 0</span>
-<span class="cstat-no" title="statement not covered" >        }));</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >        }))</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >      const shouldEnableV8intrinsicPlugin = /%[A-Z]/.test(text);</span>
 <span class="cstat-no" title="statement not covered" >      if (text.includes("|&gt;")) {</span>
 <span class="cstat-no" title="statement not covered" >        const conflictsPlugins = shouldEnableV8intrinsicPlugin ? [...pipelineOperatorPlugins, v8intrinsicPlugin] : pipelineOperatorPlugins;</span>
@@ -47065,7 +47074,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-11T04:10:41.181Z
+                at 2026-09-12T04:10:06.769Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

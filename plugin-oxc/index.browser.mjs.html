@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/24813</span>
+                <span class='fraction'>0/24833</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/24813</span>
+                <span class='fraction'>0/24833</span>
             </div>
         
             
@@ -24876,7 +24876,47 @@
 <a name='L24811'></a><a href='#L24811'>24811</a>
 <a name='L24812'></a><a href='#L24812'>24812</a>
 <a name='L24813'></a><a href='#L24813'>24813</a>
-<a name='L24814'></a><a href='#L24814'>24814</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L24814'></a><a href='#L24814'>24814</a>
+<a name='L24815'></a><a href='#L24815'>24815</a>
+<a name='L24816'></a><a href='#L24816'>24816</a>
+<a name='L24817'></a><a href='#L24817'>24817</a>
+<a name='L24818'></a><a href='#L24818'>24818</a>
+<a name='L24819'></a><a href='#L24819'>24819</a>
+<a name='L24820'></a><a href='#L24820'>24820</a>
+<a name='L24821'></a><a href='#L24821'>24821</a>
+<a name='L24822'></a><a href='#L24822'>24822</a>
+<a name='L24823'></a><a href='#L24823'>24823</a>
+<a name='L24824'></a><a href='#L24824'>24824</a>
+<a name='L24825'></a><a href='#L24825'>24825</a>
+<a name='L24826'></a><a href='#L24826'>24826</a>
+<a name='L24827'></a><a href='#L24827'>24827</a>
+<a name='L24828'></a><a href='#L24828'>24828</a>
+<a name='L24829'></a><a href='#L24829'>24829</a>
+<a name='L24830'></a><a href='#L24830'>24830</a>
+<a name='L24831'></a><a href='#L24831'>24831</a>
+<a name='L24832'></a><a href='#L24832'>24832</a>
+<a name='L24833'></a><a href='#L24833'>24833</a>
+<a name='L24834'></a><a href='#L24834'>24834</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -64395,7 +64435,7 @@
 <span class="cstat-no" title="statement not covered" >// src/language-js/parentheses/chain-expression.js</span>
 <span class="cstat-no" title="statement not covered" >function shouldAddParenthesesToChainExpression(path) {</span>
 <span class="cstat-no" title="statement not covered" >  const { key, parent } = path;</span>
-<span class="cstat-no" title="statement not covered" >  return key === "expression" &amp;&amp; parent.type === "TSNonNullExpression" || key === "object" &amp;&amp; parent.type === "MemberExpression" &amp;&amp; !parent.optional || key === "callee" &amp;&amp; parent.type === "CallExpression" &amp;&amp; !parent.optional || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression";</span>
+<span class="cstat-no" title="statement not covered" >  return key === "object" &amp;&amp; parent.type === "MemberExpression" &amp;&amp; !parent.optional || key === "callee" &amp;&amp; parent.type === "CallExpression" &amp;&amp; !parent.optional || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression" || key === "expression" &amp;&amp; parent.type === "TSNonNullExpression";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var isParenthesized = (node) =&gt; node.extra?.parenthesized;</span>
 <span class="cstat-no" title="statement not covered" >var isBabelOptionalChainElement = createTypeCheckFunction([</span>
@@ -64419,8 +64459,11 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return !(path.key === "expression" &amp;&amp; path.parent.type === "TSNonNullExpression");</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function isChainExpressionRoot(path) {</span>
+<span class="cstat-no" title="statement not covered" >  return path.node.type === "ChainExpression" || isBabelOptionalChainRoot(path);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function shouldAddParenthesesToChainElement(path) {</span>
-<span class="cstat-no" title="statement not covered" >  return (path.node.type === "ChainExpression" || isBabelOptionalChainRoot(path)) &amp;&amp; shouldAddParenthesesToChainExpression(path);</span>
+<span class="cstat-no" title="statement not covered" >  return isChainExpressionRoot(path) &amp;&amp; shouldAddParenthesesToChainExpression(path);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/parentheses/identifier.js</span>
@@ -64464,6 +64507,20 @@
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    if (statement) {</span>
 <span class="cstat-no" title="statement not covered" >      const expression = statement.type === "ExpressionStatement" ? statement.expression : statement.type === "ForStatement" ? statement.init : statement.left;</span>
+<span class="cstat-no" title="statement not covered" >      if (startsWithNoLookaheadToken(</span>
+<span class="cstat-no" title="statement not covered" >        expression,</span>
+<span class="cstat-no" title="statement not covered" >        (leftmostNode) =&gt; leftmostNode === node</span>
+<span class="cstat-no" title="statement not covered" >      )) {</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (node.name === "await") {</span>
+<span class="cstat-no" title="statement not covered" >    const statement = path.findAncestor(</span>
+<span class="cstat-no" title="statement not covered" >      (node2) =&gt; node2.type === "ExpressionStatement"</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    if (statement) {</span>
+<span class="cstat-no" title="statement not covered" >      const { expression } = statement;</span>
 <span class="cstat-no" title="statement not covered" >      if (startsWithNoLookaheadToken(</span>
 <span class="cstat-no" title="statement not covered" >        expression,</span>
 <span class="cstat-no" title="statement not covered" >        (leftmostNode) =&gt; leftmostNode === node</span>
@@ -64735,7 +64792,7 @@
 <span class="cstat-no" title="statement not covered" >  if (node.type === "Identifier") {</span>
 <span class="cstat-no" title="statement not covered" >    return shouldAddParenthesesToIdentifier(path);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (node.type === "ObjectExpression" || node.type === "FunctionExpression" || node.type === "ClassExpression" || node.type === "DoExpression") {</span>
+<span class="cstat-no" title="statement not covered" >  if (node.type === "ObjectExpression" || node.type === "FunctionExpression" || node.type === "ClassExpression" || node.type === "DoExpression" || node.type === "UnaryExpression" &amp;&amp; node.operator === "throw") {</span>
 <span class="cstat-no" title="statement not covered" >    const expression = path.findAncestor(</span>
 <span class="cstat-no" title="statement not covered" >      (node2) =&gt; node2.type === "ExpressionStatement"</span>
 <span class="cstat-no" title="statement not covered" >    )?.expression;</span>
@@ -65219,7 +65276,10 @@
 <span class="cstat-no" title="statement not covered" >    case "JSXElement":</span>
 <span class="cstat-no" title="statement not covered" >      return key === "callee" || key === "left" &amp;&amp; parent.type === "BinaryExpression" &amp;&amp; parent.operator === "&lt;" || !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) &amp;&amp; parent.type !== "TypeCastExpression" &amp;&amp; parent.type !== "VariableDeclarator" &amp;&amp; parent.type !== "YieldExpression" &amp;&amp; parent.type !== "MatchExpressionCase" &amp;&amp; !(key === "declaration" &amp;&amp; parent.type === "ExportDefaultDeclaration");</span>
 <span class="cstat-no" title="statement not covered" >    case "TSInstantiationExpression":</span>
-<span class="cstat-no" title="statement not covered" >      return key === "object" &amp;&amp; isMemberExpression(parent);</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "object" &amp;&amp; isMemberExpression(parent) || key === "callee" &amp;&amp; parent.type === "CallExpression" || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression" || key === "superClass" &amp;&amp; (parent.type === "ClassDeclaration" || parent.type === "ClassExpression")) {</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >    case "MatchOrPattern":</span>
 <span class="cstat-no" title="statement not covered" >      return parent.type === "MatchAsPattern";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -74509,7 +74569,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-11T04:10:44.082Z
+                at 2026-09-12T04:10:09.213Z
             </div>
         <script src="../prettify.js"></script>
         <script>

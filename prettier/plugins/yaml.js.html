@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8952</span>
+                <span class='fraction'>0/8962</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8952</span>
+                <span class='fraction'>0/8962</span>
             </div>
         
             
@@ -9014,7 +9014,27 @@
 <a name='L8949'></a><a href='#L8949'>8949</a>
 <a name='L8950'></a><a href='#L8950'>8950</a>
 <a name='L8951'></a><a href='#L8951'>8951</a>
-<a name='L8952'></a><a href='#L8952'>8952</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L8952'></a><a href='#L8952'>8952</a>
+<a name='L8953'></a><a href='#L8953'>8953</a>
+<a name='L8954'></a><a href='#L8954'>8954</a>
+<a name='L8955'></a><a href='#L8955'>8955</a>
+<a name='L8956'></a><a href='#L8956'>8956</a>
+<a name='L8957'></a><a href='#L8957'>8957</a>
+<a name='L8958'></a><a href='#L8958'>8958</a>
+<a name='L8959'></a><a href='#L8959'>8959</a>
+<a name='L8960'></a><a href='#L8960'>8960</a>
+<a name='L8961'></a><a href='#L8961'>8961</a>
+<a name='L8962'></a><a href='#L8962'>8962</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -19641,10 +19661,10 @@
 <span class="cstat-no" title="statement not covered" >    for (let line2 = commentLine; line2 &gt;= document.position.start.line; line2--) {</span>
 <span class="cstat-no" title="statement not covered" >      const { trailingNode } = nodeTable[line2 - 1];</span>
 <span class="cstat-no" title="statement not covered" >      let currentNode;</span>
-<span class="cstat-no" title="statement not covered" >      if (!trailingNode)</span>
+<span class="cstat-no" title="statement not covered" >      if (!trailingNode) {</span>
 <span class="cstat-no" title="statement not covered" >        if (line2 !== commentLine &amp;&amp; nodeTable[line2 - 1].comment) currentNode = nodeTable[line2 - 1].comment._parent;</span>
 <span class="cstat-no" title="statement not covered" >        else continue;</span>
-<span class="cstat-no" title="statement not covered" >      else currentNode = trailingNode;</span>
+<span class="cstat-no" title="statement not covered" >      } else currentNode = trailingNode;</span>
 <span class="cstat-no" title="statement not covered" >      if (currentNode.type === "sequence" || currentNode.type === "mapping") currentNode = currentNode.children[0];</span>
 <span class="cstat-no" title="statement not covered" >      if (currentNode.type === "mappingItem") {</span>
 <span class="cstat-no" title="statement not covered" >        const [mappingKey, mappingValue] = currentNode.children;</span>
@@ -19780,6 +19800,7 @@
 <span class="cstat-no" title="statement not covered" >          if (firstTagOrAnchorRange &amp;&amp; firstTagOrAnchorRange[0] &lt;= tokenRange[0] &amp;&amp; tokenRange[1] &lt;= node.range[0]) middleComments.push(comment);</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        // istanbul ignore next -- @preserve</span>
 <span class="cstat-no" title="statement not covered" >        default:</span>
 <span class="cstat-no" title="statement not covered" >          throw new Error(`Unexpected content property token type: ${token.type}`);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -19801,9 +19822,9 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/yaml-unist-parser/dist/cst.mjs</span>
 <span class="cstat-no" title="statement not covered" >  function* tokens(...tokensArgs) {</span>
-<span class="cstat-no" title="statement not covered" >    for (const tokens$1 of tokensArgs) {</span>
-<span class="cstat-no" title="statement not covered" >      if (!tokens$1) continue;</span>
-<span class="cstat-no" title="statement not covered" >      for (const token of tokens$1) {</span>
+<span class="cstat-no" title="statement not covered" >    for (const tokens2 of tokensArgs) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!tokens2) continue;</span>
+<span class="cstat-no" title="statement not covered" >      for (const token of tokens2) {</span>
 <span class="cstat-no" title="statement not covered" >        if (isSpace(token)) continue;</span>
 <span class="cstat-no" title="statement not covered" >        yield token;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -19864,7 +19885,8 @@
 <span class="cstat-no" title="statement not covered" >      throw new Error(`Unexpected token type in block value end: ${token.type}`);</span>
 <span class="cstat-no" title="statement not covered" >    if (!blockScalarHeaderToken) throw new Error("Expected block scalar header token");</span>
 <span class="cstat-no" title="statement not covered" >    const headerInfo = parseHeader(blockScalarHeaderToken.source);</span>
-<span class="cstat-no" title="statement not covered" >    return createBlockValue(context.transformRange(blockValue.range), context.transformContentProperties(blockValue, props.tokens), headerInfo.chomping, headerInfo.indent, blockValue.source, indicatorComment);</span>
+<span class="cstat-no" title="statement not covered" >    const position = context.transformRange(blockValue.range);</span>
+<span class="cstat-no" title="statement not covered" >    return createBlockValue(position, context.transformContentProperties(blockValue, props.tokens), headerInfo.chomping, headerInfo.indent, blockValue.source, indicatorComment);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function parseHeader(header) {</span>
 <span class="cstat-no" title="statement not covered" >    const parsed = /([+-]?)(\d*)([+-]?)$/u.exec(header);</span>
@@ -20011,7 +20033,10 @@
 <span class="cstat-no" title="statement not covered" >    if (!isEmptyNode2(pair.value, additionalValueData.props)) valueContent = context.transformNode(pair.value, additionalValueData.props);</span>
 <span class="cstat-no" title="statement not covered" >    else extractComments(additionalValueData.props.tokens, context);</span>
 <span class="cstat-no" title="statement not covered" >    const mappingKey = createMappingKey(context.transformRange([additionalKeyData.range ? additionalKeyData.range[0] : keyContent.position.start.offset, keyContent ? keyContent.position.end.offset : additionalKeyData.range[1]]), keyContent);</span>
-<span class="cstat-no" title="statement not covered" >    const mappingValue = valueContent || additionalValueData.range ? createMappingValue(context.transformRange([additionalValueData.range ? additionalValueData.range[0] : valueContent.position.start.offset, valueContent ? valueContent.position.end.offset : additionalValueData.range[0] + 1]), valueContent) : null;</span>
+<span class="cstat-no" title="statement not covered" >    const mappingValue = valueContent || additionalValueData.range ? createMappingValue(context.transformRange([additionalValueData.range ? additionalValueData.range[0] : (</span>
+<span class="cstat-no" title="statement not covered" >      // istanbul ignore next -- @preserve</span>
+<span class="cstat-no" title="statement not covered" >      valueContent.position.start.offset</span>
+<span class="cstat-no" title="statement not covered" >    ), valueContent ? valueContent.position.end.offset : additionalValueData.range[0] + 1]), valueContent) : null;</span>
 <span class="cstat-no" title="statement not covered" >    return createNode2(createPosition(mappingKey.position.start, mappingValue ? mappingValue.position.end : mappingKey.position.end), mappingKey, mappingValue || createMappingValue(createEmptyPosition(mappingKey.position.end), null));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -20610,36 +20635,38 @@
 <span class="cstat-no" title="statement not covered" >        if (node.anchor === this.source)</span>
 <span class="cstat-no" title="statement not covered" >          found = node;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (found &amp;&amp; ctx) {</span>
+<span class="cstat-no" title="statement not covered" >        const { anchors, doc: doc2, maxAliasCount } = ctx;</span>
+<span class="cstat-no" title="statement not covered" >        let data = anchors.get(found);</span>
+<span class="cstat-no" title="statement not covered" >        if (!data) {</span>
+<span class="cstat-no" title="statement not covered" >          toJS(found, null, ctx);</span>
+<span class="cstat-no" title="statement not covered" >          data = anchors.get(found);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (data?.res === void 0) {</span>
+<span class="cstat-no" title="statement not covered" >          const msg = "This should not happen: Alias anchor was not resolved?";</span>
+<span class="cstat-no" title="statement not covered" >          throw new ReferenceError(msg);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (maxAliasCount &gt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >          data.count += 1;</span>
+<span class="cstat-no" title="statement not covered" >          if (data.aliasCount === 0)</span>
+<span class="cstat-no" title="statement not covered" >            data.aliasCount = getAliasCount(doc2, found, anchors);</span>
+<span class="cstat-no" title="statement not covered" >          if (data.count * data.aliasCount &gt; maxAliasCount) {</span>
+<span class="cstat-no" title="statement not covered" >            const msg = "Excessive alias count indicates a resource exhaustion attack";</span>
+<span class="cstat-no" title="statement not covered" >            throw new ReferenceError(msg);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return found;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    toJSON(_arg, ctx) {</span>
 <span class="cstat-no" title="statement not covered" >      if (!ctx)</span>
 <span class="cstat-no" title="statement not covered" >        return { source: this.source };</span>
-<span class="cstat-no" title="statement not covered" >      const { anchors, doc, maxAliasCount } = ctx;</span>
-<span class="cstat-no" title="statement not covered" >      const source = this.resolve(doc, ctx);</span>
+<span class="cstat-no" title="statement not covered" >      const source = this.resolve(ctx.doc, ctx);</span>
 <span class="cstat-no" title="statement not covered" >      if (!source) {</span>
 <span class="cstat-no" title="statement not covered" >        const msg = `Unresolved alias (the anchor must be set before the alias): ${this.source}`;</span>
 <span class="cstat-no" title="statement not covered" >        throw new ReferenceError(msg);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      let data = anchors.get(source);</span>
-<span class="cstat-no" title="statement not covered" >      if (!data) {</span>
-<span class="cstat-no" title="statement not covered" >        toJS(source, null, ctx);</span>
-<span class="cstat-no" title="statement not covered" >        data = anchors.get(source);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (data?.res === void 0) {</span>
-<span class="cstat-no" title="statement not covered" >        const msg = "This should not happen: Alias anchor was not resolved?";</span>
-<span class="cstat-no" title="statement not covered" >        throw new ReferenceError(msg);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (maxAliasCount &gt;= 0) {</span>
-<span class="cstat-no" title="statement not covered" >        data.count += 1;</span>
-<span class="cstat-no" title="statement not covered" >        if (data.aliasCount === 0)</span>
-<span class="cstat-no" title="statement not covered" >          data.aliasCount = getAliasCount(doc, source, anchors);</span>
-<span class="cstat-no" title="statement not covered" >        if (data.count * data.aliasCount &gt; maxAliasCount) {</span>
-<span class="cstat-no" title="statement not covered" >          const msg = "Excessive alias count indicates a resource exhaustion attack";</span>
-<span class="cstat-no" title="statement not covered" >          throw new ReferenceError(msg);</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return data.res;</span>
+<span class="cstat-no" title="statement not covered" >      return ctx.anchors.get(source).res;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    toString(ctx, _onComment, _onChompKeep) {</span>
 <span class="cstat-no" title="statement not covered" >      const src = `*${this.source}`;</span>
@@ -24097,37 +24124,38 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (badChar)</span>
 <span class="cstat-no" title="statement not covered" >      onError(0, "BAD_SCALAR_START", `Plain value cannot start with ${badChar}`);</span>
-<span class="cstat-no" title="statement not covered" >    return foldLines(source);</span>
+<span class="cstat-no" title="statement not covered" >    return unfoldLines(source);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function singleQuotedValue(source, onError) {</span>
 <span class="cstat-no" title="statement not covered" >    if (source[source.length - 1] !== "'" || source.length === 1)</span>
 <span class="cstat-no" title="statement not covered" >      onError(source.length, "MISSING_CHAR", "Missing closing 'quote");</span>
-<span class="cstat-no" title="statement not covered" >    return foldLines(source.slice(1, -1)).replace(/''/g, "'");</span>
+<span class="cstat-no" title="statement not covered" >    return unfoldLines(source.slice(1, -1)).replace(/''/g, "'");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function foldLines(source) {</span>
-<span class="cstat-no" title="statement not covered" >    let first, line2;</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      first = new RegExp("(.*?)(?&lt;![ 	])[ 	]*\r?\n", "sy");</span>
-<span class="cstat-no" title="statement not covered" >      line2 = new RegExp("[ 	]*(.*?)(?:(?&lt;![ 	])[ 	]*)?\r?\n", "sy");</span>
-<span class="cstat-no" title="statement not covered" >    } catch {</span>
-<span class="cstat-no" title="statement not covered" >      first = /(.*?)[ \t]*\r?\n/sy;</span>
-<span class="cstat-no" title="statement not covered" >      line2 = /[ \t]*(.*?)[ \t]*\r?\n/sy;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    let match = first.exec(source);</span>
+<span class="cstat-no" title="statement not covered" >  function unfoldLines(source) {</span>
+<span class="cstat-no" title="statement not covered" >    const line2 = /(.*?)\r?\n/sy;</span>
+<span class="cstat-no" title="statement not covered" >    let match = line2.exec(source);</span>
 <span class="cstat-no" title="statement not covered" >    if (!match)</span>
 <span class="cstat-no" title="statement not covered" >      return source;</span>
-<span class="cstat-no" title="statement not covered" >    let res = match[1];</span>
+<span class="cstat-no" title="statement not covered" >    let trimEnd, trimBoth;</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      trimEnd = new RegExp("(?&lt;![ 	])[ 	]+$");</span>
+<span class="cstat-no" title="statement not covered" >      trimBoth = new RegExp("^[ 	]+|(?&lt;![ 	])[ 	]+$", "g");</span>
+<span class="cstat-no" title="statement not covered" >    } catch {</span>
+<span class="cstat-no" title="statement not covered" >      trimEnd = /[ \t]+$/;</span>
+<span class="cstat-no" title="statement not covered" >      trimBoth = /^[ \t]+|[ \t]+$/g;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    let res = match[1].replace(trimEnd, "");</span>
 <span class="cstat-no" title="statement not covered" >    let sep = " ";</span>
-<span class="cstat-no" title="statement not covered" >    let pos = first.lastIndex;</span>
-<span class="cstat-no" title="statement not covered" >    line2.lastIndex = pos;</span>
+<span class="cstat-no" title="statement not covered" >    let pos = line2.lastIndex;</span>
 <span class="cstat-no" title="statement not covered" >    while (match = line2.exec(source)) {</span>
-<span class="cstat-no" title="statement not covered" >      if (match[1] === "") {</span>
+<span class="cstat-no" title="statement not covered" >      const lm = match[1].replace(trimBoth, "");</span>
+<span class="cstat-no" title="statement not covered" >      if (lm === "") {</span>
 <span class="cstat-no" title="statement not covered" >        if (sep === "\n")</span>
 <span class="cstat-no" title="statement not covered" >          res += sep;</span>
 <span class="cstat-no" title="statement not covered" >        else</span>
 <span class="cstat-no" title="statement not covered" >          sep = "\n";</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        res += sep + match[1];</span>
+<span class="cstat-no" title="statement not covered" >        res += sep + lm;</span>
 <span class="cstat-no" title="statement not covered" >        sep = " ";</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      pos = line2.lastIndex;</span>
@@ -26256,7 +26284,10 @@
 <span class="cstat-no" title="statement not covered" >    if (!srcToken || srcToken.type !== "flow-collection") throw new Error("Expected flow-collection CST node for flow sequence");</span>
 <span class="cstat-no" title="statement not covered" >    const flowSequenceItems = flowSeq.items.map((item, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      const srcItem = srcToken.items[index];</span>
-<span class="cstat-no" title="statement not covered" >      if (isBlockMappingOfImmediateChildOfFlowSequence(item, srcItem)) return transformPair(getLast(item.items), srcItem, context, createFlowMappingItem);</span>
+<span class="cstat-no" title="statement not covered" >      if (isBlockMappingOfImmediateChildOfFlowSequence(item, srcItem)) {</span>
+<span class="cstat-no" title="statement not covered" >        const pair = getLast(item.items);</span>
+<span class="cstat-no" title="statement not covered" >        return transformPair(pair, srcItem, context, createFlowMappingItem);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (!isPair(item)) {</span>
 <span class="cstat-no" title="statement not covered" >        const propTokens = [];</span>
 <span class="cstat-no" title="statement not covered" >        for (const token of tokens(srcItem.start)) {</span>
@@ -26549,7 +26580,6 @@
 <span class="cstat-no" title="statement not covered" >      return transformContentProperties(node, tokens2, this);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" >  var context_default = Context;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/yaml-unist-parser/dist/factories/document.mjs</span>
 <span class="cstat-no" title="statement not covered" >  function createDocument(position, directivesEndMarker, documentEndMarker, head, body, trailingComment) {</span>
@@ -26852,7 +26882,7 @@
 <span class="cstat-no" title="statement not covered" >  // node_modules/yaml-unist-parser/dist/parse.mjs</span>
 <span class="cstat-no" title="statement not covered" >  function parse2(text, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    const lineCounter = new LineCounter();</span>
-<span class="cstat-no" title="statement not covered" >    const context = new context_default(text, lineCounter);</span>
+<span class="cstat-no" title="statement not covered" >    const context = new Context(text, lineCounter);</span>
 <span class="cstat-no" title="statement not covered" >    const parser = new Parser(lineCounter.addNewLine);</span>
 <span class="cstat-no" title="statement not covered" >    const composer = new Composer({</span>
 <span class="cstat-no" title="statement not covered" >      keepSourceTokens: true,</span>
@@ -26923,7 +26953,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-11T04:10:44.082Z
+                at 2026-09-12T04:10:09.213Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

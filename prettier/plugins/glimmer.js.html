@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8680</span>
+                <span class='fraction'>0/8686</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8680</span>
+                <span class='fraction'>0/8686</span>
             </div>
         
             
@@ -8742,7 +8742,19 @@
 <a name='L8677'></a><a href='#L8677'>8677</a>
 <a name='L8678'></a><a href='#L8678'>8678</a>
 <a name='L8679'></a><a href='#L8679'>8679</a>
-<a name='L8680'></a><a href='#L8680'>8680</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L8680'></a><a href='#L8680'>8680</a>
+<a name='L8681'></a><a href='#L8681'>8681</a>
+<a name='L8682'></a><a href='#L8682'>8682</a>
+<a name='L8683'></a><a href='#L8683'>8683</a>
+<a name='L8684'></a><a href='#L8684'>8684</a>
+<a name='L8685'></a><a href='#L8685'>8685</a>
+<a name='L8686'></a><a href='#L8686'>8686</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18019,74 +18031,6 @@
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  var unexpected_node_error_default = UnexpectedNodeError;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // src/language-handlebars/embed.js</span>
-<span class="cstat-no" title="statement not covered" >  function embed(path) {</span>
-<span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
-<span class="cstat-no" title="statement not covered" >    if (node.type !== "TextNode") {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const { parent } = path;</span>
-<span class="cstat-no" title="statement not covered" >    if (!(parent.type === "ElementNode" &amp;&amp; parent.tag === "style" &amp;&amp; parent.children.length === 1 &amp;&amp; parent.children[0] === node)) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const languageAttribute = parent.attributes.find(</span>
-<span class="cstat-no" title="statement not covered" >      (attribute) =&gt; attribute.type === "AttrNode" &amp;&amp; attribute.name === "lang"</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    if (languageAttribute &amp;&amp; !(languageAttribute.value.type === "TextNode" &amp;&amp; (languageAttribute.value.chars === "" || languageAttribute.value.chars === "css"))) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return async (textToDoc) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      const context = node.chars;</span>
-<span class="cstat-no" title="statement not covered" >      if (!context.trim()) {</span>
-<span class="cstat-no" title="statement not covered" >        return "";</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const doc = await textToDoc(context, { parser: "css" });</span>
-<span class="cstat-no" title="statement not covered" >      return doc;</span>
-<span class="cstat-no" title="statement not covered" >    };</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  var embed_default = embed;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // node_modules/to-fast-properties/index.js</span>
-<span class="cstat-no" title="statement not covered" >  var fastProto = null;</span>
-<span class="cstat-no" title="statement not covered" >  function FastObject(object) {</span>
-<span class="cstat-no" title="statement not covered" >    if (fastProto !== null &amp;&amp; typeof fastProto.property) {</span>
-<span class="cstat-no" title="statement not covered" >      const result = fastProto;</span>
-<span class="cstat-no" title="statement not covered" >      fastProto = FastObject.prototype = null;</span>
-<span class="cstat-no" title="statement not covered" >      return result;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    fastProto = FastObject.prototype = object == null ? /* @__PURE__ */ Object.create(null) : object;</span>
-<span class="cstat-no" title="statement not covered" >    return new FastObject();</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  var inlineCacheCutoff = 10;</span>
-<span class="cstat-no" title="statement not covered" >  for (let index = 0; index &lt;= inlineCacheCutoff; index++) {</span>
-<span class="cstat-no" title="statement not covered" >    FastObject();</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function toFastproperties(object) {</span>
-<span class="cstat-no" title="statement not covered" >    return FastObject(object);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // src/utilities/create-get-visitor-keys.js</span>
-<span class="cstat-no" title="statement not covered" >  function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {</span>
-<span class="cstat-no" title="statement not covered" >    toFastproperties(visitorKeys2);</span>
-<span class="cstat-no" title="statement not covered" >    function getVisitorKeys2(node) {</span>
-<span class="cstat-no" title="statement not covered" >      const type = node[typeProperty];</span>
-<span class="cstat-no" title="statement not covered" >      if (false) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(</span>
-<span class="cstat-no" title="statement not covered" >          `Can't get node type, you must pass the wrong typeProperty '${typeProperty}'`</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const keys = visitorKeys2[type];</span>
-<span class="cstat-no" title="statement not covered" >      if (!Array.isArray(keys)) {</span>
-<span class="cstat-no" title="statement not covered" >        throw Object.assign(new Error(`Missing visitor keys for '${type}'.`), {</span>
-<span class="cstat-no" title="statement not covered" >          node</span>
-<span class="cstat-no" title="statement not covered" >        });</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return keys;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return getVisitorKeys2;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  var create_get_visitor_keys_default = createGetVisitorKeys;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/@glimmer/util/dist/dev/index.js</span>
 <span class="cstat-no" title="statement not covered" >  var EMPTY_ARRAY = Object.freeze([]);</span>
 <span class="cstat-no" title="statement not covered" >  function emptyArray() {</span>
@@ -25216,6 +25160,104 @@
 <span class="cstat-no" title="statement not covered" >    isAngleBracket: true</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/language-handlebars/utilities.js</span>
+<span class="cstat-no" title="statement not covered" >  var htmlVoidElements = new Set(getVoidTags());</span>
+<span class="cstat-no" title="statement not covered" >  function isUppercase(string) {</span>
+<span class="cstat-no" title="statement not covered" >    return string.toUpperCase() === string;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function isGlimmerComponent(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return node.type === "ElementNode" &amp;&amp; typeof node.tag === "string" &amp;&amp; !node.tag.startsWith(":") &amp;&amp; (isUppercase(node.tag[0]) || node.tag.includes("."));</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function isVoidTag2(tag) {</span>
+<span class="cstat-no" title="statement not covered" >    return htmlVoidElements.has(tag.toLowerCase()) &amp;&amp; !isUppercase(tag[0]);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function isVoidElement(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return node.selfClosing === true || isVoidTag2(node.tag) || isGlimmerComponent(node) &amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2));</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function isWhitespaceNode(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return node.type === "TextNode" &amp;&amp; !/\S/.test(node.chars);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function isPlainTextElement(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return node.type === "ElementNode" &amp;&amp; node.children.length === 1 &amp;&amp; node.children[0].type === "TextNode";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function isPlainTextStyleElement(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return isPlainTextElement(node) &amp;&amp; node.tag === "style";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function isPrettierIgnoreNode(node) {</span>
+<span class="cstat-no" title="statement not covered" >    return node?.type === "MustacheCommentStatement" &amp;&amp; typeof node.value === "string" &amp;&amp; node.value.trim() === "prettier-ignore";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function hasPrettierIgnore(path) {</span>
+<span class="cstat-no" title="statement not covered" >    return isPrettierIgnoreNode(path.node) || path.isInArray &amp;&amp; (path.key === "children" || path.key === "body" || path.key === "parts") &amp;&amp; isPrettierIgnoreNode(path.siblings[path.index - 2]);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/language-handlebars/embed.js</span>
+<span class="cstat-no" title="statement not covered" >  function embed(path) {</span>
+<span class="cstat-no" title="statement not covered" >    const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type !== "TextNode") {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const { parent } = path;</span>
+<span class="cstat-no" title="statement not covered" >    if (!(isPlainTextStyleElement(parent) &amp;&amp; parent.children[0] === node)) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const languageAttribute = parent.attributes.find(</span>
+<span class="cstat-no" title="statement not covered" >      (attribute) =&gt; attribute.type === "AttrNode" &amp;&amp; attribute.name === "lang"</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    if (languageAttribute &amp;&amp; !(languageAttribute.value.type === "TextNode" &amp;&amp; languageAttribute.value.chars === "css")) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return async (textToDoc) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const context = node.chars;</span>
+<span class="cstat-no" title="statement not covered" >      if (!context.trim()) {</span>
+<span class="cstat-no" title="statement not covered" >        return "";</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      const doc = await textToDoc(context, { parser: "css" });</span>
+<span class="cstat-no" title="statement not covered" >      return doc;</span>
+<span class="cstat-no" title="statement not covered" >    };</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var embed_default = embed;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // node_modules/to-fast-properties/index.js</span>
+<span class="cstat-no" title="statement not covered" >  var fastProto = null;</span>
+<span class="cstat-no" title="statement not covered" >  function FastObject(object) {</span>
+<span class="cstat-no" title="statement not covered" >    if (fastProto !== null &amp;&amp; typeof fastProto.property) {</span>
+<span class="cstat-no" title="statement not covered" >      const result = fastProto;</span>
+<span class="cstat-no" title="statement not covered" >      fastProto = FastObject.prototype = null;</span>
+<span class="cstat-no" title="statement not covered" >      return result;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    fastProto = FastObject.prototype = object == null ? /* @__PURE__ */ Object.create(null) : object;</span>
+<span class="cstat-no" title="statement not covered" >    return new FastObject();</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var inlineCacheCutoff = 10;</span>
+<span class="cstat-no" title="statement not covered" >  for (let index = 0; index &lt;= inlineCacheCutoff; index++) {</span>
+<span class="cstat-no" title="statement not covered" >    FastObject();</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function toFastproperties(object) {</span>
+<span class="cstat-no" title="statement not covered" >    return FastObject(object);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/utilities/create-get-visitor-keys.js</span>
+<span class="cstat-no" title="statement not covered" >  function createGetVisitorKeys(visitorKeys2, typeProperty = "type") {</span>
+<span class="cstat-no" title="statement not covered" >    toFastproperties(visitorKeys2);</span>
+<span class="cstat-no" title="statement not covered" >    function getVisitorKeys2(node) {</span>
+<span class="cstat-no" title="statement not covered" >      const type = node[typeProperty];</span>
+<span class="cstat-no" title="statement not covered" >      if (false) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(</span>
+<span class="cstat-no" title="statement not covered" >          `Can't get node type, you must pass the wrong typeProperty '${typeProperty}'`</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      const keys = visitorKeys2[type];</span>
+<span class="cstat-no" title="statement not covered" >      if (!Array.isArray(keys)) {</span>
+<span class="cstat-no" title="statement not covered" >        throw Object.assign(new Error(`Missing visitor keys for '${type}'.`), {</span>
+<span class="cstat-no" title="statement not covered" >          node</span>
+<span class="cstat-no" title="statement not covered" >        });</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      return keys;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return getVisitorKeys2;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var create_get_visitor_keys_default = createGetVisitorKeys;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-handlebars/get-visitor-keys.js</span>
 <span class="cstat-no" title="statement not covered" >  var getVisitorKeys = create_get_visitor_keys_default(visitorKeys);</span>
 <span class="cstat-no" title="statement not covered" >  var get_visitor_keys_default = getVisitorKeys;</span>
@@ -25231,7 +25273,7 @@
 <span class="cstat-no" title="statement not covered" >      if (!trimmed) {</span>
 <span class="cstat-no" title="statement not covered" >        return null;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (parent.tag === "style" &amp;&amp; parent.children.length === 1 &amp;&amp; parent.children[0] === original) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isPlainTextStyleElement(parent) &amp;&amp; parent.children[0] === original) {</span>
 <span class="cstat-no" title="statement not covered" >        cloned.chars = "";</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        cloned.chars = html_whitespace_default.split(trimmed).join(" ");</span>
@@ -25262,30 +25304,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  massageAstNode.ignoredProperties = /* @__PURE__ */ new Set(["loc", "selfClosing"]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // src/language-handlebars/utilities.js</span>
-<span class="cstat-no" title="statement not covered" >  var htmlVoidElements = new Set(getVoidTags());</span>
-<span class="cstat-no" title="statement not covered" >  function isUppercase(string) {</span>
-<span class="cstat-no" title="statement not covered" >    return string.toUpperCase() === string;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function isGlimmerComponent(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return node.type === "ElementNode" &amp;&amp; typeof node.tag === "string" &amp;&amp; !node.tag.startsWith(":") &amp;&amp; (isUppercase(node.tag[0]) || node.tag.includes("."));</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function isVoidTag2(tag) {</span>
-<span class="cstat-no" title="statement not covered" >    return htmlVoidElements.has(tag.toLowerCase()) &amp;&amp; !isUppercase(tag[0]);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function isVoidElement(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return node.selfClosing === true || isVoidTag2(node.tag) || isGlimmerComponent(node) &amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2));</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function isWhitespaceNode(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return node.type === "TextNode" &amp;&amp; !/\S/.test(node.chars);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function isPrettierIgnoreNode(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return node?.type === "MustacheCommentStatement" &amp;&amp; typeof node.value === "string" &amp;&amp; node.value.trim() === "prettier-ignore";</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function hasPrettierIgnore(path) {</span>
-<span class="cstat-no" title="statement not covered" >    return isPrettierIgnoreNode(path.node) || path.isInArray &amp;&amp; (path.key === "children" || path.key === "body" || path.key === "parts") &amp;&amp; isPrettierIgnoreNode(path.siblings[path.index - 2]);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-handlebars/printer-glimmer.js</span>
 <span class="cstat-no" title="statement not covered" >  var NEWLINES_TO_PRESERVE_MAX = 2;</span>
 <span class="cstat-no" title="statement not covered" >  function print(path, options, print2) {</span>
@@ -25304,12 +25322,12 @@
 <span class="cstat-no" title="statement not covered" >          return [startingTag];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const endingTag = ["&lt;/", node.tag, "&gt;"];</span>
-<span class="cstat-no" title="statement not covered" >        const isStyle = node.tag === "style";</span>
-<span class="cstat-no" title="statement not covered" >        if (node.children.length === 0 || (!isWhitespaceSensitive || isStyle) &amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2))) {</span>
+<span class="cstat-no" title="statement not covered" >        const isPlainStyle = isPlainTextStyleElement(node);</span>
+<span class="cstat-no" title="statement not covered" >        if (node.children.length === 0 || (!isWhitespaceSensitive || isPlainStyle) &amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2))) {</span>
 <span class="cstat-no" title="statement not covered" >          return [startingTag, endingTag];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        const parts = path.map(print2, "children");</span>
-<span class="cstat-no" title="statement not covered" >        if (isStyle || !isWhitespaceSensitive) {</span>
+<span class="cstat-no" title="statement not covered" >        if (isPlainStyle || !isWhitespaceSensitive) {</span>
 <span class="cstat-no" title="statement not covered" >          return [startingTag, indent([softline, ...parts]), softline, endingTag];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return [startingTag, indent(group(parts)), endingTag];</span>
@@ -25354,7 +25372,7 @@
 <span class="cstat-no" title="statement not covered" >          if (parent.tag === "pre") {</span>
 <span class="cstat-no" title="statement not covered" >            return replaceEndOfLine(text);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (parent.tag === "style") {</span>
+<span class="cstat-no" title="statement not covered" >          if (isPlainTextStyleElement(parent)) {</span>
 <span class="cstat-no" title="statement not covered" >            text = method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >              /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >              0,</span>
@@ -26107,7 +26125,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-11T04:10:44.082Z
+                at 2026-09-12T04:10:09.213Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
