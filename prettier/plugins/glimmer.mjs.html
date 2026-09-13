@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8654</span>
+                <span class='fraction'>0/8679</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8654</span>
+                <span class='fraction'>0/8679</span>
             </div>
         
             
@@ -8717,7 +8717,57 @@
 <a name='L8652'></a><a href='#L8652'>8652</a>
 <a name='L8653'></a><a href='#L8653'>8653</a>
 <a name='L8654'></a><a href='#L8654'>8654</a>
-<a name='L8655'></a><a href='#L8655'>8655</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L8655'></a><a href='#L8655'>8655</a>
+<a name='L8656'></a><a href='#L8656'>8656</a>
+<a name='L8657'></a><a href='#L8657'>8657</a>
+<a name='L8658'></a><a href='#L8658'>8658</a>
+<a name='L8659'></a><a href='#L8659'>8659</a>
+<a name='L8660'></a><a href='#L8660'>8660</a>
+<a name='L8661'></a><a href='#L8661'>8661</a>
+<a name='L8662'></a><a href='#L8662'>8662</a>
+<a name='L8663'></a><a href='#L8663'>8663</a>
+<a name='L8664'></a><a href='#L8664'>8664</a>
+<a name='L8665'></a><a href='#L8665'>8665</a>
+<a name='L8666'></a><a href='#L8666'>8666</a>
+<a name='L8667'></a><a href='#L8667'>8667</a>
+<a name='L8668'></a><a href='#L8668'>8668</a>
+<a name='L8669'></a><a href='#L8669'>8669</a>
+<a name='L8670'></a><a href='#L8670'>8670</a>
+<a name='L8671'></a><a href='#L8671'>8671</a>
+<a name='L8672'></a><a href='#L8672'>8672</a>
+<a name='L8673'></a><a href='#L8673'>8673</a>
+<a name='L8674'></a><a href='#L8674'>8674</a>
+<a name='L8675'></a><a href='#L8675'>8675</a>
+<a name='L8676'></a><a href='#L8676'>8676</a>
+<a name='L8677'></a><a href='#L8677'>8677</a>
+<a name='L8678'></a><a href='#L8678'>8678</a>
+<a name='L8679'></a><a href='#L8679'>8679</a>
+<a name='L8680'></a><a href='#L8680'>8680</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -25082,8 +25132,8 @@
 <span class="cstat-no" title="statement not covered" >function isPlainTextElement(node) {</span>
 <span class="cstat-no" title="statement not covered" >  return node.type === "ElementNode" &amp;&amp; node.children.length === 1 &amp;&amp; node.children[0].type === "TextNode";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function isPlainTextStyleElement(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return isPlainTextElement(node) &amp;&amp; node.tag === "style";</span>
+<span class="cstat-no" title="statement not covered" >function isPlainTextStyleOrScriptElement(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return isPlainTextElement(node) &amp;&amp; (node.tag === "style" || node.tag === "script");</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function isPrettierIgnoreNode(node) {</span>
 <span class="cstat-no" title="statement not covered" >  return node?.type === "MustacheCommentStatement" &amp;&amp; typeof node.value === "string" &amp;&amp; node.value.trim() === "prettier-ignore";</span>
@@ -25093,28 +25143,53 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-handlebars/embed.js</span>
+<span class="cstat-no" title="statement not covered" >function getAttribute(node, name) {</span>
+<span class="cstat-no" title="statement not covered" >  return node.attributes.find(</span>
+<span class="cstat-no" title="statement not covered" >    (attribute) =&gt; attribute.type === "AttrNode" &amp;&amp; attribute.name === name</span>
+<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function getTextValue(attribute) {</span>
+<span class="cstat-no" title="statement not covered" >  return attribute.value.type === "TextNode" ? attribute.value.chars : void 0;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function getScriptTextToDocOptions(node) {</span>
+<span class="cstat-no" title="statement not covered" >  if (getAttribute(node, "src")) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const typeAttribute = getAttribute(node, "type");</span>
+<span class="cstat-no" title="statement not covered" >  const type = typeAttribute ? getTextValue(typeAttribute) : void 0;</span>
+<span class="cstat-no" title="statement not covered" >  if (!typeAttribute || type === "module" || type === "text/javascript") {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >      parser: "babel",</span>
+<span class="cstat-no" title="statement not covered" >      __embeddedInHtml: true,</span>
+<span class="cstat-no" title="statement not covered" >      __babelSourceType: type === "module" ? "module" : "script"</span>
+<span class="cstat-no" title="statement not covered" >    };</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function getStyleTextToDocOptions(node) {</span>
+<span class="cstat-no" title="statement not covered" >  const langAttribute = getAttribute(node, "lang");</span>
+<span class="cstat-no" title="statement not covered" >  if (!langAttribute || getTextValue(langAttribute) === "css") {</span>
+<span class="cstat-no" title="statement not covered" >    return { parser: "css" };</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function embed(path) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type !== "TextNode") {</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const { parent } = path;</span>
-<span class="cstat-no" title="statement not covered" >  if (!(isPlainTextStyleElement(parent) &amp;&amp; parent.children[0] === node)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!(isPlainTextStyleOrScriptElement(parent) &amp;&amp; parent.children[0] === node)) {</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const languageAttribute = parent.attributes.find(</span>
-<span class="cstat-no" title="statement not covered" >    (attribute) =&gt; attribute.type === "AttrNode" &amp;&amp; attribute.name === "lang"</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >  if (languageAttribute &amp;&amp; !(languageAttribute.value.type === "TextNode" &amp;&amp; languageAttribute.value.chars === "css")) {</span>
+<span class="cstat-no" title="statement not covered" >  const textToDocOptions = parent.tag === "style" ? getStyleTextToDocOptions(parent) : getScriptTextToDocOptions(parent);</span>
+<span class="cstat-no" title="statement not covered" >  if (!textToDocOptions) {</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return async (textToDoc) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const context = node.chars;</span>
-<span class="cstat-no" title="statement not covered" >    if (!context.trim()) {</span>
+<span class="cstat-no" title="statement not covered" >    const content = node.chars;</span>
+<span class="cstat-no" title="statement not covered" >    if (!content.trim()) {</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const doc = await textToDoc(context, { parser: "css" });</span>
-<span class="cstat-no" title="statement not covered" >    return doc;</span>
+<span class="cstat-no" title="statement not covered" >    return await textToDoc(content, textToDocOptions);</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var embed_default = embed;</span>
@@ -25175,7 +25250,7 @@
 <span class="cstat-no" title="statement not covered" >    if (!trimmed) {</span>
 <span class="cstat-no" title="statement not covered" >      return null;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (isPlainTextStyleElement(parent) &amp;&amp; parent.children[0] === original) {</span>
+<span class="cstat-no" title="statement not covered" >    if (isPlainTextStyleOrScriptElement(parent) &amp;&amp; parent.children[0] === original) {</span>
 <span class="cstat-no" title="statement not covered" >      cloned.chars = "";</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      cloned.chars = html_whitespace_default.split(trimmed).join(" ");</span>
@@ -25224,12 +25299,12 @@
 <span class="cstat-no" title="statement not covered" >        return [startingTag];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const endingTag = ["&lt;/", node.tag, "&gt;"];</span>
-<span class="cstat-no" title="statement not covered" >      const isPlainStyle = isPlainTextStyleElement(node);</span>
-<span class="cstat-no" title="statement not covered" >      if (node.children.length === 0 || (!isWhitespaceSensitive || isPlainStyle) &amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2))) {</span>
+<span class="cstat-no" title="statement not covered" >      const isPlainStyleOrScript = isPlainTextStyleOrScriptElement(node);</span>
+<span class="cstat-no" title="statement not covered" >      if (node.children.length === 0 || (!isWhitespaceSensitive || isPlainStyleOrScript) &amp;&amp; node.children.every((node2) =&gt; isWhitespaceNode(node2))) {</span>
 <span class="cstat-no" title="statement not covered" >        return [startingTag, endingTag];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const parts = path.map(print2, "children");</span>
-<span class="cstat-no" title="statement not covered" >      if (isPlainStyle || !isWhitespaceSensitive) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!isWhitespaceSensitive || isPlainStyleOrScript) {</span>
 <span class="cstat-no" title="statement not covered" >        return [startingTag, indent([softline, ...parts]), softline, endingTag];</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return [startingTag, indent(group(parts)), endingTag];</span>
@@ -25274,7 +25349,7 @@
 <span class="cstat-no" title="statement not covered" >        if (parent.tag === "pre") {</span>
 <span class="cstat-no" title="statement not covered" >          return replaceEndOfLine(text);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (isPlainTextStyleElement(parent)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (isPlainTextStyleOrScriptElement(parent) &amp;&amp; parent.children[0] === node) {</span>
 <span class="cstat-no" title="statement not covered" >          text = method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >            /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >            0,</span>
@@ -26032,7 +26107,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-12T04:10:09.213Z
+                at 2026-09-13T04:21:46.923Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

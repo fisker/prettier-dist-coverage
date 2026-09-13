@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10364</span>
+                <span class='fraction'>0/10384</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10364</span>
+                <span class='fraction'>0/10384</span>
             </div>
         
             
@@ -10427,7 +10427,47 @@
 <a name='L10362'></a><a href='#L10362'>10362</a>
 <a name='L10363'></a><a href='#L10363'>10363</a>
 <a name='L10364'></a><a href='#L10364'>10364</a>
-<a name='L10365'></a><a href='#L10365'>10365</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L10365'></a><a href='#L10365'>10365</a>
+<a name='L10366'></a><a href='#L10366'>10366</a>
+<a name='L10367'></a><a href='#L10367'>10367</a>
+<a name='L10368'></a><a href='#L10368'>10368</a>
+<a name='L10369'></a><a href='#L10369'>10369</a>
+<a name='L10370'></a><a href='#L10370'>10370</a>
+<a name='L10371'></a><a href='#L10371'>10371</a>
+<a name='L10372'></a><a href='#L10372'>10372</a>
+<a name='L10373'></a><a href='#L10373'>10373</a>
+<a name='L10374'></a><a href='#L10374'>10374</a>
+<a name='L10375'></a><a href='#L10375'>10375</a>
+<a name='L10376'></a><a href='#L10376'>10376</a>
+<a name='L10377'></a><a href='#L10377'>10377</a>
+<a name='L10378'></a><a href='#L10378'>10378</a>
+<a name='L10379'></a><a href='#L10379'>10379</a>
+<a name='L10380'></a><a href='#L10380'>10380</a>
+<a name='L10381'></a><a href='#L10381'>10381</a>
+<a name='L10382'></a><a href='#L10382'>10382</a>
+<a name='L10383'></a><a href='#L10383'>10383</a>
+<a name='L10384'></a><a href='#L10384'>10384</a>
+<a name='L10385'></a><a href='#L10385'>10385</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23101,6 +23141,26 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var get_node_content_default = getNodeContent;</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-html/utilities/is-in-ng-non-bindable.js</span>
+<span class="cstat-no" title="statement not covered" >var angularNonBindableCache = /* @__PURE__ */ new WeakMap();</span>
+<span class="cstat-no" title="statement not covered" >function hasOrInNgNonBindable(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return getOrInsertComputed(angularNonBindableCache, node, (node2) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (node2.kind === "element" &amp;&amp; function_object_has_own_default(node2.attrMap, "ngNonBindable")) {</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (!node2.parent) {</span>
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return hasOrInNgNonBindable(node2.parent);</span>
+<span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function isInNgNonBindable(path, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  if (options2.parser !== "angular") {</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return hasOrInNgNonBindable(path.node.parent);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-html/embed.js</span>
 <span class="cstat-no" title="statement not covered" >var embeddedAngularControlFlowBlocks = /* @__PURE__ */ new Set([</span>
 <span class="cstat-no" title="statement not covered" >  "if",</span>
@@ -23169,7 +23229,7 @@
 <span class="cstat-no" title="statement not covered" >            ];</span>
 <span class="cstat-no" title="statement not covered" >          };</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      } else if (node.parent.kind === "interpolation") {</span>
+<span class="cstat-no" title="statement not covered" >      } else if (node.parent.kind === "interpolation" &amp;&amp; !isInNgNonBindable(path, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >        return async (textToDoc) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >          const textToDocOptions = {</span>
 <span class="cstat-no" title="statement not covered" >            __isInHtmlInterpolation: true,</span>
@@ -31162,7 +31222,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-12T04:10:09.213Z
+                at 2026-09-13T04:21:46.923Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
