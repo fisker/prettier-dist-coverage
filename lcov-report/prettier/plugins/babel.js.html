@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15675</span>
+                <span class='fraction'>0/15677</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15675</span>
+                <span class='fraction'>0/15677</span>
             </div>
         
             
@@ -15737,7 +15737,11 @@
 <a name='L15672'></a><a href='#L15672'>15672</a>
 <a name='L15673'></a><a href='#L15673'>15673</a>
 <a name='L15674'></a><a href='#L15674'>15674</a>
-<a name='L15675'></a><a href='#L15675'>15675</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L15675'></a><a href='#L15675'>15675</a>
+<a name='L15676'></a><a href='#L15676'>15676</a>
+<a name='L15677'></a><a href='#L15677'>15677</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -32858,10 +32862,10 @@
 <span class="cstat-no" title="statement not covered" >    j_cTag: new TokContext("&lt;/tag"),</span>
 <span class="cstat-no" title="statement not covered" >    j_expr: new TokContext("&lt;tag&gt;...&lt;/tag&gt;", true)</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" >  var bmpIdentifierStart = /[\p{ID_Start}\u088f\u0c5c\u0cdc\ua7ce\ua7cf\ua7d2\ua7d4\ua7f1]/u;</span>
-<span class="cstat-no" title="statement not covered" >  var bmpIdentifier = /[\p{ID_Continue}\u088f\u0c5c\u0cdc\ua7ce\ua7cf\ua7d2\ua7d4\ua7f1\u1acf-\u1add\u1ae0-\u1aeb]/u;</span>
-<span class="cstat-no" title="statement not covered" >  var supplementaryIdentifierStartCodes = [2368, 25, 1388, 2, 3817, 43, 20677, 24, 3, 24, 287, 4, 6146, 7, 1290, 21, 98, 114, 22734, 30, 2, 2, 2, 1, 2, 6, 3, 4, 10, 1, 53307, 5, 5987, 11, 21763, 4297];</span>
-<span class="cstat-no" title="statement not covered" >  var supplementaryIdentifierCodes = [3834, 1, 3173, 7, 633, 9, 51450, 0, 3, 0, 8, 1, 6, 0];</span>
+<span class="cstat-no" title="statement not covered" >  var bmpIdentifierStart = /[\p{ID_Start}\u0558\u058b\u058c\u088f\u0c5c\u0cdc\u208f\u209d-\u209f\ua7ce\ua7cf\ua7d2\ua7d4\ua7dd\ua7e2\ua7f1\uab6c\uab6d]/u;</span>
+<span class="cstat-no" title="statement not covered" >  var bmpIdentifier = /[\p{ID_Continue}\u0558\u058b\u058c\u088f\u0c5c\u0cdc\u208f\u209d-\u209f\ua7ce\ua7cf\ua7d2\ua7d4\ua7dd\ua7e2\ua7f1\uab6c\uab6d\u05c8\u05c9\u0b53\u0b54\u1acf-\u1af0]/u;</span>
+<span class="cstat-no" title="statement not covered" >  var supplementaryIdentifierStartCodes = [1979, 4, 385, 25, 1388, 2, 18, 21, 3100, 0, 678, 43, 22, 0, 1662, 0, 6, 10, 209, 310, 18458, 24, 3, 24, 287, 4, 6146, 7, 1239, 4, 47, 23, 96, 114, 14, 913, 15, 50, 8017, 5, 64, 0, 9534, 0, 2169, 5, 7, 86, 15, 6, 55, 50, 1729, 30, 2, 2, 2, 1, 2, 6, 3, 4, 10, 1, 53307, 5, 223, 0, 5764, 11, 21763, 4297, 39815, 11327];</span>
+<span class="cstat-no" title="statement not covered" >  var supplementaryIdentifierCodes = [3787, 4, 33, 11, 3173, 7, 633, 9, 7, 0, 45879, 1, 296, 2, 9, 1, 3, 0, 33, 1, 5218, 0, 3, 0, 8, 1, 6, 0];</span>
 <span class="cstat-no" title="statement not covered" >  function isInSupplementarySet(code2, set) {</span>
 <span class="cstat-no" title="statement not covered" >    let pos = 65536;</span>
 <span class="cstat-no" title="statement not covered" >    for (let i = 0, length = set.length; i &lt; length; i += 2) {</span>
@@ -34460,13 +34464,15 @@
 <span class="cstat-no" title="statement not covered" >      const arrows = [];</span>
 <span class="cstat-no" title="statement not covered" >      while (stack.length !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >        const node2 = stack.pop();</span>
-<span class="cstat-no" title="statement not covered" >        if (node2.type === "ArrowFunctionExpression" &amp;&amp; node2.body.type !== "BlockStatement") {</span>
+<span class="cstat-no" title="statement not covered" >        if (node2.type === "ArrowFunctionExpression") {</span>
 <span class="cstat-no" title="statement not covered" >          if (node2.typeParameters || !node2.returnType) {</span>
 <span class="cstat-no" title="statement not covered" >            this.finishArrowValidation(node2);</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            arrows.push(node2);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          stack.push(node2.body);</span>
+<span class="cstat-no" title="statement not covered" >          if (node2.body.type !== "BlockStatement") {</span>
+<span class="cstat-no" title="statement not covered" >            stack.push(node2.body);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        } else if (node2.type === "ConditionalExpression") {</span>
 <span class="cstat-no" title="statement not covered" >          stack.push(node2.consequent);</span>
 <span class="cstat-no" title="statement not covered" >          stack.push(node2.alternate);</span>
@@ -35496,8 +35502,7 @@
 <span class="cstat-no" title="statement not covered" >      return node.type === "TypeCastExpression" ? node.expression : node;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" >  var lineBreak = /\r\n|[\r\n\u2028\u2029]/;</span>
-<span class="cstat-no" title="statement not covered" >  var lineBreakG = new RegExp(lineBreak.source, "g");</span>
+<span class="cstat-no" title="statement not covered" >  var lineBreakG = /\r\n|[\r\n\u2028\u2029]/g;</span>
 <span class="cstat-no" title="statement not covered" >  function isNewLine(code2) {</span>
 <span class="cstat-no" title="statement not covered" >    switch (code2) {</span>
 <span class="cstat-no" title="statement not covered" >      case 10:</span>
@@ -36676,12 +36681,12 @@
 <span class="cstat-no" title="statement not covered" >        val = Infinity;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (val &gt;= radix) {</span>
-<span class="cstat-no" title="statement not covered" >        if (val &lt;= 9 &amp;&amp; bailOnError) {</span>
-<span class="cstat-no" title="statement not covered" >          return {</span>
+<span class="cstat-no" title="statement not covered" >        if (val &lt;= 9) {</span>
+<span class="cstat-no" title="statement not covered" >          if (bailOnError) return {</span>
 <span class="cstat-no" title="statement not covered" >            n: null,</span>
 <span class="cstat-no" title="statement not covered" >            pos</span>
 <span class="cstat-no" title="statement not covered" >          };</span>
-<span class="cstat-no" title="statement not covered" >        } else if (val &lt;= 9 &amp;&amp; errors.invalidDigit(pos, lineStart, curLine, radix)) {</span>
+<span class="cstat-no" title="statement not covered" >          errors.invalidDigit(pos, lineStart, curLine, radix);</span>
 <span class="cstat-no" title="statement not covered" >          val = 0;</span>
 <span class="cstat-no" title="statement not covered" >        } else if (forceLen) {</span>
 <span class="cstat-no" title="statement not covered" >          val = 0;</span>
@@ -37696,11 +37701,9 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    errorHandlers_readInt = {</span>
 <span class="cstat-no" title="statement not covered" >      invalidDigit: (pos, lineStart, curLine, radix) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (!(this.optionFlags &amp; 4096)) return false;</span>
 <span class="cstat-no" title="statement not covered" >        this.raise(Errors.InvalidDigit, buildPosition(pos, lineStart, curLine), {</span>
 <span class="cstat-no" title="statement not covered" >          radix</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
-<span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      },</span>
 <span class="cstat-no" title="statement not covered" >      numericSeparatorInEscapeSequence: this.errorBuilder(Errors.NumericSeparatorInEscapeSequence),</span>
 <span class="cstat-no" title="statement not covered" >      unexpectedNumericSeparator: this.errorBuilder(Errors.UnexpectedNumericSeparator)</span>
@@ -44826,6 +44829,9 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    fillOptionalPropertiesForTSESLint(node) {</span>
 <span class="cstat-no" title="statement not covered" >      switch (node.type) {</span>
+<span class="cstat-no" title="statement not covered" >        case "ImportDeclaration":</span>
+<span class="cstat-no" title="statement not covered" >          node.phase ?? (node.phase = null);</span>
+<span class="cstat-no" title="statement not covered" >          return;</span>
 <span class="cstat-no" title="statement not covered" >        case "ExpressionStatement":</span>
 <span class="cstat-no" title="statement not covered" >          node.directive ?? (node.directive = void 0);</span>
 <span class="cstat-no" title="statement not covered" >          return;</span>
@@ -47092,7 +47098,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-18T04:15:09.852Z
+                at 2026-09-19T04:11:42.341Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
