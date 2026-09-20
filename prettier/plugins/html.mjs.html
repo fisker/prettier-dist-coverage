@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10410</span>
+                <span class='fraction'>0/10422</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10410</span>
+                <span class='fraction'>0/10422</span>
             </div>
         
             
@@ -10473,7 +10473,31 @@
 <a name='L10408'></a><a href='#L10408'>10408</a>
 <a name='L10409'></a><a href='#L10409'>10409</a>
 <a name='L10410'></a><a href='#L10410'>10410</a>
-<a name='L10411'></a><a href='#L10411'>10411</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L10411'></a><a href='#L10411'>10411</a>
+<a name='L10412'></a><a href='#L10412'>10412</a>
+<a name='L10413'></a><a href='#L10413'>10413</a>
+<a name='L10414'></a><a href='#L10414'>10414</a>
+<a name='L10415'></a><a href='#L10415'>10415</a>
+<a name='L10416'></a><a href='#L10416'>10416</a>
+<a name='L10417'></a><a href='#L10417'>10417</a>
+<a name='L10418'></a><a href='#L10418'>10418</a>
+<a name='L10419'></a><a href='#L10419'>10419</a>
+<a name='L10420'></a><a href='#L10420'>10420</a>
+<a name='L10421'></a><a href='#L10421'>10421</a>
+<a name='L10422'></a><a href='#L10422'>10422</a>
+<a name='L10423'></a><a href='#L10423'>10423</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -28980,18 +29004,7 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-html/print-preprocess.js</span>
-<span class="cstat-no" title="statement not covered" >var PREPROCESS_PIPELINE = [</span>
-<span class="cstat-no" title="statement not covered" >  removeIgnorableFirstLf,</span>
-<span class="cstat-no" title="statement not covered" >  mergeIfConditionalStartEndCommentIntoElementOpeningTag,</span>
-<span class="cstat-no" title="statement not covered" >  mergeCdataIntoText,</span>
-<span class="cstat-no" title="statement not covered" >  extractInterpolation,</span>
-<span class="cstat-no" title="statement not covered" >  extractWhitespaces,</span>
-<span class="cstat-no" title="statement not covered" >  addCssDisplay,</span>
-<span class="cstat-no" title="statement not covered" >  addIsSelfClosing,</span>
-<span class="cstat-no" title="statement not covered" >  addHasHtmComponentClosingTag,</span>
-<span class="cstat-no" title="statement not covered" >  addIsSpaceSensitive,</span>
-<span class="cstat-no" title="statement not covered" >  mergeSimpleElementIntoText</span>
-<span class="cstat-no" title="statement not covered" >];</span>
+<span class="cstat-no" title="statement not covered" >var PREPROCESS_PIPELINE = [convertAngularNonBindableNodesToText, removeIgnorableFirstLf, mergeIfConditionalStartEndCommentIntoElementOpeningTag, mergeCdataIntoText, extractInterpolation, extractWhitespaces, addCssDisplay, addIsSelfClosing, addHasHtmComponentClosingTag, addIsSpaceSensitive, mergeSimpleElementIntoText];</span>
 <span class="cstat-no" title="statement not covered" >function preprocess(ast, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  for (const fn of PREPROCESS_PIPELINE) {</span>
 <span class="cstat-no" title="statement not covered" >    fn(ast, options2);</span>
@@ -29023,14 +29036,8 @@
 <span class="cstat-no" title="statement not covered" >        const ieConditionalEndComment = child.firstChild;</span>
 <span class="cstat-no" title="statement not covered" >        node.removeChild(ieConditionalStartComment);</span>
 <span class="cstat-no" title="statement not covered" >        i--;</span>
-<span class="cstat-no" title="statement not covered" >        const startSourceSpan = new ParseSourceSpan(</span>
-<span class="cstat-no" title="statement not covered" >          ieConditionalStartComment.sourceSpan.start,</span>
-<span class="cstat-no" title="statement not covered" >          ieConditionalEndComment.sourceSpan.end</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >        const sourceSpan = new ParseSourceSpan(</span>
-<span class="cstat-no" title="statement not covered" >          startSourceSpan.start,</span>
-<span class="cstat-no" title="statement not covered" >          child.sourceSpan.end</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >        const startSourceSpan = new ParseSourceSpan(ieConditionalStartComment.sourceSpan.start, ieConditionalEndComment.sourceSpan.end);</span>
+<span class="cstat-no" title="statement not covered" >        const sourceSpan = new ParseSourceSpan(startSourceSpan.start, child.sourceSpan.end);</span>
 <span class="cstat-no" title="statement not covered" >        child.condition = ieConditionalStartComment.condition;</span>
 <span class="cstat-no" title="statement not covered" >        child.sourceSpan = sourceSpan;</span>
 <span class="cstat-no" title="statement not covered" >        child.startSourceSpan = startSourceSpan;</span>
@@ -29038,6 +29045,61 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function convertAngularNonBindableNodesToText(ast, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  if (options2.parser !== "angular" || !options2.originalText.includes("ngNonBindable")) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  ast.walk((node) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (node.kind === "element" &amp;&amp; function_object_has_own_default(node.attrMap, "ngNonBindable")) {</span>
+<span class="cstat-no" title="statement not covered" >      convertAngularNonBindableChildren(node, options2);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function convertAngularNonBindableChildren(node, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  const {</span>
+<span class="cstat-no" title="statement not covered" >    children</span>
+<span class="cstat-no" title="statement not covered" >  } = node;</span>
+<span class="cstat-no" title="statement not covered" >  if (!children) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  for (let i = 0; i &lt; children.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    const child = children[i];</span>
+<span class="cstat-no" title="statement not covered" >    if (child.kind === "angularControlFlowBlock") {</span>
+<span class="cstat-no" title="statement not covered" >      convertAngularNonBindableChildren(child, options2);</span>
+<span class="cstat-no" title="statement not covered" >      const replacements = [];</span>
+<span class="cstat-no" title="statement not covered" >      let {</span>
+<span class="cstat-no" title="statement not covered" >        start</span>
+<span class="cstat-no" title="statement not covered" >      } = child.sourceSpan;</span>
+<span class="cstat-no" title="statement not covered" >      for (const blockChild of child.children) {</span>
+<span class="cstat-no" title="statement not covered" >        if (start.offset &lt; blockChild.sourceSpan.start.offset) {</span>
+<span class="cstat-no" title="statement not covered" >          const sourceSpan = new ParseSourceSpan(start, blockChild.sourceSpan.start);</span>
+<span class="cstat-no" title="statement not covered" >          replacements.push(createOriginalTextNode(sourceSpan, options2));</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        replacements.push(blockChild);</span>
+<span class="cstat-no" title="statement not covered" >        start = blockChild.sourceSpan.end;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (start.offset &lt; child.sourceSpan.end.offset) {</span>
+<span class="cstat-no" title="statement not covered" >        const sourceSpan = new ParseSourceSpan(start, child.sourceSpan.end);</span>
+<span class="cstat-no" title="statement not covered" >        replacements.push(createOriginalTextNode(sourceSpan, options2));</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      children.splice(i, 1, ...replacements.map((replacement) =&gt; node.createChild(replacement)));</span>
+<span class="cstat-no" title="statement not covered" >      i += replacements.length - 1;</span>
+<span class="cstat-no" title="statement not covered" >      continue;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (child.kind === "angularLetDeclaration") {</span>
+<span class="cstat-no" title="statement not covered" >      children[i] = node.createChild(createOriginalTextNode(child.sourceSpan, options2));</span>
+<span class="cstat-no" title="statement not covered" >      continue;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    convertAngularNonBindableChildren(child, options2);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function createOriginalTextNode(sourceSpan, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
+<span class="cstat-no" title="statement not covered" >    kind: "text",</span>
+<span class="cstat-no" title="statement not covered" >    value: options2.originalText.slice(sourceSpan.start.offset, sourceSpan.end.offset),</span>
+<span class="cstat-no" title="statement not covered" >    sourceSpan</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function mergeNodeIntoText(ast, shouldMerge, getValue) {</span>
 <span class="cstat-no" title="statement not covered" >  ast.walk((node) =&gt; {</span>
@@ -29056,10 +29118,7 @@
 <span class="cstat-no" title="statement not covered" >          continue;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        prevChild.value += child.value;</span>
-<span class="cstat-no" title="statement not covered" >        prevChild.sourceSpan = new ParseSourceSpan(</span>
-<span class="cstat-no" title="statement not covered" >          prevChild.sourceSpan.start,</span>
-<span class="cstat-no" title="statement not covered" >          child.sourceSpan.end</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >        prevChild.sourceSpan = new ParseSourceSpan(prevChild.sourceSpan.start, child.sourceSpan.end);</span>
 <span class="cstat-no" title="statement not covered" >        node.removeChild(child);</span>
 <span class="cstat-no" title="statement not covered" >        i--;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -29067,11 +29126,7 @@
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function mergeCdataIntoText(ast) {</span>
-<span class="cstat-no" title="statement not covered" >  return mergeNodeIntoText(</span>
-<span class="cstat-no" title="statement not covered" >    ast,</span>
-<span class="cstat-no" title="statement not covered" >    (node) =&gt; node.kind === "cdata",</span>
-<span class="cstat-no" title="statement not covered" >    (node) =&gt; `&lt;![CDATA[${node.value}]]&gt;`</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >  return mergeNodeIntoText(ast, (node) =&gt; node.kind === "cdata", (node) =&gt; `&lt;![CDATA[${node.value}]]&gt;`);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function mergeSimpleElementIntoText(ast) {</span>
 <span class="cstat-no" title="statement not covered" >  const isSimpleElement = (node) =&gt; node.kind === "element" &amp;&amp; node.attrs.length === 0 &amp;&amp; !is_non_empty_array_default(node.startTagComments) &amp;&amp; node.children.length === 1 &amp;&amp; node.firstChild.kind === "text" &amp;&amp; !html_whitespace_default.hasWhitespaceCharacter(node.children[0].value) &amp;&amp; !node.firstChild.hasLeadingSpaces &amp;&amp; !node.firstChild.hasTrailingSpaces &amp;&amp; node.isLeadingSpaceSensitive &amp;&amp; !node.hasLeadingSpaces &amp;&amp; node.isTrailingSpaceSensitive &amp;&amp; !node.hasTrailingSpaces &amp;&amp; node.prev?.kind === "text" &amp;&amp; node.next?.kind === "text";</span>
@@ -29085,10 +29140,7 @@
 <span class="cstat-no" title="statement not covered" >        const prevChild = child.prev;</span>
 <span class="cstat-no" title="statement not covered" >        const nextChild = child.next;</span>
 <span class="cstat-no" title="statement not covered" >        prevChild.value += `&lt;${child.rawName}&gt;` + child.firstChild.value + `&lt;/${child.rawName}&gt;` + nextChild.value;</span>
-<span class="cstat-no" title="statement not covered" >        prevChild.sourceSpan = new ParseSourceSpan(</span>
-<span class="cstat-no" title="statement not covered" >          prevChild.sourceSpan.start,</span>
-<span class="cstat-no" title="statement not covered" >          nextChild.sourceSpan.end</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >        prevChild.sourceSpan = new ParseSourceSpan(prevChild.sourceSpan.start, nextChild.sourceSpan.end);</span>
 <span class="cstat-no" title="statement not covered" >        prevChild.isTrailingSpaceSensitive = nextChild.isTrailingSpaceSensitive;</span>
 <span class="cstat-no" title="statement not covered" >        prevChild.hasTrailingSpaces = nextChild.hasTrailingSpaces;</span>
 <span class="cstat-no" title="statement not covered" >        node.removeChild(child);</span>
@@ -29131,16 +29183,11 @@
 <span class="cstat-no" title="statement not covered" >        node.insertChildBefore(child, {</span>
 <span class="cstat-no" title="statement not covered" >          kind: "interpolation",</span>
 <span class="cstat-no" title="statement not covered" >          sourceSpan: new ParseSourceSpan(startSourceSpan, endSourceSpan),</span>
-<span class="cstat-no" title="statement not covered" >          children: value.length === 0 ? [] : [</span>
-<span class="cstat-no" title="statement not covered" >            {</span>
-<span class="cstat-no" title="statement not covered" >              kind: "text",</span>
-<span class="cstat-no" title="statement not covered" >              value,</span>
-<span class="cstat-no" title="statement not covered" >              sourceSpan: new ParseSourceSpan(</span>
-<span class="cstat-no" title="statement not covered" >                startSourceSpan.moveBy(2),</span>
-<span class="cstat-no" title="statement not covered" >                endSourceSpan.moveBy(-2)</span>
-<span class="cstat-no" title="statement not covered" >              )</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >          ]</span>
+<span class="cstat-no" title="statement not covered" >          children: value.length === 0 ? [] : [{</span>
+<span class="cstat-no" title="statement not covered" >            kind: "text",</span>
+<span class="cstat-no" title="statement not covered" >            value,</span>
+<span class="cstat-no" title="statement not covered" >            sourceSpan: new ParseSourceSpan(startSourceSpan.moveBy(2), endSourceSpan.moveBy(-2))</span>
+<span class="cstat-no" title="statement not covered" >          }]</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      node.removeChild(child);</span>
@@ -29166,7 +29213,11 @@
 <span class="cstat-no" title="statement not covered" >        if (child.kind !== "text") {</span>
 <span class="cstat-no" title="statement not covered" >          continue;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        const { leadingWhitespace, text, trailingWhitespace } = getLeadingAndTrailingHtmlWhitespace(child.value);</span>
+<span class="cstat-no" title="statement not covered" >        const {</span>
+<span class="cstat-no" title="statement not covered" >          leadingWhitespace,</span>
+<span class="cstat-no" title="statement not covered" >          text,</span>
+<span class="cstat-no" title="statement not covered" >          trailingWhitespace</span>
+<span class="cstat-no" title="statement not covered" >        } = getLeadingAndTrailingHtmlWhitespace(child.value);</span>
 <span class="cstat-no" title="statement not covered" >        const prevChild = child.prev;</span>
 <span class="cstat-no" title="statement not covered" >        const nextChild = child.next;</span>
 <span class="cstat-no" title="statement not covered" >        if (!text) {</span>
@@ -29182,10 +29233,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >          child.value = text;</span>
-<span class="cstat-no" title="statement not covered" >          child.sourceSpan = new ParseSourceSpan(</span>
-<span class="cstat-no" title="statement not covered" >            child.sourceSpan.start.moveBy(leadingWhitespace.length),</span>
-<span class="cstat-no" title="statement not covered" >            child.sourceSpan.end.moveBy(-trailingWhitespace.length)</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
+<span class="cstat-no" title="statement not covered" >          child.sourceSpan = new ParseSourceSpan(child.sourceSpan.start.moveBy(leadingWhitespace.length), child.sourceSpan.end.moveBy(-trailingWhitespace.length));</span>
 <span class="cstat-no" title="statement not covered" >          if (leadingWhitespace) {</span>
 <span class="cstat-no" title="statement not covered" >            if (prevChild) {</span>
 <span class="cstat-no" title="statement not covered" >              prevChild.hasTrailingSpaces = true;</span>
@@ -29216,12 +29264,7 @@
 <span class="cstat-no" title="statement not covered" >    if (node.kind !== "element") {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    node.hasHtmComponentClosingTag = node.endSourceSpan &amp;&amp; /^&lt;\s*\/\s*\/\s*&gt;$/.test(</span>
-<span class="cstat-no" title="statement not covered" >      options2.originalText.slice(</span>
-<span class="cstat-no" title="statement not covered" >        node.endSourceSpan.start.offset,</span>
-<span class="cstat-no" title="statement not covered" >        node.endSourceSpan.end.offset</span>
-<span class="cstat-no" title="statement not covered" >      )</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    node.hasHtmComponentClosingTag = node.endSourceSpan &amp;&amp; /^&lt;\s*\/\s*\/\s*&gt;$/.test(options2.originalText.slice(node.endSourceSpan.start.offset, node.endSourceSpan.end.offset));</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function addCssDisplay(ast, options2) {</span>
@@ -29231,26 +29274,19 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function addIsSpaceSensitive(ast, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  ast.walk((node) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const { children } = node;</span>
+<span class="cstat-no" title="statement not covered" >    const {</span>
+<span class="cstat-no" title="statement not covered" >      children</span>
+<span class="cstat-no" title="statement not covered" >    } = node;</span>
 <span class="cstat-no" title="statement not covered" >    if (!children) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (children.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >      node.isDanglingSpaceSensitive = isDanglingSpaceSensitiveNode(</span>
-<span class="cstat-no" title="statement not covered" >        node,</span>
-<span class="cstat-no" title="statement not covered" >        options2</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      node.isDanglingSpaceSensitive = isDanglingSpaceSensitiveNode(node, options2);</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    for (const child of children) {</span>
-<span class="cstat-no" title="statement not covered" >      child.isLeadingSpaceSensitive = isLeadingSpaceSensitiveNode(</span>
-<span class="cstat-no" title="statement not covered" >        child,</span>
-<span class="cstat-no" title="statement not covered" >        options2</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >      child.isTrailingSpaceSensitive = isTrailingSpaceSensitiveNode(</span>
-<span class="cstat-no" title="statement not covered" >        child,</span>
-<span class="cstat-no" title="statement not covered" >        options2</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      child.isLeadingSpaceSensitive = isLeadingSpaceSensitiveNode(child, options2);</span>
+<span class="cstat-no" title="statement not covered" >      child.isTrailingSpaceSensitive = isTrailingSpaceSensitiveNode(child, options2);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    for (let index = 0; index &lt; children.length; index++) {</span>
 <span class="cstat-no" title="statement not covered" >      const child = children[index];</span>
@@ -31300,7 +31336,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-19T04:11:44.785Z
+                at 2026-09-20T04:30:43.251Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
