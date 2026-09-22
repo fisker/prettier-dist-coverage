@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.2% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/5741</span>
+                <span class='fraction'>12/5745</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.2% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/5741</span>
+                <span class='fraction'>12/5745</span>
             </div>
         
             
@@ -5803,7 +5803,16 @@
 <a name='L5738'></a><a href='#L5738'>5738</a>
 <a name='L5739'></a><a href='#L5739'>5739</a>
 <a name='L5740'></a><a href='#L5740'>5740</a>
-<a name='L5741'></a><a href='#L5741'>5741</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L5741'></a><a href='#L5741'>5741</a>
+<a name='L5742'></a><a href='#L5742'>5742</a>
+<a name='L5743'></a><a href='#L5743'>5743</a>
+<a name='L5744'></a><a href='#L5744'>5744</a>
+<a name='L5745'></a><a href='#L5745'>5745</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -9640,7 +9649,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13476,6 +13484,11 @@
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/utilities/bom.js</span>
+<span class="cstat-no" title="statement not covered" >  var BOM = "\uFEFF";</span>
+<span class="cstat-no" title="statement not covered" >  var hasBom = (string) =&gt; string.charAt(0) === BOM;</span>
+<span class="cstat-no" title="statement not covered" >  var addBom = (string) =&gt; BOM + string;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/utilities/get-alignment-size.js</span>
 <span class="cstat-no" title="statement not covered" >  function getAlignmentSize(text, tabWidth, startIndex = 0) {</span>
 <span class="cstat-no" title="statement not covered" >    let size = 0;</span>
@@ -16665,7 +16678,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/main/core.js</span>
-<span class="cstat-no" title="statement not covered" >  var BOM = "\uFEFF";</span>
 <span class="cstat-no" title="statement not covered" >  var CURSOR = /* @__PURE__ */ Symbol("cursor");</span>
 <span class="cstat-no" title="statement not covered" >  async function coreFormat(originalText, opts, addAlignmentSize = 0) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!originalText || originalText.trim().length === 0) {</span>
@@ -16841,8 +16853,8 @@
 <span class="cstat-no" title="statement not covered" >      rangeEnd,</span>
 <span class="cstat-no" title="statement not covered" >      endOfLine</span>
 <span class="cstat-no" title="statement not covered" >    } = normalizeIndexes(text, options);</span>
-<span class="cstat-no" title="statement not covered" >    const hasBOM = text.charAt(0) === BOM;</span>
-<span class="cstat-no" title="statement not covered" >    if (hasBOM) {</span>
+<span class="cstat-no" title="statement not covered" >    const hasBom2 = hasBom(text);</span>
+<span class="cstat-no" title="statement not covered" >    if (hasBom2) {</span>
 <span class="cstat-no" title="statement not covered" >      text = text.slice(1);</span>
 <span class="cstat-no" title="statement not covered" >      cursorOffset--;</span>
 <span class="cstat-no" title="statement not covered" >      rangeStart--;</span>
@@ -16859,7 +16871,7 @@
 <span class="cstat-no" title="statement not covered" >      text = normalizeEndOfLine(text);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
-<span class="cstat-no" title="statement not covered" >      hasBOM,</span>
+<span class="cstat-no" title="statement not covered" >      hasBom: hasBom2,</span>
 <span class="cstat-no" title="statement not covered" >      text,</span>
 <span class="cstat-no" title="statement not covered" >      options: normalizeIndexes(text, {</span>
 <span class="cstat-no" title="statement not covered" >        ...options,</span>
@@ -16880,7 +16892,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  async function formatWithCursor(originalText, originalOptions) {</span>
 <span class="cstat-no" title="statement not covered" >    let {</span>
-<span class="cstat-no" title="statement not covered" >      hasBOM,</span>
+<span class="cstat-no" title="statement not covered" >      hasBom: hasBom2,</span>
 <span class="cstat-no" title="statement not covered" >      text,</span>
 <span class="cstat-no" title="statement not covered" >      options</span>
 <span class="cstat-no" title="statement not covered" >    } = normalizeInputAndOptions(originalText, await normalize_format_options_default(originalOptions));</span>
@@ -16900,8 +16912,8 @@
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      result = await coreFormat(text, options);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (hasBOM) {</span>
-<span class="cstat-no" title="statement not covered" >      result.formatted = BOM + result.formatted;</span>
+<span class="cstat-no" title="statement not covered" >    if (hasBom2) {</span>
+<span class="cstat-no" title="statement not covered" >      result.formatted = addBom(result.formatted);</span>
 <span class="cstat-no" title="statement not covered" >      if (result.cursorOffset &gt;= 0) {</span>
 <span class="cstat-no" title="statement not covered" >        result.cursorOffset++;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -17290,7 +17302,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-21T04:28:50.549Z
+                at 2026-09-22T04:24:34.118Z
             </div>
         <script src="../prettify.js"></script>
         <script>

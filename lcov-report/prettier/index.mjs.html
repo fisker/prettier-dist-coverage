@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.45% </span>
+                <span class="strong">62.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12157/19465</span>
+                <span class='fraction'>12164/19472</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">71.15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2260/3176</span>
+                <span class='fraction'>2262/3179</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">63.52% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>808/1272</span>
+                <span class='fraction'>810/1275</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.45% </span>
+                <span class="strong">62.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12157/19465</span>
+                <span class='fraction'>12164/19472</span>
             </div>
         
             
@@ -19528,7 +19528,14 @@
 <a name='L19463'></a><a href='#L19463'>19463</a>
 <a name='L19464'></a><a href='#L19464'>19464</a>
 <a name='L19465'></a><a href='#L19465'>19465</a>
-<a name='L19466'></a><a href='#L19466'>19466</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">460x</span>
+<a name='L19466'></a><a href='#L19466'>19466</a>
+<a name='L19467'></a><a href='#L19467'>19467</a>
+<a name='L19468'></a><a href='#L19468'>19468</a>
+<a name='L19469'></a><a href='#L19469'>19469</a>
+<a name='L19470'></a><a href='#L19470'>19470</a>
+<a name='L19471'></a><a href='#L19471'>19471</a>
+<a name='L19472'></a><a href='#L19472'>19472</a>
+<a name='L19473'></a><a href='#L19473'>19473</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
@@ -33560,6 +33567,12 @@
 <span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
+<span class="cline-any cline-yes">460x</span>
+<span class="cline-any cline-yes">460x</span>
+<span class="cline-any cline-yes">460x</span>
+<span class="cline-any cline-yes">460x</span>
+<span class="cline-any cline-yes">460x</span>
+<span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">607x</span>
 <span class="cline-any cline-yes">607x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -33578,6 +33591,7 @@
 <span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
+<span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">62x</span>
@@ -33628,6 +33642,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -38178,7 +38193,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
 <span class="cline-any cline-yes">460x</span>
@@ -53023,6 +53037,12 @@ function parse6(toml, { maxDepth = 1e3, integersAsBigInt } = {}) {
 <span class="cstat-no" title="statement not covered" >  return res;</span>
 }
 &nbsp;
+// src/utilities/bom.js
+var BOM = "\uFEFF";
+var hasBom = (string) =&gt; string.charAt(0) === BOM;
+var stripBom = (string) =&gt; hasBom(string) <span class="branch-0 cbranch-no" title="branch not covered" >? string.slice(1) </span>: string;
+var addBom = <span class="fstat-no" title="function not covered" >(string) =&gt; BOM + string;</span>
+&nbsp;
 // src/utilities/read-file.js
 import fs3 from "fs/promises";
 async function readFile2(file) {
@@ -53044,7 +53064,8 @@ var read_file_default = readFile2;
 &nbsp;
 // src/config/prettier-config/loaders.js
 async function readJson(file) {
-  const content = await read_file_default(file);
+  let content = await read_file_default(file);
+  content = stripBom(content);
   try {
     return parseJson(content);
   } catch (error) {
@@ -53094,7 +53115,8 @@ ${error.message}`;
   }
 }
 async function loadToml(file) {
-  const content = await read_file_default(file);
+  let content = await read_file_default(file);
+  content = stripBom(content);
   try {
     return parse6(content);
   } catch (error) {
@@ -57652,7 +57674,6 @@ var {
 var {
   printDocToString: printDocToStringWithoutNormalizeOptions
 } = __doc_printer;
-var BOM = "\uFEFF";
 var CURSOR = /* @__PURE__ */ Symbol("cursor");
 async function coreFormat(originalText, opts2, addAlignmentSize = 0) {
   if (!originalText || originalText.trim().length === 0) {
@@ -57828,8 +57849,8 @@ function normalizeInputAndOptions(text, options7) {
     rangeEnd,
     endOfLine
   } = normalizeIndexes(text, options7);
-  const hasBOM = text.charAt(0) === BOM;
-  if (hasBOM) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  const hasBom2 = hasBom(text);
+  if (hasBom2) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    text = text.slice(1);</span>
 <span class="cstat-no" title="statement not covered" >    cursorOffset--;</span>
 <span class="cstat-no" title="statement not covered" >    rangeStart--;</span>
@@ -57846,7 +57867,7 @@ function normalizeInputAndOptions(text, options7) {
 <span class="cstat-no" title="statement not covered" >    text = normalizeEndOfLine(text);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
   return {
-    hasBOM,
+    hasBom: hasBom2,
     text,
     options: normalizeIndexes(text, {
       ...options7,
@@ -57867,7 +57888,7 @@ function normalizeInputAndOptions(text, options7) {
 <span class="cstat-no" title="statement not covered" >}</span>
 async function formatWithCursor(originalText, originalOptions) {
   let {
-    hasBOM,
+    hasBom: hasBom2,
     text,
     options: options7
   } = normalizeInputAndOptions(originalText, await normalize_format_options_default(originalOptions));
@@ -57887,8 +57908,8 @@ async function formatWithCursor(originalText, originalOptions) {
 <span class="cstat-no" title="statement not covered" >    }</span>
     result = await coreFormat(text, options7);
   }
-  if (hasBOM) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    result.formatted = BOM + result.formatted;</span>
+  if (hasBom2) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    result.formatted = addBom(result.formatted);</span>
 <span class="cstat-no" title="statement not covered" >    if (result.cursorOffset &gt;= 0) {</span>
 <span class="cstat-no" title="statement not covered" >      result.cursorOffset++;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -58465,7 +58486,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-21T04:28:48.045Z
+                at 2026-09-22T04:24:31.565Z
             </div>
         <script src="../prettify.js"></script>
         <script>
