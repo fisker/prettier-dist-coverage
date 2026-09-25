@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/32034</span>
+                <span class='fraction'>0/32064</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/32034</span>
+                <span class='fraction'>0/32064</span>
             </div>
         
             
@@ -32096,7 +32096,67 @@
 <a name='L32031'></a><a href='#L32031'>32031</a>
 <a name='L32032'></a><a href='#L32032'>32032</a>
 <a name='L32033'></a><a href='#L32033'>32033</a>
-<a name='L32034'></a><a href='#L32034'>32034</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L32034'></a><a href='#L32034'>32034</a>
+<a name='L32035'></a><a href='#L32035'>32035</a>
+<a name='L32036'></a><a href='#L32036'>32036</a>
+<a name='L32037'></a><a href='#L32037'>32037</a>
+<a name='L32038'></a><a href='#L32038'>32038</a>
+<a name='L32039'></a><a href='#L32039'>32039</a>
+<a name='L32040'></a><a href='#L32040'>32040</a>
+<a name='L32041'></a><a href='#L32041'>32041</a>
+<a name='L32042'></a><a href='#L32042'>32042</a>
+<a name='L32043'></a><a href='#L32043'>32043</a>
+<a name='L32044'></a><a href='#L32044'>32044</a>
+<a name='L32045'></a><a href='#L32045'>32045</a>
+<a name='L32046'></a><a href='#L32046'>32046</a>
+<a name='L32047'></a><a href='#L32047'>32047</a>
+<a name='L32048'></a><a href='#L32048'>32048</a>
+<a name='L32049'></a><a href='#L32049'>32049</a>
+<a name='L32050'></a><a href='#L32050'>32050</a>
+<a name='L32051'></a><a href='#L32051'>32051</a>
+<a name='L32052'></a><a href='#L32052'>32052</a>
+<a name='L32053'></a><a href='#L32053'>32053</a>
+<a name='L32054'></a><a href='#L32054'>32054</a>
+<a name='L32055'></a><a href='#L32055'>32055</a>
+<a name='L32056'></a><a href='#L32056'>32056</a>
+<a name='L32057'></a><a href='#L32057'>32057</a>
+<a name='L32058'></a><a href='#L32058'>32058</a>
+<a name='L32059'></a><a href='#L32059'>32059</a>
+<a name='L32060'></a><a href='#L32060'>32060</a>
+<a name='L32061'></a><a href='#L32061'>32061</a>
+<a name='L32062'></a><a href='#L32062'>32062</a>
+<a name='L32063'></a><a href='#L32063'>32063</a>
+<a name='L32064'></a><a href='#L32064'>32064</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -91727,14 +91787,37 @@
 <span class="cstat-no" title="statement not covered" >      if (isComment(node) || isJSDocComment(node)) {</span>
 <span class="cstat-no" title="statement not covered" >        return;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (isToken2(node) &amp;&amp; node.kind !== SyntaxKind2.EndOfFileToken) {</span>
-<span class="cstat-no" title="statement not covered" >        result.push(convertToken(node, ast));</span>
+<span class="cstat-no" title="statement not covered" >      const {</span>
+<span class="cstat-no" title="statement not covered" >        kind</span>
+<span class="cstat-no" title="statement not covered" >      } = node;</span>
+<span class="cstat-no" title="statement not covered" >      if (isToken2(node) &amp;&amp; kind !== SyntaxKind2.EndOfFileToken) {</span>
+<span class="cstat-no" title="statement not covered" >        const token = convertToken(node, ast);</span>
+<span class="cstat-no" title="statement not covered" >        if (kind === SyntaxKind2.LessThanToken) {</span>
+<span class="cstat-no" title="statement not covered" >          addMissingLessThanToken(result, token, ast);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        result.push(token);</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        node.getChildren(ast).forEach(walk);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    walk(ast);</span>
 <span class="cstat-no" title="statement not covered" >    return result;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function addMissingLessThanToken(result, token, ast) {</span>
+<span class="cstat-no" title="statement not covered" >    if (result.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const currentTokenStart = token.range[0];</span>
+<span class="cstat-no" title="statement not covered" >    const previousTokenEnd = result[result.length - 1].range[1];</span>
+<span class="cstat-no" title="statement not covered" >    if (currentTokenStart &gt; previousTokenEnd &amp;&amp; ast.text[currentTokenStart - 1] === "&lt;") {</span>
+<span class="cstat-no" title="statement not covered" >      const range = [currentTokenStart - 1, currentTokenStart];</span>
+<span class="cstat-no" title="statement not covered" >      result.push({</span>
+<span class="cstat-no" title="statement not covered" >        type: AST_TOKEN_TYPES2.Punctuator,</span>
+<span class="cstat-no" title="statement not covered" >        loc: getLocFor(range, ast),</span>
+<span class="cstat-no" title="statement not covered" >        range,</span>
+<span class="cstat-no" title="statement not covered" >        value: "&lt;"</span>
+<span class="cstat-no" title="statement not covered" >      });</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  var TSError = class extends Error {</span>
 <span class="cstat-no" title="statement not covered" >    fileName;</span>
@@ -92213,6 +92296,13 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      // eslint-disable-next-line @typescript-eslint/no-deprecated</span>
+<span class="cstat-no" title="statement not covered" >      case SyntaxKind4.AssertEntry:</span>
+<span class="cstat-no" title="statement not covered" >      case SyntaxKind4.ImportAttribute:</span>
+<span class="cstat-no" title="statement not covered" >        if (node.value.kind !== SyntaxKind4.StringLiteral) {</span>
+<span class="cstat-no" title="statement not covered" >          throw (0, createError)(node.value, "String literal expected.");</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="cstat-no" title="statement not covered" >      case SyntaxKind4.ExternalModuleReference:</span>
 <span class="cstat-no" title="statement not covered" >        if (node.expression.kind !== SyntaxKind4.StringLiteral) {</span>
 <span class="cstat-no" title="statement not covered" >          throw (0, createError)(node.expression, "String literal expected.");</span>
@@ -92526,7 +92616,7 @@
 <span class="cstat-no" title="statement not covered" >      return id;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    /**</span>
-<span class="cstat-no" title="statement not covered" >     * Coverts body Nodes and add a directive field to StringLiterals</span>
+<span class="cstat-no" title="statement not covered" >     * Converts body Nodes and add a directive field to StringLiterals</span>
 <span class="cstat-no" title="statement not covered" >     * @param nodes of ts.Node</span>
 <span class="cstat-no" title="statement not covered" >     * @param parent parentNode</span>
 <span class="cstat-no" title="statement not covered" >     * @returns Array of body statements</span>
@@ -96169,7 +96259,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-24T04:17:18.542Z
+                at 2026-09-25T04:29:57.808Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
