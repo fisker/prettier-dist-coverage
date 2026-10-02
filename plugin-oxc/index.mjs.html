@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13195</span>
+                <span class='fraction'>0/13203</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13195</span>
+                <span class='fraction'>0/13203</span>
             </div>
         
             
@@ -13258,7 +13258,23 @@
 <a name='L13193'></a><a href='#L13193'>13193</a>
 <a name='L13194'></a><a href='#L13194'>13194</a>
 <a name='L13195'></a><a href='#L13195'>13195</a>
-<a name='L13196'></a><a href='#L13196'>13196</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13196'></a><a href='#L13196'>13196</a>
+<a name='L13197'></a><a href='#L13197'>13197</a>
+<a name='L13198'></a><a href='#L13198'>13198</a>
+<a name='L13199'></a><a href='#L13199'>13199</a>
+<a name='L13200'></a><a href='#L13200'>13200</a>
+<a name='L13201'></a><a href='#L13201'>13201</a>
+<a name='L13202'></a><a href='#L13202'>13202</a>
+<a name='L13203'></a><a href='#L13203'>13203</a>
+<a name='L13204'></a><a href='#L13204'>13204</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -26648,24 +26664,6 @@
 <span class="cstat-no" title="statement not covered" >  ])</span>
 <span class="cstat-no" title="statement not covered" >);</span>
 <span class="cstat-no" title="statement not covered" >var shouldAddContentEnd = createTypeCheckFunction(nodeTypesWithContentEnd);</span>
-<span class="cstat-no" title="statement not covered" >var shouldIgnoredNodePrintSemicolon = (node) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  if (shouldAddContentEnd(node) &amp;&amp; node.__contentEnd) {</span>
-<span class="cstat-no" title="statement not covered" >    return true;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const {</span>
-<span class="cstat-no" title="statement not covered" >    type</span>
-<span class="cstat-no" title="statement not covered" >  } = node;</span>
-<span class="cstat-no" title="statement not covered" >  if (type === "BreakStatement" || type === "ContinueStatement" || type === "DebuggerStatement" || type === "VariableDeclaration") {</span>
-<span class="cstat-no" title="statement not covered" >    return true;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (type === "IfStatement") {</span>
-<span class="cstat-no" title="statement not covered" >    return shouldIgnoredNodePrintSemicolon(node.alternate ?? node.consequent);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (type === "ForInStatement" || type === "ForOfStatement" || type === "ForStatement" || type === "LabeledStatement" || type === "WithStatement" || type === "WhileStatement") {</span>
-<span class="cstat-no" title="statement not covered" >    return shouldIgnoredNodePrintSemicolon(node.body);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return false;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
 <span class="cstat-no" title="statement not covered" >function locEnd(node) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    type</span>
@@ -37260,11 +37258,16 @@
 <span class="cstat-no" title="statement not covered" >  return ["catch ", print3("body")];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/utilities/is-for-x-statement-initializer.js</span>
+<span class="cstat-no" title="statement not covered" >function isForXStatementInitializer({ key, parent }) {</span>
+<span class="cstat-no" title="statement not covered" >  return key === "init" &amp;&amp; parent.type === "ForStatement" || key === "left" &amp;&amp; (parent.type === "ForInStatement" || parent.type === "ForOfStatement");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/print/variable-declaration.js</span>
 <span class="cstat-no" title="statement not covered" >function printVariableDeclaration(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  const printed = path.map(print3, "declarations");</span>
-<span class="cstat-no" title="statement not covered" >  const isForXStatementInitializer = path.key === "init" &amp;&amp; path.parent.type === "ForStatement" || path.key === "left" &amp;&amp; (path.parent.type === "ForInStatement" || path.parent.type === "ForOfStatement");</span>
+<span class="cstat-no" title="statement not covered" >  const isForXInitializer = isForXStatementInitializer(path);</span>
 <span class="cstat-no" title="statement not covered" >  const hasValue = node.declarations.some((declarator) =&gt; declarator.init);</span>
 <span class="cstat-no" title="statement not covered" >  let firstVariable;</span>
 <span class="cstat-no" title="statement not covered" >  if (printed.length === 1 &amp;&amp; !hasComment(node.declarations[0])) {</span>
@@ -37279,11 +37282,11 @@
 <span class="cstat-no" title="statement not covered" >    indent(</span>
 <span class="cstat-no" title="statement not covered" >      printed.slice(1).map((doc) =&gt; [</span>
 <span class="cstat-no" title="statement not covered" >        ",",</span>
-<span class="cstat-no" title="statement not covered" >        hasValue &amp;&amp; !isForXStatementInitializer ? hardline : line,</span>
+<span class="cstat-no" title="statement not covered" >        hasValue &amp;&amp; !isForXInitializer ? hardline : line,</span>
 <span class="cstat-no" title="statement not covered" >        doc</span>
 <span class="cstat-no" title="statement not covered" >      ])</span>
 <span class="cstat-no" title="statement not covered" >    ),</span>
-<span class="cstat-no" title="statement not covered" >    isForXStatementInitializer ? "" : printSemicolon(options2)</span>
+<span class="cstat-no" title="statement not covered" >    isForXInitializer ? "" : printSemicolon(options2)</span>
 <span class="cstat-no" title="statement not covered" >  ]);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -38471,11 +38474,32 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/semicolon/should-ignored-node-print-semicolon.js</span>
+<span class="cstat-no" title="statement not covered" >function shouldPrintSemicolon2(node) {</span>
+<span class="cstat-no" title="statement not covered" >  if (shouldAddContentEnd(node) &amp;&amp; node.__contentEnd) {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const { type } = node;</span>
+<span class="cstat-no" title="statement not covered" >  if (type === "BreakStatement" || type === "ContinueStatement" || type === "DebuggerStatement" || type === "VariableDeclaration") {</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (type === "IfStatement") {</span>
+<span class="cstat-no" title="statement not covered" >    return shouldPrintSemicolon2(node.alternate ?? node.consequent);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  if (type === "ForInStatement" || type === "ForOfStatement" || type === "ForStatement" || type === "LabeledStatement" || type === "WithStatement" || type === "WhileStatement") {</span>
+<span class="cstat-no" title="statement not covered" >    return shouldPrintSemicolon2(node.body);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return false;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function shouldIgnoredNodePrintSemicolon(path) {</span>
+<span class="cstat-no" title="statement not covered" >  return !isForXStatementInitializer(path) &amp;&amp; shouldPrintSemicolon2(path.node);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/print/ignored.js</span>
 <span class="cstat-no" title="statement not covered" >function printIgnored(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  let text = options2.originalText.slice(locStart(node), locEnd(node));</span>
-<span class="cstat-no" title="statement not covered" >  if (options2.semi &amp;&amp; shouldIgnoredNodePrintSemicolon(node)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (options2.semi &amp;&amp; shouldIgnoredNodePrintSemicolon(path)) {</span>
 <span class="cstat-no" title="statement not covered" >    text += ";";</span>
 <span class="cstat-no" title="statement not covered" >  } else if (shouldExpressionStatementPrintLeadingSemicolon(path, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >    text = `;${text}`;</span>
@@ -39655,7 +39679,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-01T05:22:00.299Z
+                at 2026-10-02T05:10:45.635Z
             </div>
         <script src="../prettify.js"></script>
         <script>
