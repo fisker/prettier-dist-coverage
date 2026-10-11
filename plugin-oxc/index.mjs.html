@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13203</span>
+                <span class='fraction'>0/13204</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13203</span>
+                <span class='fraction'>0/13204</span>
             </div>
         
             
@@ -13266,7 +13266,9 @@
 <a name='L13201'></a><a href='#L13201'>13201</a>
 <a name='L13202'></a><a href='#L13202'>13202</a>
 <a name='L13203'></a><a href='#L13203'>13203</a>
-<a name='L13204'></a><a href='#L13204'>13204</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13204'></a><a href='#L13204'>13204</a>
+<a name='L13205'></a><a href='#L13205'>13205</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -38816,12 +38818,15 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const shouldBreak = node.attributes?.some((attr) =&gt; isStringLiteral(attr.value) &amp;&amp; attr.value.value.includes("\n"));</span>
 <span class="cstat-no" title="statement not covered" >  const attributeLine = options2.singleAttributePerLine &amp;&amp; node.attributes.length &gt; 1 ? hardline : line;</span>
-<span class="cstat-no" title="statement not covered" >  return group(["&lt;", print3("name"), print3("typeArguments"), indent(path.map(({</span>
+<span class="cstat-no" title="statement not covered" >  return group(["&lt;", printJsxElementName(path, options2, print3), print3("typeArguments"), indent(path.map(({</span>
 <span class="cstat-no" title="statement not covered" >    isFirst,</span>
 <span class="cstat-no" title="statement not covered" >    previous</span>
 <span class="cstat-no" title="statement not covered" >  }) =&gt; [isFirst ? attributeLine : isNextLineEmpty2(previous, options2) ? [hardline, hardline] : attributeLine, print3()], "attributes")), ...printEndOfOpeningTag(node, options2, nameHasComments)], {</span>
 <span class="cstat-no" title="statement not covered" >    shouldBreak</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function printJsxClosingElement(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >  return ["&lt;/", printJsxElementName(path, options2, print3), "&gt;"];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function printEndOfOpeningTag(node, options2, nameHasComments) {</span>
 <span class="cstat-no" title="statement not covered" >  if (node.selfClosing) {</span>
@@ -38855,21 +38860,19 @@
 <span class="cstat-no" title="statement not covered" >    (!nameHasComments || node.attributes.length &gt; 0) &amp;&amp; !lastAttrHasTrailingComments</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function printJsxClosingElement(path, options2, print3) {</span>
+<span class="cstat-no" title="statement not covered" >function printJsxElementName(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    node</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
-<span class="cstat-no" title="statement not covered" >  const parts = ["&lt;/"];</span>
+<span class="cstat-no" title="statement not covered" >  const nameNode = node.name;</span>
 <span class="cstat-no" title="statement not covered" >  const printed = print3("name");</span>
-<span class="cstat-no" title="statement not covered" >  if (hasComment(node.name, CommentCheckFlags.Leading | CommentCheckFlags.Line)) {</span>
-<span class="cstat-no" title="statement not covered" >    parts.push(indent([hardline, printed]), hardline);</span>
-<span class="cstat-no" title="statement not covered" >  } else if (hasComment(node.name, CommentCheckFlags.Leading | CommentCheckFlags.Block)) {</span>
-<span class="cstat-no" title="statement not covered" >    parts.push(" ", printed);</span>
-<span class="cstat-no" title="statement not covered" >  } else {</span>
-<span class="cstat-no" title="statement not covered" >    parts.push(printed);</span>
+<span class="cstat-no" title="statement not covered" >  if (hasComment(nameNode, CommentCheckFlags.Leading | CommentCheckFlags.Line)) {</span>
+<span class="cstat-no" title="statement not covered" >    return [indent([hardline, printed]), node.type === "JSXClosingElement" ? hardline : ""];</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  parts.push("&gt;");</span>
-<span class="cstat-no" title="statement not covered" >  return parts;</span>
+<span class="cstat-no" title="statement not covered" >  if (hasComment(nameNode, CommentCheckFlags.Leading | CommentCheckFlags.Block)) {</span>
+<span class="cstat-no" title="statement not covered" >    return [" ", printed];</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return printed;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function printJsxOpeningClosingFragment(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
@@ -39679,7 +39682,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-10T05:24:03.228Z
+                at 2026-10-11T05:16:38.128Z
             </div>
         <script src="../prettify.js"></script>
         <script>
