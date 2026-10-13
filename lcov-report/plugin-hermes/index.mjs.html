@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25146</span>
+                <span class='fraction'>0/25160</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25146</span>
+                <span class='fraction'>0/25160</span>
             </div>
         
             
@@ -25209,7 +25209,35 @@
 <a name='L25144'></a><a href='#L25144'>25144</a>
 <a name='L25145'></a><a href='#L25145'>25145</a>
 <a name='L25146'></a><a href='#L25146'>25146</a>
-<a name='L25147'></a><a href='#L25147'>25147</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25147'></a><a href='#L25147'>25147</a>
+<a name='L25148'></a><a href='#L25148'>25148</a>
+<a name='L25149'></a><a href='#L25149'>25149</a>
+<a name='L25150'></a><a href='#L25150'>25150</a>
+<a name='L25151'></a><a href='#L25151'>25151</a>
+<a name='L25152'></a><a href='#L25152'>25152</a>
+<a name='L25153'></a><a href='#L25153'>25153</a>
+<a name='L25154'></a><a href='#L25154'>25154</a>
+<a name='L25155'></a><a href='#L25155'>25155</a>
+<a name='L25156'></a><a href='#L25156'>25156</a>
+<a name='L25157'></a><a href='#L25157'>25157</a>
+<a name='L25158'></a><a href='#L25158'>25158</a>
+<a name='L25159'></a><a href='#L25159'>25159</a>
+<a name='L25160'></a><a href='#L25160'>25160</a>
+<a name='L25161'></a><a href='#L25161'>25161</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -65492,7 +65520,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/left-side.js</span>
 <span class="cstat-no" title="statement not covered" >function hasNakedLeftSide(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return node.type === "AssignmentExpression" || node.type === "BinaryExpression" || node.type === "LogicalExpression" || node.type === "NGPipeExpression" || node.type === "ConditionalExpression" || isCallExpression(node) || isMemberExpression(node) || node.type === "SequenceExpression" || node.type === "TaggedTemplateExpression" || node.type === "BindExpression" || node.type === "UpdateExpression" &amp;&amp; !node.prefix || isBinaryCastExpression(node) || isChainElementWrapper(node);</span>
+<span class="cstat-no" title="statement not covered" >  return node.type === "AssignmentExpression" || node.type === "BinaryExpression" || node.type === "LogicalExpression" || node.type === "NGPipeExpression" || node.type === "ConditionalExpression" || isCallExpression(node) || isMemberExpression(node) || node.type === "SequenceExpression" || node.type === "TaggedTemplateExpression" || node.type === "BindExpression" || node.type === "UpdateExpression" &amp;&amp; !node.prefix || isBinaryCastExpression(node) || isChainElementWrapper(node) || node.type === "TSInstantiationExpression";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function getLeftSide(node) {</span>
 <span class="cstat-no" title="statement not covered" >  if (node.expressions) {</span>
@@ -66190,7 +66218,7 @@
 <span class="cstat-no" title="statement not covered" >    case "JSXElement":</span>
 <span class="cstat-no" title="statement not covered" >      return key === "callee" || key === "left" &amp;&amp; parent.type === "BinaryExpression" &amp;&amp; parent.operator === "&lt;" || !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) &amp;&amp; parent.type !== "TypeCastExpression" &amp;&amp; parent.type !== "VariableDeclarator" &amp;&amp; parent.type !== "YieldExpression" &amp;&amp; parent.type !== "MatchExpressionCase" &amp;&amp; !(key === "declaration" &amp;&amp; parent.type === "ExportDefaultDeclaration");</span>
 <span class="cstat-no" title="statement not covered" >    case "TSInstantiationExpression":</span>
-<span class="cstat-no" title="statement not covered" >      if (key === "object" &amp;&amp; isMemberExpression(parent) || key === "callee" &amp;&amp; parent.type === "CallExpression" || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression" || key === "superClass" &amp;&amp; (parent.type === "ClassDeclaration" || parent.type === "ClassExpression")) {</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "object" &amp;&amp; isMemberExpression(parent) || key === "callee" &amp;&amp; parent.type === "CallExpression" || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression" || key === "expression" &amp;&amp; parent.type === "TSNonNullExpression" || key === "superClass" &amp;&amp; (parent.type === "ClassDeclaration" || parent.type === "ClassExpression")) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
@@ -68739,7 +68767,7 @@
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/semicolon/semicolon.js</span>
-<span class="cstat-no" title="statement not covered" >function shouldExpressionStatementPrintLeadingSemicolon(path, options2) {</span>
+<span class="cstat-no" title="statement not covered" >function isEligibleForLeadingSemicolon(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  if (options2.semi) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -68750,11 +68778,22 @@
 <span class="cstat-no" title="statement not covered" >  const { key, parent } = path;</span>
 <span class="cstat-no" title="statement not covered" >  if (</span>
 <span class="cstat-no" title="statement not covered" >    // `Program.directives` don't need leading semicolon</span>
-<span class="cstat-no" title="statement not covered" >    (key === "body" &amp;&amp; (parent.type === "Program" || parent.type === "BlockStatement" || parent.type === "StaticBlock" || parent.type === "TSModuleBlock") || key === "consequent" &amp;&amp; parent.type === "SwitchCase") &amp;&amp; path.call(() =&gt; expressionNeedsAsiProtection(path, options2), "expression")</span>
+<span class="cstat-no" title="statement not covered" >    key === "body" &amp;&amp; (parent.type === "Program" || parent.type === "BlockStatement" || parent.type === "StaticBlock" || parent.type === "TSModuleBlock") || key === "consequent" &amp;&amp; parent.type === "SwitchCase"</span>
 <span class="cstat-no" title="statement not covered" >  ) {</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return false;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function shouldExpressionStatementPrintLeadingSemicolon(path, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  return isEligibleForLeadingSemicolon(path, options2) &amp;&amp; path.call(() =&gt; expressionNeedsAsiProtection(path, options2), "expression");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >var ASI_HAZARD_START_CHARACTERS = new Set("[(`+-/&lt;:");</span>
+<span class="cstat-no" title="statement not covered" >function shouldIgnoredExpressionStatementPrintLeadingSemicolon(path, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!isEligibleForLeadingSemicolon(path, options2)) {</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const leadingCharacter = options2.originalText[locStart(path.node)];</span>
+<span class="cstat-no" title="statement not covered" >  return ASI_HAZARD_START_CHARACTERS.has(leadingCharacter);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function expressionNeedsAsiProtection(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
@@ -74346,9 +74385,11 @@
 <span class="cstat-no" title="statement not covered" >function printIgnored(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  let text = options2.originalText.slice(locStart(node), locEnd(node));</span>
-<span class="cstat-no" title="statement not covered" >  if (options2.semi &amp;&amp; shouldIgnoredNodePrintSemicolon(path)) {</span>
-<span class="cstat-no" title="statement not covered" >    text += ";";</span>
-<span class="cstat-no" title="statement not covered" >  } else if (shouldExpressionStatementPrintLeadingSemicolon(path, options2)) {</span>
+<span class="cstat-no" title="statement not covered" >  if (options2.semi) {</span>
+<span class="cstat-no" title="statement not covered" >    if (shouldIgnoredNodePrintSemicolon(path)) {</span>
+<span class="cstat-no" title="statement not covered" >      text += ";";</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  } else if (shouldIgnoredExpressionStatementPrintLeadingSemicolon(path, options2)) {</span>
 <span class="cstat-no" title="statement not covered" >    text = `;${text}`;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (node.type === "ClassExpression" &amp;&amp; is_non_empty_array_default(node.decorators)) {</span>
@@ -74494,7 +74535,8 @@
 <span class="cstat-no" title="statement not covered" >        if (words[0] === "") {</span>
 <span class="cstat-no" title="statement not covered" >          words.shift();</span>
 <span class="cstat-no" title="statement not covered" >          if (/\n/.test(words[0])) {</span>
-<span class="cstat-no" title="statement not covered" >            pushLine(separatorWithWhitespace(isFacebookTranslationTag, words[1], node, next));</span>
+<span class="cstat-no" title="statement not covered" >            const trailingWhitespace = jsxWhitespace.getTrailingWhitespace(text);</span>
+<span class="cstat-no" title="statement not covered" >            pushLine(separatorWithWhitespace(isFacebookTranslationTag, words[1], node, trailingWhitespace &amp;&amp; !/\n/.test(trailingWhitespace) ? void 0 : next));</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
 <span class="cstat-no" title="statement not covered" >            pushLine(whitespace);</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
@@ -75508,7 +75550,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-12T05:30:00.081Z
+                at 2026-10-13T06:27:44.654Z
             </div>
         <script src="../prettify.js"></script>
         <script>
