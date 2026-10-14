@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.99% </span>
+                <span class="strong">36.01% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11528/32031</span>
+                <span class='fraction'>11539/32042</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.99% </span>
+                <span class="strong">36.01% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11528/32031</span>
+                <span class='fraction'>11539/32042</span>
             </div>
         
             
@@ -32094,7 +32094,18 @@
 <a name='L32029'></a><a href='#L32029'>32029</a>
 <a name='L32030'></a><a href='#L32030'>32030</a>
 <a name='L32031'></a><a href='#L32031'>32031</a>
-<a name='L32032'></a><a href='#L32032'>32032</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L32032'></a><a href='#L32032'>32032</a>
+<a name='L32033'></a><a href='#L32033'>32033</a>
+<a name='L32034'></a><a href='#L32034'>32034</a>
+<a name='L32035'></a><a href='#L32035'>32035</a>
+<a name='L32036'></a><a href='#L32036'>32036</a>
+<a name='L32037'></a><a href='#L32037'>32037</a>
+<a name='L32038'></a><a href='#L32038'>32038</a>
+<a name='L32039'></a><a href='#L32039'>32039</a>
+<a name='L32040'></a><a href='#L32040'>32040</a>
+<a name='L32041'></a><a href='#L32041'>32041</a>
+<a name='L32042'></a><a href='#L32042'>32042</a>
+<a name='L32043'></a><a href='#L32043'>32043</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -63247,6 +63258,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -95331,9 +95353,12 @@ var vk = [
   ["parameterName", "typeAnnotation"],
   ["checkType", "extendsType", "trueType", "falseType"],
   ["typeParameter"],
+  ["quasis", "types"],
   ["literal"],
   ["expression", "typeArguments"],
+  ["id", "moduleReference"],
   ["decorators", "key", "typeAnnotation"],
+  ["params", "returnType", "rest", "typeParameters"],
   ["argument", "cases"],
   ["pattern", "body", "guard"],
   ["properties", "rest"],
@@ -95561,14 +95586,14 @@ var visitor_keys_evaluate_default = {
   TSTypeOperator: vk[30],
   TSIndexedAccessType: vk[39],
   TSMappedType: ["key", "constraint", "nameType", "typeAnnotation"],
-  TSTemplateLiteralType: ["quasis", "types"],
-  TSLiteralType: vk[47],
-  TSClassImplements: vk[48],
-  TSInterfaceHeritage: vk[48],
+  TSTemplateLiteralType: vk[47],
+  TSLiteralType: vk[48],
+  TSClassImplements: vk[49],
+  TSInterfaceHeritage: vk[49],
   TSInterfaceDeclaration: vk[28],
   TSInterfaceBody: vk[18],
   TSTypeAliasDeclaration: ["id", "typeParameters", "typeAnnotation"],
-  TSInstantiationExpression: vk[48],
+  TSInstantiationExpression: vk[49],
   TSAsExpression: vk[36],
   TSSatisfiesExpression: vk[36],
   TSTypeAssertion: vk[36],
@@ -95578,7 +95603,7 @@ var visitor_keys_evaluate_default = {
   TSModuleDeclaration: vk[29],
   TSModuleBlock: vk[18],
   TSImportType: ["source", "options", "qualifier", "typeArguments"],
-  TSImportEqualsDeclaration: ["id", "moduleReference"],
+  TSImportEqualsDeclaration: vk[50],
   TSExternalModuleReference: vk[8],
   TSNonNullExpression: vk[8],
   TSExportAssignment: vk[8],
@@ -95594,10 +95619,10 @@ var visitor_keys_evaluate_default = {
   Property: vk[25],
   PropertyDefinition: vk[23],
   AccessorProperty: vk[40],
-  TSAbstractAccessorProperty: vk[49],
+  TSAbstractAccessorProperty: vk[51],
   TSAbstractKeyword: [],
   TSAbstractMethodDefinition: vk[25],
-  TSAbstractPropertyDefinition: vk[49],
+  TSAbstractPropertyDefinition: vk[51],
   TSAsyncKeyword: [],
   TSDeclareKeyword: [],
   TSEmptyBodyFunctionExpression: ["id", "typeParameters", "params", "returnType"],
@@ -95607,6 +95632,8 @@ var visitor_keys_evaluate_default = {
   TSPublicKeyword: [],
   TSReadonlyKeyword: [],
   TSStaticKeyword: [],
+  AbstractMethodDefinition: vk[25],
+  AbstractPropertyDefinition: ["key", "value", "typeAnnotation", "variance"],
   AsConstExpression: vk[8],
   AsExpression: vk[36],
   BigIntTypeAnnotation: [],
@@ -95615,6 +95642,7 @@ var visitor_keys_evaluate_default = {
   ComponentTypeAnnotation: ["params", "rest", "typeParameters", "rendersType"],
   ComponentTypeParameter: vk[32],
   ConditionalTypeAnnotation: vk[45],
+  ConstructorTypeAnnotation: vk[52],
   DeclareComponent: ["id", "params", "rest", "typeParameters", "rendersType"],
   DeclareEnum: vk[29],
   DeclareHook: vk[24],
@@ -95622,30 +95650,34 @@ var visitor_keys_evaluate_default = {
   EnumBigIntBody: vk[38],
   EnumBigIntMember: vk[17],
   EnumBody: vk[38],
+  ExportAssignment: vk[8],
+  ExternalModuleReference: vk[8],
   HookDeclaration: vk[41],
-  HookTypeAnnotation: ["params", "returnType", "rest", "typeParameters"],
+  HookTypeAnnotation: vk[52],
+  ImportEqualsDeclaration: vk[50],
+  ImportType: ["source"],
   InferTypeAnnotation: vk[46],
   KeyofTypeAnnotation: vk[15],
   MatchArrayPattern: ["elements", "rest"],
   MatchAsPattern: ["pattern", "target"],
   MatchBindingPattern: vk[24],
-  MatchExpression: vk[50],
-  MatchExpressionCase: vk[51],
+  MatchExpression: vk[53],
+  MatchExpressionCase: vk[54],
   MatchIdentifierPattern: vk[24],
-  MatchInstanceObjectPattern: vk[52],
+  MatchInstanceObjectPattern: vk[55],
   MatchInstancePattern: ["targetConstructor", "properties"],
-  MatchLiteralPattern: vk[47],
+  MatchLiteralPattern: vk[48],
   MatchMemberPattern: ["base", "property"],
-  MatchObjectPattern: vk[52],
+  MatchObjectPattern: vk[55],
   MatchObjectPatternProperty: ["key", "pattern"],
   MatchOrPattern: ["patterns"],
   MatchRestPattern: vk[15],
-  MatchStatement: vk[50],
-  MatchStatementCase: vk[51],
+  MatchStatement: vk[53],
+  MatchStatementCase: vk[54],
   MatchUnaryPattern: vk[15],
   MatchWildcardPattern: [],
   NeverTypeAnnotation: [],
-  ObjectTypeMappedTypeProperty: ["keyTparam", "propType", "sourceType", "variance"],
+  ObjectTypeMappedTypeProperty: ["keyTparam", "propType", "sourceType", "nameType", "variance"],
   QualifiedTypeofIdentifier: vk[34],
   RecordDeclaration: ["id", "typeParameters", "implements", "body"],
   RecordDeclarationBody: vk[0],
@@ -95655,6 +95687,7 @@ var visitor_keys_evaluate_default = {
   RecordExpression: ["recordConstructor", "typeArguments", "properties"],
   RecordExpressionProperties: vk[12],
   SatisfiesExpression: vk[36],
+  TemplateLiteralTypeAnnotation: vk[47],
   TupleTypeLabeledElement: ["label", "elementType", "variance"],
   TupleTypeSpreadElement: ["label", "typeAnnotation"],
   TypeOperator: vk[30],
@@ -95670,9 +95703,9 @@ var visitor_keys_evaluate_default = {
   NGMicrosyntaxKey: [],
   NGMicrosyntaxKeyedExpression: ["key", "expression"],
   NGMicrosyntaxLet: vk[25],
-  NGRoot: vk[53],
-  JsExpressionRoot: vk[53],
-  JsonRoot: vk[53],
+  NGRoot: vk[56],
+  JsExpressionRoot: vk[56],
+  JsonRoot: vk[56],
   TSJSDocAllType: [],
   TSJSDocUnknownType: [],
   TSJSDocNullableType: vk[30],
@@ -96163,7 +96196,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-13T06:27:44.654Z
+                at 2026-10-14T04:28:44.035Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

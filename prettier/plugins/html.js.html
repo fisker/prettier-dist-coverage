@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10521</span>
+                <span class='fraction'>0/10511</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10521</span>
+                <span class='fraction'>0/10511</span>
             </div>
         
             
@@ -10573,27 +10573,7 @@
 <a name='L10508'></a><a href='#L10508'>10508</a>
 <a name='L10509'></a><a href='#L10509'>10509</a>
 <a name='L10510'></a><a href='#L10510'>10510</a>
-<a name='L10511'></a><a href='#L10511'>10511</a>
-<a name='L10512'></a><a href='#L10512'>10512</a>
-<a name='L10513'></a><a href='#L10513'>10513</a>
-<a name='L10514'></a><a href='#L10514'>10514</a>
-<a name='L10515'></a><a href='#L10515'>10515</a>
-<a name='L10516'></a><a href='#L10516'>10516</a>
-<a name='L10517'></a><a href='#L10517'>10517</a>
-<a name='L10518'></a><a href='#L10518'>10518</a>
-<a name='L10519'></a><a href='#L10519'>10519</a>
-<a name='L10520'></a><a href='#L10520'>10520</a>
-<a name='L10521'></a><a href='#L10521'>10521</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L10511'></a><a href='#L10511'>10511</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22151,7 +22131,7 @@
 <span class="cstat-no" title="statement not covered" >    return node.kind === "comment" &amp;&amp; node.value.trim() === "prettier-ignore";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function isTextLikeNode(node) {</span>
-<span class="cstat-no" title="statement not covered" >    return node.kind === "text" || node.kind === "comment";</span>
+<span class="cstat-no" title="statement not covered" >    return node.kind === "text" || node.kind === "comment" || node.kind === "cdata";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function isScriptLikeTag(node, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    return node.kind === "element" &amp;&amp; (node.fullName === "script" || node.fullName === "style" || node.fullName === "svg:style" || node.fullName === "svg:script" || node.fullName === "mj-style" &amp;&amp; options2.parser === "mjml" || is_unknown_namespace_default(node) &amp;&amp; (node.name === "script" || node.name === "style"));</span>
@@ -29281,7 +29261,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-html/print-preprocess.js</span>
-<span class="cstat-no" title="statement not covered" >  var PREPROCESS_PIPELINE = [convertAngularNonBindableNodesToText, removeIgnorableFirstLf, mergeIfConditionalStartEndCommentIntoElementOpeningTag, mergeCdataIntoText, extractInterpolation, extractWhitespaces, addCssDisplay, addIsSelfClosing, addHasHtmComponentClosingTag, addIsSpaceSensitive, mergeSimpleElementIntoText];</span>
+<span class="cstat-no" title="statement not covered" >  var PREPROCESS_PIPELINE = [convertAngularNonBindableNodesToText, removeIgnorableFirstLf, mergeIfConditionalStartEndCommentIntoElementOpeningTag, mergeAdjacentTextNodes, extractInterpolation, extractWhitespaces, addCssDisplay, addIsSelfClosing, addHasHtmComponentClosingTag, addIsSpaceSensitive, mergeSimpleElementIntoText];</span>
 <span class="cstat-no" title="statement not covered" >  function preprocess(ast, options2) {</span>
 <span class="cstat-no" title="statement not covered" >    for (const fn of PREPROCESS_PIPELINE) {</span>
 <span class="cstat-no" title="statement not covered" >      fn(ast, options2);</span>
@@ -29382,20 +29362,13 @@
 <span class="cstat-no" title="statement not covered" >      sourceSpan</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function mergeNodeIntoText(ast, shouldMerge, getValue) {</span>
+<span class="cstat-no" title="statement not covered" >  function mergeAdjacentTextNodes(ast) {</span>
 <span class="cstat-no" title="statement not covered" >    ast.walk((node) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (node.children) {</span>
 <span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; node.children.length; i++) {</span>
 <span class="cstat-no" title="statement not covered" >          const child = node.children[i];</span>
-<span class="cstat-no" title="statement not covered" >          if (child.kind !== "text" &amp;&amp; !shouldMerge(child)) {</span>
-<span class="cstat-no" title="statement not covered" >            continue;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (child.kind !== "text") {</span>
-<span class="cstat-no" title="statement not covered" >            child.kind = "text";</span>
-<span class="cstat-no" title="statement not covered" >            child.value = getValue(child);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          const prevChild = child.prev;</span>
-<span class="cstat-no" title="statement not covered" >          if (!prevChild || prevChild.kind !== "text") {</span>
+<span class="cstat-no" title="statement not covered" >          if (child.kind !== "text" || prevChild?.kind !== "text") {</span>
 <span class="cstat-no" title="statement not covered" >            continue;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          prevChild.value += child.value;</span>
@@ -29405,9 +29378,6 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function mergeCdataIntoText(ast) {</span>
-<span class="cstat-no" title="statement not covered" >    return mergeNodeIntoText(ast, (node) =&gt; node.kind === "cdata", (node) =&gt; `&lt;![CDATA[${node.value}]]&gt;`);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function mergeSimpleElementIntoText(ast) {</span>
 <span class="cstat-no" title="statement not covered" >    const isSimpleElement = (node) =&gt; node.kind === "element" &amp;&amp; node.attrs.length === 0 &amp;&amp; !is_non_empty_array_default(node.startTagComments) &amp;&amp; node.children.length === 1 &amp;&amp; node.firstChild.kind === "text" &amp;&amp; !html_whitespace_default.hasWhitespaceCharacter(node.children[0].value) &amp;&amp; !node.firstChild.hasLeadingSpaces &amp;&amp; !node.firstChild.hasTrailingSpaces &amp;&amp; node.isLeadingSpaceSensitive &amp;&amp; !node.hasLeadingSpaces &amp;&amp; node.isTrailingSpaceSensitive &amp;&amp; !node.hasTrailingSpaces &amp;&amp; node.prev?.kind === "text" &amp;&amp; node.next?.kind === "text";</span>
@@ -29672,6 +29642,8 @@
 <span class="cstat-no" title="statement not covered" >        )]), printClosingTagEnd(node, options2)];</span>
 <span class="cstat-no" title="statement not covered" >      case "comment":</span>
 <span class="cstat-no" title="statement not covered" >        return [printOpeningTagPrefix(node, options2), replaceEndOfLine(options2.originalText.slice(locStart(node), locEnd(node))), printClosingTagSuffix(node, options2)];</span>
+<span class="cstat-no" title="statement not covered" >      case "cdata":</span>
+<span class="cstat-no" title="statement not covered" >        return [printOpeningTagPrefix(node, options2), "&lt;![CDATA[", replaceEndOfLine(node.value), "]]&gt;", printClosingTagSuffix(node, options2)];</span>
 <span class="cstat-no" title="statement not covered" >      case "attribute": {</span>
 <span class="cstat-no" title="statement not covered" >        if (node.value === null) {</span>
 <span class="cstat-no" title="statement not covered" >          return node.rawName;</span>
@@ -29696,8 +29668,6 @@
 <span class="cstat-no" title="statement not covered" >        return printStartTagComment(path);</span>
 <span class="cstat-no" title="statement not covered" >      case "frontMatter":</span>
 <span class="cstat-no" title="statement not covered" >      // Handled in core</span>
-<span class="cstat-no" title="statement not covered" >      case "cdata":</span>
-<span class="cstat-no" title="statement not covered" >      // Transformed into `text`</span>
 <span class="cstat-no" title="statement not covered" >      default:</span>
 <span class="cstat-no" title="statement not covered" >        throw new unexpected_node_error_default(node, "HTML");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -31630,7 +31600,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-13T06:27:47.266Z
+                at 2026-10-14T04:28:46.598Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
