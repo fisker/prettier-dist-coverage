@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10480</span>
+                <span class='fraction'>0/10488</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10480</span>
+                <span class='fraction'>0/10488</span>
             </div>
         
             
@@ -10543,7 +10543,23 @@
 <a name='L10478'></a><a href='#L10478'>10478</a>
 <a name='L10479'></a><a href='#L10479'>10479</a>
 <a name='L10480'></a><a href='#L10480'>10480</a>
-<a name='L10481'></a><a href='#L10481'>10481</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L10481'></a><a href='#L10481'>10481</a>
+<a name='L10482'></a><a href='#L10482'>10482</a>
+<a name='L10483'></a><a href='#L10483'>10483</a>
+<a name='L10484'></a><a href='#L10484'>10484</a>
+<a name='L10485'></a><a href='#L10485'>10485</a>
+<a name='L10486'></a><a href='#L10486'>10486</a>
+<a name='L10487'></a><a href='#L10487'>10487</a>
+<a name='L10488'></a><a href='#L10488'>10488</a>
+<a name='L10489'></a><a href='#L10489'>10489</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22338,9 +22354,6 @@
 <span class="cstat-no" title="statement not covered" >    tagName === "style" &amp;&amp; attributeName === "vars"</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function getTextValueParts(node, value = node.value) {</span>
-<span class="cstat-no" title="statement not covered" >  return node.parent.isWhitespaceSensitive ? node.parent.isIndentationSensitive ? replaceEndOfLine(value) : replaceEndOfLine(html_whitespace_default.dedentString(htmlTrimPreserveIndentation(value)), hardline) : join(line, html_whitespace_default.split(value));</span>
-<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function isVueScriptTag(node, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  return isVueSfcBlock(node, options2) &amp;&amp; node.name === "script";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -22460,11 +22473,8 @@
 <span class="cstat-no" title="statement not covered" >}));</span>
 <span class="cstat-no" title="statement not covered" >function printAngularI18n(textToDoc, print, { node }) {</span>
 <span class="cstat-no" title="statement not covered" >  const value = getUnescapedAttributeValue(node);</span>
-<span class="cstat-no" title="statement not covered" >  return printExpand(</span>
-<span class="cstat-no" title="statement not covered" >    // @ts-expect-error -- Need investigate how `replaceEndOfLine` works</span>
-<span class="cstat-no" title="statement not covered" >    fill(getTextValueParts(node, value.trim())),</span>
-<span class="cstat-no" title="statement not covered" >    !value.includes("@@")</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >  const doc = fill(join(line, html_whitespace_default.split(value.trim())));</span>
+<span class="cstat-no" title="statement not covered" >  return printExpand(doc, !value.includes("@@"));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var angular_attributes_default = printers;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -23980,6 +23990,41 @@
 <span class="cstat-no" title="statement not covered" >    return `//${value.trimEnd()}`;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return ["/*", replaceEndOfLine(value), "*/"];</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-html/print/text.js</span>
+<span class="cstat-no" title="statement not covered" >function printTextValue(node) {</span>
+<span class="cstat-no" title="statement not covered" >  const { value } = node;</span>
+<span class="cstat-no" title="statement not covered" >  return node.parent.isWhitespaceSensitive ? node.parent.isIndentationSensitive ? replaceEndOfLine(value) : replaceEndOfLine(</span>
+<span class="cstat-no" title="statement not covered" >    html_whitespace_default.dedentString(htmlTrimPreserveIndentation(value)),</span>
+<span class="cstat-no" title="statement not covered" >    hardline</span>
+<span class="cstat-no" title="statement not covered" >  ) : join(line, html_whitespace_default.split(value));</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function printText(path, options2) {</span>
+<span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
+<span class="cstat-no" title="statement not covered" >  if (node.parent.kind === "interpolation") {</span>
+<span class="cstat-no" title="statement not covered" >    let { value } = node;</span>
+<span class="cstat-no" title="statement not covered" >    const trailingNewlineRegex = /\n[^\S\n]*$/;</span>
+<span class="cstat-no" title="statement not covered" >    const hasTrailingNewline = trailingNewlineRegex.test(value);</span>
+<span class="cstat-no" title="statement not covered" >    if (hasTrailingNewline) {</span>
+<span class="cstat-no" title="statement not covered" >      value = value.replace(trailingNewlineRegex, "");</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const parts = [replaceEndOfLine(value)];</span>
+<span class="cstat-no" title="statement not covered" >    if (hasTrailingNewline) {</span>
+<span class="cstat-no" title="statement not covered" >      if (node.parent.next &amp;&amp; needsToBorrowPrevClosingTagEndMarker(node.parent.next)) {</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(breakParent);</span>
+<span class="cstat-no" title="statement not covered" >      } else {</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(hardline);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return parts;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const prefix = printOpeningTagPrefix(node, options2);</span>
+<span class="cstat-no" title="statement not covered" >  const printed = printTextValue(node);</span>
+<span class="cstat-no" title="statement not covered" >  const suffix = printClosingTagSuffix(node, options2);</span>
+<span class="cstat-no" title="statement not covered" >  printed[0] = [prefix, printed[0]];</span>
+<span class="cstat-no" title="statement not covered" >  printed.push([printed.pop(), suffix]);</span>
+<span class="cstat-no" title="statement not covered" >  return fill(printed);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// node_modules/angular-html-parser/dist/compiler/src/ml_parser/tags.mjs</span>
@@ -29509,33 +29554,12 @@
 <span class="cstat-no" title="statement not covered" >      return [printOpeningTagStart(node), printClosingTagEnd(node)];</span>
 <span class="cstat-no" title="statement not covered" >    case "interpolation":</span>
 <span class="cstat-no" title="statement not covered" >      return [printOpeningTagStart(node, options2), ...path.map(print, "children"), printClosingTagEnd(node, options2)];</span>
-<span class="cstat-no" title="statement not covered" >    case "text": {</span>
-<span class="cstat-no" title="statement not covered" >      if (node.parent.kind === "interpolation") {</span>
-<span class="cstat-no" title="statement not covered" >        let {</span>
-<span class="cstat-no" title="statement not covered" >          value</span>
-<span class="cstat-no" title="statement not covered" >        } = node;</span>
-<span class="cstat-no" title="statement not covered" >        const trailingNewlineRegex = /\n[^\S\n]*$/;</span>
-<span class="cstat-no" title="statement not covered" >        const hasTrailingNewline = trailingNewlineRegex.test(value);</span>
-<span class="cstat-no" title="statement not covered" >        if (hasTrailingNewline) {</span>
-<span class="cstat-no" title="statement not covered" >          value = value.replace(trailingNewlineRegex, "");</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        const parts = [replaceEndOfLine(value)];</span>
-<span class="cstat-no" title="statement not covered" >        if (hasTrailingNewline) {</span>
-<span class="cstat-no" title="statement not covered" >          if (node.parent.next &amp;&amp; needsToBorrowPrevClosingTagEndMarker(node.parent.next)) {</span>
-<span class="cstat-no" title="statement not covered" >            parts.push(breakParent);</span>
-<span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            parts.push(hardline);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return parts;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      const prefix = printOpeningTagPrefix(node, options2);</span>
-<span class="cstat-no" title="statement not covered" >      const printed = getTextValueParts(node);</span>
-<span class="cstat-no" title="statement not covered" >      const suffix = printClosingTagSuffix(node, options2);</span>
-<span class="cstat-no" title="statement not covered" >      printed[0] = [prefix, printed[0]];</span>
-<span class="cstat-no" title="statement not covered" >      printed.push([printed.pop(), suffix]);</span>
-<span class="cstat-no" title="statement not covered" >      return fill(printed);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    case "text":</span>
+<span class="cstat-no" title="statement not covered" >      return printText(</span>
+<span class="cstat-no" title="statement not covered" >        path,</span>
+<span class="cstat-no" title="statement not covered" >        options2</span>
+<span class="cstat-no" title="statement not covered" >        /* , print*/</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" >    case "docType":</span>
 <span class="cstat-no" title="statement not covered" >      return [group([printOpeningTagStart(node, options2), " ", method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >        /* OPTIONAL_OBJECT: false */</span>
@@ -31510,7 +31534,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-15T04:10:36.805Z
+                at 2026-10-16T04:07:20.655Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
