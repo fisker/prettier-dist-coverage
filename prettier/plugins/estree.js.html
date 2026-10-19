@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13254</span>
+                <span class='fraction'>0/13272</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13254</span>
+                <span class='fraction'>0/13272</span>
             </div>
         
             
@@ -13316,7 +13316,43 @@
 <a name='L13251'></a><a href='#L13251'>13251</a>
 <a name='L13252'></a><a href='#L13252'>13252</a>
 <a name='L13253'></a><a href='#L13253'>13253</a>
-<a name='L13254'></a><a href='#L13254'>13254</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13254'></a><a href='#L13254'>13254</a>
+<a name='L13255'></a><a href='#L13255'>13255</a>
+<a name='L13256'></a><a href='#L13256'>13256</a>
+<a name='L13257'></a><a href='#L13257'>13257</a>
+<a name='L13258'></a><a href='#L13258'>13258</a>
+<a name='L13259'></a><a href='#L13259'>13259</a>
+<a name='L13260'></a><a href='#L13260'>13260</a>
+<a name='L13261'></a><a href='#L13261'>13261</a>
+<a name='L13262'></a><a href='#L13262'>13262</a>
+<a name='L13263'></a><a href='#L13263'>13263</a>
+<a name='L13264'></a><a href='#L13264'>13264</a>
+<a name='L13265'></a><a href='#L13265'>13265</a>
+<a name='L13266'></a><a href='#L13266'>13266</a>
+<a name='L13267'></a><a href='#L13267'>13267</a>
+<a name='L13268'></a><a href='#L13268'>13268</a>
+<a name='L13269'></a><a href='#L13269'>13269</a>
+<a name='L13270'></a><a href='#L13270'>13270</a>
+<a name='L13271'></a><a href='#L13271'>13271</a>
+<a name='L13272'></a><a href='#L13272'>13272</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27199,6 +27235,11 @@
 <span class="cstat-no" title="statement not covered" >    "ClassDeclaration",</span>
 <span class="cstat-no" title="statement not covered" >    "ClassExpression"</span>
 <span class="cstat-no" title="statement not covered" >  ]);</span>
+<span class="cstat-no" title="statement not covered" >  var isEnumDeclaration = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >    "TSEnumDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >    "EnumDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >    "DeclareEnum"</span>
+<span class="cstat-no" title="statement not covered" >  ]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/utilities/is-shorthand-specifier.js</span>
 <span class="cstat-no" title="statement not covered" >  function isShorthandSpecifier(specifier) {</span>
@@ -27693,6 +27734,13 @@
 <span class="cstat-no" title="statement not covered" >      addDanglingComment(node, comment);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function addEnumBodyFirstComment(node, comment) {</span>
+<span class="cstat-no" title="statement not covered" >    if (node.members.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      addLeadingComment(node.members[0], comment);</span>
+<span class="cstat-no" title="statement not covered" >    } else {</span>
+<span class="cstat-no" title="statement not covered" >      addDanglingComment(node, comment);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/comments/attach/handle-if-statement-comments.js</span>
 <span class="cstat-no" title="statement not covered" >  function handleIfStatementComments({</span>
@@ -27932,6 +27980,16 @@
 <span class="cstat-no" title="statement not covered" >    followingNode,</span>
 <span class="cstat-no" title="statement not covered" >    options: options2</span>
 <span class="cstat-no" title="statement not covered" >  }) {</span>
+<span class="cstat-no" title="statement not covered" >    if (followingNode &amp;&amp; followingNode === enclosingNode?.body) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isClassLikeNode(enclosingNode) || isModuleDeclaration(enclosingNode)) {</span>
+<span class="cstat-no" title="statement not covered" >        addBlockStatementFirstComment(enclosingNode.body, comment);</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (isEnumDeclaration(enclosingNode)) {</span>
+<span class="cstat-no" title="statement not covered" >        addEnumBodyFirstComment(enclosingNode.body, comment);</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (isClassLikeNode(enclosingNode)) {</span>
 <span class="cstat-no" title="statement not covered" >      const {</span>
 <span class="cstat-no" title="statement not covered" >        decorators</span>
@@ -27943,10 +28001,6 @@
 <span class="cstat-no" title="statement not covered" >          decorators,</span>
 <span class="cstat-no" title="statement not covered" >          -1</span>
 <span class="cstat-no" title="statement not covered" >        ), comment);</span>
-<span class="cstat-no" title="statement not covered" >        return true;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (enclosingNode.body &amp;&amp; followingNode === enclosingNode.body) {</span>
-<span class="cstat-no" title="statement not covered" >        addBlockStatementFirstComment(enclosingNode.body, comment);</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (followingNode &amp;&amp; precedingNode) {</span>
@@ -39829,7 +39883,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-18T04:04:11.604Z
+                at 2026-10-19T04:13:23.353Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

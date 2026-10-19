@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.33% </span>
+                <span class="strong">61.34% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12126/19769</span>
+                <span class='fraction'>12131/19774</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.33% </span>
+                <span class="strong">61.34% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12126/19769</span>
+                <span class='fraction'>12131/19774</span>
             </div>
         
             
@@ -19832,7 +19832,12 @@
 <a name='L19767'></a><a href='#L19767'>19767</a>
 <a name='L19768'></a><a href='#L19768'>19768</a>
 <a name='L19769'></a><a href='#L19769'>19769</a>
-<a name='L19770'></a><a href='#L19770'>19770</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">454x</span>
+<a name='L19770'></a><a href='#L19770'>19770</a>
+<a name='L19771'></a><a href='#L19771'>19771</a>
+<a name='L19772'></a><a href='#L19772'>19772</a>
+<a name='L19773'></a><a href='#L19773'>19773</a>
+<a name='L19774'></a><a href='#L19774'>19774</a>
+<a name='L19775'></a><a href='#L19775'>19775</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-yes">454x</span>
@@ -38460,17 +38465,22 @@
 <span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-yes">454x</span>
-<span class="cline-any cline-yes">14982x</span>
-<span class="cline-any cline-yes">14982x</span>
-<span class="cline-any cline-yes">14982x</span>
+<span class="cline-any cline-yes">15436x</span>
+<span class="cline-any cline-yes">15436x</span>
+<span class="cline-any cline-yes">15436x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">14982x</span>
-<span class="cline-any cline-yes">14982x</span>
+<span class="cline-any cline-yes">15436x</span>
+<span class="cline-any cline-yes">15436x</span>
+<span class="cline-any cline-yes">454x</span>
+<span class="cline-any cline-yes">454x</span>
+<span class="cline-any cline-yes">454x</span>
+<span class="cline-any cline-yes">454x</span>
+<span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-yes">454x</span>
 <span class="cline-any cline-yes">454x</span>
@@ -58389,6 +58399,11 @@ var isClass = createTypeCheckFunction([
   "ClassDeclaration",
   "ClassExpression"
 ]);
+var isEnumDeclaration = createTypeCheckFunction([
+  "TSEnumDeclaration",
+  "EnumDeclaration",
+  "DeclareEnum"
+]);
 &nbsp;
 // src/main/range.js
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function findCommonAncestor(startNodeAndAncestors, endNodeAndAncestors) {</span></span>
@@ -58477,7 +58492,7 @@ var isClass = createTypeCheckFunction([
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    type</span>
 <span class="cstat-no" title="statement not covered" >  } = node;</span>
-<span class="cstat-no" title="statement not covered" >  return parent?.type !== "DeclareExportDeclaration" &amp;&amp; type !== "TypeParameterDeclaration" &amp;&amp; !(type === "VariableDeclaration" &amp;&amp; isForXStatementInitializer(node, parent)) &amp;&amp; (type === "Directive" || type === "TypeAlias" || isExportAssignment(node) || type.startsWith("Declare") || type.startsWith("TSDeclare") || type.endsWith("Statement") || type.endsWith("Declaration"));</span>
+<span class="cstat-no" title="statement not covered" >  return parent?.type !== "DeclareExportDeclaration" &amp;&amp; type !== "TypeParameterDeclaration" &amp;&amp; type !== "TSTypeParameterDeclaration" &amp;&amp; !(type === "VariableDeclaration" &amp;&amp; isForXStatementInitializer(node, parent)) &amp;&amp; (type === "Directive" || type === "TypeAlias" || isExportAssignment(node) || type.startsWith("Declare") || type.startsWith("TSDeclare") || type.endsWith("Statement") || type.endsWith("Declaration"));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 var jsonSourceElements = /* @__PURE__ */ new Set(["JsonRoot", "ObjectExpression", "ArrayExpression", "StringLiteral", "NumericLiteral", "BooleanLiteral", "NullLiteral", "UnaryExpression", "TemplateLiteral"]);
 var graphqlSourceElements = /* @__PURE__ */ new Set(["OperationDefinition", "FragmentDefinition", "VariableDefinition", "TypeExtensionDefinition", "ObjectTypeDefinition", "FieldDefinition", "DirectiveDefinition", "EnumTypeDefinition", "EnumValueDefinition", "InputValueDefinition", "InputObjectTypeDefinition", "SchemaDefinition", "OperationTypeDefinition", "InterfaceTypeDefinition", "UnionTypeDefinition", "ScalarTypeDefinition"]);
@@ -59377,7 +59392,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-18T04:04:11.604Z
+                at 2026-10-19T04:13:23.353Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.2% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/5887</span>
+                <span class='fraction'>12/5892</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.2% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/5887</span>
+                <span class='fraction'>12/5892</span>
             </div>
         
             
@@ -5950,7 +5950,12 @@
 <a name='L5885'></a><a href='#L5885'>5885</a>
 <a name='L5886'></a><a href='#L5886'>5886</a>
 <a name='L5887'></a><a href='#L5887'>5887</a>
-<a name='L5888'></a><a href='#L5888'>5888</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L5888'></a><a href='#L5888'>5888</a>
+<a name='L5889'></a><a href='#L5889'>5889</a>
+<a name='L5890'></a><a href='#L5890'>5890</a>
+<a name='L5891'></a><a href='#L5891'>5891</a>
+<a name='L5892'></a><a href='#L5892'>5892</a>
+<a name='L5893'></a><a href='#L5893'>5893</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -9757,6 +9762,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -16928,6 +16938,11 @@
 <span class="cstat-no" title="statement not covered" >  "ClassDeclaration",</span>
 <span class="cstat-no" title="statement not covered" >  "ClassExpression"</span>
 <span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isEnumDeclaration = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSEnumDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "EnumDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "DeclareEnum"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/main/range.js</span>
 <span class="cstat-no" title="statement not covered" >function findCommonAncestor(startNodeAndAncestors, endNodeAndAncestors) {</span>
@@ -17016,7 +17031,7 @@
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    type</span>
 <span class="cstat-no" title="statement not covered" >  } = node;</span>
-<span class="cstat-no" title="statement not covered" >  return parent?.type !== "DeclareExportDeclaration" &amp;&amp; type !== "TypeParameterDeclaration" &amp;&amp; !(type === "VariableDeclaration" &amp;&amp; isForXStatementInitializer(node, parent)) &amp;&amp; (type === "Directive" || type === "TypeAlias" || isExportAssignment(node) || type.startsWith("Declare") || type.startsWith("TSDeclare") || type.endsWith("Statement") || type.endsWith("Declaration"));</span>
+<span class="cstat-no" title="statement not covered" >  return parent?.type !== "DeclareExportDeclaration" &amp;&amp; type !== "TypeParameterDeclaration" &amp;&amp; type !== "TSTypeParameterDeclaration" &amp;&amp; !(type === "VariableDeclaration" &amp;&amp; isForXStatementInitializer(node, parent)) &amp;&amp; (type === "Directive" || type === "TypeAlias" || isExportAssignment(node) || type.startsWith("Declare") || type.startsWith("TSDeclare") || type.endsWith("Statement") || type.endsWith("Declaration"));</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >var jsonSourceElements = /* @__PURE__ */ new Set(["JsonRoot", "ObjectExpression", "ArrayExpression", "StringLiteral", "NumericLiteral", "BooleanLiteral", "NullLiteral", "UnaryExpression", "TemplateLiteral"]);</span>
 <span class="cstat-no" title="statement not covered" >var graphqlSourceElements = /* @__PURE__ */ new Set(["OperationDefinition", "FragmentDefinition", "VariableDefinition", "TypeExtensionDefinition", "ObjectTypeDefinition", "FieldDefinition", "DirectiveDefinition", "EnumTypeDefinition", "EnumValueDefinition", "InputValueDefinition", "InputObjectTypeDefinition", "SchemaDefinition", "OperationTypeDefinition", "InterfaceTypeDefinition", "UnionTypeDefinition", "ScalarTypeDefinition"]);</span>
@@ -17731,7 +17746,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-18T04:04:09.100Z
+                at 2026-10-19T04:13:20.759Z
             </div>
         <script src="../prettify.js"></script>
         <script>
