@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/32076</span>
+                <span class='fraction'>0/32092</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/32076</span>
+                <span class='fraction'>0/32092</span>
             </div>
         
             
@@ -32138,7 +32138,39 @@
 <a name='L32073'></a><a href='#L32073'>32073</a>
 <a name='L32074'></a><a href='#L32074'>32074</a>
 <a name='L32075'></a><a href='#L32075'>32075</a>
-<a name='L32076'></a><a href='#L32076'>32076</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L32076'></a><a href='#L32076'>32076</a>
+<a name='L32077'></a><a href='#L32077'>32077</a>
+<a name='L32078'></a><a href='#L32078'>32078</a>
+<a name='L32079'></a><a href='#L32079'>32079</a>
+<a name='L32080'></a><a href='#L32080'>32080</a>
+<a name='L32081'></a><a href='#L32081'>32081</a>
+<a name='L32082'></a><a href='#L32082'>32082</a>
+<a name='L32083'></a><a href='#L32083'>32083</a>
+<a name='L32084'></a><a href='#L32084'>32084</a>
+<a name='L32085'></a><a href='#L32085'>32085</a>
+<a name='L32086'></a><a href='#L32086'>32086</a>
+<a name='L32087'></a><a href='#L32087'>32087</a>
+<a name='L32088'></a><a href='#L32088'>32088</a>
+<a name='L32089'></a><a href='#L32089'>32089</a>
+<a name='L32090'></a><a href='#L32090'>32090</a>
+<a name='L32091'></a><a href='#L32091'>32091</a>
+<a name='L32092'></a><a href='#L32092'>32092</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -92087,6 +92119,9 @@
 <span class="cstat-no" title="statement not covered" >      if (modifier.kind === SyntaxKind3.AbstractKeyword &amp;&amp; node.kind !== SyntaxKind3.ClassDeclaration &amp;&amp; node.kind !== SyntaxKind3.ConstructorType &amp;&amp; node.kind !== SyntaxKind3.MethodDeclaration &amp;&amp; node.kind !== SyntaxKind3.PropertyDeclaration &amp;&amp; node.kind !== SyntaxKind3.GetAccessor &amp;&amp; node.kind !== SyntaxKind3.SetAccessor) {</span>
 <span class="cstat-no" title="statement not covered" >        throw (0, createError)(modifier, `'${tokenToString(modifier.kind)}' modifier can only appear on a class, method, or property declaration.`);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (modifier.kind === SyntaxKind3.ExportKeyword &amp;&amp; modifiers.slice(0, modifiers.indexOf(modifier)).some((m) =&gt; m.kind === SyntaxKind3.AbstractKeyword)) {</span>
+<span class="cstat-no" title="statement not covered" >        throw (0, createError)(modifier, "'export' modifier must precede 'abstract' modifier.");</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if ((modifier.kind === SyntaxKind3.StaticKeyword || modifier.kind === SyntaxKind3.PublicKeyword || modifier.kind === SyntaxKind3.ProtectedKeyword || modifier.kind === SyntaxKind3.PrivateKeyword) &amp;&amp; (node.parent.kind === SyntaxKind3.ModuleBlock || node.parent.kind === SyntaxKind3.SourceFile)) {</span>
 <span class="cstat-no" title="statement not covered" >        throw (0, createError)(modifier, `'${tokenToString(modifier.kind)}' modifier cannot appear on a module or namespace element.`);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -92959,7 +92994,7 @@
 <span class="cstat-no" title="statement not covered" >        case SyntaxKind5.SourceFile: {</span>
 <span class="cstat-no" title="statement not covered" >          return this.createNode(node, {</span>
 <span class="cstat-no" title="statement not covered" >            type: AST_NODE_TYPES2.Program,</span>
-<span class="cstat-no" title="statement not covered" >            range: [node.getStart(this.ast), node.endOfFileToken.end],</span>
+<span class="cstat-no" title="statement not covered" >            range: [0, node.endOfFileToken.end],</span>
 <span class="cstat-no" title="statement not covered" >            body: this.convertBodyExpressions(node.statements, node),</span>
 <span class="cstat-no" title="statement not covered" >            comments: void 0,</span>
 <span class="cstat-no" title="statement not covered" >            sourceType: node.externalModuleIndicator ? "module" : "script",</span>
@@ -93772,6 +93807,7 @@
 <span class="cstat-no" title="statement not covered" >            operator,</span>
 <span class="cstat-no" title="statement not covered" >            // Guaranteed to be true in a valid AST (and asserted above) but</span>
 <span class="cstat-no" title="statement not covered" >            // technically could be false at runtime with allowInvalidAST: true.</span>
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line @typescript-eslint/no-deprecated -- `prefix` is a required property</span>
 <span class="cstat-no" title="statement not covered" >            prefix: isPrefixUnaryExpression2</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -93780,6 +93816,7 @@
 <span class="cstat-no" title="statement not covered" >            type: AST_NODE_TYPES2.UnaryExpression,</span>
 <span class="cstat-no" title="statement not covered" >            argument: this.convertChild(node.expression),</span>
 <span class="cstat-no" title="statement not covered" >            operator: "delete",</span>
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line @typescript-eslint/no-deprecated -- `prefix` is a required property</span>
 <span class="cstat-no" title="statement not covered" >            prefix: true</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        case SyntaxKind5.VoidExpression:</span>
@@ -93787,6 +93824,7 @@
 <span class="cstat-no" title="statement not covered" >            type: AST_NODE_TYPES2.UnaryExpression,</span>
 <span class="cstat-no" title="statement not covered" >            argument: this.convertChild(node.expression),</span>
 <span class="cstat-no" title="statement not covered" >            operator: "void",</span>
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line @typescript-eslint/no-deprecated -- `prefix` is a required property</span>
 <span class="cstat-no" title="statement not covered" >            prefix: true</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        case SyntaxKind5.TypeOfExpression:</span>
@@ -93794,6 +93832,7 @@
 <span class="cstat-no" title="statement not covered" >            type: AST_NODE_TYPES2.UnaryExpression,</span>
 <span class="cstat-no" title="statement not covered" >            argument: this.convertChild(node.expression),</span>
 <span class="cstat-no" title="statement not covered" >            operator: "typeof",</span>
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line @typescript-eslint/no-deprecated -- `prefix` is a required property</span>
 <span class="cstat-no" title="statement not covered" >            prefix: true</span>
 <span class="cstat-no" title="statement not covered" >          });</span>
 <span class="cstat-no" title="statement not covered" >        case SyntaxKind5.TypeOperator:</span>
@@ -94417,6 +94456,7 @@
 <span class="cstat-no" title="statement not covered" >                return {</span>
 <span class="cstat-no" title="statement not covered" >                  body: this.convertChild(node.body),</span>
 <span class="cstat-no" title="statement not covered" >                  declare: false,</span>
+<span class="cstat-no" title="statement not covered" >                  // eslint-disable-next-line @typescript-eslint/no-deprecated -- `global` is a required property</span>
 <span class="cstat-no" title="statement not covered" >                  global: false,</span>
 <span class="cstat-no" title="statement not covered" >                  id: this.convertChild(node.name),</span>
 <span class="cstat-no" title="statement not covered" >                  kind: "global"</span>
@@ -94430,6 +94470,7 @@
 <span class="cstat-no" title="statement not covered" >                    body</span>
 <span class="cstat-no" title="statement not covered" >                  } : {},</span>
 <span class="cstat-no" title="statement not covered" >                  declare: false,</span>
+<span class="cstat-no" title="statement not covered" >                  // eslint-disable-next-line @typescript-eslint/no-deprecated -- `global` is a required property</span>
 <span class="cstat-no" title="statement not covered" >                  global: false,</span>
 <span class="cstat-no" title="statement not covered" >                  id: this.convertChild(node.name)</span>
 <span class="cstat-no" title="statement not covered" >                };</span>
@@ -94464,6 +94505,7 @@
 <span class="cstat-no" title="statement not covered" >              return {</span>
 <span class="cstat-no" title="statement not covered" >                body: this.convertChild(node.body),</span>
 <span class="cstat-no" title="statement not covered" >                declare: false,</span>
+<span class="cstat-no" title="statement not covered" >                // eslint-disable-next-line @typescript-eslint/no-deprecated -- `global` is a required property</span>
 <span class="cstat-no" title="statement not covered" >                global: false,</span>
 <span class="cstat-no" title="statement not covered" >                id: name,</span>
 <span class="cstat-no" title="statement not covered" >                kind: node.flags &amp; NodeFlags.Namespace ? "namespace" : "module"</span>
@@ -95288,12 +95330,18 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-js/utilities/strip-comments.js</span>
 <span class="cstat-no" title="statement not covered" >  function stripCommentsFromText(text, comments) {</span>
+<span class="cstat-no" title="statement not covered" >    if (comments.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >      return text;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    let result = "";</span>
+<span class="cstat-no" title="statement not covered" >    let previousEnd = 0;</span>
 <span class="cstat-no" title="statement not covered" >    for (const comment of comments) {</span>
 <span class="cstat-no" title="statement not covered" >      const start = locStart(comment);</span>
 <span class="cstat-no" title="statement not covered" >      const end = locEnd(comment);</span>
-<span class="cstat-no" title="statement not covered" >      text = text.slice(0, start) + replace_non_line_breaks_with_space_default(text.slice(start, end)) + text.slice(end);</span>
+<span class="cstat-no" title="statement not covered" >      result += text.slice(previousEnd, start) + replace_non_line_breaks_with_space_default(text.slice(start, end));</span>
+<span class="cstat-no" title="statement not covered" >      previousEnd = end;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return text;</span>
+<span class="cstat-no" title="statement not covered" >    return result + text.slice(previousEnd);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  var cache2 = /* @__PURE__ */ new WeakMap();</span>
 <span class="cstat-no" title="statement not covered" >  function stripComments(options) {</span>
@@ -96295,7 +96343,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-19T04:13:20.759Z
+                at 2026-10-20T04:25:43.039Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

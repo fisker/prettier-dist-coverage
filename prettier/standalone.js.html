@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.2% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/5918</span>
+                <span class='fraction'>12/5928</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.2% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/5918</span>
+                <span class='fraction'>12/5928</span>
             </div>
         
             
@@ -5980,7 +5980,18 @@
 <a name='L5915'></a><a href='#L5915'>5915</a>
 <a name='L5916'></a><a href='#L5916'>5916</a>
 <a name='L5917'></a><a href='#L5917'>5917</a>
-<a name='L5918'></a><a href='#L5918'>5918</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L5918'></a><a href='#L5918'>5918</a>
+<a name='L5919'></a><a href='#L5919'>5919</a>
+<a name='L5920'></a><a href='#L5920'>5920</a>
+<a name='L5921'></a><a href='#L5921'>5921</a>
+<a name='L5922'></a><a href='#L5922'>5922</a>
+<a name='L5923'></a><a href='#L5923'>5923</a>
+<a name='L5924'></a><a href='#L5924'>5924</a>
+<a name='L5925'></a><a href='#L5925'>5925</a>
+<a name='L5926'></a><a href='#L5926'>5926</a>
+<a name='L5927'></a><a href='#L5927'>5927</a>
+<a name='L5928'></a><a href='#L5928'>5928</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -9822,6 +9833,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -14308,11 +14328,12 @@
 <span class="cstat-no" title="statement not covered" >    comments.push(comment);</span>
 <span class="cstat-no" title="statement not covered" >    comment.printed = false;</span>
 <span class="cstat-no" title="statement not covered" >    comment.nodeDescription = describeNodeForDebugging(node);</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function addLeadingComment(node, comment) {</span>
 <span class="cstat-no" title="statement not covered" >    comment.leading = true;</span>
 <span class="cstat-no" title="statement not covered" >    comment.trailing = false;</span>
-<span class="cstat-no" title="statement not covered" >    addCommentHelper(node, comment);</span>
+<span class="cstat-no" title="statement not covered" >    return addCommentHelper(node, comment);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function addDanglingComment(node, comment, marker) {</span>
 <span class="cstat-no" title="statement not covered" >    comment.leading = false;</span>
@@ -14320,12 +14341,12 @@
 <span class="cstat-no" title="statement not covered" >    if (marker) {</span>
 <span class="cstat-no" title="statement not covered" >      comment.marker = marker;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    addCommentHelper(node, comment);</span>
+<span class="cstat-no" title="statement not covered" >    return addCommentHelper(node, comment);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function addTrailingComment(node, comment) {</span>
 <span class="cstat-no" title="statement not covered" >    comment.leading = false;</span>
 <span class="cstat-no" title="statement not covered" >    comment.trailing = true;</span>
-<span class="cstat-no" title="statement not covered" >    addCommentHelper(node, comment);</span>
+<span class="cstat-no" title="statement not covered" >    return addCommentHelper(node, comment);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/main/comments/attach.js</span>
@@ -17028,6 +17049,15 @@
 <span class="cstat-no" title="statement not covered" >    "EnumDeclaration",</span>
 <span class="cstat-no" title="statement not covered" >    "DeclareEnum"</span>
 <span class="cstat-no" title="statement not covered" >  ]);</span>
+<span class="cstat-no" title="statement not covered" >  var isEnumBody = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >    "TSEnumBody",</span>
+<span class="cstat-no" title="statement not covered" >    "EnumBody",</span>
+<span class="cstat-no" title="statement not covered" >    "EnumBooleanBody",</span>
+<span class="cstat-no" title="statement not covered" >    "EnumNumberBody",</span>
+<span class="cstat-no" title="statement not covered" >    "EnumBigIntBody",</span>
+<span class="cstat-no" title="statement not covered" >    "EnumStringBody",</span>
+<span class="cstat-no" title="statement not covered" >    "EnumSymbolBody"</span>
+<span class="cstat-no" title="statement not covered" >  ]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/main/range.js</span>
 <span class="cstat-no" title="statement not covered" >  function findCommonAncestor(startNodeAndAncestors, endNodeAndAncestors) {</span>
@@ -17821,7 +17851,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-19T04:13:23.353Z
+                at 2026-10-20T04:25:45.659Z
             </div>
         <script src="../prettify.js"></script>
         <script>

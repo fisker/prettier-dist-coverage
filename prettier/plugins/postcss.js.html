@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/12128</span>
+                <span class='fraction'>5/12151</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/12128</span>
+                <span class='fraction'>5/12151</span>
             </div>
         
             
@@ -12190,7 +12190,53 @@
 <a name='L12125'></a><a href='#L12125'>12125</a>
 <a name='L12126'></a><a href='#L12126'>12126</a>
 <a name='L12127'></a><a href='#L12127'>12127</a>
-<a name='L12128'></a><a href='#L12128'>12128</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L12128'></a><a href='#L12128'>12128</a>
+<a name='L12129'></a><a href='#L12129'>12129</a>
+<a name='L12130'></a><a href='#L12130'>12130</a>
+<a name='L12131'></a><a href='#L12131'>12131</a>
+<a name='L12132'></a><a href='#L12132'>12132</a>
+<a name='L12133'></a><a href='#L12133'>12133</a>
+<a name='L12134'></a><a href='#L12134'>12134</a>
+<a name='L12135'></a><a href='#L12135'>12135</a>
+<a name='L12136'></a><a href='#L12136'>12136</a>
+<a name='L12137'></a><a href='#L12137'>12137</a>
+<a name='L12138'></a><a href='#L12138'>12138</a>
+<a name='L12139'></a><a href='#L12139'>12139</a>
+<a name='L12140'></a><a href='#L12140'>12140</a>
+<a name='L12141'></a><a href='#L12141'>12141</a>
+<a name='L12142'></a><a href='#L12142'>12142</a>
+<a name='L12143'></a><a href='#L12143'>12143</a>
+<a name='L12144'></a><a href='#L12144'>12144</a>
+<a name='L12145'></a><a href='#L12145'>12145</a>
+<a name='L12146'></a><a href='#L12146'>12146</a>
+<a name='L12147'></a><a href='#L12147'>12147</a>
+<a name='L12148'></a><a href='#L12148'>12148</a>
+<a name='L12149'></a><a href='#L12149'>12149</a>
+<a name='L12150'></a><a href='#L12150'>12150</a>
+<a name='L12151'></a><a href='#L12151'>12151</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24878,8 +24924,28 @@
 <span class="cstat-no" title="statement not covered" >        if (!str.includes("&lt;")) return str;</span>
 <span class="cstat-no" title="statement not covered" >        return str.replace(STYLE_TAG, "\\3c $2").replace(COMMENT_OPEN, "\\3c $2");</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      function cutEscaped(chunks, css2, escaped) {</span>
+<span class="cstat-no" title="statement not covered" >        let parts = [];</span>
+<span class="cstat-no" title="statement not covered" >        let at2 = 0;</span>
+<span class="cstat-no" title="statement not covered" >        let into = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; chunks.length; i += 3) {</span>
+<span class="cstat-no" title="statement not covered" >          let from = into;</span>
+<span class="cstat-no" title="statement not covered" >          let end = at2 + chunks[i].length;</span>
+<span class="cstat-no" title="statement not covered" >          while (at2 &lt; end) {</span>
+<span class="cstat-no" title="statement not covered" >            if (css2[at2] === escaped[into]) {</span>
+<span class="cstat-no" title="statement not covered" >              at2 += 1;</span>
+<span class="cstat-no" title="statement not covered" >              into += 1;</span>
+<span class="cstat-no" title="statement not covered" >            } else {</span>
+<span class="cstat-no" title="statement not covered" >              at2 += 1;</span>
+<span class="cstat-no" title="statement not covered" >              into += 4;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          parts.push(escaped.slice(from, into));</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        return parts;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      var SafeStringifier = class extends Stringifier {</span>
-<span class="cstat-no" title="statement not covered" >        escapeHTML(node, print2) {</span>
+<span class="cstat-no" title="statement not covered" >        escapeHTML(print2) {</span>
 <span class="cstat-no" title="statement not covered" >          let builder = this.builder;</span>
 <span class="cstat-no" title="statement not covered" >          let chunks, css2;</span>
 <span class="cstat-no" title="statement not covered" >          this.builder = (str, child, type) =&gt; {</span>
@@ -24902,15 +24968,18 @@
 <span class="cstat-no" title="statement not covered" >              builder(chunks[i], chunks[i + 1], chunks[i + 2]);</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            builder(escaped, node, "start");</span>
+<span class="cstat-no" title="statement not covered" >            let parts = cutEscaped(chunks, css2, escaped);</span>
+<span class="cstat-no" title="statement not covered" >            for (let i = 0; i &lt; chunks.length; i += 3) {</span>
+<span class="cstat-no" title="statement not covered" >              builder(parts[i / 3], chunks[i + 1], chunks[i + 2]);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        root(node) {</span>
 <span class="cstat-no" title="statement not covered" >          if (node.parent &amp;&amp; node.parent.type === "document") {</span>
-<span class="cstat-no" title="statement not covered" >            this.escapeHTML(node, () =&gt; this.body(node));</span>
+<span class="cstat-no" title="statement not covered" >            this.escapeHTML(() =&gt; this.body(node));</span>
 <span class="cstat-no" title="statement not covered" >            if (node.raws.after) this.builder(node.raws.after);</span>
 <span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            this.escapeHTML(node, () =&gt; super.root(node));</span>
+<span class="cstat-no" title="statement not covered" >            this.escapeHTML(() =&gt; super.root(node));</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
@@ -24919,7 +24988,7 @@
 <span class="cstat-no" title="statement not covered" >        if (node.type === "root" || node.type === "document") {</span>
 <span class="cstat-no" title="statement not covered" >          str.stringify(node);</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >          str.escapeHTML(node, () =&gt; str.stringify(node));</span>
+<span class="cstat-no" title="statement not covered" >          str.escapeHTML(() =&gt; str.stringify(node));</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      module.exports = stringify;</span>
@@ -28357,7 +28426,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.30";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.31";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -36451,7 +36520,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-19T04:13:23.353Z
+                at 2026-10-20T04:25:45.659Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
