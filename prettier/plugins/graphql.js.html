@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/2711</span>
+                <span class='fraction'>0/2721</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/2711</span>
+                <span class='fraction'>0/2721</span>
             </div>
         
             
@@ -2773,7 +2773,27 @@
 <a name='L2708'></a><a href='#L2708'>2708</a>
 <a name='L2709'></a><a href='#L2709'>2709</a>
 <a name='L2710'></a><a href='#L2710'>2710</a>
-<a name='L2711'></a><a href='#L2711'>2711</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L2711'></a><a href='#L2711'>2711</a>
+<a name='L2712'></a><a href='#L2712'>2712</a>
+<a name='L2713'></a><a href='#L2713'>2713</a>
+<a name='L2714'></a><a href='#L2714'>2714</a>
+<a name='L2715'></a><a href='#L2715'>2715</a>
+<a name='L2716'></a><a href='#L2716'>2716</a>
+<a name='L2717'></a><a href='#L2717'>2717</a>
+<a name='L2718'></a><a href='#L2718'>2718</a>
+<a name='L2719'></a><a href='#L2719'>2719</a>
+<a name='L2720'></a><a href='#L2720'>2720</a>
+<a name='L2721'></a><a href='#L2721'>2721</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -5758,7 +5778,8 @@
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      indent: shouldIndent = false,</span>
 <span class="cstat-no" title="statement not covered" >      marker,</span>
-<span class="cstat-no" title="statement not covered" >      filter = returnTrue</span>
+<span class="cstat-no" title="statement not covered" >      filter = returnTrue,</span>
+<span class="cstat-no" title="statement not covered" >      separator = hardline</span>
 <span class="cstat-no" title="statement not covered" >    } = danglingCommentsPrintOptions;</span>
 <span class="cstat-no" title="statement not covered" >    const danglingComments = new Set(</span>
 <span class="cstat-no" title="statement not covered" >      path.node?.comments?.filter(</span>
@@ -5768,12 +5789,21 @@
 <span class="cstat-no" title="statement not covered" >    if (danglingComments.size === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      return "";</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const parts = path.map(</span>
-<span class="cstat-no" title="statement not covered" >      ({ node: comment }) =&gt; danglingComments.has(comment) ? printComment(path, options2) : "",</span>
-<span class="cstat-no" title="statement not covered" >      "comments"</span>
-<span class="cstat-no" title="statement not covered" >    ).filter(Boolean);</span>
-<span class="cstat-no" title="statement not covered" >    const doc = join(hardline, parts);</span>
-<span class="cstat-no" title="statement not covered" >    return shouldIndent ? indent([hardline, doc]) : doc;</span>
+<span class="cstat-no" title="statement not covered" >    const parts = [];</span>
+<span class="cstat-no" title="statement not covered" >    let previous;</span>
+<span class="cstat-no" title="statement not covered" >    path.each(({ node: comment }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (!danglingComments.has(comment)) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (previous) {</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(</span>
+<span class="cstat-no" title="statement not covered" >          typeof separator === "function" ? separator({ previous, comment }) : separator</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(printComment(path, options2));</span>
+<span class="cstat-no" title="statement not covered" >      previous = comment;</span>
+<span class="cstat-no" title="statement not covered" >    }, "comments");</span>
+<span class="cstat-no" title="statement not covered" >    return shouldIndent ? indent([hardline, parts]) : parts;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/utilities/is-non-empty-array.js</span>
@@ -8200,7 +8230,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-21T04:15:39.232Z
+                at 2026-10-22T04:15:36.930Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13314</span>
+                <span class='fraction'>0/13332</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13314</span>
+                <span class='fraction'>0/13332</span>
             </div>
         
             
@@ -13377,7 +13377,43 @@
 <a name='L13312'></a><a href='#L13312'>13312</a>
 <a name='L13313'></a><a href='#L13313'>13313</a>
 <a name='L13314'></a><a href='#L13314'>13314</a>
-<a name='L13315'></a><a href='#L13315'>13315</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13315'></a><a href='#L13315'>13315</a>
+<a name='L13316'></a><a href='#L13316'>13316</a>
+<a name='L13317'></a><a href='#L13317'>13317</a>
+<a name='L13318'></a><a href='#L13318'>13318</a>
+<a name='L13319'></a><a href='#L13319'>13319</a>
+<a name='L13320'></a><a href='#L13320'>13320</a>
+<a name='L13321'></a><a href='#L13321'>13321</a>
+<a name='L13322'></a><a href='#L13322'>13322</a>
+<a name='L13323'></a><a href='#L13323'>13323</a>
+<a name='L13324'></a><a href='#L13324'>13324</a>
+<a name='L13325'></a><a href='#L13325'>13325</a>
+<a name='L13326'></a><a href='#L13326'>13326</a>
+<a name='L13327'></a><a href='#L13327'>13327</a>
+<a name='L13328'></a><a href='#L13328'>13328</a>
+<a name='L13329'></a><a href='#L13329'>13329</a>
+<a name='L13330'></a><a href='#L13330'>13330</a>
+<a name='L13331'></a><a href='#L13331'>13331</a>
+<a name='L13332'></a><a href='#L13332'>13332</a>
+<a name='L13333'></a><a href='#L13333'>13333</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27462,7 +27498,6 @@
 <span class="cstat-no" title="statement not covered" >  DeclareEnum: vk[29],</span>
 <span class="cstat-no" title="statement not covered" >  DeclareHook: vk[24],</span>
 <span class="cstat-no" title="statement not covered" >  DeclareNamespace: vk[29],</span>
-<span class="cstat-no" title="statement not covered" >  EnumBigIntBody: vk[38],</span>
 <span class="cstat-no" title="statement not covered" >  EnumBigIntMember: vk[17],</span>
 <span class="cstat-no" title="statement not covered" >  EnumBody: vk[38],</span>
 <span class="cstat-no" title="statement not covered" >  ExportAssignment: vk[8],</span>
@@ -27524,7 +27559,8 @@
 <span class="cstat-no" title="statement not covered" >  TSJSDocAllType: [],</span>
 <span class="cstat-no" title="statement not covered" >  TSJSDocUnknownType: [],</span>
 <span class="cstat-no" title="statement not covered" >  TSJSDocNullableType: vk[30],</span>
-<span class="cstat-no" title="statement not covered" >  TSJSDocNonNullableType: vk[30]</span>
+<span class="cstat-no" title="statement not covered" >  TSJSDocNonNullableType: vk[30],</span>
+<span class="cstat-no" title="statement not covered" >  EnumBigIntBody: vk[38]</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/traverse/get-visitor-keys.js</span>
@@ -27606,7 +27642,10 @@
 <span class="cstat-no" title="statement not covered" >  ast = visit_node_default(ast, {</span>
 <span class="cstat-no" title="statement not covered" >    onEnter(node) {</span>
 <span class="cstat-no" title="statement not covered" >      setContentEnd(node, comments, text);</span>
-<span class="cstat-no" title="statement not covered" >      switch (node.type) {</span>
+<span class="cstat-no" title="statement not covered" >      const {</span>
+<span class="cstat-no" title="statement not covered" >        type</span>
+<span class="cstat-no" title="statement not covered" >      } = node;</span>
+<span class="cstat-no" title="statement not covered" >      switch (type) {</span>
 <span class="cstat-no" title="statement not covered" >        case "ParenthesizedExpression": {</span>
 <span class="cstat-no" title="statement not covered" >          const {</span>
 <span class="cstat-no" title="statement not covered" >            expression</span>
@@ -27685,6 +27724,32 @@
 <span class="cstat-no" title="statement not covered" >          if (astType === "hermes" &amp;&amp; node.assertions &amp;&amp; !node.attributes) {</span>
 <span class="cstat-no" title="statement not covered" >            node.attributes = node.assertions;</span>
 <span class="cstat-no" title="statement not covered" >            delete node.assertions;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >        // Since flow@0.313.0 (reverted during 0.320.0~0.337.0), `TypeParameter.bound` is a bare type node without the `TypeAnnotation` wrapper</span>
+<span class="cstat-no" title="statement not covered" >        // https://github.com/facebook/flow/blob/HEAD/Changelog.md#03130</span>
+<span class="cstat-no" title="statement not covered" >        // https://github.com/facebook/flow/issues/9449</span>
+<span class="cstat-no" title="statement not covered" >        case "TypeParameter":</span>
+<span class="cstat-no" title="statement not covered" >          if (astType !== "flow" &amp;&amp; node.bound?.type === "TypeAnnotation") {</span>
+<span class="cstat-no" title="statement not covered" >            node.bound = node.bound.typeAnnotation;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >        // https://github.com/facebook/flow/blob/HEAD/Changelog.md#03370</span>
+<span class="cstat-no" title="statement not covered" >        case "EnumBooleanBody":</span>
+<span class="cstat-no" title="statement not covered" >        case "EnumNumberBody":</span>
+<span class="cstat-no" title="statement not covered" >        case "EnumBigIntBody":</span>
+<span class="cstat-no" title="statement not covered" >        case "EnumStringBody":</span>
+<span class="cstat-no" title="statement not covered" >        case "EnumSymbolBody":</span>
+<span class="cstat-no" title="statement not covered" >          if (astType === "hermes") {</span>
+<span class="cstat-no" title="statement not covered" >            if (node.explicitType || type === "EnumSymbolBody") {</span>
+<span class="cstat-no" title="statement not covered" >              node.explicitType = type.slice(</span>
+<span class="cstat-no" title="statement not covered" >                // `Enum`</span>
+<span class="cstat-no" title="statement not covered" >                4,</span>
+<span class="cstat-no" title="statement not covered" >                // `Body`</span>
+<span class="cstat-no" title="statement not covered" >                -4</span>
+<span class="cstat-no" title="statement not covered" >              ).toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            node.type = "EnumBody";</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -28337,15 +28402,7 @@
 <span class="cstat-no" title="statement not covered" >  "EnumDeclaration",</span>
 <span class="cstat-no" title="statement not covered" >  "DeclareEnum"</span>
 <span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isEnumBody = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSEnumBody",</span>
-<span class="cstat-no" title="statement not covered" >  "EnumBody",</span>
-<span class="cstat-no" title="statement not covered" >  "EnumBooleanBody",</span>
-<span class="cstat-no" title="statement not covered" >  "EnumNumberBody",</span>
-<span class="cstat-no" title="statement not covered" >  "EnumBigIntBody",</span>
-<span class="cstat-no" title="statement not covered" >  "EnumStringBody",</span>
-<span class="cstat-no" title="statement not covered" >  "EnumSymbolBody"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isEnumBody = createTypeCheckFunction(["TSEnumBody", "EnumBody"]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/is-shorthand-specifier.js</span>
 <span class="cstat-no" title="statement not covered" >function isShorthandSpecifier(specifier) {</span>
@@ -30164,6 +30221,7 @@
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          return key === "left" &amp;&amp; parent.operator === "**";</span>
 <span class="cstat-no" title="statement not covered" >        case "TSNonNullExpression":</span>
+<span class="cstat-no" title="statement not covered" >        case "TSInstantiationExpression":</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        default:</span>
 <span class="cstat-no" title="statement not covered" >          return false;</span>
@@ -30212,6 +30270,7 @@
 <span class="cstat-no" title="statement not covered" >        case "BindExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "AwaitExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "TSNonNullExpression":</span>
+<span class="cstat-no" title="statement not covered" >        case "TSInstantiationExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "UpdateExpression":</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        case "UnaryExpression":</span>
@@ -30315,7 +30374,7 @@
 <span class="cstat-no" title="statement not covered" >      if (key === "extendsType" &amp;&amp; isConditionalType(node) &amp;&amp; parent.type === node.type) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (key === "constraint" &amp;&amp; node.type === "TSConditionalType" &amp;&amp; parent.type === "TSTypeParameter" || key === "typeAnnotation" &amp;&amp; node.type === "ConditionalTypeAnnotation" &amp;&amp; parent.type === "TypeAnnotation" &amp;&amp; path.grandparent.type === "TypeParameter" &amp;&amp; path.grandparent.bound === parent &amp;&amp; path.grandparent.usesExtendsBound) {</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "constraint" &amp;&amp; node.type === "TSConditionalType" &amp;&amp; parent.type === "TSTypeParameter" || key === "bound" &amp;&amp; node.type === "ConditionalTypeAnnotation" &amp;&amp; parent.type === "TypeParameter" &amp;&amp; parent.usesExtendsBound) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (key === "checkType" &amp;&amp; isConditionalType(parent)) {</span>
@@ -30470,6 +30529,7 @@
 <span class="cstat-no" title="statement not covered" >        case "AsConstExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "SatisfiesExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "TSNonNullExpression":</span>
+<span class="cstat-no" title="statement not covered" >        case "TSInstantiationExpression":</span>
 <span class="cstat-no" title="statement not covered" >          return true;</span>
 <span class="cstat-no" title="statement not covered" >        case "NewExpression":</span>
 <span class="cstat-no" title="statement not covered" >        case "CallExpression":</span>
@@ -30591,7 +30651,7 @@
 <span class="cstat-no" title="statement not covered" >    case "JSXElement":</span>
 <span class="cstat-no" title="statement not covered" >      return key === "callee" || key === "left" &amp;&amp; parent.type === "BinaryExpression" &amp;&amp; parent.operator === "&lt;" || !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) &amp;&amp; parent.type !== "TypeCastExpression" &amp;&amp; parent.type !== "VariableDeclarator" &amp;&amp; parent.type !== "YieldExpression" &amp;&amp; parent.type !== "MatchExpressionCase" &amp;&amp; !(key === "declaration" &amp;&amp; parent.type === "ExportDefaultDeclaration");</span>
 <span class="cstat-no" title="statement not covered" >    case "TSInstantiationExpression":</span>
-<span class="cstat-no" title="statement not covered" >      if (key === "object" &amp;&amp; isMemberExpression(parent) || key === "callee" &amp;&amp; parent.type === "CallExpression" || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression" || key === "expression" &amp;&amp; parent.type === "TSNonNullExpression" || key === "superClass" &amp;&amp; isClass(parent)) {</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "object" &amp;&amp; isMemberExpression(parent) || key === "callee" &amp;&amp; parent.type === "CallExpression" || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression" || key === "expression" &amp;&amp; (parent.type === "TSNonNullExpression" || parent.type === "TSInstantiationExpression") || key === "superClass" &amp;&amp; isClass(parent)) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
@@ -32331,7 +32391,8 @@
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    indent: shouldIndent = false,</span>
 <span class="cstat-no" title="statement not covered" >    marker,</span>
-<span class="cstat-no" title="statement not covered" >    filter = returnTrue</span>
+<span class="cstat-no" title="statement not covered" >    filter = returnTrue,</span>
+<span class="cstat-no" title="statement not covered" >    separator = hardline</span>
 <span class="cstat-no" title="statement not covered" >  } = danglingCommentsPrintOptions;</span>
 <span class="cstat-no" title="statement not covered" >  const danglingComments = new Set(</span>
 <span class="cstat-no" title="statement not covered" >    path.node?.comments?.filter(</span>
@@ -32341,12 +32402,21 @@
 <span class="cstat-no" title="statement not covered" >  if (danglingComments.size === 0) {</span>
 <span class="cstat-no" title="statement not covered" >    return "";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const parts = path.map(</span>
-<span class="cstat-no" title="statement not covered" >    ({ node: comment }) =&gt; danglingComments.has(comment) ? printComment(path, options2) : "",</span>
-<span class="cstat-no" title="statement not covered" >    "comments"</span>
-<span class="cstat-no" title="statement not covered" >  ).filter(Boolean);</span>
-<span class="cstat-no" title="statement not covered" >  const doc = join(hardline, parts);</span>
-<span class="cstat-no" title="statement not covered" >  return shouldIndent ? indent([hardline, doc]) : doc;</span>
+<span class="cstat-no" title="statement not covered" >  const parts = [];</span>
+<span class="cstat-no" title="statement not covered" >  let previous;</span>
+<span class="cstat-no" title="statement not covered" >  path.each(({ node: comment }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (!danglingComments.has(comment)) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (previous) {</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(</span>
+<span class="cstat-no" title="statement not covered" >        typeof separator === "function" ? separator({ previous, comment }) : separator</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(printComment(path, options2));</span>
+<span class="cstat-no" title="statement not covered" >    previous = comment;</span>
+<span class="cstat-no" title="statement not covered" >  }, "comments");</span>
+<span class="cstat-no" title="statement not covered" >  return shouldIndent ? indent([hardline, parts]) : parts;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function printLeadingComments(path, options2, printOptions) {</span>
 <span class="cstat-no" title="statement not covered" >  const printed = options2[/* @__PURE__ */ Symbol.for("printedComments")];</span>
@@ -34751,7 +34821,8 @@
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const dangling = printDanglingComments(path, options2, {</span>
-<span class="cstat-no" title="statement not covered" >    marker: "commentBeforeArrow"</span>
+<span class="cstat-no" title="statement not covered" >    marker: "commentBeforeArrow",</span>
+<span class="cstat-no" title="statement not covered" >    separator: ({ previous, comment }) =&gt; locEnd(previous) === locStart(comment) ? "" : " "</span>
 <span class="cstat-no" title="statement not covered" >  });</span>
 <span class="cstat-no" title="statement not covered" >  if (dangling) {</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(" ", dangling);</span>
@@ -36717,9 +36788,8 @@
 <span class="cstat-no" title="statement not covered" >    parent</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
 <span class="cstat-no" title="statement not covered" >  const isEnumBody2 = isEnumBody(node);</span>
-<span class="cstat-no" title="statement not covered" >  const isFlowEnumBody = isEnumBody2 &amp;&amp; node.type !== "TSEnumBody";</span>
 <span class="cstat-no" title="statement not covered" >  const isImportAttributes = isPrintingImportAttributes(node);</span>
-<span class="cstat-no" title="statement not covered" >  const hasUnknownMembers = isFlowEnumBody &amp;&amp; node.hasUnknownMembers;</span>
+<span class="cstat-no" title="statement not covered" >  const hasUnknownMembers = node.type === "EnumBody" &amp;&amp; node.hasUnknownMembers;</span>
 <span class="cstat-no" title="statement not covered" >  const property = isEnumBody2 ? "members" : isImportAttributes ? "attributes" : "properties";</span>
 <span class="cstat-no" title="statement not covered" >  const children = node[property];</span>
 <span class="cstat-no" title="statement not covered" >  const shouldBreak = isEnumBody2 || node.type === "ObjectPattern" &amp;&amp; parent.type !== "FunctionDeclaration" &amp;&amp; parent.type !== "FunctionExpression" &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "ObjectMethod" &amp;&amp; parent.type !== "ClassMethod" &amp;&amp; parent.type !== "ClassPrivateMethod" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "CatchClause" &amp;&amp; node.properties.some((property2) =&gt; property2.value &amp;&amp; (property2.value.type === "ObjectPattern" || property2.value.type === "ArrayPattern")) || node.type !== "ObjectPattern" &amp;&amp; options2.objectWrap === "preserve" &amp;&amp; children.length &gt; 0 &amp;&amp; hasNewLineAfterOpeningBrace(node, children[0], options2);</span>
@@ -37894,18 +37964,6 @@
 <span class="cstat-no" title="statement not covered" >    printObject(path, options2, print3)</span>
 <span class="cstat-no" title="statement not covered" >  ];</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function printLegacyFlowEnumBody(path, options2, print3) {</span>
-<span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
-<span class="cstat-no" title="statement not covered" >  return [</span>
-<span class="cstat-no" title="statement not covered" >    node.type === "EnumSymbolBody" || node.explicitType ? `of ${node.type.slice(</span>
-<span class="cstat-no" title="statement not covered" >      // `Enum`</span>
-<span class="cstat-no" title="statement not covered" >      4,</span>
-<span class="cstat-no" title="statement not covered" >      // `Body`</span>
-<span class="cstat-no" title="statement not covered" >      -4</span>
-<span class="cstat-no" title="statement not covered" >    ).toLowerCase()} ` : "",</span>
-<span class="cstat-no" title="statement not covered" >    printObject(path, options2, print3)</span>
-<span class="cstat-no" title="statement not covered" >  ];</span>
-<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function printEnumMember(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >  const isTsEnumMember2 = node.type === "TSEnumMember";</span>
@@ -38472,6 +38530,8 @@
 <span class="cstat-no" title="statement not covered" >  if (node.bound) {</span>
 <span class="cstat-no" title="statement not covered" >    if (node.usesExtendsBound) {</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(" extends ");</span>
+<span class="cstat-no" title="statement not covered" >    } else {</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(": ");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(printTypeAnnotationProperty(path, print3, "bound"));</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -38614,12 +38674,6 @@
 <span class="cstat-no" title="statement not covered" >      return printEnumDeclaration(path, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumBody":</span>
 <span class="cstat-no" title="statement not covered" >      return printFlowEnumBody(path, options2, print3);</span>
-<span class="cstat-no" title="statement not covered" >    case "EnumBooleanBody":</span>
-<span class="cstat-no" title="statement not covered" >    case "EnumNumberBody":</span>
-<span class="cstat-no" title="statement not covered" >    case "EnumBigIntBody":</span>
-<span class="cstat-no" title="statement not covered" >    case "EnumStringBody":</span>
-<span class="cstat-no" title="statement not covered" >    case "EnumSymbolBody":</span>
-<span class="cstat-no" title="statement not covered" >      return printLegacyFlowEnumBody(path, options2, print3);</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumBooleanMember":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumNumberMember":</span>
 <span class="cstat-no" title="statement not covered" >    case "EnumBigIntMember":</span>
@@ -40012,7 +40066,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-21T04:15:36.744Z
+                at 2026-10-22T04:15:34.842Z
             </div>
         <script src="../prettify.js"></script>
         <script>
