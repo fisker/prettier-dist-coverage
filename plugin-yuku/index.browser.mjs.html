@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14630</span>
+                <span class='fraction'>0/14623</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14630</span>
+                <span class='fraction'>0/14623</span>
             </div>
         
             
@@ -14686,21 +14686,7 @@
 <a name='L14621'></a><a href='#L14621'>14621</a>
 <a name='L14622'></a><a href='#L14622'>14622</a>
 <a name='L14623'></a><a href='#L14623'>14623</a>
-<a name='L14624'></a><a href='#L14624'>14624</a>
-<a name='L14625'></a><a href='#L14625'>14625</a>
-<a name='L14626'></a><a href='#L14626'>14626</a>
-<a name='L14627'></a><a href='#L14627'>14627</a>
-<a name='L14628'></a><a href='#L14628'>14628</a>
-<a name='L14629'></a><a href='#L14629'>14629</a>
-<a name='L14630'></a><a href='#L14630'>14630</a>
-<a name='L14631'></a><a href='#L14631'>14631</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L14624'></a><a href='#L14624'>14624</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -31609,13 +31595,6 @@
 <span class="cstat-no" title="statement not covered" >        // remove redundant TypeScript nodes</span>
 <span class="cstat-no" title="statement not covered" >        case "TSParenthesizedType":</span>
 <span class="cstat-no" title="statement not covered" >          return node.typeAnnotation;</span>
-<span class="cstat-no" title="statement not covered" >        // For hack-style pipeline</span>
-<span class="cstat-no" title="statement not covered" >        case "TopicReference":</span>
-<span class="cstat-no" title="statement not covered" >          ast.extra = {</span>
-<span class="cstat-no" title="statement not covered" >            ...ast.extra,</span>
-<span class="cstat-no" title="statement not covered" >            __isUsingHackPipeline: true</span>
-<span class="cstat-no" title="statement not covered" >          };</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        // In Flow parser, it doesn't generate union/intersection types for single type</span>
 <span class="cstat-no" title="statement not covered" >        case "TSUnionType":</span>
 <span class="cstat-no" title="statement not covered" >        case "TSIntersectionType":</span>
@@ -38194,6 +38173,8 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return true;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >var topicReferenceCheckResult = /* @__PURE__ */ new WeakMap();</span>
+<span class="cstat-no" title="statement not covered" >var isHackStylePipeline = (path) =&gt; path.node.type === "BinaryExpression" &amp;&amp; path.node.operator === "|&gt;" &amp;&amp; getOrInsertComputed(topicReferenceCheckResult, path.root, () =&gt; hasNode(path.node, (node) =&gt; node.type === "TopicReference"));</span>
 <span class="cstat-no" title="statement not covered" >function printBinaryishExpression(path, options2, print3) {</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    node,</span>
@@ -38202,7 +38183,6 @@
 <span class="cstat-no" title="statement not covered" >    key</span>
 <span class="cstat-no" title="statement not covered" >  } = path;</span>
 <span class="cstat-no" title="statement not covered" >  const isInsideParenthesis = key !== "body" &amp;&amp; (parent.type === "IfStatement" || parent.type === "WhileStatement" || parent.type === "SwitchStatement" || parent.type === "DoWhileStatement");</span>
-<span class="cstat-no" title="statement not covered" >  const isHackPipeline = node.operator === "|&gt;" &amp;&amp; path.root.extra?.__isUsingHackPipeline;</span>
 <span class="cstat-no" title="statement not covered" >  const parts = printBinaryishExpressions(</span>
 <span class="cstat-no" title="statement not covered" >    path,</span>
 <span class="cstat-no" title="statement not covered" >    options2,</span>
@@ -38214,14 +38194,14 @@
 <span class="cstat-no" title="statement not covered" >  if (isInsideParenthesis) {</span>
 <span class="cstat-no" title="statement not covered" >    return parts;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (isHackPipeline) {</span>
+<span class="cstat-no" title="statement not covered" >  if (isHackStylePipeline(path)) {</span>
 <span class="cstat-no" title="statement not covered" >    return group(parts);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if (key === "callee" &amp;&amp; isCallOrNewExpression(parent) || // `UnaryExpression` adds parentheses and indention when argument has comment</span>
 <span class="cstat-no" title="statement not covered" >  parent.type === "UnaryExpression" &amp;&amp; !hasComment(node) || isMemberExpression(parent) &amp;&amp; !parent.computed) {</span>
 <span class="cstat-no" title="statement not covered" >    return group([indent([softline, ...parts]), softline]);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  const shouldNotIndent = isReturnOrThrowStatement(parent) || parent.type === "JSXExpressionContainer" &amp;&amp; grandparent.type === "JSXAttribute" || node.operator !== "|" &amp;&amp; parent.type === "JsExpressionRoot" || node.type !== "NGPipeExpression" &amp;&amp; (parent.type === "NGRoot" &amp;&amp; options2.parser === "__ng_binding" || parent.type === "NGMicrosyntaxExpression" &amp;&amp; grandparent.type === "NGMicrosyntax" &amp;&amp; grandparent.body.length === 1) || node === parent.body &amp;&amp; parent.type === "ArrowFunctionExpression" || node !== parent.body &amp;&amp; parent.type === "ForStatement" || parent.type === "ConditionalExpression" &amp;&amp; !isReturnOrThrowStatement(grandparent) &amp;&amp; !isCallOrNewExpression(grandparent) || parent.type === "TemplateLiteral" || key === "argument" &amp;&amp; parent.type === "UnaryExpression" || key === "arguments" &amp;&amp; isBooleanTypeCoercion(parent);</span>
+<span class="cstat-no" title="statement not covered" >  const shouldNotIndent = key === "argument" &amp;&amp; (isReturnOrThrowStatement(parent) || parent.type === "YieldExpression" || parent.type === "UnaryExpression") || parent.type === "JSXExpressionContainer" &amp;&amp; grandparent.type === "JSXAttribute" || node.operator !== "|" &amp;&amp; parent.type === "JsExpressionRoot" || node.type !== "NGPipeExpression" &amp;&amp; (parent.type === "NGRoot" &amp;&amp; options2.parser === "__ng_binding" || parent.type === "NGMicrosyntaxExpression" &amp;&amp; grandparent.type === "NGMicrosyntax" &amp;&amp; grandparent.body.length === 1) || node === parent.body &amp;&amp; parent.type === "ArrowFunctionExpression" || node !== parent.body &amp;&amp; parent.type === "ForStatement" || parent.type === "ConditionalExpression" &amp;&amp; !isReturnOrThrowStatement(grandparent) &amp;&amp; !isCallOrNewExpression(grandparent) || parent.type === "TemplateLiteral" || key === "arguments" &amp;&amp; isBooleanTypeCoercion(parent);</span>
 <span class="cstat-no" title="statement not covered" >  const shouldIndentIfInlining = parent.type === "AssignmentExpression" || parent.type === "VariableDeclarator" || parent.type === "ClassProperty" || parent.type === "PropertyDefinition" || isAbstractPropertyDefinition(parent) || parent.type === "ClassPrivateProperty" || isObjectProperty(parent);</span>
 <span class="cstat-no" title="statement not covered" >  if (shouldNotIndent || isInlineLogicalExpression(node) || !shouldInlineLogicalExpression(node) &amp;&amp; shouldIndentIfInlining) {</span>
 <span class="cstat-no" title="statement not covered" >    return group(parts);</span>
@@ -38287,8 +38267,7 @@
 <span class="cstat-no" title="statement not covered" >  if (shouldInline) {</span>
 <span class="cstat-no" title="statement not covered" >    right = [operator, hasLeadingOwnLineComment(options2.originalText, rightNodeToCheckComments) ? indent([line, print3("right"), rightSuffix]) : [" ", print3("right"), rightSuffix]];</span>
 <span class="cstat-no" title="statement not covered" >  } else {</span>
-<span class="cstat-no" title="statement not covered" >    const isHackPipeline = operator === "|&gt;" &amp;&amp; path.root.extra?.__isUsingHackPipeline;</span>
-<span class="cstat-no" title="statement not covered" >    const rightContent = isHackPipeline ? path.call(() =&gt; printBinaryishExpressions(</span>
+<span class="cstat-no" title="statement not covered" >    const rightContent = isHackStylePipeline(path) ? path.call(() =&gt; printBinaryishExpressions(</span>
 <span class="cstat-no" title="statement not covered" >      path,</span>
 <span class="cstat-no" title="statement not covered" >      options2,</span>
 <span class="cstat-no" title="statement not covered" >      print3,</span>
@@ -43960,7 +43939,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-22T04:15:36.930Z
+                at 2026-10-23T04:18:54.342Z
             </div>
         <script src="../prettify.js"></script>
         <script>
