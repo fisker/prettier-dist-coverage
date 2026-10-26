@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36% </span>
+                <span class="strong">36.03% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11550/32080</span>
+                <span class='fraction'>11559/32080</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">19.61% </span>
+                <span class="strong">19.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>431/2197</span>
+                <span class='fraction'>431/2202</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36% </span>
+                <span class="strong">36.03% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11550/32080</span>
+                <span class='fraction'>11559/32080</span>
             </div>
         
             
@@ -59738,24 +59738,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -91817,25 +91817,25 @@ function isChildUnwrappableOptionalChain(node, child) {
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-var TSError = class extends Error <span class="fstat-no" title="function not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >  fileName;</span>
+var TSError = class extends Error {
+<span class="fstat-no" title="function not covered" >  fileName;</span>
 <span class="cstat-no" title="statement not covered" >  location;</span>
-<span class="cstat-no" title="statement not covered" >  name = "TSError";</span>
-<span class="cstat-no" title="statement not covered" >  constructor(message, fileName, location) {</span>
+  name = "TSError";
+<span class="fstat-no" title="function not covered" >  constructor(message, fileName, location) {</span>
 <span class="cstat-no" title="statement not covered" >    super(message);</span>
 <span class="cstat-no" title="statement not covered" >    this.fileName = fileName;</span>
 <span class="cstat-no" title="statement not covered" >    this.location = location;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  // For old version of ESLint https://github.com/typescript-eslint/typescript-eslint/pull/6556#discussion_r1123237311</span>
-<span class="cstat-no" title="statement not covered" >  get index() {</span>
+  // For old version of ESLint https://github.com/typescript-eslint/typescript-eslint/pull/6556#discussion_r1123237311
+<span class="fstat-no" title="function not covered" >  get index() {</span>
 <span class="cstat-no" title="statement not covered" >    return this.location.start.offset;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  // https://github.com/eslint/eslint/blob/b09a512107249a4eb19ef5a37b0bd672266eafdb/lib/linter/linter.js#L853</span>
-<span class="cstat-no" title="statement not covered" >  get lineNumber() {</span>
+  // https://github.com/eslint/eslint/blob/b09a512107249a4eb19ef5a37b0bd672266eafdb/lib/linter/linter.js#L853
+<span class="fstat-no" title="function not covered" >  get lineNumber() {</span>
 <span class="cstat-no" title="statement not covered" >    return this.location.start.line;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  // https://github.com/eslint/eslint/blob/b09a512107249a4eb19ef5a37b0bd672266eafdb/lib/linter/linter.js#L854</span>
-<span class="cstat-no" title="statement not covered" >  get column() {</span>
+  // https://github.com/eslint/eslint/blob/b09a512107249a4eb19ef5a37b0bd672266eafdb/lib/linter/linter.js#L854
+<span class="fstat-no" title="function not covered" >  get column() {</span>
 <span class="cstat-no" title="statement not covered" >    return this.location.start.column;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 };
@@ -95171,7 +95171,7 @@ var overrideBreakOrContinueEnd = (
   @param {BREAK_KEYWORD_LENGTH | CONTINUE_KEYWORD_LENGTH} keywordLength
   @returns {LocEndOverride&lt;NodeMap["BreakStatement"] | NodeMap["ContinueStatement"]&gt;}
   */
-  (keywordLength) =&gt; (node) =&gt; node.label ? locEnd(node.label) : locStart(node) + keywordLength
+  (keywordLength) =&gt; <span class="fstat-no" title="function not covered" >(node) =&gt; node.label ? locEnd(node.label) : locStart(node) + keywordLength</span>
 );
 var getContentEnd = <span class="fstat-no" title="function not covered" >(node) =&gt; node.__contentEnd ?? locEndWithFullText(node);</span>
 var nodeTypesWithContentEnd = (
@@ -96310,7 +96310,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-25T04:12:22.327Z
+                at 2026-10-26T04:16:55.499Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
