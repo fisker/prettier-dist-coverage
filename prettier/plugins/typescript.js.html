@@ -64348,30 +64348,6 @@
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  var debug_default = debug;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // scripts/build/shims/shared.js</span>
-<span class="cstat-no" title="statement not covered" >  var OPTIONAL_OBJECT = 1;</span>
-<span class="cstat-no" title="statement not covered" >  var createMethodShim = (methodName, getImplementation) =&gt; (flags, object, ...arguments_) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (flags | OPTIONAL_OBJECT &amp;&amp; (object === void 0 || object === null)) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const implementation = getImplementation.call(object) ?? object[methodName];</span>
-<span class="cstat-no" title="statement not covered" >    return implementation.apply(object, arguments_);</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // scripts/build/shims/method-replace-all.js</span>
-<span class="cstat-no" title="statement not covered" >  var stringReplaceAll = String.prototype.replaceAll ?? function(pattern, replacement) {</span>
-<span class="cstat-no" title="statement not covered" >    if (pattern.global) {</span>
-<span class="cstat-no" title="statement not covered" >      return this.replace(pattern, replacement);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return this.split(pattern).join(replacement);</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" >  var replaceAll = /* @__PURE__ */ createMethodShim("replaceAll", function() {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof this === "string") {</span>
-<span class="cstat-no" title="statement not covered" >      return stringReplaceAll;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  });</span>
-<span class="cstat-no" title="statement not covered" >  var method_replace_all_default = replaceAll;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/typescript/lib/typescript.js</span>
 <span class="cstat-no" title="statement not covered" >  var versionMajorMinor = "6.0";</span>
 <span class="cstat-no" title="statement not covered" >  var emptyArray = [];</span>
@@ -91553,6 +91529,30 @@
 <span class="cstat-no" title="statement not covered" >  ];</span>
 <span class="cstat-no" title="statement not covered" >  setObjectAllocator(getServicesObjectAllocator());</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // scripts/build/shims/shared.js</span>
+<span class="cstat-no" title="statement not covered" >  var OPTIONAL_OBJECT = 1;</span>
+<span class="cstat-no" title="statement not covered" >  var createMethodShim = (methodName, getImplementation) =&gt; (flags, object, ...arguments_) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (flags | OPTIONAL_OBJECT &amp;&amp; (object === void 0 || object === null)) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    const implementation = getImplementation.call(object) ?? object[methodName];</span>
+<span class="cstat-no" title="statement not covered" >    return implementation.apply(object, arguments_);</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // scripts/build/shims/method-replace-all.js</span>
+<span class="cstat-no" title="statement not covered" >  var stringReplaceAll = String.prototype.replaceAll ?? function(pattern, replacement) {</span>
+<span class="cstat-no" title="statement not covered" >    if (pattern.global) {</span>
+<span class="cstat-no" title="statement not covered" >      return this.replace(pattern, replacement);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return this.split(pattern).join(replacement);</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" >  var replaceAll = /* @__PURE__ */ createMethodShim("replaceAll", function() {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof this === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      return stringReplaceAll;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >  var method_replace_all_default = replaceAll;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // node_modules/@typescript-eslint/typescript-estree/dist/version-check.js</span>
 <span class="cstat-no" title="statement not covered" >  var typescriptVersionIsAtLeast = new Proxy({}, { get: () =&gt; true });</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -95738,7 +95738,7 @@
 <span class="cstat-no" title="statement not covered" >    ModuleExpression: vk[18],</span>
 <span class="cstat-no" title="statement not covered" >    TopicReference: [],</span>
 <span class="cstat-no" title="statement not covered" >    VoidPattern: [],</span>
-<span class="cstat-no" title="statement not covered" >    TSParameterProperty: ["parameter", "decorators"],</span>
+<span class="cstat-no" title="statement not covered" >    TSParameterProperty: ["decorators", "parameter"],</span>
 <span class="cstat-no" title="statement not covered" >    TSDeclareFunction: vk[41],</span>
 <span class="cstat-no" title="statement not covered" >    TSDeclareMethod: vk[42],</span>
 <span class="cstat-no" title="statement not covered" >    TSQualifiedName: vk[1],</span>
@@ -96409,7 +96409,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-28T05:07:45.978Z
+                at 2026-10-29T05:20:53.767Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

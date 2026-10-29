@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7833</span>
+                <span class='fraction'>0/7851</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7833</span>
+                <span class='fraction'>0/7851</span>
             </div>
         
             
@@ -7895,7 +7895,43 @@
 <a name='L7830'></a><a href='#L7830'>7830</a>
 <a name='L7831'></a><a href='#L7831'>7831</a>
 <a name='L7832'></a><a href='#L7832'>7832</a>
-<a name='L7833'></a><a href='#L7833'>7833</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L7833'></a><a href='#L7833'>7833</a>
+<a name='L7834'></a><a href='#L7834'>7834</a>
+<a name='L7835'></a><a href='#L7835'>7835</a>
+<a name='L7836'></a><a href='#L7836'>7836</a>
+<a name='L7837'></a><a href='#L7837'>7837</a>
+<a name='L7838'></a><a href='#L7838'>7838</a>
+<a name='L7839'></a><a href='#L7839'>7839</a>
+<a name='L7840'></a><a href='#L7840'>7840</a>
+<a name='L7841'></a><a href='#L7841'>7841</a>
+<a name='L7842'></a><a href='#L7842'>7842</a>
+<a name='L7843'></a><a href='#L7843'>7843</a>
+<a name='L7844'></a><a href='#L7844'>7844</a>
+<a name='L7845'></a><a href='#L7845'>7845</a>
+<a name='L7846'></a><a href='#L7846'>7846</a>
+<a name='L7847'></a><a href='#L7847'>7847</a>
+<a name='L7848'></a><a href='#L7848'>7848</a>
+<a name='L7849'></a><a href='#L7849'>7849</a>
+<a name='L7850'></a><a href='#L7850'>7850</a>
+<a name='L7851'></a><a href='#L7851'>7851</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15833,7 +15869,7 @@
 <span class="cstat-no" title="statement not covered" >    ...node,</span>
 <span class="cstat-no" title="statement not covered" >    range: [...node.range]</span>
 <span class="cstat-no" title="statement not covered" >  }));</span>
-<span class="cstat-no" title="statement not covered" >  var version$1 = "7.4.0";</span>
+<span class="cstat-no" title="statement not covered" >  var version$1 = "7.4.1";</span>
 <span class="cstat-no" title="statement not covered" >  var packageJson = {</span>
 <span class="cstat-no" title="statement not covered" >    version: version$1</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
@@ -17473,6 +17509,9 @@
 <span class="cstat-no" title="statement not covered" >    if ((t &amp; 537079808) === 537079808) {</span>
 <span class="cstat-no" title="statement not covered" >      if (context &amp; 1) parser.report(121);</span>
 <span class="cstat-no" title="statement not covered" >      parser.flags |= 512;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (context &amp; 1 &amp;&amp; (t &amp; 255) === (241737 &amp; 255)) {</span>
+<span class="cstat-no" title="statement not covered" >      parser.report(99);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (!isValidIdentifier(context, t)) parser.report(0);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -19200,21 +19239,25 @@
 <span class="cstat-no" title="statement not covered" >          const {</span>
 <span class="cstat-no" title="statement not covered" >            flags</span>
 <span class="cstat-no" title="statement not covered" >          } = parser;</span>
-<span class="cstat-no" title="statement not covered" >          if ((flags &amp; 1) === 0) {</span>
-<span class="cstat-no" title="statement not covered" >            if (parser.getToken() === 86104) {</span>
-<span class="cstat-no" title="statement not covered" >              declaration = parseFunctionDeclaration(parser, context, scope, void 0, 1, 1, 1, tokenStart, 4);</span>
-<span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >              if (parser.getToken() === 67174411) {</span>
-<span class="cstat-no" title="statement not covered" >                declaration = parseAsyncArrowOrCallExpression(parser, context, void 0, declaration, 1, 1, flags, tokenStart);</span>
-<span class="cstat-no" title="statement not covered" >                declaration = parseMemberOrUpdateExpression(parser, context, void 0, declaration, 0, 0, tokenStart);</span>
-<span class="cstat-no" title="statement not covered" >                declaration = parseAssignmentExpression(parser, context, void 0, 0, 0, tokenStart, declaration);</span>
-<span class="cstat-no" title="statement not covered" >              } else if (parser.getToken() &amp; 143360) {</span>
-<span class="cstat-no" title="statement not covered" >                if (scope) scope = createArrowHeadParsingScope(parser, context, parser.tokenValue, parser.tokenStart, parser.currentLocation);</span>
-<span class="cstat-no" title="statement not covered" >                declaration = parseIdentifier(parser, context);</span>
-<span class="cstat-no" title="statement not covered" >                declaration = parseArrowFunctionExpression(parser, context, scope, void 0, [declaration], 1, tokenStart);</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >          if ((flags &amp; 1) === 0 &amp;&amp; parser.getToken() === 86104) {</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseFunctionDeclaration(parser, context, scope, void 0, 1, 1, 1, tokenStart, 4);</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          if (parser.getToken() === 10) {</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseArrowFromIdentifier(parser, context &amp; -9, void 0, "async", declaration, 0, 1, 0, tokenStart);</span>
+<span class="cstat-no" title="statement not covered" >          } else if ((flags &amp; 1) === 0 &amp;&amp; parser.getToken() === 67174411) {</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseAsyncArrowOrCallExpression(parser, context, void 0, declaration, 1, 1, flags, tokenStart);</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseMemberOrUpdateExpression(parser, context, void 0, declaration, 0, 0, tokenStart);</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseAssignmentExpression(parser, context, void 0, 0, 0, tokenStart, declaration);</span>
+<span class="cstat-no" title="statement not covered" >          } else if ((flags &amp; 1) === 0 &amp;&amp; parser.getToken() &amp; 143360) {</span>
+<span class="cstat-no" title="statement not covered" >            if (scope) scope = createArrowHeadParsingScope(parser, context, parser.tokenValue, parser.tokenStart, parser.currentLocation);</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseIdentifier(parser, context);</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseArrowFunctionExpression(parser, context, scope, void 0, [declaration], 1, tokenStart);</span>
+<span class="cstat-no" title="statement not covered" >          } else {</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseMemberOrUpdateExpression(parser, context, void 0, declaration, 0, 0, tokenStart);</span>
+<span class="cstat-no" title="statement not covered" >            declaration = parseAssignmentExpression(parser, context, void 0, 0, 0, tokenStart, declaration);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          matchOrInsertSemicolon(parser, context | 32);</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        default:</span>
@@ -19429,6 +19472,10 @@
 <span class="cstat-no" title="statement not covered" >    }, start);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function parseBinaryExpression(parser, context, privateScope, inGroup, start, minPrecedence, operator, left) {</span>
+<span class="cstat-no" title="statement not covered" >    if ((parser.flags &amp; 16384) === 16384) {</span>
+<span class="cstat-no" title="statement not covered" >      parser.flags = (parser.flags | 16384) ^ 16384;</span>
+<span class="cstat-no" title="statement not covered" >      return left;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const bit = -((context &amp; 131072) &gt; 0) &amp; 8673330;</span>
 <span class="cstat-no" title="statement not covered" >    let t;</span>
 <span class="cstat-no" title="statement not covered" >    let precedence;</span>
@@ -19531,6 +19578,12 @@
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      } else if (parser.getToken() === 8391476) {</span>
 <span class="cstat-no" title="statement not covered" >        parser.report(30, KeywordDescTable[parser.getToken() &amp; 255]);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (parser.getToken() &amp; (67108864 | 8388608)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (argument === null &amp;&amp; (parser.flags &amp; 1) === 0) {</span>
+<span class="cstat-no" title="statement not covered" >          parser.report(30, KeywordDescTable[parser.getToken() &amp; 255]);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        parser.flags |= 16384;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      parser.assignable = 2;</span>
 <span class="cstat-no" title="statement not covered" >      return parser.finishNode({</span>
@@ -19689,6 +19742,10 @@
 <span class="cstat-no" title="statement not covered" >    if ((parser.getToken() &amp; 33619968) === 33619968 &amp;&amp; (parser.flags &amp; 1) === 0) {</span>
 <span class="cstat-no" title="statement not covered" >      expr = parseUpdateExpression(parser, context, expr, start);</span>
 <span class="cstat-no" title="statement not covered" >    } else if ((parser.getToken() &amp; 67108864) === 67108864) {</span>
+<span class="cstat-no" title="statement not covered" >      if ((parser.flags &amp; 16384) === 16384) {</span>
+<span class="cstat-no" title="statement not covered" >        parser.flags = (parser.flags | 16384) ^ 16384;</span>
+<span class="cstat-no" title="statement not covered" >        return expr;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      context = (context | 131072) ^ 131072;</span>
 <span class="cstat-no" title="statement not covered" >      switch (parser.getToken()) {</span>
 <span class="cstat-no" title="statement not covered" >        case 67108877: {</span>
@@ -20541,19 +20598,16 @@
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      destructible |= 32;</span>
 <span class="cstat-no" title="statement not covered" >      argument = parseLeftHandSideExpression(parser, context, privateScope, 1, inGroup, 1);</span>
-<span class="cstat-no" title="statement not covered" >      const {</span>
-<span class="cstat-no" title="statement not covered" >        tokenStart: tokenStart2</span>
-<span class="cstat-no" title="statement not covered" >      } = parser;</span>
 <span class="cstat-no" title="statement not covered" >      const token2 = parser.getToken();</span>
 <span class="cstat-no" title="statement not covered" >      if (token2 === 1077936155) {</span>
 <span class="cstat-no" title="statement not covered" >        if (parser.assignable &amp; 2) parser.report(26);</span>
-<span class="cstat-no" title="statement not covered" >        argument = parseAssignmentExpression(parser, context, privateScope, inGroup, isPattern, tokenStart2, argument);</span>
+<span class="cstat-no" title="statement not covered" >        argument = parseAssignmentExpression(parser, context, privateScope, inGroup, isPattern, tokenStart, argument);</span>
 <span class="cstat-no" title="statement not covered" >        destructible |= 16;</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        if (token2 === 18) {</span>
 <span class="cstat-no" title="statement not covered" >          destructible |= 16;</span>
 <span class="cstat-no" title="statement not covered" >        } else if (token2 !== closingToken) {</span>
-<span class="cstat-no" title="statement not covered" >          argument = parseAssignmentExpression(parser, context, privateScope, inGroup, isPattern, tokenStart2, argument);</span>
+<span class="cstat-no" title="statement not covered" >          argument = parseAssignmentExpression(parser, context, privateScope, inGroup, isPattern, tokenStart, argument);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        destructible |= parser.assignable &amp; 1 ? 32 : 16;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -22915,7 +22969,7 @@
 <span class="cstat-no" title="statement not covered" >    ModuleExpression: vk[18],</span>
 <span class="cstat-no" title="statement not covered" >    TopicReference: [],</span>
 <span class="cstat-no" title="statement not covered" >    VoidPattern: [],</span>
-<span class="cstat-no" title="statement not covered" >    TSParameterProperty: ["parameter", "decorators"],</span>
+<span class="cstat-no" title="statement not covered" >    TSParameterProperty: ["decorators", "parameter"],</span>
 <span class="cstat-no" title="statement not covered" >    TSDeclareFunction: vk[41],</span>
 <span class="cstat-no" title="statement not covered" >    TSDeclareMethod: vk[42],</span>
 <span class="cstat-no" title="statement not covered" >    TSQualifiedName: vk[1],</span>
@@ -23566,7 +23620,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-28T05:07:44.269Z
+                at 2026-10-29T05:20:51.367Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
