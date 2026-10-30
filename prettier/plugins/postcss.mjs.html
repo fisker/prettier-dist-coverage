@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.89% </span>
+                <span class="strong">39.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4815/12070</span>
+                <span class='fraction'>4818/12073</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.9% </span>
+                <span class="strong">53.94% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>614/1139</span>
+                <span class='fraction'>615/1140</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.96% </span>
+                <span class="strong">38.04% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>303/798</span>
+                <span class='fraction'>304/799</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.89% </span>
+                <span class="strong">39.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4815/12070</span>
+                <span class='fraction'>4818/12073</span>
             </div>
         
             
@@ -12133,7 +12133,10 @@
 <a name='L12068'></a><a href='#L12068'>12068</a>
 <a name='L12069'></a><a href='#L12069'>12069</a>
 <a name='L12070'></a><a href='#L12070'>12070</a>
-<a name='L12071'></a><a href='#L12071'>12071</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">24x</span>
+<a name='L12071'></a><a href='#L12071'>12071</a>
+<a name='L12072'></a><a href='#L12072'>12072</a>
+<a name='L12073'></a><a href='#L12073'>12073</a>
+<a name='L12074'></a><a href='#L12074'>12074</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
@@ -22609,6 +22612,15 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -23633,12 +23645,6 @@
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -34679,6 +34685,15 @@ function adjustStrings(value, options2) {
     (match) =&gt; print_string_default(match, options2)
   );
 }
+function removeQuotedStrings(value) {
+  return method_replace_all_default(
+    /* OPTIONAL_OBJECT: false */
+    0,
+    value,
+    STRING_REGEX,
+    ""
+  );
+}
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function quoteAttributeValue(value, options2) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const quote = options2.singleQuote ? "'" : '"';</span>
 <span class="cstat-no" title="statement not covered" >  let flag = "";</span>
@@ -35704,13 +35719,7 @@ var parse_media_query_default = parseMediaQuery;
 // src/language-css/parse/parse-selector.js
 var import_processor = __toESM(require_processor2(), 1);
 function parseSelector(selector) {
-  if (/\/[/*]/.test(method_replace_all_default(
-    /* OPTIONAL_OBJECT: false */
-    0,
-    selector,
-    /"[^"]+"|'[^']+'/g,
-    ""
-  ))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (/\/[/*]/.test(removeQuotedStrings(selector))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
 <span class="cstat-no" title="statement not covered" >      type: "selector-unknown",</span>
 <span class="cstat-no" title="statement not covered" >      value: selector.trim()</span>
@@ -36280,7 +36289,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-29T05:20:53.767Z
+                at 2026-10-30T05:20:29.922Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
