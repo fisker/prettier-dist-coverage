@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.07% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/6598</span>
+                <span class='fraction'>5/6606</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/6598</span>
+                <span class='fraction'>5/6606</span>
             </div>
         
             
@@ -6661,7 +6661,23 @@
 <a name='L6596'></a><a href='#L6596'>6596</a>
 <a name='L6597'></a><a href='#L6597'>6597</a>
 <a name='L6598'></a><a href='#L6598'>6598</a>
-<a name='L6599'></a><a href='#L6599'>6599</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L6599'></a><a href='#L6599'>6599</a>
+<a name='L6600'></a><a href='#L6600'>6600</a>
+<a name='L6601'></a><a href='#L6601'>6601</a>
+<a name='L6602'></a><a href='#L6602'>6602</a>
+<a name='L6603'></a><a href='#L6603'>6603</a>
+<a name='L6604'></a><a href='#L6604'>6604</a>
+<a name='L6605'></a><a href='#L6605'>6605</a>
+<a name='L6606'></a><a href='#L6606'>6606</a>
+<a name='L6607'></a><a href='#L6607'>6607</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -17462,6 +17478,10 @@
 <span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; input.length - 1; i++) {</span>
 <span class="cstat-no" title="statement not covered" >      const char = input.charCodeAt(i);</span>
 <span class="cstat-no" title="statement not covered" >      const nextChar = input.charCodeAt(i + 1);</span>
+<span class="cstat-no" title="statement not covered" >      if (char === $BACKSLASH) {</span>
+<span class="cstat-no" title="statement not covered" >        i++;</span>
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      if (char === $SLASH &amp;&amp; nextChar == $SLASH &amp;&amp; outerQuote == null) return i;</span>
 <span class="cstat-no" title="statement not covered" >      if (outerQuote === char) {</span>
 <span class="cstat-no" title="statement not covered" >        outerQuote = null;</span>
@@ -18263,7 +18283,11 @@
 <span class="cstat-no" title="statement not covered" >          this.error("Template literal interpolation cannot be empty");</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        expressions.push(expression);</span>
+<span class="cstat-no" title="statement not covered" >        this.expectCharacter($RBRACE);</span>
 <span class="cstat-no" title="statement not covered" >        this.rbracesExpected--;</span>
+<span class="cstat-no" title="statement not covered" >      } else if (token.isError()) {</span>
+<span class="cstat-no" title="statement not covered" >        this.errors.push(getParseError(token.toString(), this.input, this.getErrorLocationText(this.index), this.parseSourceSpan));</span>
+<span class="cstat-no" title="statement not covered" >        this.advance();</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
 <span class="cstat-no" title="statement not covered" >        this.advance();</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -18793,7 +18817,7 @@
 <span class="cstat-no" title="statement not covered" >  _VisitorMode2[_VisitorMode2["Extract"] = 0] = "Extract";</span>
 <span class="cstat-no" title="statement not covered" >  _VisitorMode2[_VisitorMode2["Merge"] = 1] = "Merge";</span>
 <span class="cstat-no" title="statement not covered" >})(_VisitorMode || (_VisitorMode = {}));</span>
-<span class="cstat-no" title="statement not covered" >var VERSION = new Version("22.2.3");</span>
+<span class="cstat-no" title="statement not covered" >var VERSION = new Version("22.2.4");</span>
 <span class="cstat-no" title="statement not covered" >var CommentTriviaType;</span>
 <span class="cstat-no" title="statement not covered" >(function(CommentTriviaType2) {</span>
 <span class="cstat-no" title="statement not covered" >  CommentTriviaType2["DIAGNOSTIC"] = "D";</span>
@@ -19864,7 +19888,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-30T05:20:27.435Z
+                at 2026-10-31T05:02:18.115Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
