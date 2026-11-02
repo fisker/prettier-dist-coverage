@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8962</span>
+                <span class='fraction'>0/8981</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8962</span>
+                <span class='fraction'>0/8981</span>
             </div>
         
             
@@ -9024,7 +9024,45 @@
 <a name='L8959'></a><a href='#L8959'>8959</a>
 <a name='L8960'></a><a href='#L8960'>8960</a>
 <a name='L8961'></a><a href='#L8961'>8961</a>
-<a name='L8962'></a><a href='#L8962'>8962</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L8962'></a><a href='#L8962'>8962</a>
+<a name='L8963'></a><a href='#L8963'>8963</a>
+<a name='L8964'></a><a href='#L8964'>8964</a>
+<a name='L8965'></a><a href='#L8965'>8965</a>
+<a name='L8966'></a><a href='#L8966'>8966</a>
+<a name='L8967'></a><a href='#L8967'>8967</a>
+<a name='L8968'></a><a href='#L8968'>8968</a>
+<a name='L8969'></a><a href='#L8969'>8969</a>
+<a name='L8970'></a><a href='#L8970'>8970</a>
+<a name='L8971'></a><a href='#L8971'>8971</a>
+<a name='L8972'></a><a href='#L8972'>8972</a>
+<a name='L8973'></a><a href='#L8973'>8973</a>
+<a name='L8974'></a><a href='#L8974'>8974</a>
+<a name='L8975'></a><a href='#L8975'>8975</a>
+<a name='L8976'></a><a href='#L8976'>8976</a>
+<a name='L8977'></a><a href='#L8977'>8977</a>
+<a name='L8978'></a><a href='#L8978'>8978</a>
+<a name='L8979'></a><a href='#L8979'>8979</a>
+<a name='L8980'></a><a href='#L8980'>8980</a>
+<a name='L8981'></a><a href='#L8981'>8981</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18427,6 +18465,9 @@
 <span class="cstat-no" title="statement not covered" >    return { type: DOC_TYPE_LINE_SUFFIX, contents };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/document/builders/trim.js</span>
+<span class="cstat-no" title="statement not covered" >  var trim = { type: DOC_TYPE_TRIM };</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/utilities/skip.js</span>
 <span class="cstat-no" title="statement not covered" >  function skip(characters) {</span>
 <span class="cstat-no" title="statement not covered" >    return (text, startIndex, options2) =&gt; {</span>
@@ -18879,6 +18920,10 @@
 <span class="cstat-no" title="statement not covered" >  function hasTrailingContentWhitespace(node) {</span>
 <span class="cstat-no" title="statement not covered" >    return /[ \t]+\n*$/.test(node.value);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  function endsWithBlockWithTrailingWhitespace(node) {</span>
+<span class="cstat-no" title="statement not covered" >    const lastDescendantNode = getLastDescendantNode(node);</span>
+<span class="cstat-no" title="statement not covered" >    return isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; hasTrailingContentWhitespace(lastDescendantNode);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function isInlineNode(node) {</span>
 <span class="cstat-no" title="statement not covered" >    if (!node) {</span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
@@ -18957,10 +19002,12 @@
 <span class="cstat-no" title="statement not covered" >        contentsParts.push(</span>
 <span class="cstat-no" title="statement not covered" >          lineWords.length === 0 ? hardline : markAsRoot(literalline)</span>
 <span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >      } else if (isLastDescendant &amp;&amp; node.chomping === "keep" || hasTrailingContentWhitespace(node)) {</span>
+<span class="cstat-no" title="statement not covered" >      } else if (isLastDescendant &amp;&amp; (node.chomping === "keep" || hasTrailingContentWhitespace(node))) {</span>
 <span class="cstat-no" title="statement not covered" >        contentsParts.push(</span>
-<span class="cstat-no" title="statement not covered" >          isLastDescendant ? dedentToRoot(lineWords.length === 0 ? hardline : literalline) : dedent(lineWords.length === 0 ? hardline : literalline)</span>
+<span class="cstat-no" title="statement not covered" >          dedentToRoot(lineWords.length === 0 ? hardline : literalline)</span>
 <span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >      } else if (lineWords.length === 0 &amp;&amp; hasTrailingContentWhitespace(node)) {</span>
+<span class="cstat-no" title="statement not covered" >        contentsParts.push(trim);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (node.indent === null) {</span>
@@ -19203,9 +19250,16 @@
 <span class="cstat-no" title="statement not covered" >      parts.push(lineSuffix([node.type === "mappingValue" &amp;&amp; !node.content ? "" : " ", path.parent.type === "mappingKey" &amp;&amp; path.getParentNode(2).type === "mapping" &amp;&amp; isInlineNode(node) ? "" : breakParent, print("trailingComment")]));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (shouldPrintEndComments(node)) {</span>
-<span class="cstat-no" title="statement not covered" >      parts.push(alignWithSpaces(node.type === "sequenceItem" ? 2 : 0, [hardline, join(hardline, path.map(({</span>
-<span class="cstat-no" title="statement not covered" >        node: node2</span>
-<span class="cstat-no" title="statement not covered" >      }) =&gt; [is_previous_line_empty_default(options2.originalText, locStart(node2)) ? hardline : "", print()], "endComments"))]));</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(alignWithSpaces(node.type === "sequenceItem" ? 2 : 0, [</span>
+<span class="cstat-no" title="statement not covered" >        // Same as below, `hardline` would trim the whitespace of the block</span>
+<span class="cstat-no" title="statement not covered" >        endsWithBlockWithTrailingWhitespace(node) ? markAsRoot(literalline) : hardline,</span>
+<span class="cstat-no" title="statement not covered" >        join(hardline, path.map(({</span>
+<span class="cstat-no" title="statement not covered" >          node: node2</span>
+<span class="cstat-no" title="statement not covered" >        }) =&gt; [is_previous_line_empty_default(options2.originalText, locStart(node2)) ? hardline : "", print()], "endComments"))</span>
+<span class="cstat-no" title="statement not covered" >      ]));</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (isNode(node, ["mappingItem", "sequenceItem"]) &amp;&amp; !path.isLast &amp;&amp; endsWithBlockWithTrailingWhitespace(node)) {</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(markAsRoot(literalline));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(nextEmptyLine);</span>
 <span class="cstat-no" title="statement not covered" >    return parts;</span>
@@ -19234,6 +19288,9 @@
 <span class="cstat-no" title="statement not covered" >          parts.push(print());</span>
 <span class="cstat-no" title="statement not covered" >          const documentLastDescendantNode = getLastDescendantNode(document);</span>
 <span class="cstat-no" title="statement not covered" >          const documentBlockPrintsTrailingLine = isNode(documentLastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; (hasTrailingContentWhitespace(documentLastDescendantNode) || isLast &amp;&amp; documentLastDescendantNode.chomping === "keep");</span>
+<span class="cstat-no" title="statement not covered" >          if (documentBlockPrintsTrailingLine &amp;&amp; !isLast) {</span>
+<span class="cstat-no" title="statement not covered" >            parts.push(literalline);</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          const documentEndMarkerPrinted = shouldPrintDocumentEndMarker(path);</span>
 <span class="cstat-no" title="statement not covered" >          lastDocumentEndMarkerPrinted = documentEndMarkerPrinted;</span>
 <span class="cstat-no" title="statement not covered" >          if (documentEndMarkerPrinted) {</span>
@@ -19355,11 +19412,11 @@
 <span class="cstat-no" title="statement not covered" >        return path.map(({</span>
 <span class="cstat-no" title="statement not covered" >          node: node2,</span>
 <span class="cstat-no" title="statement not covered" >          isLast</span>
-<span class="cstat-no" title="statement not covered" >        }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          const lastDescendantNode = getLastDescendantNode(node2);</span>
-<span class="cstat-no" title="statement not covered" >          const childPrintsTrailingLine = isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) &amp;&amp; hasTrailingContentWhitespace(lastDescendantNode);</span>
-<span class="cstat-no" title="statement not covered" >          return [print(), !isLast &amp;&amp; !childPrintsTrailingLine ? hardline : ""];</span>
-<span class="cstat-no" title="statement not covered" >        }, "children");</span>
+<span class="cstat-no" title="statement not covered" >        }) =&gt; [</span>
+<span class="cstat-no" title="statement not covered" >          print(),</span>
+<span class="cstat-no" title="statement not covered" >          // The line break is printed by the child, see `genericPrint`</span>
+<span class="cstat-no" title="statement not covered" >          !isLast &amp;&amp; !endsWithBlockWithTrailingWhitespace(node2) ? hardline : ""</span>
+<span class="cstat-no" title="statement not covered" >        ], "children");</span>
 <span class="cstat-no" title="statement not covered" >      case "sequenceItem":</span>
 <span class="cstat-no" title="statement not covered" >        return ["- ", alignWithSpaces(2, node.content ? print("content") : "")];</span>
 <span class="cstat-no" title="statement not covered" >      case "mappingKey":</span>
@@ -26953,7 +27010,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-01T05:34:12.822Z
+                at 2026-11-02T05:32:04.409Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
