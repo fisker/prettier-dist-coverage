@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7964</span>
+                <span class='fraction'>0/7970</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7964</span>
+                <span class='fraction'>0/7970</span>
             </div>
         
             
@@ -8027,7 +8027,19 @@
 <a name='L7962'></a><a href='#L7962'>7962</a>
 <a name='L7963'></a><a href='#L7963'>7963</a>
 <a name='L7964'></a><a href='#L7964'>7964</a>
-<a name='L7965'></a><a href='#L7965'>7965</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L7965'></a><a href='#L7965'>7965</a>
+<a name='L7966'></a><a href='#L7966'>7966</a>
+<a name='L7967'></a><a href='#L7967'>7967</a>
+<a name='L7968'></a><a href='#L7968'>7968</a>
+<a name='L7969'></a><a href='#L7969'>7969</a>
+<a name='L7970'></a><a href='#L7970'>7970</a>
+<a name='L7971'></a><a href='#L7971'>7971</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22586,7 +22598,7 @@
 <span class="cstat-no" title="statement not covered" >  ["id"],</span>
 <span class="cstat-no" title="statement not covered" >  ["key", "value"],</span>
 <span class="cstat-no" title="statement not covered" >  ["elementType"],</span>
-<span class="cstat-no" title="statement not covered" >  ["id", "typeParameters"],</span>
+<span class="cstat-no" title="statement not covered" >  ["id", "typeArguments"],</span>
 <span class="cstat-no" title="statement not covered" >  ["id", "typeParameters", "extends", "body"],</span>
 <span class="cstat-no" title="statement not covered" >  ["id", "body"],</span>
 <span class="cstat-no" title="statement not covered" >  ["typeAnnotation"],</span>
@@ -22940,7 +22952,7 @@
 <span class="cstat-no" title="statement not covered" >  QualifiedTypeofIdentifier: vk[32],</span>
 <span class="cstat-no" title="statement not covered" >  RecordDeclaration: ["id", "typeParameters", "implements", "body"],</span>
 <span class="cstat-no" title="statement not covered" >  RecordDeclarationBody: vk[0],</span>
-<span class="cstat-no" title="statement not covered" >  RecordDeclarationImplements: ["id", "typeArguments"],</span>
+<span class="cstat-no" title="statement not covered" >  RecordDeclarationImplements: vk[25],</span>
 <span class="cstat-no" title="statement not covered" >  RecordDeclarationProperty: ["key", "typeAnnotation", "defaultValue"],</span>
 <span class="cstat-no" title="statement not covered" >  RecordDeclarationStaticProperty: ["key", "typeAnnotation", "value"],</span>
 <span class="cstat-no" title="statement not covered" >  RecordExpression: ["recordConstructor", "typeArguments", "properties"],</span>
@@ -23045,9 +23057,6 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    delete ast.hashbang;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (ast.type === "Program") {</span>
-<span class="cstat-no" title="statement not covered" >    ast.range = [0, text.length];</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let typeCastCommentsEnds;</span>
 <span class="cstat-no" title="statement not covered" >  ast = visit_node_default(ast, {</span>
 <span class="cstat-no" title="statement not covered" >    onEnter(node) {</span>
@@ -23121,6 +23130,7 @@
 <span class="cstat-no" title="statement not covered" >        case "TupleTypeAnnotation":</span>
 <span class="cstat-no" title="statement not covered" >          if (node.types &amp;&amp; !node.elementTypes) {</span>
 <span class="cstat-no" title="statement not covered" >            node.elementTypes = node.types;</span>
+<span class="cstat-no" title="statement not covered" >            delete node.types;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="cstat-no" title="statement not covered" >        case "ImportDeclaration":</span>
@@ -23155,6 +23165,14 @@
 <span class="cstat-no" title="statement not covered" >            node.type = "EnumBody";</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >        // `hermes` and `babel-flow`</span>
+<span class="cstat-no" title="statement not covered" >        case "GenericTypeAnnotation":</span>
+<span class="cstat-no" title="statement not covered" >        case "ClassImplements":</span>
+<span class="cstat-no" title="statement not covered" >        case "InterfaceExtends":</span>
+<span class="cstat-no" title="statement not covered" >          if (astType !== "flow" &amp;&amp; node.typeParameters &amp;&amp; !node.typeArguments) {</span>
+<span class="cstat-no" title="statement not covered" >            node.typeArguments = node.typeParameters;</span>
+<span class="cstat-no" title="statement not covered" >            delete node.typeParameters;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    },</span>
 <span class="cstat-no" title="statement not covered" >    onLeave(node) {</span>
@@ -23962,7 +23980,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-08T05:35:31.376Z
+                at 2026-11-09T05:46:05.999Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
