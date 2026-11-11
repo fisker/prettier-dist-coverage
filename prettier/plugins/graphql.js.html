@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/2821</span>
+                <span class='fraction'>0/2839</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/2821</span>
+                <span class='fraction'>0/2839</span>
             </div>
         
             
@@ -2883,7 +2883,43 @@
 <a name='L2818'></a><a href='#L2818'>2818</a>
 <a name='L2819'></a><a href='#L2819'>2819</a>
 <a name='L2820'></a><a href='#L2820'>2820</a>
-<a name='L2821'></a><a href='#L2821'>2821</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L2821'></a><a href='#L2821'>2821</a>
+<a name='L2822'></a><a href='#L2822'>2822</a>
+<a name='L2823'></a><a href='#L2823'>2823</a>
+<a name='L2824'></a><a href='#L2824'>2824</a>
+<a name='L2825'></a><a href='#L2825'>2825</a>
+<a name='L2826'></a><a href='#L2826'>2826</a>
+<a name='L2827'></a><a href='#L2827'>2827</a>
+<a name='L2828'></a><a href='#L2828'>2828</a>
+<a name='L2829'></a><a href='#L2829'>2829</a>
+<a name='L2830'></a><a href='#L2830'>2830</a>
+<a name='L2831'></a><a href='#L2831'>2831</a>
+<a name='L2832'></a><a href='#L2832'>2832</a>
+<a name='L2833'></a><a href='#L2833'>2833</a>
+<a name='L2834'></a><a href='#L2834'>2834</a>
+<a name='L2835'></a><a href='#L2835'>2835</a>
+<a name='L2836'></a><a href='#L2836'>2836</a>
+<a name='L2837'></a><a href='#L2837'>2837</a>
+<a name='L2838'></a><a href='#L2838'>2838</a>
+<a name='L2839'></a><a href='#L2839'>2839</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -5976,6 +6012,17 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  var has_newline_default = hasNewline;</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/utilities/is-previous-line-empty.js</span>
+<span class="cstat-no" title="statement not covered" >  function isPreviousLineEmpty(text, startIndex) {</span>
+<span class="cstat-no" title="statement not covered" >    let idx = startIndex - 1;</span>
+<span class="cstat-no" title="statement not covered" >    idx = skipSpaces(text, idx, { backwards: true });</span>
+<span class="cstat-no" title="statement not covered" >    idx = skip_newline_default(text, idx, { backwards: true });</span>
+<span class="cstat-no" title="statement not covered" >    idx = skipSpaces(text, idx, { backwards: true });</span>
+<span class="cstat-no" title="statement not covered" >    const idx2 = skip_newline_default(text, idx, { backwards: true });</span>
+<span class="cstat-no" title="statement not covered" >    return idx !== idx2;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var is_previous_line_empty_default = isPreviousLineEmpty;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/main/comments/print.js</span>
 <span class="cstat-no" title="statement not covered" >  var returnTrue = () =&gt; true;</span>
 <span class="cstat-no" title="statement not covered" >  function printComment(path, options2) {</span>
@@ -5984,11 +6031,12 @@
 <span class="cstat-no" title="statement not covered" >    return options2.printer.printComment(path, options2);</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function printDanglingComments(path, options2, danglingCommentsPrintOptions = {}) {</span>
+<span class="cstat-no" title="statement not covered" >    const { originalText, locStart: locStart2 } = options2;</span>
 <span class="cstat-no" title="statement not covered" >    const {</span>
 <span class="cstat-no" title="statement not covered" >      indent: shouldIndent = false,</span>
 <span class="cstat-no" title="statement not covered" >      marker,</span>
 <span class="cstat-no" title="statement not covered" >      filter = returnTrue,</span>
-<span class="cstat-no" title="statement not covered" >      separator = hardline</span>
+<span class="cstat-no" title="statement not covered" >      separator = ({ comment }) =&gt; is_previous_line_empty_default(originalText, locStart2(comment)) ? [hardline, hardline] : hardline</span>
 <span class="cstat-no" title="statement not covered" >    } = danglingCommentsPrintOptions;</span>
 <span class="cstat-no" title="statement not covered" >    const danglingComments = new Set(</span>
 <span class="cstat-no" title="statement not covered" >      path.node?.comments?.filter(</span>
@@ -6340,7 +6388,7 @@
 <span class="cstat-no" title="statement not covered" >      case "SelectionSet":</span>
 <span class="cstat-no" title="statement not covered" >        return printSelectionSet(path, options2, print2);</span>
 <span class="cstat-no" title="statement not covered" >      case "Field":</span>
-<span class="cstat-no" title="statement not covered" >        return group([node.alias ? [print2("alias"), ": "] : "", print2("name"), is_non_empty_array_default(node.arguments) ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", printDirectives(path, print2), printSelectionSetField(path, options2, print2)]);</span>
+<span class="cstat-no" title="statement not covered" >        return group([node.alias ? [print2("alias"), ": "] : "", print2("name"), printArguments(path, options2, print2), printDirectives(path, print2), printSelectionSetField(path, options2, print2)]);</span>
 <span class="cstat-no" title="statement not covered" >      case "Name":</span>
 <span class="cstat-no" title="statement not covered" >        return node.value;</span>
 <span class="cstat-no" title="statement not covered" >      case "StringValue":</span>
@@ -6366,9 +6414,15 @@
 <span class="cstat-no" title="statement not covered" >          method_replace_all_default(</span>
 <span class="cstat-no" title="statement not covered" >            /* OPTIONAL_OBJECT: false */</span>
 <span class="cstat-no" title="statement not covered" >            0,</span>
-<span class="cstat-no" title="statement not covered" >            node.value,</span>
-<span class="cstat-no" title="statement not covered" >            /["\\]/g,</span>
-<span class="cstat-no" title="statement not covered" >            "\\$&amp;"</span>
+<span class="cstat-no" title="statement not covered" >            method_replace_all_default(</span>
+<span class="cstat-no" title="statement not covered" >              /* OPTIONAL_OBJECT: false */</span>
+<span class="cstat-no" title="statement not covered" >              0,</span>
+<span class="cstat-no" title="statement not covered" >              node.value,</span>
+<span class="cstat-no" title="statement not covered" >              /["\\]/g,</span>
+<span class="cstat-no" title="statement not covered" >              "\\$&amp;"</span>
+<span class="cstat-no" title="statement not covered" >            ),</span>
+<span class="cstat-no" title="statement not covered" >            "\r",</span>
+<span class="cstat-no" title="statement not covered" >            "\\r"</span>
 <span class="cstat-no" title="statement not covered" >          ),</span>
 <span class="cstat-no" title="statement not covered" >          "\n",</span>
 <span class="cstat-no" title="statement not covered" >          "\\n"</span>
@@ -6394,7 +6448,7 @@
 <span class="cstat-no" title="statement not covered" >        const bracketSpace = options2.bracketSpacing &amp;&amp; !isEmpty ? " " : "";</span>
 <span class="cstat-no" title="statement not covered" >        return group(["{", bracketSpace, printDanglingComments(path, options2, {</span>
 <span class="cstat-no" title="statement not covered" >          indent: true</span>
-<span class="cstat-no" title="statement not covered" >        }), isEmpty ? "" : [indent([softline, join([ifBreak("", ", "), softline], path.map(print2, "fields"))])], softline, ifBreak("", bracketSpace), "}"]);</span>
+<span class="cstat-no" title="statement not covered" >        }), isEmpty ? "" : indent([softline, join([ifBreak("", ", "), softline], path.map(print2, "fields"))]), softline, ifBreak("", bracketSpace), "}"]);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      case "ObjectField":</span>
 <span class="cstat-no" title="statement not covered" >      case "Argument":</span>
@@ -6439,9 +6493,9 @@
 <span class="cstat-no" title="statement not covered" >        return parts;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      case "FieldDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [printDescription(path, options2, print2), print2("name"), is_non_empty_array_default(node.arguments) ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", ": ", print2("type"), printDirectives(path, print2)];</span>
+<span class="cstat-no" title="statement not covered" >        return [printDescription(path, options2, print2), print2("name"), printArguments(path, options2, print2), ": ", print2("type"), printDirectives(path, print2)];</span>
 <span class="cstat-no" title="statement not covered" >      case "DirectiveDefinition":</span>
-<span class="cstat-no" title="statement not covered" >        return [printDescription(path, options2, print2), "directive ", "@", print2("name"), is_non_empty_array_default(node.arguments) ? group(["(", indent([softline, join([ifBreak("", ", "), softline], printSequence(path, options2, print2, "arguments"))]), softline, ")"]) : "", printDirectives(path, print2), node.repeatable ? " repeatable" : "", " on ", ...join(" | ", path.map(print2, "locations"))];</span>
+<span class="cstat-no" title="statement not covered" >        return [printDescription(path, options2, print2), "directive ", "@", print2("name"), printArguments(path, options2, print2), printDirectives(path, print2), node.repeatable ? " repeatable" : "", " on ", ...join(" | ", path.map(print2, "locations"))];</span>
 <span class="cstat-no" title="statement not covered" >      case "DirectiveExtension":</span>
 <span class="cstat-no" title="statement not covered" >        return ["extend directive @", print2("name"), printDirectives(path, print2)];</span>
 <span class="cstat-no" title="statement not covered" >      case "EnumTypeExtension":</span>
@@ -8530,7 +8584,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-10T06:54:19.072Z
+                at 2026-11-11T05:43:50.896Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

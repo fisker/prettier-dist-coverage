@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.9% </span>
+                <span class="strong">39.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4818/12073</span>
+                <span class='fraction'>4818/12085</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.04% </span>
+                <span class="strong">37.95% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>304/799</span>
+                <span class='fraction'>304/801</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.9% </span>
+                <span class="strong">39.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4818/12073</span>
+                <span class='fraction'>4818/12085</span>
             </div>
         
             
@@ -12136,7 +12136,19 @@
 <a name='L12071'></a><a href='#L12071'>12071</a>
 <a name='L12072'></a><a href='#L12072'>12072</a>
 <a name='L12073'></a><a href='#L12073'>12073</a>
-<a name='L12074'></a><a href='#L12074'>12074</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">17x</span>
+<a name='L12074'></a><a href='#L12074'>12074</a>
+<a name='L12075'></a><a href='#L12075'>12075</a>
+<a name='L12076'></a><a href='#L12076'>12076</a>
+<a name='L12077'></a><a href='#L12077'>12077</a>
+<a name='L12078'></a><a href='#L12078'>12078</a>
+<a name='L12079'></a><a href='#L12079'>12079</a>
+<a name='L12080'></a><a href='#L12080'>12080</a>
+<a name='L12081'></a><a href='#L12081'>12081</a>
+<a name='L12082'></a><a href='#L12082'>12082</a>
+<a name='L12083'></a><a href='#L12083'>12083</a>
+<a name='L12084'></a><a href='#L12084'>12084</a>
+<a name='L12085'></a><a href='#L12085'>12085</a>
+<a name='L12086'></a><a href='#L12086'>12086</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
@@ -21972,8 +21984,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -33945,8 +33969,19 @@ function hasComposesNode(node) {
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function hasEmptyRawBefore(node) {</span></span>
 <span class="cstat-no" title="statement not covered" >  return node?.raws?.before === "";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function skipLeadingComments(groups) {</span></span>
+<span class="cstat-no" title="statement not covered" >  const start = groups.findIndex((group2) =&gt; group2.type !== "value-comment");</span>
+<span class="cstat-no" title="statement not covered" >  return start === -1 ? [] : groups.slice(start);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isKeyValuePairNode(node) {</span></span>
-<span class="cstat-no" title="statement not covered" >  return node.type === "value-comma_group" &amp;&amp; node.groups?.[1]?.type === "value-colon";</span>
+<span class="cstat-no" title="statement not covered" >  return node.type === "value-comma_group" &amp;&amp; node.groups &amp;&amp; skipLeadingComments(node.groups)[1]?.type === "value-colon";</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isDedentedMapEntryNode(node, parentNode) {</span></span>
+<span class="cstat-no" title="statement not covered" >  if (parentNode?.type !== "value-paren_group" || !parentNode.open || !isKeyValuePairNode(node)) {</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const [key, , value] = skipLeadingComments(node.groups);</span>
+<span class="cstat-no" title="statement not covered" >  return key.type !== "value-paren_group" &amp;&amp; value?.type === "value-paren_group";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function isKeyValuePairInParenGroupNode(node) {</span></span>
 <span class="cstat-no" title="statement not covered" >  return node.type === "value-paren_group" &amp;&amp; node.groups?.[0] &amp;&amp; isKeyValuePairNode(node.groups[0]);</span>
@@ -34058,6 +34093,7 @@ function hasComposesNode(node) {
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >  const isControlDirective = atRuleAncestorNode &amp;&amp; isSCSSControlDirectiveNode(atRuleAncestorNode, options2);</span>
 <span class="cstat-no" title="statement not covered" >  const hasLogicalOperator = isControlDirective &amp;&amp; node.groups.some(isIfElseKeywordNode);</span>
+<span class="cstat-no" title="statement not covered" >  const isDedentedByParent = isDedentedMapEntryNode(node, parentNode) &amp;&amp; !isControlDirective;</span>
 <span class="cstat-no" title="statement not covered" >  const hasInlineComment = node.groups.some(</span>
 <span class="cstat-no" title="statement not covered" >    (node2) =&gt; isInlineValueCommentNode(node2)</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
@@ -34197,7 +34233,7 @@ function hasComposesNode(node) {
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (isInlineValueCommentNode(iNode)) {</span>
 <span class="cstat-no" title="statement not covered" >      if (parentNode.type === "value-paren_group") {</span>
-<span class="cstat-no" title="statement not covered" >        parts.push(dedent(hardline), "");</span>
+<span class="cstat-no" title="statement not covered" >        parts.push(isDedentedByParent ? hardline : dedent(hardline), "");</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(hardline, "");</span>
@@ -34253,7 +34289,7 @@ function hasComposesNode(node) {
 <span class="cstat-no" title="statement not covered" >      continue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (!atRuleAncestorNode &amp;&amp; iNode.type === "value-comment" &amp;&amp; !iNode.inline &amp;&amp; node.groups.slice(0, i).every((group2) =&gt; group2.type === "value-comment")) {</span>
-<span class="cstat-no" title="statement not covered" >      parts.push(dedent(line), "");</span>
+<span class="cstat-no" title="statement not covered" >      parts.push(isDedentedByParent ? line : dedent(line), "");</span>
 <span class="cstat-no" title="statement not covered" >      continue;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    parts.push(line, "");</span>
@@ -34786,7 +34822,7 @@ function adjustNumbers(value) {
 <span class="cstat-no" title="statement not covered" >    index</span>
 <span class="cstat-no" title="statement not covered" >  }) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    let doc2 = groupDocs[index];</span>
-<span class="cstat-no" title="statement not covered" >    if (isKeyValuePairNode(child) &amp;&amp; child.type === "value-comma_group" &amp;&amp; child.groups &amp;&amp; child.groups[0].type !== "value-paren_group" &amp;&amp; child.groups[2]?.type === "value-paren_group" &amp;&amp; get_doc_type_default(doc2) === DOC_TYPE_GROUP &amp;&amp; get_doc_type_default(doc2.contents) === DOC_TYPE_INDENT &amp;&amp; get_doc_type_default(doc2.contents.contents) === DOC_TYPE_FILL) {</span>
+<span class="cstat-no" title="statement not covered" >    if (isDedentedMapEntryNode(child, node) &amp;&amp; get_doc_type_default(doc2) === DOC_TYPE_GROUP &amp;&amp; get_doc_type_default(doc2.contents) === DOC_TYPE_INDENT &amp;&amp; get_doc_type_default(doc2.contents.contents) === DOC_TYPE_FILL) {</span>
 <span class="cstat-no" title="statement not covered" >      doc2 = group(dedent(doc2));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    const parts2 = [doc2, isLast ? printTrailingComma(path, options2) : ","];</span>
@@ -36289,7 +36325,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-10T06:54:17.044Z
+                at 2026-11-11T05:43:48.365Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

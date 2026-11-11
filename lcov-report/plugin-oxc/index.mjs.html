@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13516</span>
+                <span class='fraction'>0/13531</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13516</span>
+                <span class='fraction'>0/13531</span>
             </div>
         
             
@@ -13579,7 +13579,37 @@
 <a name='L13514'></a><a href='#L13514'>13514</a>
 <a name='L13515'></a><a href='#L13515'>13515</a>
 <a name='L13516'></a><a href='#L13516'>13516</a>
-<a name='L13517'></a><a href='#L13517'>13517</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13517'></a><a href='#L13517'>13517</a>
+<a name='L13518'></a><a href='#L13518'>13518</a>
+<a name='L13519'></a><a href='#L13519'>13519</a>
+<a name='L13520'></a><a href='#L13520'>13520</a>
+<a name='L13521'></a><a href='#L13521'>13521</a>
+<a name='L13522'></a><a href='#L13522'>13522</a>
+<a name='L13523'></a><a href='#L13523'>13523</a>
+<a name='L13524'></a><a href='#L13524'>13524</a>
+<a name='L13525'></a><a href='#L13525'>13525</a>
+<a name='L13526'></a><a href='#L13526'>13526</a>
+<a name='L13527'></a><a href='#L13527'>13527</a>
+<a name='L13528'></a><a href='#L13528'>13528</a>
+<a name='L13529'></a><a href='#L13529'>13529</a>
+<a name='L13530'></a><a href='#L13530'>13530</a>
+<a name='L13531'></a><a href='#L13531'>13531</a>
+<a name='L13532'></a><a href='#L13532'>13532</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -29197,9 +29227,22 @@
 <span class="cstat-no" title="statement not covered" >function handleForXStatementComments({</span>
 <span class="cstat-no" title="statement not covered" >  comment,</span>
 <span class="cstat-no" title="statement not covered" >  enclosingNode,</span>
+<span class="cstat-no" title="statement not covered" >  precedingNode,</span>
 <span class="cstat-no" title="statement not covered" >  followingNode,</span>
 <span class="cstat-no" title="statement not covered" >  options: options2</span>
 <span class="cstat-no" title="statement not covered" >}) {</span>
+<span class="cstat-no" title="statement not covered" >  if ((enclosingNode?.type === "ForInStatement" || enclosingNode?.type === "ForOfStatement") &amp;&amp; precedingNode === enclosingNode.left &amp;&amp; followingNode === enclosingNode.right) {</span>
+<span class="cstat-no" title="statement not covered" >    const keywordIndex = stripComments(options2).indexOf(</span>
+<span class="cstat-no" title="statement not covered" >      enclosingNode.type === "ForInStatement" ? "in" : "of",</span>
+<span class="cstat-no" title="statement not covered" >      locEnd(precedingNode)</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >    if (locStart(comment) &gt; keywordIndex) {</span>
+<span class="cstat-no" title="statement not covered" >      addLeadingComment(followingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >    } else {</span>
+<span class="cstat-no" title="statement not covered" >      addTrailingComment(precedingNode, comment);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  if ((enclosingNode?.type === "ForInStatement" || enclosingNode?.type === "ForOfStatement" || enclosingNode?.type === "ForStatement") &amp;&amp; followingNode &amp;&amp; followingNode === enclosingNode.body) {</span>
 <span class="cstat-no" title="statement not covered" >    const closingParenthesisIndex = stripComments(options2).lastIndexOf(</span>
 <span class="cstat-no" title="statement not covered" >      ")",</span>
@@ -32830,11 +32873,12 @@
 <span class="cstat-no" title="statement not covered" >  return { doc: [" ", printed], isBlock, hasLineSuffix: false };</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function printDanglingComments(path, options2, danglingCommentsPrintOptions = {}) {</span>
+<span class="cstat-no" title="statement not covered" >  const { originalText, locStart: locStart2 } = options2;</span>
 <span class="cstat-no" title="statement not covered" >  const {</span>
 <span class="cstat-no" title="statement not covered" >    indent: shouldIndent = false,</span>
 <span class="cstat-no" title="statement not covered" >    marker,</span>
 <span class="cstat-no" title="statement not covered" >    filter = returnTrue,</span>
-<span class="cstat-no" title="statement not covered" >    separator = hardline</span>
+<span class="cstat-no" title="statement not covered" >    separator = ({ comment }) =&gt; is_previous_line_empty_default(originalText, locStart2(comment)) ? [hardline, hardline] : hardline</span>
 <span class="cstat-no" title="statement not covered" >  } = danglingCommentsPrintOptions;</span>
 <span class="cstat-no" title="statement not covered" >  const danglingComments = new Set(</span>
 <span class="cstat-no" title="statement not covered" >    path.node?.comments?.filter(</span>
@@ -37108,6 +37152,7 @@
 <span class="cstat-no" title="statement not covered" >    isForOfStatement &amp;&amp; node.await ? " await" : "",</span>
 <span class="cstat-no" title="statement not covered" >    " (",</span>
 <span class="cstat-no" title="statement not covered" >    print3("left"),</span>
+<span class="cstat-no" title="statement not covered" >    align(1, lineSuffixBoundary),</span>
 <span class="cstat-no" title="statement not covered" >    " ",</span>
 <span class="cstat-no" title="statement not covered" >    isForOfStatement ? "of" : "in",</span>
 <span class="cstat-no" title="statement not covered" >    " ",</span>
@@ -40618,7 +40663,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-10T06:54:17.044Z
+                at 2026-11-11T05:43:48.365Z
             </div>
         <script src="../prettify.js"></script>
         <script>
