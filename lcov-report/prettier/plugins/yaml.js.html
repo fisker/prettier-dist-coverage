@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8981</span>
+                <span class='fraction'>0/8984</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8981</span>
+                <span class='fraction'>0/8984</span>
             </div>
         
             
@@ -9043,7 +9043,13 @@
 <a name='L8978'></a><a href='#L8978'>8978</a>
 <a name='L8979'></a><a href='#L8979'>8979</a>
 <a name='L8980'></a><a href='#L8980'>8980</a>
-<a name='L8981'></a><a href='#L8981'>8981</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L8981'></a><a href='#L8981'>8981</a>
+<a name='L8982'></a><a href='#L8982'>8982</a>
+<a name='L8983'></a><a href='#L8983'>8983</a>
+<a name='L8984'></a><a href='#L8984'>8984</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -18943,15 +18949,15 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-yaml/print/misc.js</span>
 <span class="cstat-no" title="statement not covered" >  var printedEmptyLineCache = /* @__PURE__ */ new WeakMap();</span>
+<span class="cstat-no" title="statement not covered" >  var getNextEmptyLinePrintedSet = (path) =&gt; getOrInsertComputed(printedEmptyLineCache, path.root, () =&gt; /* @__PURE__ */ new Set());</span>
+<span class="cstat-no" title="statement not covered" >  var markNextEmptyLinePrinted = (path, node = path.node) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    getNextEmptyLinePrintedSet(path).add(node.position.end.offset);</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" >  var hasNextEmptyLineBeenPrinted = (path, node = path.node) =&gt; getNextEmptyLinePrintedSet(path).has(node.position.end.offset);</span>
 <span class="cstat-no" title="statement not covered" >  function printNextEmptyLine(path, originalText) {</span>
-<span class="cstat-no" title="statement not covered" >    const { node, root } = path;</span>
-<span class="cstat-no" title="statement not covered" >    const isNextEmptyLinePrintedSet = getOrInsertComputed(</span>
-<span class="cstat-no" title="statement not covered" >      printedEmptyLineCache,</span>
-<span class="cstat-no" title="statement not covered" >      root,</span>
-<span class="cstat-no" title="statement not covered" >      () =&gt; /* @__PURE__ */ new Set()</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >    if (!isNextEmptyLinePrintedSet.has(node.position.end.offset)) {</span>
-<span class="cstat-no" title="statement not covered" >      isNextEmptyLinePrintedSet.add(node.position.end.offset);</span>
+<span class="cstat-no" title="statement not covered" >    if (!hasNextEmptyLineBeenPrinted(path)) {</span>
+<span class="cstat-no" title="statement not covered" >      markNextEmptyLinePrinted(path);</span>
+<span class="cstat-no" title="statement not covered" >      const { node } = path;</span>
 <span class="cstat-no" title="statement not covered" >      if (isNextLineEmpty(node, originalText) &amp;&amp; !shouldPrintEndComments(path.parent)) {</span>
 <span class="cstat-no" title="statement not covered" >        return softline;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -19348,6 +19354,9 @@
 <span class="cstat-no" title="statement not covered" >              -1</span>
 <span class="cstat-no" title="statement not covered" >            );</span>
 <span class="cstat-no" title="statement not covered" >            const shouldPreserveEmptyLine = isNode(lastChild, ["mapping"]) &amp;&amp; is_previous_line_empty_default(options2.originalText, locStart(endComments[0]));</span>
+<span class="cstat-no" title="statement not covered" >            if (shouldPreserveEmptyLine) {</span>
+<span class="cstat-no" title="statement not covered" >              markNextEmptyLinePrinted(path, lastChild);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            separator = shouldPreserveEmptyLine ? [hardline, hardline] : hardline;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -27010,7 +27019,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-11T05:43:48.365Z
+                at 2026-11-12T06:49:37.246Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

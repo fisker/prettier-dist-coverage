@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/26008</span>
+                <span class='fraction'>0/26022</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/26008</span>
+                <span class='fraction'>0/26022</span>
             </div>
         
             
@@ -26071,7 +26071,35 @@
 <a name='L26006'></a><a href='#L26006'>26006</a>
 <a name='L26007'></a><a href='#L26007'>26007</a>
 <a name='L26008'></a><a href='#L26008'>26008</a>
-<a name='L26009'></a><a href='#L26009'>26009</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L26009'></a><a href='#L26009'>26009</a>
+<a name='L26010'></a><a href='#L26010'>26010</a>
+<a name='L26011'></a><a href='#L26011'>26011</a>
+<a name='L26012'></a><a href='#L26012'>26012</a>
+<a name='L26013'></a><a href='#L26013'>26013</a>
+<a name='L26014'></a><a href='#L26014'>26014</a>
+<a name='L26015'></a><a href='#L26015'>26015</a>
+<a name='L26016'></a><a href='#L26016'>26016</a>
+<a name='L26017'></a><a href='#L26017'>26017</a>
+<a name='L26018'></a><a href='#L26018'>26018</a>
+<a name='L26019'></a><a href='#L26019'>26019</a>
+<a name='L26020'></a><a href='#L26020'>26020</a>
+<a name='L26021'></a><a href='#L26021'>26021</a>
+<a name='L26022'></a><a href='#L26022'>26022</a>
+<a name='L26023'></a><a href='#L26023'>26023</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -67996,12 +68024,29 @@
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
+<span class="cstat-no" title="statement not covered" >    case "BinaryExpression":</span>
+<span class="cstat-no" title="statement not covered" >      if (!(key === "right" &amp;&amp; node.type === "TSInstantiationExpression" &amp;&amp; (parent.operator === "instanceof" || parent.operator === "in")) &amp;&amp; endsWithInstantiationExpression(node)) {</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >    case "TSInstantiationExpression":</span>
 <span class="cstat-no" title="statement not covered" >      if (key === "expression" &amp;&amp; (node.type === "AwaitExpression" || node.type === "YieldExpression")) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function endsWithInstantiationExpression(node) {</span>
+<span class="cstat-no" title="statement not covered" >  while (node) {</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type === "UnaryExpression" || node.type === "AwaitExpression" || node.type === "YieldExpression") {</span>
+<span class="cstat-no" title="statement not covered" >      node = node.argument;</span>
+<span class="cstat-no" title="statement not covered" >    } else if (node.type === "TSTypeAssertion") {</span>
+<span class="cstat-no" title="statement not covered" >      node = node.expression;</span>
+<span class="cstat-no" title="statement not covered" >    } else {</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  return node?.type === "TSInstantiationExpression";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >function willArgumentBreakAndAddParentheses(path, options2) {</span>
 <span class="cstat-no" title="statement not covered" >  const { key, parent } = path;</span>
@@ -68568,7 +68613,7 @@
 <span class="cstat-no" title="statement not covered" >    case "JSXElement":</span>
 <span class="cstat-no" title="statement not covered" >      return key === "callee" || key === "left" &amp;&amp; parent.type === "BinaryExpression" &amp;&amp; parent.operator === "&lt;" || !isArrayExpression(parent) &amp;&amp; parent.type !== "ArrowFunctionExpression" &amp;&amp; parent.type !== "AssignmentExpression" &amp;&amp; parent.type !== "AssignmentPattern" &amp;&amp; parent.type !== "BinaryExpression" &amp;&amp; parent.type !== "ConditionalExpression" &amp;&amp; parent.type !== "ExpressionStatement" &amp;&amp; parent.type !== "JsExpressionRoot" &amp;&amp; parent.type !== "JSXAttribute" &amp;&amp; parent.type !== "JSXElement" &amp;&amp; parent.type !== "JSXExpressionContainer" &amp;&amp; parent.type !== "JSXFragment" &amp;&amp; parent.type !== "LogicalExpression" &amp;&amp; !isCallOrNewExpression(parent) &amp;&amp; !isObjectProperty(parent) &amp;&amp; !isReturnOrThrowStatement(parent) &amp;&amp; parent.type !== "TypeCastExpression" &amp;&amp; parent.type !== "VariableDeclarator" &amp;&amp; parent.type !== "YieldExpression" &amp;&amp; parent.type !== "MatchExpressionCase" &amp;&amp; !(key === "declaration" &amp;&amp; parent.type === "ExportDefaultDeclaration");</span>
 <span class="cstat-no" title="statement not covered" >    case "TSInstantiationExpression":</span>
-<span class="cstat-no" title="statement not covered" >      if (key === "object" &amp;&amp; isMemberExpression(parent) || key === "callee" &amp;&amp; parent.type === "CallExpression" || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression" || key === "expression" &amp;&amp; (isNonNullExpression(parent) || parent.type === "TSInstantiationExpression") || key === "superClass" &amp;&amp; (isClass(parent) || parent.type === "StructDeclaration") || parent.type === "BinaryExpression" &amp;&amp; (key === "left" || key === "right" &amp;&amp; !(parent.operator === "instanceof" || parent.operator === "in"))) {</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "object" &amp;&amp; isMemberExpression(parent) || key === "callee" &amp;&amp; parent.type === "CallExpression" || key === "callee" &amp;&amp; parent.type === "NewExpression" || key === "tag" &amp;&amp; parent.type === "TaggedTemplateExpression" || key === "expression" &amp;&amp; (isNonNullExpression(parent) || parent.type === "TSInstantiationExpression") || key === "superClass" &amp;&amp; (isClass(parent) || parent.type === "StructDeclaration")) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      break;</span>
@@ -72269,9 +72314,6 @@
 <span class="cstat-no" title="statement not covered" >  const shouldIndentIfInlining = parent.type === "AssignmentExpression" || parent.type === "VariableDeclarator" || parent.type === "ClassProperty" || parent.type === "PropertyDefinition" || isAbstractPropertyDefinition(parent) || parent.type === "ClassPrivateProperty" || isObjectProperty(parent);</span>
 <span class="cstat-no" title="statement not covered" >  if (shouldNotIndent || isInlineLogicalExpression(node) || !shouldInlineLogicalExpression(node) &amp;&amp; shouldIndentIfInlining) {</span>
 <span class="cstat-no" title="statement not covered" >    return group(parts);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (parts.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >    return "";</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const hasJsx = isJsxElement(node.right);</span>
 <span class="cstat-no" title="statement not covered" >  const firstGroupIndex = parts.findIndex((part) =&gt; get_doc_type_default(part) === DOC_TYPE_GROUP);</span>
@@ -78094,7 +78136,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-11T05:43:48.365Z
+                at 2026-11-12T06:49:37.246Z
             </div>
         <script src="../prettify.js"></script>
         <script>
