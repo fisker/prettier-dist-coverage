@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.95% </span>
+                <span class="strong">21.93% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1726/7862</span>
+                <span class='fraction'>1722/7852</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">40.58% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>138/345</span>
+                <span class='fraction'>138/340</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.95% </span>
+                <span class="strong">21.93% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1726/7862</span>
+                <span class='fraction'>1722/7852</span>
             </div>
         
             
@@ -7915,17 +7915,7 @@
 <a name='L7850'></a><a href='#L7850'>7850</a>
 <a name='L7851'></a><a href='#L7851'>7851</a>
 <a name='L7852'></a><a href='#L7852'>7852</a>
-<a name='L7853'></a><a href='#L7853'>7853</a>
-<a name='L7854'></a><a href='#L7854'>7854</a>
-<a name='L7855'></a><a href='#L7855'>7855</a>
-<a name='L7856'></a><a href='#L7856'>7856</a>
-<a name='L7857'></a><a href='#L7857'>7857</a>
-<a name='L7858'></a><a href='#L7858'>7858</a>
-<a name='L7859'></a><a href='#L7859'>7859</a>
-<a name='L7860'></a><a href='#L7860'>7860</a>
-<a name='L7861'></a><a href='#L7861'>7861</a>
-<a name='L7862'></a><a href='#L7862'>7862</a>
-<a name='L7863'></a><a href='#L7863'>7863</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<a name='L7853'></a><a href='#L7853'>7853</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
@@ -15307,6 +15297,7 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">130x</span>
 <span class="cline-any cline-yes">130x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -15451,12 +15442,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
@@ -15468,15 +15453,6 @@
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15484,8 +15460,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -22769,6 +22749,7 @@ var vk = [
   ["decorators", "key", "value"],
   ["argument"],
   ["expressions"],
+  ["declarations"],
   ["id", "init"],
   ["body"],
   ["decorators", "id", "typeParameters", "superClass", "superTypeArguments", "mixins", "implements", "body"],
@@ -22856,19 +22837,19 @@ var visitor_keys_evaluate_default = {
   TryStatement: ["block", "handler", "finalizer"],
   UnaryExpression: vk[15],
   UpdateExpression: vk[15],
-  VariableDeclaration: ["declarations"],
-  VariableDeclarator: vk[17],
+  VariableDeclaration: vk[17],
+  VariableDeclarator: vk[18],
   WhileStatement: vk[7],
   WithStatement: ["object", "body"],
   AssignmentPattern: ["left", "right", "decorators", "typeAnnotation"],
   ArrayPattern: ["elements", "typeAnnotation", "decorators"],
   ArrowFunctionExpression: ["typeParameters", "params", "predicate", "returnType", "body"],
-  ClassBody: vk[18],
-  ClassExpression: vk[19],
-  ClassDeclaration: vk[19],
+  ClassBody: vk[19],
+  ClassExpression: vk[20],
+  ClassDeclaration: vk[20],
   ExportAllDeclaration: ["source", "attributes", "exported"],
   ExportDefaultDeclaration: ["declaration"],
-  ExportNamedDeclaration: vk[20],
+  ExportNamedDeclaration: vk[21],
   ExportSpecifier: ["local", "exported"],
   ForOfStatement: vk[9],
   ImportDeclaration: ["specifiers", "source", "attributes"],
@@ -22890,41 +22871,41 @@ var visitor_keys_evaluate_default = {
   ExportNamespaceSpecifier: ["exportsFilter", "exported"],
   OptionalMemberExpression: vk[11],
   OptionalCallExpression: vk[5],
-  ClassProperty: vk[21],
-  ClassPrivateProperty: vk[21],
+  ClassProperty: vk[22],
+  ClassPrivateProperty: vk[22],
   ClassPrivateMethod: vk[13],
-  PrivateName: vk[22],
-  StaticBlock: vk[18],
-  ImportAttribute: vk[23],
+  PrivateName: vk[23],
+  StaticBlock: vk[19],
+  ImportAttribute: vk[24],
   AnyTypeAnnotation: [],
-  ArrayTypeAnnotation: vk[24],
+  ArrayTypeAnnotation: vk[25],
   BooleanTypeAnnotation: [],
   BooleanLiteralTypeAnnotation: [],
   NullLiteralTypeAnnotation: [],
-  ClassImplements: vk[25],
+  ClassImplements: vk[26],
   DeclareClass: ["id", "typeParameters", "extends", "mixins", "implements", "body"],
   DeclareFunction: ["id", "predicate", "typeAnnotation"],
-  DeclareInterface: vk[26],
-  DeclareModule: vk[27],
-  DeclareModuleExports: vk[28],
-  DeclareTypeAlias: vk[29],
+  DeclareInterface: vk[27],
+  DeclareModule: vk[28],
+  DeclareModuleExports: vk[29],
+  DeclareTypeAlias: vk[30],
   DeclareOpaqueType: ["id", "typeParameters", "supertype", "lowerBound", "upperBound"],
-  DeclareVariable: ["id", "declarations"],
-  DeclareExportDeclaration: vk[20],
+  DeclareVariable: vk[17],
+  DeclareExportDeclaration: vk[21],
   DeclareExportAllDeclaration: ["source", "attributes"],
   DeclaredPredicate: vk[2],
   ExistsTypeAnnotation: [],
   FunctionTypeAnnotation: ["typeParameters", "this", "params", "rest", "returnType"],
-  FunctionTypeParam: vk[30],
-  GenericTypeAnnotation: vk[25],
+  FunctionTypeParam: vk[31],
+  GenericTypeAnnotation: vk[26],
   InferredPredicate: [],
-  InterfaceExtends: vk[25],
-  InterfaceDeclaration: vk[26],
+  InterfaceExtends: vk[26],
+  InterfaceDeclaration: vk[27],
   InterfaceTypeAnnotation: ["extends", "body"],
-  IntersectionTypeAnnotation: vk[31],
+  IntersectionTypeAnnotation: vk[32],
   MixedTypeAnnotation: [],
   EmptyTypeAnnotation: [],
-  NullableTypeAnnotation: vk[28],
+  NullableTypeAnnotation: vk[29],
   NumberLiteralTypeAnnotation: [],
   BigIntLiteralTypeAnnotation: [],
   NumberTypeAnnotation: [],
@@ -22935,33 +22916,33 @@ var visitor_keys_evaluate_default = {
   ObjectTypeProperty: ["key", "value", "variance", "init"],
   ObjectTypeSpreadProperty: vk[15],
   OpaqueType: ["id", "typeParameters", "supertype", "impltype", "lowerBound", "upperBound"],
-  QualifiedTypeIdentifier: vk[32],
+  QualifiedTypeIdentifier: vk[33],
   StringLiteralTypeAnnotation: [],
   StringTypeAnnotation: [],
   SymbolTypeAnnotation: [],
   ThisTypeAnnotation: [],
-  TupleTypeAnnotation: vk[33],
+  TupleTypeAnnotation: vk[34],
   TypeofTypeAnnotation: ["argument", "typeArguments"],
-  TypeAlias: vk[29],
-  TypeAnnotation: vk[28],
-  TypeCastExpression: vk[34],
+  TypeAlias: vk[30],
+  TypeAnnotation: vk[29],
+  TypeCastExpression: vk[35],
   TypeParameter: ["bound", "default", "variance"],
-  TypeParameterDeclaration: vk[35],
-  TypeParameterInstantiation: vk[35],
-  UnionTypeAnnotation: vk[31],
+  TypeParameterDeclaration: vk[36],
+  TypeParameterInstantiation: vk[36],
+  UnionTypeAnnotation: vk[32],
   Variance: [],
   VoidTypeAnnotation: [],
-  EnumDeclaration: vk[27],
-  EnumBooleanBody: vk[36],
-  EnumNumberBody: vk[36],
-  EnumStringBody: vk[36],
-  EnumSymbolBody: vk[36],
-  EnumBooleanMember: vk[17],
-  EnumNumberMember: vk[17],
-  EnumStringMember: vk[17],
-  EnumDefaultedMember: vk[22],
-  IndexedAccessType: vk[37],
-  OptionalIndexedAccessType: vk[37],
+  EnumDeclaration: vk[28],
+  EnumBooleanBody: vk[37],
+  EnumNumberBody: vk[37],
+  EnumStringBody: vk[37],
+  EnumSymbolBody: vk[37],
+  EnumBooleanMember: vk[18],
+  EnumNumberMember: vk[18],
+  EnumStringMember: vk[18],
+  EnumDefaultedMember: vk[23],
+  IndexedAccessType: vk[38],
+  OptionalIndexedAccessType: vk[38],
   JSXAttribute: ["name", "value"],
   JSXClosingElement: ["name"],
   JSXElement: ["openingElement", "children", "closingElement"],
@@ -22981,23 +22962,23 @@ var visitor_keys_evaluate_default = {
   V8IntrinsicIdentifier: [],
   ArgumentPlaceholder: [],
   BindExpression: ["object", "callee"],
-  ClassAccessorProperty: vk[38],
+  ClassAccessorProperty: vk[39],
   Decorator: vk[8],
-  DoExpression: vk[18],
+  DoExpression: vk[19],
   ExportDefaultSpecifier: ["exported"],
-  ModuleExpression: vk[18],
+  ModuleExpression: vk[19],
   TopicReference: [],
   VoidPattern: [],
   StructDeclaration: ["id", "superClass", "body"],
-  StructBody: vk[18],
+  StructBody: vk[19],
   TSParameterProperty: ["decorators", "parameter"],
-  TSDeclareFunction: vk[39],
-  TSDeclareMethod: vk[40],
+  TSDeclareFunction: vk[40],
+  TSDeclareMethod: vk[41],
   TSQualifiedName: vk[1],
-  TSCallSignatureDeclaration: vk[41],
-  TSConstructSignatureDeclaration: vk[41],
+  TSCallSignatureDeclaration: vk[42],
+  TSConstructSignatureDeclaration: vk[42],
   TSPropertySignature: ["key", "typeAnnotation"],
-  TSMethodSignature: vk[40],
+  TSMethodSignature: vk[41],
   TSIndexSignature: ["parameters", "typeAnnotation"],
   TSAnyKeyword: [],
   TSBooleanKeyword: [],
@@ -23013,62 +22994,62 @@ var visitor_keys_evaluate_default = {
   TSUnknownKeyword: [],
   TSVoidKeyword: [],
   TSThisType: [],
-  TSFunctionType: vk[41],
-  TSConstructorType: vk[41],
+  TSFunctionType: vk[42],
+  TSConstructorType: vk[42],
   TSTypeReference: ["typeName", "typeArguments"],
-  TSTypePredicate: vk[42],
+  TSTypePredicate: vk[43],
   TSTypeQuery: ["exprName", "typeArguments"],
-  TSTypeLiteral: vk[36],
-  TSArrayType: vk[24],
-  TSTupleType: vk[33],
-  TSOptionalType: vk[28],
-  TSRestType: vk[28],
+  TSTypeLiteral: vk[37],
+  TSArrayType: vk[25],
+  TSTupleType: vk[34],
+  TSOptionalType: vk[29],
+  TSRestType: vk[29],
   TSNamedTupleMember: ["label", "elementType"],
-  TSUnionType: vk[31],
-  TSIntersectionType: vk[31],
-  TSConditionalType: vk[43],
-  TSInferType: vk[44],
-  TSParenthesizedType: vk[28],
-  TSTypeOperator: vk[28],
-  TSIndexedAccessType: vk[37],
+  TSUnionType: vk[32],
+  TSIntersectionType: vk[32],
+  TSConditionalType: vk[44],
+  TSInferType: vk[45],
+  TSParenthesizedType: vk[29],
+  TSTypeOperator: vk[29],
+  TSIndexedAccessType: vk[38],
   TSMappedType: ["key", "constraint", "nameType", "typeAnnotation"],
-  TSTemplateLiteralType: vk[45],
-  TSLiteralType: vk[46],
-  TSClassImplements: vk[47],
-  TSInterfaceHeritage: vk[47],
-  TSInterfaceDeclaration: vk[26],
-  TSInterfaceBody: vk[18],
+  TSTemplateLiteralType: vk[46],
+  TSLiteralType: vk[47],
+  TSClassImplements: vk[48],
+  TSInterfaceHeritage: vk[48],
+  TSInterfaceDeclaration: vk[27],
+  TSInterfaceBody: vk[19],
   TSTypeAliasDeclaration: ["id", "typeParameters", "typeAnnotation"],
-  TSInstantiationExpression: vk[47],
-  TSAsExpression: vk[34],
-  TSSatisfiesExpression: vk[34],
-  TSTypeAssertion: vk[34],
-  TSEnumBody: vk[36],
-  TSEnumDeclaration: vk[27],
+  TSInstantiationExpression: vk[48],
+  TSAsExpression: vk[35],
+  TSSatisfiesExpression: vk[35],
+  TSTypeAssertion: vk[35],
+  TSEnumBody: vk[37],
+  TSEnumDeclaration: vk[28],
   TSEnumMember: ["id", "initializer"],
-  TSModuleDeclaration: vk[27],
-  TSModuleBlock: vk[18],
+  TSModuleDeclaration: vk[28],
+  TSModuleBlock: vk[19],
   TSImportType: ["source", "options", "qualifier", "typeArguments"],
-  TSImportEqualsDeclaration: vk[48],
+  TSImportEqualsDeclaration: vk[49],
   TSExternalModuleReference: vk[8],
   TSNonNullExpression: vk[8],
   TSExportAssignment: vk[8],
-  TSNamespaceExportDeclaration: vk[22],
-  TSTypeAnnotation: vk[28],
-  TSTypeParameterInstantiation: vk[35],
-  TSTypeParameterDeclaration: vk[35],
+  TSNamespaceExportDeclaration: vk[23],
+  TSTypeAnnotation: vk[29],
+  TSTypeParameterInstantiation: vk[36],
+  TSTypeParameterDeclaration: vk[36],
   TSTypeParameter: ["name", "constraint", "default"],
   ChainExpression: vk[8],
   Literal: [],
   MethodDefinition: vk[14],
   PrivateIdentifier: [],
-  Property: vk[23],
-  PropertyDefinition: vk[21],
-  AccessorProperty: vk[38],
-  TSAbstractAccessorProperty: vk[49],
+  Property: vk[24],
+  PropertyDefinition: vk[22],
+  AccessorProperty: vk[39],
+  TSAbstractAccessorProperty: vk[50],
   TSAbstractKeyword: [],
-  TSAbstractMethodDefinition: vk[23],
-  TSAbstractPropertyDefinition: vk[49],
+  TSAbstractMethodDefinition: vk[24],
+  TSAbstractPropertyDefinition: vk[50],
   TSAsyncKeyword: [],
   TSDeclareKeyword: [],
   TSEmptyBodyFunctionExpression: ["id", "typeParameters", "params", "returnType"],
@@ -23078,90 +23059,90 @@ var visitor_keys_evaluate_default = {
   TSPublicKeyword: [],
   TSReadonlyKeyword: [],
   TSStaticKeyword: [],
-  AbstractMethodDefinition: vk[23],
+  AbstractMethodDefinition: vk[24],
   AbstractPropertyDefinition: ["key", "value", "typeAnnotation", "variance"],
   AsConstExpression: vk[8],
-  AsExpression: vk[34],
+  AsExpression: vk[35],
   BigIntTypeAnnotation: [],
   ComponentDeclaration: ["id", "params", "body", "typeParameters", "rendersType"],
   ComponentParameter: ["name", "local"],
   ComponentTypeAnnotation: ["params", "rest", "typeParameters", "rendersType"],
-  ComponentTypeParameter: vk[30],
-  ConditionalTypeAnnotation: vk[43],
-  ConstructorTypeAnnotation: vk[50],
+  ComponentTypeParameter: vk[31],
+  ConditionalTypeAnnotation: vk[44],
+  ConstructorTypeAnnotation: vk[51],
   DeclareClassExtendsCall: ["callee", "argument"],
   DeclareComponent: ["id", "params", "rest", "typeParameters", "rendersType"],
-  DeclareEnum: vk[27],
-  DeclareHook: vk[22],
-  DeclareNamespace: vk[27],
-  EnumBigIntMember: vk[17],
-  EnumBody: vk[36],
+  DeclareEnum: vk[28],
+  DeclareHook: vk[23],
+  DeclareNamespace: vk[28],
+  EnumBigIntMember: vk[18],
+  EnumBody: vk[37],
   ExportAssignment: vk[8],
   ExternalModuleReference: vk[8],
-  HookDeclaration: vk[39],
-  HookTypeAnnotation: vk[50],
-  ImportEqualsDeclaration: vk[48],
+  HookDeclaration: vk[40],
+  HookTypeAnnotation: vk[51],
+  ImportEqualsDeclaration: vk[49],
   ImportType: ["source"],
-  InferTypeAnnotation: vk[44],
+  InferTypeAnnotation: vk[45],
   KeyofTypeAnnotation: vk[15],
   MatchArrayPattern: ["elements", "rest"],
   MatchAsPattern: ["pattern", "target"],
-  MatchBindingPattern: vk[22],
-  MatchExpression: vk[51],
-  MatchExpressionCase: vk[52],
-  MatchIdentifierPattern: vk[22],
-  MatchInstanceObjectPattern: vk[53],
+  MatchBindingPattern: vk[23],
+  MatchExpression: vk[52],
+  MatchExpressionCase: vk[53],
+  MatchIdentifierPattern: vk[23],
+  MatchInstanceObjectPattern: vk[54],
   MatchInstancePattern: ["targetConstructor", "properties"],
-  MatchLiteralPattern: vk[46],
+  MatchLiteralPattern: vk[47],
   MatchMemberPattern: ["base", "property"],
-  MatchObjectPattern: vk[53],
+  MatchObjectPattern: vk[54],
   MatchObjectPatternProperty: ["key", "pattern"],
   MatchOrPattern: ["patterns"],
   MatchRestPattern: vk[15],
-  MatchStatement: vk[51],
-  MatchStatementCase: vk[52],
+  MatchStatement: vk[52],
+  MatchStatementCase: vk[53],
   MatchUnaryPattern: vk[15],
   MatchWildcardPattern: [],
-  NamespaceExportDeclaration: vk[22],
+  NamespaceExportDeclaration: vk[23],
   NeverTypeAnnotation: [],
   NonNullExpression: vk[8],
   ObjectTypeMappedTypeProperty: ["keyTparam", "propType", "sourceType", "nameType", "variance"],
   ObjectTypePrivateField: ["key"],
-  ParameterProperty: vk[21],
-  QualifiedTypeofIdentifier: vk[32],
+  ParameterProperty: vk[22],
+  QualifiedTypeofIdentifier: vk[33],
   RecordDeclaration: ["id", "typeParameters", "implements", "body"],
   RecordDeclarationBody: vk[0],
-  RecordDeclarationImplements: vk[25],
+  RecordDeclarationImplements: vk[26],
   RecordDeclarationProperty: ["key", "typeAnnotation", "defaultValue"],
   RecordDeclarationStaticProperty: ["key", "typeAnnotation", "value"],
   RecordExpression: ["recordConstructor", "typeArguments", "properties"],
   RecordExpressionProperties: vk[12],
-  SatisfiesExpression: vk[34],
-  TemplateLiteralTypeAnnotation: vk[45],
-  TupleTypeElement: vk[24],
+  SatisfiesExpression: vk[35],
+  TemplateLiteralTypeAnnotation: vk[46],
+  TupleTypeElement: vk[25],
   TupleTypeLabeledElement: ["label", "elementType", "variance"],
   TupleTypeSpreadElement: ["label", "typeAnnotation"],
-  TypeOperator: vk[28],
-  TypePredicate: vk[42],
+  TypeOperator: vk[29],
+  TypePredicate: vk[43],
   UndefinedTypeAnnotation: [],
   UnknownTypeAnnotation: [],
   NGChainedExpression: vk[16],
   NGEmptyExpression: [],
   NGPipeExpression: ["left", "right", "arguments"],
-  NGMicrosyntax: vk[18],
+  NGMicrosyntax: vk[19],
   NGMicrosyntaxAs: ["key", "alias"],
   NGMicrosyntaxExpression: ["expression", "alias"],
   NGMicrosyntaxKey: [],
   NGMicrosyntaxKeyedExpression: ["key", "expression"],
-  NGMicrosyntaxLet: vk[23],
-  NGRoot: vk[54],
-  JsExpressionRoot: vk[54],
-  JsonRoot: vk[54],
+  NGMicrosyntaxLet: vk[24],
+  NGRoot: vk[55],
+  JsExpressionRoot: vk[55],
+  JsonRoot: vk[55],
   TSJSDocAllType: [],
   TSJSDocUnknownType: [],
-  TSJSDocNullableType: vk[28],
-  TSJSDocNonNullableType: vk[28],
-  EnumBigIntBody: vk[36]
+  TSJSDocNullableType: vk[29],
+  TSJSDocNonNullableType: vk[29],
+  EnumBigIntBody: vk[37]
 };
 &nbsp;
 // src/language-js/traverse/get-visitor-keys.js
@@ -23289,7 +23270,7 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "TemplateElement":</span>
-<span class="cstat-no" title="statement not covered" >          if (astType === "flow" || astType === "hermes" || astType === "espree" || astType === "typescript" || astType === "oxc-ts" || astType === "yuku-ts") {</span>
+<span class="cstat-no" title="statement not covered" >          if (astType === "flow" || astType === "espree" || astType === "typescript" || astType === "oxc-ts" || astType === "yuku-ts") {</span>
 <span class="cstat-no" title="statement not covered" >            const start = locStart(node) + 1;</span>
 <span class="cstat-no" title="statement not covered" >            const end = locEnd(node) - (node.tail ? 1 : 2);</span>
 <span class="cstat-no" title="statement not covered" >            node.range = [start, end];</span>
@@ -23312,12 +23293,6 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >            delete node.types;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >        case "ImportDeclaration":</span>
-<span class="cstat-no" title="statement not covered" >          if (astType === "hermes" &amp;&amp; node.assertions &amp;&amp; !node.attributes) {</span>
-<span class="cstat-no" title="statement not covered" >            node.attributes = node.assertions;</span>
-<span class="cstat-no" title="statement not covered" >            delete node.assertions;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
         // Since flow@0.313.0 (reverted during 0.320.0~0.337.0), `TypeParameter.bound` is a bare type node without the `TypeAnnotation` wrapper
         // https://github.com/facebook/flow/blob/HEAD/Changelog.md#03130
         // https://github.com/facebook/flow/issues/9449
@@ -23326,25 +23301,7 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >            node.bound = node.bound.typeAnnotation;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-        // https://github.com/facebook/flow/blob/HEAD/Changelog.md#03370
-<span class="branch-0 cbranch-no" title="branch not covered" >        case "EnumBooleanBody":</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >        case "EnumNumberBody":</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >        case "EnumBigIntBody":</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >        case "EnumStringBody":</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >        case "EnumSymbolBody":</span>
-<span class="cstat-no" title="statement not covered" >          if (astType === "hermes") {</span>
-<span class="cstat-no" title="statement not covered" >            if (node.explicitType || type === "EnumSymbolBody") {</span>
-<span class="cstat-no" title="statement not covered" >              node.explicitType = type.slice(</span>
-<span class="cstat-no" title="statement not covered" >                // `Enum`</span>
-<span class="cstat-no" title="statement not covered" >                4,</span>
-<span class="cstat-no" title="statement not covered" >                // `Body`</span>
-<span class="cstat-no" title="statement not covered" >                -4</span>
-<span class="cstat-no" title="statement not covered" >              ).toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            node.type = "EnumBody";</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
-        // `hermes` and `babel-flow`
+        // `babel-flow`
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "GenericTypeAnnotation":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "ClassImplements":</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >        case "InterfaceExtends":</span>
@@ -23352,6 +23309,19 @@ function postprocess(ast, options) {
 <span class="cstat-no" title="statement not covered" >            node.typeArguments = node.typeParameters;</span>
 <span class="cstat-no" title="statement not covered" >            delete node.typeParameters;</span>
 <span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        // `babel-flow`
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "DeclareVariable":</span>
+<span class="cstat-no" title="statement not covered" >          if (astType !== "flow" &amp;&amp; !Array.isArray(node.declarations)) {</span>
+<span class="cstat-no" title="statement not covered" >            node.kind ?? (node.kind = "var");</span>
+<span class="cstat-no" title="statement not covered" >            node.declarations = [{</span>
+<span class="cstat-no" title="statement not covered" >              type: "VariableDeclarator",</span>
+<span class="cstat-no" title="statement not covered" >              id: node.id,</span>
+<span class="cstat-no" title="statement not covered" >              range: [locStart(node.id), locEnd(node.id)]</span>
+<span class="cstat-no" title="statement not covered" >            }];</span>
+<span class="cstat-no" title="statement not covered" >            delete node.id;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
       }
     },
     onLeave(node) {
@@ -23656,7 +23626,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-12T06:49:37.246Z
+                at 2026-11-13T06:05:49.946Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
