@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/12171</span>
+                <span class='fraction'>5/12168</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/12171</span>
+                <span class='fraction'>5/12168</span>
             </div>
         
             
@@ -12230,12 +12230,7 @@
 <a name='L12165'></a><a href='#L12165'>12165</a>
 <a name='L12166'></a><a href='#L12166'>12166</a>
 <a name='L12167'></a><a href='#L12167'>12167</a>
-<a name='L12168'></a><a href='#L12168'>12168</a>
-<a name='L12169'></a><a href='#L12169'>12169</a>
-<a name='L12170'></a><a href='#L12170'>12170</a>
-<a name='L12171'></a><a href='#L12171'>12171</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L12168'></a><a href='#L12168'>12168</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13049,7 +13044,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -24549,11 +24543,9 @@
 <span class="cstat-no" title="statement not covered" >            if (number === this.line) {</span>
 <span class="cstat-no" title="statement not covered" >              if (line2.length &gt; 160) {</span>
 <span class="cstat-no" title="statement not covered" >                let padding = 20;</span>
+<span class="cstat-no" title="statement not covered" >                let endColumn = typeof this.endColumn === "number" ? this.endColumn : this.column;</span>
 <span class="cstat-no" title="statement not covered" >                let subLineStart = Math.max(0, this.column - padding);</span>
-<span class="cstat-no" title="statement not covered" >                let subLineEnd = Math.max(</span>
-<span class="cstat-no" title="statement not covered" >                  this.column + padding,</span>
-<span class="cstat-no" title="statement not covered" >                  this.endColumn + padding</span>
-<span class="cstat-no" title="statement not covered" >                );</span>
+<span class="cstat-no" title="statement not covered" >                let subLineEnd = Math.max(this.column + padding, endColumn + padding);</span>
 <span class="cstat-no" title="statement not covered" >                let subLine = line2.slice(subLineStart, subLineEnd);</span>
 <span class="cstat-no" title="statement not covered" >                let spacing2 = aside(gutter.replace(/\d/g, " ")) + line2.slice(0, Math.min(this.column - 1, padding - 1)).replace(/[^\t]/g, " ");</span>
 <span class="cstat-no" title="statement not covered" >                return mark("&gt;") + aside(gutter) + highlight(subLine) + "\n " + spacing2 + mark("^");</span>
@@ -26410,14 +26402,15 @@
 <span class="cstat-no" title="statement not covered" >      var RE_WORD_END = /[\t\n\f\r !"#'():;@[\\\]{}]|\/(?=\*)/g;</span>
 <span class="cstat-no" title="statement not covered" >      var RE_BAD_BRACKET = /.[\r\n"'(/\\]/;</span>
 <span class="cstat-no" title="statement not covered" >      var RE_HEX_ESCAPE = /[\da-f]/i;</span>
+<span class="cstat-no" title="statement not covered" >      var RE_URL_NAME = /(^|[\t\n\f\r "'(),/:;[\]{}])url$/i;</span>
+<span class="cstat-no" title="statement not covered" >      var RE_QUOTED = /[\t\n\f\r ]*["']/y;</span>
 <span class="cstat-no" title="statement not covered" >      module.exports = function tokenizer(input, options2 = {}) {</span>
 <span class="cstat-no" title="statement not covered" >        let css2 = input.css.valueOf();</span>
 <span class="cstat-no" title="statement not covered" >        let ignore = options2.ignoreErrors;</span>
 <span class="cstat-no" title="statement not covered" >        let code, content, escape, next, quote;</span>
-<span class="cstat-no" title="statement not covered" >        let currentToken, escaped, escapePos, n, prev;</span>
+<span class="cstat-no" title="statement not covered" >        let currentToken, escaped, escapePos;</span>
 <span class="cstat-no" title="statement not covered" >        let length = css2.length;</span>
 <span class="cstat-no" title="statement not covered" >        let pos = 0;</span>
-<span class="cstat-no" title="statement not covered" >        let buffer = [];</span>
 <span class="cstat-no" title="statement not covered" >        let returned = [];</span>
 <span class="cstat-no" title="statement not covered" >        let lastBadParen = -1;</span>
 <span class="cstat-no" title="statement not covered" >        function position() {</span>
@@ -26461,9 +26454,8 @@
 <span class="cstat-no" title="statement not covered" >              break;</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            case OPEN_PARENTHESES: {</span>
-<span class="cstat-no" title="statement not covered" >              prev = buffer.length ? buffer.pop()[1] : "";</span>
-<span class="cstat-no" title="statement not covered" >              n = css2.charCodeAt(pos + 1);</span>
-<span class="cstat-no" title="statement not covered" >              if (prev === "url" &amp;&amp; n !== SINGLE_QUOTE2 &amp;&amp; n !== DOUBLE_QUOTE2 &amp;&amp; n !== SPACE &amp;&amp; n !== NEWLINE &amp;&amp; n !== TAB &amp;&amp; n !== FEED &amp;&amp; n !== CR) {</span>
+<span class="cstat-no" title="statement not covered" >              RE_QUOTED.lastIndex = pos + 1;</span>
+<span class="cstat-no" title="statement not covered" >              if (RE_URL_NAME.test(css2.substring(pos - 4, pos)) &amp;&amp; !RE_QUOTED.test(css2)) {</span>
 <span class="cstat-no" title="statement not covered" >                next = pos;</span>
 <span class="cstat-no" title="statement not covered" >                do {</span>
 <span class="cstat-no" title="statement not covered" >                  escaped = false;</span>
@@ -26580,7 +26572,6 @@
 <span class="cstat-no" title="statement not covered" >                  next = RE_WORD_END.lastIndex - 2;</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                currentToken = ["word", css2.slice(pos, next + 1), pos, next];</span>
-<span class="cstat-no" title="statement not covered" >                buffer.push(currentToken);</span>
 <span class="cstat-no" title="statement not covered" >                pos = next;</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              break;</span>
@@ -28061,7 +28052,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.32";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.33";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -36580,7 +36571,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-14T05:53:26.135Z
+                at 2026-11-15T05:55:21.889Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

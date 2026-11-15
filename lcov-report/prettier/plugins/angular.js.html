@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.06% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/7532</span>
+                <span class='fraction'>5/7554</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.06% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/7532</span>
+                <span class='fraction'>5/7554</span>
             </div>
         
             
@@ -7594,7 +7594,51 @@
 <a name='L7529'></a><a href='#L7529'>7529</a>
 <a name='L7530'></a><a href='#L7530'>7530</a>
 <a name='L7531'></a><a href='#L7531'>7531</a>
-<a name='L7532'></a><a href='#L7532'>7532</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L7532'></a><a href='#L7532'>7532</a>
+<a name='L7533'></a><a href='#L7533'>7533</a>
+<a name='L7534'></a><a href='#L7534'>7534</a>
+<a name='L7535'></a><a href='#L7535'>7535</a>
+<a name='L7536'></a><a href='#L7536'>7536</a>
+<a name='L7537'></a><a href='#L7537'>7537</a>
+<a name='L7538'></a><a href='#L7538'>7538</a>
+<a name='L7539'></a><a href='#L7539'>7539</a>
+<a name='L7540'></a><a href='#L7540'>7540</a>
+<a name='L7541'></a><a href='#L7541'>7541</a>
+<a name='L7542'></a><a href='#L7542'>7542</a>
+<a name='L7543'></a><a href='#L7543'>7543</a>
+<a name='L7544'></a><a href='#L7544'>7544</a>
+<a name='L7545'></a><a href='#L7545'>7545</a>
+<a name='L7546'></a><a href='#L7546'>7546</a>
+<a name='L7547'></a><a href='#L7547'>7547</a>
+<a name='L7548'></a><a href='#L7548'>7548</a>
+<a name='L7549'></a><a href='#L7549'>7549</a>
+<a name='L7550'></a><a href='#L7550'>7550</a>
+<a name='L7551'></a><a href='#L7551'>7551</a>
+<a name='L7552'></a><a href='#L7552'>7552</a>
+<a name='L7553'></a><a href='#L7553'>7553</a>
+<a name='L7554'></a><a href='#L7554'>7554</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -15561,6 +15605,25 @@
 <span class="cstat-no" title="statement not covered" >      return new _TypeofExpr(this.expr.clone());</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
+<span class="cstat-no" title="statement not covered" >  var VoidExpr = class _VoidExpr extends Expression {</span>
+<span class="cstat-no" title="statement not covered" >    expr;</span>
+<span class="cstat-no" title="statement not covered" >    constructor(expr, type, sourceSpan, leadingComments) {</span>
+<span class="cstat-no" title="statement not covered" >      super(type, sourceSpan, leadingComments);</span>
+<span class="cstat-no" title="statement not covered" >      this.expr = expr;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    visitExpression(visitor, context) {</span>
+<span class="cstat-no" title="statement not covered" >      return visitor.visitVoidExpr(this, context);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    isEquivalent(e) {</span>
+<span class="cstat-no" title="statement not covered" >      return e instanceof _VoidExpr &amp;&amp; e.expr.isEquivalent(this.expr);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    isConstant() {</span>
+<span class="cstat-no" title="statement not covered" >      return this.expr.isConstant();</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    clone() {</span>
+<span class="cstat-no" title="statement not covered" >      return new _VoidExpr(this.expr.clone());</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" >  var InvokeFunctionExpr = class _InvokeFunctionExpr extends Expression {</span>
 <span class="cstat-no" title="statement not covered" >    fn;</span>
 <span class="cstat-no" title="statement not covered" >    args;</span>
@@ -15973,6 +16036,8 @@
 <span class="cstat-no" title="statement not covered" >        return `read(${expr.name})`;</span>
 <span class="cstat-no" title="statement not covered" >      } else if (expr instanceof TypeofExpr) {</span>
 <span class="cstat-no" title="statement not covered" >        return `typeof(${this.keyOf(expr.expr)})`;</span>
+<span class="cstat-no" title="statement not covered" >      } else if (expr instanceof VoidExpr) {</span>
+<span class="cstat-no" title="statement not covered" >        return `void(${this.keyOf(expr.expr)})`;</span>
 <span class="cstat-no" title="statement not covered" >      } else if (expr instanceof SpreadElementExpr) {</span>
 <span class="cstat-no" title="statement not covered" >        return `...${this.keyOf(expr.expression)}`;</span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
@@ -20256,7 +20321,8 @@
 <span class="cstat-no" title="statement not covered" >      return params;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    getArrowFunctionIdentifierArg(token) {</span>
-<span class="cstat-no" title="statement not covered" >      return new ArrowFunctionIdentifierParameter(token.strValue, this.span(token.index), this.sourceSpan(token.index));</span>
+<span class="cstat-no" title="statement not covered" >      const start = token.index + this.offset;</span>
+<span class="cstat-no" title="statement not covered" >      return new ArrowFunctionIdentifierParameter(token.strValue, this.span(start), this.sourceSpan(start));</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    isArrowFunction() {</span>
 <span class="cstat-no" title="statement not covered" >      const start = this.index;</span>
@@ -20703,7 +20769,7 @@
 <span class="cstat-no" title="statement not covered" >    _VisitorMode2[_VisitorMode2["Extract"] = 0] = "Extract";</span>
 <span class="cstat-no" title="statement not covered" >    _VisitorMode2[_VisitorMode2["Merge"] = 1] = "Merge";</span>
 <span class="cstat-no" title="statement not covered" >  })(_VisitorMode || (_VisitorMode = {}));</span>
-<span class="cstat-no" title="statement not covered" >  var VERSION = new Version("22.2.5");</span>
+<span class="cstat-no" title="statement not covered" >  var VERSION = new Version("22.2.6");</span>
 <span class="cstat-no" title="statement not covered" >  var CommentTriviaType;</span>
 <span class="cstat-no" title="statement not covered" >  (function(CommentTriviaType2) {</span>
 <span class="cstat-no" title="statement not covered" >    CommentTriviaType2["DIAGNOSTIC"] = "D";</span>
@@ -22663,7 +22729,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-14T05:53:24.781Z
+                at 2026-11-15T05:55:19.517Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
