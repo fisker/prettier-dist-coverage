@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.65% </span>
+                <span class="strong">43.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5837/13372</span>
+                <span class='fraction'>5837/13374</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.6% </span>
+                <span class="strong">39.58% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>846/2136</span>
+                <span class='fraction'>846/2137</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.65% </span>
+                <span class="strong">43.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5837/13372</span>
+                <span class='fraction'>5837/13374</span>
             </div>
         
             
@@ -13435,7 +13435,9 @@
 <a name='L13370'></a><a href='#L13370'>13370</a>
 <a name='L13371'></a><a href='#L13371'>13371</a>
 <a name='L13372'></a><a href='#L13372'>13372</a>
-<a name='L13373'></a><a href='#L13373'>13373</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<a name='L13373'></a><a href='#L13373'>13373</a>
+<a name='L13374'></a><a href='#L13374'>13374</a>
+<a name='L13375'></a><a href='#L13375'>13375</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">804x</span>
 <span class="cline-any cline-yes">804x</span>
@@ -19698,7 +19700,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -22896,6 +22897,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -33066,8 +33070,7 @@ var get_alignment_size_default = getAlignmentSize;
 <span class="cstat-no" title="statement not covered" >    return 0;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return get_alignment_size_default(</span>
-<span class="cstat-no" title="statement not covered" >    // All the leading whitespaces</span>
-<span class="cstat-no" title="statement not covered" >    value.slice(lastNewlineIndex + 1).match(/^[\t ]*/)[0],</span>
+<span class="cstat-no" title="statement not covered" >    /^(?&lt;leadingSpace&gt;[\t ]*)/.exec(value.slice(lastNewlineIndex + 1)).groups.leadingSpace,</span>
 <span class="cstat-no" title="statement not covered" >    tabWidth</span>
 <span class="cstat-no" title="statement not covered" >  );</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -36328,6 +36331,9 @@ var shouldPrintClassInGroupModeCache = /* @__PURE__ */ new WeakMap();
 <span class="cstat-no" title="statement not covered" >    parts.push("override ");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  parts.push(printMethod(path, options2, print3));</span>
+<span class="cstat-no" title="statement not covered" >  if (node.type === "AbstractMethodDefinition") {</span>
+<span class="cstat-no" title="statement not covered" >    parts.push(printSemicolon(options2));</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return parts;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function printClassProperty(path, options2, print3) {</span></span>
@@ -39183,7 +39189,7 @@ function printJsxOpeningElement(path, options2, print3) {
   return group(["&lt;", printJsxElementName(path, options2, print3), print3("typeArguments"), indent(path.map(({
     isFirst,
     previous
-  }) =&gt; [isFirst ? attributeLine <span class="branch-0 cbranch-no" title="branch not covered" >: isNextLineEmpty2(previous, options2) ? [hardline, hardline] : attributeLine,</span> print3()], "attributes")), ...printEndOfOpeningTag(node, options2, nameHasComments)], {
+  }) =&gt; [isFirst <span class="branch-0 cbranch-no" title="branch not covered" >|| !isNextLineEmpty2(previous, options2) </span>? attributeLine <span class="branch-0 cbranch-no" title="branch not covered" >: [hardline, hardline],</span> print3()], "attributes")), ...printEndOfOpeningTag(node, options2, nameHasComments)], {
     shouldBreak
   });
 }
@@ -40186,7 +40192,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-19T00:30:54.468Z
+                at 2026-11-20T00:29:19.885Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

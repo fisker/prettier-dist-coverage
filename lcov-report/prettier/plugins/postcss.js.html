@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/12168</span>
+                <span class='fraction'>5/12166</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/12168</span>
+                <span class='fraction'>5/12166</span>
             </div>
         
             
@@ -12228,9 +12228,7 @@
 <a name='L12163'></a><a href='#L12163'>12163</a>
 <a name='L12164'></a><a href='#L12164'>12164</a>
 <a name='L12165'></a><a href='#L12165'>12165</a>
-<a name='L12166'></a><a href='#L12166'>12166</a>
-<a name='L12167'></a><a href='#L12167'>12167</a>
-<a name='L12168'></a><a href='#L12168'>12168</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L12166'></a><a href='#L12166'>12166</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -13044,8 +13042,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -33154,10 +33150,8 @@
 <span class="cstat-no" title="statement not covered" >  var skipEverythingButNewLine = skip(/[^\n\r]/);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-css/loc.js</span>
-<span class="cstat-no" title="statement not covered" >  function fixValueWordLoc(node, originalIndex) {</span>
-<span class="cstat-no" title="statement not covered" >    const {</span>
-<span class="cstat-no" title="statement not covered" >      value</span>
-<span class="cstat-no" title="statement not covered" >    } = node;</span>
+<span class="cstat-no" title="statement not covered" >  function fixValueLoc(node, originalIndex) {</span>
+<span class="cstat-no" title="statement not covered" >    const value = node.type === "value-number" ? node.value + node.unit : node.value;</span>
 <span class="cstat-no" title="statement not covered" >    if (value === "-" || value === "--" || value.charAt(0) !== "-") {</span>
 <span class="cstat-no" title="statement not covered" >      return originalIndex;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -33168,8 +33162,8 @@
 <span class="cstat-no" title="statement not covered" >      return node.source.start.offset;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    if (typeof node.sourceIndex === "number") {</span>
-<span class="cstat-no" title="statement not covered" >      if (node.type === "value-word") {</span>
-<span class="cstat-no" title="statement not covered" >        return fixValueWordLoc(node, node.sourceIndex);</span>
+<span class="cstat-no" title="statement not covered" >      if (node.type === "value-word" || node.type === "value-number") {</span>
+<span class="cstat-no" title="statement not covered" >        return fixValueLoc(node, node.sourceIndex);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      return node.sourceIndex;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -33196,8 +33190,8 @@
 <span class="cstat-no" title="statement not covered" >    if (node.source) {</span>
 <span class="cstat-no" title="statement not covered" >      if (node.source.end) {</span>
 <span class="cstat-no" title="statement not covered" >        const index = line_column_to_index_default(node.source.end, text);</span>
-<span class="cstat-no" title="statement not covered" >        if (node.type === "value-word") {</span>
-<span class="cstat-no" title="statement not covered" >          return fixValueWordLoc(node, index);</span>
+<span class="cstat-no" title="statement not covered" >        if (node.type === "value-word" || node.type === "value-number") {</span>
+<span class="cstat-no" title="statement not covered" >          return fixValueLoc(node, index);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return index;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
@@ -36571,7 +36565,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-19T00:30:54.468Z
+                at 2026-11-20T00:29:19.885Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
