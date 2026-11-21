@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13508</span>
+                <span class='fraction'>0/13514</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13508</span>
+                <span class='fraction'>0/13514</span>
             </div>
         
             
@@ -13571,7 +13571,19 @@
 <a name='L13506'></a><a href='#L13506'>13506</a>
 <a name='L13507'></a><a href='#L13507'>13507</a>
 <a name='L13508'></a><a href='#L13508'>13508</a>
-<a name='L13509'></a><a href='#L13509'>13509</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13509'></a><a href='#L13509'>13509</a>
+<a name='L13510'></a><a href='#L13510'>13510</a>
+<a name='L13511'></a><a href='#L13511'>13511</a>
+<a name='L13512'></a><a href='#L13512'>13512</a>
+<a name='L13513'></a><a href='#L13513'>13513</a>
+<a name='L13514'></a><a href='#L13514'>13514</a>
+<a name='L13515'></a><a href='#L13515'>13515</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27219,6 +27231,214 @@
 <span class="cstat-no" title="statement not covered" >  return (node) =&gt; types.has(node?.type);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/utilities/literal.js</span>
+<span class="cstat-no" title="statement not covered" >function isBigIntLiteral(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return node.type === "BigIntLiteral" || node.type === "Literal" &amp;&amp; // @ts-expect-error -- Safe</span>
+<span class="cstat-no" title="statement not covered" >  Boolean(node.bigint);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function isBooleanLiteral(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return node.type === "BooleanLiteral" || node.type === "Literal" &amp;&amp; typeof node.value === "boolean";</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function isNumericLiteral(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return node.type === "NumericLiteral" || node.type === "Literal" &amp;&amp; typeof node.value === "number";</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function isRegExpLiteral(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return node.type === "RegExpLiteral" || node.type === "Literal" &amp;&amp; // @ts-expect-error -- Safe</span>
+<span class="cstat-no" title="statement not covered" >  Boolean(node.regex);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function isStringLiteral(node) {</span>
+<span class="cstat-no" title="statement not covered" >  return node?.type === "StringLiteral" || node?.type === "Literal" &amp;&amp; typeof node.value === "string";</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// src/language-js/utilities/node-types.js</span>
+<span class="cstat-no" title="statement not covered" >var isBinaryCastExpression = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  // TS</span>
+<span class="cstat-no" title="statement not covered" >  "TSAsExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "TSSatisfiesExpression",</span>
+<span class="cstat-no" title="statement not covered" >  // Flow</span>
+<span class="cstat-no" title="statement not covered" >  "AsExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "AsConstExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "SatisfiesExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isSatisfiesExpression = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "SatisfiesExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "TSSatisfiesExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isUnionType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSUnionType",</span>
+<span class="cstat-no" title="statement not covered" >  "UnionTypeAnnotation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isIntersectionType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSIntersectionType",</span>
+<span class="cstat-no" title="statement not covered" >  "IntersectionTypeAnnotation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isTupleType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TupleTypeAnnotation",</span>
+<span class="cstat-no" title="statement not covered" >  "TSTupleType"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isConditionalType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSConditionalType",</span>
+<span class="cstat-no" title="statement not covered" >  "ConditionalTypeAnnotation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isTemplateLiteralType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSTemplateLiteralType",</span>
+<span class="cstat-no" title="statement not covered" >  "TemplateLiteralTypeAnnotation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isImportType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSImportType",</span>
+<span class="cstat-no" title="statement not covered" >  "ImportType"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isExternalModuleReference = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSExternalModuleReference",</span>
+<span class="cstat-no" title="statement not covered" >  "ExternalModuleReference"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isTypeAlias = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSTypeAliasDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "TypeAlias"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isReturnOrThrowStatement = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "ReturnStatement",</span>
+<span class="cstat-no" title="statement not covered" >  "ThrowStatement"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isUnaryLikeNode = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "ReturnStatement",</span>
+<span class="cstat-no" title="statement not covered" >  "ThrowStatement",</span>
+<span class="cstat-no" title="statement not covered" >  "YieldExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "UnaryExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isExportDeclaration = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "ExportDefaultDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "DeclareExportDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "ExportNamedDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "ExportAllDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "DeclareExportAllDeclaration"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isExportAssignment = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSExportAssignment",</span>
+<span class="cstat-no" title="statement not covered" >  "ExportAssignment"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isAbstractMethodDefinition = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "AbstractMethodDefinition",</span>
+<span class="cstat-no" title="statement not covered" >  "TSAbstractMethodDefinition"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isAbstractPropertyDefinition = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "AbstractPropertyDefinition",</span>
+<span class="cstat-no" title="statement not covered" >  "TSAbstractPropertyDefinition"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var classPropertyTypes = (</span>
+<span class="cstat-no" title="statement not covered" >  /** @type {const} */</span>
+<span class="cstat-no" title="statement not covered" >  [</span>
+<span class="cstat-no" title="statement not covered" >    "ClassProperty",</span>
+<span class="cstat-no" title="statement not covered" >    "PropertyDefinition",</span>
+<span class="cstat-no" title="statement not covered" >    "ClassPrivateProperty",</span>
+<span class="cstat-no" title="statement not covered" >    "ClassAccessorProperty",</span>
+<span class="cstat-no" title="statement not covered" >    "AccessorProperty",</span>
+<span class="cstat-no" title="statement not covered" >    "AbstractPropertyDefinition",</span>
+<span class="cstat-no" title="statement not covered" >    "TSAbstractPropertyDefinition",</span>
+<span class="cstat-no" title="statement not covered" >    "TSAbstractAccessorProperty"</span>
+<span class="cstat-no" title="statement not covered" >  ]</span>
+<span class="cstat-no" title="statement not covered" >);</span>
+<span class="cstat-no" title="statement not covered" >var isClassProperty = createTypeCheckFunction(classPropertyTypes);</span>
+<span class="cstat-no" title="statement not covered" >var isParameterProperty = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSParameterProperty",</span>
+<span class="cstat-no" title="statement not covered" >  "ParameterProperty"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isNonNullExpression = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSNonNullExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "NonNullExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isOptionalTupleMember = (node) =&gt; node?.type === "TSOptionalType" || node?.type === "TupleTypeElement" &amp;&amp; node.optional === true;</span>
+<span class="cstat-no" title="statement not covered" >var isArrayExpression = createTypeCheckFunction(["ArrayExpression"]);</span>
+<span class="cstat-no" title="statement not covered" >var isObjectExpression = createTypeCheckFunction(["ObjectExpression"]);</span>
+<span class="cstat-no" title="statement not covered" >var isLiteral = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "Literal",</span>
+<span class="cstat-no" title="statement not covered" >  "BooleanLiteral",</span>
+<span class="cstat-no" title="statement not covered" >  "BigIntLiteral",</span>
+<span class="cstat-no" title="statement not covered" >  // Babel, flow use `BigIntLiteral` too</span>
+<span class="cstat-no" title="statement not covered" >  "DirectiveLiteral",</span>
+<span class="cstat-no" title="statement not covered" >  "NullLiteral",</span>
+<span class="cstat-no" title="statement not covered" >  "NumericLiteral",</span>
+<span class="cstat-no" title="statement not covered" >  "RegExpLiteral",</span>
+<span class="cstat-no" title="statement not covered" >  "StringLiteral"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isObjectType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "ObjectTypeAnnotation",</span>
+<span class="cstat-no" title="statement not covered" >  "TSTypeLiteral",</span>
+<span class="cstat-no" title="statement not covered" >  "TSMappedType"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isFunctionOrArrowExpression = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "FunctionExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "ArrowFunctionExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isJsxElement = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "JSXElement",</span>
+<span class="cstat-no" title="statement not covered" >  "JSXFragment"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isBinaryish = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "BinaryExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "LogicalExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "NGPipeExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isCallExpression = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isMemberExpression = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "MemberExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "OptionalMemberExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isCallOrNewExpression = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "NewExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isCallLikeExpression = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "NewExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "ImportExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isChainElementWrapper = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "ChainExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "TSNonNullExpression",</span>
+<span class="cstat-no" title="statement not covered" >  "NonNullExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isArrayType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSArrayType",</span>
+<span class="cstat-no" title="statement not covered" >  "ArrayTypeAnnotation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isTypeParameterInstantiation = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSTypeParameterInstantiation",</span>
+<span class="cstat-no" title="statement not covered" >  "TypeParameterInstantiation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isTypeAnnotation = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSTypeAnnotation",</span>
+<span class="cstat-no" title="statement not covered" >  "TypeAnnotation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isModuleDeclaration = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSModuleDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "DeclareModule",</span>
+<span class="cstat-no" title="statement not covered" >  "DeclareNamespace"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isConstructorType = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSConstructorType",</span>
+<span class="cstat-no" title="statement not covered" >  "ConstructorTypeAnnotation"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isClass = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "ClassDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "ClassExpression"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isNamespaceSpecifier = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "ImportNamespaceSpecifier",</span>
+<span class="cstat-no" title="statement not covered" >  "ExportNamespaceSpecifier"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isEnumDeclaration = createTypeCheckFunction([</span>
+<span class="cstat-no" title="statement not covered" >  "TSEnumDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "EnumDeclaration",</span>
+<span class="cstat-no" title="statement not covered" >  "DeclareEnum"</span>
+<span class="cstat-no" title="statement not covered" >]);</span>
+<span class="cstat-no" title="statement not covered" >var isEnumBody = createTypeCheckFunction(["TSEnumBody", "EnumBody"]);</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/location/end-with-full-text.js</span>
 <span class="cstat-no" title="statement not covered" >function locEndWithFullText(node) {</span>
 <span class="cstat-no" title="statement not covered" >  const end = node.range?.[1] ?? node.end;</span>
@@ -27267,14 +27487,7 @@
 <span class="cstat-no" title="statement not covered" >    "ThrowStatement",</span>
 <span class="cstat-no" title="statement not covered" >    "DoWhileStatement",</span>
 <span class="cstat-no" title="statement not covered" >    // Properties</span>
-<span class="cstat-no" title="statement not covered" >    "ClassProperty",</span>
-<span class="cstat-no" title="statement not covered" >    "PropertyDefinition",</span>
-<span class="cstat-no" title="statement not covered" >    "ClassPrivateProperty",</span>
-<span class="cstat-no" title="statement not covered" >    "ClassAccessorProperty",</span>
-<span class="cstat-no" title="statement not covered" >    "AccessorProperty",</span>
-<span class="cstat-no" title="statement not covered" >    "AbstractPropertyDefinition",</span>
-<span class="cstat-no" title="statement not covered" >    "TSAbstractPropertyDefinition",</span>
-<span class="cstat-no" title="statement not covered" >    "TSAbstractAccessorProperty"</span>
+<span class="cstat-no" title="statement not covered" >    ...classPropertyTypes</span>
 <span class="cstat-no" title="statement not covered" >  ]</span>
 <span class="cstat-no" title="statement not covered" >);</span>
 <span class="cstat-no" title="statement not covered" >var overrides = (</span>
@@ -28167,6 +28380,7 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  let end = locEndWithFullText(node);</span>
 <span class="cstat-no" title="statement not covered" >  if (originalText[end - 1] !== ";") {</span>
+<span class="cstat-no" title="statement not covered" >    node.__contentEnd = end;</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  const text = stripComments({</span>
@@ -28587,200 +28801,6 @@
 <span class="cstat-no" title="statement not covered" >function isMethod(node) {</span>
 <span class="cstat-no" title="statement not covered" >  return node.method &amp;&amp; node.kind === "init" || node.kind === "get" || node.kind === "set";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// src/language-js/utilities/literal.js</span>
-<span class="cstat-no" title="statement not covered" >function isBigIntLiteral(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return node.type === "BigIntLiteral" || node.type === "Literal" &amp;&amp; // @ts-expect-error -- Safe</span>
-<span class="cstat-no" title="statement not covered" >  Boolean(node.bigint);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function isBooleanLiteral(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return node.type === "BooleanLiteral" || node.type === "Literal" &amp;&amp; typeof node.value === "boolean";</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function isNumericLiteral(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return node.type === "NumericLiteral" || node.type === "Literal" &amp;&amp; typeof node.value === "number";</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function isRegExpLiteral(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return node.type === "RegExpLiteral" || node.type === "Literal" &amp;&amp; // @ts-expect-error -- Safe</span>
-<span class="cstat-no" title="statement not covered" >  Boolean(node.regex);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >function isStringLiteral(node) {</span>
-<span class="cstat-no" title="statement not covered" >  return node?.type === "StringLiteral" || node?.type === "Literal" &amp;&amp; typeof node.value === "string";</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// src/language-js/utilities/node-types.js</span>
-<span class="cstat-no" title="statement not covered" >var isBinaryCastExpression = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  // TS</span>
-<span class="cstat-no" title="statement not covered" >  "TSAsExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "TSSatisfiesExpression",</span>
-<span class="cstat-no" title="statement not covered" >  // Flow</span>
-<span class="cstat-no" title="statement not covered" >  "AsExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "AsConstExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "SatisfiesExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isSatisfiesExpression = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "SatisfiesExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "TSSatisfiesExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isUnionType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSUnionType",</span>
-<span class="cstat-no" title="statement not covered" >  "UnionTypeAnnotation"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isIntersectionType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSIntersectionType",</span>
-<span class="cstat-no" title="statement not covered" >  "IntersectionTypeAnnotation"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isTupleType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TupleTypeAnnotation",</span>
-<span class="cstat-no" title="statement not covered" >  "TSTupleType"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isConditionalType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSConditionalType",</span>
-<span class="cstat-no" title="statement not covered" >  "ConditionalTypeAnnotation"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isTemplateLiteralType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSTemplateLiteralType",</span>
-<span class="cstat-no" title="statement not covered" >  "TemplateLiteralTypeAnnotation"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isImportType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSImportType",</span>
-<span class="cstat-no" title="statement not covered" >  "ImportType"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isExternalModuleReference = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSExternalModuleReference",</span>
-<span class="cstat-no" title="statement not covered" >  "ExternalModuleReference"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isTypeAlias = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSTypeAliasDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "TypeAlias"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isReturnOrThrowStatement = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "ReturnStatement",</span>
-<span class="cstat-no" title="statement not covered" >  "ThrowStatement"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isUnaryLikeNode = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "ReturnStatement",</span>
-<span class="cstat-no" title="statement not covered" >  "ThrowStatement",</span>
-<span class="cstat-no" title="statement not covered" >  "YieldExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "UnaryExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isExportDeclaration = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "ExportDefaultDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "DeclareExportDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "ExportNamedDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "ExportAllDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "DeclareExportAllDeclaration"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isExportAssignment = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSExportAssignment",</span>
-<span class="cstat-no" title="statement not covered" >  "ExportAssignment"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isAbstractMethodDefinition = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "AbstractMethodDefinition",</span>
-<span class="cstat-no" title="statement not covered" >  "TSAbstractMethodDefinition"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isAbstractPropertyDefinition = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "AbstractPropertyDefinition",</span>
-<span class="cstat-no" title="statement not covered" >  "TSAbstractPropertyDefinition"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isParameterProperty = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSParameterProperty",</span>
-<span class="cstat-no" title="statement not covered" >  "ParameterProperty"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isNonNullExpression = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSNonNullExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "NonNullExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isOptionalTupleMember = (node) =&gt; node?.type === "TSOptionalType" || node?.type === "TupleTypeElement" &amp;&amp; node.optional === true;</span>
-<span class="cstat-no" title="statement not covered" >var isArrayExpression = createTypeCheckFunction(["ArrayExpression"]);</span>
-<span class="cstat-no" title="statement not covered" >var isObjectExpression = createTypeCheckFunction(["ObjectExpression"]);</span>
-<span class="cstat-no" title="statement not covered" >var isLiteral = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "Literal",</span>
-<span class="cstat-no" title="statement not covered" >  "BooleanLiteral",</span>
-<span class="cstat-no" title="statement not covered" >  "BigIntLiteral",</span>
-<span class="cstat-no" title="statement not covered" >  // Babel, flow use `BigIntLiteral` too</span>
-<span class="cstat-no" title="statement not covered" >  "DirectiveLiteral",</span>
-<span class="cstat-no" title="statement not covered" >  "NullLiteral",</span>
-<span class="cstat-no" title="statement not covered" >  "NumericLiteral",</span>
-<span class="cstat-no" title="statement not covered" >  "RegExpLiteral",</span>
-<span class="cstat-no" title="statement not covered" >  "StringLiteral"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isObjectType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "ObjectTypeAnnotation",</span>
-<span class="cstat-no" title="statement not covered" >  "TSTypeLiteral",</span>
-<span class="cstat-no" title="statement not covered" >  "TSMappedType"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isFunctionOrArrowExpression = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "FunctionExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "ArrowFunctionExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isJsxElement = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "JSXElement",</span>
-<span class="cstat-no" title="statement not covered" >  "JSXFragment"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isBinaryish = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "BinaryExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "LogicalExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "NGPipeExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isCallExpression = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isMemberExpression = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "MemberExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "OptionalMemberExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isCallOrNewExpression = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "NewExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isCallLikeExpression = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "CallExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "OptionalCallExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "NewExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "ImportExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isChainElementWrapper = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "ChainExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "TSNonNullExpression",</span>
-<span class="cstat-no" title="statement not covered" >  "NonNullExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isArrayType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSArrayType",</span>
-<span class="cstat-no" title="statement not covered" >  "ArrayTypeAnnotation"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isTypeParameterInstantiation = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSTypeParameterInstantiation",</span>
-<span class="cstat-no" title="statement not covered" >  "TypeParameterInstantiation"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isTypeAnnotation = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSTypeAnnotation",</span>
-<span class="cstat-no" title="statement not covered" >  "TypeAnnotation"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isModuleDeclaration = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSModuleDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "DeclareModule",</span>
-<span class="cstat-no" title="statement not covered" >  "DeclareNamespace"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isConstructorType = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSConstructorType",</span>
-<span class="cstat-no" title="statement not covered" >  "ConstructorTypeAnnotation"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isClass = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "ClassDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "ClassExpression"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isNamespaceSpecifier = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "ImportNamespaceSpecifier",</span>
-<span class="cstat-no" title="statement not covered" >  "ExportNamespaceSpecifier"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isEnumDeclaration = createTypeCheckFunction([</span>
-<span class="cstat-no" title="statement not covered" >  "TSEnumDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "EnumDeclaration",</span>
-<span class="cstat-no" title="statement not covered" >  "DeclareEnum"</span>
-<span class="cstat-no" title="statement not covered" >]);</span>
-<span class="cstat-no" title="statement not covered" >var isEnumBody = createTypeCheckFunction(["TSEnumBody", "EnumBody"]);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >// src/language-js/utilities/is-shorthand-specifier.js</span>
 <span class="cstat-no" title="statement not covered" >function isShorthandSpecifier(specifier) {</span>
@@ -36635,7 +36655,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  return "";</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >var isClassProperty = createTypeCheckFunction(["ClassProperty", "PropertyDefinition", "ClassPrivateProperty", "ClassAccessorProperty", "AccessorProperty", "AbstractPropertyDefinition", "TSAbstractPropertyDefinition", "TSAbstractAccessorProperty"]);</span>
 <span class="cstat-no" title="statement not covered" >var isKeywordProperty = (node) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  if (node.computed || node.typeAnnotation) {</span>
 <span class="cstat-no" title="statement not covered" >    return false;</span>
@@ -36674,8 +36693,7 @@
 <span class="cstat-no" title="statement not covered" >  if (isClassProperty(nextNode) &amp;&amp; // Flow abstract properties cannot have variance or static modifiers, and</span>
 <span class="cstat-no" title="statement not covered" >  // their AST nodes do not have a `static` field.</span>
 <span class="cstat-no" title="statement not covered" >  nextNode.type !== "AbstractPropertyDefinition" &amp;&amp; !nextNode.static &amp;&amp; // @ts-expect-error -- Safe</span>
-<span class="cstat-no" title="statement not covered" >  nextNode.variance &amp;&amp; // @ts-expect-error -- Safe</span>
-<span class="cstat-no" title="statement not covered" >  !nextNode.declare) {</span>
+<span class="cstat-no" title="statement not covered" >  nextNode.variance &amp;&amp; !nextNode.declare) {</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  switch (nextNode.type) {</span>
@@ -40594,7 +40612,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-20T00:29:19.885Z
+                at 2026-11-21T00:30:05.945Z
             </div>
         <script src="../prettify.js"></script>
         <script>
