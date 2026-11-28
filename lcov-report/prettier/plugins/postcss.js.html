@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.03% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/13877</span>
+                <span class='fraction'>5/13876</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0.03% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/13877</span>
+                <span class='fraction'>5/13876</span>
             </div>
         
             
@@ -13938,8 +13938,7 @@
 <a name='L13873'></a><a href='#L13873'>13873</a>
 <a name='L13874'></a><a href='#L13874'>13874</a>
 <a name='L13875'></a><a href='#L13875'>13875</a>
-<a name='L13876'></a><a href='#L13876'>13876</a>
-<a name='L13877'></a><a href='#L13877'>13877</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L13876'></a><a href='#L13876'>13876</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -14306,7 +14305,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -27965,7 +27963,7 @@
 <span class="cstat-no" title="statement not covered" >                let subLineStart = Math.max(0, this.column - padding);</span>
 <span class="cstat-no" title="statement not covered" >                let subLineEnd = Math.max(this.column + padding, endColumn + padding);</span>
 <span class="cstat-no" title="statement not covered" >                let subLine = line2.slice(subLineStart, subLineEnd);</span>
-<span class="cstat-no" title="statement not covered" >                let spacing2 = aside(gutter.replace(/\d/g, " ")) + line2.slice(0, Math.min(this.column - 1, padding - 1)).replace(/[^\t]/g, " ");</span>
+<span class="cstat-no" title="statement not covered" >                let spacing2 = aside(gutter.replace(/\d/g, " ")) + line2.slice(subLineStart, this.column - 1).replace(/[^\t]/g, " ");</span>
 <span class="cstat-no" title="statement not covered" >                return mark("&gt;") + aside(gutter) + highlight(subLine) + "\n " + spacing2 + mark("^");</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >              let spacing = aside(gutter.replace(/\d/g, " ")) + line2.slice(0, this.column - 1).replace(/[^\t]/g, " ");</span>
@@ -29801,14 +29799,18 @@
 <span class="cstat-no" title="statement not covered" >            } else if (token[1].toLowerCase() === "important") {</span>
 <span class="cstat-no" title="statement not covered" >              let cache = tokens.slice(0);</span>
 <span class="cstat-no" title="statement not covered" >              let str = "";</span>
+<span class="cstat-no" title="statement not covered" >              let bang = false;</span>
 <span class="cstat-no" title="statement not covered" >              for (let j = i; j &gt; 0; j--) {</span>
 <span class="cstat-no" title="statement not covered" >                let type = cache[j][0];</span>
-<span class="cstat-no" title="statement not covered" >                if (str.trim().startsWith("!") &amp;&amp; type !== "space") {</span>
+<span class="cstat-no" title="statement not covered" >                if (bang &amp;&amp; type !== "space") {</span>
 <span class="cstat-no" title="statement not covered" >                  break;</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                str = cache.pop()[1] + str;</span>
+<span class="cstat-no" title="statement not covered" >                let value = cache.pop()[1];</span>
+<span class="cstat-no" title="statement not covered" >                str = value + str;</span>
+<span class="cstat-no" title="statement not covered" >                let trimmed = value.trim();</span>
+<span class="cstat-no" title="statement not covered" >                if (trimmed.length &gt; 0) bang = trimmed[0] === "!";</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >              if (str.trim().startsWith("!")) {</span>
+<span class="cstat-no" title="statement not covered" >              if (bang) {</span>
 <span class="cstat-no" title="statement not covered" >                node.important = true;</span>
 <span class="cstat-no" title="statement not covered" >                node.raws.important = str;</span>
 <span class="cstat-no" title="statement not covered" >                tokens = cache;</span>
@@ -30929,7 +30931,7 @@
 <span class="cstat-no" title="statement not covered" >      var Root = require_root();</span>
 <span class="cstat-no" title="statement not covered" >      var Processor = class {</span>
 <span class="cstat-no" title="statement not covered" >        constructor(plugins = []) {</span>
-<span class="cstat-no" title="statement not covered" >          this.version = "8.5.33";</span>
+<span class="cstat-no" title="statement not covered" >          this.version = "8.5.34";</span>
 <span class="cstat-no" title="statement not covered" >          this.plugins = this.normalize(plugins);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        normalize(plugins) {</span>
@@ -38579,12 +38581,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  var parse_default = parse;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // src/utilities/is-object.js</span>
-<span class="cstat-no" title="statement not covered" >  function isObject(object) {</span>
-<span class="cstat-no" title="statement not covered" >    return object !== null &amp;&amp; typeof object === "object";</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  var is_object_default = isObject;</span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/utilities/line-column-to-index.js</span>
 <span class="cstat-no" title="statement not covered" >  function lineColumnToIndex(lineColumn, text) {</span>
 <span class="cstat-no" title="statement not covered" >    let index = 0;</span>
@@ -38707,7 +38703,7 @@
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    for (const key in node) {</span>
 <span class="cstat-no" title="statement not covered" >      const child = node[key];</span>
-<span class="cstat-no" title="statement not covered" >      if (key === "source" || !child || typeof child !== "object") {</span>
+<span class="cstat-no" title="statement not covered" >      if (key === "source" || key === "parent" || !child || typeof child !== "object") {</span>
 <span class="cstat-no" title="statement not covered" >        continue;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      const children = Array.isArray(child) ? child : [child];</span>
@@ -38901,46 +38897,26 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-css/parse/parse-media-query.js</span>
 <span class="cstat-no" title="statement not covered" >  var import_postcss_media_query_parser = __toESM(require_dist(), 1);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // src/language-css/parse/utilities.js</span>
-<span class="cstat-no" title="statement not covered" >  function addTypePrefix(node, prefix, skipPrefix) {</span>
-<span class="cstat-no" title="statement not covered" >    if (is_object_default(node)) {</span>
-<span class="cstat-no" title="statement not covered" >      delete node.parent;</span>
-<span class="cstat-no" title="statement not covered" >      for (const key in node) {</span>
-<span class="cstat-no" title="statement not covered" >        addTypePrefix(node[key], prefix, skipPrefix);</span>
-<span class="cstat-no" title="statement not covered" >        if (key === "type" &amp;&amp; typeof node[key] === "string" &amp;&amp; !node[key].startsWith(prefix) &amp;&amp; (!skipPrefix || !skipPrefix.test(node[key]))) {</span>
-<span class="cstat-no" title="statement not covered" >          node[key] = prefix + node[key];</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return node;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  function addMissingType(node) {</span>
-<span class="cstat-no" title="statement not covered" >    if (is_object_default(node)) {</span>
-<span class="cstat-no" title="statement not covered" >      delete node.parent;</span>
-<span class="cstat-no" title="statement not covered" >      for (const key in node) {</span>
-<span class="cstat-no" title="statement not covered" >        addMissingType(node[key]);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (!Array.isArray(node) &amp;&amp; node.value &amp;&amp; !node.type) {</span>
-<span class="cstat-no" title="statement not covered" >        node.type = "unknown";</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return node;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  // src/language-css/parse/parse-media-query.js</span>
 <span class="cstat-no" title="statement not covered" >  var parse2 = import_postcss_media_query_parser.default.default;</span>
-<span class="cstat-no" title="statement not covered" >  function parseMediaQuery(params) {</span>
+<span class="cstat-no" title="statement not covered" >  function parseMediaQuery(source) {</span>
 <span class="cstat-no" title="statement not covered" >    let result;</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      result = parse2(params);</span>
+<span class="cstat-no" title="statement not covered" >      result = parse2(source);</span>
 <span class="cstat-no" title="statement not covered" >    } catch {</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
-<span class="cstat-no" title="statement not covered" >        type: "selector-unknown",</span>
-<span class="cstat-no" title="statement not covered" >        value: params</span>
+<span class="cstat-no" title="statement not covered" >        type: "media-unknown",</span>
+<span class="cstat-no" title="statement not covered" >        value: source</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return addTypePrefix(addMissingType(result), "media-");</span>
+<span class="cstat-no" title="statement not covered" >    result.walk((node) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const { type } = node;</span>
+<span class="cstat-no" title="statement not covered" >      if (!type) {</span>
+<span class="cstat-no" title="statement not covered" >        node.type = "media-unknown";</span>
+<span class="cstat-no" title="statement not covered" >      } else if (!type.startsWith("media-")) {</span>
+<span class="cstat-no" title="statement not covered" >        node.type = `media-${type}`;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" >    return result;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  var parse_media_query_default = parseMediaQuery;</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -39356,13 +39332,6 @@
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-css/parse/parse-selector.js</span>
-<span class="cstat-no" title="statement not covered" >  function isInvalidAst(ast, selector) {</span>
-<span class="cstat-no" title="statement not covered" >    return !ast || // https://github.com/postcss/postcss-selector-parser/issues/366</span>
-<span class="cstat-no" title="statement not covered" >    String(ast) !== selector || // https://github.com/postcss/postcss-selector-parser/issues/370</span>
-<span class="cstat-no" title="statement not covered" >    ast.walk(</span>
-<span class="cstat-no" title="statement not covered" >      (node) =&gt; node.type === "string" &amp;&amp; node.value.startsWith("(") ? false : void 0</span>
-<span class="cstat-no" title="statement not covered" >    ) === false;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  function parseSelector(selector) {</span>
 <span class="cstat-no" title="statement not covered" >    if (/\/[/*]/.test(removeQuotedStrings(selector))) {</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
@@ -39375,18 +39344,37 @@
 <span class="cstat-no" title="statement not covered" >      result = (0, import_postcss_selector_parser.default)().astSync(selector);</span>
 <span class="cstat-no" title="statement not covered" >    } catch {</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (isInvalidAst(result, selector)) {</span>
+<span class="cstat-no" title="statement not covered" >    let isInvalid = !result || // https://github.com/postcss/postcss-selector-parser/issues/366</span>
+<span class="cstat-no" title="statement not covered" >    String(result) !== selector;</span>
+<span class="cstat-no" title="statement not covered" >    if (!isInvalid) {</span>
+<span class="cstat-no" title="statement not covered" >      result.type = `selector-${result.type}`;</span>
+<span class="cstat-no" title="statement not covered" >      result.walk((node) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const { type } = node;</span>
+<span class="cstat-no" title="statement not covered" >        if (type === "string" &amp;&amp; node.value.startsWith("(")) {</span>
+<span class="cstat-no" title="statement not covered" >          isInvalid = true;</span>
+<span class="cstat-no" title="statement not covered" >          return false;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        node.type = `selector-${type}`;</span>
+<span class="cstat-no" title="statement not covered" >      });</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (isInvalid) {</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
 <span class="cstat-no" title="statement not covered" >        type: "selector-unknown",</span>
 <span class="cstat-no" title="statement not covered" >        value: selector</span>
 <span class="cstat-no" title="statement not covered" >      };</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return addTypePrefix(result, "selector-");</span>
+<span class="cstat-no" title="statement not covered" >    return result;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  var parse_selector_default = parseSelector;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-css/parse/parse-value.js</span>
 <span class="cstat-no" title="statement not covered" >  var import_parser2 = __toESM(require_parser3(), 1);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/utilities/is-object.js</span>
+<span class="cstat-no" title="statement not covered" >  function isObject(object) {</span>
+<span class="cstat-no" title="statement not covered" >    return object !== null &amp;&amp; typeof object === "object";</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  var is_object_default = isObject;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-css/utilities/get-value-root.js</span>
 <span class="cstat-no" title="statement not covered" >  var getValueRoot = (node) =&gt; {</span>
@@ -39432,6 +39420,20 @@
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >  var is_scss_variable_default = isSCSSVariable;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // src/language-css/parse/utilities.js</span>
+<span class="cstat-no" title="statement not covered" >  function addTypePrefix(node, prefix, skipPrefix) {</span>
+<span class="cstat-no" title="statement not covered" >    if (is_object_default(node)) {</span>
+<span class="cstat-no" title="statement not covered" >      delete node.parent;</span>
+<span class="cstat-no" title="statement not covered" >      for (const key in node) {</span>
+<span class="cstat-no" title="statement not covered" >        addTypePrefix(node[key], prefix, skipPrefix);</span>
+<span class="cstat-no" title="statement not covered" >        if (key === "type" &amp;&amp; typeof node[key] === "string" &amp;&amp; !node[key].startsWith(prefix) &amp;&amp; (!skipPrefix || !skipPrefix.test(node[key]))) {</span>
+<span class="cstat-no" title="statement not covered" >          node[key] = prefix + node[key];</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    return node;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  // src/language-css/parse/parse-value.js</span>
 <span class="cstat-no" title="statement not covered" >  var isClosingParenthesis = (node) =&gt; node.type === "paren" &amp;&amp; node.value === ")";</span>
@@ -39797,246 +39799,236 @@
 <span class="cstat-no" title="statement not covered" >  var DEFAULT_SCSS_DIRECTIVE = /(\s*)(!default).*$/;</span>
 <span class="cstat-no" title="statement not covered" >  var GLOBAL_SCSS_DIRECTIVE = /(\s*)(!global).*$/;</span>
 <span class="cstat-no" title="statement not covered" >  function parseNestedCSS(parse3, node, options2) {</span>
-<span class="cstat-no" title="statement not covered" >    if (is_object_default(node)) {</span>
-<span class="cstat-no" title="statement not covered" >      delete node.parent;</span>
-<span class="cstat-no" title="statement not covered" >      for (const key in node) {</span>
-<span class="cstat-no" title="statement not covered" >        parseNestedCSS(parse3, node[key], options2);</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type === "css-decl" &amp;&amp; typeof node.prop === "string" &amp;&amp; node.prop.startsWith("--") &amp;&amp; typeof node.value === "string" &amp;&amp; node.value.startsWith("{")) {</span>
+<span class="cstat-no" title="statement not covered" >      let rules;</span>
+<span class="cstat-no" title="statement not covered" >      if (node.value.trimEnd().endsWith("}")) {</span>
+<span class="cstat-no" title="statement not covered" >        const textBefore = options2.originalText.slice(</span>
+<span class="cstat-no" title="statement not covered" >          0,</span>
+<span class="cstat-no" title="statement not covered" >          node.source.start.offset</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >        const nodeText = "a".repeat(node.prop.length) + options2.originalText.slice(</span>
+<span class="cstat-no" title="statement not covered" >          node.source.start.offset + node.prop.length,</span>
+<span class="cstat-no" title="statement not covered" >          node.source.end.offset</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >        const fakeContent = replace_non_line_breaks_with_space_default(textBefore) + nodeText;</span>
+<span class="cstat-no" title="statement not covered" >        let ast;</span>
+<span class="cstat-no" title="statement not covered" >        try {</span>
+<span class="cstat-no" title="statement not covered" >          ast = parse3(fakeContent, { ...options2 });</span>
+<span class="cstat-no" title="statement not covered" >        } catch {</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (ast?.nodes?.length === 1 &amp;&amp; ast.nodes[0].type === "css-rule") {</span>
+<span class="cstat-no" title="statement not covered" >          rules = ast.nodes[0].nodes;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (!node.type) {</span>
+<span class="cstat-no" title="statement not covered" >      if (rules) {</span>
+<span class="cstat-no" title="statement not covered" >        node.value = {</span>
+<span class="cstat-no" title="statement not covered" >          type: "css-rule",</span>
+<span class="cstat-no" title="statement not covered" >          nodes: rules</span>
+<span class="cstat-no" title="statement not covered" >        };</span>
+<span class="cstat-no" title="statement not covered" >      } else {</span>
+<span class="cstat-no" title="statement not covered" >        node.value = {</span>
+<span class="cstat-no" title="statement not covered" >          type: "value-unknown",</span>
+<span class="cstat-no" title="statement not covered" >          value: node.raws.value.raw</span>
+<span class="cstat-no" title="statement not covered" >        };</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      return node;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    let selector = "";</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof node.selector === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      selector = node.raws.selector ? node.raws.selector.scss ?? node.raws.selector.raw : node.selector;</span>
+<span class="cstat-no" title="statement not covered" >      if (node.raws.between &amp;&amp; node.raws.between.trim().length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        selector += node.raws.between;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      node.raws.selector = selector;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    let value = "";</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof node.value === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      value = node.raws.value ? node.raws.value.scss ?? node.raws.value.raw : node.value;</span>
+<span class="cstat-no" title="statement not covered" >      node.raws.value = value.trim();</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    let params = "";</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof node.params === "string") {</span>
+<span class="cstat-no" title="statement not covered" >      params = node.raws.params ? node.raws.params.scss ?? node.raws.params.raw : node.params;</span>
+<span class="cstat-no" title="statement not covered" >      if (node.raws.afterName &amp;&amp; node.raws.afterName.trim().length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        params = node.raws.afterName + params;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (node.raws.between &amp;&amp; node.raws.between.trim().length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        params += node.raws.between;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      params = params.trim();</span>
+<span class="cstat-no" title="statement not covered" >      node.raws.params = params;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (selector.trim().length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      if (selector.startsWith("@") &amp;&amp; selector.endsWith(":")) {</span>
 <span class="cstat-no" title="statement not covered" >        return node;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      node.raws ?? (node.raws = {});</span>
-<span class="cstat-no" title="statement not covered" >      if (node.type === "css-decl" &amp;&amp; typeof node.prop === "string" &amp;&amp; node.prop.startsWith("--") &amp;&amp; typeof node.value === "string" &amp;&amp; node.value.startsWith("{")) {</span>
-<span class="cstat-no" title="statement not covered" >        let rules;</span>
-<span class="cstat-no" title="statement not covered" >        if (node.value.trimEnd().endsWith("}")) {</span>
-<span class="cstat-no" title="statement not covered" >          const textBefore = options2.originalText.slice(</span>
-<span class="cstat-no" title="statement not covered" >            0,</span>
-<span class="cstat-no" title="statement not covered" >            node.source.start.offset</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
-<span class="cstat-no" title="statement not covered" >          const nodeText = "a".repeat(node.prop.length) + options2.originalText.slice(</span>
-<span class="cstat-no" title="statement not covered" >            node.source.start.offset + node.prop.length,</span>
-<span class="cstat-no" title="statement not covered" >            node.source.end.offset</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
-<span class="cstat-no" title="statement not covered" >          const fakeContent = replace_non_line_breaks_with_space_default(textBefore) + nodeText;</span>
-<span class="cstat-no" title="statement not covered" >          let ast;</span>
-<span class="cstat-no" title="statement not covered" >          try {</span>
-<span class="cstat-no" title="statement not covered" >            ast = parse3(fakeContent, { ...options2 });</span>
-<span class="cstat-no" title="statement not covered" >          } catch {</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (ast?.nodes?.length === 1 &amp;&amp; ast.nodes[0].type === "css-rule") {</span>
-<span class="cstat-no" title="statement not covered" >            rules = ast.nodes[0].nodes;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (rules) {</span>
-<span class="cstat-no" title="statement not covered" >          node.value = {</span>
-<span class="cstat-no" title="statement not covered" >            type: "css-rule",</span>
-<span class="cstat-no" title="statement not covered" >            nodes: rules</span>
-<span class="cstat-no" title="statement not covered" >          };</span>
-<span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >          node.value = {</span>
-<span class="cstat-no" title="statement not covered" >            type: "value-unknown",</span>
-<span class="cstat-no" title="statement not covered" >            value: node.raws.value.raw</span>
-<span class="cstat-no" title="statement not covered" >          };</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      if (node.mixin) {</span>
+<span class="cstat-no" title="statement not covered" >        node.selector = parse_value_default(selector, options2);</span>
 <span class="cstat-no" title="statement not covered" >        return node;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      let selector = "";</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof node.selector === "string") {</span>
-<span class="cstat-no" title="statement not covered" >        selector = node.raws.selector ? node.raws.selector.scss ?? node.raws.selector.raw : node.selector;</span>
-<span class="cstat-no" title="statement not covered" >        if (node.raws.between &amp;&amp; node.raws.between.trim().length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >          selector += node.raws.between;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        node.raws.selector = selector;</span>
+<span class="cstat-no" title="statement not covered" >      if (is_scss_nested_property_node_default(node, options2)) {</span>
+<span class="cstat-no" title="statement not covered" >        node.isScssNestedProperty = true;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      let value = "";</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof node.value === "string") {</span>
-<span class="cstat-no" title="statement not covered" >        value = node.raws.value ? node.raws.value.scss ?? node.raws.value.raw : node.value;</span>
-<span class="cstat-no" title="statement not covered" >        node.raws.value = value.trim();</span>
+<span class="cstat-no" title="statement not covered" >      node.selector = parse_selector_default(selector);</span>
+<span class="cstat-no" title="statement not covered" >      return node;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (value.trim().length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      const defaultSCSSDirectiveIndex = value.match(DEFAULT_SCSS_DIRECTIVE);</span>
+<span class="cstat-no" title="statement not covered" >      if (defaultSCSSDirectiveIndex) {</span>
+<span class="cstat-no" title="statement not covered" >        value = value.slice(0, defaultSCSSDirectiveIndex.index);</span>
+<span class="cstat-no" title="statement not covered" >        node.scssDefault = true;</span>
+<span class="cstat-no" title="statement not covered" >        if (defaultSCSSDirectiveIndex[0].trim() !== "!default") {</span>
+<span class="cstat-no" title="statement not covered" >          node.raws.scssDefault = defaultSCSSDirectiveIndex[0];</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      let params = "";</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof node.params === "string") {</span>
-<span class="cstat-no" title="statement not covered" >        params = node.raws.params ? node.raws.params.scss ?? node.raws.params.raw : node.params;</span>
-<span class="cstat-no" title="statement not covered" >        if (node.raws.afterName &amp;&amp; node.raws.afterName.trim().length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >          params = node.raws.afterName + params;</span>
+<span class="cstat-no" title="statement not covered" >      const globalSCSSDirectiveIndex = value.match(GLOBAL_SCSS_DIRECTIVE);</span>
+<span class="cstat-no" title="statement not covered" >      if (globalSCSSDirectiveIndex) {</span>
+<span class="cstat-no" title="statement not covered" >        value = value.slice(0, globalSCSSDirectiveIndex.index);</span>
+<span class="cstat-no" title="statement not covered" >        node.scssGlobal = true;</span>
+<span class="cstat-no" title="statement not covered" >        if (globalSCSSDirectiveIndex[0].trim() !== "!global") {</span>
+<span class="cstat-no" title="statement not covered" >          node.raws.scssGlobal = globalSCSSDirectiveIndex[0];</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (node.raws.between &amp;&amp; node.raws.between.trim().length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >          params += node.raws.between;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        params = params.trim();</span>
-<span class="cstat-no" title="statement not covered" >        node.raws.params = params;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (selector.trim().length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >        if (selector.startsWith("@") &amp;&amp; selector.endsWith(":")) {</span>
-<span class="cstat-no" title="statement not covered" >          return node;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      if (value.startsWith("progid:")) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+<span class="cstat-no" title="statement not covered" >          type: "value-unknown",</span>
+<span class="cstat-no" title="statement not covered" >          value</span>
+<span class="cstat-no" title="statement not covered" >        };</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      node.value = parse_value_default(value, options2);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (options2.parser === "less" &amp;&amp; node.type === "css-decl" &amp;&amp; typeof node.prop === "string" &amp;&amp; /^\s*\+\s*:/.test(node.raws.between)) {</span>
+<span class="cstat-no" title="statement not covered" >      node.prop += "+";</span>
+<span class="cstat-no" title="statement not covered" >      node.raws.between = node.raws.between.replace("+", "");</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (options2.parser === "less" &amp;&amp; node.type === "css-decl" &amp;&amp; value.startsWith("extend(")) {</span>
+<span class="cstat-no" title="statement not covered" >      node.extend || (node.extend = node.raws.between === ":");</span>
+<span class="cstat-no" title="statement not covered" >      if (node.extend &amp;&amp; !node.selector) {</span>
+<span class="cstat-no" title="statement not covered" >        delete node.value;</span>
+<span class="cstat-no" title="statement not covered" >        node.selector = parse_selector_default(value.slice("extend(".length, -1));</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type === "css-atrule") {</span>
+<span class="cstat-no" title="statement not covered" >      if (options2.parser === "less") {</span>
 <span class="cstat-no" title="statement not covered" >        if (node.mixin) {</span>
-<span class="cstat-no" title="statement not covered" >          node.selector = parse_value_default(selector, options2);</span>
-<span class="cstat-no" title="statement not covered" >          return node;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (is_scss_nested_property_node_default(node, options2)) {</span>
-<span class="cstat-no" title="statement not covered" >          node.isScssNestedProperty = true;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        node.selector = parse_selector_default(selector);</span>
-<span class="cstat-no" title="statement not covered" >        return node;</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (value.trim().length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >        const defaultSCSSDirectiveIndex = value.match(DEFAULT_SCSS_DIRECTIVE);</span>
-<span class="cstat-no" title="statement not covered" >        if (defaultSCSSDirectiveIndex) {</span>
-<span class="cstat-no" title="statement not covered" >          value = value.slice(0, defaultSCSSDirectiveIndex.index);</span>
-<span class="cstat-no" title="statement not covered" >          node.scssDefault = true;</span>
-<span class="cstat-no" title="statement not covered" >          if (defaultSCSSDirectiveIndex[0].trim() !== "!default") {</span>
-<span class="cstat-no" title="statement not covered" >            node.raws.scssDefault = defaultSCSSDirectiveIndex[0];</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        const globalSCSSDirectiveIndex = value.match(GLOBAL_SCSS_DIRECTIVE);</span>
-<span class="cstat-no" title="statement not covered" >        if (globalSCSSDirectiveIndex) {</span>
-<span class="cstat-no" title="statement not covered" >          value = value.slice(0, globalSCSSDirectiveIndex.index);</span>
-<span class="cstat-no" title="statement not covered" >          node.scssGlobal = true;</span>
-<span class="cstat-no" title="statement not covered" >          if (globalSCSSDirectiveIndex[0].trim() !== "!global") {</span>
-<span class="cstat-no" title="statement not covered" >            node.raws.scssGlobal = globalSCSSDirectiveIndex[0];</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (value.startsWith("progid:")) {</span>
-<span class="cstat-no" title="statement not covered" >          return {</span>
-<span class="cstat-no" title="statement not covered" >            type: "value-unknown",</span>
-<span class="cstat-no" title="statement not covered" >            value</span>
-<span class="cstat-no" title="statement not covered" >          };</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        node.value = parse_value_default(value, options2);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (options2.parser === "less" &amp;&amp; node.type === "css-decl" &amp;&amp; typeof node.prop === "string" &amp;&amp; /^\s*\+\s*:/.test(node.raws.between)) {</span>
-<span class="cstat-no" title="statement not covered" >        node.prop += "+";</span>
-<span class="cstat-no" title="statement not covered" >        node.raws.between = node.raws.between.replace("+", "");</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (options2.parser === "less" &amp;&amp; node.type === "css-decl" &amp;&amp; value.startsWith("extend(")) {</span>
-<span class="cstat-no" title="statement not covered" >        node.extend || (node.extend = node.raws.between === ":");</span>
-<span class="cstat-no" title="statement not covered" >        if (node.extend &amp;&amp; !node.selector) {</span>
-<span class="cstat-no" title="statement not covered" >          delete node.value;</span>
-<span class="cstat-no" title="statement not covered" >          node.selector = parse_selector_default(value.slice("extend(".length, -1));</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (node.type === "css-atrule") {</span>
-<span class="cstat-no" title="statement not covered" >        if (options2.parser === "less") {</span>
-<span class="cstat-no" title="statement not covered" >          if (node.mixin) {</span>
-<span class="cstat-no" title="statement not covered" >            const source = node.raws.identifier + node.name + node.raws.afterName + node.raws.params;</span>
-<span class="cstat-no" title="statement not covered" >            node.selector = parse_selector_default(source);</span>
-<span class="cstat-no" title="statement not covered" >            delete node.params;</span>
-<span class="cstat-no" title="statement not covered" >            return node;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (node.function) {</span>
-<span class="cstat-no" title="statement not covered" >            return node;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (options2.parser === "css" &amp;&amp; node.name === "custom-selector") {</span>
-<span class="cstat-no" title="statement not covered" >          const customSelector = node.params.match(/:--\S+\s+/)[0].trim();</span>
-<span class="cstat-no" title="statement not covered" >          node.customSelector = customSelector;</span>
-<span class="cstat-no" title="statement not covered" >          node.selector = parse_selector_default(</span>
-<span class="cstat-no" title="statement not covered" >            node.params.slice(customSelector.length).trim()</span>
-<span class="cstat-no" title="statement not covered" >          );</span>
+<span class="cstat-no" title="statement not covered" >          const source = node.raws.identifier + node.name + node.raws.afterName + node.raws.params;</span>
+<span class="cstat-no" title="statement not covered" >          node.selector = parse_selector_default(source);</span>
 <span class="cstat-no" title="statement not covered" >          delete node.params;</span>
 <span class="cstat-no" title="statement not covered" >          return node;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (options2.parser === "less") {</span>
-<span class="cstat-no" title="statement not covered" >          if (node.name.includes(":")) {</span>
-<span class="cstat-no" title="statement not covered" >            node.variable = true;</span>
-<span class="cstat-no" title="statement not covered" >            const parts = node.name.split(":");</span>
-<span class="cstat-no" title="statement not covered" >            node.name = parts[0];</span>
-<span class="cstat-no" title="statement not covered" >            let value2 = parts.slice(1).join(":");</span>
-<span class="cstat-no" title="statement not covered" >            if (node.params) {</span>
-<span class="cstat-no" title="statement not covered" >              value2 += node.params;</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            node.value = parse_value_default(value2, options2);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (!["page", "nest", "keyframes"].includes(node.name) &amp;&amp; node.params?.[0] === ":") {</span>
-<span class="cstat-no" title="statement not covered" >            node.variable = true;</span>
-<span class="cstat-no" title="statement not covered" >            let text = node.raws.params;</span>
-<span class="cstat-no" title="statement not covered" >            if (text.startsWith(":")) {</span>
-<span class="cstat-no" title="statement not covered" >              text = text.slice(1);</span>
-<span class="cstat-no" title="statement not covered" >              if (text) {</span>
-<span class="cstat-no" title="statement not covered" >                node.value = parse_value_default(text, options2);</span>
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            node.raws.afterName += ":";</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          if (node.variable) {</span>
-<span class="cstat-no" title="statement not covered" >            delete node.params;</span>
-<span class="cstat-no" title="statement not covered" >            if (!node.value) {</span>
-<span class="cstat-no" title="statement not covered" >              delete node.value;</span>
-<span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            return node;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >        if (node.function) {</span>
+<span class="cstat-no" title="statement not covered" >          return node;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      if (node.type === "css-atrule" &amp;&amp; params.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >        const { name } = node;</span>
-<span class="cstat-no" title="statement not covered" >        if (name === "warn" || name === "error") {</span>
-<span class="cstat-no" title="statement not covered" >          node.params = {</span>
+<span class="cstat-no" title="statement not covered" >      if (options2.parser === "css" &amp;&amp; node.name === "custom-selector") {</span>
+<span class="cstat-no" title="statement not covered" >        const customSelector = node.params.match(/:--\S+\s+/)[0].trim();</span>
+<span class="cstat-no" title="statement not covered" >        node.customSelector = customSelector;</span>
+<span class="cstat-no" title="statement not covered" >        node.selector = parse_selector_default(</span>
+<span class="cstat-no" title="statement not covered" >          node.params.slice(customSelector.length).trim()</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" >        delete node.params;</span>
+<span class="cstat-no" title="statement not covered" >        return node;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (options2.parser === "less") {</span>
+<span class="cstat-no" title="statement not covered" >        if (node.name.includes(":")) {</span>
+<span class="cstat-no" title="statement not covered" >          node.variable = true;</span>
+<span class="cstat-no" title="statement not covered" >          const parts = node.name.split(":");</span>
+<span class="cstat-no" title="statement not covered" >          node.name = parts[0];</span>
+<span class="cstat-no" title="statement not covered" >          let value2 = parts.slice(1).join(":");</span>
+<span class="cstat-no" title="statement not covered" >          if (node.params) {</span>
+<span class="cstat-no" title="statement not covered" >            value2 += node.params;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          node.value = parse_value_default(value2, options2);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (!["page", "nest", "keyframes"].includes(node.name) &amp;&amp; node.params?.[0] === ":") {</span>
+<span class="cstat-no" title="statement not covered" >          node.variable = true;</span>
+<span class="cstat-no" title="statement not covered" >          let text = node.raws.params;</span>
+<span class="cstat-no" title="statement not covered" >          if (text.startsWith(":")) {</span>
+<span class="cstat-no" title="statement not covered" >            text = text.slice(1);</span>
+<span class="cstat-no" title="statement not covered" >            if (text) {</span>
+<span class="cstat-no" title="statement not covered" >              node.value = parse_value_default(text, options2);</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          node.raws.afterName += ":";</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (node.variable) {</span>
+<span class="cstat-no" title="statement not covered" >          delete node.params;</span>
+<span class="cstat-no" title="statement not covered" >          if (!node.value) {</span>
+<span class="cstat-no" title="statement not covered" >            delete node.value;</span>
+<span class="cstat-no" title="statement not covered" >          }</span>
+<span class="cstat-no" title="statement not covered" >          return node;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    if (node.type === "css-atrule" &amp;&amp; params.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      const { name } = node;</span>
+<span class="cstat-no" title="statement not covered" >      if (name === "warn" || name === "error") {</span>
+<span class="cstat-no" title="statement not covered" >        node.params = {</span>
+<span class="cstat-no" title="statement not covered" >          type: "media-unknown",</span>
+<span class="cstat-no" title="statement not covered" >          value: params</span>
+<span class="cstat-no" title="statement not covered" >        };</span>
+<span class="cstat-no" title="statement not covered" >        return node;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (name === "extend" || name === "nest") {</span>
+<span class="cstat-no" title="statement not covered" >        const optionalFlag = /\s+!optional$/.exec(params);</span>
+<span class="cstat-no" title="statement not covered" >        if (optionalFlag) {</span>
+<span class="cstat-no" title="statement not covered" >          node.optional = true;</span>
+<span class="cstat-no" title="statement not covered" >          params = params.slice(0, optionalFlag.index);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        node.selector = parse_selector_default(params);</span>
+<span class="cstat-no" title="statement not covered" >        delete node.params;</span>
+<span class="cstat-no" title="statement not covered" >        return node;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (name === "at-root") {</span>
+<span class="cstat-no" title="statement not covered" >        if (/^\(\s*(?:without|with)\s*:.+\)$/s.test(params)) {</span>
+<span class="cstat-no" title="statement not covered" >          node.params = parse_value_default(params, options2);</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >          node.selector = parse_selector_default(params);</span>
+<span class="cstat-no" title="statement not covered" >          delete node.params;</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        return node;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      const lowercasedName = name.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >      if (is_module_rule_name_default(lowercasedName)) {</span>
+<span class="cstat-no" title="statement not covered" >        node.import = true;</span>
+<span class="cstat-no" title="statement not covered" >        delete node.filename;</span>
+<span class="cstat-no" title="statement not covered" >        node.params = parse_value_default(params, options2);</span>
+<span class="cstat-no" title="statement not covered" >        return node;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if ([</span>
+<span class="cstat-no" title="statement not covered" >        "namespace",</span>
+<span class="cstat-no" title="statement not covered" >        "supports",</span>
+<span class="cstat-no" title="statement not covered" >        "if",</span>
+<span class="cstat-no" title="statement not covered" >        "else",</span>
+<span class="cstat-no" title="statement not covered" >        "for",</span>
+<span class="cstat-no" title="statement not covered" >        "each",</span>
+<span class="cstat-no" title="statement not covered" >        "while",</span>
+<span class="cstat-no" title="statement not covered" >        "debug",</span>
+<span class="cstat-no" title="statement not covered" >        "mixin",</span>
+<span class="cstat-no" title="statement not covered" >        "include",</span>
+<span class="cstat-no" title="statement not covered" >        "function",</span>
+<span class="cstat-no" title="statement not covered" >        "return",</span>
+<span class="cstat-no" title="statement not covered" >        "define-mixin",</span>
+<span class="cstat-no" title="statement not covered" >        "add-mixin"</span>
+<span class="cstat-no" title="statement not covered" >      ].includes(name)) {</span>
+<span class="cstat-no" title="statement not covered" >        params = params.replace(/(\$\S+?)(\s+)?\.{3}/, "$1...$2");</span>
+<span class="cstat-no" title="statement not covered" >        params = params.replace(/^(?!if)([^"'\s(]+)(\s+)\(/, "$1($2");</span>
+<span class="cstat-no" title="statement not covered" >        node.value = parse_value_default(params, options2);</span>
+<span class="cstat-no" title="statement not covered" >        delete node.params;</span>
+<span class="cstat-no" title="statement not covered" >        return node;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      if (["media", "custom-media"].includes(lowercasedName)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (params.includes("#{")) {</span>
+<span class="cstat-no" title="statement not covered" >          return {</span>
 <span class="cstat-no" title="statement not covered" >            type: "media-unknown",</span>
 <span class="cstat-no" title="statement not covered" >            value: params</span>
 <span class="cstat-no" title="statement not covered" >          };</span>
-<span class="cstat-no" title="statement not covered" >          return node;</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (name === "extend" || name === "nest") {</span>
-<span class="cstat-no" title="statement not covered" >          const optionalFlag = /\s+!optional$/.exec(params);</span>
-<span class="cstat-no" title="statement not covered" >          if (optionalFlag) {</span>
-<span class="cstat-no" title="statement not covered" >            node.optional = true;</span>
-<span class="cstat-no" title="statement not covered" >            params = params.slice(0, optionalFlag.index);</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          node.selector = parse_selector_default(params);</span>
-<span class="cstat-no" title="statement not covered" >          delete node.params;</span>
-<span class="cstat-no" title="statement not covered" >          return node;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (name === "at-root") {</span>
-<span class="cstat-no" title="statement not covered" >          if (/^\(\s*(?:without|with)\s*:.+\)$/s.test(params)) {</span>
-<span class="cstat-no" title="statement not covered" >            node.params = parse_value_default(params, options2);</span>
-<span class="cstat-no" title="statement not covered" >          } else {</span>
-<span class="cstat-no" title="statement not covered" >            node.selector = parse_selector_default(params);</span>
-<span class="cstat-no" title="statement not covered" >            delete node.params;</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          return node;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        const lowercasedName = name.toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >        if (is_module_rule_name_default(lowercasedName)) {</span>
-<span class="cstat-no" title="statement not covered" >          node.import = true;</span>
-<span class="cstat-no" title="statement not covered" >          delete node.filename;</span>
-<span class="cstat-no" title="statement not covered" >          node.params = parse_value_default(params, options2);</span>
-<span class="cstat-no" title="statement not covered" >          return node;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if ([</span>
-<span class="cstat-no" title="statement not covered" >          "namespace",</span>
-<span class="cstat-no" title="statement not covered" >          "supports",</span>
-<span class="cstat-no" title="statement not covered" >          "if",</span>
-<span class="cstat-no" title="statement not covered" >          "else",</span>
-<span class="cstat-no" title="statement not covered" >          "for",</span>
-<span class="cstat-no" title="statement not covered" >          "each",</span>
-<span class="cstat-no" title="statement not covered" >          "while",</span>
-<span class="cstat-no" title="statement not covered" >          "debug",</span>
-<span class="cstat-no" title="statement not covered" >          "mixin",</span>
-<span class="cstat-no" title="statement not covered" >          "include",</span>
-<span class="cstat-no" title="statement not covered" >          "function",</span>
-<span class="cstat-no" title="statement not covered" >          "return",</span>
-<span class="cstat-no" title="statement not covered" >          "define-mixin",</span>
-<span class="cstat-no" title="statement not covered" >          "add-mixin"</span>
-<span class="cstat-no" title="statement not covered" >        ].includes(name)) {</span>
-<span class="cstat-no" title="statement not covered" >          params = params.replace(/(\$\S+?)(\s+)?\.{3}/, "$1...$2");</span>
-<span class="cstat-no" title="statement not covered" >          params = params.replace(/^(?!if)([^"'\s(]+)(\s+)\(/, "$1($2");</span>
-<span class="cstat-no" title="statement not covered" >          node.value = parse_value_default(params, options2);</span>
-<span class="cstat-no" title="statement not covered" >          delete node.params;</span>
-<span class="cstat-no" title="statement not covered" >          return node;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (["media", "custom-media"].includes(lowercasedName)) {</span>
-<span class="cstat-no" title="statement not covered" >          if (params.includes("#{")) {</span>
-<span class="cstat-no" title="statement not covered" >            return {</span>
-<span class="cstat-no" title="statement not covered" >              type: "media-unknown",</span>
-<span class="cstat-no" title="statement not covered" >              value: params</span>
-<span class="cstat-no" title="statement not covered" >            };</span>
-<span class="cstat-no" title="statement not covered" >          }</span>
-<span class="cstat-no" title="statement not covered" >          node.params = parse_media_query_default(params);</span>
-<span class="cstat-no" title="statement not covered" >          return node;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        node.params = params;</span>
+<span class="cstat-no" title="statement not covered" >        node.params = parse_media_query_default(params);</span>
 <span class="cstat-no" title="statement not covered" >        return node;</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      node.params = params;</span>
+<span class="cstat-no" title="statement not covered" >      return node;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    return node;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
@@ -40059,8 +40051,12 @@
 <span class="cstat-no" title="statement not covered" >          cause: error</span>
 <span class="cstat-no" title="statement not covered" >        });</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >      result.type = `css-${result.type}`;</span>
+<span class="cstat-no" title="statement not covered" >      result.walk((node) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        node.type = `css-${node.type}`;</span>
+<span class="cstat-no" title="statement not covered" >        parseNestedCSS(parse3, node, options2);</span>
+<span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >      options2.originalText = text;</span>
-<span class="cstat-no" title="statement not covered" >      result = parseNestedCSS(parse3, addTypePrefix(result, "css-"), options2);</span>
 <span class="cstat-no" title="statement not covered" >      calculateLoc(result, text);</span>
 <span class="cstat-no" title="statement not covered" >      if (frontMatter) {</span>
 <span class="cstat-no" title="statement not covered" >        result.frontMatter = {</span>
@@ -40201,6 +40197,7 @@
 <span class="cstat-no" title="statement not covered" >  var ignoredProperties = /* @__PURE__ */ new Set([</span>
 <span class="cstat-no" title="statement not covered" >    "raw",</span>
 <span class="cstat-no" title="statement not covered" >    // front-matter</span>
+<span class="cstat-no" title="statement not covered" >    "parent",</span>
 <span class="cstat-no" title="statement not covered" >    "raws",</span>
 <span class="cstat-no" title="statement not covered" >    "sourceIndex",</span>
 <span class="cstat-no" title="statement not covered" >    "source",</span>
@@ -41698,7 +41695,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-27T00:31:11.190Z
+                at 2026-11-28T00:28:59.397Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
